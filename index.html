@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>수의학 정리본 아카이브</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* =========================================================
+   설정 — 보통은 건드릴 필요 없어요.
+   username.github.io/저장소이름 주소로 열면 자동으로 알아냅니다.
+   나중에 psjshihumdaevi.com 같은 개인 도메인을 연결하면
+   아래 script의 CONFIG에 GitHub 아이디와 저장소 이름을 적어 주세요.
+   ========================================================= */
+:root{
+  --bg:#f2f5f3; --surface:#ffffff; --ink:#16201d; --muted:#5d6b67; --line:#d6dedb;
+  --accent:#1e6b58; --accent-ink:#ffffff; --accent-soft:#e1eee8; --danger:#b23f2d;
+  --display:"Gowun Batang","Noto Serif KR",serif;
+  --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1413; --surface:#162120; --ink:#e4ece9; --muted:#93a29d; --line:#283533;
+  --accent:#62c4a5; --accent-ink:#0b1a16; --accent-soft:#1a302a; --danger:#e47d68; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1413; --surface:#162120; --ink:#e4ece9; --muted:#93a29d; --line:#283533;
+  --accent:#62c4a5; --accent-ink:#0b1a16; --accent-soft:#1a302a; --danger:#e47d68; color-scheme:dark}
+*{box-sizing:border-box}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+[hidden]{display:none!important}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 64px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;flex-direction:column;gap:6px}
+.top-line{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.theme-btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+h1{font-family:var(--display);font-size:clamp(26px,6vw,34px);line-height:1.2;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0;font-size:14px}
+
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
+.cats::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:1px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:8px 12px;cursor:pointer;font:inherit;text-align:left}
+.chip .code{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted)}
+.chip .nm{font-weight:600;font-size:14px;white-space:nowrap}
+.chip .nm small{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--muted);margin-left:4px}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.chip[aria-pressed="true"] .code,.chip[aria-pressed="true"] small{color:var(--accent-ink);opacity:.8}
+button:focus-visible,input:focus-visible,.row:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.search{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:10px 12px;font:inherit}
+.btn{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.section-head h2{font-family:var(--display);font-size:20px;margin:0}
+.section-head span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px 4px;border:0;border-bottom:1px solid var(--line);cursor:pointer;background:none;color:inherit;font:inherit;text-align:left;width:100%}
+.row:hover .t{color:var(--accent)}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;border:1px solid var(--line);border-radius:4px;padding:2px 6px;color:var(--muted);min-width:52px;text-align:center}
+.row .main{min-width:0;display:flex;flex-direction:column;gap:2px}
+.row .t{font-weight:600;overflow-wrap:anywhere}
+.row .m{font-family:var(--mono);font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row .go{color:var(--muted);font-size:18px}
+.empty{padding:36px 8px;text-align:center;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:center}
+.empty strong{color:var(--ink);font-weight:600}
+
+.reader{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;z-index:10}
+.reader-bar{display:flex;align-items:center;gap:10px;padding:10px 12px;padding-top:calc(10px + env(safe-area-inset-top,0px));border-bottom:1px solid var(--line);background:var(--surface)}
+.reader-bar .ttl{flex:1;min-width:0;display:flex;flex-direction:column}
+.reader-bar .ttl b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reader-bar .ttl span{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.reader iframe{flex:1;border:0;width:100%;background:#fff}
+@media (prefers-reduced-motion:no-preference){.row{transition:background .15s}.row:hover{background:var(--accent-soft)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top-line">
+      <div class="eyebrow">College of Veterinary Medicine · Notes</div>
+      <button id="themeBtn" class="theme-btn" type="button"><span id="themeIcon" aria-hidden="true">☾</span><span id="themeLabel">다크</span></button>
+    </div>
+    <h1>수의학 정리본 아카이브</h1>
+    <p class="sub">과목별로 모아둔 강의 정리본이에요. 제목을 누르면 바로 열려요.</p>
+  </header>
+
+  <nav class="cats" id="cats" aria-label="과목"></nav>
+
+  <input id="q" class="search" type="search" placeholder="제목으로 찾기" aria-label="정리본 검색">
+
+  <section>
+    <div class="section-head"><h2 id="secTitle">전체</h2><span id="secCount"></span></div>
+    <div id="list" class="list"></div>
+  </section>
+</div>
+
+<div id="reader" class="reader" hidden>
+  <div class="reader-bar">
+    <button id="back" class="btn" type="button">← 목록</button>
+    <div class="ttl"><b id="rTitle"></b><span id="rMeta"></span></div>
+  </div>
+  <iframe id="frame" title="정리본"></iframe>
+</div>
+
+<script>
+/* ---------- 개인 도메인을 연결했을 때만 채우세요 ---------- */
+const CONFIG = { owner: "", repo: "", branch: "main" };
+/* ------------------------------------------------------- */
+
+// 폴더 이름 = 과목 이름. GitHub 저장소에 이 이름 그대로 폴더를 만들어 HTML을 넣으면 됩니다.
+const CATS=[
+  {ko:"외과",code:"SURG"},
+  {ko:"소동물내과",code:"SA·IM"},
+  {ko:"대동물내과",code:"LA·IM"},
+  {ko:"산과",code:"THERIO"},
+  {ko:"인공수정학",code:"A.I."},
+  {ko:"수생의학",code:"AQUA"},
+  {ko:"진단검사의학",code:"CLIN·PATH"},
+  {ko:"방사선학",code:"RAD"}
+];
+const catOf=k=>CATS.find(c=>c.ko===k);
+const $=id=>document.getElementById(id);
+let notes=[],state="loading",errMsg="",cur="all",q="";
+
+function repoInfo(){
+  if(CONFIG.owner&&CONFIG.repo)return {...CONFIG};
+  const h=location.hostname;
+  if(h.endsWith(".github.io")){
+    const owner=h.split(".")[0];
+    const seg=location.pathname.split("/").filter(Boolean)[0];
+    const repo=(seg&&!/\.html?$/i.test(seg))?decodeURIComponent(seg):h;
+    return {owner,repo,branch:CONFIG.branch||"main"};
+  }
+  return null;
+}
+function fmtSize(b){if(b==null)return"";return b<1048576?Math.max(1,Math.round(b/1024))+" KB":(b/1048576).toFixed(1)+" MB"}
+function encPath(p){return p.split("/").map(encodeURIComponent).join("/")}
+
+// theme
+const rootEl=document.documentElement;
+const mq=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+function isDark(){const t=rootEl.getAttribute("data-theme");return t?t==="dark":!!(mq&&mq.matches)}
+function paintTheme(){const d=isDark();$("themeIcon").textContent=d?"☀":"☾";$("themeLabel").textContent=d?"라이트":"다크";$("themeBtn").setAttribute("aria-label",d?"라이트 모드로 바꾸기":"다크 모드로 바꾸기")}
+try{const s=localStorage.getItem("vetnotes-theme");if(s==="dark"||s==="light")rootEl.setAttribute("data-theme",s)}catch(e){}
+$("themeBtn").onclick=()=>{const n=isDark()?"light":"dark";rootEl.setAttribute("data-theme",n);try{localStorage.setItem("vetnotes-theme",n)}catch(e){}paintTheme()};
+if(mq&&mq.addEventListener)mq.addEventListener("change",paintTheme);
+paintTheme();
+
+const initHash=decodeURIComponent((location.hash||"").slice(1));
+if(catOf(initHash))cur=initHash;
+
+function renderCats(){
+  const nav=$("cats");nav.textContent="";
+  for(const c of [{ko:"전체",code:"ALL",all:true},...CATS]){
+    const key=c.all?"all":c.ko;
+    const n=c.all?notes.length:notes.filter(x=>x.category===c.ko).length;
+    const b=document.createElement("button");b.className="chip";b.type="button";b.setAttribute("aria-pressed",String(cur===key));
+    const code=document.createElement("span");code.className="code";code.textContent=c.code;
+    const nm=document.createElement("span");nm.className="nm";nm.textContent=c.ko;
+    if(state==="ready"){const s=document.createElement("small");s.textContent=n;nm.appendChild(s)}
+    b.append(code,nm);
+    b.onclick=()=>{cur=key;try{history.replaceState(null,"",key==="all"?location.pathname:"#"+encodeURIComponent(key))}catch(e){}render()};
+    nav.appendChild(b);
+  }
+}
+function emptyBox(title,text,withRetry){
+  const e=document.createElement("div");e.className="empty";
+  const s=document.createElement("strong");s.textContent=title;
+  const p=document.createElement("span");p.textContent=text;e.append(s,p);
+  if(withRetry){const b=document.createElement("button");b.className="btn";b.textContent="다시 불러오기";b.onclick=()=>load(true);e.appendChild(b)}
+  return e;
+}
+function render(){
+  renderCats();
+  $("secTitle").textContent=cur==="all"?"전체":cur;
+  const list=$("list");list.textContent="";
+  if(state==="loading"){$("secCount").textContent="";list.appendChild(emptyBox("목록을 불러오는 중…",""));return}
+  if(state==="error"){$("secCount").textContent="";list.appendChild(emptyBox("목록을 불러오지 못했어요",errMsg,true));return}
+  let rows=cur==="all"?notes:notes.filter(n=>n.category===cur);
+  if(q)rows=rows.filter(n=>n.title.toLowerCase().includes(q));
+  $("secCount").textContent=rows.length+"건";
+  if(!rows.length){
+    list.appendChild(emptyBox(q?"찾는 제목이 없어요":(cur==="all"?"아직 올라온 정리본이 없어요":cur+" 정리본이 아직 없어요"),q?"다른 단어로 찾아보세요.":"정리본이 올라오면 여기에 표시돼요."));
+    return;
+  }
+  for(const n of rows){
+    const r=document.createElement("button");r.className="row";r.type="button";
+    const tag=document.createElement("span");tag.className="tag";tag.textContent=catOf(n.category).code;
+    const main=document.createElement("span");main.className="main";
+    const t=document.createElement("span");t.className="t";t.textContent=n.title;
+    const m=document.createElement("span");m.className="m";m.textContent=[n.category,fmtSize(n.size)].filter(Boolean).join(" · ");
+    main.append(t,m);
+    const go=document.createElement("span");go.className="go";go.textContent="›";go.setAttribute("aria-hidden","true");
+    r.append(tag,main,go);r.onclick=()=>openReader(n);list.appendChild(r);
+  }
+}
+
+function openReader(n){
+  $("rTitle").textContent=n.title;$("rMeta").textContent=n.category;
+  $("frame").src=encPath(n.path);
+  $("reader").hidden=false;document.body.style.overflow="hidden";
+}
+function closeReader(){$("reader").hidden=true;$("frame").src="about:blank";document.body.style.overflow=""}
+$("back").onclick=closeReader;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("reader").hidden)closeReader()});
+$("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();render()});
+
+const CACHE_KEY="vetnotes-tree-v1",TTL=5*60*1000;
+function fromTree(tree){
+  const out=[];
+  for(const it of tree){
+    if(it.type!=="blob")continue;
+    const m=/^([^/]+)\/(.+)\.html?$/i.exec(it.path);
+    if(!m||!catOf(m[1]))continue;
+    const name=m[2].split("/").pop();
+    out.push({category:m[1],title:name.replace(/[_]+/g," ").trim(),path:it.path,size:it.size});
+  }
+  out.sort((a,b)=>a.title.localeCompare(b.title,"ko",{numeric:true}));
+  return out;
+}
+async function load(force){
+  const info=repoInfo();
+  if(!info){state="error";errMsg="GitHub 저장소를 찾지 못했어요. index.html의 CONFIG에 아이디와 저장소 이름을 적어 주세요.";render();return}
+  let cached=null;
+  try{cached=JSON.parse(localStorage.getItem(CACHE_KEY)||"null")}catch(e){}
+  if(!force&&cached&&Date.now()-cached.t<TTL){notes=fromTree(cached.tree);state="ready";render();return}
+  state="loading";render();
+  try{
+    const res=await fetch(`https://api.github.com/repos/${encodeURIComponent(info.owner)}/${encodeURIComponent(info.repo)}/git/trees/${encodeURIComponent(info.branch)}?recursive=1`,{headers:{Accept:"application/vnd.github+json"}});
+    if(!res.ok)throw res.status;
+    const data=await res.json();
+    try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),tree:data.tree}))}catch(e){}
+    notes=fromTree(data.tree);state="ready";
+  }catch(code){
+    if(cached){notes=fromTree(cached.tree);state="ready"}
+    else{state="error";errMsg=code===403||code===429?"잠시 접속이 많았어요. 몇 분 뒤 다시 시도해 주세요.":code===404?"저장소나 브랜치 이름이 맞는지 확인해 주세요.":"인터넷 연결을 확인하고 다시 시도해 주세요."}
+  }
+  render();
+}
+render();load(false);
+</script>
+</body>
+</html>
