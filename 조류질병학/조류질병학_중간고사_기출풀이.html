@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조류질병학 중간 기출</title>
+<style>
+@font-face{font-family:'GmarketSans';font-weight:400;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-display:swap}
+@font-face{font-family:'GmarketSans';font-weight:700;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-display:swap}
+@font-face{font-family:'GmarketSans';font-weight:300;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-display:swap}
+:root{--ink:#1a1a1a;--red:#c62828;--sub:#6b6b6b;--line:#dcdcdc;--paper:#fff;--bg:#f3f1ec;--beige:#f2efe8;--th:#dee6ef;--navy:#1f3b6e}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'GmarketSans',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.65;-webkit-text-size-adjust:100%}
+.wrap{max-width:840px;margin:0 auto;padding:0 14px 90px}
+header{background:var(--paper);padding:22px 16px 14px;border-bottom:2px solid var(--ink)}
+header .subj{color:var(--red);font-weight:700;font-size:13px;letter-spacing:.5px}
+header h1{margin:2px 0 4px;font-size:22px;line-height:1.3}
+header p{margin:0;color:var(--sub);font-size:12.5px;font-weight:300}
+.bar{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 14px 8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:6px 13px;font:inherit;font-size:13.5px;font-weight:700;cursor:pointer}
+.tab.on{background:var(--ink);color:#fff}
+.tab.topic{border-color:var(--red);color:var(--red)}
+.tab.topic.on{background:var(--red);color:#fff}
+.sub{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px 9px;font-size:12.5px;color:var(--sub)}
+.sub label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.prog{font-weight:700;color:var(--ink)}
+.prog b{color:var(--red)}
+.yearhead{margin:22px 2px 10px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+.yearhead .k{color:var(--red);font-weight:700;font-size:12.5px}
+.yearhead h2{margin:0;font-size:19px}
+.yearhead p{margin:3px 0 0;color:var(--sub);font-size:12.5px;font-weight:300}
+.freq{background:var(--paper);border:1.5px dashed var(--red);border-radius:10px;padding:12px 13px;margin:16px 0 4px}
+.freq h3{margin:0 0 8px;font-size:15px;color:var(--red)}
+.freq .chips{display:flex;flex-wrap:wrap;gap:6px}
+.freq a{font-size:12.5px;text-decoration:none;color:var(--ink);background:var(--beige);border-radius:6px;padding:4px 8px}
+.freq a b{color:var(--red)}
+.tophead{margin:26px 2px 10px;padding-bottom:6px;border-bottom:2px solid var(--ink);scroll-margin-top:90px}
+.tophead h2{margin:0;font-size:17.5px}
+.tophead span{color:var(--red);font-size:13px;font-weight:700;margin-left:6px}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;margin:10px 0;scroll-margin-top:95px}
+.q.done{border-left:4px solid var(--red)}
+.qh{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:7px}
+.yr{border:1.5px solid var(--red);color:var(--red);font-weight:700;font-size:11.5px;border-radius:5px;padding:1px 6px}
+.no{font-weight:700;font-size:17px}
+.ty{font-size:11.5px;color:var(--sub);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
+.tg{font-size:11.5px;background:var(--beige);border-radius:5px;padding:1px 7px;color:#5a4f3c}
+.qt{font-weight:700;font-size:15.5px;line-height:1.6;word-break:keep-all}
+.note{font-size:12.5px;color:var(--sub);margin-top:4px;font-weight:300}
+.note.red{color:var(--red);font-weight:400}
+.img{margin:9px 0 2px;border:1.5px dashed #b9b9b9;border-radius:8px;padding:12px;text-align:center;color:var(--sub);font-size:12.5px;background:#fafafa}
+.ch{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.opt{display:flex;gap:8px;align-items:flex-start;text-align:left;width:100%;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;line-height:1.55;word-break:keep-all}
+.opt b{flex:0 0 auto;color:var(--sub)}
+.opt.sel{border-color:var(--red);background:#fff5f5}
+.opt.sel b{color:var(--red)}
+.opt.right{border-color:#1b7a3d;background:#f1faf3}
+.opt.wrong{border-color:var(--red);background:#fff0f0;text-decoration:line-through;text-decoration-color:rgba(198,40,40,.5)}
+.opt input{margin:4px 2px 0 0;accent-color:var(--red);flex:0 0 auto}
+.ox{display:flex;flex-direction:column;gap:4px}
+textarea,input.cz{font:inherit;color:var(--ink);background:#fffdf6;border:1px solid #e6e0cf;border-radius:7px;padding:7px 9px;width:100%;font-size:14.5px;line-height:1.55;resize:vertical;outline:none}
+textarea:focus,input.cz:focus{border-color:var(--red);background:#fff}
+textarea.why{margin:0 0 4px 22px;width:calc(100% - 22px);border-color:#f0c9c9;background:#fffafa}
+.hide{display:none!important}
+.fills{display:grid;gap:7px;margin-top:10px}
+.fr{display:grid;grid-template-columns:minmax(92px,32%) 1fr;gap:8px;align-items:start}
+.fr label{font-size:13.5px;font-weight:700;padding-top:8px;word-break:keep-all;line-height:1.35}
+.es{margin-top:10px;min-height:120px}
+.tw{overflow-x:auto;margin-top:10px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid #9aa7b5;padding:5px 6px;vertical-align:middle}
+thead th{background:var(--th);font-weight:700;white-space:nowrap}
+tbody th{background:var(--beige);font-weight:700;text-align:left;font-size:12.5px;line-height:1.35;min-width:96px}
+td textarea{min-width:96px;padding:5px 6px;font-size:13px;border:none;background:#fffdf6;border-radius:4px}
+td.ok textarea{background:#eaf7ee}
+td.bad textarea{background:#ffecec}
+td .fix{display:block;font-size:11.5px;color:var(--red);margin-top:2px;line-height:1.3}
+table.tax td textarea{min-width:118px}
+.cloze{margin-top:10px;font-size:14.5px;line-height:2.15;word-break:keep-all;background:#fcfbf8;border-radius:8px;padding:8px 10px}
+.cz-wrap{display:inline-flex;align-items:center;gap:3px;vertical-align:middle}
+.cz-wrap i{font-style:normal;color:var(--red);font-weight:700;font-size:12px}
+input.cz{width:8.5em;padding:3px 7px;font-size:14px;resize:none}
+.na{margin-top:8px;color:var(--sub);font-size:13.5px;font-style:italic}
+.qf{display:flex;gap:6px;margin-top:11px;flex-wrap:wrap}
+.btn{font:inherit;font-size:12.5px;font-weight:700;border:1.5px solid var(--ink);background:#fff;border-radius:7px;padding:5px 11px;cursor:pointer;color:var(--ink)}
+.btn.red{border-color:var(--red);color:var(--red)}
+.ans{margin-top:9px;border:1.5px dashed var(--red);background:#fffafa;border-radius:9px;padding:10px 12px;font-size:14px}
+.ans .ph{color:var(--sub);font-size:13px}
+.ans h4{margin:0 0 6px;color:var(--red);font-size:13.5px}
+.rep{font-size:11.5px;font-weight:700;background:var(--red);color:#fff;border-radius:5px;padding:1px 7px}
+.rels{margin:2px 0 9px;padding:7px 9px;background:#faf8f3;border-radius:8px;display:grid;gap:5px}
+.rel{display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+.rl{font-size:12px;font-weight:700;margin-right:2px}
+.rel.dup .rl{color:var(--red)}
+.rel.sim .rl{color:var(--navy)}
+.rc{font:inherit;font-size:12px;border-radius:999px;padding:2px 9px;cursor:pointer;background:#fff}
+.rel.dup .rc{border:1.5px solid var(--red);color:var(--red)}
+.rel.sim .rc{border:1px dashed var(--navy);color:var(--navy)}
+.rnote{font-size:12px;color:#7a3b00;line-height:1.45}
+.legend{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin:14px 0 0;font-size:12.5px;line-height:1.6}
+.legend b.r{color:var(--red)}.legend b.n{color:var(--navy)}
+@keyframes fl{0%{box-shadow:0 0 0 4px rgba(198,40,40,.45)}100%{box-shadow:0 0 0 0 rgba(198,40,40,0)}}
+.q.flash{animation:fl 1.6s ease-out}
+.tg2{display:flex;gap:12px}
+.ia{font-size:12.5px;color:var(--red);line-height:1.45;margin:3px 0 2px 2px;word-break:keep-all}
+.ox .ia{margin-left:24px}
+.iaz{font-size:12.5px;color:#fff;background:var(--red);border-radius:5px;padding:0 6px;font-weight:700}
+.afrom{font-size:12px;color:var(--navy);font-weight:700;margin-bottom:5px}
+.awarn{font-size:12.5px;color:#7a3b00;background:#fff4e0;border-radius:6px;padding:6px 8px;margin-bottom:6px;line-height:1.5}
+.abig{font-weight:700;color:var(--red);font-size:15px;margin-bottom:4px}
+.ascore{font-size:12.5px;color:var(--ink);font-weight:400}
+.ahtml{line-height:1.65}
+.asrc{font-size:11.5px;color:var(--sub);margin-top:6px}
+.gen{display:flex;gap:2px;margin:8px 0;font-size:10.5px;font-weight:700;text-align:center;line-height:1.2}
+.gen span{flex:0.8;border-radius:3px;padding:5px 1px;color:#fff;display:flex;align-items:center;justify-content:center;min-width:0;word-break:keep-all}
+.g-u{background:#c62828;flex:0.4!important}.g-l{background:#555;flex:0.35!important}.g-r{background:#5aa9b8}.g-s{background:#c9a6c7}.g-a{background:#7fb3c4}.g-e{background:#5fae3e;flex:0.45!important}.g-m{background:#e8913a}.g-n{background:#8cc65a}
+table.mini{margin:6px 0 8px;font-size:12.5px}table.mini th{background:var(--beige);white-space:nowrap;text-align:left}
+.btn.tipb{border-color:#b8860b;color:#8a6100}
+.tip{margin-top:8px;border:1.5px solid #e2c56b;background:#fffbea;border-radius:9px;padding:10px 12px;font-size:13.5px;line-height:1.7;word-break:keep-all}
+.tip h4{margin:0 0 5px;color:#8a6100;font-size:13.5px}
+.penbtn{font:inherit;font-size:12.5px;font-weight:700;border:1.5px solid #1f3b6e;color:#1f3b6e;background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer}
+.penbtn.on{background:#1f3b6e;color:#fff}
+.penbar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;z-index:30;display:flex;align-items:center;gap:5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 9px;box-shadow:0 6px 20px rgba(0,0,0,.14);max-width:calc(100vw - 16px);overflow-x:auto;scrollbar-width:none}
+.pb{font:inherit;font-size:11.5px;font-weight:700;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:4px 7px;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+.pb.on{border-color:var(--ink);background:#f3f1ec}
+.pc{width:23px;height:23px;padding:0;background:var(--c);border:3px solid #fff;box-shadow:0 0 0 1.5px var(--line)}
+.pc.on{box-shadow:0 0 0 2.5px var(--ink);background:var(--c)}
+.psep{width:1px;height:20px;background:var(--line);flex:0 0 auto}
+.ink-wrap{position:relative}
+.tw .ink-wrap{width:max-content;min-width:100%}
+canvas.ink{position:absolute;left:0;top:0;z-index:2}
+.pad{position:relative;border:1px solid #e6e0cf;border-radius:8px;margin-top:10px;overflow:hidden;background-color:#fffdf6;background-image:repeating-linear-gradient(transparent 0 31px,#e3e6ea 31px 32px)}
+.padph{position:absolute;left:10px;top:7px;color:#b5ad98;font-size:12.5px;pointer-events:none}
+.padbox{margin-top:2px}
+.btn.padmore{margin-top:5px;font-size:11.5px;padding:3px 9px;border-color:var(--line);color:var(--sub)}
+body.pen .ink-wrap textarea,body.pen .ink-wrap input.cz{pointer-events:none;caret-color:transparent}
+body.pen .fr textarea{min-height:58px}
+body.pen td textarea{min-height:66px;min-width:120px}
+body.pen table.tax td textarea{min-width:140px}
+body.pen input.cz{width:9.5em;height:40px}
+body.pen .cloze{line-height:2.9}
+body.pen .wrap{padding-bottom:120px}
+.alist{display:grid;gap:4px;margin:2px 0 8px;font-size:13.5px;color:var(--red)}
+.alist b{color:var(--ink)}
+.azc{display:inline-block;margin:0 8px 4px 0}.azc i{font-style:normal;background:var(--red);color:#fff;border-radius:4px;padding:0 5px;font-size:11.5px;margin-right:3px}
+.tg2 label,.prog{white-space:nowrap}.tg2{align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:8px}.penbtn{white-space:nowrap}
+footer{text-align:center;margin-top:30px;color:var(--sub);font-size:12px}
+footer .btn{margin-top:8px}
+.empty{text-align:center;color:var(--sub);padding:40px 0}
+@media (max-width:480px){.fr{grid-template-columns:1fr;gap:3px}.fr label{padding-top:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="subj">조류질병학 · 장형관 교수님</div>
+  <h1>중간고사 기출 풀이 <span style="font-weight:300">2021–2025</span></h1>
+  <p>2025·2024·2022 답지 반영 (2023·2021은 동일 문제 답으로 채움) · 답은 이 기기에 자동 저장됩니다 · 연도별 / 주제별(반복 출제 묶음)로 풀 수 있어요</p>
+</header>
+<div class="bar">
+  <div class="tabs" id="tabs"></div>
+  <div class="sub">
+    <span class="prog" id="prog"></span>
+    <span class="tg2"><button id="penBtn" class="penbtn">✍️ 펜 필기</button><label><input type="checkbox" id="showAll"> 정답 펼치기</label><label><input type="checkbox" id="onlyEmpty"> 안 푼 문제만</label></span>
+  </div>
+</div>
+<div class="penbar hide" id="penbar">
+  <button class="pb pc on" data-col="#1a1a1a" style="--c:#1a1a1a" aria-label="검정"></button>
+  <button class="pb pc" data-col="#1f4fbf" style="--c:#1f4fbf" aria-label="파랑"></button>
+  <button class="pb pc" data-col="#c62828" style="--c:#c62828" aria-label="빨강"></button>
+  <span class="psep"></span>
+  <button class="pb pw" data-w="1.4">가늘게</button>
+  <button class="pb pw on" data-w="2.2">보통</button>
+  <button class="pb pw" data-w="3.4">굵게</button>
+  <span class="psep"></span>
+  <button class="pb" id="pErase">지우개</button>
+  <button class="pb" id="pUndo">↶</button>
+  <button class="pb" id="pFinger" title="손가락으로도 쓰기 (대신 필기칸 위에선 스크롤이 안 돼요)">👆 손가락</button>
+</div>
+<div class="wrap">
+  <main id="main"></main>
+  <footer>
+    원본: 조류질병학 중간고사 기출집 p.226–241<br>
+    <button class="btn" id="reset">내 답 전체 지우기</button>
+  </footer>
+</div>
+
+<script>
+/* ===== 정답 (답지 받으면 여기 채우기) =====
+   형식 예: ANSWERS['2025-1'] = {mc:2, html:'해설...'}  (mc는 0부터: ①=0)
+            ANSWERS['2025-13'] = {ox:[0,1,4], html:'...'}
+            ANSWERS['2024-3']  = {html:'...'}                         */
+const ANSWERS = {};
+/* 답지(2025·2024·2022, 기출집 p.208–222) — 2023·2021은 답지 없음 → 동일 문제 답을 출처 표시해서 가져옴
+   mc: 정답 index / ox: 틀린 보기 index / oxr: 보기별 고침 / f: 칸별 답 / t: 표 답 / z: 빈칸 답
+   from: 다른 해 답지에서 가져온 경우 / warn: 답지끼리 다르거나 주의할 점 / src: 답지 출처 */
+const ALL6=[0,1,2,3,4,5];
+const K={
+ nab25:{f:['HN, F','G, F','S1','HA, NA','VP2','VP1','capsomere (Hexon)','VP1','σC','gp85'],src:'ND ppt 7·17p, aMPV ppt 6p, IB ppt 6p, AI ppt 7·20p, IBD ppt 9p, CIA ppt 7p, FAdV ppt 7p, AEV ppt 5p, ARV ppt 8p, ALS ppt 10p, 교재 4·15·157p'},
+ aiv25:{f:['막대모양 삼량체 / 부착 → 침입','버섯모양 사량체 / 해리','핵산 배출 관련 단백질','인터페론 길항작용 → 바이러스 병원성 관련'],src:'조류인플루엔자 ppt 7p'},
+ herp:{f:['Gallid alphaherpesvirus 1','Gallid alphaherpesvirus 2','Gallid alphaherpesvirus 3','Meleagrid alphaherpesvirus 1']},
+ ndvp:{f:['9~11일령 SPF 발육란 (MDT)','1일령 SPF 병아리 (ICPI)','6주령 SPF 닭 (IVPI)'],src:'1장 뉴캣슬병 PPT 11p'},
+ onco:{f:['Meq (Marek’s EcoRI-Q)','v-onc (급성으로 종양 유발)','v-rel'],src:'교재 136·161p, 세망내피증 ppt 7p'},
+ ampvddWarn:'✅ 수업 PPT로 확정 — 닭 MG / 칠면조 Coryza (2025 답지의 "두부종창증후군 / 칠면조 비기관염"은 오답 · 2024·2022 답지가 맞음)',
+ ampvddEv:'<b>근거 — aMPV PPT 16p "감별진단"</b><br>· 호흡기 증상 및 산란율 저하 ▷ ND, IB, LPAI, MG, Coryza 등<br>· NDV, AIV ▷ HA/NA 활성 유무(혈구응집 여부) → 감별 용이<br>· IBV ▷ 입자 형태·구조 차이, 유전자 진단 → 감별 용이<br>· ND, IB, AI ▷ aMPV보다 증상 정도 심함, 피해 기간 김<br>· <b>닭</b>의 경우 ▷ <b>aMPV와 MG 임상증상 정도 유사</b> → 감별진단 주의 필요<br>· <b>칠면조</b> 경우 ▷ <b>aMPV와 Coryza 임상증상 정도 유사</b> → 감별진단 주의 필요',
+ eggWarn:'⚠ 답지끼리 다름 — 2025: AC 9~11일령(ND·IBV·AI) / CAM 9~11일령(FP·IBD) / YS 5~7일령(CIA·AEV) · 2024: AC 8일령(ND·IB·AI) / CAM 9~11일령(ILT·FP·IBD) / YS 9~11일령(aMPV·CIA·AE·AR) · YS는 수업 PPT 기준 6~8일령으로 통일 — 2025 쪽이 출처(각 장 PPT)를 자세히 적음',
+ nab22Warn:'⚠ 2025 답지와 다름 — 2025: aMPV G·F / CIAV VP1 / AEV VP1 / ARV σC / ALSV gp85. 2022 답지는 AEV·ARV·ALSV 칸이 섞인 듯하고(σC는 ARV, SU=gp85는 ALSV), VP3는 apoptin(2025 17번 해설)이라 2025 답지 기준으로 외우는 게 안전',
+ mdvf:{html:'① 부화장의 부적절한 백신접종 시술 여부<br>② 접종개체 내 백신주 증식 여부<br>③ 종양원성 MDV 조기노출 여부<br>④ 면역억제를 유발하는 다른 병원체 동시감염 여부 등'},
+ lpai:{html:'1. 비염기성 아미노산이 염기성 아미노산으로 <b>치환</b>(substitution)<br>2. 다수의 염기성 아미노산 <b>삽입</b>(insertion)<br>3. 출처 미지의 짧은 길이의 비염기성 및 염기성 아미노산 삽입(insertion)<br>4. HA cleavage site <b>연장</b>(elongation)',src:'5장 조류인플루엔자 ppt 15p (2024 답지 · 2022 답지는 1~3번만)'},
+ hps:{html:'· 2024 답지: 폐수종, 심장과 간의 점상 및 반상출혈 등 (조류아데노바이러스감염증 ppt 13p)<br>· 2022 답지: <b>심낭 내 황색 액체 저류</b>, 간과 심장에서 출혈 및 괴사'},
+ fl:{html:'· 2024 답지: <b>4주령 이전</b> 어린 개체에 감염되면 <b>수란관이 손상·위축</b>되어, 회복해도 외관상 정상인데 산란을 못함 (ppt 3장 15·16p, 교재 27p)<br>· 2022 답지: 4주령 이하의 병아리가 IBV에 감염되면 수란관의 손상과 위축이 발생해 외관상 완전 정상으로 보이나 산란을 못하는 무산란계가 된다 (교재 27p)'},
+ arv:{html:'· 2022 답지: 바이러스성 관절염, 건초염, 발육부전증후군, 흡수장애 증후군<br>· 2025 4번 해설: 발육부전 증후군, 호흡기질환, 장 질환, 면역억제, 흡수불량 증후군'},
+ alv:{html:'① V−A− : 바이러스와 항체가 모두 없는 형태<br>② V−A+ : 바이러스는 없으나 항체가 검출되는 형태<br>③ <b>V+A−</b> : 바이러스는 있으나 항체가 검출되지 않는 형태 → 후대 병아리로 바이러스를 가장 잘 전파시키는 형태 → <b>난백분비선</b>에서 증식되어 난백을 통해 전파<br>④ V+A+ : 바이러스와 항체가 모두 검출되는 형태',src:'수업자료 14장 조류백혈병/육종 14p (외인성 전파) · 2024 답지도 같은 답 (원문 "V+V-"는 V+A- 오타)'},
+ cell:['14-15일령','18일령','14-15일령','20일령','6주령','1-2일령'],
+ ibdr:{f:['세포막 glycoprotein','표면 IgM λ light chain','표면 chicken heat-shock protein 90','표면 α4β1 integrin'],html:'모든 IBDV VP2의 가장 외측으로 노출된 영역에 보존된 인테그린-결합부위(integrin-binding motif)와 상호작용',src:'7장 전염성F낭병 PPT 11p'},
+ ae:['대뇌 신경세포 — Nissl body 소실에 의한 central chromatolysis','선위 — 근육층에서 과도하게 증식된 림프구의 침윤','췌장 — 림프소절(lymphoid follicle)의 증식'],
+ ndCap:{f:['선위 — 심한 출혈 소견','소장 — 출혈 소견과 궤양 소견','대뇌 — perivascular cuffing (강독형 ND의 특징)'],warn:'답지에는 없는 문제예요 — 2021 기출 사진에 찍힌 교재 그림 캡션(그림 1-2·1-3·1-5) 기준'},
+ route:{html:'<b>가금질병관리의 이해 PPT 26p 백신접종법</b><br>1. 주사접종(피하/근육) : ND, MD, RA, DHAV<br>2. 점안접종 : ND, IB, ILT<br>3. 음수접종 : RA, DHAV, ND, IB, IBD, AE<br>4. 분무접종(호흡기 및 눈 점막) : ND, IB<br>5. 천자접종 : FP<br>6. 사료첨가 : 콕시듐<br>7. In-ovo 접종 (18일령 부화란) : MD, rMD+ND, IBD<br><span style="color:#6b6b6b">· 2024 29번 답지: 주사 ND / 분무 IB·ND / 음수 IB·ND / 점안 IB·ILT / 비강 IB·ILT / 근육·피하 IB·AR</span>',src:'가금질병관리의 이해 PPT 26p'},
+ ampv:['TOC는 섬모손상이 없는 C형 바이러스 분리에 이용한다.','후대 병아리에 모체항체가 이행되지만 감염방어는 할 수 없는 것으로 알려졌다.','주로 수평감염으로 전파되며 수직감염에 대한 증거는 확인되지 않고 있다.','A, B 바이러스는 교차면역원성을 가지며 일부 C형 바이러스에서도 백신효과가 있다.','칠면조보다 닭에서 증세가 약하다. (칠면조: 극심한 콧물, 하악·안와 주위 종창의 특징적인 비기관염 / 닭: 단독감염 시 콧물, 부비동염 등 상부호흡기 증상)','칠면조의 비기관염, 닭의 두부종창증후군으로 알려졌다. (두부종창증후군 = aMPV + 대장균 등 호흡기 세균 복합감염으로 발병하는 닭의 임상증상 중 하나 · 두부 피하조직의 젤라틴성/화농성 부종, 활모양강직 등 신경증상)'],
+ ib:['수직전파 불가능 (수직전파 보고 없음)','어린 일령 호흡기 감염방어에 효과적이지 못함 (모체이행항체 → 체액성 면역)','잠복기가 (매우) 짧고 전파는 빠르다','처음 야외주는 분리가 어렵다 · 바이러스 분리동정에는 AC, CEK, CK 사용','호흡기 및 산란저하 증상은 감별진단이 어렵다','Spike 단백질(S1, S2)이 항원결정기로 작용하고 혈청형 특이적 — S1 단백질에 의해 항원성 결정'],
+ ilt:['주로 성계에 발생','CAM 접종이 가장 적합','수직(난계대)전파 불가능','열, 소독제에 쉽게 불활화','핵내봉입체','MD, AI가 더 빠른 전파력'],
+ fp:['모기를 통한 전염이 가장 흔한 전염경로이다.','숙주 범위가 매우 넓어 232종 이상의 조류가 자연감염될 수 있다.','결정 병변은 피부 병변 — 점막형은 기관 개구부 결절·호흡곤란이 ILT 병변과 유사한 것','디프테리형은 경증~중증의 호흡기 증상과 호흡곤란을 동반한다.','모기 등 흡혈곤충이 활동하는 여름철/초가을에 다발한다.','fowl poxvirus 생백신 설명 — pigeon poxvirus는 닭에 병원성 없음 (비둘기에 질병을 일으키므로 주의)'],
+ cia:['일본 메추라기, 떼까마귀에서도 항체양성 보고사례가 있다.','수평감염과 수직감염이 모두 존재한다.','F낭 → 흉선 (흉선 위축이 가장 현저)','VP2 → VP3 (Apoptin은 VP3, 세포자살 유발)','닭배아 난황에서는 바이러스가 검출되지 않으며, T세포주와 ALL 유래 B세포주에서 증식한다.','출혈성 빈혈 증후군은 세균·바이러스·곰팡이의 복합감염 특징이다.'],
+ eds:['수직전파 이후 수평전파되며, 일령이 증가해 산란 시기처럼 생리적 스트레스·성호르몬 변화가 있는 시기에 특히 취약해짐','난계대 감염개체뿐 아니라 산란 중 감염에서도 난질저하·산란저하 등 발병·피해가 발생함','Duck adenovirus type 1 (Atadenovirus · Duck Atadenovirus A)에 의해 닭에 감염됨','단일 혈청형 · 백신방어면역이 탁월해 12~16주령경 오일보조백신(불활화백신) 1회 접종으로 예방 가능','닭 유래 발육란·초대배양세포에서는 증식 불가 또는 매우 낮음 (오리 유래 발육란·DEL·DEF·DK에서 증식)','바이러스 전파속도가 매우 느림']
+};
+const S25={src:'2025 답지'};
+function setA(id,o){ANSWERS[id]=o}
+function from(y,n,dup){return `${y}년 ${n}번 답지${dup===false?' (유사 문제)':' (동일 문제)'}`}
+
+/* ---- 2025 ---- */
+setA('2025-1',{mc:3,html:'뉴캣슬병은 대부분의 조류에 감염되며 고병원성(VVND)형은 심각한 임상증상을 나타낸다. 호흡기 증상이 나타나기 시작하면서 1~2일 후 신경증상이 발현한다.',src:'1장 뉴캣슬병 14·15p'});
+setA('2025-2',{mc:0,html:'F낭이 미성숙한 2주령 이하 병아리에 감염된 경우, 폐사 및 임상증상이 현저하지 않으나 면역능력이 크게 저하되는 특징이 있다.',src:'전염성F낭병 ppt 3p'});
+setA('2025-3',{mc:0,html:'조류인플루엔자는 분변을 통한 직접전파 또는 비말 등 호흡기를 통한 간접전파가 이루어진다. 따라서 난계대 전염병이 아니다.',src:'PPT 조류인플루엔자 17p'});
+setA('2025-4',{mc:1,html:'레오바이러스감염증의 임상증상: 발육부전 증후군, 호흡기질환, 장 질환, 면역억제, 흡수불량 증후군 (신경계 질환은 없음)',src:'PPT 레오바이러스감염증 3p'});
+setA('2025-5',{mc:0,html:'A, B형 바이러스에 상호 교차면역이 가능하다.',src:'조류질병학 수업자료 ppt 2 17p'});
+setA('2025-6',{mc:0,html:'호수 또는 강에 모여든 물새들이 분변-경구경로(fecal-oral route)로 감염된다.',src:'교재 51p'});
+setA('2025-8',{mc:0,html:'뉴캐슬의 임상증상: 침울, 기관점막 발적 및 출혈, 선위점막 출혈, <b>녹색설사, 신경증상, 산란율 감소</b> 등',src:'뉴캐슬 ppt 3p'});
+setA('2025-9',{mc:0,html:'② IBH와 병변이 매우 유사 / ③ Aviadeno속 / ④ 병변이 간·심장뿐 아니라 폐·비장·신장에도 나타남 / ⑤ 다른 속과 교차반응이 없음 → ①이 맞는 보기',src:'PPT 조류아데노바이러스감염증 12-13p'});
+setA('2025-10',{mc:0,html:'전염성 F낭병은 대장균증, 괴저성피부염, 봉입체성간염, 닭전염성빈혈 등 2차 기회감염증을 증가시킨다.',src:'교재 65p'});
+setA('2025-11',{mc:0,html:'② 16주 미만의 닭에서도 여러 장기에 림프증식성 종양이 있다.<br>③ 진드기·모기·콕시듐 원충 등에 의한 전파는 일어나지 않는다.<br>④ 감염성 입자는 모낭 각질화 상피세포의 세포질 내 존재하다가 탈락 상피세포 혹은 cell-free 상태로 각질/비듬 등에 싸여 방출되고 호흡기로 감염된다.<br>⑤ MDV는 주로 림프구에 국한해 감염되는 γ-herpesvirus와 같은 생물학적 속성을 지닌 <b>α-herpesvirus</b>이다.',src:'교재 133-153p'});
+setA('2025-12',{mc:0,html:'선위와 췌장에서의 병변은 림프구의 과도한 침윤 혹은 증식이다.',src:'교재 118p'});
+setA('2025-13',{ox:ALL6,oxr:K.ampv,html:'보기 6개 모두 틀린 설명',src:'2장 aMPV ppt'});
+setA('2025-14',{ox:ALL6,oxr:K.ib,html:'보기 6개 모두 틀린 설명 (보기는 IB 내용)',src:'IB ppt 3·11·13p, 교재 22-23·28p'});
+setA('2025-15',{ox:ALL6,oxr:K.ilt,html:'보기 6개 모두 틀린 설명',src:'ILT ppt 7-16p'});
+setA('2025-16',{ox:ALL6,oxr:K.fp,html:'보기 6개 모두 틀린 설명',src:'교재 46-48p, ppt 6장 계두 10·12·18p'});
+setA('2025-17',{ox:ALL6,oxr:K.cia,html:'보기 6개 모두 틀린 설명',src:'교재 85-95p, 8장 CIA ppt 8·11·14·15p'});
+setA('2025-18',{ox:ALL6,oxr:K.eds,html:'보기 6개 모두 틀린 설명',src:'10장 EDS ppt 3-14p'});
+setA('2025-19',K.nab25);
+setA('2025-20',K.aiv25);
+setA('2025-21',{f:['주사, 분무 등','분무, 음수 등','점안접종, 비강접종 등','익막 천자접종, 브러쉬법 등','음수접종, In-ovo 접종 등','주사(경부피하, 근육)접종, In-ovo 접종 등','음수접종, 익막 천자접종 등'],src:'가금질병관리의 이해 ppt 26p, 각 질병 ppt (ND 22p, IB 24p, ILT 17p, 계두 18p, IBD 29p, MD 29p, AE 14p)'});
+setA('2025-22',{f:['MG (Mycoplasma gallisepticum, 마이코플라즈마)','Coryza (전염성 코라이자)'],warn:K.ampvddWarn,html:K.ampvddEv,src:'aMPV PPT 16p'});
+setA('2025-23',{f:['Chick syncytial virus','Duck infectious anemia virus','Strain T'],src:'교재 169p'});
+setA('2025-24',{f:['B1, LaSota, Clone 30, VG/GA, Ulster 2C','M41, H120','CVI988, SB-1, HVT'],src:'1장 뉴캣슬병 10p, 3장 전염성기관지염 24p, 13장 마렉병 28p'});
+setA('2025-25',K.ndvp);
+setA('2025-26',K.onco);
+setA('2025-27',{t:[['9~11일령','ND, IBV, AI'],['9~11일령','Fowlpox virus, IBD'],['6~8일령 (수업 PPT 기준 · 답지 원래 5~7일령)','CIA, AEV']],html:'AC는 일반적으로 사용하며 9~11일령, CAM도 9~11일령, YS는 embryo가 작을 때 접종하며 5~7일령이 적절하다. → 수업 PPT "6~8일령 종란 ▷ 난황(yolk sac) 접종" 기준으로 6~8일령으로 수정',warn:K.eggWarn,src:'PPT 1장 19p, 2장 21p, 3장 20p, 6장 15p, 7장 21p, 11장 12p'});
+setA('2025-28',{f:['닭, 칠면조','마우스, 페렛'],src:'PPT 5장 AI 16p'});
+
+/* ---- 2024 ---- */
+setA('2024-2',{...K.nab25,from:from(2025,19)});
+setA('2024-3',K.herp);
+setA('2024-4',{f:['B1, LaSota','CVI988, CVI988 + HVT'],html:'2025 답지: ND B1·LaSota·Clone 30·VG/GA·Ulster 2C / MD CVI988·SB-1·HVT'});
+setA('2024-5',{f:['9~11일령 종란','1일령 병아리','6주령 닭']});
+setA('2024-6',{f:['Meq','v-onc','v-rel'],html:'· 마렉병 Meq: 종양 형성에 결정적 역할 (마렉병 ppt 8p)<br>· 조류백혈병: 종양발현 잠복기에 영향을 주는 중요한 요소는 바이러스 종양유전자(v-onc) 보유 여부 (세포종양유전자도 맞음)<br>· 세망내피증 v-rel: 종양유발 능력 차이를 보임'});
+setA('2024-7',{f:['닭, 칠면조','생쥐, 페럿']});
+setA('2024-8',{...K.aiv25,from:from(2025,20)});
+setA('2024-9',{f:['Mycoplasmosis (MG)','Infectious coryza'],warn:K.ampvddWarn,html:K.ampvddEv,src:'aMPV PPT 16p'});
+setA('2024-10',{f:['Chick syncytial virus','Duck infectious anemia virus','Strain T']});
+setA('2024-11',{f:['pp24, pp38, vLIP, LAT','Meq, vIL-8, vTR'],src:'PPT 13장 마렉병 7p, 교재 136-137p'});
+setA('2024-13',K.ndCap);
+setA('2024-14',{t:[['8일령','ND, IB, AI'],['9~11일령','ILT, FP, IBD'],['6~8일령 (수업 PPT 기준 · 답지 원래 9~11일령)','aMPV, CIA, AE, AR']],warn:K.eggWarn});
+setA('2024-15',K.hps);
+setA('2024-16',K.fl);
+setA('2024-17',K.lpai);
+setA('2024-18',{...K.arv,from:from(2022,26)});
+setA('2024-19',K.mdvf);
+setA('2024-21',K.alv);
+setA('2024-22',{html:'모든 개체에 균일한 백신 접종, 접종 dose 및 백신 접종량 결정, 사육 형태, 사육밀도, 백신접종반응 고려, 백신 및 백신접종방법 선택, 질병발생 상황 등 고려<br><span style="color:#6b6b6b">(23p) 동물집단에 저항성 개체가 일정비율(약 80%) 이상 증가하면 대부분 전염병 전파 중단 · 단, 사육밀도가 높고 병원체 양이 과다하면 예방접종을 해도 집단 내 모든 개체가 감수성을 가짐</span>',src:'가금질병관리의 이해 PPT 23p 집단면역 고려사항 (답지와 같음)'});
+setA('2024-24',{html:'<b>통제, 청소, 소독, 시설보수</b> (차단방역의 기본)<br>· 15p 차단방역관리: 격리(울타리, all-in/all-out, 휴지기간 준수) / 이동관리(농장 내·농장 간) / 세척 및 소독(사람, 차량, 도구 등)<br>· 17p 주요 점검 포인트: 감염계·보균계 유입 관리, 방문객 신발·의복 소독, 곤충·쥐·야생조류 등 매개체 관리, 폐사체 처리, 지표수·오염 사료 관리, 사료차·닭 수송차량·어리장 관리, 오염 토양·깔짚 관리, 공기·계란을 통한 전파 위험성 관리',src:'가금질병관리의 이해 PPT 15·17·19p'});
+setA('2024-25',{html:'<b>PPT 25p — R0 값을 &lt;1로 감소시키는 방법</b><br>① <b>감염숙주와 감염원의 제거</b> → 감염숙주 도태(제거)·치료로 병원체 배설 중지, 감염원 제거 소독(질병발생계사, 폐사축, 분뇨시설, 냉장고 등)<br>② <b>병원체의 환경 내 생존기간 감소</b> → 청소, 건조, 소독, 자외선 등<br>③ <b>질병을 전파시키는 차량, 도구 등의 감소</b> → 사료·물 오염방지, 차량·기구 소독 및 통제<br>④ <b>매개동물 제거 또는 숙주의 노출방지</b> → 살충제 투여, 매개곤충 서식지에서 동물 제거<br>⑤ <b>감수성 동물의 노출 정도 감소</b> → 사육밀도 감소, 감염축 격리, 올인·올아웃 등<br>⑥ <b>숙주의 항병력 증가</b> → 백신 사전접종, 난황항체, 영양관리 등<br><span style="color:#6b6b6b">(24p) R0 = p × c × D (p 감염위험, c 접촉 개체수, D 감염기간) · R0&lt;1 질병종식 / =1 유지(endemic) / &gt;1 확산(epidemic) · 2024 답지는 ①·②·③·⑤ 4개만 적음</span>',src:'가금질병관리의 이해 PPT 24·25p'});
+setA('2024-28',{f:['백신 효능에 대한 점검, 백신을 실시하지 않는 질병의 유입 여부 모니터링','평판응집시험, 한천겔내면역침강시험, 바이러스중화시험, 혈구응집저지시험'],html:'<span style="color:#6b6b6b">(PPT 29p 혈청검사 예) AGP: AI, IBD / PA(평판응집): SP, MG/MS / HI: ND, IB, AI, EDS76, FT / ELISA: AE, APV, ALV-J, CIA, EDS76, IBD, REV, Reo, MG/MS, SE/ST, ART</span>',src:'2024 답지 · 가금질병관리의 이해 PPT 29p'});
+setA('2024-29',{html:'<b>가금질병관리의 이해 PPT 26p 백신접종법</b><br>1. 주사접종(피하/근육) : ND, MD, RA, DHAV<br>2. 점안접종 : ND, IB, ILT<br>3. 음수접종 : RA, DHAV, ND, IB, IBD, AE<br>4. 분무접종(호흡기 및 눈 점막) : ND, IB<br>5. 천자접종 : FP<br>6. 사료첨가 : 콕시듐<br>7. In-ovo 접종 (18일령 부화란) : MD, rMD+ND, IBD<br><span style="color:#6b6b6b">· 2024 답지: ① 주사 - ND ② 분무 - IB, ND ③ 음수 - IB, ND ④ 점안 - IB, ILT ⑤ 비강 - IB, ILT · 근육/피하 - IB, AR 등도 가능</span>',src:'가금질병관리의 이해 PPT 26p'});
+
+setA('2024-12',{t:[
+ ['H5·H7형 중 일부 아형만 — H5Nx(1,2,6,8 등) / H7Nx(1,7,9)','모든 HA 아형(H1~H16) — H5·H7형에도 LPAI 존재'],
+ ['전신 장기 (피부·내부장기 — 심장·비장·췌장·간·신장·폐·뇌 등)','호흡기·소화기에 국한'],
+ ['전조증상 없이 급사, 또는 3~7일 생존하며 특징적 증상 · 심한 침울, 식욕·음수량 저하, 산란율 저하 · 신경증상(두경부 진전, 균형감각 소실, 사경) · 육관·육수 청색증·출혈','무증상 ~ 호흡기 증상(기침, 비말, 콧물, 호흡기음) · 산란율 저하, 종계 수정율 저하 · 우모역립, 침울, 식욕저하, 설사'],
+ ['매우 높은 이환율·폐사율 50~90%, 경우에 따라 100%','높은 이환율, 폐사율 5% 이하 (2차·복합감염 시 증가)'],
+ ['trypsin 없이 증식 → CPE(plaque) 형성 · 발육란 접종 시 24시간 이내 대부분 종란 폐사','trypsin 첨가해야 증식 (없으면 다회 증식·CPE 안 됨)'],
+ ['cleavage site에 염기성 아미노산 다수 (K-R-K-K-R↓G) → 전신에 있는 furin 등 subtilisin계 protease로 절단 (보충)','cleavage site 염기성 아미노산 1개 (P-A-S-Y-R↓G) → 호흡기·소화기의 trypsin 유사 protease로만 절단']
+ ],
+ html:'<b>근거 — 5장 조류인플루엔자 PPT</b><br>· HA 아형: 5p "H5Nx(1,2,6,8 등)/H7Nx(1,7,9) 일부 아형만 가금류에 HPAI 발생", "H5, H7형은 모두 HPAI라는 잘못된 정설 수정" · 22p HI 혈구응집원 H1~H16 · 15p LPAI H5/H7은 HA cleavage site 변화로 고병원성 변이 가능<br>· 증식 장기: 19p 병변 — LPAI는 호흡기계·복강·수란장기·신장 / HPAI는 피부·내부장기 전반 출혈·괴사(심외막, 흉근, 선위·근위, 심장·비장·췌장·간·신장, 폐, F낭·흉선) · 21p 야외주는 호흡기·소화 장기에서 분리<br>· 질병양상·폐사율: 3p 개요, 18p 임상증상<br>· CEF 증식: 14p "LPAIV는 trypsin 첨가, 반면 HPAIV는 필요 없음" · 21p HPAIV는 접종 후 24hr 이내 대부분 종란 폐사<br>· Protease: 8p HA0 → HA1·HA2 수식, 국내 cleavage site 예시 HPAIV K-R-K-K-R↓G / LPAIV P-A-S-Y-R↓G<br><span style="color:#6b6b6b">(보충) PPT엔 protease 이름이 직접 안 나와요 — furin(전신 분포) vs trypsin 유사 효소(호흡기·장관 국한)가 이 차이의 원리이고, 그래서 HPAI는 전신 증식, LPAI는 국소 증식이 돼요. 증식 장기의 "전신 vs 국소"도 이 원리 + 19p 병변 분포에서 정리한 것.</span>',
+ src:'5장 조류인플루엔자 PPT 3·5·8·14·15·18·19·21·22p (답지에 없어 PPT로 작성)'});
+setA('2023-13',{...ANSWERS['2024-12'],from:'2024년 12번 (PPT로 작성한 답)'});
+
+setA('2024-23',{html:'<b>리비히의 최소량의 법칙</b> — 1840년 리비히가 질소·인산·칼리 등 식물 성장 필수 영양소 중 성장을 좌우하는 것은 넘치는 요소가 아니라 <b>가장 부족한 요소에 의해 성장이 결정</b>된다고 발표. 하나라도 부족하면 다른 것이 아무리 많아도 제대로 자랄 수 없음 → <b>최대가 아니라 최소가 성장을 결정</b>.<br><b>가금농장 방역관리에 적용</b> — 물통(나무판 높이가 각 요소)처럼, 방역 요소(통제·청소·소독·시설보수·백신 등) 중 <b>가장 취약한 한 곳의 수준이 농장 전체 방역 수준(성과)을 결정</b>함. 나머지를 아무리 잘해도 출입구·배수구(쥐 유입) 같은 빈틈 하나, 혹은 지키지 않는 한 사람 때문에 병원체가 들어오고 손실(돈과 시간)이 생김.<br>→ 깨진유리창 법칙도 같은 뜻: <b>100 − 1 = 0</b> (하나만 빠져도 방역은 0), 0 + 1 = 100 · 그래서 교육과 실행 여부 점검, 채찍과 당근, 지속적·단계적 목표 상향이 필요 — "내 농장은 내가 지킨다!"',src:'가금질병관리의 이해 PPT 17·18·20p (물통 그림 해석 포함)'});
+setA('2024-26',{html:'① <b>불균일한 접종·부적절한 접종 dose/방법</b> — 집단면역은 모든 개체의 균일한 접종이 가장 중요 (22·23p)<br>② <b>높은 사육밀도·과다한 병원체 양(감염압)</b> — 이 경우 예방접종을 해도 집단 내 모든 개체가 감수성을 가지게 됨 (23p)<br>③ <b>면역억제 질병 동시감염</b> (IBD, CIA, MD, RE 등 — 5p 질병 만연 요소 "동시감염", 7p 면역억제 질병)<br>④ <b>모체이행항체 간섭</b> — 생백신·사백신 접종 후 간섭현상 (AI PPT 20p · 4p PS의 위생 및 면역수준)<br>⑤ <b>백신주와 야외주의 항원성 차이</b> — HA 유사도가 낮으면 폐사는 막아도 바이러스 배출은 못 막음 (AI PPT 20p)<br><span style="color:#6b6b6b">이 PPT엔 "접종효능 저하 요인"이 한 장으로 정리돼 있진 않아서, 23p를 중심으로 관련 슬라이드를 모은 답이에요. 2024 19번(MDV 면역 실패 점검사항: 부적절한 접종시술, 면역억제 병원체 동시감염 등)도 같은 맥락.</span>',src:'가금질병관리의 이해 PPT 4·5·22·23p, 5장 AI PPT 20p'});
+setA('2024-27',{html:'<b>중요성</b><br>· 살모넬라 중 <b>추백리(S. Pullorum)·가금티푸스(S. Gallinarum)</b>는 <b>난계대전염병</b>(제2종 법정전염병)이고, <b>S. Enteritidis</b>는 제3종으로 신규 지정, S. Typhimurium·Enteritidis는 공중위생(식중독) 문제 (7·11·12p)<br>· 부화장은 PL·GGPS → GP → GPS → PS → CC → 브로일러로 이어지는 <b>생산 피라미드의 연결 고리</b> — 상위 1개 계군이 하위 수많은 계군(GPS 150 → CC 2,100만 수)으로 확대되므로, 부화장 한 곳이 오염되면 하위 단계 전체로 퍼짐 (3·28p)<br>· 그래서 「종계장·부화장 방역관리요령」(농식품부 고시)으로 <b>난계대 전염병을 관리</b> (11p)<br><b>모니터링 내용</b> (29·30p)<br>· 부화장 위생검사: 표면·공기중 세균 및 곰팡이 검사 월 1회, <b>환경·기기·기구 살모넬라 검사 월 2회</b><br>· GPS/PS 살모넬라 모니터링 계군당 18회, 발생계군 살모넬라 검사(약추, 난각 등), 종란실 위생검사, 깔짚·사료 내 살모넬라 검사<br><b>의미</b> (28·31p)<br>· 질병 발생상황을 <b>조기에 파악 → 즉시 현지조치 → 정확한 실험적 진단으로 농장별 맞춤 후속조치 → 질병 손실 최소화</b><br>· 질병·위생관리 제반검사의 최종목표는 <b>차단방역</b> → 모니터링 → 결과확인·문제점 발생 시 Action 수립 → 문제점 해결 → 꾸준한 생산성 확보',src:'가금질병관리의 이해 PPT 3·7·11·12·28·29·30·31p'});
+setA('2024-30',{html:'<b>PPT 4p 가금농장의 생산성에 영향을 미치는 요소</b><br>① <b>전염성 질병</b>(Virus, 세균, 곰팡이, 기생충) — 폐사·증체 저하·산란저하로 직접 손실<br>② <b>계사환경</b>(온도, 습도, 환기) — 스트레스·호흡기 질병 유발, 사료효율 저하<br>③ <b>사육시설</b>(급이, 급수) — 사료·물 섭취가 고르지 않으면 성장·균일도 저하<br>④ <b>사료</b>(원료품질, 마이코톡신) — 영양 불량, 곰팡이독소로 면역억제·성장저하<br>⑤ <b>차단방역 및 예방접종</b> — 질병 유입·확산을 막는 기본<br>⑥ <b>PS(종계)의 영양상태</b>(아미노산, 비타민) — 병아리 품질 결정<br>⑦ <b>PS의 주령</b>(신계, 노계) — 종란·병아리 품질 차이<br>⑧ <b>PS의 위생 및 면역수준</b>(난계대 질병, 모체이행항체) — 병아리 초기 방어력·난계대 감염 좌우<br><span style="color:#6b6b6b">요소 8가지는 4p 그대로, 각 요소 옆 "이유"는 PPT에 적혀 있지 않아 제가 보충한 것 · 5p 질병 만연 요소(사육밀도, 다일령계군, 다른 종류 가금, 지역 내 농장밀도, 사양·위생관리 불량, 사육간 휴지기, 동시감염)도 이유로 활용 가능</span>',src:'가금질병관리의 이해 PPT 4·5p'});
+setA('2021-3',{html:'<b>PPT 11p 난계대전염병</b> 중 바이러스성:<br>① 닭백혈병 (Lymphoid Leukosis; LL — ALV)<br>② 세망내피증 (RE)<br>③ 닭뇌척수염 (AE)<br>④ 닭전염성빈혈 (CIA)<br>⑤ 산란저하증후군 (EDS76)<br>⑥ 레오바이러스감염증 (Reovirus)<br><span style="color:#6b6b6b">(나머지 추백리·가금티푸스·마이코플라즈마병은 세균성 · AI는 난계대 근거 없음 — 2025 3번)</span>',src:'가금질병관리의 이해 PPT 11p (답지 없어 PPT로 작성)'});
+K.ibvg={html:`<b>① 유전체 도식</b> (IB PPT 9p)
+<div class="gen"><span class="g-u">5′</span><span class="g-l">L</span><span class="g-r" style="flex:5">Replicase 1a / 1ab</span><span class="g-s" style="flex:1.6">S</span><span class="g-a">3a 3b</span><span class="g-e">E</span><span class="g-m">M</span><span class="g-a">5a 5b</span><span class="g-n" style="flex:1.1">N</span><span class="g-u">3′</span></div>
+<b>5′-UTR – leader – 1a/1ab – S – 3a – 3b – E – M – 5a – 5b – N – UTR-3′</b><br>
+· (+) sense ssRNA, 선형(linear), 약 27.5~28 kb, 외피막 보유 (6p)<br>
+· <b>UTR</b>(untranslated region) : 바이러스 RNA 전사 및 복제(증식)에 관여<br>
+· <b>Replicase 1a, 1b</b> : 유전체 복제, 4종 구조단백질과 15종 비구조단백질 형성에 관여<br>
+· <b>3a, 3b, 5a, 5b</b> : 기능이 밝혀지지 않은 비구조단백질<br>
+<b>② 6종 subgenomic mRNA와 합성 단백질</b> (9p) — 각 mRNA는 5′ 끝에 leader 서열을 공유하고 3′ 끝까지 이어지는 중첩(nested) 구조
+<table class="mini"><tr><th>mRNA 1</th><td>Polymerase (Replicase 1a/1ab) → 유전체 복제, RdRp</td></tr><tr><th>mRNA 2</th><td><b>Spike (S)</b> → S1·S2 (S1: 중화항체 유도·항원결정기, 수용체 부착 / S2: M과 결합해 S1 지지하는 막관통 부위)</td></tr><tr><th>mRNA 3</th><td>3a / 3b / <b>E</b> (envelope, 지질이중막)</td></tr><tr><th>mRNA 4</th><td><b>Membrane (M)</b> → IBV 공통항원</td></tr><tr><th>mRNA 5</th><td>5a / 5b (기능 미상 비구조단백질)</td></tr><tr><th>mRNA 6</th><td><b>Nucleocapsid (N)</b> → IBV 공통항원(group-specific), 유전체와 결합해 RNP 형성</td></tr></table>
+<b>③ (덧붙이면 좋은 것) 복제 과정</b> (10p) — S1의 RBM이 숙주세포 수용체 결합·막융합 → 게놈 세포질 유입 → <b>RdRp에 의해 subgenomic mRNA 전사</b> 및 단백질 합성 → S·E·M은 골지체 막으로 이동, N은 새 유전자와 RNP 형성 → N·E·M 상호작용으로 소포체(RE) 막에서 출아 → 세포막 융합으로 방출<br>
+· S 단백질 전구체 S0 → 세포 단백분해효소로 S1(520 aa)·S2(625 aa) 수식, cleavage site R-R-F-R-R`,src:'3장 전염성기관지염 PPT 6·9·10p (답지 없어 PPT로 작성)'};
+setA('2023-30',K.ibvg);
+setA('2021-29',{...K.ibvg,from:'2023년 30번 (PPT로 작성한 답)'});
+
+K.ibda={html:`<b>① Segment A 도식</b> (IBD PPT 7p) — dsRNA 약 3.3 kb, 5′/3′ 말단 모두 79~111 bp UTR, 5′ 끝에 VP1(VPg) 결합
+<div class="gen"><span class="g-u">5′</span><span class="g-a" style="flex:1.2">ORF1<br>VP5</span><span class="g-r" style="flex:5">ORF2 : pVP2 ─ VP4 ─ VP3 (polyprotein)</span><span class="g-u">3′</span></div>
+<div class="gen" style="margin-top:-4px"><span style="flex:0.4;background:none"></span><span style="flex:1.2;background:none;color:#6b6b6b;font-weight:400">ORF2와 일부 중첩</span><span class="g-s" style="flex:2.5">pre-VP2 (pVP2, VPX)<br>1~512</span><span class="g-m" style="flex:1.2">VP4<br>513~755</span><span class="g-n" style="flex:1.3">VP3<br>756~</span><span style="flex:0.4;background:none"></span></div>
+· <b>ORF1 → VP5</b> 암호화 (ORF2와 부분적으로 중첩)<br>
+· <b>ORF2 → pVP2–VP4–VP3</b> 다단백질(polyprotein) 형태로 동시 번역 → <b>VP4(protease)에 의해 절단</b>되어 pVP2, VP3, VP4 생성 (절단부위 512/513, 755/756)<br>
+· pre-VP2(pVP2, VPX) 성숙 → <b>VP2(1~441) + 4종 small peptides(pep46, 7, 7, 11)</b> · VP2 내 hypervariable region (그림상 709~1,146)<br>
+<i>(참고) Segment B (약 2.9 kb) : ORF3 → VP1</i><br>
+<b>② 발현 단백질·펩타이드의 기능</b> (8·9·11·12p)
+<table class="mini">
+<tr><th>VP2</th><td><b>외부 capsid 단백질</b> — 260개 삼량체로 외각 형성, 4종 peptide와 함께 조립 · <b>중화항체 유도(방어 면역원성) 항원</b>, 가변영역(hot spot 212~224/248~252/279~290/314~324 aa)이 가장 외측 loop · 세포 수용체 결합(integrin-binding motif) · 병원성·F낭 친화성에 관여</td></tr>
+<tr><th>small peptides</th><td>pep46·pep11 : 기하학적 구조형성 조절 결정체 · <b>pep46 : 소낭(endosome) 막에 구멍</b> → 바이러스 유전체가 세포질로 유출되는 통로 형성 (세포내 감염에 중요)</td></tr>
+<tr><th>VP3</th><td><b>내부 capsid·핵산단백질</b> — dsRNA와 결합해 섬유소성 구조 유지, VP3 자체·pVP2·VP1·유전체와 상호작용 → <b>입자 조립·완전한 capsid 형성</b>(C-말단이 VP2와 결합) · 유전체 비결합 RdRp(VP1)를 활성화 · 초창기 면역원성 항원(중화와 무관)</td></tr>
+<tr><th>VP4</th><td><b>단백분해효소(protease)</b> — Ser-Lys 잔기에 작용, polyprotein 절단과 VP2 성숙(수식)에 중요</td></tr>
+<tr><th>VP5</th><td><b>바이러스 증식 기능</b> — 감염 초기 caspase·NF-κB 경로 방해로 세포자살(apoptosis) 지연·방지 → 증식 도움 · 세포막에 구멍 형성 → 성숙 입자 방출·확산</td></tr>
+</table>
+<b>③ 입자 형성 순서</b> (12p) — VP1이 vRNA와 가장 먼저 결합 → VP3가 VP3·pVP2·VP1·유전체와 상호작용하며 부분 조립·capsid 형성 → 조립 완료된 capsid 안에서 <b>pVP2 C말단 peptide가 순차 절단</b>되며 VP2로 최종 성숙 → VP5가 세포자살 지연 + 막 구멍으로 방출`,src:'7장 전염성F낭병 PPT 6~12p (답지 없어 PPT로 작성)'};
+setA('2022-30',K.ibda);
+setA('2021-30',{...K.ibda,from:'2022년 30번 (PPT로 작성한 답)'});
+
+/* ---- 2022 ---- */
+setA('2022-2',{f:['HN','M2','S1 (spike glycoprotein)','Glycoprotein spike','VP2','VP3','fiber','σC (시그마 c)','?? (답지 작성자도 모름)','SU'],warn:K.nab22Warn});
+setA('2022-3',K.herp);
+setA('2022-4',{f:K.cell,warn:'⚠ TOC 일령은 IB PPT 11p엔 "20일령 발육란의 계태아 기관에 접종"으로 나옴 (답지 1-2일령과 다름)'});
+setA('2022-5',K.ibdr);
+setA('2022-6',{f:['핵산 배출 단백질','핵산 배출 단백질','인터페론 길항 작용']});
+setA('2022-7',{f:['Meq (Marek’s EcoRI-Q)','급성으로 종양을 유발하는 바이러스는 v-onc 유전자를 가짐 (만성으로 종양을 유발하는 바이러스는 바이러스 종양유전자 없음)','v-rel']});
+setA('2022-8',{f:['CEF, CEK','MDCK, DF-1']});
+setA('2022-9',{f:['Chick syncytial virus','Strain T','Duck infectious anemia virus'],html:'(답지 작성자 메모: 교재 세망내피증 파트, 확실하지 않음 — 2024·2025 답지도 같은 답)'});
+setA('2022-10',{f:['HVT 벡터, CVI988 + REV LTR 삽입, vvMDV Md5ΔMeq 재조합 실험백신','비병원성 생백신(VG/GA, Ulster 2C), 약병원성 생백신(B1, LaSota, Clone 30)']});
+setA('2022-11',{f:['마이코플라즈마 (MG)','전염성 코라이자'],warn:K.ampvddWarn,html:K.ampvddEv,src:'aMPV PPT 16p'});
+setA('2022-12',{f:K.ae,src:'PPT 11장 9p'});
+setA('2022-14',{z:{'1':'폐','2':'B세포','3':'6~7일','4':'CD4+ T세포','5':'CD8+ T세포','6':'B세포','7':'표피세포','8':'2차 림프기관','9':'종양화','10':'림프종'}});
+setA('2022-15',{ox:ALL6,oxr:K.ampv,src:'2장 aMPV PPT'});
+setA('2022-16',{ox:ALL6,oxr:['수직전파 보고 없음','모체이행항체 → 체액성 면역 (어린 일령 호흡기 감염방어엔 효과적이지 못함)','잠복기가 매우 짧음','바이러스 분리동정에는 AC, CEK, CK 사용됨','호흡기 및 산란저하 증상의 경우 감별진단이 어려움','Spike protein(S1, S2)이 항원결정기로 작용하고, 혈청형 특이적임']});
+setA('2022-17',{ox:ALL6,oxr:K.ilt});
+setA('2022-18',{ox:ALL6,oxr:['실제로 야외에서는 모기를 통한 전염이 가장 흔히 나타나는 경로이다.','계두는 숙주 범위가 매우 넓어 232종 이상의 조류가 자연감염될 수 있다.','(답지) 기관 개구부에서 나타나는 결절이 ILT 병변과 매우 유사하다 — 2025 답지: 결정 병변은 피부 병변','경증 또는 중증의 호흡기 증상과 호흡곤란을 동반한다.','모기 등 흡혈곤충 작용 가능한 여름철/초가을에 다발한다.','(pigeon poxvirus는) 닭에서는 병원성이 없고 비둘기에는 질병을 일으키므로 주의한다.']});
+setA('2022-19',{ox:[0,1,2,3,4],oxr:['오리, 칠면조, 비둘기에서는 실험감염도 성립 안 되며, 1주령 이전이어야 성립된다. (2025 답지: 일본 메추라기·떼까마귀에서 항체양성 보고)','감염경로는 수직감염(난계대)뿐 아니라 수평감염도 있다.','VP3에 대한 설명이다.','F낭도 위축되긴 하나, 그 정도가 흉선보다는 적다. (2판 60p)','닭배아난황 및 MD 유래 T세포주(MDCC)는 증식이 아니라 분리에 이용된다. 증식에 이용되는 세포는 흉선림프모구, 골수 혈구모세포이다.'],html:'(답지 ⑥ — 2022 문제엔 없는 보기) 출혈성 빈혈증후군은 IBH, IBD, 괴저성 피부염과 복합감염 시 발생한다.'});
+setA('2022-20',{ox:ALL6,oxr:['수직감염된 어린 연령에서는 바이러스 배출 및 항체형성이 없으며, 성계에서는 산란저하 유발 및 바이러스가 배출되고 항체역가의 상승이 나타난다.','임상적 발병 및 피해는 수직전파와 수평전파에 의해 발생한다.','감염체는 Atadenovirus에 속하는 Duck Atadenovirus A이다.','EDSV는 단일 혈청형만 존재하고, 백신면역이 잘 이루어진다.','바이러스는 오리 유래 발육란 및 초대세포배양(DEL, DEF, DK)에서 증식성이 높다.','바이러스의 전파속도가 느리다.']});
+setA('2022-21',{...K.route,from:from(2024,29)});
+setA('2022-22',{html:'생백신, 불활화백신, 난내백신, 재조합벡터백신'});
+setA('2022-23',K.fl);
+setA('2022-24',K.lpai);
+setA('2022-25',K.hps);
+setA('2022-26',K.arv);
+setA('2022-27',{...K.mdvf,from:from(2024,19)});
+setA('2022-29',K.alv);
+
+/* ---- 2023 (답지 없음 → 동일 문제에서) ---- */
+setA('2023-2',{...K.nab25,from:from(2025,19)});
+setA('2023-3',{...K.herp,from:from(2024,3)});
+setA('2023-4',{f:['B1, LaSota (+ Clone 30, VG/GA, Ulster 2C)','CVI988, SB-1, HVT'],from:'2024년 4번 + 2025년 24번 답지'});
+setA('2023-5',{...K.ndvp,from:from(2025,25)});
+setA('2023-6',{f:K.cell,from:from(2022,4),warn:'⚠ TOC 일령은 IB PPT 11p엔 "20일령 발육란의 계태아 기관에 접종"으로 나옴 (답지 1-2일령과 다름)'});
+setA('2023-7',{...K.onco,from:from(2025,26)});
+setA('2023-8',{f:['CEF, CEK','MDCK, DF-1'],from:from(2022,8)});
+setA('2023-9',{...K.aiv25,from:from(2025,20)});
+setA('2023-10',{f:['Mycoplasmosis (MG)','Infectious coryza'],warn:K.ampvddWarn,html:K.ampvddEv,from:'2024년 9번 · 2022년 11번 답지',src:'aMPV PPT 16p'});
+setA('2023-11',{f:['Chick syncytial virus','Strain T','Duck infectious anemia virus'],from:'2025·2024·2022 답지'});
+setA('2023-12',{f:['pp24, pp38, vLIP, LAT','Meq, vIL-8, vTR'],from:from(2024,11),src:'PPT 13장 마렉병 7p, 교재 136-137p'});
+setA('2023-14',{f:K.ae,from:from(2022,12)});
+setA('2023-15',{z:{a:'폐',b:'B세포',c:'6~7일',d:'CD4+ T세포',e:'CD8+ T세포',f:'B세포',g:'림프장기',h:'내장기관','단계명':'후기 세포용해성 감염',i:'표피세포',j:'2차 림프기관',k:'종양화',l:'림프종'},from:from(2022,14),html:'g·h·(3) 단계명은 2022 문제 지문에 적혀 있던 말'});
+setA('2023-16',{ox:ALL6,oxr:K.ampv,from:'2025년 13번 · 2022년 15번 답지'});
+setA('2023-17',{ox:ALL6,oxr:K.ib,from:'2025년 14번 · 2022년 16번 답지'});
+setA('2023-18',{ox:ALL6,oxr:K.ilt,from:'2025년 15번 · 2022년 17번 답지'});
+setA('2023-19',{ox:ALL6,oxr:K.fp,from:'2025년 16번 · 2022년 18번 답지'});
+setA('2023-20',{ox:ALL6,oxr:K.cia,from:from(2025,17),html:'2022 답지 참고: ④ F낭도 위축되나 흉선보다 적음 / ⑤ MDCC는 분리용, 증식은 흉선림프모구·골수 혈구모세포 / ⑥ IBH·IBD·괴저성 피부염과 복합감염 시 발생'});
+setA('2023-21',{ox:ALL6,oxr:K.eds,from:'2025년 18번 · 2022년 20번 답지'});
+setA('2023-22',{...K.route,from:'2024년 29번 · 2025년 21번 답지 (유사 문제)'});
+setA('2023-23',{...K.fl,from:'2024년 16번 · 2022년 23번 답지'});
+setA('2023-24',{...K.lpai,from:'2024년 17번 · 2022년 24번 답지'});
+setA('2023-25',{...K.hps,from:'2024년 15번 · 2022년 25번 답지'});
+setA('2023-26',{...K.arv,from:from(2022,26)});
+setA('2023-27',{...K.mdvf,from:from(2024,19)});
+setA('2023-29',{...K.alv,from:'2022년 29번 · 2024년 21번 답지'});
+
+/* ---- 2021 (답지 없음 → 동일 문제에서) ---- */
+setA('2021-2',{...K.herp,from:from(2024,3)});
+setA('2021-4',{f:['14-15일령','18일령','14-15일령','6주령'],from:from(2022,4)});
+setA('2021-6',{...K.route,from:'2024년 29번 · 2025년 21번 답지 (유사 문제)'});
+setA('2021-7',{html:'생백신, 불활화백신, 난내백신, 재조합벡터백신',from:from(2022,22)});
+setA('2021-8',{...K.fl,from:'2024년 16번 · 2022년 23번 답지'});
+setA('2021-9',{...K.ibdr,from:from(2022,5)});
+setA('2021-10',{...K.lpai,from:'2024년 17번 · 2022년 24번 답지'});
+setA('2021-11',{...K.hps,from:'2024년 15번 · 2022년 25번 답지'});
+setA('2021-12',{...K.arv,from:from(2022,26)});
+setA('2021-13',{f:['핵산 배출 단백질','인터페론 길항 작용'],from:from(2022,6)});
+setA('2021-14',{f:['v-onc','v-rel'],from:'2025년 26번 · 2024년 6번 답지 (유사 문제)'});
+setA('2021-15',{...K.mdvf,from:from(2024,19)});
+setA('2021-16',{f:['Chick syncytial virus','Strain T','Duck infectious anemia virus'],from:'2025·2024·2022 답지'});
+setA('2021-17',{f:['CEF, CEK','MDCK, DF-1'],from:from(2022,8)});
+setA('2021-20',{ox:ALL6,oxr:K.ampv,from:'2025년 13번 · 2022년 15번 답지'});
+setA('2021-21',{ox:ALL6,oxr:K.ib,from:'2025년 14번 · 2022년 16번 답지'});
+setA('2021-22',{ox:ALL6,oxr:K.ilt,from:'2025년 15번 · 2022년 17번 답지'});
+setA('2021-23',{ox:ALL6,oxr:K.fp,from:'2025년 16번 · 2022년 18번 답지'});
+setA('2021-24',{ox:[0,1,2,3,5],oxr:[K.cia[0],K.cia[1],K.cia[2],K.cia[3],'(애매) 2021 문장엔 "~에서만"이 없음 — 2025 답지: T세포주·ALL 유래 B세포주에서 증식 → 옳은 문장일 수 있음 / 2022 답지: MDCC는 분리용, 증식은 흉선림프모구·골수 혈구모세포 → 틀린 문장',K.cia[5]],from:'2025년 17번 · 2022년 19번 답지'});
+setA('2021-26',K.ndCap);
+setA('2021-27',{f:K.ae,from:from(2022,12),warn:'사진 순서는 교재 그림 11-2(뇌) · 11-3(선위) · 11-4(췌장) 기준 — 기출집 사진 확인'});
+setA('2021-28',{z:{a:'폐 (의 대식세포)',b:'흉선',c:'F낭',d:'B세포',f:'6~7',g:'CD4+ T세포',h:'CD8+ T세포',i:'B세포',m:'림프종'},from:'2022년 14번 답지 (빈칸 위치가 달라 맞는 것만)',html:'b·c는 2022·2023 지문("흉선, F낭, 비장 등"), e·j·k·l은 답지에 대응하는 칸이 없어요.'});
+
+const C='①②③④⑤⑥⑦⑧⑨⑩'.split('');
+const TAGS={
+ tax:'분류체계·유전체 성상 표', nab:'중화항체 유도 단백질', herpes:'ILTV·MDV 혈청형 종명', rev:'REV 종류 (닭·오리·칠면조)',
+ onco:'종양 관련 유전자', aivprot:'AIV 단백질 기능 (HA·NA·NS·PB1-F2)', route:'백신 접종법', mdvfail:'MDV 백신 면역 실패 점검사항',
+ lpai:'LPAI→HPAI 변이 기전', hps:'HPS 부검소견', arv:'Avian reovirus 유발 질병', alv:'외인성 ALV 감염형태 4종',
+ genome:'NDV·aMPV 유전체 구조', fl:'무산란계 (false layer)', ampvox:'aMPV 틀린 설명 고르기', ibox:'IB 틀린 설명 고르기',
+ iltox:'ILT 틀린 설명 고르기', fpox:'Fowl pox 틀린 설명 고르기', ciaox:'CIAV 틀린 설명 고르기', edsox:'EDS 틀린 설명 고르기',
+ ampvdd:'aMPV 유사 질병 (닭·칠면조)', strain:'백신주', ndvp:'NDV 병원성 시험 (MDT·ICPI·IVPI)', mdvgene:'MDV 특이 유전자',
+ mdvmech:'MDV 종양형성 4단계 (빈칸)', aivcell:'AIV 배양세포·세포주', cell:'초대세포배양 일(주)령', aivani:'AIV 실험동물',
+ hplp:'HPAI vs LPAI 비교', egg:'종란접종법 3가지', ndimg:'고병원성 ND 부검소견 (사진)', aeimg:'AE 조직소견 (사진)',
+ ibdrec:'IBD 바이러스 수용체', vtype:'백신 유형', ibvg:'IBV 유전체·sgRNA', ibda:'IBD Segment A 구조',
+ vert:'난계대 바이러스성 질병', rbp:'수용체 부착 단백질 (full name)', serol:'혈청검사 목적·방법', farm:'방역·농장관리 서술', mc:'객관식 (질병 총론)'
+};
+const TYLABEL={mc:'객관식',ox:'틀린 것 + 이유',fill:'단답',essay:'서술',tbl:'표 채우기',tax:'표 채우기',cloze:'빈칸 채우기',na:'—'};
+
+/* 공통 보기 */
+const AMPV6=['모든 aMPV 이형 바이러스 분리에 TOC가 주로 이용된다.','aMPV 감염증은 모체이행항체에 의해 후대 병아리의 감염 방어에 효과적이다.','주요 전파 경로는 수평감염 및 수직감염 모두에 의해 이루어진다.','aMPV A, B, C, D 아형 subtype 간 교차 방어 효과에 차이가 없다.','칠면조보다 주로 닭에서 더 심한 임상증상을 관찰할 수 있다.','aMPV 감염증은 칠면조의 두부종창증후군으로 알려진 질병이다.'];
+const IB6=['바이러스는 주로 장관, 수란관, 난각표면에서 분리되고, 수평·수직 전파가 가능하다.','어린 일령에서 IB 방어에는 모체이행항체가 효과적이다.','잠복기가 길어서 개체 간의 전파는 비교적 서서히 진행되는 편이다.','신장형의 야외바이러스 분리에는 닭태아신장세포(CEK) 배양이 효과적이다.','호흡기 및 산란저하 증상을 보이는 경우에는 같은 임상증상을 나타내는 다른 질병들과 감별이 비교적 용이하다.','바이러스군 특이적인 Nucleocapsid 단백질에 의해 항원성이 결정된다.'];
+const ILT6=['모든 연령에 감수성이 있으며 대부분 임상증상은 어린 연령에서 관찰된다.','병원체 분리는 CEL, CELu, CEK가 주로 이용된다.','종란 내부 또는 외부를 통한 후대 병아리 감염이 성립된다.','원인체는 외피막을 보유하지만 각질·비듬 등에 싸여 열·소독제에 강한 저항성을 보인다.','특징적인 병변으로 후두와 기관 삼출물 등을 보이며 호흡기점막상피세포의 세포질 내 봉입체를 관찰할 수 있다.','ND나 AI보다 상대적으로 빠른 전파력을 보이며 급성 경과로 개구호흡, 혈담 객출을 관찰할 수 있다.'];
+const FP6=['야외에서 공기를 통한 전염이 가장 흔한 감염경로로, 간혹 모기를 통한 매개체 전파도 이루어진다.','숙주는 닭과 칠면조에 국한된다.','눈 점막을 통해 감염된 바이러스는 눈물샘을 따라 후두에 이르러 ILT 병변과 유사한 결정 병변을 형성한다.','디프테리형은 가벼운 호흡기 증상으로 내과한다.','여름철보다 초가을 및 겨울철에 다발한다.','Pigeon poxvirus 생백신은 닭에 병원성은 약하지만 백신접종 부작용에 주의해야 한다.'];
+const EDS6=['감염 증상은 주로 수직감염에 의해 나타나며 일령이 증가할수록 수평감염에 저항성을 가진다.','임상적 발병 및 피해는 난계대전염에 의해서만 발생한다.','감염체는 Aviadenovirus에 속하는 Fowl adenovirus A로 닭에서 감염된다.','백신압에 의해 변이주가 빈번하게 발생하며 현행 백신의 예방효과는 낮다.','바이러스는 닭 유래 발육란과 계태아세포에서 잘 증식한다.','바이러스는 전파속도가 빠르며 심한 산란저하, 기형란, 무각란, 난질저하가 유도된다.'];
+const NAB=['NDV','aMPV','IBV','AIV','IBDV','CIAV','FAdV','AEV','ARV','ALSV'];
+const HPLP={cols:['HPAI','LPAI'],rows:['HA 아형','바이러스 증식 장기','질병 양상','폐사율','CEF 세포 증식 및 CPE','HA 수식 작용 protease']};
+const EGG={cols:['SPF 부화란 일령','분리대상 질병(바이러스)'],rows:['AC (Allantoic Cavity) 접종','CAM (Chorioallantoic membrane) 접종','YS (Yolk sac) 접종']};
+const NDVP=['MDT (Mean Death Time)','ICPI (Intracerebral Pathogenicity Index)','IVPI (Intravenous Pathogenicity Index)'];
+const HERP=['ILTV','MDV-1','MDV-2','MDV-3'];
+const CELL6=['CEF 세포배양','CEK 세포배양','CEL 세포배양','CELu 세포배양','CK 세포배양','Chicken tracheal organ culture (TOC)'];
+const IBDREC=['IgM 발현 미성숙 B 림프구','조류 유래 DT40 세포주','조류 유래 DF1 세포주','설치류 유래 3T3 세포주'];
+const Q_ALV='어미닭의 외인성(exogenous) ALV 감염형태는 혈중 바이러스 항원 및 항체의 존재 여부에 따라 4종류로 나뉜다. 4종류를 각각 설명하고, 이 중 난계대전파가 가장 용이한 형태와 그 형태의 바이러스가 증식하는 장기의 이름을 쓰시오.';
+const Q_LPAI='LPAI H5/H7 아형 virus가 가금숙주에 감염된 경우 HA cleavage site 변화에 의해 고병원성으로 변이할 수 있는 기전에 대하여 3가지 이상 설명하시오.';
+const Q_GEN='NDV와 aMPV의 각 유전체 구조를 표기하고 암호화 유전자의 특징적인 차이점에 대해 설명하시오.';
+const Q_IBVG='IBV 유전체 구조를 도식화하여 자세히 설명하고, 6종의 subgenomic RNA에 의해 각각 합성되는 단백질에 대해서 설명하시오.';
+const Q_IBDA='IBD 바이러스 Segment A의 유전체 구조를 도식화하고, 발현 단백질 및 펩타이드가 바이러스 증식 및 입자 형성 과정에 관여하는 주요 기능에 대하여 설명하시오.';
+const Q_MDVF='MDV 백신 면역에 실패했을 경우 고려해야 하는 점검사항 4가지를 설명하시오.';
+const Q_TAX='가금의 주요 바이러스성 질병의 원인체별 분류체계(family, subfamily, genus) 및 각각의 성숙 바이러스 입자 내 유전체 성상(segmented or non-segmented / linear or circular / + or − / ss or ds / DNA or RNA)에 대해 문제지 빈칸에 직접 기입하시오.';
+const Q_NAB='가금 바이러스 원인체별 항원성 및 병원성 결정인자로 중화항체를 유도하는 단백질을 쓰시오.';
+const Q_HERP='동일한 herpesvirus에 속하는 ILTV와 MDV의 혈청형별 종명을 쓰시오.';
+const Q_NDVP='NDV의 병원성 평가에 이용되는 시험법별 SPF 종란 또는 닭의 일(주)령을 쓰시오.';
+const Q_ONCO='닭에 종양을 일으키는 원인체별 종양 관련 유전자명을 기입하시오.';
+const Q_REV='조류 유래의 세망내피증을 일으키는 REV를 각각 1종 이상씩 쓰시오.';
+const Q_AMPVDD='aMPV 감염증과 병원성이 유사한 질병들 중 다음 종에 감염되는 적절한 질병명을 쓰시오.';
+const Q_AIVP='AIV 세포 내 감염 증식 및 복제에 관여하는 단백질의 각 기능에 대해 설명하시오.';
+const Q_MDVG='MDV 고유의 특이 유전자 중 혈청형 공통 또는 MDV-1 특이 유전자명을 각각 2종 이상 쓰시오.';
+const Q_EGG='바이러스성 가금질병의 원인체를 분리하기 위해 이용되는 3가지 종란접종법 및 각 종란접종법별 사용되는 종란의 일령과 주요 분리대상 바이러스를 2종 이상 예시하시오.';
+const Q_AIVA='야외 유래 AIV의 병원성 및 종간전파 검증을 위해 주로 공시하는 실험동물을 각각 2종 이상 예시하시오.';
+const Q_HPS='FAdV 감염으로 인한 심낭수종증후군(HPS)으로 폐사한 육계에서 부검 시 나타나는 육안병변(주요 부검소견) 2가지 이상을 쓰시오.';
+const Q_ARV='Avian reovirus 감염으로 닭에 유발될 수 있는 질병을 4종 이상 예시하시오.';
+const Q_CELL='가금 바이러스성 질병의 원인체를 배양하기 위해 쓰이는 초대세포배양과 SPF 부화란 또는 닭의 일(주)령을 문제지 빈칸에 쓰시오.';
+const Q_AIVC='AIV가 증식 가능한 (부화란 이외의) 초대배양세포 및 연속 계대 세포주를 1종 이상씩 쓰시오.';
+const Q_IBDR='IBD 바이러스가 세포 내 감염 시 부착하는 세포 종류별 각각의 수용체를 쓰시오.';
+const Q_ROUTE6='가금질병 예방을 위한 백신접종 방식을 6종 이상 쓰시오.';
+const Q_VTYPE='질병에 대한 예방목적으로 사용될 수 있는 백신의 유형을 4가지 이상 쓰시오.';
+
+const MDV2023=`<b>(1) 초기 세포용해성 감염</b>
+1. 흡인된 MDV는 [[a]]의 대식세포에 감염한 후 MDV 유발
+2. 흉선, F낭, 비장 등의 림프구 초기 용해성 감염을 일으키며 주로 [[b]]가 감염
+<b>(2) 잠복감염</b>
+- 잠복감염은 감염 약 [[c]] 후부터 나타날 수 있다.
+- 대부분 잠복감염 세포는 활성화 [[d]]이며, 일부 활성화 [[e]] 및 [[f]]도 존재한다.
+- 잠복감염이 형성되면 숙주세포와 바이러스 요인이 연관된 복합적인 상호작용을 통해 바이러스가 재활성화되어 후기 세포용해성 감염이 [[g]]와 [[h]]에서 국소적으로 나타난다.
+<b>(3)</b> [[단계명]]
+- 잠복감염이 형성되면 숙주세포와 바이러스 요인이 연관된 복합적인 상호작용을 통해 바이러스가 재활성화됨
+- 혈중 MDV 감염세포는 [[i]], [[j]], 상피조직에 MDV 전파되고 조직에서 후기 세포용해성 감염이 이루어짐
+<b>(4)</b> [[k]]
+1. 후기 세포용해성 감염이 있은 후 육안적·현미경적 검출이 가능한 [[l]]이 여러 장기에 관찰.`;
+const MDV2022=`<b>(1) 초기 세포용해성 감염</b>
+1. 흡인된 MDV는 [[1]]의 대식세포에 감염한 후 전신장기로 MDV 유발
+2. 흉선, F낭, 비장 등의 림프구 초기 용해성 감염을 일으키며 주로 [[2]]가 감염
+<b>(2) 잠복감염</b>
+- 잠복감염은 감염 약 [[3]] 후부터 나타날 수 있다.
+- 대부분 잠복감염 세포는 활성화 [[4]]이며, 일부 활성화 [[5]] 및 [[6]]도 존재한다.
+- 잠복감염이 형성되면 숙주세포와 바이러스 요인이 연관된 복합적인 상호작용을 통해 바이러스가 재활성화되어 후기 세포용해성 감염이 림프장기와 내장기관에서 국소적으로 나타난다.
+<b>(3) 후기 세포용해성 감염</b>
+- 잠복감염이 형성되면 숙주세포와 바이러스 요인이 연관된 복합적인 상호작용을 통해 바이러스가 재활성화됨
+- 혈중 MDV 감염세포는 [[7]], [[8]], 상피조직에 MDV 전파되고 조직에서 후기 세포용해성 감염이 이루어짐
+<b>(4)</b> [[9]]
+- 후기 세포용해성 감염이 있은 후 육안적·현미경적 검출이 가능한 [[10]]이 여러 장기에 관찰`;
+const MDV2021=`<b>1) 초기 세포용해성 감염</b> : 흡입된 MDV는 [[a]]에 감염된 후 전신장기로 MDV를 전파시킨다. 특히 [[b]], [[c]], 비장 등의 림프구 초기 세포용해성 감염을 일으키며 [[d]]가 주로 감염된다. 세포용해성 감염을 방어하기 위해 [[e]]가 활성화되면 상호작용을 통해 감염이 전이된다.
+<b>2) 잠복감염</b> : 잠복감염은 감염 후 [[f]]일 후부터 나타날 수 있다. 대부분의 잠복감염 세포는 [[g]]이며 일부 [[h]]와 [[i]]도 존재한다.
+<b>3) 후기 세포용해성 감염</b> : 잠복감염이 형성되면 [[j]]와 [[k]] 등의 내장장기 상피조직과 피부 [[l]]에서 나타난다.
+<b>4) 종양화</b> : 후기 세포용해성 감염이 있은 후 육안적·현미경적 검출 가능한 [[m]]이 여러 장기에 관찰된다.`;
+
+const YEARS={
+ '2025':{t:'2025년 본과 3학년 2학기 조류질병학 중간고사',n:'객관식 12문항 + 틀린 것 고르기 6문항 + 단답 · 기출집에 7번 누락'},
+ '2024':{t:'2024년 본과 3학년 2학기 조류질병학 중간고사',n:'범위: 가금질병의 이해 ~ 15장 세망내피증'},
+ '2023':{t:'2023년 본과 3학년 2학기 조류질병학 중간고사',n:'총점 120점 (100점 맞아도 100점 / 120점 맞아도 100점)'},
+ '2022':{t:'2022년 본과 3학년 2학기 조류질병학 중간고사',n:'범위: Ch1~15 가금 바이러스학 전체 · 기출집에 13번 없음'},
+ '2021':{t:'2021년 본과 3학년 2학기 조류질병학 중간고사',n:'18·19·25번은 복원 안 됨 (탈족)'}
+};
+
+const Q=[];
+function add(y,list){list.forEach(o=>{o.y=y;o.id=y+'-'+o.n;Q.push(o)})}
+
+add('2025',[
+ {n:1,t:'mc',g:'mc',q:'가금의 바이러스 질병 설명 중 옳은 것은?',c:['전염성 기관지염의 예방 백신 항체는 야외주 방어에 효과적이다.','마렉병은 분변으로 배출되어 경구감염된다.','닭 뇌척수염은 성계에 감염되며 운동실조 등 신경증상을 일으킨다.','뉴캣슬병은 닭, 오리에 심한 호흡기, 신경증상을 유발한다.','계두는 흡혈 곤충으로 전파되며 핵 내 봉입체를 형성한다.']},
+ {n:2,t:'mc',g:'mc',q:'닭의 면역저하 질병에 대한 설명으로 옳지 않은 것은?',c:['IBD는 3주령 이하의 어린 닭에 발병되면 높은 폐사가 특징이다.','REV는 수평전파 뿐만 아니라 종계를 통해 수직전파 될 수 있다.','MD 특유의 종양병변은 주로 4주령 이상의 개체에서 관찰된다.','ALL은 잠복기가 길어 주로 16주령 이상의 개체에서 발병한다.','CIA는 주로 3주령 이하의 어린 닭에 빈혈을 유발한다.']},
+ {n:3,t:'mc',g:'vert',q:'닭의 바이러스성 난계대 전염병으로 옳지 않은 것은?',c:['조류인플루엔자','닭전염성빈혈','닭뇌척수염','조류백혈병','조류아데노바이러스감염증']},
+ {n:4,t:'mc',g:'arv',q:'닭의 레오바이러스 감염증 질환으로 옳지 않은 것은?',c:['호흡기 질환','신경계 질환','면역억제 질환','발육부전 증후군','흡수불량 증후군']},
+ {n:5,t:'mc',g:'mc',q:'조류 메타뉴모바이러스에 대한 설명으로 옳은 것은?',c:['A, B형 아형 간 교차면역이 가능하다.','병원체가 뉴캣슬 바이러스와 동일한 family이다.','닭은 칠면조보다 감수성이 높아 쉽게 질병에 이환된다.','주요 전파경로로 수평전파와 수직전파가 있다.','병원체가 닭 적혈구에 감염 시 응집한다.']},
+ {n:6,t:'mc',g:'mc',q:'조류의 질병(AI)의 설명으로 옳은 것은?',c:['물새의 경우 분변이 오염된 것을 통해 경구감염을 통해 전파된다.','H5, H7 외의 인플루엔자는 사람에게 전파되지 않는다.','절지동물로 전파되는 것이 가장 많으며 급만성으로 진행된다.','국내에서는 N형이 동일한 채로 H5 고병원성 AI만 검출되었다.','체내 수용체 결합에 Neuraminidase가 사용된다.']},
+ {n:7,t:'na',g:'mc',q:'(기출집에 7번 문제 누락)'},
+ {n:8,t:'mc',g:'mc',q:'산란계 닭에서 급격한 산란저하, 호흡기, 신경증상, 녹색설사를 보이는 질병은?',c:['뉴캐슬','전염성 기관지염','전염성 F낭염','전염성 후두기관염','조류메타뉴모바이러스']},
+ {n:9,t:'mc',g:'mc',q:'닭의 심낭수종증후군에 대한 설명으로 옳은 것은?',c:['주로 fowl adenovirus 4 혈청형에 의해 유발된다.','IBH와 병변 감별이 용이하다.','Atadeno속에 속한다.','병변이 간, 심장에 국한적으로 나타나는 특징이 있다.','현행 백신의 교차방어 면역으로 발생피해가 크지 않다.']},
+ {n:10,t:'mc',g:'mc',q:'닭의 전염성 F낭병에 대한 설명으로 옳은 것은?',c:['2차 감염에 대한 감수성이 높다.','원인체는 적혈구 응집능이 있다.','T림프구에 감염 친화성이 높다.','원인체는 환경저항성이 약한 편이다.','모든 일령에서 감수성이 높다.']},
+ {n:11,t:'mc',g:'mc',q:'마렉병에 대한 설명으로 옳은 것은?',c:['닭 이외에도 칠면조, 메추리, 꿩에도 발병한다.','림프장기의 종양은 주로 16주령 이후에 다발한다.','진드기, 모기, 원충에 의한 매개 전파도 가능하다.','감염성 입자는 주로 호흡기 배출을 통해 배출한다.','원인체는 최근 분류법에 따라 γ-herpesvirus에 속한다.']},
+ {n:12,t:'mc',g:'mc',q:'닭 뇌척수염 바이러스에서 림프구 침윤에 의한 위막 형성을 흔히 볼 수 있는 장기는?',c:['췌장','비장','간','심장','신장']},
+ {n:13,t:'ox',g:'ampvox',q:'aMPV 감염증에 대한 틀린 설명을 고르고, 틀린 이유를 설명하시오.',c:AMPV6},
+ {n:14,t:'ox',g:'ibox',q:'aMPV 감염증에 대한 틀린 설명을 고르고, 틀린 이유를 설명하시오.',note:'※ 문제는 aMPV로 적혀 있지만 보기 내용은 IB에 관한 것 (기출집 원문 그대로)',c:IB6},
+ {n:15,t:'ox',g:'iltox',q:'ILT에 대한 설명으로 옳지 않은 것을 고르고, 틀린 이유를 설명하시오.',c:ILT6},
+ {n:16,t:'ox',g:'fpox',q:'Fowl pox에 대한 옳지 않은 설명을 고르고, 틀린 이유를 쓰시오.',c:FP6},
+ {n:17,t:'ox',g:'ciaox',q:'CIAV에 대한 옳지 않은 설명을 고르고, 틀린 이유를 쓰시오.',c:['닭이 유일한 자연감염 숙주이고, 오리·칠면조·비둘기에서도 항체양성 보고사례가 있다.','임상증상의 발현은 난계대 전염에 의해서만 국한된다.','감염 초기 F낭의 현저한 위축소견이 관찰된다.','VP2는 세포 자살을 저해하는 Apoptin으로 작용한다.','CIA 바이러스는 MD 유래 T세포주에서만 국한되어 자란다.','출혈성 빈혈 증후군은 흔히 CIA 바이러스에 의해 유발되는 특징적인 임상징후이다.']},
+ {n:18,t:'ox',g:'edsox',q:'EDS에 대한 옳지 않은 설명을 고르고, 틀린 이유를 쓰시오.',c:EDS6},
+ {n:19,t:'fill',g:'nab',q:Q_NAB,f:NAB},
+ {n:20,t:'fill',g:'aivprot',q:Q_AIVP,f:['HA','NA','NS 1, 2','PB1-F2']},
+ {n:21,t:'fill',g:'route',q:'가금류 질병별 현장에서 통상적으로 사용하는 생백신 접종방법을 질병별 2가지 이상 쓰시오.',f:['뉴캐슬병 (ND)','전염성기관지염 (IB)','전염성후두기관염 (ILT)','계두 (FP)','전염성F낭병 (IBD)','마렉병 (MD)','닭뇌척수염 (AE)']},
+ {n:22,t:'fill',g:'ampvdd',q:'aMPV 감염증과 유사한 정도의 병원성을 보여 닭과 칠면조에서 감별이 필요한 질병을 각각 쓰시오.',f:['닭','칠면조']},
+ {n:23,t:'fill',g:'rev',q:Q_REV,f:['닭','오리','칠면조']},
+ {n:24,t:'fill',g:'strain',q:'닭의 주요 질병 중 전세계적으로 통용되고 있는 백신주를 각각 2종 이상 예시하시오.',f:['뉴캣슬병','전염성기관지염','마렉병']},
+ {n:25,t:'fill',g:'ndvp',q:Q_NDVP,f:NDVP},
+ {n:26,t:'fill',g:'onco',q:Q_ONCO,f:['마렉병','조류 백혈병/육종','세망내피증']},
+ {n:27,t:'tbl',g:'egg',q:Q_EGG,tb:EGG},
+ {n:28,t:'fill',g:'aivani',q:Q_AIVA,note:'원문 표기는 "AVI"',f:['조류 실험동물','포유류 실험동물']},
+ {n:29,t:'tax',g:'tax',q:Q_TAX}
+]);
+
+add('2024',[
+ {n:1,t:'tax',g:'tax',q:Q_TAX,note:'* Species, envelope 유무는 출제되지 않음 · 빈칸 15개 정도',cols:[0,1,2,4]},
+ {n:2,t:'fill',g:'nab',q:'질병별로 중화항체 유도 단백질을 쓰시오.',f:['ND','aMPV','IB','AIV','IBDV','CIAV','FAdV','AEV','ARV','ALSV']},
+ {n:3,t:'fill',g:'herpes',q:Q_HERP,f:HERP},
+ {n:4,t:'fill',g:'strain',q:'ND와 MD의 국내 시판 주요 백신주를 각각 2종 이상 예시하시오.',f:['ND','MD']},
+ {n:5,t:'fill',g:'ndvp',q:Q_NDVP,f:NDVP},
+ {n:6,t:'fill',g:'onco',q:Q_ONCO,f:['MD','ALSV','REV']},
+ {n:7,t:'fill',g:'aivani',q:Q_AIVA,f:['조류 실험동물','포유류 실험동물']},
+ {n:8,t:'fill',g:'aivprot',q:Q_AIVP,f:['HA','NA','NS 1, 2','PB1-F2']},
+ {n:9,t:'fill',g:'ampvdd',q:'aMPV 감염증과 병원성이 유사한 질병들 중 닭, 칠면조에 감염되는 적절한 질병명은?',f:['닭','칠면조']},
+ {n:10,t:'fill',g:'rev',q:Q_REV,f:['닭','오리','칠면조']},
+ {n:11,t:'fill',g:'mdvgene',q:Q_MDVG,f:['MDV-1/-2/-3 (혈청형 공통)','MDV-1 특이']},
+ {n:12,t:'tbl',g:'hplp',q:'고병원성 HPAI와 저병원성 LPAI의 특징과 차이점을 서술하시오.',tb:HPLP},
+ {n:13,t:'fill',g:'ndimg',q:'고병원성 ND에 걸린 개체를 부검했을 때 1) 선위/근위 2) 소장 3) 뇌에 나타나는 소견을 쓰시오.',img:'p.230 사진 3장 (선위·근위 / 소장 / 뇌)',f:['1) 선위/근위','2) 소장','3) 뇌']},
+ {n:14,t:'tbl',g:'egg',q:Q_EGG,tb:EGG},
+ {n:15,t:'essay',g:'hps',q:'FAdV 감염으로 인한 심낭수종증후군 HPS 발생 시 폐사한 육계에서 부검 시 나타나는 육안병변 두 가지는?',r:3},
+ {n:16,t:'essay',g:'fl',q:'IBD에 의해 산란계가 무산란계(false layer)로 발생하는 원인에 대해 설명하시오.',note:'원문 표기 그대로 "IBD" (다른 해에는 IB로 출제)'},
+ {n:17,t:'essay',g:'lpai',q:Q_LPAI},
+ {n:18,t:'essay',g:'arv',q:Q_ARV,r:3},
+ {n:19,t:'essay',g:'mdvfail',q:Q_MDVF},
+ {n:20,t:'essay',g:'genome',q:Q_GEN},
+ {n:21,t:'essay',g:'alv',q:Q_ALV},
+ {n:22,t:'essay',g:'farm',q:'가금 농장에 집단면역을 실시하기 전에 고려해야 할 주의사항에 대해 설명하시오.'},
+ {n:23,t:'essay',g:'farm',q:'리비히의 최소한의 법칙(law of minimum)을 예시로 들어 가금농장의 방역관리에 대하여 설명하시오.'},
+ {n:24,t:'essay',g:'farm',q:'가금농장 차단방역을 위한 주요 관리요소에 대해 4가지 이상 예시하시오.'},
+ {n:25,t:'essay',g:'farm',q:'질병 전파(또는 재생산) 계수(R0)를 &lt;1로 감소시키기 위한 방법을 4가지 이상 예시하시오.'},
+ {n:26,t:'essay',g:'farm',q:'가금백신의 접종효능을 저하시킬 수 있는 주요요인 2가지 이상 쓰시오.',r:3},
+ {n:27,t:'essay',g:'farm',q:'가금 부화장에 대한 살모넬라 모니터링의 중요성과 그 의미에 대하여 서술하시오.'},
+ {n:28,t:'fill',g:'serol',q:'가금질병 임상진단을 보조하기 위해 실시하는 혈청검사의 2가지 주된 목적과 혈청검사법을 4종 이상 예시하시오.',f:['1) 목적','2) 혈청검사법']},
+ {n:29,t:'essay',g:'route',q:'가금질병 예방을 위한 백신접종 방식을 5종 이상 쓰고, 각 접종법에 해당하는 질병명을 1종 이상 예시하시오.'},
+ {n:30,t:'essay',g:'farm',q:'가금농장 생산성에 영향을 미칠 수 있는 주요 핵심요소를 5가지 이상 예시하고, 그 이유를 설명하시오.'}
+]);
+
+add('2023',[
+ {n:1,t:'tax',g:'tax',q:Q_TAX,note:'(표 대부분 채워져 있었고 10개 정도 빈칸이었음)'},
+ {n:2,t:'fill',g:'nab',q:'병원체별 항원성 및 병원성 결정인자로 중화항체를 유도하는 단백질을 쓰시오.',f:NAB},
+ {n:3,t:'fill',g:'herpes',q:Q_HERP,f:HERP},
+ {n:4,t:'fill',g:'strain',q:'ND와 MD의 국내 시판 주요 백신주를 각각 2종 이상 예시하시오.',f:['ND','MD']},
+ {n:5,t:'fill',g:'ndvp',q:Q_NDVP,f:NDVP},
+ {n:6,t:'fill',g:'cell',q:Q_CELL,f:CELL6},
+ {n:7,t:'fill',g:'onco',q:Q_ONCO,f:['MDV','ALSV','REV']},
+ {n:8,t:'fill',g:'aivcell',q:Q_AIVC,f:['초대배양세포','연속 계대 세포주']},
+ {n:9,t:'fill',g:'aivprot',q:Q_AIVP,f:['HA','NA','NS 1, 2','PB1-F2']},
+ {n:10,t:'fill',g:'ampvdd',q:Q_AMPVDD,f:['닭','칠면조']},
+ {n:11,t:'fill',g:'rev',q:Q_REV,f:['닭','칠면조','오리']},
+ {n:12,t:'fill',g:'mdvgene',q:Q_MDVG,f:['MDV-1/-2/-3 (혈청형 공통)','MDV-1 특이']},
+ {n:13,t:'tbl',g:'hplp',q:'고병원성과 저병원성 AI 바이러스의 특성과 차이점을 비교하시오.',tb:HPLP},
+ {n:14,t:'fill',g:'aeimg',q:'AE의 특징적인 병변은 주로 (1) 신경세포, (2) 선위, (3) 췌장에서 관찰할 수 있다. AE를 진단하는 데 도움이 되는 조직병변의 병리학적 소견을 빈칸에 적으시오.',img:'p.233 조직 사진 3장',f:['(1) 신경세포','(2) 선위','(3) 췌장']},
+ {n:15,t:'cloze',g:'mdvmech',q:'병원성 MDV에 의한 종양형성기전이다. 빈칸을 채우시오.',z:MDV2023},
+ {n:16,t:'ox',g:'ampvox',q:'aMPV 감염증에 대한 틀린 설명을 고르고, 이유를 설명하시오.',c:AMPV6},
+ {n:17,t:'ox',g:'ibox',q:'IB에 대한 옳지 않은 설명을 고르고, 그 이유를 설명하시오.',c:IB6},
+ {n:18,t:'ox',g:'iltox',q:'ILT에 대한 설명으로 옳지 않은 것을 고르고, 틀린 이유를 설명하시오.',note:'원본 번호 표기가 섞여 있어 6개 보기로 정리',c:ILT6},
+ {n:19,t:'ox',g:'fpox',q:'Fowl pox에 대한 옳지 않은 설명을 고르고, 그 이유를 설명하시오.',c:['야외에서 공기를 통한 전염이 가장 흔한 감염이다.'].concat(FP6.slice(1))},
+ {n:20,t:'ox',g:'ciaox',q:'CIA에 대한 설명으로 옳지 않은 것을 모두 고르고, 이유를 쓰시오.',c:['닭이 유일한 자연감염 숙주이고, 오리·칠면조·비둘기에서도 항체양성 보고사례가 있다.','임상증상의 발현은 난계대 전염에 의해서만 국한된다.','감염 초기에 면역기관 중 F낭 위축이 가장 현저하다.','VP2는 세포자살을 저해하는 Apoptin으로 작용한다.','바이러스는 닭배아난황 및 MD 유래 T세포주에서만 증식하는 특징이 있다.','출혈성 빈혈 증후군은 CIAV 단독감염의 특징이다.']},
+ {n:21,t:'ox',g:'edsox',q:'EDS에 대한 옳지 않은 설명을 고르고, 틀린 이유를 쓰시오.',c:EDS6},
+ {n:22,t:'essay',g:'route',q:Q_ROUTE6},
+ {n:23,t:'essay',g:'fl',q:'IB에 의해 무산란계(false layer)가 발생하는 원인에 대하여 설명하시오.'},
+ {n:24,t:'essay',g:'lpai',q:Q_LPAI},
+ {n:25,t:'essay',g:'hps',q:Q_HPS,r:3},
+ {n:26,t:'essay',g:'arv',q:Q_ARV,r:3},
+ {n:27,t:'essay',g:'mdvfail',q:Q_MDVF},
+ {n:28,t:'essay',g:'genome',q:Q_GEN},
+ {n:29,t:'essay',g:'alv',q:Q_ALV},
+ {n:30,t:'essay',g:'ibvg',q:Q_IBVG}
+]);
+
+add('2022',[
+ {n:1,t:'tax',g:'tax',q:Q_TAX,note:'(매번 꼭 나오는 문제 · 몇 칸은 채워져 있었지만 전부 외우는 게 편함)'},
+ {n:2,t:'fill',g:'nab',q:'질병별로 중화항체 유도 단백질을 쓰시오.',f:['ND','aMPV','IB','ILT','IBD','CIA','FAdV','AEV','ALSV','ARV']},
+ {n:3,t:'fill',g:'herpes',q:Q_HERP,f:HERP},
+ {n:4,t:'fill',g:'cell',q:Q_CELL,f:CELL6},
+ {n:5,t:'fill',g:'ibdrec',q:Q_IBDR,f:IBDREC},
+ {n:6,t:'fill',g:'aivprot',q:'AIV 세포 내 감염 증식 및 복제에 관여하는 비구조단백질의 각 기능에 대해 설명하시오.',f:['NS-1','NS-2','PB1-F2']},
+ {n:7,t:'fill',g:'onco',q:Q_ONCO,f:['MDV','ALSV','REV']},
+ {n:8,t:'fill',g:'aivcell',q:Q_AIVC,f:['초대배양세포','연속 계대 세포주']},
+ {n:9,t:'fill',g:'rev',q:Q_REV,f:['닭','칠면조','오리']},
+ {n:10,t:'fill',g:'strain',q:'ND와 MD의 국내 시판 주요 백신주를 각각 2종 이상 예시하시오.',note:'원문 표기는 "MB" (MD 오타)',f:['MD','ND']},
+ {n:11,t:'fill',g:'ampvdd',q:Q_AMPVDD,f:['닭','칠면조']},
+ {n:12,t:'fill',g:'aeimg',q:'AE의 특징적인 병변은 주로 신경세포, 선위, 췌장에서 관찰할 수 있다. AE를 진단하는 데 도움이 되는 조직병변의 병리학적 소견을 빈칸에 적으시오.',img:'p.236 조직 사진 3장',f:['신경세포','선위','췌장']},
+ {n:14,t:'cloze',g:'mdvmech',q:'병원성 MDV에 의한 종양형성기전이다. 빈칸을 채우시오.',z:MDV2022},
+ {n:15,t:'ox',g:'ampvox',q:'aMPV 감염증에 대한 틀린 설명을 고르고, 이유를 설명하시오.',c:AMPV6},
+ {n:16,t:'ox',g:'ibox',q:'IB에 대한 설명으로 옳지 않은 것을 고르고, 이유를 설명하시오.',c:IB6},
+ {n:17,t:'ox',g:'iltox',q:'ILT에 대한 설명으로 옳지 않은 것을 고르고, 틀린 이유를 설명하시오.',c:['모든 연령에 감수성이 있으며 대부분 임상증상은 어린 연령에서 발생한다.','병원체 분리는 CEL, CK, CEK를 주로 이용한다.','종란 내부 또는 외부를 통한 후대 병아리의 감염이 성립된다.','원인체는 외피를 보유하지만, 각질·비듬 등에 싸여 배출되어 열·소독제에 저항성을 가진다.','특징적인 병변으로 후두, 기관 삼출물을 보이며 호흡기점막상피세포의 세포질 내 봉입체가 관찰될 수 있다.','MD나 AI보다 빠른 전파력을 가지며, 급성 경과로 개구호흡 및 혈담 객출이 관찰된다.']},
+ {n:18,t:'ox',g:'fpox',q:'Fowl pox에 대한 옳지 않은 설명을 고르고, 그 이유를 설명하시오.',c:FP6},
+ {n:19,t:'ox',g:'ciaox',q:'CIAV에 대한 설명으로 틀린 것을 모두 고르고, 틀린 이유를 설명하시오.',c:['닭이 유일한 자연감염 숙주이고 오리, 칠면조, 비둘기에서도 항체양성 보고사례가 있다.','임상적 발현 및 피해는 난계대감염에 국한된다.','VP2는 감염세포 핵 내에 존재하여 세포자살(apoptosis)을 유발하는 apoptin으로 작용한다.','감염 초기에 면역기관 중 F낭 위축이 가장 현저하다.','바이러스는 닭배아난황 및 MD 유래 T세포주에서만 증식하는 특징이 있다.']},
+ {n:20,t:'ox',g:'edsox',q:'EDS에 대한 옳지 않은 설명을 고르고, 틀린 이유를 쓰시오.',c:['감염 증상은 주로 수직감염에 의해 나타나며, 일령 증가할수록 수평감염에 저항성을 가진다.','임상적 발병 및 피해는 난계대전염에 의해서만 발생한다.','감염체는 Aviadenovirus에 속하는 Fowl adenovirus A로 닭에서 감염된다.','백신압(vaccine pressure)에 의해 변이주가 빈번하게 발생하며, 현행 백신의 예방 효과는 낮다.','바이러스는 닭 유래 발육란과 계태아세포(CEF)에서 잘 증식한다.','바이러스는 전파속도가 빠르며, 심한 산란저하, 기형란, 무각란, 난질저하가 유도된다.']},
+ {n:21,t:'essay',g:'route',q:'가금 질병 예방을 위해 실시하는 백신 접종법 6가지를 예시하고, 각 접종법에 해당하는 질병명을 1종 이상 예시하시오.'},
+ {n:22,t:'essay',g:'vtype',q:Q_VTYPE,r:3},
+ {n:23,t:'essay',g:'fl',q:"IB에 의해 '무산란계(false layer)'가 발생하는 원인에 대해서 설명하시오."},
+ {n:24,t:'essay',g:'lpai',q:Q_LPAI},
+ {n:25,t:'essay',g:'hps',q:Q_HPS,r:3},
+ {n:26,t:'essay',g:'arv',q:Q_ARV,r:3},
+ {n:27,t:'essay',g:'mdvfail',q:Q_MDVF},
+ {n:28,t:'essay',g:'genome',q:Q_GEN},
+ {n:29,t:'essay',g:'alv',q:Q_ALV},
+ {n:30,t:'essay',g:'ibda',q:Q_IBDA}
+]);
+
+add('2021',[
+ {n:1,t:'tax',g:'tax',q:Q_TAX,note:'(표를 제시해 주셨고 거의 웬만한 것은 다 빈칸 · 총 15점 · 전부 외워야 할 정도)'},
+ {n:2,t:'fill',g:'herpes',q:Q_HERP,f:HERP},
+ {n:3,t:'essay',g:'vert',q:'종란을 통해 후대 병아리에 전염될 수 있는 난계대 바이러스성 질병을 6종 이상 쓰시오.',r:3},
+ {n:4,t:'fill',g:'cell',q:'가금 바이러스성 질병의 원인체 초대세포배양을 위한 SPF 종란 또는 닭의 일(주)령은?',f:['CEF (Chicken Embryo Fibroblast)','CEK (Chicken Embryo Kidney)','CEL (Chicken Embryo Liver)','CK (Chicken Kidney)']},
+ {n:5,t:'fill',g:'rbp',q:'가금 바이러스성 질병의 원인체별 성숙 입자의 가장 외측에 발현하는 숙주세포 수용체 부착 단백질명(full name)을 쓰시오.',f:['NDV','aMPV','IBV','AIV','FAdV','ARV']},
+ {n:6,t:'essay',g:'route',q:'가금 질병의 예방을 위한 백신 접종법 6종 이상 쓰시오.'},
+ {n:7,t:'essay',g:'vtype',q:Q_VTYPE,r:3},
+ {n:8,t:'essay',g:'fl',q:"전염성 기관지염(IB)의 'false layer'에 대해 설명하고 그 원인을 쓰시오."},
+ {n:9,t:'fill',g:'ibdrec',q:Q_IBDR,f:IBDREC},
+ {n:10,t:'essay',g:'lpai',q:'LPAI H5/H7 아형 바이러스가 가금 숙주에 감염된 경우, HA cleavage site 변화에 의해 고병원성으로 변이되는 기전에 대하여 3가지 이상 기술하시오.'},
+ {n:11,t:'essay',g:'hps',q:Q_HPS,r:3},
+ {n:12,t:'essay',g:'arv',q:'조류 레오바이러스 감염에 의해 닭에 나타날 수 있는 질병을 4종 이상 예시하시오.',r:3},
+ {n:13,t:'fill',g:'aivprot',q:'AIV 세포 내 감염 증식 및 복제에 관여하는 비구조단백질의 각 기능에 대해서 설명하시오.',f:['NS1 & 2','PB1-F2']},
+ {n:14,t:'fill',g:'onco',q:'ALSV와 REV에서 유발되는 종양 관련 유전자명을 각각 쓰시오.',f:['ALSV','REV']},
+ {n:15,t:'essay',g:'mdvfail',q:'MDV 백신면역 실패 시, 점검해야 하는 사항 4가지 이상을 쓰시오.'},
+ {n:16,t:'fill',g:'rev',q:Q_REV,f:['닭','칠면조','오리']},
+ {n:17,t:'fill',g:'aivcell',q:'AI 바이러스의 배양법을 각각 2종 이상 쓰시오.',f:['초대배양세포','Cell line (세포주)']},
+ {n:18,t:'na',g:'mc',q:'(복원 안 됨 — 탈족)'},
+ {n:19,t:'na',g:'mc',q:'(복원 안 됨 — 탈족)'},
+ {n:20,t:'ox',g:'ampvox',q:'aMPV 감염증에 대한 설명으로 틀린 것을 모두 고르고, 틀린 이유를 설명하시오.',c:AMPV6},
+ {n:21,t:'ox',g:'ibox',q:'IB에 대한 설명 중 틀린 것을 모두 고르고, 틀린 이유를 적으시오.',c:['IB는 호흡기, 장관, 수란관, 난각에서 분리가 가능하고, 수평·수직전파가 가능하다.','어린 일령의 IB 방어에는 모체이행항체가 결정적인 역할을 한다.','잠복기가 비교적 길어 상대적으로 개체군 간의 전파가 느리게 발생한다.','신장형으로 의심되는 야외바이러스 분리에는 닭태아신장세포를 이용한다.','호흡기형, 산란저하 증상은 유사한 증상을 나타내는 질병들과 비교적 감별진단이 쉽다.','바이러스군 특이적 nucleocapsid 단백은 항원결정기로 작용한다.']},
+ {n:22,t:'ox',g:'iltox',q:'ILT에 대한 설명으로 옳지 않은 것을 모두 고르고, 틀린 이유를 설명하시오.',c:ILT6},
+ {n:23,t:'ox',g:'fpox',q:'Fowl pox에 대한 설명 중 옳지 않은 것을 모두 고르고, 그 이유를 설명하시오.',c:['야외에서 공기를 통한 감염이 가장 흔한 경로로, 간혹 모기를 통한 매개체에 의해 전파가 이루어진다.',FP6[1],FP6[2],'디프테리아형은 가벼운 호흡기 증상으로 내과한다.',FP6[4],FP6[5]]},
+ {n:24,t:'ox',g:'ciaox',q:'CIAV에 대한 설명으로 옳지 않은 것을 모두 고르고, 이유를 쓰시오.',c:['닭이 유일한 자연감염 숙주이고, 오리·칠면조·비둘기에서도 항체양성 보고사례가 있다.','임상증상의 발현은 난계대 전염에 의해서만 국한된다.','감염 초기 F낭의 현저한 위축소견이 관찰된다.','VP2는 세포자살을 저해하는 Apoptin으로 작용한다.','MD 유래 T세포주에서 자란다.','출혈성 빈혈 증후군은 CIAV 단독감염의 특징적인 증상이다.']},
+ {n:25,t:'na',g:'mc',q:'(복원 안 됨 — 탈족)'},
+ {n:26,t:'fill',g:'ndimg',q:'ND에 관한 그림 중 다음에 대해 설명하시오. (각 사진에 대한 설명을 쓰면 됨)',img:'p.240 교재 그림 (위 좌·위 우·아래)',f:['1) 위 좌 — 선위, 근위','2) 위 우 — 소장','3) 아래 — 뇌']},
+ {n:27,t:'fill',g:'aeimg',q:'다음은 AE(닭 뇌척수염)에 감염된 조류에서의 조직 사진이다. 각 부위의 이름을 쓰고, 이에 대한 조직학적 소견을 설명하시오.',img:'p.240 교재 조직 사진 3장',f:['사진 1','사진 2','사진 3']},
+ {n:28,t:'cloze',g:'mdvmech',q:'MDV의 림프종을 유발하는 4단계 과정 (빈칸 채워 넣기)',note:'빈칸 개수 및 위치는 정확하지 않음 (복원자 메모)',z:MDV2021},
+ {n:29,t:'essay',g:'ibvg',q:Q_IBVG},
+ {n:30,t:'essay',g:'ibda',q:Q_IBDA}
+]);
+
+/* 분류체계 표 — 기출집 p.229에 수록된 표 */
+const TAXCOLS=['Family','Subfamily','Genus','Species','게놈 성상','EN'];
+const TAXROWS=[['① 뉴캐슬병','ND'],['② 메타뉴모바이러스감염증','aMPV'],['③ 전염성 기관지염','IB'],['④ 전염성 후두기관염','ILT'],['⑤ 조류인플루엔자','AI'],['⑥ 계두','Fowl Pox'],['⑦ 전염성 F낭병','IBD'],['⑧ 닭전염성빈혈','CIA'],['⑨ 아데노바이러스감염증','FAdV'],['⑩ 산란저하증후군','EDS'],['⑪ 닭 뇌척수염','AE'],['⑫ 레오바이러스감염증','ARV'],['⑬ 마렉병','MD'],['⑭ 조류백혈병/육종','ALS'],['⑮ 세망내피증','RE']];
+const TAXREF=[
+ ['Paramyxoviridae','Avulavirinae','Orthoavulavirus','Avian orthoavulavirus 1 (=ND virus)','linear (−) ssRNA','O'],
+ ['Pneumoviridae','-','Avian Metapneumovirus','AMP virus','linear (−) ssRNA','O'],
+ ['Coronaviridae','Orthocoronavirinae','Gammacoronavirus','IB virus','linear (+) ssRNA','O'],
+ ['Herpesviridae','Alphaherpesvirinae','Iltovirus','ILT virus','linear dsDNA','O'],
+ ['Orthomyxoviridae','-','Influenzavirus type A','AI virus','8 linear (−) ssRNA','O'],
+ ['Poxviridae','Chordopoxvirinae','Avipoxvirus','FP virus','linear dsDNA','O'],
+ ['Birnaviridae','-','Avibirnavirus','IBD virus','2 linear dsRNA','X'],
+ ['Circoviridae → Anelloviridae','-','Gyrovirus','CIA virus','circular (−) ssDNA','X'],
+ ['Adenoviridae','-','Aviadenovirus','Fowl adenovirus (FAdV)','linear dsDNA','X'],
+ ['Adenoviridae','-','Atadenovirus','Duck Atadenovirus A (Duck adenovirus type 1, DAdV-1)','linear dsDNA','X'],
+ ['Picornaviridae','','Tremovirus','Avian encephalomyelitis virus','linear (+) ssRNA','X'],
+ ['Reoviridae','Spinareovirinae','Orthoreovirus','Avian reovirus (ARV)','10 dsRNA','X'],
+ ['Herpesviridae','Alphaherpesvirinae','Mardivirus','MDV','linear dsDNA','O'],
+ ['Retroviridae','Orthoretrovirinae','Alpharetrovirus','Avian leukosis/sarcoma virus (ALSV)','linear (+) ssRNA','O'],
+ ['Retroviridae','Orthoretrovirinae','Gammaretrovirus','Reticuloendotheliosis virus (REV)','','']
+];
+
+/* ===== 동일·유사 문제 =====
+   DUP = 사실상 같은 문제 묶음 (보기·표현 차이는 DNOTE에 메모)
+   유사 = 같은 주제인데 묻는 범위/형식이 다른 문제 (같은 주제 묶음 + SIMX 수동 연결) */
+const DUP=[
+ ['2025-29','2024-1','2023-1','2022-1','2021-1'],
+ ['2024-3','2023-3','2022-3','2021-2'],
+ ['2025-19','2024-2','2023-2','2022-2'],
+ ['2025-20','2024-8','2023-9'],['2022-6','2021-13'],
+ ['2025-23','2024-10','2023-11','2022-9','2021-16'],
+ ['2024-4','2023-4','2022-10'],
+ ['2025-25','2024-5','2023-5'],
+ ['2025-26','2024-6','2023-7','2022-7'],
+ ['2025-27','2024-14'],['2025-28','2024-7'],['2024-11','2023-12'],['2024-12','2023-13'],
+ ['2025-22','2024-9','2023-10','2022-11'],
+ ['2025-13','2023-16','2022-15','2021-20'],
+ ['2025-14','2023-17','2022-16','2021-21'],
+ ['2025-15','2023-18','2022-17','2021-22'],
+ ['2025-16','2023-19','2022-18','2021-23'],
+ ['2025-17','2023-20','2022-19','2021-24'],
+ ['2025-18','2023-21','2022-20'],
+ ['2023-22','2021-6'],['2024-29','2022-21'],
+ ['2022-22','2021-7'],
+ ['2024-16','2023-23','2022-23','2021-8'],
+ ['2024-17','2023-24','2022-24','2021-10'],
+ ['2024-15','2023-25','2022-25','2021-11'],
+ ['2024-18','2023-26','2022-26','2021-12'],
+ ['2024-19','2023-27','2022-27','2021-15'],
+ ['2024-20','2023-28','2022-28'],
+ ['2024-21','2023-29','2022-29'],
+ ['2023-30','2021-29'],['2022-30','2021-30'],
+ ['2023-6','2022-4','2021-4'],
+ ['2023-8','2022-8','2021-17'],
+ ['2023-14','2022-12','2021-27'],
+ ['2024-13','2021-26'],
+ ['2023-15','2022-14','2021-28'],
+ ['2022-5','2021-9']
+];
+const DNOTE={
+ '2024-1':'Species·EN 칸은 안 나옴',
+ '2022-2':'보기 중 AIV 대신 ILT가 들어감',
+ '2021-20':'"틀린 것 모두 고르기"로 출제',
+ '2025-14':'문제엔 aMPV라 적혔지만 보기는 IB 보기와 동일',
+ '2021-21':'① 보기 표현 다름("호흡기" 포함, "주로" 없음) — 답지 기준 틀린 포인트가 "수직전파 불가"라 ①도 틀린 보기 · ② "결정적인 역할"',
+ '2022-17':'보기 ② CK↔CELu, ⑥ MD↔ND 표현 다름 — 답지 기준 ②는 "CAM 접종이 가장 적합", ⑥은 "MD·AI가 더 빠름"이라 둘 다 틀린 보기',
+ '2023-19':'① 보기 뒷부분(모기 매개 전파) 빠짐',
+ '2025-17':'보기 ③·⑤·⑥ 표현 조금 다름 ("흔히 CIA에 의해 유발되는 특징적 임상징후")',
+ '2023-20':'보기 ③ "면역기관 중 F낭 위축이 가장 현저", ⑤ "닭배아난황 및 MD T세포주에서만"',
+ '2022-19':'⚠ 보기 5개 · ③ VP2 문장이 반대("세포자살 유발")로 나옴 · ⑥ 없음',
+ '2021-24':'⚠ ⑤ "~에서만" 빠짐 ("MD 유래 T세포주에서 자란다") — 답지끼리 해석이 갈려 옳은 문장일 수도 있음 (정답 보기에서 확인)',
+ '2024-29':'5종 이상 + 질병명 (2022는 6가지)',
+ '2024-16':'원문 표기는 "IBD" (내용은 IB 무산란계)',
+ '2021-8':'false layer 정의 설명까지 요구',
+ '2021-15':'"4가지 이상"',
+ '2021-4':'CELu·TOC 없이 4개만',
+ '2021-17':'"각각 2종 이상"',
+ '2021-27':'부위 이름까지 쓰라고 함 (교재 사진)',
+ '2021-28':'빈칸 위치·개수 다름 (복원자 메모: 정확하지 않음)'
+};
+const SIMX=[['2025-5','2025-13'],['2025-9','2024-15'],['2025-12','2023-14'],['2021-5','2025-19'],['2023-6','2023-8']];
+const DUPOF={};DUP.forEach((c,i)=>c.forEach(id=>DUPOF[id]=i));
+const NOSIM={mc:1,farm:1};
+function rel(q){
+ const ci=DUPOF[q.id];
+ const dup=ci!=null?DUP[ci].filter(x=>x!==q.id):[];
+ const s=new Set();
+ if(!NOSIM[q.g]) Q.forEach(o=>{if(o.g===q.g&&o.id!==q.id&&o.t!=='na'&&(ci==null||DUPOF[o.id]!==ci))s.add(o.id)});
+ const expand=id=>{const c=DUPOF[id];return c!=null?DUP[c]:[id]};
+ SIMX.forEach(([a,b])=>{const A=expand(a),B=expand(b);if(A.includes(q.id))B.forEach(x=>s.add(x));if(B.includes(q.id))A.forEach(x=>s.add(x))});
+ dup.forEach(x=>s.delete(x));s.delete(q.id);
+ const ord=(a,b)=>b.localeCompare(a,undefined,{numeric:true});
+ return {dup:dup.sort(ord),sim:[...s].sort(ord)};
+}
+const chip=id=>{const [y,n]=id.split('-');return `<button class="rc" data-jump="${id}">${y} · ${n}번</button>`};
+function relHTML(q){
+ if(q.t==='na')return '';
+ const r=rel(q),note=DNOTE[q.id];let h='';
+ if(r.dup.length) h+=`<div class="rel dup"><span class="rl">🔁 동일 문제</span>${r.dup.map(chip).join('')}</div>`;
+ if(note) h+=`<div class="rnote">${note}</div>`;
+ if(r.sim.length) h+=`<div class="rel sim"><span class="rl">≈ 유사 문제</span>${r.sim.map(chip).join('')}</div>`;
+ return h?`<div class="rels">${h}</div>`:'';
+}
+function jump(id){
+ let el=document.getElementById('q-'+id);
+ if(!el){view='all';document.getElementById('onlyEmpty').checked=false;render();el=document.getElementById('q-'+id)}
+ if(!el)return;el.scrollIntoView({behavior:'smooth',block:'start'});
+ el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');
+}
+
+
+/* ===== 암기 팁 ===== (주제별 기본 + 문제별) */
+const TIP_G={
+tax:`<b>① DNA냐 RNA냐부터</b> — DNA 바이러스 과(family)는 4개뿐: <b>"헤·폭·아·서"</b> = 헤르페스(ILT, MD) · 폭스(FP) · 아데노(FAdV, EDS) · 서코→아넬로(CIA). 나머지는 전부 RNA.<br>
+· DNA는 다 선형 dsDNA인데 <b>CIA만 원형 (−)ssDNA</b> — 제일 작은 놈(Gyro = 빙빙)이 동그랗게 말려 있음<br>
+<b>② RNA는 부호로</b><br>
+· <b>"코피 나면 플러스(+)"</b> — <b>코</b>로나(IB) · <b>피</b>코르나(AE) · 레트로(ALS, RE) = (+)ssRNA<br>
+· <b>"믹스(myxo)·뉴모는 빼기(−)"</b> — 파라믹소(ND) · 뉴모(aMPV) · 오르토믹소(AI) = (−)ssRNA, AI는 <b>8분절</b>(문어 다리 8개)<br>
+· <b>dsRNA는 두 놈</b> — <b>Bi</b>rna(IBD) = bi(둘) → <b>2분절</b> / Reo(ARV) = <b>10분절</b><br>
+<b>③ 외피막(EN) 없는 놈</b> — <b>"옷 벗은 비서가 아피레(아프대)"</b> = <b>비</b>르나(IBD) · <b>서</b>코(CIA) · <b>아</b>데노(FAdV, EDS) · <b>피</b>코르나(AE) · <b>레</b>오(ARV). 나머지는 외피 O<br>
+<b>④ Genus 힌트</b> — IB = <b>γ</b>-corona("닭은 감마") · ILT = Iltovirus(이름 그대로) · MD = <b>Mar</b>divirus(Marek) · CIA = <b>Gyro</b>virus · AE = <b>Tremo</b>virus(tremor = 떨림 → 뇌척수염) · EDS = <b>Ata</b>denovirus("앗! 오리 바이러스") · ALS = <b>α</b>-retro / RE = <b>γ</b>-retro · ILT·MD는 둘 다 <b>α</b>herpesvirinae`,
+nab:`<b>원리: 바이러스 겉에서 세포에 "붙는" 단백질 = 중화항체 표적</b><br>
+· ND <b>HN·F</b> (붙고·자르고 + 융합) / aMPV는 친척인데 HN 대신 <b>G</b>(Glue처럼 붙음) + <b>F</b><br>
+· IB <b>S1</b> (Spike의 머리) / AI <b>HA·NA</b><br>
+· IBD <b>VP2</b> = 바깥 겉옷 / CIA <b>VP1</b> = 유일한 껍데기 (VP3은 "쓰리 → 세포 쓰러뜨림" apoptin, 중화 X)<br>
+· FAdV <b>hexon</b>(6각 capsomere) / AEV <b>VP1</b> / ARV <b>σC</b> (σ<b>C</b>ell-attachment) / ALSV <b>gp85</b> (= SU)`,
+herpes:`· <b>Gallid</b> = 닭(<i>Gallus</i>), <b>Meleagrid</b> = 칠면조(<i>Meleagris</i>)<br>
+· <b>번호가 하나씩 밀린다</b>: ILT가 닭 1번 자리를 먼저 차지 → MDV-1은 Gallid <b>2</b>, MDV-2는 Gallid <b>3</b><br>
+· MDV-3 = HVT(Herpesvirus of <b>T</b>urkey) → 칠면조라서 <b>Meleagrid 1</b><br>
+· 모두 <b>alpha</b>herpesvirus`,
+ndvp:`<b>시험법 이름 속 단어로 대상을 떠올리기</b><br>
+· MDT = Mean <b>Death Time</b> → 배아가 죽는 시간 → <b>발육란</b>(표준 9~11일령)<br>
+· ICPI = Intra-<b>Cerebral</b> → 뇌에 주사 → 두개골 얇은 <b>1일령 병아리</b><br>
+· IVPI = Intra-<b>Venous</b> → 정맥 찾으려면 큰 닭 → <b>6주령 닭</b>`,
+aivprot:`· <b>HA</b> = <b>H</b>old — 붙잡아 침입, 막대 <b>삼</b>량체 / <b>NA</b> = 놓아주기(해리) — 버섯 <b>사</b>량체 → <b>"HA 삼삼하게 붙고, NA 사뿐히 떠난다"</b><br>
+· <b>NS</b> = <b>N</b>uclear export(<b>S</b>huttle) → 핵산을 핵 밖으로 배출<br>
+· <b>PB1-F2</b> → (답지 기준) 인터페론 길항 → 병원성`,
+rev:`<b>이름에 숙주가 들어 있다</b> — <b>chick</b> syncytial virus = 닭 / <b>duck</b> infectious anemia virus = 오리 / 남는 Strain <b>T</b> = <b>T</b>urkey(칠면조)`,
+strain:`· ND: <b>"라쏘 타고(LaSota) 비원(B1) 간다"</b> + Clone 30 / 비병원성 VG/GA·Ulster 2C<br>
+· IB: <b>"H120 Mass 41"</b> — H120, M41 (둘 다 Mass형)<br>
+· MD: 혈청형 1·2·3 백신을 순서대로 — <b>CVI988(1형) · SB-1(2형) · HVT(3형)</b>`,
+onco:`· MD = <b>M</b>eq (<b>M</b>arek's EcoRI-Q) — 이름에 M<br>
+· ALSV = 레트로가 세포 유전자를 훔쳐 온 <b>v-onc</b> (급성형만 보유)<br>
+· REV = <b>v-rel</b> — <b>REV</b>의 <b>REL</b>`,
+egg:`· <b>어릴수록 난황(YS)이 크다</b> → 난황 접종은 어린 <b>6~8일령</b> (CIA, AE)<br>
+· AC·CAM은 표준 <b>9~11일령</b><br>
+· <b>AC(요막강)</b> = 요막액에서 혈구응집 확인하는 놈 → ND, AI + IB<br>
+· <b>CAM(막)</b> = 막에 결절·플라크(pock) 만드는 놈 → FP(pox), IBD, ILT`,
+aivani:`· 조류: 당연히 <b>닭</b> + 칠면조<br>· 포유류: <b>마우스</b> + <b>페렛</b>(사람처럼 재채기 → 인플루엔자·종간전파 모델)`,
+mdvgene:`· <b>종양 만드는 건 1형뿐</b> → 종양 관련 유전자가 1형 특이: <b>Meq · vIL-8 · vTR</b>(텔로머레이스 RNA)<br>
+· 공통은 <b>pp24 · pp38</b>(phosphoprotein) + <b>vLIP · LAT</b>(잠복 관련)`,
+hplp:`<b>전부 "HA 절단부위" 하나로 설명된다</b><br>
+염기성 aa가 여러 개(K-R-K-K-R) → <b>어느 장기에나 있는 효소로 잘림</b> → 전신 증식 → 폐사 높음 → 배양할 때 trypsin 필요 없음 / LPAI는 반대 — 호흡기·장에만 있는 trypsin 유사 효소 필요 → 국소 증식 → 폐사 낮음 → 배양 시 trypsin 첨가<br>
+· 아형: HPAI는 <b>H5·H7 일부만</b>, LPAI는 H1~H16 전부`,
+ampvdd:`· 닭 = <b>MG</b> (Mycoplasma <b>Gall</b>isepticum — <i>Gallus</i> 닭!)<br>· 칠면조 = <b>코라이자</b> — "칠면조는 <b>코</b>(Coryza)가 길다" (aMPV PPT 16p)`,
+ampvox:`<b>6개 보기 전부 틀린 함정 문제 → 전부 뒤집으면 정답</b><br>
+· aMPV 원래 이름 = <b>칠면조 비기관염(TRT)</b> → 주인공은 칠면조: <b>칠면조가 더 심하고</b>, 닭은 두부종창증후군(SHS, 대장균 등 복합감염)으로 조연<br>
+· TOC는 섬모 손상 없는 <b>C형</b> 분리용 / A·B는 형제 → <b>교차면역 O</b><br>
+· 모체항체로 방어 <b>X</b> · 수직감염 증거 <b>X</b> (주로 수평)`,
+ibox:`<b>IB 공식 "빠·짧·S1"</b> — 잠복기 <b>짧고</b> 전파 <b>빠름</b> · 항원성은 <b>S1</b>(N은 공통항원이라 혈청형 구분 못 함)<br>
+· 수직전파 <b>X</b> · 모체항체로 어린 일령 호흡기 방어 <b>X</b><br>
+· 호흡기·산란저하는 ND·AI·aMPV·MG 등과 겹쳐서 감별 <b>어려움</b><br>
+· 처음 야외주는 세포(CEK) 분리 <b>어려움</b> → 발육란 맹목계대 3~5회`,
+iltox:`<b>헤르페스(DNA) → 핵에서 복제 → "핵내" 봉입체</b> (세포질 X)<br>
+· 주로 <b>성계</b> · 분리는 <b>CAM</b> 접종 · 수직전파 <b>X</b><br>
+· 외피 있는 바이러스 → 열·소독제에 <b>약함</b><br>
+· 전파 속도는 ND·AI가 <b>더 빠름</b> (ILT는 상대적으로 느림)`,
+fpox:`<b>계두 = 모기</b>에서 다 풀린다<br>
+· 가장 흔한 경로 = <b>모기</b> → 모기 많은 <b>여름·초가을</b> 다발<br>
+· 모기는 아무 새나 문다 → 숙주 <b>매우 넓음</b>(232종↑)<br>
+· <b>Pigeon</b>pox 백신 = 닭엔 병원성 없음 (부작용 주의는 <b>fowl</b>pox 생백신)<br>
+· 디프테리형 = 입·목에 위막 → 호흡기 증상 경증~<b>중증</b> · ILT와 헷갈리는 건 기관 결절(점막형)`,
+ciaox:`<b>CIA 단백질 3개: "1 껍데기 · 2 도우미 · 3 쓰리(=쓰러뜨림)"</b> → apoptin은 <b>VP3</b><br>
+· T세포 전구체를 공격 → <b>흉선(Thymus)</b> 위축이 가장 현저 (F낭은 덜함)<br>
+· 감염은 <b>수평 + 수직</b> 둘 다<br>
+· 단독감염 = 빈혈 / <b>출혈성 빈혈 증후군은 복합감염</b>(IBD, IBH, 괴저성피부염 등)<br>
+· 배양: MD 유래 T세포주(MDCC) · 닭배아 난황에선 검출 X`,
+edsox:`<b>EDS = 오리 바이러스(Duck adenovirus 1, Atadenovirus)가 닭에 온 것</b><br>
+· 오리 바이러스니까 → <b>오리 세포</b>(DEL·DEF·DK)에서 잘 크고 닭 세포에선 못 큼<br>
+· 전파 <b>느림</b> · 혈청형 <b>1개</b> → 백신(오일 불활화 12~16주령 1회)으로 잘 막힘<br>
+· 수직감염 개체는 잠복 → <b>산란 시작</b>(스트레스·성호르몬) 때 터짐 · 산란 중 수평감염으로도 피해`,
+route:`<b>"어디로 들어가는 병이냐"로 접종법 고르기</b><br>
+· 호흡기 바이러스(ND, IB, ILT) → 눈·코·분무 = <b>점안·점비·분무</b><br>
+· 계두는 피부병 → 날개를 찔러 <b>천자(익막)</b><br>
+· 마렉은 세포결합성 → <b>주사</b>(경부피하) · <b>In-ovo</b>(18일령)<br>
+· 장으로 가는 IBD·AE → <b>음수</b> / 콕시듐 → <b>사료</b><br>
+· ND는 거의 모든 방법 가능 (만능)`,
+vtype:`<b>"생·불·난·재"</b> — 생백신 · 불활화백신 · 난내(in-ovo)백신 · 재조합 벡터백신`,
+fl:`<b>"어려서 다친 수란관"</b> — 4주령 이전 IB 감염 → 수란관 손상·위축 → 겉은 멀쩡한데 알을 못 낳음 = 가짜 산란계(false layer)<br>· 원인은 <b>IB</b> (IBD 아님)`,
+lpai:`<b>"치·삽·삽·연"</b> — ① 치환(비염기성 → 염기성) ② 삽입(염기성 여러 개) ③ 삽입(출처 미지 짧은 서열) ④ 연장<br>→ 결과는 모두 <b>"절단부위에 염기성 aa 늘리기"</b> = 어디서나 잘리는 HPAI형`,
+hps:`<b>이름이 곧 답</b> — HPS = <b>H</b>ydro<b>p</b>ericardium(심낭수종) + Hepatitis → <b>심낭에 노란 물</b> + <b>간 출혈·괴사</b><br>· 원인 = FAdV <b>4형</b>`,
+arv:`<b>Reo = R</b>espiratory <b>E</b>nteric <b>O</b>rphan → 호흡기·장<br>+ 다리(바이러스성 <b>관절염·건초염</b>) + <b>발육부전·흡수불량</b> + 면역억제 / <b>신경계는 없음</b>`,
+mdvfail:`<b>"부·증·조·동"</b> — <b>부</b>화장 접종 시술 · 백신주 <b>증</b>식 · 야외주 <b>조</b>기 노출(면역 생기기 전) · 면역억제 병원체 <b>동</b>시감염`,
+genome:`<span style="color:#6b6b6b">(답지·PPT 아직 없음 — 일반 교과서 기준)</span><br>
+· 둘 다 (−)ssRNA 비분절. <b>ND: 3′-NP-P-M-F-HN-L-5′</b> (6개) → "엔피엠, 에프, 헤엔, 엘"<br>
+· <b>aMPV: 3′-N-P-M-F-M2-SH-G-L-5′</b> (8개) → F 다음에 <b>"M2·쉬(SH)·쥐(G)"</b><br>
+· 차이: aMPV는 <b>HN 대신 G</b>(혈구응집·NA 활성 없음) + <b>M2·SH</b> 추가, F·M2 순서 다름`,
+alv:`<b>V+A− = 바이러스는 있는데 항체가 없다</b> = 면역관용(어려서 감염돼 몸이 바이러스를 "내 것"으로 인식) → 항체가 안 막으니 알로 계속 흘려보냄 → <b>난백분비선</b>(난관)에서 증식해 난백으로 전파`,
+ibvg:`<b>유전체 순서대로 1번부터 6번까지</b> — "<b>폴·스·쓰리·엠·오·엔</b>"<br>
+1 Polymerase · 2 Spike · 3 <b>3</b>a/<b>3</b>b/E · 4 M · 5 <b>5</b>a/<b>5</b>b · 6 N → 번호 3·5엔 같은 숫자 이름 단백질이 들어감`,
+ibda:`<b>A분절 = "오(5) / 2-4-3"</b> — ORF1 → VP<b>5</b>, ORF2 → pVP<b>2</b>-VP<b>4</b>-VP<b>3</b><br>
+<b>역할 비유</b>: VP2 = 겉옷(중화항원) · VP3 = 속옷 + 조립 반장 · VP4 = 가위(protease) · VP5 = 탈출구(막 구멍·apoptosis 지연) · pep46 = 소낭 뚫는 드릴 · (B분절 VP1 = 복사기 RdRp)`,
+cell:`<b>장기가 다 자라야 떼어 쓴다</b> — 섬유아세포·간은 중간(14~15일령), 신장(K)·폐(Lu)는 늦게 완성(18~20일령), CK는 아예 닭(6주령)`,
+aivcell:`· 초대배양: <b>CEF, CEK</b> (닭 배아 섬유아·신장)<br>· 세포주: <b>MDCK</b>(Madin-Darby <b>Canine</b> Kidney = 개 신장, 인플루엔자 국민 세포주) · <b>DF-1</b>(닭 섬유아세포주)`,
+aeimg:`<b>"뇌는 녹고, 위·췌장엔 림프구가 몰려온다"</b><br>· 뇌 신경세포 = Nissl 소실(central chromatolysis) · 선위 근육층 = 림프구 침윤 · 췌장 = 림프소절 증식`,
+ndimg:`<b>강독형 ND = 출혈 3종 세트</b> — 선위(유두) 출혈 · 소장(림프조직) 출혈·궤양 · 뇌 = perivascular cuffing(혈관 주위를 림프구가 소매처럼 둘러쌈)`,
+mdvmech:`<b>"폐로 들어와 B로 시작해서 T에 숨는다"</b><br>흡입 → <b>폐</b> 대식세포 → <b>B세포</b> 용해성 감염 → (6~7일) <b>활성화 CD4+ T</b>에 잠복 → 깃털 모낭 상피에서 후기 용해(전파) → <b>종양화(림프종)</b>`,
+ibdrec:`· 미성숙 B·DT40은 <b>B세포</b>니까 → 항체 부품(IgM, λ light chain)<br>· DF1 = <b>HSP90</b> / 3T3 = <b>α4β1 integrin</b> → VP2 바깥의 integrin-binding motif와 맞물림`,
+vert:`<b>난계대 바이러스 6종</b> — 레트로 2(<b>LL·RE</b>) + "<b>아·씨·이·레</b>"(<b>A</b>E · <b>C</b>IA · <b>E</b>DS · <b>Re</b>o)<br>· AI는 난계대 근거 없음`,
+rbp:`<span style="color:#6b6b6b">(답지 없음 — 19번 중화단백질 답지·교재 기준)</span><br>NDV <b>HN</b>(hemagglutinin-neuraminidase) · aMPV <b>G</b>(attachment glycoprotein) · IBV <b>S1</b>(spike glycoprotein) · AIV <b>HA</b>(hemagglutinin) · FAdV <b>fiber</b> · ARV <b>σC</b>(sigma C)`,
+serol:`· 목적 <b>"효·유"</b> — 백신 <b>효</b>능 점검 / 미접종 질병 <b>유</b>입 모니터링<br>· 검사법 <b>"평·한·중·혈"</b> — 평판응집 · 한천겔침강(AGP) · 중화 · 혈구응집저지(HI) (+ ELISA)`
+};
+const TIP_ID={
+'2025-1':`· 정답 ④ ND. 나머지가 왜 틀렸나: ① IB는 혈청형이 많아 백신 항체가 야외주 방어 <b>약함</b> · ② MD는 깃털 비듬 → <b>호흡기</b> 감염 · ③ AE는 <b>어린 병아리</b> 신경증상(성계는 산란저하만) · ⑤ pox는 DNA인데 예외적으로 <b>세포질</b>에서 복제 → <b>세포질</b> 봉입체`,
+'2025-2':`· IBD <b>2주령 이하</b> = F낭 미성숙 → 폐사 적고 <b>면역억제만</b> (조용히 망가짐) / 폐사 많은 임상형은 3~6주령`,
+'2025-3':`· AI는 <b>난계대 근거 없음</b> (PPT 개요) — 나머지 4개(CIA, AE, ALV, 아데노)는 난계대 단골`,
+'2025-4':`· <b>Reo = R</b>espiratory <b>E</b>nteric <b>O</b>rphan → 호흡기·장 + 발육부전·흡수불량·면역억제. <b>신경</b>만 없다`,
+'2025-5':`· A·B형은 형제 → <b>교차면역 O</b>. 나머지: Pneumoviridae(ND와 다른 과) · 칠면조가 더 심함 · 수직 X · 혈구응집 X(HN 없음, G 단백질)`,
+'2025-6':`· 물새는 물 위에서 똥 싸고 그 물 마신다 → <b>분변-경구</b>`,
+'2025-8':`· <b>녹색설사 + 신경 + 호흡기 + 산란저하</b> = ND 4종 세트`,
+'2025-9':`· HPS = FAdV <b>4형</b> — "심낭(Hydro<b>p</b>ericardium)은 <b>4</b>형" · Aviadeno속 · IBH와 비슷해 감별 어려움`,
+'2025-10':`· IBD = 면역억제 → <b>2차감염 문을 열어줌</b> / 외피 없어 환경에 강함 · <b>B</b>림프구 표적 · 혈구응집 X · 2주령 이하는 폐사 적음`,
+'2025-11':`· MD 숙주 = 닭 + <b>칠면조·메추리·꿩</b> / 비듬(깃털 모낭)→호흡기 / 매개체 X / <b>α</b>-herpes (γ 같은 성질만 있음)`,
+'2025-12':`· AE 림프구 몰리는 곳 = <b>선위·췌장</b> → "위·췌장에 림프구"`,
+'2024-22':`<b>"균·도·사·반·방·발"</b> — <b>균</b>일 접종 · <b>D</b>ose · <b>사</b>육형태·밀도 · 접종<b>반</b>응 · 백신·접종<b>방</b>법 · 질병<b>발</b>생 상황`,
+'2024-23':`· 물통은 <b>가장 짧은 판자</b> 높이까지만 찬다 → 방역도 <b>가장 약한 고리</b>가 결정 · 깨진유리창 <b>100 − 1 = 0</b>`,
+'2024-24':`<b>"통·청·소·시"</b> — 통제 · 청소 · 소독 · 시설보수 ("통(桶) 청소 시(時)")`,
+'2024-25':`· <b>R0 = p × c × D</b>의 각 항을 줄인다고 생각 — 감염원 제거(D↓) / 환경 생존·매개체·차량도구 줄이기(p↓) / 밀도·격리·올인올아웃(c↓) / 백신·영양으로 항병력↑(p↓)`,
+'2024-26':`<b>"균·밀·동·모·항"</b> — 불<b>균</b>일 접종 · 고<b>밀</b>도(감염압) · 면역억제 <b>동</b>시감염 · <b>모</b>체항체 간섭 · <b>항</b>원성 차이`,
+'2024-27':`· 피라미드 꼭대기 한 계군 → 아래로 수천만 수 → <b>부화장은 길목</b><br>· 추백리·가금티푸스 = <b>난계대</b> 법정전염병 · 최종목표 = <b>차단방역</b>`,
+'2024-30':`· PPT 4p 그림 그대로 — 왼쪽 <b>PS 3개</b>(위생·면역 / 주령 / 영양) · 오른쪽 <b>환경 3개</b>(계사환경 / 사육시설 / 사료) · 위 <b>전염성 질병</b> · 아래 <b>차단방역·예방접종</b>`
+};
+function tipFor(q){return TIP_ID[q.id]||TIP_G[q.g]||''}
+
+/* ===== 저장 ===== */
+const KEY='avian-midterm-2021-2025';
+let S={};
+try{S=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){S={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* ===== 렌더 ===== */
+function ta(k,ph,rows,cls){return `<textarea data-k="${k}" rows="${rows||1}" placeholder="${esc(ph||'')}"${cls?` class="${cls}"`:''}>${esc(S[k])}</textarea>`}
+function body(q){
+ const id=q.id;
+ if(q.t==='mc') return `<div class="ch">${q.c.map((x,i)=>`<button class="opt${S[id]===i?' sel':''}" data-mc="${id}" data-v="${i}"><b>${C[i]}</b><span>${x}</span></button>`).join('')}</div>`;
+ if(q.t==='ox') return `<div class="ch">${q.c.map((x,i)=>{const on=!!S[id+':c'+i];return `<div class="ox"><label class="opt${on?' sel':''}"><input type="checkbox" data-k="${id}:c${i}"${on?' checked':''}><b>${C[i]}</b><span>${x}</span></label>${PEN?'':ta(id+':r'+i,'틀린 이유 / 올바르게 고치면?',2,'why'+(on?'':' hide'))}</div>`}).join('')}</div>${PEN?padHTML(id+':x',190,'틀린 보기 번호와 이유를 손으로 써요'):''}`;
+ if(q.t==='fill') return `<div class="ink-wrap" data-pad="${id}:o"><div class="fills">${q.f.map((f,i)=>`<div class="fr"><label>${f}</label>${ta(id+':f'+i,'',1)}</div>`).join('')}</div></div>`;
+ if(q.t==='essay') return PEN?padHTML(id+':e',(q.r||5)>3?320:200,''):ta(id+':e','답안 작성',q.r||5,'es');
+ if(q.t==='tbl') return `<div class="tw"><div class="ink-wrap" data-pad="${id}:o"><table><thead><tr><th></th>${q.tb.cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>${q.tb.rows.map((r,ri)=>`<tr><th>${r}</th>${q.tb.cols.map((c,ci)=>`<td>${ta(id+':t'+ri+'_'+ci,'',2)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
+ if(q.t==='tax'){const cols=q.cols||[0,1,2,3,4,5];return `<div class="tw"><div class="ink-wrap" data-pad="${id}:o"><table class="tax"><thead><tr><th>질병명</th>${cols.map(c=>`<th>${TAXCOLS[c]}</th>`).join('')}</tr></thead><tbody>${TAXROWS.map((r,ri)=>`<tr><th>${r[0]}<br><span style="font-weight:400;color:#6b6b6b">${r[1]}</span></th>${cols.map(c=>`<td data-cell="${ri}_${c}">${ta(id+':x'+ri+'_'+c,'',c===5?1:2)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ if(q.t==='cloze') return `<div class="ink-wrap" data-pad="${id}:o"><div class="cloze">${q.z.split('\n').map(l=>l.replace(/\[\[(.+?)\]\]/g,(m,lab)=>{const k=id+':z_'+lab;return `<span class="cz-wrap"><i>${lab}</i><input class="cz" data-k="${esc(k)}" value="${esc(S[k])}"></span>`})).join('<br>')}</div></div>`;
+ if(q.t==='na') return `<div class="na">이 문항은 기출집에 내용이 없어요.</div>`;
+ return '';
+}
+function isDone(q){
+ if(q.t==='na') return false;
+ if(q.t==='mc') return S[q.id]!==undefined && S[q.id]!==null;
+ const p=q.id+':';
+ return Object.keys(S).some(k=>k.startsWith(p)&&S[k]!==''&&S[k]!==false)||Object.keys(INK).some(k=>k.startsWith(p)&&INK[k]&&INK[k].s&&INK[k].s.length);
+}
+function card(q,showTopic){
+ const tag=TAGS[q.g]||'';
+ const ci=DUPOF[q.id],times=ci!=null?DUP[ci].length:0;
+ return `<div class="q${isDone(q)?' done':''}" id="q-${q.id}" data-id="${q.id}">
+  <div class="qh"><span class="yr">${q.y}</span><span class="no">${q.n}.</span><span class="ty">${TYLABEL[q.t]}</span>${times?`<span class="rep">🔁 ${times}회 출제</span>`:''}${tag&&q.t!=='na'?`<span class="tg">${tag}</span>`:''}</div>
+  ${relHTML(q)}
+  <div class="qt">${q.q}</div>
+  ${q.note?`<div class="note red">${q.note}</div>`:''}
+  ${q.img?`<div class="img">📷 사진 문제 — 기출집 ${q.img}를 보며 풀기</div>`:''}
+  ${body(q)}
+  ${q.t!=='na'?`<div class="qf"><button class="btn red" data-ans="${q.id}">정답 보기</button>${q.t==='tax'&&!PEN?`<button class="btn" data-grade="${q.id}">표 채점</button>`:''}${tipFor(q)?`<button class="btn tipb" data-tip="${q.id}">💡 암기 팁</button>`:''}<button class="btn" data-clr="${q.id}">지우기</button></div><div class="ans hide" id="a-${q.id}"></div>${tipFor(q)?`<div class="tip hide" id="t-${q.id}"><h4>💡 암기 팁</h4>${tipFor(q)}</div>`:''}`:''}
+ </div>`;
+}
+
+let view='all';
+const VIEWS=[['all','전체'],['2025','2025'],['2024','2024'],['2023','2023'],['2022','2022'],['2021','2021'],['topic','주제별 · 반복 출제']];
+function tabs(){
+ document.getElementById('tabs').innerHTML=VIEWS.map(([k,l])=>`<button class="tab${k==='topic'?' topic':''}${view===k?' on':''}" data-view="${k}">${l}</button>`).join('');
+}
+function prog(){
+ const all=Q.filter(q=>q.t!=='na'),d=all.filter(isDone).length;
+ document.getElementById('prog').innerHTML=`작성 <b>${d}</b> / ${all.length}`;
+}
+function render(){
+ tabs();prog();
+ const only=document.getElementById('onlyEmpty').checked;
+ const ok=q=>!only||(!isDone(q)&&q.t!=='na');
+ let h=`<div class="legend"><b class="r">🔁 동일 문제</b> = 다른 해에 거의 그대로 나온 문제 (보기 차이는 갈색 메모, ⚠는 답이 달라질 수 있는 차이) · <b class="n">≈ 유사 문제</b> = 같은 주제인데 묻는 범위·형식이 다른 문제 · 칩을 누르면 그 문제로 이동</div>`;
+ if(view==='topic'){
+  const groups={};Q.filter(q=>q.t!=='na').forEach(q=>{(groups[q.g]=groups[q.g]||[]).push(q)});
+  const keys=Object.keys(TAGS).filter(k=>groups[k]).sort((a,b)=>groups[b].length-groups[a].length);
+  h+=`<div class="freq"><h3>★ 출제 빈도 순 — 많이 나온 것부터</h3><div class="chips">${keys.map(k=>`<a href="#t-${k}">${TAGS[k]} <b>${groups[k].length}</b></a>`).join('')}</div></div>`;
+  keys.forEach(k=>{
+   const cl=q=>DUPOF[q.id]!=null?DUPOF[q.id]:1e3;
+   const list=groups[k].filter(ok).sort((a,b)=>cl(a)-cl(b)||b.y-a.y);if(!list.length)return;
+   const yrs=[...new Set(groups[k].map(q=>q.y))].join('·');
+   h+=`<div class="tophead" id="t-${k}"><h2>${TAGS[k]}<span>${groups[k].length}회 · ${yrs}</span></h2></div>`+list.map(q=>card(q,true)).join('');
+  });
+ }else{
+  const ys=view==='all'?['2025','2024','2023','2022','2021']:[view];
+  ys.forEach(y=>{
+   const list=Q.filter(q=>q.y===y&&ok(q));
+   h+=`<div class="yearhead"><div class="k">${y}</div><h2>${YEARS[y].t}</h2><p>${YEARS[y].n}</p></div>`;
+   h+=list.length?list.map(q=>card(q)).join(''):`<div class="empty">다 풀었어요 👏</div>`;
+  });
+ }
+ document.getElementById('main').innerHTML=h;
+ if(document.getElementById('showAll').checked) document.querySelectorAll('.q[data-id]').forEach(e=>{showAns(e.dataset.id,true);const t=document.getElementById('t-'+e.dataset.id);if(t)t.classList.remove('hide')});
+ document.querySelectorAll('textarea').forEach(fit);
+ mountPads();
+}
+function fit(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'}
+function refreshCard(id){
+ const q=Q.find(x=>x.id===id),el=document.getElementById('q-'+id);if(!q||!el)return;
+ el.classList.toggle('done',isDone(q));prog();
+}
+
+/* ===== 정답 ===== */
+function taxRefTable(q){
+ const cols=q.cols||[0,1,2,3,4,5];
+ return `<h4>기출집 p.229 수록 표 (기출집 원본 그대로)</h4><div class="tw"><table><thead><tr><th>질병명</th>${cols.map(c=>`<th>${TAXCOLS[c]}</th>`).join('')}</tr></thead><tbody>${TAXROWS.map((r,ri)=>`<tr><th>${r[0]} ${r[1]}</th>${cols.map(c=>`<td>${TAXREF[ri][c]||'<span style="color:#aaa">(공란)</span>'}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+}
+function showAns(id,force){
+ const q=Q.find(x=>x.id===id),box=document.getElementById('a-'+id),el=document.getElementById('q-'+id);if(!box||!el)return;
+ const open=!box.classList.contains('hide');
+ if(open&&force!==true){box.classList.add('hide');clearMarks(id);return}
+ if(open)return;
+ const A=ANSWERS[id];let h='';
+ if(A){
+  if(A.from) h+=`<div class="afrom">📎 ${A.from}에서 가져온 답</div>`;
+  if(A.warn) h+=`<div class="awarn">${A.warn}</div>`;
+  if(q.t==='mc'&&A.mc!=null){el.querySelectorAll('.opt').forEach((o,i)=>{if(i===A.mc)o.classList.add('right');else if(i===S[id])o.classList.add('wrong')});h+=`<div class="abig">정답 ${C[A.mc]}</div>`}
+  if(q.t==='ox'&&A.ox){
+   const pick=q.c.map((_,i)=>!!S[id+':c'+i]),any=pick.some(Boolean);
+   el.querySelectorAll('.ox').forEach((d,i)=>{const o=d.querySelector('.opt'),ans=A.ox.includes(i);
+    if(ans)o.classList.add('right');else if(pick[i])o.classList.add('wrong');
+    if(A.oxr&&A.oxr[i])d.insertAdjacentHTML('beforeend',`<div class="ia">${ans?'✗ 틀린 이유':'?'} → ${A.oxr[i]}</div>`)});
+   const hit=A.ox.filter(i=>pick[i]).length,bad=pick.filter((p,i)=>p&&!A.ox.includes(i)).length;
+   h+=`<div class="abig">틀린 보기: ${A.ox.map(i=>C[i]).join(' ')}${any?` <span class="ascore">· 내가 고른 것 ${hit}/${A.ox.length} 맞힘${bad?`, ${bad}개 잘못 고름`:''}</span>`:''}</div>`;
+  }
+  if(PEN&&(q.t==='fill'||q.t==='tbl'||q.t==='cloze')) h+=penAnsList(q,A);
+  else if(q.t==='fill'&&A.f) el.querySelectorAll('.fr').forEach((r,i)=>{if(A.f[i]!=null)r.querySelector('textarea').insertAdjacentHTML('afterend',`<div class="ia">→ ${A.f[i]}</div>`)});
+  else if(q.t==='tbl'&&A.t) A.t.forEach((row,ri)=>row.forEach((v,ci)=>{const t=el.querySelector(`textarea[data-k="${id}:t${ri}_${ci}"]`);if(t)t.insertAdjacentHTML('afterend',`<div class="ia">→ ${v}</div>`)}));
+  else if(q.t==='cloze'&&A.z) el.querySelectorAll('input.cz').forEach(inp=>{const lab=inp.dataset.k.split(':z_')[1];const v=A.z[lab];inp.closest('.cz-wrap').insertAdjacentHTML('beforeend',`<span class="iaz">${v!=null?v:'—'}</span>`)});
+  if(A.html) h+=`<div class="ahtml">${A.html}</div>`;
+  if(A.src) h+=`<div class="asrc">출처: ${A.src}</div>`;
+ }
+ if(q.t==='tax') h+=taxRefTable(q);
+ if(!A&&q.t!=='tax') h+=`<div class="ph">이 문제는 답지에 없어요 (동일 문제 답도 없음).</div>`;
+ if(!A&&q.t==='tax') h=`<div class="ph">답지엔 이 표가 없어서, 기출집에 실린 표로 대신해요 — "표 채점"으로 맞춰보기</div>`+h;
+ box.innerHTML=h;box.classList.remove('hide');
+}
+function clearMarks(id){const el=document.getElementById('q-'+id);if(!el)return;el.querySelectorAll('.opt').forEach(o=>o.classList.remove('right','wrong'));el.querySelectorAll('.ia,.iaz').forEach(x=>x.remove())}
+const norm=s=>String(s||'').toLowerCase().replace(/[\s,·()=]/g,'').replace(/→|->/g,'>').replace(/−/g,'-');
+function cellOk(inp,ref,c){
+ const a=norm(inp),r=norm(ref);
+ if(c===5){const yes=['o','0','유','있음','+'],no=['x','무','없음','-'];return (r==='o'&&yes.includes(a))||(r==='x'&&no.includes(a))}
+ if(r==='-'||r==='') return a===''||a==='-'||a==='없음'||a==='x';
+ if(!a) return false;
+ return a===r||(a.length>=3&&(r.includes(a)||a.includes(r)));
+}
+function grade(id){
+ const q=Q.find(x=>x.id===id),cols=q.cols||[0,1,2,3,4,5];let ok=0,tot=0;
+ TAXROWS.forEach((r,ri)=>cols.forEach(c=>{
+  const td=document.querySelector(`#q-${id} td[data-cell="${ri}_${c}"]`);if(!td)return;
+  td.classList.remove('ok','bad');const old=td.querySelector('.fix');if(old)old.remove();
+  const ref=TAXREF[ri][c];if(ref===''&&(c===4||c===5||ri===14))return;
+  tot++;const good=cellOk(S[`${id}:x${ri}_${c}`],ref,c);
+  td.classList.add(good?'ok':'bad');if(good)ok++;else td.insertAdjacentHTML('beforeend',`<span class="fix">${esc(ref)}</span>`);
+ }));
+ const btn=document.querySelector(`[data-grade="${id}"]`);if(btn)btn.textContent=`표 채점 · ${ok}/${tot}`;
+}
+
+
+/* ===== 펜 필기 ===== */
+let PEN=false,FINGER=false,TOOL='pen',PCOL='#1a1a1a',PW=2.2,INK={},HIST=[];
+try{PEN=localStorage.getItem('avian-pen')==='1';FINGER=localStorage.getItem('avian-finger')==='1'}catch(e){}
+let IDB=null;
+function idbOpen(){return new Promise(res=>{try{const r=indexedDB.open('avian-ink',1);r.onupgradeneeded=()=>r.result.createObjectStore('ink');r.onsuccess=()=>res(r.result);r.onerror=()=>res(null)}catch(e){res(null)}})}
+async function inkLoad(){
+ IDB=await idbOpen();if(!IDB)return;
+ await new Promise(res=>{try{const tx=IDB.transaction('ink','readonly'),st=tx.objectStore('ink'),rq=st.openCursor();
+  rq.onsuccess=()=>{const c=rq.result;if(c){INK[c.key]=c.value;c.continue()}else res()};rq.onerror=()=>res()}catch(e){res()}});
+}
+const inkTimers={};
+function inkSave(k){clearTimeout(inkTimers[k]);inkTimers[k]=setTimeout(()=>{if(!IDB)return;try{IDB.transaction('ink','readwrite').objectStore('ink').put(INK[k],k)}catch(e){}},400)}
+function inkDel(k){if(!IDB)return;try{IDB.transaction('ink','readwrite').objectStore('ink').delete(k)}catch(e){}}
+function padHTML(key,hgt,ph){const H=(INK[key]&&INK[key].h)||hgt;return `<div class="padbox"><div class="pad lined" data-pad="${key}" style="height:${H}px">${ph?`<span class="padph">${ph}</span>`:''}</div><button class="btn padmore" data-more="${key}">+ 공간 늘리기</button></div>`}
+function penAnsList(q,A){
+ let r='<div class="alist">';
+ if(q.t==='fill'&&A.f) q.f.forEach((f,i)=>{if(A.f[i]!=null)r+=`<div><b>${f}</b> → ${A.f[i]}</div>`});
+ if(q.t==='tbl'&&A.t) q.tb.rows.forEach((row,ri)=>{r+=`<div><b>${row}</b> → ${q.tb.cols.map((c,ci)=>A.t[ri]&&A.t[ri][ci]!=null?`${c}: ${A.t[ri][ci]}`:'').filter(Boolean).join(' / ')}</div>`});
+ if(q.t==='cloze'&&A.z) Object.entries(A.z).forEach(([l,v])=>{r+=`<span class="azc"><i>${l}</i> ${v}</span>`});
+ return r+'</div>';
+}
+function mountPads(){
+ document.querySelectorAll('[data-pad]').forEach(host=>{
+  if(!PEN){if(host._pad){host._pad.destroy();host._pad=null}return}
+  if(!host._pad) host._pad=new Pad(host);
+ });
+}
+class Pad{
+ constructor(host){
+  this.host=host;this.key=host.dataset.pad;this.c=document.createElement('canvas');this.c.className='ink';host.appendChild(this.c);
+  this.ctx=this.c.getContext('2d');this.cur=null;this.erasing=false;
+  this.ro=new ResizeObserver(()=>this.size());this.ro.observe(host);
+  const c=this.c;
+  this.onDown=e=>this.down(e);this.onMove=e=>this.move(e);this.onUp=e=>this.up(e);
+  c.addEventListener('pointerdown',this.onDown);c.addEventListener('pointermove',this.onMove);
+  c.addEventListener('pointerup',this.onUp);c.addEventListener('pointercancel',this.onUp);c.addEventListener('pointerleave',this.onUp);
+  this.onTouch=ev=>{if(FINGER){ev.preventDefault();return}for(const t of ev.touches){if(t.touchType==='stylus'){ev.preventDefault();return}}};
+  c.addEventListener('touchstart',this.onTouch,{passive:false});c.addEventListener('touchmove',this.onTouch,{passive:false});
+  this.size();
+ }
+ destroy(){this.ro.disconnect();this.c.remove()}
+ data(){return INK[this.key]||(INK[this.key]={w:this.w,s:[]})}
+ size(){
+  const w=this.host.offsetWidth,h=this.host.offsetHeight,d=window.devicePixelRatio||1;
+  if(!w||!h)return;if(w===this.w&&h===this.h)return;
+  this.w=w;this.h=h;this.c.style.width=w+'px';this.c.style.height=h+'px';this.c.width=Math.round(w*d);this.c.height=Math.round(h*d);
+  this.ctx.setTransform(d,0,0,d,0,0);this.c.style.touchAction=FINGER?'none':'pan-x pan-y';this.redraw();
+ }
+ ok(e){return e.pointerType==='pen'||e.pointerType==='mouse'||(FINGER&&e.pointerType==='touch')}
+ pt(e){const r=this.c.getBoundingClientRect();const D=this.data(),sc=(D.w||this.w)/this.w;return [(e.clientX-r.left)*sc,(e.clientY-r.top)*sc,e.pointerType==='pen'?(e.pressure||0.5):0.5]}
+ down(e){
+  if(!this.ok(e))return;e.preventDefault();this.c.setPointerCapture(e.pointerId);
+  const D=this.data();if(!D.w)D.w=this.w;
+  if(TOOL==='erase'||e.button===5||(e.buttons&32)){this.erasing=true;this.removed=[];this.erase(this.pt(e));return}
+  const p=this.pt(e);this.cur={c:PCOL,w:PW,p:[+p[0].toFixed(1),+p[1].toFixed(1),+p[2].toFixed(2)]};
+  const ph=this.host.querySelector('.padph');if(ph)ph.remove();
+ }
+ move(e){
+  if(this.erasing){this.erase(this.pt(e));return}
+  if(!this.cur)return;e.preventDefault();
+  const evs=e.getCoalescedEvents?e.getCoalescedEvents():[e];
+  for(const ev of evs){const p=this.pt(ev),P=this.cur.p,n=P.length;
+   const lx=P[n-3],ly=P[n-2];if(Math.hypot(p[0]-lx,p[1]-ly)<0.8)continue;
+   P.push(+p[0].toFixed(1),+p[1].toFixed(1),+p[2].toFixed(2));this.seg(this.cur,P.length/3-2)}
+ }
+ up(e){
+  if(this.erasing){this.erasing=false;if(this.removed.length){HIST.push({k:this.key,t:'e',s:this.removed});inkSave(this.key);afterInk(this.key)}return}
+  if(!this.cur)return;const D=this.data();
+  if(this.cur.p.length===3){this.cur.p.push(this.cur.p[0]+0.3,this.cur.p[1]+0.3,this.cur.p[2]);this.seg(this.cur,0)}
+  D.s.push(this.cur);HIST.push({k:this.key,t:'a',s:this.cur});this.cur=null;inkSave(this.key);afterInk(this.key);
+ }
+ erase(p){const D=this.data(),R=10;const keep=[];
+  D.s.forEach(st=>{let hit=false;for(let i=0;i<st.p.length;i+=3){if(Math.hypot(st.p[i]-p[0],st.p[i+1]-p[1])<R){hit=true;break}}if(hit)this.removed.push(st);else keep.push(st)});
+  if(keep.length!==D.s.length){D.s=keep;this.redraw()}}
+ seg(st,i){const ctx=this.ctx,P=st.p,sc=this.w/((this.data().w)||this.w);
+  const x0=P[i*3]*sc,y0=P[i*3+1]*sc,x1=P[i*3+3]*sc,y1=P[i*3+4]*sc,pr=P[i*3+5];
+  ctx.strokeStyle=st.c;ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=st.w*(0.45+pr*1.1)*sc;
+  ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x1,y1);ctx.stroke()}
+ redraw(){const ctx=this.ctx;ctx.clearRect(0,0,this.w,this.h);const D=INK[this.key];if(!D)return;D.s.forEach(st=>{for(let i=0;i<st.p.length/3-1;i++)this.seg(st,i)})}
+}
+function afterInk(key){refreshCard(key.split(':')[0])}
+function padOf(key){const el=document.querySelector(`[data-pad="${CSS.escape(key)}"]`);return el&&el._pad}
+function setPen(on,init){
+ PEN=on;try{localStorage.setItem('avian-pen',on?'1':'0')}catch(e){}
+ document.body.classList.toggle('pen',on);document.getElementById('penbar').classList.toggle('hide',!on);
+ const b=document.getElementById('penBtn');b.classList.toggle('on',on);b.textContent=on?'✍️ 펜 ON':'✍️ 펜 필기';
+ document.getElementById('pFinger').classList.toggle('on',FINGER);
+ render();
+}
+document.getElementById('penBtn').addEventListener('click',()=>setPen(!PEN));
+document.getElementById('penbar').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.col){PCOL=b.dataset.col;TOOL='pen';document.querySelectorAll('.pc').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pErase').classList.remove('on');return}
+ if(b.dataset.w){PW=+b.dataset.w;TOOL='pen';document.querySelectorAll('.pw').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('pErase').classList.remove('on');return}
+ if(b.id==='pErase'){TOOL=TOOL==='erase'?'pen':'erase';b.classList.toggle('on',TOOL==='erase');return}
+ if(b.id==='pFinger'){FINGER=!FINGER;try{localStorage.setItem('avian-finger',FINGER?'1':'0')}catch(e){}b.classList.toggle('on',FINGER);document.querySelectorAll('canvas.ink').forEach(c=>c.style.touchAction=FINGER?'none':'pan-x pan-y');return}
+ if(b.id==='pUndo'){const h=HIST.pop();if(!h)return;const D=INK[h.k];if(!D)return;
+  if(h.t==='a')D.s=D.s.filter(s=>s!==h.s);else D.s=D.s.concat(h.s);
+  inkSave(h.k);const p=padOf(h.k);if(p)p.redraw();afterInk(h.k);return}
+});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-more]');if(!b)return;const k=b.dataset.more,el=document.querySelector(`[data-pad="${CSS.escape(k)}"]`);if(!el)return;
+ const nh=el.offsetHeight+140;el.style.height=nh+'px';const D=INK[k]||(INK[k]={w:el._pad?el._pad.w:el.offsetWidth,s:[]});D.h=nh;inkSave(k)});
+
+/* ===== 이벤트 ===== */
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-view],[data-mc],[data-ans],[data-grade],[data-clr],[data-jump],[data-tip]');if(!t)return;
+ if(t.dataset.tip){const b=document.getElementById('t-'+t.dataset.tip);if(b)b.classList.toggle('hide');return}
+ if(t.dataset.jump){jump(t.dataset.jump);return}
+ if(t.dataset.view){view=t.dataset.view;render();window.scrollTo(0,0);return}
+ if(t.dataset.mc){const id=t.dataset.mc,v=+t.dataset.v;S[id]=S[id]===v?null:v;if(S[id]===null)delete S[id];save();
+  document.querySelectorAll(`#q-${id} .opt`).forEach((o,i)=>{o.classList.toggle('sel',S[id]===i);o.classList.remove('right','wrong')});refreshCard(id);return}
+ if(t.dataset.ans){showAns(t.dataset.ans);return}
+ if(t.dataset.grade){grade(t.dataset.grade);return}
+ if(t.dataset.clr){const id=t.dataset.clr;if(!confirm('이 문제의 내 답을 지울까요?'))return;
+  Object.keys(S).forEach(k=>{if(k===id||k.startsWith(id+':'))delete S[k]});save();
+  Object.keys(INK).forEach(k=>{if(k.startsWith(id+':')){delete INK[k];inkDel(k)}});
+  const q=Q.find(x=>x.id===id),el=document.getElementById('q-'+id);el.outerHTML=card(q);document.querySelectorAll(`#q-${id} textarea`).forEach(fit);mountPads();prog();}
+});
+document.addEventListener('input',e=>{
+ const k=e.target.dataset&&e.target.dataset.k;if(!k)return;
+ if(e.target.type==='checkbox'){S[k]=e.target.checked;if(!S[k])delete S[k];
+  const lab=e.target.closest('.opt');lab.classList.toggle('sel',e.target.checked);
+  const why=lab.nextElementSibling;if(why){why.classList.toggle('hide',!e.target.checked);fit(why)}}
+ else{S[k]=e.target.value;if(!S[k])delete S[k];if(e.target.tagName==='TEXTAREA')fit(e.target)}
+ save();refreshCard(k.split(':')[0]);
+});
+document.addEventListener('change',e=>{if(e.target.type==='checkbox'&&e.target.dataset.k){e.target.dispatchEvent(new Event('input',{bubbles:true}))}});
+document.getElementById('onlyEmpty').addEventListener('change',render);
+document.getElementById('showAll').addEventListener('change',render);
+document.getElementById('reset').addEventListener('click',()=>{if(confirm('모든 문제의 내 답(타이핑·필기)을 지울까요? 되돌릴 수 없어요.')){S={};save();Object.keys(INK).forEach(k=>inkDel(k));INK={};render()}});
+inkLoad().then(()=>{setPen(PEN,true)});
+</script>
+</body>
+</html>
