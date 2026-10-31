@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대동물내과 서술형 기출답안</title>
+<style>
+@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-display:swap}
+@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:'GmarketSans';src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-weight:300;font-display:swap}
+:root{--ink:#111;--red:#d32f2f;--blue:#1f4fbf;--blue-t:#eef3fc;--line:#c9d6f2}
+*{box-sizing:border-box}
+html,body{background:#fff;margin:0}
+body{font-family:'GmarketSans','Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:500;color:var(--ink);font-size:14px;line-height:1.75;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding:36px 16px 80px}
+.subj{color:var(--red);font-weight:700;font-size:14px;letter-spacing:.5px}
+h1{font-size:26px;margin:4px 0 6px;padding-bottom:10px;border-bottom:3px solid var(--ink);line-height:1.35}
+.lead{font-weight:300;font-size:13px;margin:8px 0 18px}
+.legend{border:1.5px solid var(--ink);padding:10px 14px;font-size:12.8px;margin-bottom:18px}
+.legend b{font-weight:700}
+.toc{border:1.5px solid var(--blue);padding:12px 16px;margin-bottom:30px}
+.toc h3{margin:0 0 6px;font-size:15px;color:var(--blue)}
+.toc ol{margin:0;padding-left:0;list-style:none;columns:2;column-gap:26px;font-size:12.8px}
+.toc li{break-inside:avoid;padding:2px 0}
+.toc a{color:var(--ink);text-decoration:none}
+.toc .n{color:var(--red);font-weight:700;margin-right:6px}
+h2{font-size:20px;margin:44px 0 6px;padding:2px 0 6px 12px;border-left:6px solid var(--red);border-bottom:1.5px solid var(--ink)}
+.group{margin:26px 0 34px;break-inside:avoid-page}
+.gtitle{font-size:17px;font-weight:700;margin:0 0 8px}
+.gtitle .num{color:var(--red);margin-right:8px}
+.lbl{font-size:12px;font-weight:700;margin:0 0 3px}
+.lbl.q{color:var(--ink)}
+.lbl.a{color:var(--blue);margin-top:12px}
+.qbox{border:2px solid var(--ink);padding:10px 14px}
+.qbox p{margin:3px 0;padding-left:86px;text-indent:-86px}
+.yr{display:inline-block;width:82px;text-indent:0;color:var(--red);font-weight:700}
+.tag{display:inline-block;font-size:10.5px;line-height:1;border:1px solid var(--blue);color:var(--blue);padding:3px 4px 2px;margin-right:4px;vertical-align:1px;text-indent:0}
+.abox{border:2px solid var(--blue);padding:6px 16px 10px}
+.abox>.row{border-bottom:1px dotted var(--line);padding:7px 0}
+.abox>.row:last-child{border-bottom:none}
+.h{color:var(--blue);font-weight:700}
+.k{color:var(--red);font-weight:700}
+.b{font-weight:700}
+.light{font-weight:300}
+ul,ol.in{margin:2px 0 2px;padding-left:20px}
+li{margin:1px 0}
+.note{color:var(--red);font-size:12.6px;font-weight:500;margin:6px 0 0}
+.flow{border:1.5px dashed var(--blue);padding:8px 12px;margin:6px 0;line-height:2}
+.short{font-size:16px;font-weight:700;color:var(--red)}
+.tw{overflow-x:auto;margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:12.6px;min-width:520px}
+th,td{border:1px solid var(--ink);padding:5px 7px;vertical-align:middle;text-align:center}
+th{background:var(--blue-t);color:var(--blue);font-weight:700}
+td.l{text-align:left}
+td.f{font-weight:700;background:#fff}
+.new{display:inline-block;font-size:10.5px;line-height:1;background:var(--blue);color:#fff;padding:3px 5px 2px;margin-left:6px;vertical-align:1px;font-weight:700}
+.lbl.e{color:var(--red);margin-top:12px}
+.ebox{border:2.5px solid var(--red);padding:4px 14px}
+.erow{display:flex;gap:10px;padding:8px 0;border-bottom:1px dotted #e6b3b3}
+.erow:last-child{border-bottom:none}
+.ey{flex:0 0 auto;min-width:54px;color:var(--red);font-weight:700}
+.et{flex:1;font-size:14.2px}
+@media (max-width:600px){.erow{display:block}.ey{display:block}}
+.lbl.t{color:var(--blue);margin-top:10px}
+.tbox{border:1.5px dashed var(--blue);padding:6px 14px;font-size:13.4px}
+.trow{padding:3px 0}
+.trow::before{content:"▸ ";color:var(--blue)}
+.essay{display:inline-block;font-size:11px;line-height:1;border:1.5px solid var(--red);color:var(--red);padding:4px 6px 3px;margin-left:8px;vertical-align:2px;font-weight:700}
+.miss .qbox{border-color:var(--red)}
+.miss .abox{border:2px dashed var(--red);color:var(--red);font-size:13px}
+@media (max-width:600px){
+  .wrap{padding:24px 16px 60px}
+  h1{font-size:22px}
+  .toc ol{columns:1}
+  .qbox p{padding-left:0;text-indent:0}
+  .yr{display:inline;width:auto;margin-right:4px}
+}
+@media print{
+  .wrap{max-width:none;padding:10mm 4mm}
+  .toc{display:none}
+  h2{break-after:avoid}
+  .group{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="subj">대동물내과</div>
+<h1>서술형 기출 — 비슷한 문제끼리 묶은 답안</h1>
+<p class="lead">문제 출처: 대내과 서술형 문제모음(21~25년도) + 추가 문제(근골격·알러지) · 답 출처: 선배 족보 PDF 2개 + 새 족보(삼성노트). <b>비뇨기(신장) 파트는 기말 범위라 제외</b>. 범위 밖 문제(22년 1번 말 산통, 22년 단답 2번 소 장염 병원체)는 제외.</p>
+
+<div class="legend">
+<b>보는 법</b> — 검정 박스 = 묶어놓은 문제 / 파랑 박스 = 관련 내용(공부용) / <span class="k">빨강 박스 = 시험 답안</span>(기술형 2~3줄, 단답은 정답만) / 파랑 점선 = 외우는 팁<br><span class="essay" style="margin-left:0">서술형 출제예정</span> = 내과실습 서술형(오픈북) 주제와 겹치는 묶음 → 기술형으론 안 나올 가능성 높음<br>
+<span class="k">빨강</span> = 답안 키워드 · <span class="h">파랑</span> = 소제목 · <span class="tag">단답</span> = 단답형 문제 · <span class="k">※</span> = 주의할 점(족보 내용이 빈약하거나 문제 표기가 다를 때)
+</div>
+
+<nav class="toc">
+<h3>목차 (26묶음)</h3>
+<ol>
+<li><a href="#g01"><span class="n">01</span>반추위 미생물총의 기능</a></li>
+<li><a href="#g02"><span class="n">02</span>1위 산증</a></li>
+<li><a href="#g03"><span class="n">03</span>고창증</a></li>
+<li><a href="#g04"><span class="n">04</span>창상성 심낭염</a></li>
+<li><a href="#g05"><span class="n">05</span>제4위 좌방전위</a></li>
+<li><a href="#g06"><span class="n">06</span>지방종증</a></li>
+<li><a href="#g07"><span class="n">07</span>간염 원인</a></li>
+<li><a href="#g08"><span class="n">08</span>간성뇌증</a></li>
+<li><a href="#g09"><span class="n">09</span>지방간증</a></li>
+<li><a href="#g10"><span class="n">10</span>황달</a></li>
+<li><a href="#g11"><span class="n">11</span>ALP</a></li>
+<li><a href="#g12"><span class="n">12</span>쇼크 · DIC</a></li>
+<li><a href="#g13"><span class="n">13</span>부종 · 누출액</a></li>
+<li><a href="#g14"><span class="n">14</span>혈액 기능장애 유형</a></li>
+<li><a href="#g15"><span class="n">15</span>수혈 부작용</a></li>
+<li><a href="#g16"><span class="n">16</span>빈혈 접근 · 검사항목</a></li>
+<li><a href="#g17"><span class="n">17</span>영양결핍성 빈혈</a></li>
+<li><a href="#g18"><span class="n">18</span>거대비장</a></li>
+<li><a href="#g19"><span class="n">19</span>림프절 종대</a></li>
+<li><a href="#g20"><span class="n">20</span>근병증(Myopathy)</a></li>
+<li><a href="#g21"><span class="n">21</span>골이영양증 원인</a></li>
+<li><a href="#g22"><span class="n">22</span>관절증 vs 관절염</a></li>
+<li><a href="#g23"><span class="n">23</span>과민반응 Type Ⅰ~Ⅳ</a></li>
+<li><a href="#g24"><span class="n">24</span>제엽염</a></li>
+<li><a href="#g25"><span class="n">25</span>신생동물 동종면역성 용혈성 빈혈</a></li>
+<li><a href="#g26"><span class="n">26</span>소 수포성 구내염 원인체</a></li>
+</ol>
+</nav>
+
+<!-- ============ Ⅰ ============ -->
+<h2>Ⅰ. 제1위 · 제4위 · 심낭</h2>
+
+<section class="group" id="g01">
+<div class="gtitle"><span class="num">01</span>반추위 미생물총의 주요 기능</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 1번.</span>반추동물 제1위 내의 미생물총의 주요기능에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row">1위 내 미생물총: <span class="k">Gram(−) 간균류, 원충, 섬모충</span>으로 구성</div>
+<div class="row"><span class="h">① 탄수화물 대사 → 휘발성 지방산(VFA) 생성</span><br>
+초산(Acetic acid), 프로피온산(Propionic acid), 낙산(Butyric acid) 생성 → <span class="k">1위벽·혈액으로 흡수</span>되어 중요한 <span class="k">에너지원</span>으로 이용</div>
+<div class="row"><span class="h">② 비타민 합성</span><br>1위 내에서 <span class="k">Vitamin B12</span> 등 여러 비타민 합성</div>
+<div class="row"><span class="h">③ 단백질 공급원</span><br>1위 미생물 일부가 4위·소장으로 내려가는 동안 사멸 → 미생물의 <span class="k">아미노산</span>이 소장에서 흡수 → <span class="k">체단백질 합성</span>에 이용</div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-1</span><div class="et">① 탄수화물을 대사해 VFA(초산·프로피온산·낙산) 생성 → 1위벽으로 흡수되어 주요 에너지원으로 이용.<br>② 1위 내에서 Vit B12 등 여러 비타민 합성.<br>③ 4위·소장으로 내려가며 사멸한 미생물의 아미노산이 흡수되어 체단백질 합성에 이용.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">1위 미생물은 <span class="k">"V·Bi·단"</span> 결성 → <span class="k">V</span>FA(에너지) · <span class="k">Bi</span>tamin(Vit B12) · <span class="k">단</span>백질</div><div class="trow">VFA 3종 <span class="k">"초·프·낙"</span> → 초산·프로피온산·낙산 = "초를 프로가 낙서"</div></div>
+</section>
+
+<section class="group" id="g02">
+<div class="gtitle"><span class="num">02</span>1위 산증 (Ruminal acidosis)<span class="essay">서술형 출제예정</span></div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">22년도 2번.</span>1위 산증(Ruminal acidosis)에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">정의</span><br>
+= 곡물과식증(식체), 1위 산성증. 발효하기 쉬운 곡물(<span class="k">고탄수화물성 사료</span>)을 한번에 과량 섭취(분쇄된 곡물은 더 위험) → 1위 내 <span class="k">젖산(Lactic acid)</span> 과량 생성 → 급성 질병<br>
+정상 1위 pH 6.0~7.0 (섬유소 분해균에 적합한 환경)<br>
+· 급성 1위 산증 <span class="k">ARA: pH &lt; 5.0</span> · 아급성 1위 산증 <span class="k">SARA: pH &lt; 5.5</span></div>
+<div class="row"><span class="h">기병론 (Cascade)</span>
+<div class="flow">탄수화물↑ → Pyruvate → <span class="k">VFA↑</span> → Rumen pH↓ → <span class="k">Streptococcus bovis↑</span> → <span class="k">Lactate↑</span> → Rumen pH↓ → 세균 성장↓ → <span class="k">Rumen pH &lt; 4.5</span> → <span class="k">Lactobacillus↑</span> → <span class="k">D-lactate↑</span> → 흡수 → Blood lactate↑ → <span class="k">대사성 산증</span></div>
+동반 변화: VFA↑, 세균 <span class="k">내독소(endotoxin)↑</span>, 1위 <span class="k">삼투압↑</span>, 1위 상피 parakeratosis·농양 / 1위 세균이 혈류로 유입 → 전신 감염</div>
+<div class="row"><span class="h">Cascade 설명</span>
+<ol class="in">
+<li>발효하기 쉬운 탄수화물 과량 섭취 → 정상 미생물총이 <span class="k">VFA 다량 생성</span> → 1위 pH 감소</li>
+<li><span class="k">Streptococcus bovis</span> 증가 → 과량의 <span class="k">젖산</span> 생성</li>
+<li>산이 pH를 더 떨어뜨림 → <span class="k">정상 미생물총 사멸</span> &amp; <span class="k">Lactobacillus 급증</span></li>
+<li>Lactobacillus가 젖산을 더 생성 → pH 더 저하 → <span class="k">악순환</span></li>
+<li>낮아진 pH → <span class="k">1위 운동 정지</span></li>
+</ol></div>
+<div class="row"><span class="h">임상증상</span><br><span class="k">1위 운동정지</span>, 심한 <span class="k">탈수증</span>, <span class="k">독혈증</span>, 전신쇠약 &amp; <span class="k">횡와</span> → 높은 폐사율
+<ul>
+<li><span class="b">탈수증</span>: 1위 내 과량의 젖산 → <span class="k">1위 내 삼투압 증가</span> → 1위 내로 수분 유출·저류 → <span class="k">탈수증 &amp; 혈액농축</span></li>
+<li><span class="b">제1위염</span>: 과량 젖산이 위벽 자극 → <span class="k">화학적 1위염</span> &amp; 이상각화증 / 산에 저항하는 진균(Mucor, Rhizopus, Absidia) 증식 → <span class="k">진균성 1위염</span>(혈전증·경색) → 간으로 파급 → <span class="k">간농양</span></li>
+<li><span class="b">산증</span>: 1위 내 젖산이 소장에서 혈액으로 흡수 → <span class="k">대사성 산증</span></li>
+<li><span class="b">배뇨량 감소</span>: 탈수 → 신혈류·사구체 여과율 감소 → <span class="k">무뇨증</span> → <span class="k">Shock</span> → 폐사 (과식 후 24시간 이내 발생 가능)</li>
+</ul>
+<span class="light">임상상(Clinical picture): Rumen atony, Dehydration, Hydrorumen, Diarrhoea, Laminitis, Polioencephalomalacia, Parakeratosis-rumenitis-liver abscess complex, Pneumonia·Pyelonephritis·Endocarditis</span></div>
+<div class="row"><span class="h">연관 질환</span> — 젖산에 의해 pH 저하 → 세균 사멸·내독소 유출 → 체내 흡수 → 발굽의 알러지성 질환 = <span class="k">제엽염</span> (사지에 발병, <span class="k">제관부 열감 &amp; 종창</span>)</div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">22-2</span><div class="et">발효 쉬운 고탄수화물 사료 과식 → VFA↑·pH↓ → S. bovis, Lactobacillus 증식으로 젖산 과량 생성되는 급성 질병(ARA pH&lt;5.0, SARA pH&lt;5.5).<br>젖산 축적 → ① 1위 삼투압↑ → 탈수·혈액농축 → 무뇨·쇼크 ② 1위벽 자극 → 1위염·간농양 ③ 혈중 흡수 → 대사성 산증.<br>증상: 1위 운동정지, 탈수, 독혈증, 전신쇠약·횡와, 높은 폐사율(제엽염 병발).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">Cascade: 탄수화물 먹고 <span class="k">"스보(S. bovis)가 젖 짜고, 락토(Lactobacillus)가 마무리"</span> → 젖산 폭탄</div><div class="trow">pH: ARA <span class="k">5.0</span> / SARA <span class="k">5.5</span> — Sub(아급성)는 0.5 봐줌</div><div class="trow">합병증 <span class="k">"탈·염·산·뇨"</span> = 염산을 탈탈 털어 오줌으로 → 탈수 · 1위염 · 산증 · 배뇨감소</div></div>
+</section>
+
+<section class="group" id="g03">
+<div class="gtitle"><span class="num">03</span>고창증 (원발성 · 속발성 · 폐사기전)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">23년도 2번.</span>원발성(속발성) 고창증 유발원인에 관하여 기술하시오.</p>
+<p><span class="yr">22년도 7번.</span>원발성(포말성) 고창증의 유발원인과 이로 인해 폐사되는 기전을 간략히 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row">고창증: 1위·2위 내 gas 충만 → 심한 확장·팽대</div>
+<div class="row"><span class="h">① 원발성 고창증 = 포말성 고창증</span> — <span class="k">사료에 기인</span>, gas와 위내용물이 혼합되어 <span class="k">포말</span> 형성
+<ol class="in">
+<li>1위 내 발효 gas가 <span class="k">안정한 포말</span> 형성 → <span class="k">식도 분문부 폐색</span> → 애기(트림) 장애
+<ul>
+<li><span class="k">콩과식물(alfalfa)</span> 급여, <span class="k">어린 청초</span>에 방목 시 → 포말형성 <span class="k">가용성 엽단백질(soluble leaf protein)</span></li>
+<li>세균에 의해 형성되는 <span class="k">불용성 점액성 물질(slime)</span></li>
+<li>소는 타액분비능력이 부족 → 포말형성을 억제하는 타액 내 <span class="k">mucoprotein 부족</span></li>
+</ul></li>
+<li><span class="k">농후사료 과식</span>: 탄수화물이 많을 때 세균 증식 → 불용성 점액성 물질 생산 / <span class="k">미세하게 마쇄된 곡물</span>이 포말 안정성을 높임</li>
+</ol></div>
+<div class="row"><span class="h">② 속발성 고창증 = 유리가스성 고창증</span> — <span class="k">트림(애기) 장애</span>에 기인, 유리 gas가 충만
+<ol class="in">
+<li><span class="k">식도 폐색</span>: 이물에 의한 식도 내강 폐색 or 식도 주위 신생물에 의한 식도벽 압박<br>
+<span class="k">식도구(Esophageal groove) 기능장애</span>: 미주신경 손상, 파상풍, 2위벽 or 식도구 부근 신생물, 과민증 → 애기장애</li>
+<li><span class="k">농후사료 과식</span>: 식도염, 1위 산증, 1위염, 식체, 1위 무력증 → 애기장애 → 2차적 고창증</li>
+<li><span class="k">송아지 만성 고창증</span>: <span class="k">6개월령 이하</span>, 흉선의 잔존, 거친 조사료 or 불량 대용유</li>
+</ol></div>
+<div class="row"><span class="h">③ 폐사 기전</span>
+<div class="flow">애기 장애 → <span class="k">1위 팽대</span> → 초기: 1위 운동 항진 → 포말 형성 촉진 → 시간 경과 시 <span class="k">1위벽 근육 이완</span> → <span class="k">1위 운동 정지</span> → 1위 팽대로 <span class="k">반사적 순환기 · 호흡기 기능 억압</span> → 폐사</div></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">23-2</span><div class="et">원발성(포말성): 콩과식물·어린 청초의 가용성 엽단백질, 세균성 slime, 타액 mucoprotein 부족 → 안정한 포말이 식도 분문부 폐색 → 애기장애 / 농후사료 과식.<br>속발성(유리가스성): 식도폐색(이물·신생물)·식도구 기능장애, 농후사료 과식에 따른 1위산증·무력증·식도염, 6개월령 이하 송아지 만성고창 → 애기장애.</div></div><div class="erow"><span class="ey">22-7</span><div class="et">원발성(포말성): 콩과식물·어린 청초의 가용성 엽단백질, 세균성 slime, 타액 mucoprotein 부족 → 안정한 포말이 식도 분문부 폐색 → 애기장애 / 농후사료 과식.<br>폐사기전: 1위 팽대 → 초기 운동항진 → 1위벽 근육 이완·운동정지 → 반사적으로 순환기·호흡기 기능 억압 → 폐사.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">원발성 = <span class="k">먹이 탓</span>(콩·청초 → 거품) / 속발성 = <span class="k">트림 탓</span>(식도 막힘·농후사료·송아지)</div><div class="trow">폐사: 빵빵 → 처음엔 <span class="k">꿈틀(항진)</span> → 지쳐 <span class="k">축 늘어짐(정지)</span> → 숨·피 다 눌림</div></div>
+</section>
+
+<section class="group" id="g04">
+<div class="gtitle"><span class="num">04</span>창상성 심낭염 (Traumatic pericarditis)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 2번.</span>창상성 심낭염의 진단적 특징을 간략히 기술하시오.</p>
+<p><span class="yr">23년도 3번.</span>소의 창상성 심낭염(병태생리기전 포함)에 대해 기술하시오.</p>
+<p><span class="yr">22년도 5번.</span>창상성 심낭염에 대해 설명하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">특징</span> — <span class="k">독혈증, 발열</span>, 울혈성 심부전 기인 <span class="k">심박수 증가</span>, <span class="k">심음 이상</span></div>
+<div class="row"><span class="h">원인 · 발생</span><br>
+<span class="k">예리한 이물</span>이 <span class="k">2위벽 천공</span> → <span class="k">횡격막 관통</span> → 심낭 천공·염증 유발<br>
+분만 3개월 전 <span class="k">임신 말기 ~ 분만 직후</span> 다발 (태아에 의한 복강 내압 증가 → 이물이 심장 쪽으로 압박)</div>
+<div class="row"><span class="h">병태생리 (기병론)</span>
+<ol class="in">
+<li>이물에 의한 심낭 천공 → (아)급성 심낭염</li>
+<li>2위 내 세균 → 심낭 내 감염, 심낭염 악화<br>
+→ <span class="k">심낭 내 삼출액 증가</span> → 심장 압박 → <span class="k">울혈성 심부전</span> → <span class="k">경정맥 노장 &amp; 피하 부종</span></li>
+<li>드물게 <span class="k">관상동맥 파열</span> → 급성 폐사</li>
+</ol></div>
+<div class="row"><span class="h">증상 · 진단적 특징</span> <span class="light">(독혈증 &amp; 순환장애 병발, 급성 외상성 2위 복막염과 유사)</span>
+<ul>
+<li><span class="b">복통</span>: 운동 기피, 신음, 심한 동통 / <span class="k">심장 영역 타진 시 신음 현저</span>, <span class="k">심탁음계 확대</span></li>
+<li><span class="b">전신증상</span>: 흉통·호흡곤란 완화를 위해 <span class="k">팔꿈치를 벌리고 서 있음</span> / 독혈증, 침울, 발열(40~41℃), 심박수 증가(100 이상), 약맥 / 얕은 복식호흡(40~50회), 신음 동반</li>
+<li><span class="b">순환장애</span>: 울혈성 심부전 → <span class="k">경정맥 노장</span>, 전흉부·하복부 <span class="k">부종</span></li>
+<li><span class="b">심장 청진</span>: 초기 <span class="k">심낭 마찰음</span> → 진행 시 심낭 내 삼출액에 의한 <span class="k">액체음(박수음)</span></li>
+</ul></div>
+<div class="row"><span class="h">경과</span> — 급성형은 1~2주 내 폐사, 소수 만성 심낭염으로 이행</div>
+<p class="note">※ 25년 2번(진단적 특징)은 위 '증상·진단적 특징' 칸(타진·청진 소견, 자세, 경정맥 노장·부종) 위주로 쓰면 돼요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-2</span><div class="et">심장 영역 타진 시 동통·신음, 심탁음계 확대 / 청진 시 초기 심낭마찰음 → 진행 시 액체음(박수음).<br>울혈성 심부전으로 경정맥 노장·전흉부/하복부 부종 / 팔꿈치를 벌린 자세, 발열·빈맥(100회↑)·독혈증.</div></div><div class="erow"><span class="ey">23-3</span><div class="et">2위 내 예리한 이물이 2위벽·횡격막을 관통해 심낭에 염증 유발(임신 말기~분만 직후 다발).<br>2위 세균 감염 → 심낭 내 삼출액 증가 → 심장 압박 → 울혈성 심부전으로 경정맥 노장·전흉부/하복부 부종, 드물게 관상동맥 파열로 급사.<br>증상: 팔꿈치를 벌린 자세, 발열·빈맥(100회↑)·독혈증, 심음 이상.</div></div><div class="erow"><span class="ey">22-5</span><div class="et">23-3 답안과 동일하게 작성.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">"못 삼킨 소": 2위 → 횡격막 → 심장 <span class="k">콕</span> / 배불뚝이(태아)가 못을 심장으로 밀어서 <span class="k">임신말기~분만직후</span></div><div class="trow">눈에 보이는 3종: <span class="k">팔꿈치 벌린 자세 · 목 정맥 불룩 · 심장 물소리(박수음)</span></div></div>
+</section>
+
+<section class="group" id="g05">
+<div class="gtitle"><span class="num">05</span>제4위 좌방전위 (LDA)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 3번.</span>제4위 좌측전위증의 신체검사법에 대해 간략히 기술하시오.</p>
+<p><span class="yr">23년도 4번.</span>소의 제4위 좌방전위의 유발요인과 주요임상증상을 기술하시오.</p>
+<p><span class="yr">22년도 3번.</span><span class="tag">단답</span>비유량과 함께 식욕감퇴, 배변량 감소, 찐득한 연고모양의 증상을 나타내며 타청진 시 좌우늑골궁(9~12th 늑골 사이)에서 유향성 ping sound가 청취되는 질병명과 치료방법을 적으시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">발생</span> — <span class="k">분만 직후</span> or 수주 전후 다발 / 4위가 1위와 좌측 복벽 사이에 끼어 듦</div>
+<div class="row"><span class="h">유발요인 · 기병론</span>
+<ol class="in">
+<li><span class="k">농후사료 과식</span>: 과식된 농후사료가 신속히 4위로 → 다량의 <span class="k">VFA</span> 생성 → <span class="k">4위 운동 억제(무력증)</span> → 섭취물·gas 증가 → 변위 / 상층에 gas 축적 → 좌측 복벽에서 ping sound</li>
+<li><span class="k">제1위의 거상</span>: 임신 시 태아 무게로 1위가 복부 바닥에서 거상 → 4위가 그 간격으로 좌측 변위 → <span class="k">분만 후 침하된 1위에 갇혀</span> 4위 내용물 통과장애</li>
+<li><span class="k">비정상적 운동</span>: 발정 시 jump·승가 같은 갑작스러운 운동 → 1위 거상 → 4위 좌측 변위</li>
+<li><span class="k">산·염기 불균형</span>: 겨울철 알칼리 상태 → <span class="k">4위 무력증</span> → 통과장애</li>
+</ol></div>
+<div class="row"><span class="h">주요 임상증상</span>
+<ol class="in">
+<li><span class="b">소화기 증상</span>: 식욕은 초기 <span class="k">비유량과 함께 감소</span>했다가 점차 회복, <span class="k">건초만 먹는 경향</span> / <span class="k">배변량 감소, 찐득한 연고모양 변</span> (드물게 설사) / 1위 운동 심하게 감소~정지</li>
+<li><span class="b">좌측 복벽 소견</span>: 좌측 겸부 전하방, 늑골궁 바로 뒤쪽 <span class="k">뚜렷한 팽대부</span> / 9~12번 갈비뼈 사이 늑골궁 청진 시 <span class="k">ping sound</span> (경계선을 그리면 <span class="k">큰 난원형</span>)</li>
+<li><span class="b">경과</span>: 아급성·만성, 폐사하지 않지만 <span class="k">비유량 · 체중 감소</span></li>
+</ol></div>
+<div class="row"><span class="h">신체검사법 · 진단</span>
+<ol class="in">
+<li><span class="b">신체검사</span>: 발생 조건(분만 후) + 특징적 증상(좌측 복부 팽대, 소량의 연변)<br>
+<span class="k">ping sound 청취</span>: 팽대부에서 <span class="k">왼쪽 elbow를 향해 그은 선의 중앙부</span>(9~12번 갈비뼈 사이 늑골궁) 바로 아래를 <span class="k">타청진</span></li>
+<li><span class="b">제4위 천자액 검사</span>: 좌측 복벽 <span class="k">10~11번 갈비뼈 아래 1/3</span> 부위 천자 → <span class="k">pH 2</span>, 원충 없음</li>
+<li><span class="b">요검사</span>: 속발성 <span class="k">케톤뇨</span> 흔함, 혈당량은 정상</li>
+<li><span class="b">혈액검사</span>: 저클로르혈증·저칼륨혈증 동반 mild 대사성 알칼리증, 저칼슘혈증, 혈액농축 (특이적이진 않음)</li>
+</ol></div>
+<div class="row"><span class="h">감별진단</span> <span class="light">(족보에 "혹시 몰라서" 넣은 부분)</span>
+<ul>
+<li>원발성 ketosis: 비유량 좋던 분만 2~6주 소, <span class="k">혈당량 저하</span>로 감별</li>
+<li>외상성 제2위 복막염: 1위 운동정지, 미열, 검상연골부 심부촉진 시 신음, mild 호중구 증가 &amp; 핵좌방이동</li>
+<li>미주신경성 소화불량증: 1위 팽대로 복부팽창, 분만 전 발생 多</li>
+<li>횡격막 허니아: 만성 1위 고창 &amp; 복부팽대</li>
+</ul></div>
+<div class="row"><span class="h">단답 22-3 답</span> — 질병명 <span class="short">제4위 좌방전위</span><br>
+치료 목표: 가능한 빨리 교정 → 복막 유착이나 천공으로 급사를 초래하는 <span class="k">4위 궤양</span> 위험을 줄임
+<ol class="in">
+<li><span class="b">수술적 정복</span>: <span class="k">대망막 고정술(Omentopexy)</span> — 우측 겸부 절개 후 대망 고정</li>
+<li><span class="b">회전 정복법</span>: 사료·물 <span class="k">완전 절식</span> 후, 소를 보정해 <span class="k">양와자세</span>로 눕혀 좌/우로 회전 → 정복 안 되면 자측으로 굴려 기립 / 최근엔 회전 후 4위가 원위치로 돌아오면 <span class="k">blind suture</span> 후 기립</li>
+<li><span class="b">기타</span>: 속발성 <span class="k">ketosis</span> 치료, 지방간 예방 위해 <span class="k">포도당 주사 &amp; propylene glycol 경구투여</span></li>
+</ol></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-3</span><div class="et">시진·타청진: 좌측 겸부 팽대, 좌측 9~12번 늑골 사이 늑골궁에서 ping sound 청취.<br>좌측 복벽 10~11번 늑골 아래 천자 시 pH 2·원충 없는 4위액, 요검사 시 케톤뇨.</div></div><div class="erow"><span class="ey">23-4</span><div class="et">유발요인: 농후사료 과식(VFA → 4위 무력증), 임신 중 1위 거상 → 4위 좌측 변위 → 분만 후 1위 침하로 4위가 갇힘, 발정 시 승가, 산·염기 불균형.<br>증상: 식욕감퇴(건초만 먹음), 배변량 감소·연고모양 변, 좌측 겸부 팽대, 좌측 9~12번 늑골 사이 늑골궁에서 ping sound, 비유량·체중 감소.</div></div><div class="erow"><span class="ey">22-3</span><div class="et"><span class="k">제4위 좌방전위</span><br>치료: 대망막고정술(수술적 정복) / 회전정복법(절식 후 양와자세로 회전 → 정복되면 blind suture).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">핑(ping)은 <span class="k">왼쪽 9~12</span> 갈비, 천자액 pH는 <span class="k">2</span> → "핑은 둘이서"</div><div class="trow">원인 <span class="k">"농·거·운·산"</span> = 농부가 거름 운반하러 산에 → 농후사료 · 1위 거상 · 운동(승가) · 산염기</div></div>
+</section>
+
+<section class="group" id="g06">
+<div class="gtitle"><span class="num">06</span>지방종증 (Lipomatosis)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">23년도 5번.</span>지방종증에 대해 간략히 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">정의</span> — <span class="k">장간막 또는 복막·대망막</span>에 지방이 이상 침착하여 변성된 것 (= 복부지방괴사증, Abdominal fat necrosis)</div>
+<div class="row"><span class="h">원인</span> — <span class="k">지방 및 탄수화물 과잉 섭취</span>, <span class="k">운동 부족</span>, 사양관리 조건이 갑자기 나빠졌을 때, <span class="k">내분비 질환</span></div>
+<div class="row"><span class="h">증상</span> — (장기간) <span class="k">식욕부진, 반추 미약</span>, 전신쇠약, 악취성 설사, <span class="k">장폐색증</span> / 장 폐색 시 복통 &amp; 소량의 <span class="k">토끼똥 모양 변</span> / 직장검사 중 우연히 발견되는 경우 많음</div>
+<div class="row"><span class="h">치료</span>
+<ul>
+<li>불포화지방산 함유 <span class="k">율무, 해바라기 기름, Soysterol</span> 급여 → 병변부 <span class="k">포화지방을 불포화지방으로 변화</span>시켜 흡수 촉진</li>
+<li>지방대사 항진제 병용: <span class="k">Epinephrine, 갑상선 호르몬</span>, Arginine 염산염 주사</li>
+</ul></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">23-5</span><div class="et">장간막·대망막에 지방이 이상 침착·변성된 것(=복부지방괴사증), 지방·탄수화물 과잉·운동부족·내분비질환이 원인.<br>증상: 장기간 식욕부진, 반추미약, 악취성 설사, 장폐색(토끼똥 모양 변).<br>치료: 불포화지방산(율무·해바라기유·Soysterol) 급여 + epinephrine·갑상선 호르몬 병용.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">뱃속 <span class="k">기름 덩어리</span> → 장 막힘 → <span class="k">토끼똥</span></div><div class="trow">치료는 "기름엔 기름": 포화지방 → <span class="k">해바라기유·율무(불포화)</span>로 녹여 빼기</div></div>
+</section>
+
+<!-- ============ Ⅱ ============ -->
+<h2>Ⅱ. 간 질환</h2>
+
+<section class="group" id="g07">
+<div class="gtitle"><span class="num">07</span>간염 (Hepatitis)의 원인</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 5번.</span>간염(Hepatitis)의 유발 원인들을 분류해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">① 중독성 간염 (Toxic hepatitis)</span><br>
+원인: <span class="k">독성 식물, Fungal toxin, Algae</span> / 무기물: <span class="k">인, 비소, Selenium</span> / 유기물: <span class="k">Cresol, Chloroform, Gossypol</span><br>
+병변: 미약한 소엽-중심성 혼탁종창 → 지방간 형성 후 광범위한 괴사</div>
+<div class="row"><span class="h">② 전염성 간염 (Infectious hepatitis)</span><br>
+농장 동물에서 감염에 의한 미만성 간경변은 드묾 — <span class="k">Salmonellosis, 패혈성 Listeriosis, Leptospirosis, 말 전염성 빈혈</span> 등<br>
+보통 간기능부전 임상증상 없이 부검에서 인지</div>
+<div class="row"><span class="h">③ 기생충성 간염 (Parasitic hepatitis)</span><br>
+(대형) <span class="k">간흡충류</span> 침입 &amp; <span class="k">회충(Ascaris lumbricoides) 유충</span>의 체내 이행<br>
+소: <span class="k">간질충(간디스토마)</span> → 담도에 기생 → 담도 폐쇄 → <span class="k">폐쇄성(간후성) 황달</span></div>
+<div class="row"><span class="h">④ 영양성 간염 (Nutritional hepatitis)</span><br>
+<span class="k">Vitamin E</span>(Cystine 결여 사료로 사육된 생쥐에서 간괴사 예방), <span class="k">Selenium, α-tocopherol</span> → 식이성 간괴사 예방 → 즉 이들의 <span class="k">결핍</span>이 간괴사 유발</div>
+<div class="row"><span class="h">⑤ 울혈성 간염 (Congestive hepatitis)</span><br>
+원인: <span class="k">울혈성 심부전</span> → 간 중심정맥 압력 증가 → <span class="k">중심소엽성 변성</span> → 무산소증 &amp; 주위 간실질 압박</div>
+<div class="row"><span class="h">⑥ 선천성 간 부전 (Inherited hepatitis)</span></div>
+<p class="note">※ ⑥ 선천성 간 부전은 강의 PDF에 분류명만 있고 세부 설명 슬라이드는 없어요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-5</span><div class="et">① 울혈성(울혈성 심부전 → 중심소엽성 변성) ② 기생충성(간흡충, 회충 유충 이행) ③ 영양성(Vit E·Selenium 결핍 → 간괴사) ④ 선천성 간 부전<br>⑤ 전염성(Salmonella, Listeria, Leptospira, 말 전염성 빈혈) ⑥ 중독성(독성식물·곰팡이독소, 인·비소·셀레늄, gossypol).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"울 기영이 선전중"</span> → 울혈 · 기생충 · 영양 · 선천 · 전염 · 중독</div></div>
+</section>
+
+<section class="group" id="g08">
+<div class="gtitle"><span class="num">08</span>간성뇌증 (Hepatic Encephalopathy)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">24년도 1번.</span>간성뇌증의 치료에 대해 간략히 기술하시오.</p>
+<p><span class="yr">25년도 4번.</span>간성뇌증 환축에서 장내 암모니아 생성·흡수 감소를 위해 적용되는 약제(적용목적)를 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">치료</span>
+<ol class="in">
+<li>공격성·반복성 행동 → <span class="k">진정제</span> 투여</li>
+<li>저혈당증 교정: <span class="k">포도당</span> → 혈중 암모니아 농도 감소 (저혈당이 아닌 동물에게도 지속적인 포도당 주입 필요)</li>
+<li><span class="k">탈수, 산·염기 및 전해질 불균형</span> 교정</li>
+<li><span class="k">장내 암모니아 생성·흡수 감소</span> → 아래 약제</li>
+</ol></div>
+<div class="row"><span class="h">장내 암모니아 감소 약제 (25-4 답)</span>
+<ul>
+<li><span class="k">Neomycin</span> — 장내 세균 억제</li>
+<li><span class="k">Metronidazole</span> — 혐기성 세균 감소</li>
+<li><span class="k">Lactulose</span> — 대장 내 pH 감소 → 암모니아를 <span class="k">암모늄 이온</span>으로 전환 → 흡수 억제</li>
+</ul></div>
+<div class="row"><span class="h">관리법 (식이 관리)</span>
+<ol class="in">
+<li><span class="k">소량씩 자주 급여</span> — 간의 대사 부담 감소</li>
+<li>적절한 <span class="k">탄수화물</span> 함량 — 간에서의 포도당 합성 요구량 감소</li>
+<li><span class="k">지용성 비타민</span> 보충</li>
+<li>과도하지 않은 <span class="k">고품질 단백질</span> 제공 (과도한 지방은 지방간 유발 가능)</li>
+</ol></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-1</span><div class="et">공격행동엔 진정제, 포도당으로 저혈당 교정·혈중 암모니아 감소, 탈수·산염기·전해질 불균형 교정.<br>장내 암모니아 생성·흡수 억제: Metronidazole(혐기성 세균 감소), Lactulose(대장 pH↓ → 암모니아를 암모늄 이온으로 전환해 흡수 억제), Neomycin(장내 세균 억제).<br>식이: 소량씩 자주·적정 탄수화물·양질 단백질 급여.</div></div><div class="erow"><span class="ey">25-4</span><div class="et">Metronidazole(혐기성 세균 감소), Lactulose(대장 pH↓ → 암모니아를 암모늄 이온으로 전환해 흡수 억제), Neomycin(장내 세균 억제).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">약 3총사 <span class="k">"MLN"</span> (바르셀로나 MSN — 메시 · 루이스 수아레스 · 네이마르) → <span class="k">M</span>etronidazole · <span class="k">L</span>actulose · <span class="k">N</span>eomycin</div><div class="trow">치료 순서 "진정 → 포도당 → 교정 → 암모니아 약"</div></div>
+</section>
+
+<section class="group" id="g09">
+<div class="gtitle"><span class="num">09</span>지방간증 (지질간증)의 치료</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">24년도 2번.</span>지질간증의 치료에 대해 간략히 기술하시오.</p>
+<p><span class="yr">23년도 6번.</span>지방간증 환자의 치료원칙에 관하여 기술하시오.</p>
+<p><span class="yr">21년도 2번.</span>지방간증 환축의 치료원칙에 관해 간략히 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">치료 원칙</span> — <span class="k">더 많은 에너지 제공 or 에너지 요구량 줄임</span> → 양성 에너지 균형 쪽으로</div>
+<div class="row"><span class="h">① 당 공급</span><br>
+<span class="k">Glucose</span> 200mg PO BID 또는 <span class="k">5% Dextrose IV</span><br>
+<span class="k">Propylene glycol</span> 180~240ml PO BID → 당신생용 <span class="k">3탄당 제공</span>, 1위 내 원충 활동 증진</div>
+<div class="row"><span class="h">② Corticosteroids</span><br>Dexamethasone 10~20mg/500kg/day IM, 3~5일간 → <span class="k">경도의 혈당 증가</span></div>
+<div class="row"><span class="h">③ Lipotropic 항지질(항지방간) 인자</span><br><span class="k">Choline &amp; Methionine</span> PO → 효과 좋음</div>
+<div class="row"><span class="h">+ 간 질병 일반 치료원칙</span> <span class="light">(22년 2학기 서술14 — 지방간 치료원칙 쓸 때 같이 활용)</span>
+<ul>
+<li>미만성 간질환은 어떤 일반적 치료도 만족스럽지 못함 → 목적: <span class="k">손상 원인이 되는 근원 제거</span></li>
+<li>급성 간염: 급성 변화가 가라앉고 간이 정상 재생해 기능을 회복할 때까지 <span class="k">급성 간기능부전을 극복</span>하는 것</li>
+<li>폐사는 <span class="k">저혈당증</span>이 주원인 → 경구적 or 비경구적 <span class="k">포도당</span> 투여 → 혈당 유지</li>
+<li>탄수화물·칼슘 많은 사료, 높은 열량의 양질 단백질 → 간독성 물질에 대한 예방효과</li>
+<li>초기에 <span class="k">choline 함유 항지방간 인자</span> 투여 &amp; 지방·단백질 적은 사료 → 간의 지방 제거, 섬유성 조직 퇴축 → 압박효과 감퇴</li>
+<li>아미노산 혼합물, 특히 <span class="k">Methionine</span> → 좋은 결과</li>
+<li>항염증제 ± 항균제, <span class="k">담즙 배설 촉진</span></li>
+</ul></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-2 · 23-6 · 21-2</span><div class="et">원칙: 에너지 공급↑ 또는 요구량↓로 양성 에너지 균형 유지.<br>① Glucose PO·5% dextrose IV, Propylene glycol PO(당신생용 3탄당 공급) ② Corticosteroid(dexamethasone, 혈당 상승)<br>③ 항지방간 인자 Choline·Methionine 경구 투여.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"포·스·콜"</span> → 포도당(Glucose·PG) · 스테로이드(덱사) · 콜린(Choline·Methionine)</div><div class="trow">원칙 한 마디: "에너지 <span class="k">더 주거나 덜 쓰게</span>"</div></div>
+</section>
+
+<section class="group" id="g10">
+<div class="gtitle"><span class="num">10</span>황달 (Icterus)<span class="essay">서술형 출제예정</span></div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">23년도 1번.</span>황달(Icterus)을 분류하여 기술하시오.</p>
+<p><span class="yr">22년도 4번.</span>황달을 유발원인 기준 등으로 분류하여 기술하시오.</p>
+<p><span class="yr">21년도 1번.</span>용혈성 황달에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">분류 기준</span> — <span class="k">담즙 유출의 감소 X / 감소 O</span></div>
+<div class="row"><span class="h">① 담즙 유출 감소 X</span><br>
+<span class="k">용혈성 황달 = 간전성(Pre-hepatic)</span> — 빌리루빈 <span class="k">생산 과잉</span>에 의함</div>
+<div class="row"><span class="h">② 담즙 유출 감소 O</span>
+<ul>
+<li><span class="k">간세포 변성에 의한 황달 = 간내성(Intra-hepatic)</span> — 담즙 배설이 <span class="k">부분적으로 폐쇄</span></li>
+<li><span class="k">담즙 정체에 의한 황달 = 간후성(Extra-hepatic)</span> — <span class="k">담석</span> 등에 의해 <span class="k">담관 폐쇄</span></li>
+</ul></div>
+<div class="row"><span class="h">감별 검사</span> — 혈청 Indirect / Direct bilirubin 분석, 뇨 Urobilinogen &amp; Direct bilirubin 검사</div>
+<div class="row"><span class="h">21-1 용혈성 황달</span> <span class="light">(족보 관련 내용 모음)</span>
+<ul>
+<li>간전성 황달, 담즙 유출 감소 없음, <span class="k">빌리루빈 생산 과잉</span></li>
+<li>용혈 → 과다한 <span class="k">Hemoglobin 유리</span> → Haptoglobin 결합능 초과 → <span class="k">혈색소뇨</span></li>
+<li>예: 신생동물 <span class="k">동종면역성 용혈성 빈혈</span>(용혈 → 빈혈, 혈색소뇨, 황달), 산후 혈색소뇨증, 바베시아 감염(용혈)</li>
+</ul></div>
+<p class="note">※ 21-1(용혈성 황달)은 족보에 전용 답이 없어서, 황달 분류 + 용혈 관련 내용을 모아 구성했어요. 내용이 얇은 편이에요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">23-1 · 22-4</span><div class="et">담즙 유출 감소 없음: 용혈성 황달(간전성) — 적혈구 대량 파괴 → 빌리루빈 생산 과잉 → 혈중 간접(비포합) 빌리루빈↑.<br>담즙 유출 감소: 간세포 변성에 의한 간내성(담즙배설 부분 폐쇄), 담석 등 담관 폐쇄에 의한 간후성(폐쇄성) 황달.</div></div><div class="erow"><span class="ey">21-1</span><div class="et">용혈성 황달(간전성) — 적혈구 대량 파괴 → 빌리루빈 생산 과잉 → 혈중 간접(비포합) 빌리루빈↑, 담즙 유출 감소 없이 발생.<br>과다 Hb 유리 → haptoglobin 결합능 초과 → 혈색소뇨 동반 / 동종면역성 용혈성 빈혈, 산후 혈색소뇨증, 바베시아 등.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">질문 하나: "담즙 <span class="k">막혔나?</span>" → 아니오 = <span class="k">간 앞</span>(용혈) / 예 = <span class="k">간 속</span>(간세포) · <span class="k">간 뒤</span>(담석)</div></div>
+</section>
+
+<section class="group" id="g11">
+<div class="gtitle"><span class="num">11</span>간질환 효소 — ALP</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">24년도 1번.</span><span class="tag">단답</span>간질환의 생화학적 검사에서 담도상피의 자극·파괴 또는 담도계 폐쇄와 관련이 있으며, 간·태반·뼈·대식세포·장 상피에서 유래하고, 뼈 활동의 증가로 어린 송아지에서 활성이 증가하는 효소는 무엇인가?</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="short">ALP (Alkaline Phosphatase)</span></div>
+<div class="row">담도상피 자극/파괴 or 담도계 폐쇄와 관련 · 간·태반·뼈·대식세포·장상피 유래 · 뼈 활동 증가로 어린 송아지·망아지에서 활성 증가<br>
+<span class="light">비교) AST: 간질환에 민감하나 심장·근육·적혈구 등에도 존재 → 특이도 부족, CK 함께 측정</span></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24단-1</span><div class="et"><span class="k">ALP (Alkaline Phosphatase)</span></div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">알프(ALP)스</span> 산맥처럼 뼈가 쑥쑥 크는 어린 송아지 → 뼈·담도 효소</div></div>
+</section>
+
+<!-- ============ Ⅲ ============ -->
+<h2>Ⅲ. 쇼크 · 부종</h2>
+
+<section class="group" id="g12">
+<div class="gtitle"><span class="num">12</span>쇼크 · DIC · 쇼크 치료제</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">24년도 3번.</span>패혈증성(혈관성) 쇼크 중 DIC의 발생기전에 대해 기술하시오.</p>
+<p><span class="yr">24년도 2번.</span><span class="tag">단답</span>쇼크 상태에서 급격한 순환혈액량 감소, 심장박출량 감소, 저혈압 등으로 조직의 저산소증이 발생하며, 산화적 인산화의 억제 및 혐기성 해당작용이 증가하여 ( A ) 농도가 상승한다.</p>
+<p><span class="yr">24년도 3번.</span><span class="tag">단답</span>쇼크 시 투여할 수 있는 강심제 또는 혈관수축제를 2가지 이상 답하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">DIC 발생기전 (24-3)</span><br>
+패혈증성(혈관성) 쇼크: 혈관 확장 — 열사병, 신경원성 쇼크, 급성 과민반응, SIRS 등 / 일반적으로 <span class="k">Gram(−) 세균 감염</span> (소화관 내에만 존재하고 조직에 침투하지 않은 상태에서도 발생, 그람 양성균에 의해서도 생길 수 있음)
+<div class="flow">세균 <span class="k">세포벽</span>, 항원·항체 복합물, 균체 <span class="k">내독소</span> 순환 → <span class="k">혈관 손상</span>(혈관 내막) → <span class="k">혈소판 유착</span> → <span class="k">혈전 형성</span> → 과응고 → 혈소판 등 <span class="k">응고인자 소모</span> → <span class="k">섬유소 용해계 활성화</span> → <span class="k">저응고 상태 &amp; 응고장애</span> → <span class="k">출혈</span> → DIC</div>
+<span class="b">단계별로 풀어 쓰면</span>
+<ol class="in">
+<li><span class="k">Gram 음성균 감염</span> → 세포벽 성분(endotoxin, LPS) 혈중 방출 → 세포벽·항원항체 복합물·균체 내 독소 순환</li>
+<li><span class="k">혈관 내피 부분적 손상</span> → 혈소판 유착, 응고인자 활성화 → 혈전 형성 시작</li>
+<li><span class="k">응고계 과도한 활성화</span> → 전신 미세혈관에 미세혈전 → 조직 허혈 &amp; 장기손상</li>
+<li><span class="k">응고인자 · 혈소판 과소 소모</span> → 저응고 상태 &amp; 응고장애</li>
+<li><span class="k">섬유소용해계 활성화</span> → 이미 형성된 혈전을 용해 → <span class="k">지속적 출혈</span></li>
+</ol>
+<p class="note">※ 새 족보의 이 단계 설명은 "PPT+GPT"로 만들었다고 적혀 있어요. 뼈대(화살표 흐름)는 강의 PPT와 같아요.</p></div>
+<div class="row"><span class="h">쇼크 기병론 (단답 A 배경)</span><br>
+순환혈액량·심박출량 감소 → <span class="k">저혈압</span> → 조직 관류 부전<br>
+(보상) <span class="k">Catecholamine</span> 유출 → 심장·뇌 관류 유지 위해 말초 세동맥/모세혈관/세정맥 순환 억제<br>
+→ 혈구 응집 → 혈류량 감소 → 소순환 차단·모세혈관 정체 → 조직 내로 혈장 손실 → 정맥환류량 감소 → 심박출량 감소 (악순환) / 대사성 산증 → 평활근 기능 저하<br>
+→ 조직 <span class="k">저산소증</span> 심화 → 산화적 인산화 억제 &amp; 혐기성 해당 → <span class="k">젖산 생성</span>, 산혈증</div>
+<div class="row"><span class="h">단답 24-2 답</span> — A = <span class="short">젖산 (Lactate)</span></div>
+<div class="row"><span class="h">단답 24-3 답</span> — 심근/혈관 수축제
+<ul>
+<li><span class="k">Dobutamine</span> 5~10 μg/kg/min IV CRI 또는 <span class="k">Dopamine</span> 1~3 μg/kg/min IV CRI</li>
+<li><span class="k">Norepinephrine</span> 0.01~0.4 μg/kg/min IV CRI 또는 <span class="k">Vasopressin</span> 0.01~0.04 IU/min CRI</li>
+<li>(조기) 혈관수축제: <span class="k">Adrenalin, Pitressin(Vasopressin)</span></li>
+</ul></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-3</span><div class="et">Gram(−) 세균 내독소·세포벽 성분 순환 → 혈관 내피 손상 → 혈소판 유착·응고계 활성화 → 전신 미세혈관에 미세혈전(과응고).<br>응고인자·혈소판 소모 + 섬유소용해계 활성화 → 저응고·응고장애 → 출혈 (미세혈전과 출혈이 공존 = DIC).</div></div><div class="erow"><span class="ey">24단-2</span><div class="et"><span class="k">젖산 (Lactate)</span></div></div><div class="erow"><span class="ey">24단-3</span><div class="et"><span class="k">Dobutamine, Dopamine, Norepinephrine, Vasopressin</span> 중 2가지</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"DN프릭스는 DㅜVㅜ(두부)만 먹어라"</span> → <span class="k">D</span>opamine · <span class="k">N</span>orepinephrine / <span class="k">D</span>obutamine · <span class="k">V</span>asopressin</div></div>
+</section>
+
+<section class="group" id="g13">
+<div class="gtitle"><span class="num">13</span>부종 (Edema) · 누출액<span class="essay">서술형 출제예정</span></div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">21년도 3번.</span>체내 부종(Edema)이 유발되는 요인에 대해 간략히 기술하시오.</p>
+<p><span class="yr">24년도 4번.</span>부종의 치료에 대해 간략히 기술하시오.</p>
+<p><span class="yr">24년도 4번.</span><span class="tag">단답</span>심부전, 정맥폐쇄, 간 또는 신장질환에 의한 저단백혈증 시에 유발되며, 장액성 색을 띄고 비중은 1.017 이하, 단백농도는 3.0g/dl 이하, 총 유핵세포수는 1μl당 약 100개 정도인 이 체액은 무엇인가?</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">정의</span> — 모세혈관·조직 공간·림프관 사이 <span class="k">체액교환기전 장애</span>로 체액이 과도하게 축적된 증상</div>
+<div class="row"><span class="h">유발 요인 (21-3)</span>
+<ol class="in">
+<li><span class="k">혈액 교질삼투압 감소</span> = 혈장단백질 감소
+<ul>
+<li>영양결핍: 저단백질 사료 급여</li>
+<li>간 손상: 혈장 단백(albumin) 합성 부전</li>
+<li>장 질환(심한 기생충 감염, IBD): <span class="k">PLE</span> → 혈장 단백농도 감소</li>
+<li>신장 질환(사구체신염, 신우신염): <span class="k">PLN</span> → albumin 지속적 손실</li>
+</ul></li>
+<li><span class="k">모세혈관 정수압 증가</span> — 주로 <span class="k">울혈성 심부전</span>, 간 섬유증</li>
+<li><span class="k">림프 배액계 폐쇄</span> — 종양성/염증성 종창 → <span class="k">국소부종</span></li>
+<li><span class="k">모세혈관벽 손상</span>
+<ul>
+<li>독소·감염원: Septic Pasteurellosis, 탄저, 기종저, 악성부종, 말 전염성 비강/폐렴, 말 바이러스성 전염성 빈혈</li>
+<li>(담마진에 의한) 알러지성 부종, 맥관신경성 부종, 출혈성 자반병 → 국소성·전신성 <span class="k">히스타민 방출</span> → 소혈관 확장·손상</li>
+</ul></li>
+</ol>
+<span class="light">+ 움직이지 않는 상태의 말 사지부종: 원인 불확실, 적혈구용적·혈장단백질·적혈구침강속도 변화와 연관 추정</span></div>
+<div class="row"><span class="h">증상</span> — <span class="k">전신 부종, 복수, 흉수, 폐 부종, 심낭수종</span></div>
+<div class="row"><span class="h">치료 (24-4)</span><br>
+<span class="b">목표: 원발성 질환 교정</span>
+<ol class="in">
+<li>심근무력증 완화: <span class="k">Digitalis</span> → 심근수축력 증가</li>
+<li>심낭염: 심낭 <span class="k">배액</span> → 혈관 정수압 저하</li>
+<li>저단백혈증 완화: <span class="k">혈장 or 대용 혈장</span> 투여 → 교질삼투압 증가</li>
+<li>양질의 <span class="k">고단백 사료</span> 급여 → 저단백혈증 치료</li>
+</ol>
+<span class="b">보조 요법</span>
+<ul>
+<li>수분 &amp; 사료 내 <span class="k">소금 함량 제한</span></li>
+<li><span class="k">이뇨제</span>: 일시적 압력 완화 (누출액 농도가 높을 때는 효과 별로 없음)</li>
+<li>저류된 액체 <span class="k">서서히(slowly) 배액</span> — 내장 혈관의 급성 확장 &amp; 말초순환장애 방지</li>
+</ul></div>
+<div class="row"><span class="h">단답 24-4 답</span> — <span class="short">누출액 (Transudate)</span>
+<div class="tw"><table>
+<tr><th></th><th>누출액 Transudate</th><th>삼출액 Exudate</th></tr>
+<tr><td class="f">원인</td><td>(체강 모세혈관) Osmotic압 감소, Hydrostatic압 증가</td><td>(Mesothelial lining) 염증 &amp; 손상</td></tr>
+<tr><td class="f">성상</td><td>심부전·정맥폐쇄·간/신질환에 의한 저단백혈증 → 장액성 색</td><td>Sepsis, Toxemia 등 염증 시 → (육안상) 혼탁</td></tr>
+<tr><td class="f">비중</td><td class="k">1.017 이하</td><td>1.018 이상</td></tr>
+<tr><td class="f">단백 농도</td><td class="k">3.0 g/dl 이하</td><td>3.0 g/dl 이상</td></tr>
+<tr><td class="f">Clot 형성</td><td>無 (섬유소원 낮음)</td><td>有 (섬유소원 증가)</td></tr>
+<tr><td class="f">당 농도</td><td>혈장 수치와 유사</td><td>혈당에 비해 감소</td></tr>
+<tr><td class="f">LDH</td><td>혈청수치의 60% 이하</td><td>혈청수치의 60% 이상</td></tr>
+<tr><td class="f">총 유핵세포</td><td class="k">약 100개/μl</td><td>50,000개/μl 이상</td></tr>
+</table></div></div>
+<p class="note">※ 문제모음엔 비중이 '1.107'로 적혀 있는데 족보·표 기준으로는 <b>1.017</b>이 맞아요(오타).</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">21-3</span><div class="et">혈액 교질삼투압 감소(저단백혈증: 영양결핍·간손상·PLE·PLN), 모세혈관 정수압 증가(울혈성 심부전),<br>림프 배액계 폐쇄(종양·염증성 종창), 모세혈관벽 손상(독소·감염, 히스타민에 의한 알러지성 부종).</div></div><div class="erow"><span class="ey">24-4</span><div class="et">원발질환 교정: 심근무력증 – digitalis, 심낭염 – 배액, 저단백혈증 – 혈장 투여·양질 고단백 사료.<br>보조요법: 수분·소금 제한, 이뇨제, 저류 액체는 서서히 배액.</div></div><div class="erow"><span class="ey">24단-4</span><div class="et"><span class="k">누출액 (Transudate)</span></div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">원인 <span class="k">"교정실 림벽"</span>에서 물이 샌다 → 교질삼투압↓ · 정수압↑ · 림프 막힘 · 혈관벽 손상</div><div class="trow">누출액 = <span class="k">맑게 새는 물</span>: 비중 1.017↓ · 단백 3.0↓ · 세포 100개 → "숫자 다 작음"</div></div>
+</section>
+
+<!-- ============ Ⅳ ============ -->
+<h2>Ⅳ. 혈액 · 빈혈 · 비장 · 림프절</h2>
+
+<section class="group" id="g14">
+<div class="gtitle"><span class="num">14</span>혈액 기능장애 유형</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 6번.</span>혈액 기능장애 유형 파악을 위한 순환혈액량, 세포성분이상, 비세포성분이상에 관해 간략히 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">① 순환 혈액량</span> — 정상 <span class="k">체중의 약 8%</span> → <span class="k">감소</span> (or 증가)</div>
+<div class="row"><span class="h">② 세포 성분 이상</span> — <span class="k">RBC, WBC, Thrombocyte(Platelet)</span>
+<ul>
+<li><span class="k">Anemia / Erythrocytosis</span></li>
+<li><span class="k">Leukopenia / Leukocytosis</span> <span class="light">(Leukopenia: 4,000개/μl 이하일 때 — 필기)</span></li>
+<li><span class="k">Thrombocytopenia</span> 등</li>
+</ul></div>
+<div class="row"><span class="h">③ 비세포 성분 이상</span> — <span class="k">단백질, 전해질 및 완충계(Buffering system)</span> 등
+<ul>
+<li>단백질: <span class="k">Alb / Glo / Fib</span><br>
+<span class="light">(필기) Hypoproteinemia &lt; 4 g/dl, Hypoalbuminemia &lt; 2 g/dl — 원인: 영양부족, Liver failure, PLE/PLN<br>
+(필기) 글로불린↑↑ → 혈액 점도 증가 — 종양에 의한 Para-neoplastic syndrome</span></li>
+<li>전해질: <span class="k">Na⁺ / K⁺ / Cl⁻ / Ca²⁺ / Mg²⁺ / P</span></li>
+<li>완충계·가스: <span class="k">O₂ / CO₂ / HCO₃⁻</span></li>
+<li>Hormone, Enzyme, Vitamin, Regulatory factor 등</li>
+</ul></div>
+<div class="row"><span class="h">+ 혈액 기능부전</span> — 혈액의 <span class="k">수송기전 장애</span> → 조직(세포)의 <span class="k">필수 영양소 결핍 &amp; 대사산물 저류</span> 유발</div>
+<p class="note">※ 필기의 '혈액이 ○○해진다?'는 글씨가 흐려서 글로불린 과다 → 점도 증가(과점도)로 해석했어요. 맞는지 한 번 확인해 주세요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-6</span><div class="et">순환혈액량: 정상 체중의 약 8%로, 감소 또는 증가.<br>세포성분 이상: RBC·WBC·혈소판 → 빈혈/적혈구증가증, 백혈구감소/증가증, 혈소판감소증.<br>비세포성분 이상: 단백질(Alb·Glo·Fib), 전해질, 완충계(O₂·CO₂·HCO₃⁻), 호르몬·효소 등.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">혈액 점검은 <span class="k">"양·세·비"</span> → 양(순환혈액량) · 세포성분 · 비세포성분</div><div class="trow">피는 체중의 <span class="k">팔(8)%</span></div></div>
+</section>
+
+<section class="group" id="g15">
+<div class="gtitle"><span class="num">15</span>수혈 부작용 · 치료 · 예방 검사</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 7번.</span>수혈 시 나타날 수 있는 부작용의 증상과 치료, 이를 예방하기 위한 검사법에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">① 과민성 반응 (수혈 거부반응)</span><br>
+한 공혈동물로부터 처음 수혈하고 <span class="k">1주 이상 지난 후 반복 수혈</span>했을 때 → <span class="k">수혈 중 or 후 수분 이내</span> 발현<br>
+<span class="b">증상</span>: <span class="k">유연, 호흡곤란, 딸꾹질, 근육경련, 빈번한 기침, 고열(40~40.5℃), 고창증</span><br>
+<span class="b">치료</span>: <span class="k">Adrenaline(Epinephrine)</span> 투여 → 수분 내 호전 — IM(1:1000 용액 4~5 ml) or IV(0.2~0.5 ml)</div>
+<div class="row"><span class="h">② 순환기 부담</span><br>
+<span class="k">빠른 속도의 수혈</span> → 순환기계 과부담 → <span class="k">급성 심장장애</span> / 독혈증에 의한 심근무력증 시 수혈 → <span class="k">빈맥·약맥 &amp; 호흡곤란</span><br>
+<span class="b">치료·예방</span>: 수혈 중 심부전 발생 시 <span class="k">즉시 중단 &amp; 아트로핀</span> 주사 / 수혈량 10~15 ml/kg BW 권장, 소는 4.5 L를 약 1시간에 걸쳐</div>
+<div class="row"><span class="h">+ 수혈 부작용 분류 (Adverse reactions)</span>
+<div class="tw"><table>
+<tr><th>비면역성 Non-immunologic</th><th>면역성 Immunologic</th></tr>
+<tr><td class="l">Fever(Pyrogens), 감염 전파, 물리적 용혈, 구토, <span class="k">울혈성 심부전</span>, 저체온, <span class="k">Citrate 중독</span>, 응고장애</td>
+<td class="l"><span class="k">용혈</span> — 급성 혈관 내/외 용혈, DIC, 신부전, 지연성 혈관외 용혈(PCV 점진적 감소) / 발열 / <span class="k">두드러기(Urticaria), Anaphylaxis</span></td></tr>
+</table></div></div>
+<div class="row"><span class="h">③ 예방 검사법 — 교차시험 (Cross-matching)</span><br>
+같은 공혈동물로부터 반복 수혈 시 <span class="k">과민성 쇼크</span> 유발 가능 → 수혈 <span class="k">적합성 판정</span><br>
+<span class="b">간이법</span>: 소량의 혈액 주입 후 <span class="k">약 10분간 관찰</span> → 부작용 없으면 수혈 지속
+<ol class="in">
+<li>EDTA tube에 공혈자·수혈자 혈액 각 2 ml 채취</li>
+<li>3,000g, 1분 원심분리 → 혈장 분리</li>
+<li>적혈구를 Saline으로 3회 washing → <span class="k">2% RBC 부유액</span> 제작</li>
+<li><span class="k">Major</span>: 공혈자 적혈구 + 수혈자 혈장 / <span class="k">Minor</span>: 수혈자 적혈구 + 공혈자 혈장 / Control: 공혈자 적혈구 + 공혈자 혈장</li>
+<li>25℃에서 30분 반응</li>
+<li><span class="k">혈구 응집(Agglutination) = 양성 → 수혈 부적합</span></li>
+</ol></div>
+<p class="note">※ 출처: 강의 PDF 8장 1-1 총론(출혈·수혈) 슬라이드 8~16.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-7</span><div class="et">같은 공혈동물로 1주 이후 반복 수혈 시 과민반응: 수분 내 유연·호흡곤란·딸꾹질·근육경련·고열·고창증 → Adrenaline(Epinephrine) 투여.<br>빠른 수혈 → 순환기 과부담 → 급성 심장장애(빈맥·약맥·호흡곤란) → 즉시 중단·아트로핀, 수혈량·속도 준수(10~15 ml/kg).<br>예방: 교차시험(major·minor cross-match) – 응집 시 부적합 / 소량 주입 후 10분간 관찰.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"아·아·교"</span> → 두 번째 만남 알러지엔 <span class="k">아</span>드레날린 / 너무 빨라 심장 터지면 <span class="k">아</span>트로핀 / 미리 궁합 보기 = <span class="k">교</span>차시험</div></div>
+</section>
+
+<section class="group" id="g16">
+<div class="gtitle"><span class="num">16</span>빈혈 — 접근기준 · 평가(검사) 항목<span class="essay">서술형 출제예정</span></div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">22년도 3번.</span>빈혈환자의 접근기준과 주요특징을 기술하시오.</p>
+<p><span class="yr">21년도 4번.</span>Anemia(빈혈) 환자의 접근을 위해 검사해야 할 항목 4가지를 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">적혈구계(RBC profile) 평가 항목 4가지 (21-4)</span>
+<ol class="in">
+<li><span class="k">CBC</span> — HCT, Hb 농도, RBC count → MCV, MCHC, MCH</li>
+<li>빈혈 <span class="k">정도(Severity)</span> 파악 — Mild / Moderate / Severe</li>
+<li><span class="k">재생성 vs 비재생성, 출혈성 vs 용혈성, 혐기성 대사</span> 파악 — Reticulocyte(망상적혈구), D-/ID-Bilirubin, L-lactate</li>
+<li>(현미경 도말) <span class="k">이상 적혈구</span> 관찰 — Spherocyte(구형적혈구), Target cell, Heinz body</li>
+</ol></div>
+<div class="row"><span class="h">접근기준 (22-3)</span>
+<ul>
+<li><span class="k">출혈성 · 용혈성 빈혈</span>: 혈액 내 유약적혈구 증가 &amp; 미성숙 적혈구 출현</li>
+<li><span class="k">철결핍성 빈혈</span>: MCHC 감소, Hb 농도 저하, but RBC count 정상</li>
+<li>(독소에 의한) <span class="k">재생불량성 빈혈</span>: RBC count 적고 적혈구 생성 감소 — 고사리/비소 중독, Chloroethylene 처리 대두박 사료</li>
+</ul></div>
+<div class="row"><span class="h">주요 (임상병리적) 특징</span> — <span class="k">점막 창백</span> / <span class="k">기력소실, 식욕부진, 근육 약화</span> / <span class="k">심박수 · 맥박수 증가</span><br><span class="light">안정 시 호흡곤란은 두드러지지 않음(운동 시 호흡 심도 증가) / 말기엔 중등도 빈맥 → 심한 빈맥, 심음 강도 감소 &amp; 맥박 약화</span></div>
+<div class="row"><span class="h">치료</span> — 근본원인 치료 + 유기철분제(Fe), Vitamin B12, Cobalt / 조혈제 투여 권장</div>
+<div class="row"><span class="h">예시: 용혈성 빈혈을 평가항목에 따라 쓰면</span>
+<ol class="in">
+<li><span class="b">CBC</span>: HCT↓, Hb↓, RBC 수↓ / <span class="k">MCV 정상 또는 증가</span>(골수가 reticulocyte 생성) / MCHC 정상 또는 감소 → 재생성 빈혈 형태</li>
+<li><span class="b">정도</span>: 손상된 적혈구 파괴 정도로 Mild/Moderate/Severe — 급성 용혈(Babesiosis, IMHA)은 <span class="k">Severe</span>로 진행 가능</li>
+<li><span class="b">재생 판단</span>: 파괴된 적혈구 보충 위해 <span class="k">reticulocyte 증가</span> → 재생성 / 간접 빌리루빈(ID-bilirubin), L-lactate로 평가</li>
+<li><span class="b">도말</span>: IMHA → <span class="k">Spherocyte</span> / 산화중독성 용혈 → <span class="k">Heinz body</span> / 세포막 이상 → Target cell / Pappenheimer body</li>
+</ol>
+<p class="note">※ 새 족보의 이 예시는 "GPT의 도움을 받았다"고 적혀 있어요. 1~4 틀은 강의 PPT 평가항목 그대로예요.</p></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">22-3</span><div class="et">접근: 출혈·용혈성(유약·미성숙 적혈구 출현), 철결핍성(MCHC·Hb↓, RBC 수 정상), 독소에 의한 재생불량성(RBC 수·생성↓)으로 구분.<br>특징: 점막 창백, 기력소실·식욕부진·근육약화, 심박·맥박수 증가.</div></div><div class="erow"><span class="ey">21-4</span><div class="et">① CBC(HCT·Hb·RBC → MCV·MCHC) ② 빈혈 정도(mild~severe)<br>③ 재생/비재생·출혈/용혈·혐기성 대사(reticulocyte, bilirubin, L-lactate) ④ 도말로 이상 적혈구(spherocyte, target cell, Heinz body).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">평가항목 <span class="k">"C 정제현미"</span> → CBC · 정도 · 재생성 · 현미경</div><div class="trow">특징: "얼굴 창백, 기운 없고, 심장만 두근"</div></div>
+</section>
+
+<section class="group" id="g17">
+<div class="gtitle"><span class="num">17</span>영양결핍성 빈혈 (코발트 · 철)<span class="essay">서술형 출제예정</span></div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">24년도 5번.</span><span class="tag">단답</span>반추류 동물에서 비타민 B12 합성장애로 대혈구성 정색소성 빈혈을 일으키는 무기질 결핍증은?</p>
+<p><span class="yr">22년도 4번.</span><span class="tag">단답</span>식이성분 중의 결핍으로 인하여(Vit B12의 생성 저하로 인한) 정구성 정색소성 빈혈이 유발되고 Methylmalonic acid(MMA)의 증가로 진단할 수 있는 결핍증은?</p>
+<p><span class="yr">22년도 5번.</span><span class="tag">단답</span>콘크리트 바닥에서 사육되는 자돈에서 발생할 수 있는 질병과, 이때 나타날 수 있는 빈혈의 형태에 대해 적으시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">24-5 / 22-4 답</span> — <span class="short">코발트(Co) 결핍증</span><br>
+Co 결핍 → 1위 내 <span class="k">Vitamin B12 합성장애</span> → 빈혈 / Vit B12 효소계로 대사되던 MMA가 쌓여 <span class="k">요 중 MMA 증가</span>로 진단</div>
+<div class="row"><span class="h">22-5 답</span> — 질병: <span class="short">(자돈) 철결핍성 빈혈</span> / 형태: <span class="short">소구성 저색소성 빈혈</span> <span class="k">(Microcytic Hypochromic Anemia)</span>
+<ul>
+<li><span class="k">콘크리트나 방수 바닥</span>의 돈방에서 제한 사육되거나 <span class="k">모유가 유일한 먹이</span>인 자돈에서 발생</li>
+<li>보통은 <span class="k">흙</span>으로부터 우유에 결핍된 철을 충분히 보충 → 흙을 못 먹는 환경·철 함량이 낮은 토양에서 본증 발생</li>
+<li>기생충 감염 방지를 위한 육성사·사내 사육이 필수인 추운 기후에서 중요</li>
+<li>증상은 보통 <span class="k">3~6주령</span>이 될 때까지 나타나지 않음</li>
+</ul>
+<span class="light">(같은 소구성 저색소성: 구리(Cu) 결핍 → Hemosiderin 침착 → 철 재이용 장애)</span></div>
+<p class="note">※ 코발트 결핍 빈혈 형태: 강의 슬라이드는 'Macrocytic Hypochromic', 새 족보에 붙은 교재 pdf는 <b>'정구성 정색소성'</b>, 24년 문제는 '대혈구성 정색소성'으로 다 달라요. 답(코발트 결핍증)은 같고, 교재 기준으로는 22년 문제 표기(정구성 정색소성)가 맞아요. 진단은 <b>요 중 MMA 증가</b>.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24단-5</span><div class="et"><span class="k">코발트(Co) 결핍증</span></div></div><div class="erow"><span class="ey">22단-4</span><div class="et"><span class="k">코발트(Co) 결핍증</span></div></div><div class="erow"><span class="ey">22단-5</span><div class="et"><span class="k">자돈 철결핍성 빈혈</span> — 흙으로 철을 보충하지 못하고 모유만 먹는 자돈에서 3~6주령에 발생.<br>형태: <span class="k">소구성 저색소성 빈혈 (Microcytic Hypochromic)</span>.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">Co</span>balt → <span class="k">Co</span>balamin(B12) → 같은 Co 형제</div><div class="trow">콘크리트 바닥 = <span class="k">흙 못 먹음 = 철 못 먹음</span> → 작고(소구) 창백(저색소)</div></div>
+</section>
+
+<section class="group" id="g18">
+<div class="gtitle"><span class="num">18</span>거대비장 (Splenomegaly)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">21년도 5번.</span>Splenomegaly(거대비장) 유발원인 4가지로 분류해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="k">① 울혈성 &nbsp; ② 증식성 &nbsp; ③ 염증성 &nbsp; ④ 종양성</span></div>
+<p class="note">※ 족보엔 분류명 4개만 적혀 있어요. 각 분류별 설명은 없음.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">21-5</span><div class="et">울혈성 / 증식성 / 염증성 / 종양성</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"우울증으로 종일 염려"</span> → 울(혈) · 증(식) · 염(증) · 종(양)</div></div>
+</section>
+
+<section class="group" id="g19">
+<div class="gtitle"><span class="num">19</span>림프절 종대</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">25년도 8번.</span>림프절 종대의 원인을 포괄적으로 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">원인 (큰 분류)</span> — <span class="k">감염, 증식, 종양성 침윤</span>의 결과로 유발</div>
+<div class="row"><span class="h">① 림프절 원발성 종양</span> — <span class="k">림프종증</span>, <span class="k">골수성 백혈병</span></div>
+<div class="row"><span class="h">② 림프절염</span> — <span class="k">선역</span>, 산발성 뇌척수염, <span class="k">비저</span>, 지방성 림프관염, 유행열, <span class="k">결핵</span>, <span class="k">방선균증</span>, 건락성 림프절염 등</div>
+<div class="row"><span class="h">③ 급성 림프절염</span> — 촉진으로 <span class="k">동통 &amp; 열감</span> 파악</div>
+<p class="note">※ 보내준 슬라이드 캡처에서 림프절염 예시 줄 끝이 잘려 있어서 '건락성 림프절…'까지만 확인돼요. 뒤에 더 있으면 알려 주세요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">25-8</span><div class="et">감염·증식·종양성 침윤의 결과로 유발.<br>원발성 종양(림프종증, 골수성 백혈병), 림프절염(결핵, 선역, 비저, 방선균증 등) / 급성 림프절염은 촉진 시 동통·열감.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">원인 <span class="k">"감·증·종"</span> = 감기 증상 종합 → 감염 · 증식 · 종양 침윤</div><div class="trow">림프절염 대표: <span class="k">"결선비방"</span>(결선에서 상대 선수를 비방한다) → 결핵 · 선역 · 비저 · 방선균증</div></div>
+</section>
+
+<!-- ============ Ⅴ ============ -->
+<h2>Ⅴ. 근골격계 질병</h2>
+
+<section class="group" id="g20">
+<div class="gtitle"><span class="num">20</span>근병증 (Myopathy)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">22년도 6번.</span>근병증의 원인과 기병론에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">정의</span> — 골격근의 <span class="k">비염증성</span> 병변. 근육쇠약 / 근섬유의 <span class="k">초자양 변성</span> 발생 → <span class="k">근육효소치 상승, 근색소뇨</span> 수반</div>
+<div class="row"><span class="h">원인 (6가지)</span>
+<ol class="in">
+<li><span class="k">영양성</span>: VitE, 셀레늄 결핍 → 어린 동물</li>
+<li><span class="k">운동 후성</span>: 말 — 익숙하지 않은 운동 → 노역성 횡문근변성, 마비성 근색소뇨증 / 야생동물 — 포획 시 노역성 횡문근변성</li>
+<li><span class="k">선천성</span>: 아까바네 — 자궁 내 감염 → 신생송아지 뇌수두증·관절만곡증</li>
+<li><span class="k">약물</span>: 말 — 스테로이드 치료 → Tying up syndrome</li>
+<li><span class="k">허혈성</span>: 2일 이상 횡와 → 혈관 압박으로 핍혈 → 근병증</li>
+<li><span class="k">신경성 근위축</span>: 외상 → 변성 → 신경 차단 / 아까바네 관절만곡증 → 하위운동신경 손상</li>
+</ol></div>
+<div class="row"><span class="h">기병론</span>
+<ol class="in">
+<li><span class="b">영양성 근이영양증</span>: VitE·셀레늄 결핍 → <span class="k">과산화지질</span> → <span class="k">근세포막 변성·괴사</span></li>
+<li><span class="b">노역성 횡문근 변성</span>:
+<div class="flow">해당작용 항진 → 근육 내 <span class="k">글리코겐 감소</span> → <span class="k">혐기성 산화</span> 유발 → <span class="k">젖산염 축적</span> → 근원섬유의 <span class="k">초자양 변성</span> → <span class="k">근색소뇨</span> 배설</div>
+→ 근변성, <span class="k">근색소뇨성 신장증</span> 병발</li>
+</ol></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">22-6</span><div class="et">원인: 운동 후성(노역성 횡문근변성), 영양성(Vit E·Se 결핍), 신경성 근위축, 선천성(아까바네), 허혈성(장기 횡와), 약물(스테로이드).<br>기병론: Vit E·Se 결핍 → 항산화 작용 저하 → 과산화지질 축적 → 근세포막 변성·괴사 / 해당항진 → 글리코겐 고갈 → 혐기성 대사로 젖산 축적 → 근원섬유 초자양 변성 → 근색소뇨(근색소뇨성 신장증).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">원인 6 <span class="k">"운영이 신선허약"</span>(운영이 신선하야~) → 운동 · 영양 · 신경 · 선천 · 허혈 · 약물</div><div class="trow">무리하면 젖산 → 근육이 <span class="k">유리처럼(초자양)</span> 굳고 → 오줌이 <span class="k">커피색(근색소뇨)</span></div></div>
+</section>
+
+<section class="group" id="g21">
+<div class="gtitle"><span class="num">21</span>골이영양증의 원인</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr" style="width:auto;margin-right:6px">24년도 9번.</span>골이영양증 원인에 대해 간단히 기술하시오.</p><p><span class="yr" style="width:auto;margin-right:6px">23년도 10번.</span>골이영양증 원인 중 영양성 원인에 대해 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">① 영양성</span>
+<ul>
+<li><span class="k">Ca, P, Vit D 부족</span> → <span class="k">구루병, 골연화증, 섬유성 골이영양증</span></li>
+<li><span class="k">구리 결핍</span>: 어린 면양 — 골다공증 / 소 — 골단염</li>
+<li><span class="k">단백질·영양 부족</span> → 골다공증</li>
+<li><span class="k">Vit A 결핍 or 과잉</span></li>
+<li>수컷: <span class="k">영양성 칼시토닌 과잉증</span>(Ca의 장기간 과잉) → 부갑상선 종대, 갑상선 종양, 장골의 소주골이 치밀골로 치환</li>
+</ul></div>
+<div class="row"><span class="h">② 물리적</span> — 급성장 동물, 특히 <span class="k">콘크리트 바닥 사육</span> 시</div>
+<div class="row"><span class="h">③ 화학적</span> — <span class="k">만성 납중독</span> → 골다공증 / <span class="k">불소 침착증</span> → 장골 골막의 과잉골화</div>
+<div class="row"><span class="h">④ 유전성</span> — <span class="k">연골형성부전성 왜소발육증, 골형성부전증, 골화석증</span></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-9</span><div class="et">영양성: Ca·P·Vit D 부족 → 구루병·골연화증·섬유성 골이영양증, 구리 결핍 → 어린 면양 골다공증·소 골단염, 단백질·영양 부족 → 골다공증, Vit A 결핍 또는 과잉, 수컷의 Ca 장기 과잉 → 영양성 칼시토닌 과잉증.<br>물리적: 급성장 동물의 콘크리트 바닥 사육 / 화학적: 만성 납중독 → 골다공증, 불소 침착증 → 골막 과잉골화 / 유전성: 연골형성부전성 왜소발육증, 골형성부전증, 골화석증.</div></div><div class="erow"><span class="ey">23-10</span><div class="et">Ca·P·Vit D 부족 → 구루병·골연화증·섬유성 골이영양증, 구리 결핍 → 어린 면양 골다공증·소 골단염, 단백질·영양 부족 → 골다공증, Vit A 결핍 또는 과잉, 수컷의 Ca 장기 과잉 → 영양성 칼시토닌 과잉증.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">4분류 <span class="k">"영물 화유"</span> → 영양 · 물리 · 화학 · 유전</div><div class="trow">영양성: <span class="k">칼·인·디</span> 부족 → 구루병·골연화 / <span class="k">구리</span> → 골다공·골단염 / Vit <span class="k">A</span>는 모자라도 넘쳐도</div></div>
+</section>
+
+<section class="group" id="g22">
+<div class="gtitle"><span class="num">22</span>관절증 vs 관절염</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr" style="width:auto;margin-right:6px">23년도 8번.</span>관절증(arthropathy)과 관절염(arthritis)을 비교해서 기술하시오.</p><p><span class="yr" style="width:auto;margin-right:6px">24년도 단답 추가.</span><span class="tag">단답</span>소에서 만성적인 파행과 연골주위 골비대가 관찰되었다. 관절낭액의 분석결과, 담황색을 띠고 응괴형성은 없었으며, 백혈구수치는 약 1000/μl이었다. 이 소견은 관절증(arthropathy)과 관절염(arthritis) 중 어느 질환에 더 가까운가?</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row">
+<div class="tw"><table>
+<tr><th></th><th>관절증 / 골관절증</th><th>관절염</th></tr>
+<tr><td class="f">병변</td><td class="k">퇴행성</td><td class="k">염증성</td></tr>
+<tr><td class="f">원인</td><td>창상, 체중부하, 노화, 만성 Zn 중독 등</td><td>제대염, E. coli, Streptococcus 등 감염 / Erysipelothrix insidiosa(류마티스 인자) / 관절낭 천공, 화농성 자궁염, 거세창 → 혈행성 감염</td></tr>
+<tr><td class="f">관절낭액</td><td>담황색 <span class="light">(필기)</span></td><td>혼탁·황색 <span class="light">(필기)</span></td></tr>
+<tr><td class="f">응고물</td><td class="k">형성 X</td><td class="k">형성 O</td></tr>
+<tr><td class="f">백혈구</td><td class="k">250~1,000/μl</td><td class="k">50,000~150,000/μl</td></tr>
+</table></div></div>
+<div class="row"><span class="h">치료 (공통)</span>
+<ol class="in">
+<li>코르티코스테로이드 — 동통·불안 경감</li>
+<li>Acetylsalicylic acid — 관절 내 진통</li>
+<li>코르티코스테로이드 + Phenylbutazone — 동통 완화 (부작용 있어 관리 필요)</li>
+</ol></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">23-8</span><div class="et">관절증: 창상·체중부하·노화·만성 Zn 중독에 의한 퇴행성 병변 — 관절액 담황색, 응고물 없음, 백혈구 250~1,000/μl.<br>관절염: 감염(제대염, E. coli, Streptococcus, Erysipelothrix)·혈행성 감염에 의한 염증성 병변 — 관절액 혼탁, 응고물 형성, 백혈구 50,000~150,000/μl.<br>치료(공통): 코르티코스테로이드, acetylsalicylic acid, phenylbutazone.</div></div><div class="erow"><span class="ey">24단 추가</span><div class="et"><span class="k">관절증 (Arthropathy)</span></div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">증 = <span class="k">늙어서</span>(퇴행) / 염 = <span class="k">세균</span>(염증)</div><div class="trow">백혈구: 증은 <span class="k">천(1,000)</span>, 염은 <span class="k">십만 단위(5~15만)</span> · 염만 굳는다(응고물)</div></div>
+</section>
+
+<!-- ============ Ⅵ ============ -->
+<h2>Ⅵ. 알러지성 질병</h2>
+
+<section class="group" id="g23">
+<div class="gtitle"><span class="num">23</span>과민반응 Type Ⅰ~Ⅳ</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr" style="width:auto;margin-right:6px">24년도 8번.</span>과민반응 type 1, 2, 3, 4에 대해 서술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row">
+<div class="tw"><table>
+<tr><th>유형</th><th>매개기전</th><th>임상증상(질병)</th></tr>
+<tr><td class="f">Ⅰ형</td><td class="l">항원 – <span class="k">IgE + Mast cell</span> → 화학조절인자(<span class="k">히스타민, 류코트리엔</span> 등) 방출</td><td>아토피, 아나필락시스, 천식, 담마진</td></tr>
+<tr><td class="f">Ⅱ형</td><td class="l"><span class="k">IgG/M 항체 매개 세포독성</span> 과민반응 → 세포 파괴</td><td>IMHA, IMT</td></tr>
+<tr><td class="f">Ⅲ형</td><td class="l"><span class="k">면역복합체</span>(IgG/M + 보체) → 보체 활성화 → 호중구·염증세포 추화 → 조직 손상<br>SLE: DNA–항DNA 복합체 → 신사구체 침착</td><td>사구체신염, SLE, 다발성관절염</td></tr>
+<tr><td class="f">Ⅳ형</td><td class="l">면역능 <span class="k">림프구 + 항원</span> 반응 → <span class="k">lymphokine</span> 방출 → 병변부위로 대식세포·염증세포 유인 = <span class="k">지연형</span> 과민반응</td><td>접촉성 피부염, 면역매개성 갑상선염</td></tr>
+</table></div></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-8</span><div class="et">Ⅰ형: 비만세포에 붙은 IgE에 항원 결합 → 탈과립 → 히스타민·류코트리엔 방출(아토피, 아나필락시스, 천식, 담마진) / Ⅱ형: IgG·IgM 항체 매개 세포독성 → 세포 파괴(IMHA, IMT).<br>Ⅲ형: 항원–IgG/M 면역복합체가 조직에 침착 → 보체 활성화·호중구 추화 → 조직 손상(사구체신염, SLE, 다발성관절염).<br>Ⅳ형: 감작 T림프구-항원 반응 → lymphokine 방출로 대식세포·염증세포 유인되는 지연형(접촉성 피부염, 면역매개성 갑상선염).</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow"><span class="k">"ACID"</span> → Ⅰ <span class="k">A</span>naphylactic(IgE) · Ⅱ <span class="k">C</span>ytotoxic(IgG/M) · Ⅲ <span class="k">I</span>mmune complex · Ⅳ <span class="k">D</span>elayed(림프구)</div></div>
+</section>
+
+<section class="group" id="g24">
+<div class="gtitle"><span class="num">24</span>제엽염 (Laminitis)</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr" style="width:auto;margin-right:6px">24년도 11번.</span>제엽염의 기병론에 대해 기술하시오.</p><p><span class="yr" style="width:auto;margin-right:6px">23년도 9번.</span>알러지성 질병인 제엽염(Laminitis)에 대해 설명하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">개요</span> — <span class="k">말</span>에서 많이 발생(말·소). 제관부의 염증으로 <span class="k">발열·동통</span>, 심한 <span class="k">파행</span></div>
+<div class="row"><span class="h">원인 · 역학</span>
+<ul>
+<li><span class="k">곡물 과식</span> → 소화관 내 이상으로 생기는 세균-독소 중독</li>
+<li><span class="k">자궁염</span>(가장 흔한 병발), <span class="k">후산정체</span>, 유방염, 유방수종 등 국소 염증과 관련</li>
+<li>실험적 유발: 소 — 히스타민 주사 / 소·면양 — 1위 내 젖산 주입</li>
+</ul></div>
+<div class="row"><span class="h">기병론</span>
+<div class="flow">탄수화물 과다 섭취 → 장내 발효↑ → 위 내 <span class="k">젖산 증가</span> → <span class="k">균체 사멸</span> → <span class="k">독소 유출</span> → 체내 흡수 → 제엽의 <span class="k">염증 &amp; 알러지 반응</span> → 발굽 내 <span class="k">혈관 확장·충혈</span> → 제엽염</div></div>
+<div class="row"><span class="h">증상 · 진단</span>
+<ul>
+<li>제관부 <span class="k">열감·종창</span>, 촉진 시 통증 / 급성 시 사지에 심한 통증 / 발한, 맥박 증가, 호흡 촉박</li>
+<li>진단: 병력 청취, 자세·보행 관찰 — <span class="k">제부의 한국성 통증</span>이 주요 진단 지표</li>
+<li>감별: 파상풍, 마비성 근색소뇨병, 산통</li>
+</ul></div>
+<div class="row"><span class="h">치료</span> — <span class="k">Phenylbutazone</span>, mineral oil / <span class="k">항히스타민제</span>(급성 초기, 비경구) / 식이요법: sodium 섭취 감소</div>
+<p class="note">※ 1위 산증(02번)에 연관 질환으로 나오는 제엽염과 같은 내용이에요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-11</span><div class="et">탄수화물 과식 → 소화관 내 발효↑ → 젖산 증가 → 균체 사멸·내독소 유출 → 체내 흡수 → 제엽의 염증·알러지 반응 → 발굽 내 혈관 확장·충혈 → 제엽염 (자궁염·후산정체 등 국소 염증과도 관련).</div></div><div class="erow"><span class="ey">23-9</span><div class="et">말·소에서 다발하는 제엽의 알러지성 염증 — 기병론: 탄수화물 과식 → 소화관 내 발효↑ → 젖산 증가 → 균체 사멸·내독소 유출 → 체내 흡수 → 제엽의 염증·알러지 반응 → 발굽 내 혈관 확장·충혈 → 제엽염 (자궁염·후산정체 등 국소 염증과도 관련).<br>증상: 제관부 열감·종창·통증, 심한 파행, 발한·맥박↑·호흡촉박 — 진단 지표는 제부의 한국성 통증.<br>치료: Phenylbutazone, 항히스타민제(급성 초기), mineral oil, 소금 섭취 제한.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">곡물 → <span class="k">젖산</span> → 세균 사멸 <span class="k">독소</span> → 발굽 <span class="k">충혈</span> = "발굽이 젖어 독하게 붓는다"</div><div class="trow">치료 "<span class="k">페·항</span>" → Phenylbutazone · 항히스타민</div></div>
+</section>
+
+<section class="group" id="g25">
+<div class="gtitle"><span class="num">25</span>신생동물 동종면역성 용혈성 빈혈</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr" style="width:auto;margin-right:6px">24년도 10번.</span>망아지 동종면역성 용혈성빈혈의 원인(발생기전)에 대해 기술하시오.</p><p><span class="yr" style="width:auto;margin-right:6px">23년도 11번.</span>신생동물의 (동종면역성) 용혈성빈혈에 대한 원인, 증상, 치료에 대해서 기술하시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row"><span class="h">원인 (발생기전)</span>
+<ol class="in">
+<li><span class="b">망아지, 노새</span>
+<div class="flow">부계(종마)로부터 유전된 <span class="k">태아 적혈구 항원</span>이 태반을 통해 <span class="k">암말 혈중으로 유입</span> → 암말이 태아 적혈구에 대한 <span class="k">항체 생산</span>(항체는 태반 통과 X → 태아엔 해 없음) → 신생동물이 <span class="k">항체 포함 초유 섭취</span> → 항체와 신생동물 적혈구 항원이 반응 → <span class="k">용혈</span></div></li>
+<li><span class="b">송아지</span>: 어미소에 <span class="k">바베시아·아나플라즈마 백신</span> 투여 시 — 백신에 소 혈액이 있으면 어미소가 항체 생산 → 초유로 송아지에 전달</li>
+</ol></div>
+<div class="row"><span class="h">증상</span>
+<ul>
+<li>용혈 → <span class="k">빈혈, 혈색소뇨, 황달</span></li>
+<li>송아지: 생후 <span class="k">1~2일</span> 내 증상 발현 → 1주일 내 폐사</li>
+<li>망아지: 심급성 / 급성 / 아급성
+<div class="tw"><table>
+<tr><th></th><th>심급성</th><th>급성</th><th>아급성</th></tr>
+<tr><td class="f">시기</td><td>생후 8~36h</td><td>생후 2~4일</td><td>생후 4~5일</td></tr>
+<tr><td class="f">황달</td><td>창백</td><td>O</td><td>O</td></tr>
+<tr><td class="f">혈색소뇨</td><td>심함</td><td>O</td><td>X</td></tr>
+</table></div>
+<span class="light">(망아지 표는 족보 필기에 '참고만'이라고 적혀 있음)</span></li>
+</ul></div>
+<div class="row"><span class="h">치료</span> — 빈혈·빈혈성 저산소증·혈색소뇨성 신장증 개선: <span class="k">수혈</span> / 망아지(생후 3일 내 발병 시) — <span class="k">다른 암말로 포유</span></div>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">24-10</span><div class="et">부계(종마)로부터 유전된 태아 적혈구 항원이 태반을 통해 암말 혈중으로 유입 → 암말이 태아 적혈구에 대한 항체 생산(항체는 태반 통과 X → 태아엔 무해) → 신생 망아지가 항체 함유 초유 섭취 → 항체가 망아지 적혈구 항원과 반응 → 용혈.</div></div><div class="erow"><span class="ey">23-11</span><div class="et">원인: (망아지) 부계(종마)로부터 유전된 태아 적혈구 항원이 태반을 통해 암말 혈중으로 유입 → 암말이 태아 적혈구에 대한 항체 생산(항체는 태반 통과 X → 태아엔 무해) → 신생 망아지가 항체 함유 초유 섭취 → 항체가 망아지 적혈구 항원과 반응 → 용혈. / (송아지) 어미소에 소 혈액 함유 바베시아·아나플라즈마 백신 접종 → 항체가 초유로 전달.<br>증상: 용혈 → 빈혈, 혈색소뇨, 황달 (송아지 생후 1~2일 발현 → 1주 내 폐사, 망아지는 심급성·급성·아급성).<br>치료: 수혈, 생후 3일 내 발병 망아지는 다른 암말로 포유 → 빈혈·저산소증·혈색소뇨성 신장증 개선.</div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">엄마가 아기 피를 <span class="k">"남"</span>으로 기억 → <span class="k">젖(초유)</span>에 항체를 탄다</div><div class="trow">해결: 생후 <span class="k">3일</span> 안이면 <span class="k">다른 엄마 젖</span></div></div>
+</section>
+
+<!-- ============ Ⅶ ============ -->
+<h2>Ⅶ. 기타</h2>
+
+<section class="group" id="g26">
+<div class="gtitle"><span class="num">26</span>소 수포성 구내염 원인체</div>
+<div class="lbl q">묶어놓은 문제</div>
+<div class="qbox">
+<p><span class="yr">22년도 1번.</span><span class="tag">단답</span>소에서 수포를 형성하는 구내염의 원인체를 2가지 적으시오.</p>
+</div>
+<div class="lbl a">관련 내용</div>
+<div class="abox">
+<div class="row">아래 중 2가지</div>
+<div class="row"><span class="k">구제역</span> → FMD virus</div>
+<div class="row"><span class="k">BVD-MD</span> → BVD virus</div>
+<div class="row"><span class="k">우역</span> → Rinderpest virus</div>
+<p class="note">※ '원인체'를 물었으니 질병명보다 바이러스명으로 쓰는 게 안전해요.</p>
+</div>
+<div class="lbl e">시험 답안</div>
+<div class="ebox"><div class="erow"><span class="ey">22단-1</span><div class="et"><span class="k">FMD virus(구제역), BVD virus(BVD-MD)</span> <span class="light">(또는 Rinderpest virus)</span></div></div></div>
+<div class="lbl t">외우는 팁</div>
+<div class="tbox"><div class="trow">수포 3총사 <span class="k">"구·비·우"</span> → 구제역 · BVD · 우역</div></div>
+</section>
+
+</div>
+</body>
+</html>

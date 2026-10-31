@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1. 혈청화학 개론 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-pen2{background:#f1eafd;color:#6B3FC4;border:1px solid #c3a9f0;}
+.f2{background:#faf7ff;box-shadow:-4px 0 0 #9b7be0;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.side{border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:8px 4px 10px 20px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.clear{clear:both;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;}
+.two table{margin-left:0;width:100%;}
+
+table,.memo,.side,.two,tr{break-inside:avoid;page-break-inside:avoid;}
+h2,h3,h4,h5{break-after:avoid;page-break-after:avoid;}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two{display:block;margin-left:0;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo{margin-left:0;}
+}
+/* 자료해석 전용 */
+.flow{margin:8px 0 12px 20px;display:flex;flex-direction:column;gap:6px;}
+.fstep{display:flex;gap:8px;align-items:stretch;}
+.fnum{flex:0 0 30px;background:#13756A;color:#fff;font-weight:700;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.fbody{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:4px;padding:5px 9px;color:var(--ink);font-size:12.8px;line-height:18px;}
+.fbody .ft{font-weight:700;color:#12403B;}
+.fork{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.fork>div{flex:1;min-width:150px;border-radius:4px;padding:4px 7px;font-size:12px;line-height:16px;}
+.fk1{background:#E8F4EA;border:1px solid #0F9268;}
+.fk2{background:#FFF6D8;border:1px solid #C9A227;}
+.fk3{background:#FDECEC;border:1px solid #E23B3B;}
+.case{border:2px solid #13756A;border-radius:6px;margin:10px 0 14px 20px;background:#fff;color:var(--ink);overflow:hidden;}
+.case .ch{background:#13756A;color:#fff;font-weight:700;padding:5px 10px;font-size:14.5px;line-height:19px;}
+.case .ch .cn{display:inline-block;background:#fff;color:#13756A;border-radius:3px;padding:0 6px;margin-right:6px;font-size:12.5px;}
+.case .cs{padding:4px 10px;font-size:12.4px;line-height:17px;background:#F2F8F6;border-bottom:1px solid #D8ECE7;color:#3A4A63;}
+.case .cb{display:flex;gap:10px;padding:8px 10px;}
+.case .cd{flex:0 0 40%;}
+.case .cd table{margin:0;width:100%;font-size:11.2px;}
+.case .cd caption{font-size:12.5px;padding:3px 6px;}
+.case .ci{flex:1;}
+.case ol.st{margin:0;padding:0;list-style:none;counter-reset:s;}
+.case ol.st>li{counter-increment:s;position:relative;padding-left:24px;margin:0 0 4px;font-size:12.6px;line-height:18px;}
+.case ol.st>li::before{content:counter(s);position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:#2B5FC4;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.case .cc{margin:6px 10px 8px;padding:5px 9px;background:#FFF6D8;border-left:4px solid #E23B3B;font-size:12.8px;line-height:18px;}
+.case .cc b{color:#E23B3B;}
+.case .tr{margin:0 10px 8px;padding:4px 9px;background:#F4F9FF;border-left:4px solid #2B5FC4;font-size:12.2px;line-height:17px;}
+.cat-pre .ch{background:#0F9268;} .cat-pre{border-color:#0F9268;}
+.cat-ren .ch{background:#C0392B;} .cat-ren{border-color:#C0392B;}
+.cat-post .ch{background:#2B5FC4;} .cat-post{border-color:#2B5FC4;}
+.cat-mim .ch{background:#B7791F;} .cat-mim{border-color:#B7791F;}
+.cat-oth .ch{background:#6B4FA0;} .cat-oth{border-color:#6B4FA0;}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px 20px;font-size:11.5px;}
+.legend span{padding:1px 7px;border-radius:3px;color:#fff;font-weight:700;}
+@media (max-width:800px){.case .cb{display:block;}.case .cd{margin-bottom:6px;}.case{margin-left:0;}.flow{margin-left:0;}}
+
+</style>
+</head>
+<body>
+<section class="page">
+<h1 class="doc-title"><span class="num">1.</span> 혈청화학 개론 <span class="en">Introduction to Serum Chemistry</span></h1>
+<p class="doc-sub">진단검사의학 · 강의 PDF 1–45p + 수업 녹음 ①② + 슬라이드 필기 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-pen2">필기2</span> 동기 타이핑 필기에서 새로 추가한 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트</p>
+<hr class="hr-hand">
+<table>
+<caption>표 1. 이번 강의 한눈에 — "아픈가? → 어디가? → 어떻게·왜?"</caption>
+<thead><tr><th style="width:17%">큰 틀</th><th style="width:28%">핵심 질문</th><th>키워드</th></tr></thead>
+<tbody>
+<tr><td class="kc">검사 항목</td><td>무엇을 재는가?</td><td><b>Injury marker</b>(손상된 세포가 흘리는 효소) vs <b>Malfunction marker</b>(기능 이상) — 좋은 항목 3조건: organ specific · disease sensitive · 저렴</td></tr>
+<tr><td class="kc">시료</td><td>무엇으로 재는가?</td><td>serum = <b>heparin plasma</b> (거의 호환) / <span class="r">EDTA·citrate·fluoride plasma ✕</span> / 혈구와 반드시 분리</td></tr>
+<tr><td class="kc">장비</td><td>어디서·어떻게?</td><td>POC(병원, 건식) vs Laboratory(랩, 습식) · Wet / Dry / Semi-wet</td></tr>
+<tr class="hi"><td class="kc">검사 전 요인 ①<br>장비 수준</td><td>믿을 만한 장비인가?</td><td>Precision(정밀도, CV) · Accuracy(정확도) · Sensitivity/Specificity · PPV/NPV · <b>Reference range는 장비·랩마다 따로</b></td></tr>
+<tr class="hi"><td class="kc">검사 전 요인 ②<br>시료 수준</td><td>좋은 시료인가?</td><td>Good sample은 27%뿐 · 절식 12h · <b>lipemia · hemolysis</b> 간섭(instrument·reagent-dependent) · 처치 전 채혈 · 스트레스·운동 · 보관</td></tr>
+</tbody>
+</table>
+<h2 class="lv1">Ⅰ. 혈청화학 검사란?</h2>
+<h3 class="lv2">1. 검사의 흐름 — sick? → then, where? → how? why? what?</h3>
+<ul class="d">
+<li>독소·세균·바이러스·외상 등 원인 → 장기(세포) 손상 → 두 갈래로 결과가 나타남</li>
+</ul>
+<div class="memo" style="border-color:#9b7be0;box-shadow:2px 2px 0 #9b7be0;background:#faf7ff;">
+<div class="mt" style="color:#6B3FC4;">혈청화학 검사의 위치 — 왜 하나? <span class="tag t-pen2">필기2</span></div>
+<ul class="d">
+<li>아픈 개·고양이가 왔을 때 <b>어디가 아픈지 선별</b>하는 검사 → 혈청화학으로 <b>최소한 어느 장기가 관여됐구나</b>를 평가</li>
+<li>여기에 <b>방사선·초음파</b> + 보호자 <b>history taking</b>을 더해 좁혀감</li>
+<li>원인을 꼭 몰라도 <b>대증 치료</b>는 가능 — 구토하면 구토를 멈추는 처치를 하듯이</li>
+<li>원인체: 고양이는 바이러스 못지않게 <b>세균</b>이 튀어나오는 경우가 꽤 있고, 강아지는 바이러스가 대부분인 듯? <span class="gray">(동기 메모 — "~인 듯?" 추정 표현)</span></li>
+</ul>
+</div>
+<ul class="c">
+<li><b class="k">Injury</b> = <span class="hl">손상된 세포가 흘리는 무엇~</span> (주로 <b>효소</b>)</li>
+<li><b class="k">Malfunction</b> = <span class="hl">손상된 세포의 기능 이상</span></li>
+</ul>
+<div class="memo blue">
+<div class="mt">✎ Malfunction에 "여기 도달했다? 이미 큰일났다…" <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li class="f2">그래서 <b>나이 많은 환축</b>에서 간이 아플 것으로 예상되면 → <b>injury marker + malfunction marker를 같이</b> 검사해야 간 상태를 정확히 평가 <span class="tag t-pen2">필기2</span></li>
+<li>주요 장기에서 단순 손상을 넘어 <b>기능 이상까지 갔다 = 일단 위중</b>, 예후가 안 좋을 수 있음 → 보호자에게 이 의미를 설명할 수 있어야 함 <span class="tag t-rec">수업</span></li>
+<li>예) 신장: BUN·Cr이 신장 때문에 올랐다 = <span class="r">기능이 1/3도 안 남았다</span>(2/3 이상 소실)는 뜻</li>
+</ul>
+</div>
+<h3 class="lv2">2. Injury marker — 대부분 효소</h3>
+<ul class="d">
+<li>효소는 <span class="r">농도가 아니라 "활성도(activity)"</span>로 표현 <span class="tag t-ex">시험</span></li>
+</ul>
+<span class="pno">1</span>
+</section>
+
+<section class="page">
+<ul class="c">
+<li>이유: 효소를 직접 정량하지 않고, <b>기질을 넣고 incubation → end product</b>를 재서 간접 평가하기 때문</li>
+<li>단위: 효소는 대부분 <b>U/L</b> · TP·albumin만 <b>g/dL</b> · 나머지 화학 항목은 <b>mg/dL</b> <span class="tag t-rec">수업</span></li>
+<li>예외: <b>trypsin, cPLI</b>는 효소 자체를 직접 정량 (amylase·lipase는 간접 = 활성도)</li>
+<li class="f2">췌장 효소가 분해하는 것: <b>amylase</b> = 탄수화물 · <b>lipase</b> = 지방 · <b>trypsin</b> = 단백질 / <b>cPLI</b> = 개 췌장에서 분비되는 <b>특이적 리파제만</b> 면역학적으로 측정한 수치 → <b>췌장염 마커</b> <span class="tag t-pen2">필기2</span></li>
+</ul>
+<table>
+<caption>표 2. 임상에서 주로 쓰는 Injury marker</caption>
+<thead><tr><th style="width:16%">장기</th><th style="width:30%">항목</th><th>포인트</th></tr></thead>
+<tbody>
+<tr><td class="kc">간</td><td><b>ALT</b>, SDH, ALP</td><td>ALT = 간세포에 가장 많이 분포 → 간 특이도 가장 높음. <span class="r">"간은 사실상 ALT로 끝"</span> <span class="tag t-pen">필기</span> (아직 ALT보다 specificity 높은 항목 없음, 사람도 동일)</td></tr>
+<tr><td class="kc">근육(횡문근)</td><td><b>AST</b>, <b>CPK(CK)</b></td><td>AST는 간세포에도 있지만 근육에 많음 → AST·CPK가 유난히↑ = <b>근육 손상</b>. CPK <span class="tag t-pen">필기</span> aka. <b>횡문근융해증</b> 지표</td></tr>
+<tr><td class="kc">췌장(외분비)</td><td>amylase, lipase, trypsin, <b>cPLI</b></td><td>amylase·lipase = 전통 항목(간접 측정) / trypsin·cPLI(canine pancreatic lipase immunoreactivity) = 직접 정량. 췌장은 "injury"보다 <b>췌장염</b> 개념</td></tr>
+<tr><td class="kc">심장</td><td>troponin I</td><td><span class="tag t-pen">필기</span> 임상에서 많이 쓰는 심장 관련 injury marker. 단, 개·고양이 심장병은 심근 손상이 원인인 경우가 드묾 → <b>proBNP</b>가 더 중요</td></tr>
+<tr class="hi"><td class="kc">신장</td><td class="r">없음!</td><td>신장은 그렇게 중요한데도 <b>injury marker가 없음</b> → 연구 중이나 쉽지 않음 (urine GGT, NGAL, cystatin 등)</td></tr>
+</tbody>
+</table>
+<div class="side"><div class="mt">*수업 에피소드</div>4학년 학생이 크로스핏 등 갑자기 무리한 운동 후 <b>횡문근융해</b>로 입원 → 계속 모니터링하는 수치가 <b>CPK가 얼마나 잘 떨어지는지</b>. CPK↑ = 최소한 근육이 involve됐다는 뜻 + history taking으로 원인 파악. <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>모든 효소는 한 장기에만 있지 않아 겹침 → 그나마 <b>organ specific</b>한 것을 뽑아낸 게 위 항목들</li>
+<li>Injury marker 쪽은 수십 년 경험으로 <b>거의 고정</b> → 새 항목이 나와도 자리 잡기 힘듦 (단가 문제) → 스크리닝 검사는 예나 지금이나 비슷</li>
+</ul>
+<span class="pno">2</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. Malfunction marker — 기능 이상 지표</h3>
+<table>
+<caption>표 3. Malfunction marker 정리 (슬라이드 색깔 묶음 기준)</caption>
+<thead><tr><th style="width:15%">장기·기능</th><th style="width:28%">항목</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="kc" rowspan="2">간</td><td>ammonia(NH₃), <b>bile acid</b>, bilirubin, (cholesterol)</td><td>간 기능 <b>약 40–50% 이상</b> 손상되면 이상값 → 비교적 일찍 반응하는 아주 중요한 지표</td></tr>
+<tr><td><b>albumin, BUN, glucose, cholesterol</b></td><td>간세포가 <b>생산(합성)</b>하는 것 → 4가지가 다 감소할 정도면 <span class="r">약 85% 이상 손상</span>, 아주 심각한 상황에서야 합성 저하</td></tr>
+<tr class="hi"><td class="kc" rowspan="2">신장</td><td><b>BUN, Creatinine, SDMA</b></td><td><span class="tag t-pen">필기</span> <b>신장의 배설기능</b> 평가지표. 신장이 만드는 게 아니라 몸에서 계속 만들어지는 배설물을 신장이 얼마나 잘 내보내는지 봄</td></tr>
+<tr class="hi"><td><b>Specific gravity</b>(요비중)</td><td><span class="tag t-pen">필기</span> <b>신장의 농축(·희석)기능</b> 평가지표 — 단순하지만 매우 중요 (chem 항목은 아님)</td></tr>
+<tr><td class="kc">갑상선·부갑상선</td><td>Ca, P, Na, Cl</td><td>전해질</td></tr>
+<tr><td class="kc">췌장 내분비</td><td>glucose, TG, Chol</td><td>(위 amylase·lipase·trypsin·PLI는 <b>외분비</b> exocrine) <span class="tag t-pen2">필기2</span> glucose = 인슐린·글루카곤 작용과 관련 / <b>외분비</b> = 분비관을 통해 밖(장관)으로, <b>내분비</b> = 혈액으로 직접 분비돼 표적까지 이동</td></tr>
+<tr><td class="kc">심장</td><td>proBNP</td><td>추가로 넣는 항목</td></tr>
+<tr><td class="kc">그 외</td><td colspan="2">T4, fT4, cortisol, ADH… / Urine GGT, NGAL(<i>Neutrophil Gelatinase-Associated Lipocalin</i>), cystatin… — 계속 개발 중, 필요할 때 따로 설명</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 슬라이드의 "heart? intestine? spleen? brain? pituitary gland?" = 모든 장기를 다 스크리닝하면 좋지만 한계가 있다는 뜻</p>
+<h4 class="lv3">1) 신장 지표가 "배설 기능"을 보는 이유</h4>
+<ul class="d">
+<li>몸은 세포 덩어리 → 모든 세포는 세포 수준에서 소화·배설이 있음 → 심장이 배설물을 신장으로 날라주고, 신장이 걸러서 모았다 배설 <span class="tag t-rec">수업</span></li>
+<li>배설을 제대로 하려면 <b>세뇨관 상피세포가 살아서 ATP를 만들어</b> 작동해야 함</li>
+<li><b>BUN·Creatinine은 몸 안에서 매 순간 계속 만들어짐</b> — 자고 있어도!</li>
+</ul>
+<ul class="c">
+<li>Creatinine: 숨만 쉬어도 <b>횡문근(호흡근)</b>이 움직이니 계속 생성 → <span class="r">Cr = 0은 살아 있는 개체에서 불가능</span> (→ Ⅴ장 용혈 case)</li>
+<li>BUN: 단백 대사 → 암모니아 → 계속 생성</li>
+</ul>
+<ul class="d">
+<li class="f2">신장 연구의 두 방향: ① BUN·Cr이 <b>정말 신장이 망가져서</b> 오른 건지 구별 ② 더 <b>early phase</b>에서 알 수 있는 방법은 없을까 → 그래서 나온 게 <b>SDMA</b> <span class="tag t-pen2">필기2</span></li>
+<li><b>SDMA</b>: Cr보다 민감 — 신기능 <b>약 30–40% 손상</b>부터 증가(문헌마다 다름), 일종의 배설물</li>
+</ul>
+<ul class="c">
+<li>처음 나왔을 땐 수의사들이 열광 → 써 보니 해석 안 되는 상황이 많아 특히 <b>고양이</b>에서 마음이 떠난 수의사도 많음 → 대체 항목이 없어 그냥 사용 중 <span class="tag t-rec">수업</span></li>
+<li>동물 연구의 한계: 보호자 동의 등으로 <b>n수 확보가 어려움</b> (사람은 수천~수만 명)</li>
+</ul>
+<ul class="d">
+<li><b>요비중</b>: 땀을 많이 흘리면 비중↑, 물·술 많이 마시면 소변량↑ = 세뇨관의 <b>농축·희석</b>이 작동한 결과 → 농축·희석이 안 되면 신장 기능 손상</li>
+</ul>
+<ul class="c"><li>교수님 사모님: "산에 가니까 소변이 잘 안 나오네" → 땀 → 농축 <span class="tag t-rec">수업</span></li></ul>
+<span class="pno">3</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">4. 좋은 검사 항목의 3조건</h3>
+<div class="two">
+<div>
+<table>
+<caption>표 4. 화학 패널에 들어가려면</caption>
+<thead><tr><th>조건</th><th>뜻</th></tr></thead>
+<tbody>
+<tr><td class="kc">① organ specific</td><td>특정 장기에 맞아야 함 (예: 간 → ALT)</td></tr>
+<tr><td class="kc">② disease sensitive</td><td>질병을 <b>초기부터</b> 정확히 detect. 위중한 질병일수록 더 중요 (예: SDMA)</td></tr>
+<tr class="hi"><td class="kc">③ easy to use<br>with low cost</td><td><span class="r">제일 중요!</span> 단가 1만 원이면 탈락 → <b>1~2천 원</b> 수준이어야 chem 패널에 안정적으로 편입</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="memo" style="margin:8px 0 0 0;">
+<div class="mt">*항목이 거의 업그레이드 안 되는 이유</div>
+<ul class="d">
+<li>3조건을 다 만족 + 이미 연구가 충분히 됨 → 획기적 항목 나오기 힘듦</li>
+<li>매년 연구용 항목 수십 가지 → "첫째 목적은 <b>졸업</b>" ㅎ, 드물게 상용화 (SDMA 같은 것) <span class="tag t-rec">수업</span></li>
+<li>종에 따라 넣고 빼기: <b>LDH</b> — 사람은 중요, 개·고양이·소는 도움 안 돼 미사용 / <b>AST</b>도 빼는 추세</li>
+<li>교수님 의견: 신장 쪽에서 SDMA를 대체할 항목이 나오면 써볼 만, 그 외 영역은 쉽지 않을 것</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 class="lv1">Ⅱ. 시료 — serum vs. plasma</h2>
+<h3 class="lv2">1. 정의</h3>
+<table>
+<caption>표 5. Whole blood · Plasma · Serum</caption>
+<thead><tr><th style="width:18%">구분</th><th style="width:36%">만드는 법</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td class="kc">Whole blood<br>(전혈)</td><td><b>Anticoagulant + blood</b></td><td>혈관 밖에서 혈액은 응고 → 응고되지 않게 처리한 혈액 (1학기 CBC)</td></tr>
+<tr><td class="kc">Plasma<br>(혈장)</td><td>전혈을 원심분리한 <b>상층액(supernatant)</b></td><td>EDTA·heparin 등 항응고제 처리 후 원심분리</td></tr>
+<tr class="hi"><td class="kc">Serum<br>(혈청)</td><td><b>No additives + blood</b> → 자연 응고 후 원심분리한 액상</td><td><b>Plain tube</b> 또는 <b>SST</b>(serum separating tube, 응고 시간 단축) — 요즘은 SST 많이 씀. plain = 아무 처리 안 한 빈 튜브</td></tr>
+</tbody>
+</table>
+<h3 class="lv2">2. 튜브 5종 <span class="gray">(뚜껑 색으로 분류)</span></h3>
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> <b class="r">*튜브의 종류는 기본적으로 5가지.</b></p>
+<table>
+<caption>표 6. 튜브별 용도 — chem에는 Plain(serum) · Heparin</caption>
+<thead><tr><th style="width:15%">튜브</th><th style="width:18%">첨가물</th><th style="width:22%">용도</th><th>chem 사용? / 필기</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Red (Red-gray) top</td><td>Plain (없음)</td><td><b>Serum</b> → chem</td><td>○ <span class="tag t-pen">필기</span> 상층액 = serum</td></tr>
+<tr><td class="kc">Lavender top</td><td>EDTA</td><td>전혈 → <b>CBC</b></td><td><span class="r">✕</span> <span class="tag t-pen">필기</span> 전혈만 CBC에 활용 / "얘넨 잘 활용 X"</td></tr>
+<tr><td class="kc">Blue top</td><td>Citrate</td><td><b>응고계 검사</b>(citrate 혈장)</td><td><span class="r">✕</span></td></tr>
+<tr class="hi"><td class="kc">Green top</td><td>Heparin</td><td><b>Heparin plasma</b> → chem</td><td>○ 임상 장비는 대체로 heparin 혈장에 맞춰져 있음</td></tr>
+<tr><td class="kc">Gray top</td><td>Fluoride</td><td>특수한 경우만</td><td>△ <span class="tag t-pen">필기</span> "특수한 경우에만 활용 — when?" ↓</td></tr>
+</tbody>
+</table>
+<div class="memo blue">
+<div class="mt">✎ Fluoride 튜브는 언제? (필기 "when?"의 답) <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>fluoride가 <b>적혈구의 해당작용(glycolysis)을 억제</b> → 혈당 변화를 최대한 막아야 할 때</li>
+<li>예) 혈당이 중요한 연구인데, 혈장만 받는 게 아니라 <b>어쩔 수 없이 전혈 상태로 보내야</b> 하는 경우 — 튜브 안 적혈구는 살아있는 동안 계속 당·산소 소모, CO₂ 증가</li>
+</ul>
+</div>
+<span class="pno">4</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. 혈구와 분리 안 된 시료? — <i>"RBCs, never DIE HARDs!"</i></h3>
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> <b class="r">혈구와 분리시키는 건 가장 기본.</b></p>
+<h4 class="lv3">1) Cortisol</h4>
+<table>
+<caption>표 7. '혈구'와 분리 안 된 시료의 cortisol 농도</caption>
+<thead><tr><th>채혈 후 시간</th><th>0h</th><th>4h</th><th>8h</th><th>Ref. int.</th></tr></thead>
+<tbody><tr><td class="kc">측정치</td><td class="c r">0.024</td><td class="c r">0.085</td><td class="c r">0.1</td><td class="c">1–6 μg/dL</td></tr></tbody>
+</table>
+<ul class="d">
+<li>원심분리한 튜브를 <b>상층액만 분리하지 않고 통째로</b> 외부 랩에 보냄 → cortisol이 세포에 흡착 → <span class="r">말도 안 되게 낮은 값</span></li>
+<li>외부로 보낼 때 heparin 혈장이라도 <b>적혈구와 분리 안 한 채</b> 보내면 문제 → 혈장(혈청)만 따로 분리해서 보낼 것</li>
+<li class="f2">튜브별 차이: <b>heparin</b> 튜브 → 원심분리 후 <b>상층액만 따로</b> 옮겨야 함 / <b>SST</b> → 혈구는 덩어리져 아래로, 가운데 <b>겔(gel) 층</b>이 혈청과 혈구 사이에서 굳어 칸막이 역할 → 원심분리 마친 SST는 상층액을 안 뽑고 <b>튜브째 보관</b>해도 무방 <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+</ul>
+<h4 class="lv3">2) Glucose — 시간당 약 10% 감소</h4>
+<table>
+<caption>표 8. 혈구 미분리 시 혈당 변화 (선배들 실험, 4시간 측정)</caption>
+<thead><tr><th></th><th>0h</th><th>1h</th><th>2h</th><th>3h</th><th>4h</th></tr></thead>
+<tbody>
+<tr><td class="kc">실내</td><td class="c">109</td><td class="c">95</td><td class="c">78</td><td class="c">70</td><td class="c r">43 mg/dL</td></tr>
+<tr><td class="kc">실외</td><td class="c">109</td><td class="c">107</td><td class="c">79</td><td class="c">61</td><td class="c r">56 mg/dL</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li><span class="tag t-pen">필기</span> <b>상당히 심하게 수치 감소.</b> (교수님: 원래 실외가 더 빨리 떨어져야 하는데 데이터가 좀 바뀜 — 핵심은 "생각보다 심하게 감소")</li>
+<li>원내에선 드묾. 하지만 <b>제주에서 채혈 → 서울 랩</b>으로 보내야 하는데 혈당이 중요하다? → 원심분리 안 된 상태 ✕, 전혈 상태 ✕ → <span class="r">꼭 혈장이나 혈청만</span> 보낼 것</li>
+</ul>
+<h3 class="lv2">4. Serum or plasma? — 항응고제별 비교 논문 요약</h3>
+<ul class="d">
+<li>동일 시료를 serum → heparin → EDTA → citrate → fluoride 혈장으로 수십 항목 반복 측정 → serum 값과 통계 비교</li>
+</ul>
+<div class="memo blue" style="margin-top:4px;">
+<div class="mt">✎ 표 읽는 법 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>의미: "<b>serum 대비 heparin</b>(EDTA…)<b>과 차이가 있는가?</b>"</li>
+<li>A: <b>–*, –**, –***</b> = 차이 있음 (* p&lt;0.05, ** p&lt;0.01 상당히 큼, *** p&lt;0.001) / <b>N.S.</b> = not significant = <b>차이 없음 → interchangeable</b></li>
+</ul>
+</div>
+<span class="pno">5</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 9. Serum과 비교한 결과 (주요 항목만 발췌)</caption>
+<thead><tr><th style="width:24%">항목</th><th>Serum–Heparin</th><th>Serum–EDTA</th><th style="width:34%">비고</th></tr></thead>
+<tbody>
+<tr><td>Albumin</td><td class="c r">–**</td><td class="c r">–***</td><td>serum 35.1 / heparin 36.1 g/L</td></tr>
+<tr><td>Bile acids · Fructosamine</td><td class="c">N.S.</td><td class="c r">–* / –**</td><td></td></tr>
+<tr><td>Bilirubin · Cholesterol · Creatinine · Glucose · TP · TG · Urea</td><td class="c">N.S.</td><td class="c">N.S.</td><td>대사산물 대부분은 EDTA도 비슷</td></tr>
+<tr class="hi"><td><b>Calcium (Ca)</b></td><td class="c">N.S.</td><td class="c r">–***</td><td>2.44 → EDTA <b class="r">0.04</b> mmol/L</td></tr>
+<tr><td>Phosphorus · Sodium</td><td class="c">N.S.</td><td class="c r">–** / –***</td><td></td></tr>
+<tr class="hi"><td><b>Ionized Ca</b></td><td class="c r">–**</td><td class="c r">–**</td><td>EDTA 0.00 · heparin도 차이</td></tr>
+<tr class="hi"><td><b>Potassium (K)</b></td><td class="c r">–**</td><td class="c r">–**</td><td>4.4 → EDTA <b class="r">22.3</b> mmol/L</td></tr>
+<tr><td>Chloride</td><td class="c">N.S.</td><td class="c">N.S.</td><td>EDTA에서 유일하게 차이 없음</td></tr>
+<tr class="hi"><td><b>ALP (AP)</b></td><td class="c">N.S.</td><td class="c r">–***</td><td>82.4 → EDTA <b class="r">12.4</b> U/L</td></tr>
+<tr><td>AChE</td><td class="c r">–**</td><td class="c r">–**</td><td>acetylcholinesterase — 루틴 검사 아님</td></tr>
+<tr><td>ALT · AST · amylase · CK · GGT · lipase · BChE</td><td class="c">N.S.</td><td class="c">N.S.</td><td></td></tr>
+</tbody>
+</table>
+<p class="tnote">* Citrate·fluoride는 차이 나는 항목이 너무 많아 볼 것도 없음 (전해질은 말할 것도 없음)</p>
+<div class="memo">
+<div class="mt">결론 <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>Serum ≈ heparin plasma</b> (대부분 N.S.) → 처리도 편해서 임상에선 <b>heparin 혈장</b>을 많이 씀 (예외: ionized Ca, K는 차이 좀 있음)</li>
+<li><span class="r">EDTA 혈장은 biochemistry 검사에 부적합</span> — 대사산물은 비슷해도 전해질·ALP 등에서 대부분 차이</li>
+<li>엄밀하게 하고 싶다면? 예: albumin은 중요하니 차라리 serum으로 — <b>그러나 장비 insert가 heparin 혈장을 권장하면 "학교에서 배웠다고" 혈청 쓰지 말고 <span class="r">장비가 시키는 대로</span></b> <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+<span class="pno">6</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">5. EDTA 혈장을 쓰면? — 전형적인 오류 패턴 <span class="tag t-ex">시험</span></h3>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 1</span>3세 female Border Collie — "건강한데 해석이 안 돼요"</div>
+<div class="cs">경도의 간헐적 식욕 부진 — 거의 건강한 아이 / 5년 전 수의사가 배경 설명 없이 보낸 데이터 <span class="tag t-rec">수업</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>This case (RR)</caption><tbody>
+<tr class="hi"><td class="kc">ALP (IU/L)</td><td class="c"><span class="dn">3</span></td><td class="c">25–141</td></tr>
+<tr class="hi"><td class="kc">Ca (mg/dL)</td><td class="c"><span class="dn">0.4</span></td><td class="c">7.6–11.6</td></tr>
+<tr class="hi"><td class="kc">K (mEq/L)</td><td class="c"><span class="up">14.7</span></td><td class="c">3.9–5.9</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><b>임상적으로 건강한데 말이 안 되는 값</b> → 질병보다 <b>검사 오류(간섭)</b>부터 의심</li>
+<li><b>Ca 0.4</b>: chem의 Ca은 <b>total Ca</b>인데도 거의 0 → 생체에서 불가능 → EDTA = <b>칼슘 킬레이트</b>(Ca는 응고 조효소 → 킬레이팅으로 항응고) — <span class="tag t-pen2">필기2</span> total Ca = 혈장 안 <b>모든 형태</b>의 Ca(이온·결합형), EDTA는 Ca 등 <b>2가 양이온</b>과 결합해버림</li>
+<li><b>K 14.7</b> <span class="tag t-pen">필기</span> 말이 안 됨 → *<b>포타슘 수치가 가장 높게 측정되는 case = 애디슨병</b> — "얘도 이 정도는 안 찍힘…" — <span class="tag t-pen2">필기2</span> 애디슨(부신기능저하 → aldosterone↓ → Na 과배출·K 저류)에서도 <b>10 정도</b>가 한계, 보통 <b>6–7</b>, 안락사 KCl 주입 상황이 아니면 불가 → EDTA는 <b>K₂/K₃-EDTA</b> → K 과대평가 (장비에 따라 측정 불가)</li>
+<li><b>ALP 3</b>: 활성 측정에 Ca(·Mg) 조효소 필요 → Ca 빠지니 ALP↓ — <span class="tag t-pen2">필기2</span> 엄밀히는 ALP의 조효소인 <b>Mg²⁺·Zn²⁺(아연)</b> 같은 양이온을 EDTA가 킬레이션하는 것 (교수님은 "칼슘"으로 설명) <span class="gray">(동기 메모: Gemini 인용)</span></li>
+<li><span class="tag t-pen">필기</span> "EDTA 썼을 때 체크 가능한 놈들" = <b>ALP · Ca · K</b> → 세 개가 동시에 이렇게 나오면 패턴 완성</li>
+</ol></div></div>
+<div class="cc">결론: <b>EDTA 혈장으로 chem 검사한 오류</b> — 수의사가 나중에 이실직고: "EDTA 혈장을 썼습니다"</div>
+<div class="tr">왜 생기나? EDTA 1cc(CBC) + heparin 1cc(chem) 채혈 → CBC는 <b>한 방울</b>이면 되지만 chem은 상청액으로 15–20항목 → 혈장 부족 → "EDTA 튜브에 피가 많이 남았네" 유혹 → 원심분리해서 사용 (간호사 선생님이 하기도) <span class="tag t-rec">수업</span></div>
+<div class="tr">대처: 정상 장비 권장 시료(heparin 혈장/혈청)로 <b>재채혈·재검사</b></div>
+</div>
+<h2 class="lv1">Ⅲ. 장비</h2>
+<h3 class="lv2">1. POC equipment vs. For Laboratory</h3>
+<table>
+<caption>표 10. 병원 장비 vs 랩 장비</caption>
+<thead><tr><th style="width:15%"></th><th style="width:42%">POC (Point of Care)</th><th>Laboratory</th></tr></thead>
+<tbody>
+<tr><td class="kc">어디서</td><td>병원 현장 — 외부 랩(코리아·그린벳·IDEXX 등)이 아닌 <b>병원에서 쓰는 장비</b>. cf. <b>bedside equipment</b> = 입원실에서 바로 쓰는 소형 장비</td><td>외부 검사 랩, 건강검진 센터</td></tr>
+<tr><td class="kc">예</td><td>IDEXX Catalyst(교실에 있음), <b>Fuji DRI-CHEM</b>, VetScan, Skyla(대만), Exigo(유럽), 삼성 PT10V, 바이오노트 등</td><td>Roche, Olympus, Hitachi, <b>Beckman Coulter AU480</b>(골든 스탠다드급), Mindray(중국)</td></tr>
+<tr><td class="kc">처리량</td><td>개별 테스트 방식</td><td>시간당 <b>60~200 test</b> 이상, 하루 수천~수만 건</td></tr>
+<tr class="hi"><td class="kc">비용</td><td>단가 저렴 → 동물병원에서 많이 운용</td><td><b>시약 비쌈 + 유효기간 짧음</b> → 하루 최소 수백~수천 건은 돼야 수지타산. 동물병원은 많아야 50~100건(대형·2차 병원은 소형 랩 장비 쓰기도)</td></tr>
+</tbody>
+</table>
+<span class="pno">7</span>
+</section>
+
+<section class="page">
+<ul class="d">
+<li>Beckman Coulter의 <b>Coulter</b> = CBC <b>임피던스 원리</b>를 처음 개발한 사람 (1학기)</li>
+<li>Olympus·Hitachi = 렌즈 회사 — chem 장비에도 렌즈가 들어가서 전통적으로 강세</li>
+<li><b>Fuji DRI-CHEM = POC chem의 대명사</b> — 스카치테이프(3M 접착테이프의 브랜드명)처럼, 병원 오픈하면 "chem 장비는 드라이켐". 단가 저렴·비교적 정확 / IDEXX는 단가 비쌈 <span class="tag t-rec">수업</span></li>
+</ul>
+<div class="side"><div class="mt">*삼성 PT10V 이야기 <span class="tag t-rec">수업</span></div>박근혜 정부 때 원격의료용 소형 chem 장비로 개발(높이 20cm 정도) → 원격의료 무산 → 수의 쪽으로 전환 → 국내 성적 저조, 몇 년 뒤 <b>독일에서 수천 대</b> 팔리기 시작 → 그 사이 사장 교체·바이오시밀러 집중으로 사업부 해체 → 현재 다른 회사(교수님 언급: 프리시젼바이오)가 인수해 판매 중.</div>
+<h3 class="lv2">2. 검사 방식 — Wet vs. Dry vs. Semi-wet <span class="gray">(필기: 개념비교)</span></h3>
+<table>
+<caption>표 11. 검사 방식 비교 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:14%"></th><th>Wet type (습식)</th><th>Dry type (건식)</th><th>Semi-wet</th></tr></thead>
+<tbody>
+<tr><td class="kc">원리</td><td>시약과 시료가 <b>액상 상태</b>에서 반응</td><td>패드·슬라이드·단일 카트리지에 <b>시약이 건조된 채 장착</b> → 시료를 떨어뜨려 <b>색 변화</b>로 측정</td><td><b>원형 카트리지(rotor)</b>에 전 항목 시약이 칸마다 묻어 있음 → 반응은 <b>wet 상태</b>로 진행</td></tr>
+<tr><td class="kc">장비</td><td>Laboratory 장비 대부분</td><td>POC 장비 대부분 (Fuji DRI-CHEM, IDEXX)</td><td>VetScan, Skyla, PT10V</td></tr>
+<tr><td class="kc">장점</td><td>대량 처리</td><td>저렴, <b>개별 항목 검사 가능</b></td><td>하나 넣으면 전체 스크리닝 ("묻지마 검사")</td></tr>
+<tr class="hi"><td class="kc">단점</td><td>판매 단위 대용량·비쌈·<b>유효기간 짧음</b> → 건수 적으면 엄청난 손해</td><td>—</td><td>입원 환자처럼 <b>관련 항목만</b> 검사하기 어려움 → <span class="r">한국 수의사들은 별로 선호 ✕</span> (개별 검사 선호)</td></tr>
+<tr><td class="kc">간섭</td><td>lipemia·hemolysis 간섭 <b>많음</b></td><td>간섭 <b>적은 편</b></td><td></td></tr>
+</tbody>
+</table>
+<h2 class="lv1">Ⅳ. 검사 전 요인 ① — 장비 수준 (Pre-analytical)</h2>
+<h3 class="lv2">1. Precision — 정밀도</h3>
+<ul class="d">
+<li><b>reproducibility or repeatability</b> = <span class="hl">반복 검사했을 때 얼마나 비슷한 값이 나오는가</span></li>
+<li class="f2">= <b>누가 해도</b> 비슷한 결과가 나오는가 / <b>절대값(참값)과는 무관</b> — 참값에 가까운지는 accuracy가 따로 봄 <span class="tag t-pen2">필기2</span></li>
+</ul>
+<ul class="c">
+<li>예) albumin 30 → 20 → 50 → 측정 불가… = 못 씀</li>
+<li>A(40, 41, 40.5, 40.7) vs B(40, 39, 37, 42) → A가 더 precise / A vs C(39.5, 40.5, 40.2, 39.7)는 비슷비슷해 구별 어려움 → <b>기준값</b>이 필요</li>
+</ul>
+<h4 class="lv3">1) Precision 평가 지표</h4>
+<ul class="d">
+<li><b>Range</b> → <span class="tag t-pen">필기</span> range로 커버 안 될 때 표준편차 등을 씀</li>
+<li><b>표준편차</b> Standard Deviation (SD)</li>
+<li><b>변이계수</b> Coefficient of Variation (<b>CV</b>) = <span class="r">표준편차 / 평균</span> → <span class="hl">CV가 낮을수록 정밀(재현성 높음)</span> <span class="tag t-ex">시험</span></li>
+<li><b>95% 신뢰 구간</b></li>
+</ul>
+<span class="pno">8</span>
+</section>
+
+<section class="page">
+<div class="two">
+<div>
+<table>
+<caption>표 12. 두 저울로 100 g 추 4회 측정</caption>
+<thead><tr><th></th><th>More precise</th><th>Less precise</th></tr></thead>
+<tbody>
+<tr><td class="kc">측정값</td><td class="c">100.00, 100.01, 99.99, 99.99</td><td class="c">100.10, 100.00, 99.88, 100.02</td></tr>
+<tr><td class="kc">Average</td><td class="c">100.00</td><td class="c">100.00</td></tr>
+<tr class="hi"><td class="kc">Range</td><td class="c">±0.01</td><td class="c">±0.11</td></tr>
+<tr><td class="kc">Std. Dev.</td><td class="c">0.05</td><td class="c">0.09</td></tr>
+<tr class="hi"><td class="kc">CV</td><td class="c r">0.0005</td><td class="c">0.0009</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<ul class="d" style="margin:10px 0 0 4px;">
+<li><b>평균으로는 구별 불가</b>(둘 다 100)</li>
+<li>range·SD·CV 모두 왼쪽이 작음 → <span class="tag t-pen">필기</span> <b>왼쪽이 조금 더 precision↑</b></li>
+</ul>
+</div>
+</div>
+<h4 class="lv3">2) 실제 평가 — 경쟁 제품 비교 (CBC 장비 CV)</h4>
+<ul class="d">
+<li>교수님이 OEM CBC 장비 출시 전 evaluation 한 데이터 — 비교 기준 제품(P**) vs OEM 후보 제품(DM 등)</li>
+<li><b>State of the art</b> = 각 항목에서 CV가 이 정도 범위 안에는 들어야 precision이 <b>acceptable</b>하다는 기준</li>
+</ul>
+<ul class="c">
+<li>WBC: dog 2.98 / cat 1.33 → 기준 1.5–6.0 안 → acceptable · Neutrophil: 3.01 / 1.51 (기준 2.5–10.0, 넓게 잡음) → 매우 양호</li>
+<li>RBC: 1.05 (기준 0.9) → 조금 아쉽지만 acceptable</li>
+<li>슬라이드 결론: "경쟁 제품 비교 — 해당 제품의 CV 값이 매우 우수함."</li>
+</ul>
+<div class="memo blue">
+<div class="mt">✎ 기준을 얼마나 엄격하게? <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li><b>진단적 가치가 높거나 위중한</b> 항목 → CV를 <b>엄격하게</b> 적용</li>
+<li>그 외 항목은 기준을 좀 벗어나도 acceptable로 해석하기도 — "유도리"가 있음 <span class="tag t-rec">수업</span></li>
+<li>사람이 만드는 건 다 한계가 있다 — 완벽한 건 없다 (자동차 단차처럼)</li>
+</ul>
+</div>
+<h3 class="lv2">2. Accuracy — 정확도</h3>
+<ul class="d">
+<li><b>closeness</b> of a measured or calculated quantity to its <b>actual (true) value</b> = <span class="hl">참값에 얼마나 가까운가</span></li>
+</ul>
+<ul class="c">
+<li>100 g 추 → 100.00 = Accurate / 98.89 = Inaccurate</li>
+<li>임상 POC는 accuracy가 <b>완벽하진 않음</b>, 어느 정도 유도리 — 회사의 목표는 accuracy·precision을 <b>acceptable range</b> 안에 넣는 것</li>
+<li>회사 내부 평가는 거의 완벽한데 외부(필드) 평가에선 차이 남 → 필드의 <b>불안정한 전압</b> 등 변수 <span class="tag t-rec">수업</span></li>
+</ul>
+<h4 class="lv3">1) 과녁으로 보는 Precision vs Accuracy (영점 사격)</h4>
+<table>
+<caption>표 13. 과녁 4가지 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:26%">탄착</th><th style="width:13%">Precision</th><th style="width:13%">Accuracy</th><th>해석</th></tr></thead>
+<tbody>
+<tr class="hi"><td>정중앙에 모여 있음</td><td class="c">○</td><td class="c">○</td><td>참값 근처 + 반복해도 비슷 → <b>완벽</b></td></tr>
+<tr><td>중앙에서 벗어난 한 곳에 몰림</td><td class="c">○</td><td class="c r">✕</td><td>다행히 precision은 OK → <b>영점 조정(calibration)</b>하면 해결, 해결법 심플</td></tr>
+<tr><td>사방에 난사</td><td class="c r">✕</td><td class="c r">✕</td><td>눈 감고 쏜 것 → <span class="r">장비를 버려야</span></td></tr>
+<tr><td>중앙 주위로 좀 산만하게 분포</td><td class="c">△</td><td class="c">○</td><td><span class="tag t-pen">필기</span> <b>아쉽지만 ok… 어떤 항목에선 유도리 있게 이 정도까지</b></td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li><b>Semi-wet</b>처럼 전 항목을 통째로 검사하는 장비 → <b>거의 모든 항목</b>이 완벽해야 함 / 개별 검사 가능 장비 → 항목에 따라 엄격 or 여유 있게 적용 가능 <span class="tag t-rec">수업</span></li>
+</ul>
+<span class="pno">9</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. Accuracy of a test — 민감도·특이도·PPV·NPV</h3>
+<ul class="d">
+<li>모든 검사엔 <b>골든 스탠다드(표준 검사법)</b>가 있음 — 예: 종양 → <b>조직병리</b>. 새 검사법은 골든 스탠다드 대비 얼마나 정확한지를 <b>민감도·특이도·PPV·NPV·accuracy</b>로 제시</li>
+<li><b>Sensitivity</b> = proportion of <b>true positives</b> detected by the test (질병 있는 군 중 진양성 비율)</li>
+<li><b>Specificity</b> = proportion of <b>true negatives</b> detected by the test (질병 없는 군 중 진음성 비율)</li>
+<li><b>PPV</b> = likelihood of a positive test being genuine → <span class="tag t-pen">필기</span> <b>'양성' 결과가 나왔을 때 진짜 '양성' 비율</b></li>
+<li><b>NPV</b> → <span class="tag t-pen">필기</span> <b>'음성' 결과가 나왔을 때 진짜 '음성' 비율</b></li>
+<li>Accuracy = (TP + TN) / (TP + TN + FP + FN)</li>
+</ul>
+<div class="two">
+<div>
+<table>
+<caption>표 15-1. 유병률 10% (1,000마리)</caption>
+<thead><tr><th>new test</th><th>질병 有 (100)</th><th>질병 無 (900)</th><th></th></tr></thead>
+<tbody>
+<tr><td class="kc">+</td><td class="c">90 <span class="gray">TP</span></td><td class="c">45 <span class="gray">FP</span></td><td class="c">PPV 90/135 = <b class="r">67%</b></td></tr>
+<tr><td class="kc">–</td><td class="c">10 <span class="gray">FN</span></td><td class="c">855 <span class="gray">TN</span></td><td class="c">NPV 855/865 = 99%</td></tr>
+<tr class="hi"><td class="kc"></td><td class="c">Sens 90/100 = <b>90%</b></td><td class="c">Spec 855/900 = <b>95%</b></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<caption>표 15-2. 유병률 1% (1,000마리)</caption>
+<thead><tr><th>new test</th><th>질병 有 (10)</th><th>질병 無 (990)</th><th></th></tr></thead>
+<tbody>
+<tr><td class="kc">+</td><td class="c">9</td><td class="c">49</td><td class="c">PPV 9/58 = <b class="r">16%</b></td></tr>
+<tr><td class="kc">–</td><td class="c">1</td><td class="c">941</td><td class="c">NPV 941/942 = 99.9%</td></tr>
+<tr class="hi"><td class="kc"></td><td class="c">Sens 9/10 = <b>90%</b></td><td class="c">Spec 941/990 = <b>95%</b></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="memo red">
+<div class="mt">★ 핵심 — 무엇이 유병률에 따라 변하나? <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>민감도·특이도 = 검사의 고유한 성질</b> → 유병률이 어떻든 <b>변하지 않음</b> (두 표 모두 90% / 95%)</li>
+<li><b>PPV·NPV는 유병률의 영향을 받음</b> → 유병률 10% → 1%가 되자 PPV 67% → <span class="r">16%</span></li>
+</ul>
+</div>
+<h4 class="lv3">1) 위양성·위음성</h4>
+<ul class="d">
+<li>질병 없는데 양성(45케이스) = <b>위양성(FP)</b> / 질병 있는데 음성(10%) = <b>위음성(FN)</b></li>
+<li>진단 회사의 목표는 항상 위양성·위음성 줄이기 — 하지만</li>
+</ul>
+<div class="memo blue">
+<div class="mt">✎ 슬라이드 하단 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>*<b>위음성·위양성이 제로일 수는 절대 X</b> (장비도 시약도 사람이 만드는 거라 한계)</li>
+<li>**<b>민감도·특이도를 모두 동시에 높이기는 힘듦</b> — 민감도↑ → 특이도↓, 특이도↓ → 민감도↑ (trade-off) → <b>질병의 위중도</b>에 따라 무엇을 희생할지 조절</li>
+</ul>
+</div>
+<table>
+<caption>표 14. 질병에 따라 달라지는 위양성·위음성의 무게</caption>
+<thead><tr><th style="width:18%"></th><th>임상적 의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">위양성</td><td>질병이 심각하지 않다면 오히려 도움이 될 수도 — 선별검사 양성 → <b>추가 검사로 검증</b>하도록 유도</td></tr>
+<tr class="hi"><td class="kc">위음성</td><td>질병이 위중하면 <span class="r">아주 심각</span>. 예: 교수님 후배가 만든 <b>혈액 암 표지자 키트</b> — 위음성 10%뿐인데도, "피검사에서 없다더니 한 달 뒤 손쓸 수 없게 됐다"는 보호자 반발이 두려워 수의사들이 사용을 꺼림 → 자리 잡기 어려움 (단순 스크리닝으로 해석하면 되는데) <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table>
+<span class="pno">10</span>
+</section>
+
+<section class="page">
+<ul class="d">
+<li>유병률 변화 예: <b>Ehrlichia·Anaplasma</b> — 2000년대 초반엔 거의 없었고(수입견에서 가끔) 유병률 매우 낮았음 → 지금은 거의 <b>엔데믹</b> → 지나가고 <b>항체만 남은 개체</b>가 늘어남 → 항체 키트 <b>양성이어도 실제 병이 없을 수 있음</b> → 결과 해석 주의 <span class="tag t-rec">수업</span></li>
+<li>결론: 임상에선 <b>insert를 한번 읽어보고</b>, <span class="r">모든 검사는 완벽하지 않다 — 제일 중요한 건 임상 소견</span> (배 나온 남자에게 임신 키트 양성 일러스트 ㅎ)</li>
+</ul>
+<h3 class="lv2">4. Reference range vs. normal range</h3>
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> <b class="r">"normal range" — 이 용어는 표현이 매우 안 맞음.</b> → 정확한 표현은 <b>reference range(interval)</b> <span class="tag t-ex">시험</span></p>
+<ul class="d">
+<li>이상적: 개인 고유의 RR — 예) <b>애플워치</b>는 1주일간 손목 온도·맥박 등을 기록해 <b>내 range</b>를 만들고 벗어나면 알람 <span class="tag t-rec">수업</span></li>
+<li>현실: 피를 뽑아 내 RR을 갖기는 어려움 → <b>비슷한 조건의 건강한 개체</b>에서 채혈해 RR 설정</li>
+</ul>
+<ul class="c">
+<li><b>n = 40~200</b> / 기준: <b>Healthy criteria</b> + <b>Breed, Age, sex</b></li>
+<li>정규분포 가정 → <b>Mean ± 2SD = 약 95%(95.4%)</b> 범위를 RR로 (±1SD 68%, ±3SD 99%)</li>
+<li>너무 높거나 낮은 값은 <b>outlier</b>로 제외 → 그런데 실제로는 너무 높아도/낮아도 정상인 개체가 있음 → RR은 "<b>참고</b>"하는 범위</li>
+</ul>
+<div class="memo">
+<div class="mt">*임상하다 보면 잊어버리는 것</div>
+<ul class="d">
+<li>"RR 벗어났네 → 문제" / "RR 안이네 → 정상"으로 단정해 버림</li>
+<li>분변검사 비유: 처음엔 "내가 본 건 전체 분변의 극히 일부"라 생각하다가, 나중엔 한 번 보고 충란 없으면 "기생충 아냐" — <b>한 번 검사를 과신</b>. 모든 검사가 다 그렇다 <span class="tag t-rec">수업</span></li>
+<li>슬라이드: 시약, 장비, 검사방법, 수행자 등의 한계…… <b>완벽한 검사는 없다</b>….</li>
+</ul>
+</div>
+<h4 class="lv3">1) Reference range는 모든 장비, 랩에 공통?? → <span class="r">No!!!!</span></h4>
+<div class="memo red">
+<div class="mt">Labs, equipments should have <u>their own RRs!</u> <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li>CBC는 그래도 편차가 적지만 <b>chem</b>은 같은 BUN이라도 <b>측정 화학식(방법)</b>이 여러 가지 → 방법에 따라 값이 다름</li>
+<li>같은 방법이라도 <b>시약 회사</b>(A·B·C·D사), 같은 회사라도 <b>lot 번호</b>(1월·2월 제조), <b>원재료 원산지</b>에 따라 다를 수 있음</li>
+</ul>
+</div>
+<h4 class="lv3">2) 증거 — one K9 serum sample</h4>
+<ul class="d">
+<li>학교에 내원한 개들의 검사 후 남은 혈청을 <b>모두 모아 섞어 균일화</b> → 소분해 약 120개 기관에 <b>동일 샘플</b> 발송 → 결과 비교</li>
+</ul>
+<table>
+<caption>표 15. 동일 샘플인데도 기관마다 결과가 다름</caption>
+<thead><tr><th style="width:24%">막대 표시</th><th style="width:30%">뜻</th><th>예</th></tr></thead>
+<tbody>
+<tr><td class="kc">전체 박스</td><td>Results of <b>all methods</b> (n = 73–126) = 모든 방법의 결과 범위</td><td>Urea 34–51 mg/dL, <b>Cholesterol 185–239</b> mg/dL, ALT 20–55, Lipase 53–978(!)</td></tr>
+<tr><td class="kc">빗금</td><td>Same method on <b>different instruments</b> <span class="tag t-pen">필기</span> = 다른 장비, 같은 검사방법</td><td>예: AU480 vs Roche로 원리는 똑같은데 Sodium <b>129–153</b></td></tr>
+<tr class="hi"><td class="kc">회색</td><td>Same method on <b>same instrument</b> <span class="tag t-pen">필기</span> = 같은 장비, 같은 검사방법</td><td>장비도 원리도 같은데 Sodium 약 <b>135–140</b>으로 여전히 차이</td></tr>
+</tbody>
+</table>
+<span class="pno">11</span>
+</section>
+
+<section class="page">
+<ul class="d">
+<li>샘플은 하나니까 콜레스테롤 값도 하나여야 하는데 이렇게 차이 → <b>수의 쪽 기술이 떨어져서가 아님, 인체도 마찬가지</b></li>
+<li>교수님: "이게 이해가 돼야 임상할 수 있다. 이해가 안 되면 기초 연구를 하셔라" ㅎ <span class="tag t-rec">수업</span></li>
+</ul>
+<div class="side"><div class="mt">*그런데 RR 만들기가 어렵다 <span class="tag t-rec">수업</span></div>
+◆ 개·고양이는 <b>크기·품종이 다양</b> — 군견 부대(셰퍼드·말리노이즈 등 품종 고정)에서 수십 마리 검사 → 다른 품종에 <b>일반화 불가</b> / 브리더 통한 특정 품종 수집도 어려움<br>
+◆ 유명 회사는 매년 POC 장비 RR을 조금씩 수정하지만, 한국은 <b>toy breed가 많아</b> 지역 적용에 한계<br>
+◆ 국내 장비 대부분 = 딜러가 수입 → 외국 회사가 RR을 안 주면 딜러는 만들 책임 없음 · RR 한 번 만들려면 <b>1~2천만 원</b> (삼성은 자체 제작)<br>
+◆ 골든 스탠다드 장비의 RR을 가져와도 되는지 통계로 평가하는 방법도 있지만 교수님 왈 "말장난" — 기본은 <b>자체 설정</b></div>
+<h2 class="lv1">Ⅴ. 검사 전 요인 ② — 시료 수준</h2>
+<ul class="d">
+<li>지금까지 = pre-analytical 중 <b>기계 쪽</b>(precision, POC, RR, sens/spec) / 지금부터 = <b>시료(개체) 상태</b></li>
+<li>검사 결과를 그대로 수용하면 안 됨 → <b>적절한 시료</b>여야 결과를 신뢰할 수 있음</li>
+</ul>
+<h3 class="lv2">1. Good sample?</h3>
+<table>
+<caption>표 16. 한 리포트의 시료 상태 분포 (미국 랩 기준이지만 한국도 비슷)</caption>
+<thead><tr><th>Good!</th><th>용혈</th><th>용혈과 지질혈증</th><th>지질혈증</th><th>황달</th></tr></thead>
+<tbody><tr><td class="c"><b class="r">27%</b></td><td class="c">33%</td><td class="c">25%</td><td class="c">9%</td><td class="c">6%</td></tr>
+<tr><td class="c gray">간섭 요인 최대한 배제된 이상적 시료</td><td class="c gray">heparin 전혈 등</td><td class="c gray">함께 있는 경우 상당</td><td class="c gray"><span class="tag t-pen">필기</span> 혈청·혈장 색깔이 milk~</td><td class="c gray"><span class="tag t-pen">필기</span> 혈청색이 누르스름</td></tr></tbody>
+</table>
+<ul class="c"><li>정상 혈장(혈청) 색 = <b>straw(짚) 색깔</b> / 대부분 chem은 <b>흡광도</b> 기반 화학적 방법 → 색·혼탁도 변화 = 오류</li></ul>
+<h3 class="lv2">2. Fasting — 절식</h3>
+<ul class="d">
+<li>얼마나? <b class="r">약 12시간</b> (8시간 얘기하기도) → <b>postprandial</b>(식후) 영향에서 최대한 벗어남</li>
+<li>Why fast?</li>
+</ul>
+<ul class="c">
+<li><b>직접적인 영향</b>: <span class="hl">cholesterol · triglyceride · glucose</span></li>
+<li><b>간접적인 영향</b> – 여러 검사 항목에서 오류 값 → Why? ↓</li>
+</ul>
+<div class="memo blue">
+<div class="mt">Why? — 간접 영향의 메커니즘 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>비절식으로 <b>TG↑</b> → 혈장이 <b>milky(우윳빛)</b> → 혈관 안에선 순환하니 RBC 영향 적지만, <b>튜브 안에선 정체</b> → milky 혈장 속 <b>적혈구가 잘 깨짐</b> → <b>용혈</b>까지 → 여러 항목에 영향</li>
+<li>(glucose만 높은 건 다른 항목에 미치는 영향 별로 없음)</li>
+</ul>
+</div>
+<div class="side"><div class="mt">*수술 날 절식 안 하고 왔다면?</div>① 날짜 다시 잡기 ② <b>입원</b>시켜 절식 후 검사 → 준비되면 처치. 보호자 태도상 다음에도 먹여 올 것 같으면 ②. <span class="tag t-rec">수업</span></div>
+<span class="pno">12</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. Lipemia — 지질혈증</h3>
+<h4 class="lv3">1) 간섭</h4>
+<ul class="d">
+<li><b>Instrument, reagent-dependent</b> — 장비·시약마다 간섭 패턴이 다름 (어떤 장비는 bilirubin↓, 어떤 건 ↑, 측정 불가도)</li>
+<li><b>습식 장비</b>(랩, 액상 반응): <span class="up">↑</span> <b>albumin, calcium</b>, glucose, phosphorus, bilirubin, total protein</li>
+<li><b>건식 장비 – 거의 영향 없음</b> (병원 POC는 영향 적어 다행)</li>
+</ul>
+<h4 class="lv3">2) 전해질 — 위(偽)저나트륨혈증</h4>
+<ul class="d">
+<li><span class="dn">↓</span> <b>Na, K, Cl by displacement</b> (TG &gt; 1500 mg/dL)</li>
+<li><b>Flame photometry</b>(화염광전비색계) or <b>indirect potentiometry</b>에서 발생 ↔ <b>direct potentiometry</b>는 영향 없음 → 요즘 장비는 대부분 direct라 거의 문제없지만, 지질혈증이 심하면 차이 날 수 있었음</li>
+</ul>
+<table>
+<caption>표 17. 왜 Na가 낮게 나오나 (displacement)</caption>
+<thead><tr><th></th><th>Normal plasma</th><th>Hyperlipemic plasma</th></tr></thead>
+<tbody>
+<tr><td class="kc">구성</td><td class="c">water 92% / lipid 8%</td><td class="c">water 75% / lipid 25%</td></tr>
+<tr><td class="kc">Flame·indirect (전체 부피 기준)</td><td class="c">145 mEq/L</td><td class="c r">118 mEq/L</td></tr>
+<tr class="hi"><td class="kc">Direct (수용액상 실제 농도)</td><td class="c">145/0.92 = 158</td><td class="c">118/0.75 = <b>158 mEq/L</b></td></tr>
+</tbody>
+</table>
+<p class="tnote">→ 실제 수분상의 Na는 같은데, 지질이 부피를 차지해 전체 부피 기준 측정에서만 낮게 나옴</p>
+<h4 class="lv3">3) Case — 건강한데 말이 안 되는 수치</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 2</span>Lipemia case — TP 21.9, T.bil 18.4</div>
+<div class="cs">임상적으로 건강한 개</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry (RR)</caption><tbody>
+<tr class="hi"><td class="kc">TP</td><td class="c"><span class="up">21.9 g/dL</span></td><td class="c">5.4–7.5</td></tr>
+<tr><td class="kc">Albumin</td><td class="c">1.8 g/dL</td><td class="c">2.3–3.1</td></tr>
+<tr><td class="kc">ALP</td><td class="c"><span class="up">1481</span></td><td class="c">1–114</td></tr>
+<tr><td class="kc">Glucose</td><td class="c"><span class="up">205</span></td><td class="c">76–119</td></tr>
+<tr><td class="kc">Ca</td><td class="c"><span class="up">12.2</span></td><td class="c">9.1–11.7</td></tr>
+<tr class="hi"><td class="kc">T.bil</td><td class="c"><span class="up">18.4</span></td><td class="c">0–0.3</td></tr>
+<tr><td class="kc">Cholesterol</td><td class="c">294</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><b>임상적으로 건강한데 이상치</b> → 간섭 의심 (EDTA 때 Ca↓·K↑처럼)</li>
+<li><b>TP 21.9</b> <span class="tag t-pen">필기</span> <b>말이 안 되는 수치</b> → 형질세포 종양으로 글로불린 폭주해도 10–12 g/dL 정도, 21.9는 불가</li>
+<li><b>T.bil 18.4</b> → 말티즈·푸들이면 거의 노랗게 물들었을 것("애프리콧 푸들" ㅎ) — 그런데 건강 → 18.4 자체는 임상적으로 나올 수 있는 값이지만 <b>이 개의 상태</b>와 안 맞음</li>
+<li>둘 다 말이 안 됨 → <b>검사 오류</b>구나 → 습식 장비에서 lipemia는 albumin·Ca·glucose·P·bilirubin·TP를 <b>↑</b>시킴(패턴 일치)</li>
+<li>전화해서 확인: 시료가 <b>milky</b>? → 절식했나? <span class="tag t-pen">필기</span> ↓ <b>Conclusion: 혹시 절식 안 한 거 아닌가.</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>비절식 지질혈증(lipemia)에 의한 습식 장비 간섭</b></div>
+<div class="tr">절식했는데도 milky면 → <b>왜 지질혈증인지</b> 원인 검증(당뇨·쿠싱·갑저·담즙정체·선천성 지질대사장애·U/D 고지방식) — 다음 항목(4)</div>
+<div class="tr">건식(POC) 장비는 lipemia 영향 거의 없음 → 같은 시료라도 장비에 따라 다를 수 있음</div>
+</div>
+<span class="pno">13</span>
+</section>
+
+<section class="page">
+<div class="memo">
+<div class="mt">간섭 의심 → 대처 순서</div>
+<ul class="d">
+<li><b>임상적으로 건강한데 이상치</b> → 간섭을 의심 (EDTA 혈장 때 Ca↓·K↑처럼)</li>
+<li>시료 확인(milky?) → <b>절식했는지 물어봄</b> → 절식했는데도 lipemia면 <b>왜 지질혈증인지 원인부터 검증</b> (호르몬·선천적 등)</li>
+</ul>
+</div>
+<h4 class="lv3">4) Lipemia의 원인 — Fasting &amp; lipemia?</h4>
+<ul class="d">
+<li><b>Milky</b>(우윳빛) 혈청·혈장 = <b>TG(중성지방)↑</b> / cholesterol↑은 색이 약간 진해질 순 있지만 <b>혼탁도는 별로 안 변함</b></li>
+<li>절식을 제대로 했는데도 milky → 아래 원인 체크</li>
+</ul>
+<table>
+<caption>표 18. Lipemia 원인</caption>
+<thead><tr><th style="width:22%">분류</th><th>질환</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">호르몬(내분비)</td><td><b>당뇨병 · 쿠싱병 · 갑상선기능저하증</b> — 대표적, 우선 체크</td></tr>
+<tr><td class="kc">간</td><td><b>담즙정체 · 간 부전</b> (심하지 않은 경우)</td></tr>
+<tr><td class="kc">선천적 지질대사장애</td><td>
+Idiopathic hyperlipoproteinemia — <b>schnauzer</b><br>
+Inherited hyperchylomicronemia — <b>cat</b><br>
+Congenital <b>lipoprotein lipase deficiency</b> — mongrel (LPL 선천 결핍 → 늘 지질 높음)<br>
+Familial hyperlipoproteinemia — <b>beagle</b><br>
+Hypertriglyceridemia — <b>Brittany spaniels</b></td></tr>
+<tr><td class="kc">기타</td><td><b>U/D 섭취(고지방식)</b> — 결석 관리용 처방식이 고지방이라 지질혈증 생기기도</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 질병 자체는 아직 중요하지 않음 — 지질 파트에서 다시 다룸 <span class="tag t-rec">수업</span></p>
+<h3 class="lv2">4. Hemolysis — 용혈</h3>
+<h4 class="lv3">1) 용혈의 원인</h4>
+<ul class="d">
+<li><b>채혈 시 용혈</b> – <span class="hl">23G, 24G needle</span></li>
+</ul>
+<ul class="c">
+<li><span class="tag t-pen">필기</span> <b>고양이 채혈 때 쓰는 작은 needle</b>인데, 이 때문에 <b>적혈구가 파괴되는 경우 多</b> — 바늘이 작을수록 시린지를 당길 때 와류 → RBC 잘 깨짐</li>
+<li>채혈이 잘 안 돼서 <b>시린지 피스톤을 몇 번 앞뒤로</b> 왔다 갔다 → 음압 변화 → 원심분리하면 여지없이 벌겋게 용혈 (수의사 질문 메일)</li>
+</ul>
+<ul class="d">
+<li><b>Handling</b>: 검사지연; <b>혈청 분리 지연</b> · <b>전혈 냉동</b> · <b>얼음과 함께~</b></li>
+<li><b>Lipemia 동반</b>: 생체 내에선 혈구 영향 거의 없지만, 튜브 안 정체 → 혈구 약해짐 → 원심분리 중 깨짐 → 고지혈 + 용혈 (흔함)</li>
+<li><b>병적인 용혈</b> (1학기: 적혈구가 병적으로 깨지는 경우)</li>
+<li>And more!!!! — <b>hemoglobin-based oxygen carriers</b>(Oxyglobin 등, 합성 Hb 제제, hypoxia 환자) → <span class="r">severe discoloration of plasma</span> → 흡광도 영향 → 다른 항목 오류</li>
+</ul>
+<h4 class="lv3">2) 용혈의 영향 — 영향 severe!!</h4>
+<ul class="d">
+<li>세포가 깨지면 <b>세포 내 물질</b>이 나옴: <span class="hl">K, P, AST, LDH, CK, Bilirubin, Hb</span> (K·P = 세포 내 주된 이온)</li>
+</ul>
+<ul class="c">
+<li><span class="tag t-pen">필기</span> 이런 게 이제 튀어나오는데, <b>reference range가 빡빡한(좁은) 놈들은 영향 받음</b> (RR 넓은 건 상관없음)</li>
+<li>CK(CPK)는 RBC 안에 있진 않지만, <b>RBC 안의 다른 효소</b>(adenylate kinase)가 CK 측정에 간섭 → CK↑</li>
+<li>실제 용혈 환자에서 이 항목들이 다 균일하게 오르진 않음</li>
+</ul>
+<span class="pno">14</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 19. 용혈의 간섭 — Instrument, reagent-dependent</caption>
+<thead><tr><th style="width:16%">장비</th><th>↑ 되는 항목</th></tr></thead>
+<tbody>
+<tr><td class="kc">습식</td><td>albumin, ALP, ALT, AST, amylase, LDH, phosphorus, bilirubin, total protein, potassium</td></tr>
+<tr><td class="kc">건식</td><td>ALP, ALT, AST, amylase, CK, GGT, LDH, Mg, NH₃, phosphorus, bilirubin, BUN</td></tr>
+</tbody>
+</table>
+<p class="r" style="margin:0 0 0 20px;">→ 일률적으로 정리할 수가 없음 → 용혈은 최대한 피하는 것이 중요 <span class="tag t-ex">시험</span></p>
+<h4 class="lv3">3) 수의사의 질문 — "용혈인데 왜 bilirubin이 0.0?"</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 3</span>용혈 혈청인데 bilirubin 0.0 — 내 상식이 틀렸나?</div>
+<div class="cs">모 혈액센터에 의뢰한 용혈 혈청 / 실험실 답변: "오히려 용혈 있으면 낮게 나오는 경향"</div>
+<div class="cb"><div class="cd"><table>
+<caption>상황</caption><tbody>
+<tr><td class="kc">시료</td><td class="c">용혈(붉은 혈청)</td></tr>
+<tr class="hi"><td class="kc">T.bil</td><td class="c">0.0</td></tr>
+<tr><td class="kc">수의사 예상</td><td class="c">↑ (원료 Hb 증가)</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>수의사의 논리: 용혈 → Hb(빌리루빈 원재료)↑ → 시간이 지나면 bilirubin↑ — <b>생체 내</b>에선 맞는 얘기</li>
+<li>하지만 이건 <b>튜브 안 시료</b>의 문제 = 생리 변화가 아니라 <b>측정 간섭</b></li>
+<li>용혈 간섭은 <b>instrument·reagent-dependent</b> → 같은 장비라도 시약에 따라 ↑ / 정상 비슷 / ↓ / 측정 불가</li>
+<li><span class="tag t-pen">필기</span> ✎ Ans. <b>용혈이 있을 때는 Lab에 따라서 수치가 오를 수도, 내릴 수도 있음.</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>측정 간섭</b> — "오류가 난다"는 것만 알면 됨, 방향은 랩마다 다름</div>
+<div class="tr">그래서 용혈은 일률적으로 정리 불가 → <span class="r">최대한 피하는 것</span>이 답 (5번 실험 데이터가 증거)</div>
+</div>
+<span class="pno">15</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">4) Case — Creatinine 0?</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 4</span>빈혈 있는 개 — Creatinine 0</div>
+<div class="cs">건강한 술전 검사는 아닌 듯 (빈혈 있음) — 아픈 환자라 정상/비정상 구별이 더 어려움</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry (RR)</caption><tbody>
+<tr><td class="kc">HCT</td><td class="c"><span class="dn">20</span></td><td class="c">37–54</td></tr>
+<tr class="hi"><td class="kc">MCHC</td><td class="c"><span class="up">36</span></td><td class="c">33.5–35.5</td></tr>
+<tr><td class="kc">TP</td><td class="c"><span class="dn">2.9</span></td><td class="c">4.8–7.2</td></tr>
+<tr><td class="kc">ALT</td><td class="c">28</td><td class="c">8–75</td></tr>
+<tr class="hi"><td class="kc">Creatinine</td><td class="c"><span class="dn">0</span></td><td class="c">0.3–1.2</td></tr>
+<tr><td class="kc">Albumin</td><td class="c"><span class="dn">1.9</span></td><td class="c">2.1–3.6</td></tr>
+<tr class="hi"><td class="kc">AST</td><td class="c"><span class="up">72</span></td><td class="c">0–50</td></tr>
+<tr class="hi"><td class="kc">CK</td><td class="c"><span class="up">1063</span></td><td class="c">99–436</td></tr>
+<tr class="hi"><td class="kc">LDH</td><td class="c"><span class="up">409</span></td><td class="c">0–273</td></tr>
+<tr><td class="kc">Total Ca</td><td class="c"><span class="dn">7.7</span></td><td class="c">7.8–12.6</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><span class="tag t-pen">필기</span> ¹ <b>크레아티닌 수치는 숨쉬기만 해도 나옴</b> → 0은 살아 있는 개체에서 불가능 (피골이 상접해도 나옴)</li>
+<li><span class="tag t-pen">필기</span> ² ↓ <b>뭐가 문제지??</b> → 이 값 하나가 의심되면 <b>나머지 값도 신뢰도↓</b> → 원인 찾기</li>
+<li><span class="tag t-pen">필기</span> ³ CBC 보니 <b>MCHC↑</b> → <b>아, 용혈이네.</b> (심하지 않아도 용혈 있음)</li>
+<li>보통 간 문제면 ALT·AST가 <b>비슷하게</b>↑ → 여기선 <b>ALT 정상 + AST·CK·LDH↑</b> <span class="tag t-pen">필기</span> *<b>AST, CK, LDH가 range를 벗어났다? → 용혈이 있겠구나~</b></li>
+<li>Cr 0 자체도 용혈/간섭에 의한 <b>오류값</b>일 수 있음 (빌리루빈 첨가 실험에서 대다수 장비 Cr↓ → 0 가까이) → TP·Alb도 의심</li>
+</ol></div></div>
+<div class="cc">결론: <b>용혈에 의한 측정 간섭</b> → <b>재채혈·재검사</b></div>
+<div class="tr">이런 값은 POC(건식)보다 <b>랩(습식)</b> 장비에서 잘 나옴 <span class="tag t-rec">수업</span></div>
+<div class="tr">보호자 설명: "보호자·개·수의사 잘못이 아니라 기계적 오류 같으니 다시 검사하겠다"고 <b>정확하게</b> <span class="tag t-rec">수업</span></div>
+</div>
+<h4 class="lv3">5) 실험 데이터 — instrument·reagent-dependent의 증거</h4>
+<table>
+<caption>표 20. 간섭물질 첨가 실험 (점선 = reference range)</caption>
+<thead><tr><th style="width:30%">실험</th><th>결과</th></tr></thead>
+<tbody>
+<tr><td class="kc">혈청에 <b>헤모글로빈</b> 첨가 시 <b>인(P)</b> 농도<br><span class="gray">(용혈 심해질수록, 장비 A~L)</span></td><td>약 절반의 장비는 <span class="dn">↓</span> / 떨어졌다 다시 오르는 장비 / 다 <span class="up">↑</span>하는 장비(정도는 제각각) → 장비마다 다름</td></tr>
+<tr class="hi"><td class="kc">혈청에 <b>빌리루빈</b> 첨가 시 <b>Cr</b> 농도<br><span class="gray">(황달 심해질수록, 장비 A~K)</span></td><td><span class="tag t-pen">필기</span> 대다수: <b>빌리루빈 들어가니까 크레아티닌 감소</b> (거의 0에 가까운 값도) / 2개 장비: <b>"얘네는 증가…"</b> → <span class="r">Cr 0은 오류값으로도 나올 수 있다</span></td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>습식 랩 장비에서 특히 심함, 병원 건식 장비는 간섭 덜한 편</li>
+<li>대처: <b>황달</b>이 인정되면 → 왜 황달인지 평가 / <b>고지혈증</b> → 절식 여부, 호르몬 체크 / <b>용혈</b> → 조심스럽게 다시 채혈해 재검</li>
+</ul>
+<h3 class="lv2">5. Drugs — 임상병리 검사는 처치하기 전에!</h3>
+<ul class="d">
+<li>영향받는 것: <b>뇨 비중, PCV, 혈당, 전해질,,,,,,</b></li>
+</ul>
+<ul class="c">
+<li><b>수액</b> → 비중 금방 변화, 당 수액이면 혈당↑</li>
+<li><b>약물</b> (steroid → 혈당↑·이뇨 / 이뇨제 등)</li>
+<li><b>근육주사</b> → 바늘이 근육 손상 → <b>CPK·AST 거의 즉시 증가</b></li>
+</ul>
+<span class="pno">16</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 21. 근육 손상과 CPK</caption>
+<thead><tr><th>상황</th><th>CPK 변화</th></tr></thead>
+<tbody>
+<tr><td class="kc">채혈 시 바늘이 근육 통과?</td><td class="c"><b>3–4배</b> 증가</td></tr>
+<tr class="hi"><td class="kc">근육 주사? (특히 <b>irritant drug</b>, 항생제 IM 등)</td><td class="c">CPK <b>2–3배</b> 증가</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>원리: 몸은 세포 덩어리, 모든 세포는 혈관과 맞닿아 있음 → 세포가 망가지거나 막이 변하면 <b>내용물이 바로 혈관으로</b> → 관련 효소 빠르게↑ <span class="tag t-rec">수업</span></li>
+<li>응급 진료 순서: 어차피 혈관 잡으니 → <span class="r">검사할 최소한의 시료를 먼저 확보</span> → 그 다음 수액·수혈·약물 (안 그러면 그 영향이 섞여 환자 평가 불가)</li>
+</ul>
+<div class="side"><div class="mt">*"우리나라에 당뇨병이 이렇게 많았나?" <span class="tag t-rec">수업</span></div>소동물 진료 초창기, 여름마다 설사 강아지 다수 → 잘 못 먹으니 수액에 <b>당(덱스트로스)</b>을 넣고 → 그 뒤 채혈하니 <b>혈당↑ + 요당 양성</b> → "당뇨병 신환" 오진. 대형 리퍼 병원도 수혈·수액 받고 온 환자는 CBC·chem 수치가 변해 원래 문제만 골라 해석하기 어려움.</div>
+<h3 class="lv2">6. Other factors to avoid</h3>
+<ul class="d">
+<li><b>Stress!</b> · <b>Exercise!!</b> — 슬라이드: 나무에 매달린 강아지, 차에 묶어 달리게 하기 = <b>학대</b>. 병원 가깝다고 끌고 오기 ✕ (특히 진돗개 키우는 분들…) → 스트레스받지 않게</li>
+</ul>
+<h3 class="lv2">7. Storage — 보관</h3>
+<table>
+<caption>표 22. 보관 조건</caption>
+<thead><tr><th style="width:30%">조건</th><th>기간·비고</th></tr></thead>
+<tbody>
+<tr><td class="kc">Refrigeration at <b>4℃</b></td><td><b>8 hours</b> for most analytes — 그날그날 검사할 거면 냉장 후 검사</td></tr>
+<tr><td class="kc">Frozen at <b>–20℃</b></td><td>For <b>longer periods</b> — 외부로 보낼 땐 얼려서 보내기도</td></tr>
+<tr class="hi"><td class="kc">즉시 검사</td><td><b>암모니아</b>(휘발성) 등 → 바로 검사가 중요</td></tr>
+</tbody>
+</table>
+<p class="tnote">Some analytes may need specific conditions to keep optimal — 항목마다 요구 조건이 조금씩 다름 (어떤 항목은 냉장이 더 나음)</p>
+<div class="memo green">
+<div class="mt">교수님 마무리 요약 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>Chem의 목적 = <b>어느 장기에 문제가 있는가에 대한 최소 정보</b>를 주는 <b>스크리닝 검사</b> — 항목은 거의 고정, 업데이트 잘 안 됨</li>
+<li>항목은 크게 <b>injury marker / malfunction marker</b> 두 가지 → 각 의미와 적용법은 앞으로 하나씩</li>
+<li>검사 전 <b>장비 수준</b>: 민감도·특이도·precision·accuracy 확보 + 가장 이상적인 건 <b>RR 자체 설정</b></li>
+<li>검사 전 <b>시료 수준</b>: <b>고지혈증·용혈</b> + <b>장비마다 간섭 조건이 다름</b></li>
+<li>오류 상황 실습은 1학기처럼 <b>조별로 시간 잡아 데이터 만들어 레포트</b> (조교 통해 안내)</li>
+</ul>
+</div>
+<span class="pno">17</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">8. ★ 자료해석 — 이상한 결과를 만났을 때 판독 순서 (정리자 구성 — 강의 논리를 단계화)</h3>
+<div class="memo red">
+<div class="mt">★ 핵심 원칙 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>검사 결과를 그대로 수용하지 말 것 — <b>모든 검사는 완벽하지 않다, 제일 중요한 건 임상 소견</b></li>
+<li><b>"임상적으로 건강한데 말이 안 되는 값"</b> = 간섭(오류)을 의심하는 출발점</li>
+</ul>
+</div>
+<div class="flow">
+<div class="fstep"><div class="fnum">0</div><div class="fbody"><span class="ft">말이 되는 값인가?</span> 생리적으로 불가능한 값 체크 — Cr 0, total Ca 0.4, K 14.7, TP 21.9, MCHC 80… → 하나라도 있으면 <b>나머지 값 전체의 신뢰도↓</b></div></div>
+<div class="fstep"><div class="fnum">1</div><div class="fbody"><span class="ft">시료 육안</span>
+<div class="fork">
+<div class="fk1" style="background:#FFF;border-color:#999;"><b>Milky</b> = TG↑ lipemia<br>→ 절식했나? 원인 질환?</div>
+<div class="fk3"><b>붉음</b> = 용혈<br>→ 채혈 바늘·핸들링·지연</div>
+<div class="fk2"><b>누르스름</b> = 황달<br>→ Cr↓ 등 간섭 가능</div>
+</div></div></div>
+<div class="fstep"><div class="fnum">2</div><div class="fbody"><span class="ft">튜브·시료 종류</span> <b>Ca↓↓ · K↑↑ · ALP↓</b> = EDTA 혈장 / heparin 혈장 vs 혈청은 거의 같음(이온 Ca·K만 차이) / 장비 insert 권장 시료 확인</div></div>
+<div class="fstep"><div class="fnum">3</div><div class="fbody"><span class="ft">분리·보관·이송</span> 혈구 미분리 → <b>glucose 시간당 ~10%↓</b>, cortisol 비정상적↓ / 암모니아는 즉시 / 냉장 8h, 장기는 –20℃ / 전혈 냉동·얼음 → 용혈</div></div>
+<div class="fstep"><div class="fnum">4</div><div class="fbody"><span class="ft">용혈 패턴</span> <b>ALT 정상 + AST·CK·LDH↑</b>, MCHC↑, K·P↑ → 방향은 instrument·reagent-dependent</div></div>
+<div class="fstep"><div class="fnum">5</div><div class="fbody"><span class="ft">처치·환자 요인</span> 수액·스테로이드·이뇨제 후 채혈? (USG·혈당·전해질·PCV) / 근육주사·채혈 시 근육 통과 → <b>CPK 2–4배</b> / 스트레스·운동</div></div>
+<div class="fstep"><div class="fnum">6</div><div class="fbody"><span class="ft">장비·RR 요인</span> 이 랩·장비 <b>자체 RR</b>인가? (RR은 장비·시약·lot마다 다름) / 습식은 간섭 多, 건식은 적음 / Jaffe Cr 간섭(cephalosporin 등)</div></div>
+<div class="fstep"><div class="fnum">7</div><div class="fbody"><span class="ft">결론·대처</span> 오류 패턴이면 → <b>원인 교정 후 재채혈·재검사</b> + 보호자에게 정확히 설명 / 진짜 이상이면 → 원인 질환 검증 (예: 절식했는데 lipemia → 내분비 검사)</div></div>
+</div>
+<table>
+<caption>표 23. 이번 장 케이스 한 장 정리</caption>
+<thead><tr><th style="width:24%">케이스</th><th>결정적 단서</th><th style="width:28%">결론</th></tr></thead>
+<tbody>
+<tr><td>Border Collie 3세 (건강)</td><td>Ca 0.4, K 14.7, ALP 3</td><td><b>EDTA 혈장</b> 사용</td></tr>
+<tr><td>건강한 개 TP 21.9</td><td>TP 21.9, T.bil 18.4, milky</td><td><b>비절식 lipemia</b> (습식 장비 간섭)</td></tr>
+<tr><td>용혈 혈청 bilirubin 0.0</td><td>용혈 + 예상과 반대 방향</td><td>간섭은 <b>instrument·reagent-dependent</b></td></tr>
+<tr class="hi"><td>빈혈 개 Cr 0</td><td>Cr 0, MCHC↑, ALT 정상 + AST·CK·LDH↑</td><td><b>용혈</b> → 재검사</td></tr>
+<tr><td>(간 단원) 술전 건강견</td><td>ALT 정상 + AST·LDH↑, TG↑</td><td>비절식 → lipemia → 용혈</td></tr>
+<tr><td>혈구 미분리 이송</td><td>glucose 109 → 43 (4h), cortisol 0.024</td><td>혈구 미분리 artifact</td></tr>
+<tr><td>설사 강아지 수액 후 채혈</td><td>고혈당 + 요당</td><td>"가짜 당뇨" (당 수액)</td></tr>
+</tbody>
+</table>
+<span class="pno">18</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">★ 1장 총정리 — 시험 직전에 보는 표</h2>
+<table>
+<caption>표 24. 검사 오류 패턴 총정리</caption>
+<thead><tr><th style="width:17%">원인</th><th style="width:33%">패턴</th><th>키워드 / 기전</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">EDTA 혈장</td><td><span class="dn">Ca↓↓</span>(0.4) · <span class="up">K↑↑</span>(14.7) · <span class="dn">ALP↓</span>(3)</td><td>Ca 킬레이트 / K₂·K₃-EDTA / ALP 조효소(Ca) 결핍 — "건강한데 말이 안 됨"</td></tr>
+<tr><td class="kc">혈구 미분리</td><td><span class="dn">Glucose↓</span>(시간당 ~10%) · <span class="dn">cortisol↓</span></td><td>RBC 해당작용 지속 / 세포 흡착 → 혈장·혈청만 분리해 보낼 것 (혈당 연구는 fluoride)</td></tr>
+<tr><td class="kc">비절식</td><td>Chol·TG·glucose 직접↑ + milky → 용혈 → 다수 항목 오류</td><td>12시간 절식</td></tr>
+<tr class="hi"><td class="kc">Lipemia</td><td>습식: <span class="up">↑</span> albumin, Ca, glucose, P, bilirubin, TP / 건식 거의 영향 X<br><span class="dn">↓</span>Na·K·Cl (flame·indirect)</td><td>TP 21.9, T.bil 18.4 같은 말 안 되는 값 → 절식 확인 → 원인(당뇨·쿠싱·갑저·담즙정체·선천성)</td></tr>
+<tr class="hi"><td class="kc">Hemolysis</td><td>K, P, AST, LDH, CK, bilirubin, Hb 유출 / <b>ALT 정상 + AST·CK·LDH↑</b> / MCHC↑</td><td>23·24G 바늘, 피스톤 왕복, 분리 지연, 전혈 냉동, 얼음 / 장비마다 ↑↓ 제각각</td></tr>
+<tr><td class="kc">황달(bilirubin)</td><td>대부분 장비에서 <span class="dn">Cr↓</span>(0 가까이), 일부 ↑</td><td><b>Cr 0 = 불가능한 값 → 오류</b></td></tr>
+<tr><td class="kc">근육 손상</td><td><span class="up">CPK↑</span>(채혈 근육 통과 3–4배, IM 2–3배), AST↑</td><td>irritant drug / 횡문근융해증</td></tr>
+<tr><td class="kc">처치 후 채혈</td><td>요비중·PCV·혈당·전해질 변화, 당 수액 → 고혈당+요당</td><td>"가짜 당뇨" → 처치 전에 시료 먼저</td></tr>
+</tbody>
+</table>
+<table>
+<caption>표 25. 개념 비교 한 장</caption>
+<thead><tr><th style="width:20%">개념</th><th>정의</th><th style="width:30%">포인트</th></tr></thead>
+<tbody>
+<tr><td class="kc">Precision</td><td>반복 측정 시 비슷한 값 (reproducibility)</td><td>Range · SD · <b>CV = SD/평균</b>(낮을수록 좋음) · 95% CI</td></tr>
+<tr><td class="kc">Accuracy</td><td>참값에 가까움 (closeness to true value)</td><td>한쪽에 몰린 탄착 → 영점 조정</td></tr>
+<tr class="hi"><td class="kc">Sensitivity / Specificity</td><td>질병 有 중 진양성 / 질병 無 중 진음성</td><td><b>검사 고유 성질, 유병률 무관</b> · trade-off</td></tr>
+<tr class="hi"><td class="kc">PPV / NPV</td><td>양성 결과 중 진양성 / 음성 결과 중 진음성</td><td><b>유병률 영향 받음</b> (10%→1%: PPV 67→16%)</td></tr>
+<tr><td class="kc">Reference range</td><td>건강 개체 n=40–200, mean ±2SD (95%)</td><td>"normal range" ✕ · <b>장비·랩마다 자체 설정</b></td></tr>
+</tbody>
+</table>
+<span class="pno">19</span>
+</section>
+
+<section class="page">
+<div class="memo">
+<div class="mt">*헷갈리기 쉬운 짝</div>
+<ul class="d">
+<li><b>활성도 vs 농도</b> — 효소(ALT, AST, ALP, amylase, lipase)는 활성도(U/L), 단 <b>trypsin·cPLI는 직접 정량</b></li>
+<li><b>AST vs ALT</b> — ALT = 간 특이 / AST = 간+근육 → ALT 정상인데 AST만↑ = 근육 or <b>용혈</b></li>
+<li><b>Injury vs Malfunction</b> — 신장은 injury marker <b>없음</b>, BUN·Cr·SDMA·SG 모두 기능(malfunction) 지표</li>
+<li><b>간 malfunction 40–50% vs 85%</b> — NH₃·bile acid·bilirubin은 40–50% 손상부터 / albumin·BUN·glucose·chol(합성)은 85% 이상에서야 감소</li>
+<li><b>SDMA vs Cr</b> — SDMA는 30–40% 손상부터 (Cr은 2/3 이상 소실 후), 단 고양이에서 해석 어려움 많음</li>
+<li><b>Serum vs Plasma</b> — serum = 무첨가 자연응고 상층액(plain·SST) / plasma = 항응고제 전혈 상층액 → chem은 serum ≈ <b>heparin plasma</b></li>
+<li><b>EDTA vs Heparin</b> — EDTA = CBC(전혈) / heparin = chem(혈장). EDTA를 chem에 쓰면 Ca↓ K↑ ALP↓</li>
+<li><b>Lipemia vs Hemolysis 색</b> — milky(우윳빛, TG↑) vs 붉은색 / 황달 = 누르스름 / 정상 = straw</li>
+<li><b>Wet vs Dry vs Semi-wet</b> — 랩·액상·간섭 多 / POC·건조 시약·개별 검사 / 로터 카트리지 통째 검사(한국 비선호)</li>
+<li><b>Flame·indirect vs direct potentiometry</b> — 고지혈증 시 앞의 둘만 Na·K·Cl 위(偽)저하</li>
+</ul>
+</div>
+<span class="pno">20</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 — 한 줄로 답해보기</h2>
+<table>
+<caption>표 26. 시험 전 확인 문제 (답은 오른쪽 칸 가리고 풀기)</caption>
+<thead><tr><th style="width:5%">#</th><th>질문</th><th style="width:38%">답</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>효소 수치를 "농도"가 아니라 "활성도"라고 부르는 이유는?</td><td>기질 넣고 incubation 후 end product로 <b>간접 측정</b>하기 때문 (단, trypsin·cPLI는 직접 정량)</td></tr>
+<tr><td class="c">2</td><td>신장의 injury marker는?</td><td><b>없음</b> — BUN·Cr·SDMA·SG 모두 기능(malfunction) 지표</td></tr>
+<tr><td class="c">3</td><td>BUN·Cr이 신장 때문에 올랐다면 남은 신기능은?</td><td><b>1/3 미만</b> (2/3 이상 소실) · SDMA는 30–40% 손상부터↑</td></tr>
+<tr><td class="c">4</td><td>간에서 albumin·BUN·glucose·cholesterol이 모두 감소했다면?</td><td>약 <b>85% 이상</b> 손상 (NH₃·bile acid·bilirubin은 40–50%부터)</td></tr>
+<tr><td class="c">5</td><td>좋은 검사 항목의 3조건 중 가장 중요하다고 한 것은?</td><td><b>low cost</b> (단가 1–2천 원) — + organ specific, disease sensitive</td></tr>
+<tr class="hi"><td class="c">6</td><td>건강한 개에서 Ca 0.4, K 14.7, ALP 3 → 원인과 기전?</td><td><b>EDTA 혈장</b> — Ca 킬레이트 / K₂·K₃-EDTA / ALP 조효소 Ca 결핍</td></tr>
+<tr><td class="c">7</td><td>혈구와 분리 안 한 시료의 혈당 변화는?</td><td>시간당 약 <b>10% 감소</b> (RBC 해당작용) → fluoride 튜브 or 혈장만 분리</td></tr>
+<tr><td class="c">8</td><td>Chem에 쓸 수 있는 시료 2가지는? 둘이 다른 대표 항목은?</td><td><b>Serum, heparin plasma</b> / ionized Ca, K</td></tr>
+<tr><td class="c">9</td><td>CV의 공식과 해석은?</td><td><b>SD / 평균</b> — 낮을수록 precision↑</td></tr>
+<tr><td class="c">10</td><td>과녁 한쪽 구석에 탄착이 모였다면? 해결책은?</td><td>Precision ○ / Accuracy ✕ → <b>영점 조정(calibration)</b></td></tr>
+<tr class="hi"><td class="c">11</td><td>유병률이 10% → 1%로 떨어지면 변하는 지표와 안 변하는 지표는?</td><td>안 변함: <b>민감도·특이도</b>(고유 성질) / 변함: <b>PPV·NPV</b> (예: PPV 67 → 16%)</td></tr>
+<tr><td class="c">12</td><td>"normal range"가 부적절한 이유와 RR 설정 기준은?</td><td>범위 밖도 정상일 수 있음 → <b>reference range</b> · 건강 개체 n=40–200, mean ±2SD(95%) · <b>장비·랩마다 자체 설정</b></td></tr>
+<tr><td class="c">13</td><td>Good sample 비율과 가장 흔한 문제는?</td><td><b>27%</b> / 용혈 33%</td></tr>
+<tr><td class="c">14</td><td>절식 시간과 직접 영향받는 3항목은?</td><td><b>12시간</b> / cholesterol · TG · glucose</td></tr>
+<tr><td class="c">15</td><td>지질혈증에서 Na가 낮게 나오는 측정법과 안 나오는 측정법은?</td><td>↓: flame photometry · indirect potentiometry / 영향 없음: <b>direct</b> potentiometry</td></tr>
+<tr class="hi"><td class="c">16</td><td>ALT 정상 + AST·CK·LDH↑ + MCHC↑ + Cr 0 → 무엇을 의심?</td><td><b>용혈</b>(+ 간섭) → 재채혈·재검사</td></tr>
+<tr><td class="c">17</td><td>용혈 시 bilirubin이 0으로 나온 이유는?</td><td>간섭은 <b>instrument·reagent-dependent</b> — 랩에 따라 ↑ 또는 ↓</td></tr>
+<tr><td class="c">18</td><td>근육 주사 후 CPK는? 채혈 바늘이 근육 통과 시는?</td><td>IM <b>2–3배</b>(irritant drug) / 근육 통과 <b>3–4배</b></td></tr>
+<tr><td class="c">19</td><td>대부분 항목의 냉장 보관 한계와 즉시 검사해야 하는 항목은?</td><td>4℃ <b>8시간</b>(장기: –20℃ 냉동) / <b>암모니아</b></td></tr>
+<tr><td class="c">20</td><td>cPLI는 무엇을 측정하나? <span class="tag t-pen2">필기2</span></td><td>개 췌장 <b>특이 리파제</b>를 면역학적으로 직접 정량 → 췌장염 마커</td></tr>
+<tr><td class="c">21</td><td>SST와 heparin 튜브의 원심분리 후 보관 차이? <span class="tag t-pen2">필기2</span></td><td>heparin = 상층액만 따로 / SST = 겔 칸막이로 튜브째 보관 가능</td></tr>
+<tr><td class="c">22</td><td>EDTA 혈장에서 ALP가 떨어지는 엄밀한 이유? <span class="tag t-pen2">필기2</span></td><td>ALP 조효소 <b>Mg²⁺·Zn²⁺</b> 킬레이션 (교수님 설명은 Ca)</td></tr>
+</tbody>
+</table>
+<span class="pno">21</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 ② — 미니 케이스 · 계산</h2>
+<table>
+<caption>표 27. 숫자를 보고 판독해보기 (강의 케이스 변형 — 답은 가리고)</caption>
+<thead><tr><th style="width:5%">#</th><th>데이터</th><th style="width:38%">답 · 근거</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>건강한 개 술전 검사. Ca 1.2, K 11.5, ALP 8, 나머지 정상</td><td><b>EDTA 혈장</b> — Ca 킬레이트·K₂/K₃-EDTA·ALP 조효소 결핍</td></tr>
+<tr><td class="c">2</td><td>외부 랩 의뢰, 원심분리한 튜브 통째로 하루 뒤 도착. Glucose 35, 개는 활발</td><td><b>혈구 미분리 artifact</b> (RBC 해당작용, ~10%/h) → 혈장만 분리해 보낼 것</td></tr>
+<tr><td class="c">3</td><td>밥 먹고 온 개, 혈장이 우윳빛. TP 15.0, T.bil 9.0, 임상적으로 정상</td><td><b>Lipemia 간섭</b>(습식) → 12시간 절식 후 재검</td></tr>
+<tr><td class="c">4</td><td>고양이, 24G 바늘로 어렵게 채혈(피스톤 왕복). ALT 정상, AST·LDH·CK↑, K↑</td><td><b>채혈성 용혈</b> → 조심스럽게 재채혈</td></tr>
+<tr><td class="c">5</td><td>항생제 근육주사 직후 채혈. CPK 3배↑, AST↑, ALT 정상</td><td><b>근육주사</b> 영향 (특히 irritant drug) — 처치 전에 채혈</td></tr>
+<tr><td class="c">6</td><td>고지혈증 개, flame photometry 장비. Na 120, 증상 없음</td><td><b>위(偽)저나트륨혈증</b>(displacement) → direct potentiometry로 재측정</td></tr>
+<tr><td class="c">7</td><td>장비 A의 BUN RR을 장비 B 결과에 그대로 적용</td><td>✕ — RR은 <b>장비·랩마다 자체 설정</b> (같은 원리·같은 장비여도 차이)</td></tr>
+<tr><td class="c">8</td><td>저울 C: 100.0, 100.0, 100.1, 99.9 / 저울 D: 97.0, 97.1, 97.0, 96.9 (참값 100)</td><td>C: precision·accuracy ○ / D: <b>precision ○, accuracy ✕</b> → 영점 조정(calibration)</td></tr>
+<tr class="hi"><td class="c">9</td><td>민감도 90%·특이도 95% 검사, 1,000마리 중 <b>유병률 50%</b>일 때 PPV·NPV는?</td><td>TP 450, FN 50, FP 25, TN 475 → <b>PPV 450/475 ≈ 95%</b>, <b>NPV 475/525 ≈ 90%</b> (유병률↑ → PPV↑, NPV↓; 민감도·특이도는 그대로)</td></tr>
+<tr><td class="c">10</td><td>Ehrlichia 항체 키트 양성, 무증상 개 (엔데믹 지역)</td><td>유병률↑·과거 노출로 항체만 남은 개 多 → <b>양성이어도 현재 병 아닐 수 있음</b>, 임상 소견 우선</td></tr>
+<tr><td class="c">11</td><td>CV 계산: 평균 50, SD 2.5</td><td>CV = 2.5/50 = <b>0.05 (5%)</b> — 낮을수록 정밀</td></tr>
+<tr><td class="c">12</td><td>치명적 질병의 선별 검사 — 위음성과 위양성 중 더 줄여야 할 것은?</td><td><b>위음성</b> (민감도 우선) — 위양성은 추가 검사로 확인 가능</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 위 표는 강의 내용을 바탕으로 정리자가 만든 연습 문제 — 수치는 예시</p>
+<span class="pno">22</span>
+</section>
+</body>
+</html>

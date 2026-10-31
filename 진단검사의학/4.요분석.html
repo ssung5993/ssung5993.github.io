@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4. 요분석 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-pen2{background:#f1eafd;color:#6B3FC4;border:1px solid #c3a9f0;}
+.f2{background:#faf7ff;box-shadow:-4px 0 0 #9b7be0;}
+tr.f2 td{background:#faf7ff !important;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.side{border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:8px 4px 10px 20px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.clear{clear:both;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;}
+.two table{margin-left:0;width:100%;}
+
+table,.memo,.side,.two,tr{break-inside:avoid;page-break-inside:avoid;}
+h2,h3,h4,h5{break-after:avoid;page-break-after:avoid;}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two{display:block;margin-left:0;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo{margin-left:0;}
+}
+
+/* 자료해석 전용 */
+.flow{margin:8px 0 12px 20px;display:flex;flex-direction:column;gap:6px;}
+.fstep{display:flex;gap:8px;align-items:stretch;}
+.fnum{flex:0 0 30px;background:#13756A;color:#fff;font-weight:700;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.fbody{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:4px;padding:5px 9px;color:var(--ink);font-size:12.8px;line-height:18px;}
+.fbody .ft{font-weight:700;color:#12403B;}
+.fork{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.fork>div{flex:1;min-width:150px;border-radius:4px;padding:4px 7px;font-size:12px;line-height:16px;}
+.fk1{background:#E8F4EA;border:1px solid #0F9268;}
+.fk2{background:#FFF6D8;border:1px solid #C9A227;}
+.fk3{background:#FDECEC;border:1px solid #E23B3B;}
+.case{border:2px solid #13756A;border-radius:6px;margin:10px 0 14px 20px;background:#fff;color:var(--ink);overflow:hidden;}
+.case .ch{background:#13756A;color:#fff;font-weight:700;padding:5px 10px;font-size:14.5px;line-height:19px;}
+.case .ch .cn{display:inline-block;background:#fff;color:#13756A;border-radius:3px;padding:0 6px;margin-right:6px;font-size:12.5px;}
+.case .cs{padding:4px 10px;font-size:12.4px;line-height:17px;background:#F2F8F6;border-bottom:1px solid #D8ECE7;color:#3A4A63;}
+.case .cb{display:flex;gap:10px;padding:8px 10px;}
+.case .cd{flex:0 0 40%;}
+.case .cd table{margin:0;width:100%;font-size:11.2px;}
+.case .cd caption{font-size:12.5px;padding:3px 6px;}
+.case .ci{flex:1;}
+.case ol.st{margin:0;padding:0;list-style:none;counter-reset:s;}
+.case ol.st>li{counter-increment:s;position:relative;padding-left:24px;margin:0 0 4px;font-size:12.6px;line-height:18px;}
+.case ol.st>li::before{content:counter(s);position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:#2B5FC4;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.case .cc{margin:6px 10px 8px;padding:5px 9px;background:#FFF6D8;border-left:4px solid #E23B3B;font-size:12.8px;line-height:18px;}
+.case .cc b{color:#E23B3B;}
+.case .tr{margin:0 10px 8px;padding:4px 9px;background:#F4F9FF;border-left:4px solid #2B5FC4;font-size:12.2px;line-height:17px;}
+.cat-pre .ch{background:#0F9268;} .cat-pre{border-color:#0F9268;}
+.cat-ren .ch{background:#C0392B;} .cat-ren{border-color:#C0392B;}
+.cat-post .ch{background:#2B5FC4;} .cat-post{border-color:#2B5FC4;}
+.cat-mim .ch{background:#B7791F;} .cat-mim{border-color:#B7791F;}
+.cat-oth .ch{background:#6B4FA0;} .cat-oth{border-color:#6B4FA0;}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px 20px;font-size:11.5px;}
+.legend span{padding:1px 7px;border-radius:3px;color:#fff;font-weight:700;}
+@media (max-width:800px){.case .cb{display:block;}.case .cd{margin-bottom:6px;}.case{margin-left:0;}.flow{margin-left:0;}}
+
+.fig{margin:8px 0 12px 20px;background:#fff;border:1.5px solid #4A6B66;border-radius:4px;padding:8px 8px 4px;break-inside:avoid;page-break-inside:avoid;}
+.fig svg{display:block;margin:0 auto;}
+.fig .fc{font-size:11.2px;color:#6C7787;text-align:center;margin-top:2px;line-height:15px;}
+.t-lnk{background:#eef2f6;color:#4b5a6e;border:1px solid #b9c3cf;}
+.notice{border:2px solid #E23B3B;background:#fff4f4;padding:6px 12px;margin:6px 4px 10px 20px;color:var(--ink);font-size:12.8px;}
+.notice b{color:#E23B3B;}
+@media (max-width:800px){.fig{margin-left:0;}.notice{margin-left:0;}}
+</style>
+</head>
+<body>
+<section class="page">
+<h1 class="doc-title"><span class="num">4.</span> 요분석 <span class="en">Urinalysis — Dipstick · USG · Sediment</span></h1>
+<p class="doc-sub">진단검사의학 · 최을수 교수님 10/16 · 강의 PDF 1–60p + 수업 녹음(78분) 정리본 + 슬라이드 필기 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-ex">시험</span> 강조·시험 포인트 &nbsp;<span class="tag t-lnk">↔ 신장</span> 신장 정리본과 겹치는 케이스 &nbsp;<span class="gray">(정리자 보충) = 강의에 없는 해석 보충</span></p>
+<hr class="hr-hand">
+<div class="notice">📢 <b>다음 주 시험 범위 = 이번 요분석 강의까지</b> <span class="tag t-rec">수업</span> &nbsp;/&nbsp; 조별 요분석 <b>실습은 이번 달 안</b>에 진행 <span class="tag t-rec">수업</span> <span class="gray">(정확한 날짜는 녹음에 없음)</span></div>
+<table>
+<caption>표 1. 요분석 한눈에 — "Dipstick + USG + 요침사" 3개 세트</caption>
+<thead><tr><th style="width:15%">구성</th><th style="width:27%">무엇을 보나</th><th>핵심 한 줄</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">USG</td><td>농축·희석 = 수분 조절 기능</td><td><b>굴절계</b>로! 질소혈증 있을 때 <b>신전성 vs 신성</b> 가르는 열쇠</td></tr>
+<tr><td class="kc">Dipstick</td><td>pH · 단백 · 당 · 케톤 · 빌리루빈 · blood (· 아질산 · 백혈구)</td><td>유효기간 확인, 1분 후 판독. 모든 pad는 <b>USG·침사·혈액검사와 같이</b> 해석</td></tr>
+<tr class="hi"><td class="kc">요침사</td><td>Cast · 결정 · 세포 · 세균</td><td>Cast = <b>세뇨관 손상</b> 단서 (BUN·Cr = 배설 기능과 역할이 다름)</td></tr>
+<tr><td class="kc">강의 강조</td><td colspan="2"><b>Azotemia → USG</b>, <b>Hypoalbuminemia → Proteinuria</b>를 해석할 줄 알 것. CBC·혈청화학·영상과 겹치는 항목도 많음 → 검사 하나의 양성보다 <b>전체 정황</b> <span class="tag t-rec">수업</span></td></tr>
+</tbody></table>
+<h2 class="lv1">Ⅰ. 검사 구성과 검체 처리</h2>
+<ul class="d">
+<li><b>Dipstick</b>: 1분 후 검사 / <span class="hl">유효기간 확인하기!</span> (슬라이드 말풍선)</li>
+<li><b>비중</b>: 굴절계 사용 (<b>calibration</b> 해 두고)</li>
+<li><b>요 침사</b>: <b>1,500–2,000 rpm, 5분</b> → 0.5 mL 남기고 재부유 → <b>100배</b>: casts · crystal · cells / <b>400배</b>: 세포 · 세균</li>
+<li><span class="tag t-pen">필기</span> <b>Cast</b> = "세뇨관에서 배출되는 것들이 막 합쳐진 것"</li>
+</ul>
+<div class="fig"><svg viewBox="0 0 700 150" width="100%" style="max-width:700px;font-family:inherit"><path d="M30,30 L30,89.0 A11.0,11.0 0 0 0 52,89.0 L52,30" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M31.5,47.5 L31.5,89.0 A9.5,9.5 0 0 0 50.5,89.0 L50.5,47.5 Z" fill="#F4D35E"></path><text x="41.0" y="114" text-anchor="middle" font-size="10.5" fill="#1B2A44">소변 5 mL</text><line x1="62" y1="65" x2="118" y2="65" stroke="#2B5FC4" stroke-width="2"></line><path d="M118,65 l-7,-4 l0,8 z" fill="#2B5FC4"></path><text x="90" y="52" text-anchor="middle" font-size="10" fill="#2B5FC4">원심</text><circle cx="155" cy="65" r="30" fill="#EEF3F2" stroke="#4A6B66" stroke-width="1.6"></circle><circle cx="155" cy="65" r="4" fill="#4A6B66"></circle><path d="M155,65 l18,-18 M155,65 l-18,18" stroke="#4A6B66" stroke-width="3"></path><path d="M128,40 A36,36 0 0 1 182,40" fill="none" stroke="#E23B3B" stroke-width="1.6"></path><path d="M182,40 l-8,-1 l4,7 z" fill="#E23B3B"></path><text x="155" y="118" text-anchor="middle" font-size="10.5" fill="#1B2A44"><tspan font-weight="700">1,500–2,000 rpm</tspan></text><text x="155" y="131" text-anchor="middle" font-size="10.5" fill="#1B2A44">5분 (세게 X)</text><line x1="190" y1="65" x2="236" y2="65" stroke="#2B5FC4" stroke-width="2"></line><path d="M236,65 l-7,-4 l0,8 z" fill="#2B5FC4"></path><path d="M245,30 L245,89.0 A11.0,11.0 0 0 0 267,89.0 L267,30" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M246.5,47.5 L246.5,89.0 A9.5,9.5 0 0 0 265.5,89.0 L265.5,47.5 Z" fill="#FBEFB8"></path><ellipse cx="256.0" cy="94" rx="8.0" ry="4.5" fill="#C8A23A"></ellipse><text x="256.0" y="114" text-anchor="middle" font-size="10.5" fill="#1B2A44">침전</text><line x1="277" y1="65" x2="323" y2="65" stroke="#2B5FC4" stroke-width="2"></line><path d="M323,65 l-7,-4 l0,8 z" fill="#2B5FC4"></path><text x="300" y="52" text-anchor="middle" font-size="10" fill="#2B5FC4">상층 버림</text><path d="M332,30 L332,89.0 A11.0,11.0 0 0 0 354,89.0 L354,30" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M333.5,84.6 L333.5,89.0 A9.5,9.5 0 0 0 352.5,89.0 L352.5,84.6 Z" fill="#F4D35E"></path><ellipse cx="343.0" cy="94" rx="8.0" ry="4.5" fill="#C8A23A"></ellipse><text x="343.0" y="114" text-anchor="middle" font-size="10.5" fill="#1B2A44">0.5 mL 재부유</text><line x1="364" y1="65" x2="410" y2="65" stroke="#2B5FC4" stroke-width="2"></line><path d="M410,65 l-7,-4 l0,8 z" fill="#2B5FC4"></path><rect x="418" y="55" width="80" height="22" rx="2" fill="#F6FBFF" stroke="#4A6B66" stroke-width="1.4"></rect><rect x="440" y="58" width="34" height="16" fill="#DDEBF7" stroke="#7A9CC0" stroke-width="1"></rect><circle cx="457" cy="66" r="4" fill="#F4D35E"></circle><text x="458" y="100" text-anchor="middle" font-size="10.5" fill="#1B2A44">한 방울 + coverslip</text><line x1="505" y1="65" x2="545" y2="65" stroke="#2B5FC4" stroke-width="2"></line><path d="M545,65 l-7,-4 l0,8 z" fill="#2B5FC4"></path><rect x="552" y="22" width="140" height="40" rx="4" fill="#E8F4EA" stroke="#0F9268"></rect><text x="622" y="38" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0F9268">100× (저배율 LPF)</text><text x="622" y="54" text-anchor="middle" font-size="10.5" fill="#1B2A44">cast · crystal · cell</text><rect x="552" y="70" width="140" height="40" rx="4" fill="#FFF6D8" stroke="#C9A227"></rect><text x="622" y="86" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9A7A12">400× (고배율 HPF)</text><text x="622" y="102" text-anchor="middle" font-size="10.5" fill="#1B2A44">세포 · 세균</text></svg><div class="fc">그림 1. 요침사 만들기 — 원심이 세면 cast가 부서짐</div></div>
+<ul class="d">
+<li>원심을 <b>세게 하면 cast가 와해</b>될 수 있음 → 혈청 분리할 때보다 <b>약하게</b> <span class="tag t-rec">수업</span></li>
+<li>심하게 혼탁한 검체는 원심 전 <b>직접 검경</b>에서도 구조물이 보일 수 있음 / Wet preparation = 한 방울 + coverslip <span class="tag t-rec">수업</span></li>
+<li>염색 도말: urine·CSF처럼 <b>단백이 적은</b> 검체는 세척 중 세포가 씻겨 나감 → 남은 혈청을 소량 섞어 <b>슬라이드 부착을 돕는</b> 방법 소개 <span class="tag t-rec">수업</span></li>
+<li><span class="r">신선뇨로 신속 검사</span> — 시간·온도 변화로 채취 당시 없던 결정이 석출 / 방치하면 pH↑ · 빌리루빈 분해 (각 항목에서 다시 나옴) <span class="tag t-rec">수업</span></li>
+<li>가정용 screening: 비흡수성 고양이 모래, 간단한 pad 제품 → 이상 시 <b>내원 유도</b> 목적 <span class="tag t-rec">수업</span></li>
+</ul>
+<span class="pno">1</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 2. 채뇨 방법 — 이번 강의에서 나온 포인트만</caption>
+<thead><tr><th style="width:18%">방법</th><th>강의 포인트</th></tr></thead>
+<tbody>
+<tr><td class="kc">자연배뇨<br>(voided)</td><td><b>혈뇨 평가에는 자연배뇨 권장</b> — 천자 과정 혈액 혼입을 피함. 대신 하부요로·외부 오염 가능</td></tr>
+<tr class="hi"><td class="kc">방광천자<br>(cystocentesis)</td><td>무균 → <b>세균이 보이면 비정상</b>. 소변량 적고 피 섞인 검체 → 단백뇨를 <b>신성 단백 소실로 바로 해석 X</b></td></tr>
+</tbody></table>
+<h2 class="lv1">Ⅱ. 요비중 (USG)</h2>
+<div class="memo">
+<div class="mt">요비중 3줄 요약</div>
+<ul class="d">
+<li><span class="hl"><b>비중은 굴절계로!</b></span> — Dipstick은 정확도 떨어짐</li>
+<li><b>비중은 어떤 값도 정상!</b> — 정상 수화 상태 · 정상 신장 기능이라면 상황 따라 다양</li>
+<li><span class="hl">뚜렷한 탈수 + 신장 기능 정상</span>이면 → <b>개 1.030 이상 / 고양이 <s style="color:#9aa3ae">1.035 이상 (또는</s> 1.040 이상)</b> <span class="tag t-pen">필기</span> <span class="tag t-ex">시험</span></li>
+</ul></div>
+<div class="memo blue">
+<div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>*<b>고양이는 원래 사막 서식</b> → <b>1.060 이상</b>의 고도로 농축된 뇨가 일반적 ; 그래서 좀 농축 벗어나 싶으면 <b>바로 검사</b></li>
+<li>고양이 기준이 슬라이드에서 1.035를 지우고 <b>1.040</b>으로 적힘 → 10/2 신장 강의는 1.035 <span class="tag t-lnk">↔ 신장 Ⅺ</span> <span class="gray">(시험에선 이번 강의 기준 1.040 쪽, 두 값 다 알아두기)</span></li>
+</ul></div>
+<div class="fig"><svg viewBox="0 0 700 200" width="100%" style="max-width:700px;font-family:inherit"><text x="40" y="18" font-size="11.5" font-weight="700" fill="#12403B">탈수 + 질소혈증일 때 USG 읽기</text><rect x="40.0" y="52" width="82.7" height="32" fill="#DCEBFA" stroke="#9AA3AE" stroke-width=".8"></rect><text x="81.3" y="72" text-anchor="middle" font-size="10.5" fill="#1B2A44">희석뇨 &lt;1.008</text><rect x="122.7" y="52" width="41.3" height="32" fill="#E4E4E4" stroke="#9AA3AE" stroke-width=".8"></rect><text x="143.3" y="72" text-anchor="middle" font-size="10.5" fill="#1B2A44">등장뇨</text><rect x="164.0" y="52" width="186.0" height="32" fill="#FFF3C4" stroke="#9AA3AE" stroke-width=".8"></rect><text x="257.0" y="72" text-anchor="middle" font-size="10.5" fill="#1B2A44">농축 부족 (개 기준)</text><rect x="350.0" y="52" width="310.0" height="32" fill="#DDF1E4" stroke="#9AA3AE" stroke-width=".8"></rect><text x="505.0" y="72" text-anchor="middle" font-size="10.5" fill="#1B2A44">개 충분 ≥1.030</text><line x1="453.3" y1="44" x2="453.3" y2="88" stroke="#DD3F92" stroke-width="2.4" stroke-dasharray="5 3"></line><text x="457.3" y="42" font-size="11" font-weight="700" fill="#DD3F92">고양이 ≥1.040 (이번 강의)</text><line x1="401.7" y1="52" x2="401.7" y2="84" stroke="#9AA3AE" stroke-width="1.2" stroke-dasharray="2 2"></line><text x="397.7" y="42" text-anchor="end" font-size="9.5" fill="#6C7787">(10/2 신장: 1.035)</text><line x1="40.0" y1="84" x2="40.0" y2="90" stroke="#1B2A44"></line><text x="40.0" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.000</text><line x1="122.7" y1="84" x2="122.7" y2="90" stroke="#1B2A44"></line><text x="122.7" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.008</text><line x1="164.0" y1="84" x2="164.0" y2="90" stroke="#1B2A44"></line><text x="164.0" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.012</text><line x1="246.7" y1="84" x2="246.7" y2="90" stroke="#1B2A44"></line><text x="246.7" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.020</text><line x1="350.0" y1="84" x2="350.0" y2="90" stroke="#1B2A44"></line><text x="350.0" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.030</text><line x1="453.3" y1="84" x2="453.3" y2="90" stroke="#1B2A44"></line><text x="453.3" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.040</text><line x1="556.7" y1="84" x2="556.7" y2="90" stroke="#1B2A44"></line><text x="556.7" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.050</text><line x1="660.0" y1="84" x2="660.0" y2="90" stroke="#1B2A44"></line><text x="660.0" y="102" text-anchor="middle" font-size="10" fill="#1B2A44">1.060</text><path d="M81.3,108 L81.3,158" stroke="#2B5FC4" stroke-width="1.2"></path><circle cx="81.3" cy="108" r="3.5" fill="#2B5FC4"></circle><text x="75.3" y="168" text-anchor="start" font-size="10.5" font-weight="700" fill="#2B5FC4">고양이 요붕증 1.003–1.005</text><path d="M153.7,108 L153.7,138" stroke="#C0392B" stroke-width="1.2"></path><circle cx="153.7" cy="108" r="3.5" fill="#C0392B"></circle><text x="147.7" y="148" text-anchor="start" font-size="10.5" font-weight="700" fill="#C0392B">Irish Setter · Lab F1 1.011</text><path d="M205.3,108 L205.3,118" stroke="#C0392B" stroke-width="1.2"></path><circle cx="205.3" cy="108" r="3.5" fill="#C0392B"></circle><text x="199.3" y="128" text-anchor="start" font-size="10.5" font-weight="700" fill="#C0392B">신증후군 1.016</text><path d="M360.3,108 L360.3,118" stroke="#2B5FC4" stroke-width="1.2"></path><circle cx="360.3" cy="108" r="3.5" fill="#2B5FC4"></circle><text x="354.3" y="128" text-anchor="start" font-size="10.5" font-weight="700" fill="#2B5FC4">고양이 방광염 1.031</text><path d="M505.0,108 L505.0,138" stroke="#0F9268" stroke-width="1.2"></path><circle cx="505.0" cy="108" r="3.5" fill="#0F9268"></circle><text x="511.0" y="148" text-anchor="end" font-size="10.5" font-weight="700" fill="#0F9268">Lab cM10 1.045</text></svg><div class="fc">그림 2. USG 눈금 — 구간 경계는 신장 정리본 기준, 고양이 컷만 이번 강의 값</div></div>
+<ul class="d">
+<li><b>Dipstick USG는 unreliable</b> — 굴절계는 osmolality와 <b>good correlation, but not absolute</b> (Clinitek dipstick은 상관성 나쁨) / 때로는 임상소견과 같이 해석</li>
+<li>포도당 · 단백질 · 지방 · <b>조영제</b>에 영향 받음 → 아래 표 (용질 <b>1 g/dL</b>당 USG 증가량)</li>
+</ul>
+<span class="pno">2</span>
+</section>
+
+<section class="page">
+<div class="two">
+<div><table>
+<caption>표 3. 용질 1 g/dL당 USG 증가</caption>
+<thead><tr><th>Substance</th><th>Increase in USG</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">NaCl</td><td class="c">0.006–0.007</td></tr>
+<tr><td class="kc">Urea</td><td class="c">0.002–0.003</td></tr>
+<tr class="hi"><td class="kc">Glucose</td><td class="c">0.003–0.005</td></tr>
+<tr><td class="kc">Protein</td><td class="c">0.003–0.005</td></tr>
+<tr><td class="kc">Albumin</td><td class="c">0.002–0.003</td></tr>
+</tbody></table>
+<p class="tnote">요당 1,000 mg/dL = 1 g/dL → USG가 약 0.004 올라감 <span class="gray">(정리자 보충: mg/dL ↔ g/dL 혼동 주의)</span></p></div>
+<div><table>
+<caption>표 4. 비중을 낮게 하는 약물·처치</caption>
+<tbody>
+<tr class="hi"><td class="kc">Glucocorticoids*</td><td>Aminoglycosides*</td></tr>
+<tr><td class="kc">Diuretics</td><td>Methoxyflurane</td></tr>
+<tr class="hi"><td class="kc">Fluid therapy*</td><td>Anticonvulsants</td></tr>
+<tr><td class="kc" colspan="2" style="text-align:left">과량 thyroid hormone supplements / 짠 음식 또는 심한 저단백 식이 지속 급여</td></tr>
+</tbody></table></div>
+</div>
+<div class="memo red">
+<div class="mt">⚠ 수액이나 이뇨제 쓰기 전에 비중 검사 먼저 실시! <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><span class="tag t-pen">필기</span> *<b>BUN, Cr, SG로 환자 평가 시 주의</b> — 처치 후 USG는 신기능을 반영 못 함</li>
+<li>전원 온 환자 → <b>이전 병원의 투약·수액 이력</b>부터 확인 <span class="tag t-rec">수업</span></li>
+</ul></div>
+<ul class="d">
+<li>USG 케이스 3개 → <b>Ⅻ장 Case 1</b>(1.045, 신전성) · <b>Case 2</b>(1.011, 신성) · <b>Case 3</b>(1.003–1.005 고양이, 요붕증)</li>
+<li><span class="tag t-pen">필기</span> 고양이 Case 3: "<b>희석뇨 → 신장기능은 정상</b>" — 희석도 신장이 일을 해야 가능 <span class="tag t-lnk">↔ 신장 Case 13 Maltese</span></li>
+<li><span class="gray">단, 낮은 USG 하나만으로 "신장 질환 없음"을 확정하는 기준으로 쓰지는 말 것 (그 케이스의 해석)</span></li>
+</ul>
+<h2 class="lv1">Ⅲ. 요 pH</h2>
+<ul class="d">
+<li>범위 <b>5.0 ~ 8.5</b></li>
+<li><b>Falsely increased</b>: 실온 방치 (<span class="hl">요소가 암모니아로 전환됨</span>) · 방치된 뇨는 CO₂가 빠지면서 pH↑</li>
+<li>약물 — <b>Acidifier</b>: methionine, ammonium chloride / <b>pH increaser</b>: acetazolamide, bicarbonate, potassium citrate</li>
+<li><i>어떤 pH도 정상</i>; <span class="r">반드시 체내 pH를 반영하지 않음</span> → 정확한 pH 측정은 <b>pH meter</b> / <b>요 pH로 혈액 pH를 판단할 수 없음</b> (체내 산염기 = 혈액가스)</li>
+</ul>
+<table>
+<caption>표 5. 산성뇨 vs 알칼리뇨 원인 <span class="tag t-ex">시험</span> <span class="gray" style="color:#fff">교수님: "학교 시험 공부 항목"</span></caption>
+<thead><tr><th style="width:50%">산성뇨 (aciduria)</th><th>알칼리뇨 (alkalinuria)</th></tr></thead>
+<tbody>
+<tr><td>육식</td><td>식후 1시간 내 (<b>postprandial alkaline tide</b>) — 위산(H⁺) 분비로 HCO₃⁻ 생성 → alkalization of blood</td></tr>
+<tr><td>Respiratory and metabolic acidosis</td><td>Alkali 섭취 (bicarbonate or citrate), <b>초식</b></td></tr>
+<tr class="hi"><td><b>Severe vomiting with Cl depletion</b>, severe diarrhea</td><td>신세뇨관 산증 (proximal or distal)</td></tr>
+<tr><td>Starvation, pyrexia, urine acidifier</td><td>방치된 뇨 (CO₂ 감소하면서 pH 증가)</td></tr>
+<tr class="hi"><td><b>후기</b> proximal tubular acidosis (초기에는 알칼리뇨)</td><td><b>UTI with urease producing bacteria</b> (<span class="sp">Staphylococcus</span> or <span class="sp">Proteus</span> spp.)</td></tr>
+</tbody></table>
+<span class="pno">3</span>
+</section>
+
+<section class="page">
+<div class="memo blue">
+<div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>*<b>결석이 있을 때 알칼리뇨가 있다고 하면? ∴ 세균감염!</b> — urease가 요소 → 암모니아 → pH↑</li>
+<li>→ <span class="hl">염증에 의한 알칼리화는 <b>항생제 처치</b>로!</span> (식이로 pH만 맞추는 접근과 구분) <span class="tag t-rec">수업</span></li>
+<li>Proximal RTA: 초기엔 HCO₃⁻ 소실로 알칼리뇨 → 후기엔 산성뇨 가능 <span class="tag t-rec">수업</span></li>
+<li class="gray">(정리자 보충) 심한 구토로 Cl 고갈 → 신장이 Na 재흡수하려고 H⁺를 내보냄 → 대사성 알칼리증인데 소변은 산성 (paradoxical aciduria)</li>
+</ul></div>
+<h2 class="lv1">Ⅳ. 단백뇨 (Proteinuria)</h2>
+<ul class="d">
+<li>Dipstick은 주로 <span class="hl"><b>albumin</b></span> — myoglobin, hemoglobin, light chain protein도 검출됨 <span class="gray">(같은 민감도라는 뜻 X)</span></li>
+<li>검출 기준 약 <b>30 mg/dL</b> <span class="tag t-rec">수업</span></li>
+<li><b>요 비중을 고려</b>: 1.007 trace vs. 1.030 trace? → <span class="tag t-pen">필기</span> <b>Answer: 비중이 낮으면서 단백뇨 있는 게 더 의미 있음</b> (희석됐는데도 검출 = 실제 배설량 많음)</li>
+<li>건강한 개 비중 1.020–1.045 → (−), trace, (+) <b>가능</b> / 뚜렷한 맥락 없으면 <b>2–3회 반복</b>해 지속성 확인 <span class="tag t-rec">수업</span></li>
+<li>24시간뇨 수집은 어려움 → spot 검체로 <b>UPC</b>(요단백/요크레아티닌) — 농축·희석 영향 보정 <span class="tag t-rec">수업</span></li>
+</ul>
+<div class="two">
+<div><table>
+<caption>표 6. UPC 해석 (강의 표) <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:28%">UPC</th><th>Significance</th></tr></thead>
+<tbody>
+<tr><td class="kc">&lt;0.5</td><td>Normal</td></tr>
+<tr><td class="kc">0.5–1.0</td><td>Possible</td></tr>
+<tr class="hi"><td class="kc">≥2.0</td><td>Severe proteinuria</td></tr>
+<tr class="hi"><td class="kc">≥5.0</td><td>Glomerulonephritis, GBM damage, PLN</td></tr>
+<tr><td class="kc">8–12</td><td>Frequently related with <b>amyloidosis</b></td></tr>
+</tbody></table></div>
+<div><table>
+<caption>표 7. 신성 단백뇨 2종</caption>
+<thead><tr><th>구분</th><th>빠지는 단백</th><th>혈중 Alb</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Glomerular</td><td>알부민 + 분자량 큰 글로불린</td><td class="c"><b>저알부민혈증</b></td></tr>
+<tr><td class="kc">Tubular</td><td>소량 알부민 + 작은 단백질</td><td class="c"><b>정상</b>알부민혈증</td></tr>
+</tbody></table>
+<p class="tnote">Tubular = 주로 renal failure에 동반 (Irish Setter: 단백 1+, Alb 4.3)</p></div>
+</div>
+<h3 class="lv2">1. 단백뇨 접근 — 신장 탓으로 넘기기 전에</h3>
+<div class="flow">
+<div class="fstep"><div class="fnum">1</div><div class="fbody"><span class="ft">USG와 같이 본다</span> — 같은 trace라도 1.007이면 더 의미 있음</div></div>
+<div class="fstep"><div class="fnum">2</div><div class="fbody"><span class="ft">침사에 RBC·WBC·세균? = 신장외 원인 (출혈과 염증 – UTI, 창상, 종양)</span> <span class="tag t-pen">필기</span> <b>"If 출혈과 염증이 심하다?? 일단 단백뇨 판단은 보류."</b> → 처치 후 재평가<br><span class="gray">혈장 단백은 g/dL 단위 → 피가 조금만 섞여도 protein pad 양성</span> <span class="tag t-rec">수업</span></div></div>
+<div class="fstep"><div class="fnum">3</div><div class="fbody"><span class="ft">일시적 원인?</span> 격렬한 운동, 고열, 경련, 신장의 정맥 울혈, 심장 질환 → <b>increased glomerular permeability</b></div></div>
+<div class="fstep"><div class="fnum">4</div><div class="fbody"><span class="ft">단백질 overload?</span> Hemoglobin dimer(용혈), myoglobin, Bence Jones protein → <b>세뇨관의 재흡수능 초과</b></div></div>
+<div class="fstep"><div class="fnum">5</div><div class="fbody"><span class="ft">약물?</span> 표 8 확인</div></div>
+<div class="fstep"><div class="fnum">6</div><div class="fbody"><span class="ft">지속되면 UPC → 신성 (사구체 vs 세뇨관)</span>
+<div class="fork"><div class="fk3"><b>사구체</b>: UPC 높음 + 저알부민 (+고콜레스테롤 = 신증후군)</div><div class="fk2"><b>세뇨관</b>: 경한 단백뇨 + Alb 정상, 요당·cast 동반</div></div></div></div>
+</div>
+<span class="pno">4</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 8. 단백뇨 유발 약물</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:28%">Aminoglycosides</td><td>Neomycin, kanamycin, gentamicin, amikacin, tobramycin — <span class="tag t-pen">필기</span> <b>신독성 있음</b> (비중↓ · 요당도 같이 나옴)</td></tr>
+<tr><td class="kc">Cyclophosphamide</td><td><b>sterile cystitis</b> common</td></tr>
+<tr class="hi"><td class="kc">NSAIDs</td><td>aspirin, ibuprofen — 특히 <b>원래 신장 질환 있거나, 저혈압</b> 있을 때</td></tr>
+<tr><td class="kc">Radiographic contrast media</td><td>(조영제는 USG도 올림)</td></tr>
+</tbody></table>
+<div class="memo blue">
+<div class="mt">✎ 필기 — 저알부민혈증이 보이면 어디서 새나? <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li><span class="r">Alb 1.5 g/dL 이하</span> → <b>간</b>: 알부민 합성↓ / <b>신장</b>: 알부민↓ / <b>장</b>: 알부민, 글로불린↓</li>
+<li>간 → 글로불린은 오히려↑ 가능 / 장 → 알부민·글로불린 함께↓, 콜레스테롤↓ 가능 / 신장 → 알부민만 쏙, <b>단백뇨</b>로 확인 <span class="tag t-rec">수업</span></li>
+<li class="gray">(정리자 보충) 신장 쪽이면 콜레스테롤은 오히려↑ (신증후군) → 장과 반대</li>
+</ul></div>
+<ul class="d"><li>단백뇨 케이스 → <b>Case 4</b>(고양이, 판단 보류) · <b>Case 5</b>(신증후군) · <b>Case 17</b>(hyaline cast) · Case 2(세뇨관성)</li></ul>
+<h2 class="lv1">Ⅴ. 요당 (Glucosuria)</h2>
+<ul class="d">
+<li><span class="hl"><b>요당이 나오면 혈당을 같이 확인</b></span> <span class="tag t-rec">수업</span></li>
+<li><b>배설 역치</b> <span class="tag t-ex">시험</span> — <b>Dog 170–180 mg/dL</b> (other, 180–220) / <b>Cat 260–310 mg/dL</b> (other, 290)</li>
+<li>혈당이 RR보다 높아도 역치 미만이면 요당 음성 가능 → Case 4 고양이: 혈당 175, 요당 (−)</li>
+<li><b>거짓 요당?</b> Room air, light, humidity! — pad 보관 상태 (뚜껑 열어두지 말 것)</li>
+</ul>
+<div class="fig"><svg viewBox="0 0 700 200" width="100%" style="max-width:700px;font-family:inherit"><text x="60" y="18" font-size="11.5" font-weight="700" fill="#12403B">혈당이 역치를 넘어야 요당 (+) — 역치 미만인데 (+)면 세뇨관 문제</text><line x1="60" y1="55" x2="670" y2="55" stroke="#9AA3AE"></line><rect x="356.3" y="41" width="87.1" height="28" fill="#2B5FC4" opacity=".15"></rect><line x1="356.3" y1="39" x2="356.3" y2="71" stroke="#2B5FC4" stroke-width="2"></line><text x="359.3" y="37" font-size="10" font-weight="700" fill="#2B5FC4">역치 170–180 (180–220)</text><text x="14" y="59" font-size="12" font-weight="700" fill="#2B5FC4">개</text><line x1="60" y1="130" x2="670" y2="130" stroke="#9AA3AE"></line><rect x="513.1" y="116" width="87.1" height="28" fill="#DD3F92" opacity=".15"></rect><line x1="513.1" y1="114" x2="513.1" y2="146" stroke="#DD3F92" stroke-width="2"></line><text x="516.1" y="112" font-size="10" font-weight="700" fill="#DD3F92">역치 260–310 (290)</text><text x="14" y="134" font-size="12" font-weight="700" fill="#DD3F92">고양이</text><circle cx="206.4" cy="55" r="5.5" fill="#E23B3B" stroke="#E23B3B" stroke-width="1.8"></circle><text x="206.4" y="33" text-anchor="middle" font-size="10" fill="#1B2A44">Fanconi 84 → 4+</text><circle cx="232.5" cy="55" r="5.5" fill="#E23B3B" stroke="#E23B3B" stroke-width="1.8"></circle><text x="232.5" y="85" text-anchor="middle" font-size="10" fill="#1B2A44">Fanconi-like 99 → &gt;1000</text><circle cx="305.7" cy="55" r="5.5" fill="#E23B3B" stroke="#E23B3B" stroke-width="1.8"></circle><text x="305.7" y="33" text-anchor="middle" font-size="10" fill="#1B2A44">EG Lab 141 → +</text><circle cx="382.4" cy="55" r="5.5" fill="#E23B3B" stroke="#E23B3B" stroke-width="1.8"></circle><text x="382.4" y="85" text-anchor="middle" font-size="10" fill="#1B2A44">췌장염 Lab 185 → +</text><circle cx="577.6" cy="55" r="5.5" fill="#E23B3B" stroke="#E23B3B" stroke-width="1.8"></circle><text x="577.6" y="33" text-anchor="middle" font-size="10" fill="#1B2A44">DM+쿠싱 297 → 4+</text><circle cx="365.0" cy="130" r="5.5" fill="#fff" stroke="#E23B3B" stroke-width="1.8"></circle><text x="365.0" y="160" text-anchor="middle" font-size="10" fill="#1B2A44">DSH 175 → 음성</text><text x="60.0" y="185" text-anchor="middle" font-size="10" fill="#6C7787">0</text><text x="147.1" y="185" text-anchor="middle" font-size="10" fill="#6C7787">50</text><text x="234.3" y="185" text-anchor="middle" font-size="10" fill="#6C7787">100</text><text x="321.4" y="185" text-anchor="middle" font-size="10" fill="#6C7787">150</text><text x="408.6" y="185" text-anchor="middle" font-size="10" fill="#6C7787">200</text><text x="495.7" y="185" text-anchor="middle" font-size="10" fill="#6C7787">250</text><text x="582.9" y="185" text-anchor="middle" font-size="10" fill="#6C7787">300</text><text x="670.0" y="185" text-anchor="middle" font-size="10" fill="#6C7787">350</text><text x="670" y="198" text-anchor="end" font-size="10" fill="#6C7787">혈당 mg/dL</text><circle cx="430" cy="194" r="4.5" fill="#E23B3B"></circle><text x="438" y="198" font-size="10" fill="#1B2A44">요당 (+)</text><circle cx="500" cy="194" r="4.5" fill="#fff" stroke="#E23B3B" stroke-width="1.6"></circle><text x="508" y="198" font-size="10" fill="#1B2A44">요당 (−)</text></svg><div class="fc">그림 3. 이번 강의 케이스를 배설역치 위에 찍어보기</div></div>
+<div class="two">
+<div><table>
+<caption>표 9. 혈당 정상인데 요당 (Normoglycemia)</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:30%">선천적</td><td><b>원발성 요당</b> (primary renal glucosuria); <b>FANCONI 증후군</b>, 선천성 신질환</td></tr>
+<tr class="hi"><td class="kc">후천적</td><td><b>FANCONI 증후군</b> (신독성 물질), 급성 신부전 — aminoglycosides toxicity, acute renal failure</td></tr>
+</tbody></table></div>
+<div><table>
+<caption>표 10. 혈당 증가 시</caption>
+<tbody>
+<tr><td class="kc" style="width:24%">지속적</td><td><b>당뇨병</b>, <b>부신피질 기능 항진증</b>, pheochromocytoma, CNS 병소(?)</td></tr>
+<tr class="hi"><td class="kc">일시적</td><td><b>스트레스 (고양이)*</b>, 약물 (스테로이드, 당 투여, 부동액), 급성 췌장염 스트레스</td></tr>
+</tbody></table></div>
+</div>
+<span class="pno">5</span>
+</section>
+
+<section class="page">
+<div class="memo blue">
+<div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li><b>혈당 정상인데 요당뇨? → 'Renal glucosuria' or '<u>Fanconi syndrome</u>'</b> ← 보통 이거임</li>
+<li>*<span class="r">개에서는 당뇨병이 나왔을 때 쿠싱증후군인지 꼭 체크!</span></li>
+<li>배설 기능(BUN·Cr) ≠ 재흡수 기능 → BUN·Cr 정상이어도 여러 용질 재흡수 장애 가능 / renal failure엔 단백뇨·요당 동반 가능 <span class="tag t-rec">수업</span></li>
+</ul></div>
+<ul class="d"><li>요당 케이스 → <b>Case 1</b>(185 → +) · <b>Case 6</b>(EG, 141인데 +) · <b>Case 7·8</b>(Fanconi) · <b>Case 9</b>(DM+쿠싱)</li></ul>
+<h2 class="lv1">Ⅵ. 케톤뇨 (Ketonuria)</h2>
+<div class="two">
+<div><ul class="d" style="margin-left:0">
+<li><b>지방 분해가 있는 상황</b> — Starvation, fasting, <b>DKA</b></li>
+<li>Ketone body 3종<ul class="c">
+<li><b>β-hydroxybutyric acid</b> — <span class="r">dipstick으로 검출 X</span> (혈청·혈장 별도 측정 장비) <span class="tag t-rec">수업</span></li>
+<li><u><i>Acetoacetic acid</i></u> ┐</li>
+<li>Acetone ┘ → <b>nitroprusside</b> → <b style="color:#DD3F92">purple</b></li></ul></li>
+<li><span class="tag t-pen">필기</span> *<b>케톤뇨라고 무조건 당뇨는 X</b> — 굶기만 해도 나옴</li>
+<li>요당 + 고혈당 + 케톤뇨가 <b>같이</b> → DKA 의심 (Case 9) / 케톤뇨 단독과 구분</li>
+</ul></div>
+<div><table>
+<caption>표 11. Dipstick이 보는 케톤</caption>
+<thead><tr><th>Ketone</th><th>Nitroprusside</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Acetoacetic acid</td><td class="c"><b>+ (주로 반응)</b></td></tr>
+<tr><td class="kc">Acetone</td><td class="c">+ (약함)</td></tr>
+<tr><td class="kc">β-HB</td><td class="c up">✕</td></tr>
+</tbody></table>
+<p class="tnote">(정리자 보충) DKA 초기엔 β-HB가 우세 → dipstick이 실제보다 약하게 나올 수 있음</p></div>
+</div>
+<h2 class="lv1">Ⅶ. 빌리루빈뇨 (Bilirubinuria)</h2>
+<ul class="d">
+<li><b>Bilirubin은 중합(conjugation)되어 신장 배설</b></li>
+<li><span class="r">실온 방치 금물! 빛 노출 금지~</span> — Bilirubin은 불안정 (특히 <b>직사광선</b> → 실제보다 낮게) <span class="tag t-rec">수업</span></li>
+<li>개는 <u>신장에서도 중합</u> → 농축뇨에서 검출될 수 있음 <span class="tag t-rec">수업</span></li>
+<li><b>낮은 신장 역치</b> → 혈중 bilirubin이 오르기 전에 먼저 소변에 나올 수 있음 — Hepatic disease, post hepatic bile duct obstruction, hemolytic disease</li>
+<li class="gray">(정리자 보충) 고양이는 신장 역치가 높아 bilirubinuria가 보이면 항상 비정상</li>
+</ul>
+<div class="side"><div class="mt">💭 슬라이드 구름 말풍선</div>"뇨 빌리루빈 배설되기 전에 <b>간담관계 질환 진단은 이미 끝남</b>….." → 이미 CBC·혈청화학·영상으로 진단된 경우엔 추가 정보가 적다 <span class="tag t-rec">수업</span> <span class="gray">(모든 환자에서 불필요하다는 뜻은 아님)</span></div>
+<ul class="d"><li>빌리루빈뇨 케이스 → <b>Case 10</b> (Old English Sheepdog, IMHA) · Case 1·9·12에도 bil 양성</li></ul>
+<h2 class="lv1">Ⅷ. 혈뇨 · 혈색소뇨 · 근색소뇨 (Occult blood)</h2>
+<ul class="d">
+<li><b>Blood pad 하나</b>로 온전한 RBC(점상)와 색소(균일 변색)를 같이 판독 — 진한 반응은 육안으로 구분 어려움 → 원심·현미경 <span class="tag t-rec">수업</span></li>
+<li><span class="hl">Occ. Blood = hematuria, not occult blood</span> → 표에 "Occ. blood"라고 적혀 있어도 <b>hematuria, Hgb-uria or myoglobinuria</b> 셋 중 하나</li>
+</ul>
+<span class="pno">6</span>
+</section>
+
+<section class="page">
+<div class="fig"><svg viewBox="0 0 700 215" width="100%" style="max-width:700px;font-family:inherit"><text x="20" y="18" font-size="11.5" font-weight="700" fill="#12403B">① Blood pad 판독 (60초)</text><rect x="30" y="32" width="56" height="56" fill="#F6E96B" stroke="#4A6B66"></rect><circle cx="44.9" cy="62.2" r="2.6" fill="#2E8B57"></circle><circle cx="51.5" cy="65.2" r="2.6" fill="#2E8B57"></circle><circle cx="64.3" cy="38.3" r="2.6" fill="#2E8B57"></circle><circle cx="33.7" cy="76.9" r="2.6" fill="#2E8B57"></circle><circle cx="46.0" cy="46.7" r="2.6" fill="#2E8B57"></circle><circle cx="82.8" cy="58.5" r="2.6" fill="#2E8B57"></circle><circle cx="74.8" cy="58.8" r="2.6" fill="#2E8B57"></circle><circle cx="65.0" cy="42.5" r="2.6" fill="#2E8B57"></circle><circle cx="64.7" cy="78.4" r="2.6" fill="#2E8B57"></circle><circle cx="59.2" cy="72.1" r="2.6" fill="#2E8B57"></circle><circle cx="66.6" cy="38.2" r="2.6" fill="#2E8B57"></circle><circle cx="70.9" cy="64.6" r="2.6" fill="#2E8B57"></circle><circle cx="48.1" cy="36.6" r="2.6" fill="#2E8B57"></circle><circle cx="76.3" cy="58.6" r="2.6" fill="#2E8B57"></circle><circle cx="68.9" cy="78.9" r="2.6" fill="#2E8B57"></circle><circle cx="68.7" cy="81.1" r="2.6" fill="#2E8B57"></circle><circle cx="52.7" cy="75.0" r="2.6" fill="#2E8B57"></circle><circle cx="55.2" cy="81.8" r="2.6" fill="#2E8B57"></circle><circle cx="76.9" cy="39.9" r="2.6" fill="#2E8B57"></circle><circle cx="39.8" cy="45.8" r="2.6" fill="#2E8B57"></circle><circle cx="81.3" cy="56.8" r="2.6" fill="#2E8B57"></circle><circle cx="64.3" cy="50.1" r="2.6" fill="#2E8B57"></circle><circle cx="58.4" cy="54.3" r="2.6" fill="#2E8B57"></circle><circle cx="50.5" cy="64.3" r="2.6" fill="#2E8B57"></circle><circle cx="62.2" cy="80.2" r="2.6" fill="#2E8B57"></circle><circle cx="67.1" cy="81.4" r="2.6" fill="#2E8B57"></circle><text x="58" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B2A44">점상 (speckled)</text><text x="58" y="118" text-anchor="middle" font-size="10" fill="#1B2A44">= 온전한 RBC</text><rect x="120" y="32" width="56" height="56" fill="#2F7F63" stroke="#4A6B66"></rect><text x="148" y="104" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B2A44">전체 균일 변색</text><text x="148" y="118" text-anchor="middle" font-size="10" fill="#1B2A44">= Hb 또는 Mb</text><text x="103" y="140" text-anchor="middle" font-size="10" fill="#E23B3B">4+처럼 진하면 육안 구별 어려움</text><text x="103" y="153" text-anchor="middle" font-size="10" fill="#E23B3B">→ 원심 + 침사로 확인</text><text x="230" y="18" font-size="11.5" font-weight="700" fill="#12403B">② 붉은 소변 원심 → 상층액 + 혈장색</text><text x="300" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#1B2A44">혈뇨</text><path d="M258,52 L258,106.0 A10.0,10.0 0 0 0 278,106.0 L278,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M259.5,68.0 L259.5,106.0 A8.5,8.5 0 0 0 276.5,106.0 L276.5,68.0 Z" fill="#B3261E"></path><line x1="284" y1="84" x2="310" y2="84" stroke="#6C7787" stroke-width="2"></line><path d="M310,84 l-7,-4 l0,8 z" fill="#6C7787"></path><path d="M318,52 L318,106.0 A10.0,10.0 0 0 0 338,106.0 L338,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M319.5,68.0 L319.5,106.0 A8.5,8.5 0 0 0 336.5,106.0 L336.5,68.0 Z" fill="#F4D35E"></path><ellipse cx="328.0" cy="110" rx="7.0" ry="4.5" fill="#B3261E"></ellipse><text x="268" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 전</text><text x="328" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 후</text><rect x="272" y="146" width="56" height="20" rx="3" fill="#F7E9C9" stroke="#4A6B66"></rect><text x="300" y="160" text-anchor="middle" font-size="9.5" fill="#1B2A44">혈장</text><text x="300" y="182" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B2A44">정상</text><text x="455" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#1B2A44">혈색소뇨</text><path d="M413,52 L413,106.0 A10.0,10.0 0 0 0 433,106.0 L433,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M414.5,68.0 L414.5,106.0 A8.5,8.5 0 0 0 431.5,106.0 L431.5,68.0 Z" fill="#B3261E"></path><line x1="439" y1="84" x2="465" y2="84" stroke="#6C7787" stroke-width="2"></line><path d="M465,84 l-7,-4 l0,8 z" fill="#6C7787"></path><path d="M473,52 L473,106.0 A10.0,10.0 0 0 0 493,106.0 L493,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M474.5,68.0 L474.5,106.0 A8.5,8.5 0 0 0 491.5,106.0 L491.5,68.0 Z" fill="#B3261E"></path><text x="423" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 전</text><text x="483" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 후</text><rect x="427" y="146" width="56" height="20" rx="3" fill="#F2A0B4" stroke="#4A6B66"></rect><text x="455" y="160" text-anchor="middle" font-size="9.5" fill="#1B2A44">혈장</text><text x="455" y="182" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B2A44">분홍 (용혈)</text><text x="610" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#1B2A44">근색소뇨</text><path d="M568,52 L568,106.0 A10.0,10.0 0 0 0 588,106.0 L588,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M569.5,68.0 L569.5,106.0 A8.5,8.5 0 0 0 586.5,106.0 L586.5,68.0 Z" fill="#6B3A1F"></path><line x1="594" y1="84" x2="620" y2="84" stroke="#6C7787" stroke-width="2"></line><path d="M620,84 l-7,-4 l0,8 z" fill="#6C7787"></path><path d="M628,52 L628,106.0 A10.0,10.0 0 0 0 648,106.0 L648,52" fill="#fff" stroke="#4A6B66" stroke-width="1.6"></path><path d="M629.5,68.0 L629.5,106.0 A8.5,8.5 0 0 0 646.5,106.0 L646.5,68.0 Z" fill="#6B3A1F"></path><text x="578" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 전</text><text x="638" y="132" text-anchor="middle" font-size="9.5" fill="#6C7787">원심 후</text><rect x="582" y="146" width="56" height="20" rx="3" fill="#F7E9C9" stroke="#4A6B66"></rect><text x="610" y="160" text-anchor="middle" font-size="9.5" fill="#1B2A44">혈장</text><text x="610" y="182" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1B2A44">정상 (맑음)</text><text x="300" y="203" font-size="10" fill="#6C7787">혈뇨 = 상층 맑아지고 RBC 침전 / 혈색소·근색소 = 상층 그대로 붉음·갈색</text></svg><div class="fc">그림 4. 혈뇨 · 혈색소뇨 · 근색소뇨 구분</div></div>
+<table>
+<caption>표 12. Hemoglobinuria? — 적혈구 없고, 전체 변색?</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:26%">Hb-emia</td><td><u>용혈성 빈혈 → 혈장 색 검사</u> (분홍)</td></tr>
+<tr class="hi"><td class="kc">혈장색 정상?</td><td><b>근색소 (갈색뇨)</b> — 강직, 근육 손상 등 / myoglobin은 혈중에서 빨리 제거됨 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">혈뇨인데 Hb도?</td><td>혈뇨 시 약간 용혈되어 Hburia 가능</td></tr>
+<tr><td class="kc">단백뇨 동반</td><td><b>Hb 4+ 정도면 단백뇨 양성</b></td></tr>
+<tr class="hi"><td class="kc">RBC 용혈 조건</td><td><span class="r">pH 8 이상, 또는 저장뇨(&lt;1.008)</span>에서 용혈 가능 → 원래 혈뇨였는데 색소처럼 보일 수 있음</td></tr>
+<tr><td class="kc">위양성</td><td>Hydrogen peroxide, <b>bacterial peroxidases (e.g. cystitis)</b>, hypochlorite·chlorine, formaldehyde, outdated reagents</td></tr>
+</tbody></table>
+<div class="memo blue"><div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div><ul class="d"><li>원심 사진 → <b>'혈뇨'와 '혈색소뇨' 구분 가능</b> (혈뇨: RBC 가라앉고 상층 맑음 / Hb: 그대로 붉음)</li></ul></div>
+<h3 class="lv2">1. 혈뇨 (Hematuria)</h3>
+<div class="two">
+<div><table>
+<caption>표 13. 혈뇨 접근</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:28%">①</td><td>시료 채취 과정에 <u>오염</u> 확인</td></tr>
+<tr class="hi"><td class="kc">②</td><td><u>자연배뇨 권장</u></td></tr>
+<tr><td class="kc">③ 원인</td><td>감염, 결석, <b>응고계 이상</b>, trauma, 종양, cysts, renal infarcts, chronic passive renal congestion, 격렬한 운동; idiopathic renal hematuria</td></tr>
+</tbody></table></div>
+<div><table>
+<caption>표 14. 종별 흔한 원인</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:24%">개</td><td><b>UTI가 가장 흔함 &gt; 결석</b> / 수컷에서 <b>전립선</b> 확인</td></tr>
+<tr class="hi"><td class="kc">고양이</td><td><b>특발성 방광염</b> (FUS, FIC — idiopathic / interstitial cystitis)</td></tr>
+</tbody></table></div>
+</div>
+<ul class="d"><li>Blood 케이스 → <b>Case 11</b>(진짜 혈뇨 TNTC) · <b>Case 12</b>(RBC 없는 1+) · <b>Case 13</b>(용혈) · <b>Case 14</b>(응고 이상) · <b>Case 15</b>(특발성 신장 혈뇨)</li></ul>
+<span class="pno">7</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅸ. 세균뇨 · 아질산 · 백혈구 pad</h2>
+<div class="two">
+<div><table>
+<caption>표 15. Dipstick의 감염 pad — 믿지 말 것</caption>
+<tbody>
+<tr><td class="kc" style="width:30%">Nitrituria</td><td><b>Ignored</b> — 어떤 세균 감염에서 nitrate → nitrite 전환 / <b>위음성 많음</b> → 반드시 <b>도말 표본</b>에서 확인!!!!</td></tr>
+<tr class="hi"><td class="kc">Leukocytes<br>(esterase)</td><td><b>개</b>: specificity <b>93.2%</b>, sensitivity <b>46%</b><br><b>고양이</b>: sensitivity 77%, specificity <b>34%</b> → 백혈구 없어도 대부분 양성 → <span class="r">고양이에서는 권장되지 않음</span></td></tr>
+</tbody></table>
+<p class="tnote">교수님: 이 pad는 공부 우선순위 낮음 <span class="tag t-rec">수업</span></p></div>
+<div class="memo" style="margin:8px 0 12px 0">
+<div class="mt">Se · Sp 읽는 법 <span class="gray">(정리자 보충)</span></div>
+<ul class="d" style="margin-left:4px">
+<li>개 Se 46% = 진짜 농뇨의 절반 이상을 <b>놓침</b> → 음성이어도 배제 X</li>
+<li>개 Sp 93% = 농뇨 없으면 대부분 음성 → <b>양성이면 꽤 믿을 만</b> (슬라이드의 "양성 결과에서 정확도 93.2%")</li>
+<li>고양이 Sp 34% = 위양성 투성이</li>
+</ul></div>
+</div>
+<ul class="d">
+<li><b><i>방광 천자</i></b> 검체 → <b>세균 있으면 비정상</b></li>
+<li><b>HAC, DM 환자</b> → UTI 소견 안 보일 수도 있음 → <span class="r">반드시 배양</span></li>
+<li><span class="hlb"><i>뇨 침사 도말 표본에서 검사할 것</i></span> / 간균은 식별 쉬움, 구균은 작은 입자·Brownian motion과 헷갈림 <span class="tag t-rec">수업</span></li>
+</ul>
+<h3 class="lv2">1. 길게 늘어진 세균 — Aberrant bacterial forms (p.41–44 사진)</h3>
+<div class="fig"><svg viewBox="0 0 700 150" width="100%" style="max-width:700px;font-family:inherit"><clipPath id="cpn"><rect x="20" y="24" width="315" height="104" rx="6"></rect></clipPath><rect x="20" y="24" width="315" height="104" rx="6" fill="#F7F5FB" stroke="#B6A9D6"></rect><text x="177" y="16" text-anchor="middle" font-size="11.5" font-weight="700" fill="#12403B">보통 세균뇨</text><g clip-path="url(#cpn)"><circle cx="208.2" cy="91.9" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M204.2,90.9 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="254.7" cy="106.0" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M250.7,105.0 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="239.8" cy="104.6" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M235.8,103.6 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="47.8" cy="72.6" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M43.8,71.6 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="294.7" cy="85.4" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M290.7,84.4 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><rect x="293.3" y="42.0" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(84 293.3 42.0)"></rect><rect x="103.5" y="79.9" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(103 103.5 79.9)"></rect><rect x="35.8" y="51.1" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(50 35.8 51.1)"></rect><rect x="297.7" y="99.4" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(29 297.7 99.4)"></rect><rect x="263.2" y="44.2" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(111 263.2 44.2)"></rect><rect x="68.7" y="32.2" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(157 68.7 32.2)"></rect><rect x="92.7" y="51.0" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(177 92.7 51.0)"></rect><rect x="285.0" y="57.5" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(173 285.0 57.5)"></rect><rect x="188.4" y="91.6" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(37 188.4 91.6)"></rect><rect x="304.9" y="92.8" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(174 304.9 92.8)"></rect><rect x="291.2" y="58.3" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(65 291.2 58.3)"></rect><rect x="80.1" y="44.8" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(12 80.1 44.8)"></rect><rect x="119.4" y="85.1" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(1 119.4 85.1)"></rect><rect x="228.6" y="61.7" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(56 228.6 61.7)"></rect><rect x="269.4" y="74.3" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(57 269.4 74.3)"></rect><rect x="171.6" y="94.0" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(10 171.6 94.0)"></rect><rect x="314.8" y="34.0" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(135 314.8 34.0)"></rect><rect x="277.0" y="33.6" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(142 277.0 33.6)"></rect><rect x="138.2" y="82.9" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(2 138.2 82.9)"></rect><rect x="45.6" y="47.9" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(172 45.6 47.9)"></rect><rect x="89.0" y="98.5" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(167 89.0 98.5)"></rect><rect x="305.2" y="62.3" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(64 305.2 62.3)"></rect><rect x="184.2" y="100.3" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(19 184.2 100.3)"></rect><rect x="249.0" y="102.2" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(155 249.0 102.2)"></rect><rect x="42.6" y="115.2" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(16 42.6 115.2)"></rect><rect x="130.8" y="85.8" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(165 130.8 85.8)"></rect><rect x="130.6" y="113.3" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(98 130.6 113.3)"></rect><rect x="122.6" y="59.9" width="8" height="3" rx="1.5" fill="#2B5FC4" transform="rotate(32 122.6 59.9)"></rect><circle cx="54.7" cy="45.1" r="1.8" fill="#2B5FC4"></circle><circle cx="231.9" cy="119.7" r="1.8" fill="#2B5FC4"></circle><circle cx="78.8" cy="36.3" r="1.8" fill="#2B5FC4"></circle><circle cx="318.1" cy="79.0" r="1.8" fill="#2B5FC4"></circle><circle cx="149.7" cy="52.9" r="1.8" fill="#2B5FC4"></circle><circle cx="204.2" cy="104.7" r="1.8" fill="#2B5FC4"></circle><circle cx="164.1" cy="69.1" r="1.8" fill="#2B5FC4"></circle><circle cx="48.2" cy="112.6" r="1.8" fill="#2B5FC4"></circle><circle cx="41.5" cy="75.4" r="1.8" fill="#2B5FC4"></circle><circle cx="275.1" cy="43.5" r="1.8" fill="#2B5FC4"></circle><circle cx="244.2" cy="115.6" r="1.8" fill="#2B5FC4"></circle><circle cx="214.8" cy="101.3" r="1.8" fill="#2B5FC4"></circle><circle cx="62.9" cy="70.2" r="1.8" fill="#2B5FC4"></circle><circle cx="75.3" cy="106.3" r="1.8" fill="#2B5FC4"></circle></g><clipPath id="cpa"><rect x="365" y="24" width="315" height="104" rx="6"></rect></clipPath><rect x="365" y="24" width="315" height="104" rx="6" fill="#F7F5FB" stroke="#B6A9D6"></rect><text x="522" y="16" text-anchor="middle" font-size="11.5" font-weight="700" fill="#12403B">Aberrant form (항생제 농도 부족)</text><g clip-path="url(#cpa)"><circle cx="464.6" cy="71.7" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M460.6,70.7 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="654.8" cy="99.7" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M650.8,98.7 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="648.5" cy="71.7" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M644.5,70.7 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="516.8" cy="91.1" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M512.8,90.1 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><circle cx="514.3" cy="60.4" r="9" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M510.3,59.4 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="1.8"></path><path d="M453.8,46.3 q-4.9,13.7 29.2,2.5 q-0.0,-4.5 11.8,-4.6 q11.3,10.3 17.2,5.7 q11.0,5.4 23.3,5.2" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M445.7,93.2 q-8.8,-0.4 25.4,3.8 q-8.2,12.5 23.0,1.6 q-19.5,1.3 15.0,3.4 q-1.5,8.9 22.9,6.0" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M442.6,88.1 q9.5,9.2 17.0,6.9 q14.8,5.3 29.5,9.1 q0.7,0.8 13.3,6.7 q17.5,-0.6 23.8,4.4" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M519.1,48.4 q11.2,2.3 23.3,-1.6 q4.9,7.7 22.7,4.4 q-18.9,-9.5 18.8,3.0 q-11.2,5.2 22.6,-9.2" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M467.3,53.0 q-17.8,-10.3 16.3,-6.4 q-12.3,-13.0 19.3,-2.4 q4.5,2.5 14.8,8.1 q-20.0,-2.6 15.6,-1.8" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M396.0,103.8 q-5.0,-13.0 22.3,-8.1 q1.8,-4.5 21.6,9.2 q12.7,-2.3 26.3,2.8 q-5.2,-10.0 21.9,1.3" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M564.4,115.3 q4.3,-4.2 27.9,-10.0 q-15.7,1.8 22.3,-7.2 q5.2,11.0 17.5,-1.4 q-10.9,-5.8 29.4,-2.4" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M565.2,110.8 q3.8,-6.7 29.6,-0.1 q-3.4,-5.1 29.7,-0.2 q-8.5,-0.6 12.4,2.4 q-2.3,-5.8 25.6,6.5" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path><path d="M375.6,78.7 q-9.0,12.2 25.6,-5.1 q-9.3,-9.7 29.8,-4.1 q4.3,-0.7 22.9,2.1 q9.7,-10.7 25.2,-4.0" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round"></path></g><text x="350" y="146" text-anchor="middle" font-size="10.5" fill="#6C7787">분열(segmentation)은 막히고 길이 성장(elongation)만 계속 → 실처럼 긴 균체</text></svg><div class="fc">그림 7. 실 같은 균 = Nocardia라고 단정 X</div></div>
+<ul class="d">
+<li>실처럼 긴 균체가 보인다고 <b>Nocardia·Actinomyces로 바로 판단 X</b> <span class="tag t-rec">수업</span></li>
+<li>예: <span class="sp">E. coli</span>가 <b>불충분한 농도의 항생제</b>에 노출 → segmentation은 억제, elongation은 지속 → 길게 늘어진 비정상 형태 <span class="tag t-rec">수업</span></li>
+<li>다른 질환 때문에 먹던 항생제가 소변으로 배설되면서 생길 수 있음 → <b>투약 이력</b>과 연결 <span class="tag t-rec">수업</span></li>
+</ul>
+<h2 class="lv1">Ⅹ. 원주 (Casts)</h2>
+<ul class="d">
+<li><b>Mucoprotein</b>과 여러 가지 물질 섞임 — <b>Tamm-Horsfall</b> 점액 단백질 / proximal, distal, and collecting tubule</li>
+<li><b>정상적으로 거의 없음</b></li>
+<li><span class="r">"없다고 해서 신장 질환 없는 것 아님"</span> <span class="tag t-ex">시험</span><ul class="c">
+<li>만성인 경우 없거나 거의 없음</li>
+<li><u>대개 급성 지시</u> ; 없을 수도 있음</li>
+<li>희석뇨, 알칼리 요에서 보기 힘듦 (녹아버림)</li></ul></li>
+</ul>
+<span class="pno">8</span>
+</section>
+
+<section class="page">
+<div class="memo blue">
+<div class="mt">✎ 필기 — Cast의 위치 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li><b>"Cast : 간에서의 AST, ALT와 비슷한 지위"</b> — BUN·Cr = <b>배설 기능</b> / cast = <b>세뇨관 손상</b> (간의 효소 = 손상, 알부민 = 기능 과 같은 구도)</li>
+<li>BUN·Cr 정상이어도 특정 cast가 반복되면 → 약물·사료·독성 노출 이력 확인 / 단 cast만으로 손상 정도·원인 확정 X <span class="tag t-rec">수업</span></li>
+<li>입원 중 granular cast가 계속 나오면 → 손상이 계속되고 있다는 단서 <span class="tag t-rec">수업</span></li>
+</ul></div>
+<div class="fig"><svg viewBox="0 0 700 205" width="100%" style="max-width:700px;font-family:inherit"><text x="20" y="18" font-size="11.5" font-weight="700" fill="#12403B">세뇨관에 오래 머물수록 → 세포가 부서지고 매끈해짐</text><rect x="25" y="40" width="130" height="30" rx="15.0" fill="#FDF3E7" stroke="#B7791F" stroke-width="1.4"></rect><ellipse cx="39.0" cy="55.0" rx="9" ry="11.0" fill="#F7D9B0" stroke="#B7791F"></ellipse><circle cx="39.0" cy="55.0" r="3.2" fill="#7A4A12"></circle><ellipse cx="73.0" cy="55.0" rx="9" ry="11.0" fill="#F7D9B0" stroke="#B7791F"></ellipse><circle cx="73.0" cy="55.0" r="3.2" fill="#7A4A12"></circle><ellipse cx="107.0" cy="55.0" rx="9" ry="11.0" fill="#F7D9B0" stroke="#B7791F"></ellipse><circle cx="107.0" cy="55.0" r="3.2" fill="#7A4A12"></circle><ellipse cx="141.0" cy="55.0" rx="9" ry="11.0" fill="#F7D9B0" stroke="#B7791F"></ellipse><circle cx="141.0" cy="55.0" r="3.2" fill="#7A4A12"></circle><text x="90" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">상피세포 cast</text><text x="90" y="102" text-anchor="middle" font-size="10" fill="#6C7787">active tubular injury</text><line x1="161" y1="55" x2="190" y2="55" stroke="#E23B3B" stroke-width="2"></line><path d="M190,55 l-7,-4 l0,8 z" fill="#E23B3B"></path><rect x="197" y="40" width="130" height="30" rx="15.0" fill="#F2F0E6" stroke="#7D7A5C" stroke-width="1.4"></rect><circle cx="241.9" cy="48.0" r="2.8" fill="#6E6A48"></circle><circle cx="279.2" cy="46.4" r="2.8" fill="#6E6A48"></circle><circle cx="266.1" cy="52.3" r="2.8" fill="#6E6A48"></circle><circle cx="211.6" cy="55.1" r="2.8" fill="#6E6A48"></circle><circle cx="209.3" cy="53.7" r="2.8" fill="#6E6A48"></circle><circle cx="213.0" cy="46.8" r="2.8" fill="#6E6A48"></circle><circle cx="253.4" cy="61.5" r="2.8" fill="#6E6A48"></circle><circle cx="219.1" cy="49.5" r="2.8" fill="#6E6A48"></circle><circle cx="276.5" cy="64.0" r="2.8" fill="#6E6A48"></circle><circle cx="270.8" cy="52.9" r="2.8" fill="#6E6A48"></circle><circle cx="316.3" cy="45.9" r="2.8" fill="#6E6A48"></circle><circle cx="302.9" cy="50.8" r="2.8" fill="#6E6A48"></circle><circle cx="221.4" cy="47.4" r="2.8" fill="#6E6A48"></circle><circle cx="240.2" cy="61.3" r="2.8" fill="#6E6A48"></circle><circle cx="225.6" cy="56.6" r="2.8" fill="#6E6A48"></circle><circle cx="277.8" cy="52.4" r="2.8" fill="#6E6A48"></circle><circle cx="267.4" cy="46.3" r="2.8" fill="#6E6A48"></circle><circle cx="211.8" cy="49.1" r="2.8" fill="#6E6A48"></circle><circle cx="282.6" cy="53.6" r="2.8" fill="#6E6A48"></circle><circle cx="240.8" cy="56.7" r="2.8" fill="#6E6A48"></circle><circle cx="256.7" cy="51.0" r="2.8" fill="#6E6A48"></circle><circle cx="295.6" cy="59.0" r="2.8" fill="#6E6A48"></circle><text x="262" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Coarse granular</text><text x="262" y="102" text-anchor="middle" font-size="10" fill="#6C7787">세포 변성 중</text><line x1="333" y1="55" x2="362" y2="55" stroke="#E23B3B" stroke-width="2"></line><path d="M362,55 l-7,-4 l0,8 z" fill="#E23B3B"></path><rect x="369" y="40" width="130" height="30" rx="15.0" fill="#F2F0E6" stroke="#7D7A5C" stroke-width="1.4"></rect><circle cx="428.6" cy="56.2" r="1.1" fill="#6E6A48"></circle><circle cx="482.4" cy="54.3" r="1.1" fill="#6E6A48"></circle><circle cx="434.9" cy="56.7" r="1.1" fill="#6E6A48"></circle><circle cx="398.1" cy="55.2" r="1.1" fill="#6E6A48"></circle><circle cx="448.8" cy="60.9" r="1.1" fill="#6E6A48"></circle><circle cx="387.7" cy="51.1" r="1.1" fill="#6E6A48"></circle><circle cx="387.3" cy="61.2" r="1.1" fill="#6E6A48"></circle><circle cx="456.1" cy="45.8" r="1.1" fill="#6E6A48"></circle><circle cx="489.0" cy="64.3" r="1.1" fill="#6E6A48"></circle><circle cx="451.5" cy="57.3" r="1.1" fill="#6E6A48"></circle><circle cx="395.0" cy="45.3" r="1.1" fill="#6E6A48"></circle><circle cx="437.2" cy="46.2" r="1.1" fill="#6E6A48"></circle><circle cx="398.7" cy="49.8" r="1.1" fill="#6E6A48"></circle><circle cx="380.4" cy="54.3" r="1.1" fill="#6E6A48"></circle><circle cx="427.2" cy="61.8" r="1.1" fill="#6E6A48"></circle><circle cx="436.2" cy="57.8" r="1.1" fill="#6E6A48"></circle><circle cx="434.0" cy="58.2" r="1.1" fill="#6E6A48"></circle><circle cx="429.1" cy="50.6" r="1.1" fill="#6E6A48"></circle><circle cx="490.7" cy="64.9" r="1.1" fill="#6E6A48"></circle><circle cx="472.8" cy="59.2" r="1.1" fill="#6E6A48"></circle><circle cx="412.9" cy="49.6" r="1.1" fill="#6E6A48"></circle><circle cx="410.0" cy="46.4" r="1.1" fill="#6E6A48"></circle><circle cx="464.4" cy="53.0" r="1.1" fill="#6E6A48"></circle><circle cx="473.5" cy="52.7" r="1.1" fill="#6E6A48"></circle><circle cx="486.2" cy="61.9" r="1.1" fill="#6E6A48"></circle><circle cx="377.1" cy="49.2" r="1.1" fill="#6E6A48"></circle><circle cx="480.8" cy="54.4" r="1.1" fill="#6E6A48"></circle><circle cx="488.8" cy="52.9" r="1.1" fill="#6E6A48"></circle><circle cx="385.3" cy="57.6" r="1.1" fill="#6E6A48"></circle><circle cx="465.8" cy="50.4" r="1.1" fill="#6E6A48"></circle><circle cx="386.9" cy="51.7" r="1.1" fill="#6E6A48"></circle><circle cx="486.9" cy="60.2" r="1.1" fill="#6E6A48"></circle><circle cx="390.5" cy="49.9" r="1.1" fill="#6E6A48"></circle><circle cx="388.5" cy="46.2" r="1.1" fill="#6E6A48"></circle><circle cx="467.9" cy="48.6" r="1.1" fill="#6E6A48"></circle><circle cx="440.8" cy="53.9" r="1.1" fill="#6E6A48"></circle><circle cx="398.7" cy="59.6" r="1.1" fill="#6E6A48"></circle><circle cx="391.9" cy="57.9" r="1.1" fill="#6E6A48"></circle><circle cx="390.3" cy="53.4" r="1.1" fill="#6E6A48"></circle><circle cx="401.3" cy="50.4" r="1.1" fill="#6E6A48"></circle><circle cx="487.7" cy="61.1" r="1.1" fill="#6E6A48"></circle><circle cx="411.7" cy="62.7" r="1.1" fill="#6E6A48"></circle><circle cx="401.0" cy="52.9" r="1.1" fill="#6E6A48"></circle><circle cx="474.4" cy="57.8" r="1.1" fill="#6E6A48"></circle><circle cx="388.4" cy="64.8" r="1.1" fill="#6E6A48"></circle><circle cx="401.3" cy="50.2" r="1.1" fill="#6E6A48"></circle><circle cx="465.1" cy="51.6" r="1.1" fill="#6E6A48"></circle><circle cx="410.8" cy="46.5" r="1.1" fill="#6E6A48"></circle><circle cx="387.3" cy="56.7" r="1.1" fill="#6E6A48"></circle><circle cx="404.7" cy="57.0" r="1.1" fill="#6E6A48"></circle><circle cx="419.4" cy="54.1" r="1.1" fill="#6E6A48"></circle><circle cx="486.3" cy="54.7" r="1.1" fill="#6E6A48"></circle><circle cx="442.5" cy="62.3" r="1.1" fill="#6E6A48"></circle><circle cx="397.8" cy="48.1" r="1.1" fill="#6E6A48"></circle><circle cx="480.6" cy="61.4" r="1.1" fill="#6E6A48"></circle><circle cx="405.4" cy="48.8" r="1.1" fill="#6E6A48"></circle><circle cx="461.3" cy="63.8" r="1.1" fill="#6E6A48"></circle><circle cx="399.4" cy="64.0" r="1.1" fill="#6E6A48"></circle><circle cx="477.6" cy="57.1" r="1.1" fill="#6E6A48"></circle><circle cx="425.0" cy="47.1" r="1.1" fill="#6E6A48"></circle><circle cx="381.4" cy="64.3" r="1.1" fill="#6E6A48"></circle><circle cx="404.2" cy="59.1" r="1.1" fill="#6E6A48"></circle><circle cx="406.3" cy="61.5" r="1.1" fill="#6E6A48"></circle><circle cx="445.0" cy="50.9" r="1.1" fill="#6E6A48"></circle><circle cx="397.0" cy="59.4" r="1.1" fill="#6E6A48"></circle><circle cx="384.8" cy="49.6" r="1.1" fill="#6E6A48"></circle><circle cx="440.8" cy="62.0" r="1.1" fill="#6E6A48"></circle><circle cx="447.0" cy="50.6" r="1.1" fill="#6E6A48"></circle><circle cx="481.6" cy="49.1" r="1.1" fill="#6E6A48"></circle><circle cx="378.9" cy="50.4" r="1.1" fill="#6E6A48"></circle><text x="434" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Fine granular</text><text x="434" y="102" text-anchor="middle" font-size="10" fill="#6C7787">더 부서짐</text><line x1="505" y1="55" x2="534" y2="55" stroke="#E23B3B" stroke-width="2"></line><path d="M534,55 l-7,-4 l0,8 z" fill="#E23B3B"></path><path d="M541,43 L671,40 L667,70 L543,69 Z" fill="#D9D6CC" stroke="#5E5A4A" stroke-width="1.6"></path><path d="M599.5,41 l-4,13.5 l6,6.0" fill="none" stroke="#5E5A4A" stroke-width="1.1"></path><path d="M638.5,70 l3,-12.0" fill="none" stroke="#5E5A4A" stroke-width="1.1"></path><text x="606" y="88" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Waxy</text><text x="606" y="102" text-anchor="middle" font-size="10" fill="#6C7787">오래됨 → 만성</text><line x1="20" y1="118" x2="680" y2="118" stroke="#D8ECE7"></line><text x="20" y="136" font-size="11.5" font-weight="700" fill="#12403B">따로 기억할 2개</text><rect x="30" y="148" width="150" height="28" rx="14.0" fill="#F3F8FC" stroke="#9DB5CC" stroke-width="1.2" stroke-dasharray="3 2"></rect><text x="105" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#1B2A44">Hyaline — 투명·윤곽 희미</text><text x="270" y="162" font-size="10.5" fill="#1B2A44">이뇨·탈수 교정·<tspan font-weight="700">단백뇨(사구체)</tspan></text><text x="270" y="177" font-size="10.5" fill="#1B2A44">USG &lt;1.003에서 분해</text><rect x="440" y="148" width="150" height="28" rx="14.0" fill="#F1ECFA" stroke="#6B4FA0" stroke-width="1.4"></rect><circle cx="454.0" cy="162.0" r="10.0" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M450.0,160.0 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="2"></path><circle cx="494.7" cy="162.0" r="10.0" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M490.7,160.0 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="2"></path><circle cx="535.3" cy="162.0" r="10.0" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M531.3,160.0 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="2"></path><circle cx="576.0" cy="162.0" r="10.0" fill="#E3D9F5" stroke="#6B4FA0"></circle><path d="M572.0,160.0 q2,-4 4,0 q2,4 4,0" fill="none" stroke="#3E2A75" stroke-width="2"></path><text x="515" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#1B2A44">WBC cast — 세뇨관간질 염증</text></svg><div class="fc">그림 5. Cast 종류 — 강의 도식(Osborne) 흐름을 단순화</div></div>
+<table>
+<caption>표 16. Cast 종류 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:22%">Cast</th><th>구성 · 형태</th><th style="width:34%">의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">Hyaline</td><td>주로 단백질, 투명, 윤곽 희미 / <b>비중 1.003 미만</b>의 중성뇨에서 분해됨</td><td>이뇨시, 탈수교정시, 또는 <b>단백뇨 환자 (사구체 질환)</b></td></tr>
+<tr class="hi"><td class="kc">Granular****</td><td>변성된 세포들, 단백질 등 / 과립 크기 다양 (coarse → fine)</td><td><b>신 세뇨관 상피 세포의 퇴행과 괴사</b>를 일으키는 질환</td></tr>
+<tr><td class="kc">Waxy</td><td>Granular cast가 <b>오래된</b> 것 / 매끈, 끝이 깨진 모양</td><td><b>만성 질환</b>*</td></tr>
+<tr class="hi"><td class="kc">Renal tubular cast*<br>(상피성)</td><td>단백 틀 안에 상피세포</td><td><b>Active renal tubular injury</b> 의미</td></tr>
+<tr><td class="kc">WBC cast</td><td>백혈구</td><td>Tubulointerstitial inflammation / <b>신우신염 있을 때도 드묾</b></td></tr>
+</tbody></table>
+<p class="tnote">사진(p.47–52): hyaline · cellular · granular · granular+waxy · waxy / 마지막 사진 라벨 H(hyaline) · G(granular) · W/Wx(waxy) · Wb(WBC) — 한 시야에 여러 종류가 같이 보이기도 함</p>
+<ul class="d"><li>Cast 케이스 → <b>Case 16</b>(Saint Bernard, granular) · <b>Case 17</b>(hyaline + 신증후군) · <b>Case 2</b>(many granular)</li></ul>
+<h2 class="lv1">Ⅺ. 결정뇨 (Crystalluria)</h2>
+<ul class="d">
+<li><span class="hl"><b>신선뇨 검사</b></span> — 방치·온도 변화로 생긴 결정과 체내 상태를 구분</li>
+<li><b>Crystalluria와 결석?</b> → 결정이 있다고 반드시 결석이 생기는 것 X / 결석 환자의 결정이 결석 성분을 대표하지도 X → <b>결석은 성분 분석</b> 따로 <span class="tag t-rec">수업</span></li>
+<li>알칼리뇨 + 결석 → urease 세균 감염 확인 (Ⅲ장) <span class="tag t-rec">수업</span></li>
+</ul>
+<span class="pno">9</span>
+</section>
+
+<section class="page">
+<div class="fig"><svg viewBox="0 0 700 260" width="100%" style="max-width:700px;font-family:inherit"><rect x="8" y="6" width="684" height="20" rx="3" fill="#E8F4EA"></rect><text x="16" y="20" font-size="11.5" font-weight="700" fill="#0F9268">Common — 정상에서도 보임</text><rect x="8" y="132" width="684" height="20" rx="3" fill="#FDECEC"></rect><text x="16" y="146" font-size="11.5" font-weight="700" fill="#C0392B">Less common — 원인 찾기</text><rect x="12" y="34" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><rect x="74" y="50" width="36" height="36" fill="#EEF7E8" stroke="#3E6B2E" stroke-width="1.6" transform="rotate(8 92 68)"></rect><path d="M74,50 L110,86 M110,50 L74,86" stroke="#3E6B2E" stroke-width="1.3" transform="rotate(8 92 68)"></path><rect x="108" y="72" width="16" height="16" fill="#EEF7E8" stroke="#3E6B2E" transform="rotate(-12 116 80)"></rect><path d="M108,72 l16,16 M124,72 l-16,16" stroke="#3E6B2E" transform="rotate(-12 116 80)"></path><text x="92" y="112" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">CaOx dihydrate</text><text x="92" y="125" text-anchor="middle" font-size="10" fill="#6C7787">봉투(X자)</text><rect x="184" y="34" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><circle cx="252" cy="68" r="15" fill="#5C5340" opacity=".85"></circle><line x1="252" y1="68" x2="267.0" y2="68.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="265.0" y2="75.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="259.5" y2="81.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="252.0" y2="83.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="244.5" y2="81.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="239.0" y2="75.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="237.0" y2="68.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="239.0" y2="60.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="244.5" y2="55.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="252.0" y2="53.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="259.5" y2="55.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="252" y1="68" x2="265.0" y2="60.5" stroke="#C9BFA3" stroke-width=".7"></line><circle cx="278" cy="68" r="11" fill="#5C5340" opacity=".85"></circle><line x1="278" y1="68" x2="289.0" y2="68.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="287.5" y2="73.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="283.5" y2="77.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="278.0" y2="79.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="272.5" y2="77.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="268.5" y2="73.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="267.0" y2="68.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="268.5" y2="62.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="272.5" y2="58.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="278.0" y2="57.0" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="283.5" y2="58.5" stroke="#C9BFA3" stroke-width=".7"></line><line x1="278" y1="68" x2="287.5" y2="62.5" stroke="#C9BFA3" stroke-width=".7"></line><text x="264" y="112" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Ca carbonate</text><text x="264" y="125" text-anchor="middle" font-size="10" fill="#6C7787">구형·방사상</text><rect x="356" y="34" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><path d="M406,68 L416,56 L456,56 L466,68 L456,80 L416,80 Z" fill="#F5F1E2" stroke="#7A5C1E" stroke-width="1.6"></path><path d="M406,68 L466,68 M416,56 L424,68 L416,80 M456,56 L448,68 L456,80" fill="none" stroke="#7A5C1E" stroke-width="1"></path><text x="436" y="112" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Struvite</text><text x="436" y="125" text-anchor="middle" font-size="10" fill="#6C7787">관뚜껑</text><rect x="528" y="34" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><line x1="608" y1="72" x2="585.5" y2="59.0" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="623.6" y2="81.0" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="588.7" y2="54.6" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="621.4" y2="84.0" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="592.7" y2="51.0" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="618.6" y2="86.6" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="597.4" y2="48.2" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="615.3" y2="88.4" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="602.6" y2="46.6" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="611.7" y2="89.6" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="608.0" y2="46.0" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="608.0" y2="90.0" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="613.4" y2="46.6" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="604.3" y2="89.6" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="618.6" y2="48.2" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="600.7" y2="88.4" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="623.3" y2="51.0" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="597.4" y2="86.6" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="627.3" y2="54.6" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="594.6" y2="84.0" stroke="#C0661A" stroke-width="1.3"></line><line x1="608" y1="72" x2="630.5" y2="59.0" stroke="#C0661A" stroke-width="1.6"></line><line x1="608" y1="72" x2="592.4" y2="81.0" stroke="#C0661A" stroke-width="1.3"></line><text x="608" y="112" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Bilirubin</text><text x="608" y="125" text-anchor="middle" font-size="10" fill="#6C7787">바늘 다발</text><rect x="12" y="160" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><path d="M62,188 L68,181 L88,181 L94,188 L88,195 L68,195 Z" fill="#F4F8F0" stroke="#4E6B3E" stroke-width="1.6" transform="rotate(-20 78 188)"></path><path d="M86,200 L92,193 L112,193 L118,200 L112,207 L92,207 Z" fill="#F4F8F0" stroke="#4E6B3E" stroke-width="1.6" transform="rotate(25 102 200)"></path><path d="M82,214 q6,-8 12,0 q6,8 12,0" fill="none" stroke="#4E6B3E" stroke-width="5" stroke-linecap="round" opacity=".6"></path><text x="92" y="238" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">CaOx monohydrate</text><text x="92" y="251" text-anchor="middle" font-size="10" fill="#6C7787">울타리·덤벨</text><rect x="184" y="160" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><polygon points="273.3,202.0 256.0,212.0 238.7,202.0 238.7,182.0 256.0,172.0 273.3,182.0" fill="#EAF6F7" fill-opacity=".7" stroke="#2C6E78" stroke-width="1.6"></polygon><polygon points="289.3,208.5 278.0,215.0 266.7,208.5 266.7,195.5 278.0,189.0 289.3,195.5" fill="#EAF6F7" fill-opacity=".7" stroke="#2C6E78" stroke-width="1.6"></polygon><text x="264" y="238" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Cystine</text><text x="264" y="251" text-anchor="middle" font-size="10" fill="#6C7787">육각판</text><rect x="356" y="160" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><line x1="424" y1="194" x2="443.0" y2="194.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="440.5" y2="203.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="433.5" y2="210.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="424.0" y2="213.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="414.5" y2="210.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="407.5" y2="203.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="405.0" y2="194.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="407.5" y2="184.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="414.5" y2="177.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="424.0" y2="175.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="433.5" y2="177.5" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="424" y1="194" x2="440.5" y2="184.5" stroke="#7A4A1E" stroke-width="1.3"></line><circle cx="424" cy="194" r="12" fill="#A8672B"></circle><line x1="450" y1="198" x2="466.0" y2="198.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="463.9" y2="206.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="458.0" y2="211.9" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="450.0" y2="214.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="442.0" y2="211.9" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="436.1" y2="206.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="434.0" y2="198.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="436.1" y2="190.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="442.0" y2="184.1" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="450.0" y2="182.0" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="458.0" y2="184.1" stroke="#7A4A1E" stroke-width="1.3"></line><line x1="450" y1="198" x2="463.9" y2="190.0" stroke="#7A4A1E" stroke-width="1.3"></line><circle cx="450" cy="198" r="9" fill="#A8672B"></circle><text x="436" y="238" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Ammonium urate</text><text x="436" y="251" text-anchor="middle" font-size="10" fill="#6C7787">가시 달린 공</text><rect x="528" y="160" width="160" height="94" rx="4" fill="#fff" stroke="#D8ECE7"></rect><line x1="586.7" y1="201.5" x2="629.3" y2="186.5" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="585.0" y1="200.1" x2="631.0" y2="187.9" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="583.7" y1="198.7" x2="632.3" y2="189.3" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="582.8" y1="197.1" x2="633.2" y2="190.9" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="582.2" y1="195.6" x2="633.8" y2="192.4" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="582.0" y1="194.0" x2="634.0" y2="194.0" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="582.2" y1="192.4" x2="633.8" y2="195.6" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="582.8" y1="190.9" x2="633.2" y2="197.1" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="583.7" y1="189.3" x2="632.3" y2="198.7" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="585.0" y1="187.9" x2="631.0" y2="200.1" stroke="#8A6A3A" stroke-width="1.2"></line><line x1="586.7" y1="186.5" x2="629.3" y2="201.5" stroke="#8A6A3A" stroke-width="1.2"></line><ellipse cx="608" cy="194" rx="4" ry="7" fill="#8A6A3A"></ellipse><text x="608" y="238" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">Sulfa drug</text><text x="608" y="251" text-anchor="middle" font-size="10" fill="#6C7787">볏단 묶음</text></svg><div class="fc">그림 6. 결정 모양 — 강의 사진(p.57–60)을 단순화</div></div>
+<table>
+<caption>표 17. 결정 정리 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:24%">결정</th><th style="width:16%">분류</th><th>연결할 것</th></tr></thead>
+<tbody>
+<tr><td class="kc">CaOx dihydrate</td><td class="c">Common</td><td>정상적으로 관찰 (봉투 모양)</td></tr>
+<tr><td class="kc">Ca carbonate</td><td class="c">Common</td><td>정상적으로 관찰 (말·토끼 등 초식 쪽에서 흔함 <span class="gray">정리자 보충</span>)</td></tr>
+<tr><td class="kc">Struvite</td><td class="c">Common</td><td>정상적으로 관찰 / 알칼리뇨, UTI·결석과 같이 보이면 세균 확인 <span class="gray">(triple phosphate = struvite, Case 11)</span></td></tr>
+<tr><td class="kc">Bilirubin</td><td class="c">Common</td><td>개 농축뇨에서 정상 가능 / 간질환 맥락 <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td class="kc">CaOx monohydrate</td><td class="c">Less common</td><td><b>Ethylene glycol 중독</b> — 섭취 후 <b>고양이 ~3시간, 개 4–6시간</b>에 나타남 <span class="gray">(미검출로 중독 배제 X)</span></td></tr>
+<tr class="hi"><td class="kc">Cystine</td><td class="c">Less common</td><td><b>Congenital</b> — 선천적 재흡수 장애 (육각판)</td></tr>
+<tr class="hi"><td class="kc">Biurate·Ammonium urate</td><td class="c">Less common</td><td><b>달마시안, 잉글리쉬 불독</b> (품종) / <b>HI (PSS 등)</b> — 혈액·영상과 같이 해석</td></tr>
+<tr><td class="kc">Sulfa drugs</td><td class="c">Less common</td><td>약물 이력</td></tr>
+</tbody></table>
+<span class="pno">10</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅻ. 자료해석 — 요검사 케이스 읽는 법</h2>
+<h3 class="lv2">1. 해석 순서 (정리자 구성 — 강의 논리를 단계화)</h3>
+<div class="flow">
+<div class="fstep"><div class="fnum">0</div><div class="fbody"><span class="ft">검체부터 의심</span> 채뇨 방법(천자/자연배뇨) · <b>처치 전인가</b>(수액·이뇨제·스테로이드) · 신선한가(방치 → pH↑ · 결정 · 빌리루빈↓)</div></div>
+<div class="fstep"><div class="fnum">1</div><div class="fbody"><span class="ft">USG + 질소혈증</span>
+<div class="fork"><div class="fk1"><b>개 ≥1.030 · 고양이 ≥1.040</b><br>→ 신전성</div><div class="fk2"><b>1.008–1.029 (등장뇨 근처)</b><br>→ 신성 (mimic 배제)</div><div class="fk3"><b>&lt;1.008 희석뇨</b><br>→ 신기능 있음 · 요붕증 · 다음</div></div></div></div>
+<div class="fstep"><div class="fnum">2</div><div class="fbody"><span class="ft">침사를 먼저 보고 단백뇨 해석</span> RBC·WBC·세균 많음 → <b>보류</b> / 깨끗한데 단백 → USG로 보정 → UPC → 혈중 Alb·Chol</div></div>
+<div class="fstep"><div class="fnum">3</div><div class="fbody"><span class="ft">요당 → 혈당과 비교</span> 역치 넘음 = 고혈당(DM·쿠싱·스트레스·췌장염) / 역치 미만인데 양성 = <b>세뇨관</b>(Fanconi·신독성·급성 신부전)</div></div>
+<div class="fstep"><div class="fnum">4</div><div class="fbody"><span class="ft">케톤 · 빌리루빈 · blood → 혈액결과와 연결</span> 케톤 + 고혈당 + 요당 = DKA / 빌리루빈 + 빈혈·구형적혈구 = 용혈 / blood + 침사 RBC 0 = 색소 → 혈장색</div></div>
+<div class="fstep"><div class="fnum">5</div><div class="fbody"><span class="ft">침사 나머지</span> Cast = 세뇨관 손상(급성) / 결정 = 신선뇨인지 + 품종·독성(EG·PSS) / 세균 = 천자 검체면 비정상 → 배양</div></div>
+</div>
+<h3 class="lv2">2. 케이스 풀이</h3>
+<div class="legend"><span style="background:#0F9268">농축·신전성</span><span style="background:#C0392B">신성·세뇨관</span><span style="background:#2B5FC4">하부요로·출혈</span><span style="background:#B7791F">대사·내분비</span><span style="background:#6B4FA0">용혈·색소</span></div>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 1</span>Labrador cM 10yr — USG 1.045인데 BUN·Cr↑</div>
+<div class="cs">비만, 복부팽대, <b>복통</b>, 침울, 구토, 다음다뇨, 탈수 / CBC toxic change <span class="tag t-lnk">↔ 신장 Case 5</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>방광천자 UA / Chem</caption><tbody>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.045</b></td></tr>
+<tr><td class="kc">Prot / Glu / Bil</td><td class="c">− / <b>+</b> / +</td></tr>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c"><span class="up">88 / 3.8</span></td></tr>
+<tr><td class="kc">Amylase / Lipase</td><td class="c"><span class="up">6,021 / 1,400</span></td></tr>
+<tr><td class="kc">Glu (혈당)</td><td class="c"><span class="up">185</span></td></tr>
+<tr><td class="kc">WBC / band</td><td class="c"><span class="up">24.6 / 0.738</span></td></tr>
+<tr><td class="kc">Ca</td><td class="c"><span class="dn">8.3</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>질소혈증 + <b>USG 1.045</b> = 농축 충분 → 신장은 정상 → <b>신전성</b> (탈수)</li>
+<li>복통 + amylase·lipase 크게↑ + 염증성 백혈구 → <b>췌장염</b> <span class="tag t-rec">수업</span> (같은 수치라도 USG 1.011인 Case 2와 반대 해석)</li>
+<li>요당 +: 혈당 <b>185</b> = 개 역치(170–180) 살짝 넘음 → 췌장염 스트레스성 고혈당 → 요당 (Ⅴ장 표 10)</li>
+<li>빌리루빈 +: 개는 농축뇨에서 소량 가능 / 췌장염 담관 영향도 고려 <span class="gray">(정리자 보충)</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>신전성 질소혈증</b> + 췌장염 스트레스 요당</div>
+<div class="tr">Ca 8.3↓은 췌장염에서 흔함 (지방 비누화) <span class="gray">(정리자 보충)</span></div>
+</div>
+<span class="pno">11</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 2</span>4yr Irish Setter — 탈수 8%인데 USG 1.011</div>
+<div class="cs">갑작스런 구토, 식욕부진, 침울 / <b>이틀 경과</b> / 탈수 8% (급성 신부전) <span class="tag t-lnk">↔ 신장 Case 7</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c"><span class="up">240 / 5.2</span></td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.011</b></td></tr>
+<tr><td class="kc">P</td><td class="c"><span class="up">12.4</span></td></tr>
+<tr><td class="kc">Amyl / Lip</td><td class="c"><span class="up">2,780 / 3,000</span></td></tr>
+<tr><td class="kc">Alb / TP</td><td class="c">4.3 / 7.5 H</td></tr>
+<tr><td class="kc">Prot / Glu</td><td class="c">1+ / neg</td></tr>
+<tr class="hi"><td class="kc">Casts</td><td class="c"><b>many granular</b> /LPF</td></tr>
+<tr class="hi"><td class="kc">Crystals</td><td class="c"><b>many oxalates</b></td></tr>
+<tr><td class="kc">AG</td><td class="c"><span class="up">64</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><span class="tag t-pen">필기</span> 탈수인데 "<b>비중이 농축이 안됨 ; 신성</b>" / "<b>등장뇨</b> ↓ 신장기능이 망가졌을 때 비중"</li>
+<li>단백 1+ + Alb 4.3 정상 = <b>세뇨관성</b> 단백뇨 (재흡수 저하) <span class="tag t-rec">수업</span></li>
+<li><span class="tag t-pen">필기</span> many granular cast = "간에서의 AST, ALT" → <b>세뇨관 상피 괴사</b> 진행 중</li>
+<li>Amylase·lipase↑ = 신장 배설 장애 (췌장염 증상 없음) <span class="tag t-lnk">↔ 신장 Case 7</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>신성 — 급성 신부전 (세뇨관 손상)</b></div>
+<div class="tr">더 보기 <span class="gray">(정리자 보충)</span>: oxalate 결정 다수 + 음이온차 64 → <b>에틸렌글리콜</b> 중독을 의심할 조합 (Case 6과 비교)</div>
+</div>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 3</span>6yr cM Cat — sudden blindness, lethargy</div>
+<div class="cs">입원 후 시간별 Na·USG 추적 표 (단위 SI: mmol/L)</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem (0h) / 경과</caption><tbody>
+<tr class="hi"><td class="kc">Na / Cl</td><td class="c"><span class="up">178 / 141</span> <span class="gray">150–165 / 112–129</span></td></tr>
+<tr><td class="kc">Urea / Cr</td><td class="c"><span class="up">13.6 / 0.28</span> <span class="gray">mmol/L</span></td></tr>
+<tr><td class="kc">TP / Alb</td><td class="c"><span class="up">83 / 39</span> g/L</td></tr>
+<tr><td class="kc">Ca / CK</td><td class="c"><span class="up">3.14 / 2,603</span></td></tr>
+<tr class="hi"><td class="kc">USG 0·8·18h</td><td class="c"><b>1.005 · 1.003 · 1.005</b></td></tr>
+<tr><td class="kc">USG 26·34·40h</td><td class="c">1.010 · 1.012 · 1.014</td></tr>
+<tr><td class="kc">Na 12h → 40h</td><td class="c">185 → 166</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><b>고나트륨혈증 + 희석뇨</b> → 물만 빠져나감 (free water loss) → 탈수로 TP·Alb도 농축</li>
+<li><span class="tag t-pen">필기</span> <b>희석뇨 → 신장기능은 정상</b> (희석도 신장이 일해야 가능) / 경한 Urea·Cr↑는 탈수성</li>
+<li>탈수·고Na인데도 소변을 못 진하게 함 → ADH 문제 <span class="tag t-pen">필기</span> <b>∴ 요붕증</b> / 뇌하수체 쪽 종양 설명 <span class="tag t-rec">수업</span></li>
+<li>Na가 내려오면서 USG도 1.014까지 회복 <span class="gray">(처치 내용은 표에 없음)</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>Diabetes insipidus (요붕증)</b> — 희석뇨 ≠ 신부전</div>
+<div class="tr">Cr 0.28 mmol/L ≈ 3.2 mg/dL, Urea 13.6 mmol/L ≈ BUN 38 mg/dL <span class="gray">(정리자 보충: 단위 환산)</span> / 실명은 고Na혈증·중추 병소와 연결 가능 <span class="gray">(정리자 보충)</span></div>
+</div>
+<span class="pno">12</span>
+</section>
+
+<section class="page">
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 4</span>Cat DSH m 3yr — 단백 3+인데 판단 보류</div>
+<div class="cs">식욕부진, 침울, 구토, <b>배뇨장애</b>, tense enlarged abdomen / 방광천자, 적갈색·혼탁</div>
+<div class="cb"><div class="cd"><table>
+<caption>UA / Chem</caption><tbody>
+<tr><td class="kc">USG / pH</td><td class="c">1.031 / 7.5</td></tr>
+<tr class="hi"><td class="kc">Prot / Blood</td><td class="c"><b>+++ / ++++</b></td></tr>
+<tr class="hi"><td class="kc">침사</td><td class="c">수많은 RBC, WBC 15–20/hpf, <b>심한 세균</b></td></tr>
+<tr><td class="kc">Glu (요)</td><td class="c">−</td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c"><span class="up">169 / 13.6</span></td></tr>
+<tr class="hi"><td class="kc">혈당</td><td class="c"><span class="up">175</span></td></tr>
+<tr><td class="kc">K / P</td><td class="c"><span class="up">7.9 / 11.2</span></td></tr>
+<tr><td class="kc">Na / Cl</td><td class="c"><span class="dn">138 / 102</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>단백 3+이지만 <b>피·염증·세균 범벅</b> → <span class="tag t-pen">필기</span> "일단 단백뇨 판단은 보류" (신성 단백 소실로 해석 X)</li>
+<li>혈당 175 → 개라면 요당 나올 수치지만 <b>고양이 역치 260–310 미만</b> → 요당 (−) ✔</li>
+<li>배뇨장애 + 팽대된 방광 + 고K + 고질소혈증 → <b>요도 폐색 → 신후성</b></li>
+<li>고혈당 = 스트레스 (고양이*)</li>
+</ol></div></div>
+<div class="cc">결론: <b>출혈성 방광염과 요도 결석</b> (슬라이드 결론) — 신후성</div>
+<div class="tr">교훈: 요당 음성 ≠ 혈당 정상 → <b>종별 역치</b>로 해석</div>
+</div>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 5</span>구토·다음다뇨·복수·사지부종 개 — 낮은 비중에 단백뇨 극심</div>
+<div class="cs">배뇨 검체 <span class="tag t-lnk">↔ 신장 Case 14</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA</caption><tbody>
+<tr><td class="kc">Hct</td><td class="c"><span class="dn">18</span></td></tr>
+<tr class="hi"><td class="kc">USG / Prot</td><td class="c"><b>1.016 / ++++</b></td></tr>
+<tr><td class="kc">침사</td><td class="c">1–2 RBC, 2–5 WBC/hpf, <b>granular cast</b></td></tr>
+<tr><td class="kc">Glu·Ket·Bil·Blood</td><td class="c">모두 −</td></tr>
+<tr class="hi"><td class="kc">Alb / TP</td><td class="c"><span class="dn">0.7 / 3.3</span></td></tr>
+<tr class="hi"><td class="kc">Chol</td><td class="c"><span class="up">530</span></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c"><span class="up">133 / 4.1</span></td></tr>
+<tr><td class="kc">Ca / P</td><td class="c"><span class="dn">8.4</span> / <span class="up">6.9</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>슬라이드 말풍선: "<b>낮은 비중에 단백뇨 극심!!</b>" → 희석뇨인데 4+ = 엄청난 배설량 (1.007 vs 1.030 trace 문제의 답)</li>
+<li>침사가 깨끗 (RBC·WBC 소량) → 출혈·염증으로 설명 안 됨 → <b>신성</b></li>
+<li>Alb 0.7 = 1.5 이하 → 간/신장/장 중 <b>신장</b>(단백뇨 확인) <span class="tag t-pen">필기</span> "이미 복수 차있음"</li>
+<li>저Alb + 고Chol + 심한 단백뇨 + 부종·복수 = 신증후군 / BUN·Cr↑ + granular cast → 세뇨관 손상까지 (말풍선 "방광염; 세뇨관 손상")</li>
+</ol></div></div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ Nephrotic syndrome</b> (질소혈증 동반 = complete)</div>
+<div class="tr">비재생성 빈혈 Hct 18 → 만성 신질환과 연결 <span class="gray">(정리자 보충)</span></div>
+</div>
+<span class="pno">13</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 6</span>Labrador F 1yr — 혈당 141인데 요당 +</div>
+<div class="cs">무기력, 침울, <b>운동실조</b>, 구토, 탈수 / <span class="tag t-pen">필기</span> "<b>부동액 중독으로 온 급성 신부전 환자 Case</b>" <span class="tag t-lnk">↔ 신장 Case 6</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>UA (방광천자) / Chem</caption><tbody>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.011</b> (등장뇨)</td></tr>
+<tr><td class="kc">Prot / Glu</td><td class="c"><b>+ / +</b></td></tr>
+<tr class="hi"><td class="kc">침사</td><td class="c"><b>CaOx mono</b></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c"><span class="up">75 / 5.7</span></td></tr>
+<tr><td class="kc">혈당</td><td class="c"><span class="up">141</span></td></tr>
+<tr><td class="kc">Ca / P</td><td class="c"><span class="dn">8.6</span> / <span class="up">10.2</span></td></tr>
+<tr><td class="kc">Hct / WBC</td><td class="c"><span class="up">56.5 / 29.7</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>탈수(Hct 56.5)인데 USG 1.011 <span class="tag t-pen">필기</span> <b>등장뇨</b> → 신성</li>
+<li>혈당 141 = <b>개 역치 미만인데 요당 +</b> → 세뇨관 재흡수 장애 (후천성 — 신독성 물질) <span class="tag t-rec">수업</span></li>
+<li><b>CaOx monohydrate</b> = less common → <b>ethylene glycol</b> (섭취 후 개 4–6시간)</li>
+<li>운동실조 = EG 신경 증상 <span class="gray">(정리자 보충)</span> / Ca↓ = 옥살산이 Ca와 결합</li>
+</ol></div></div>
+<div class="cc">결론: <b>Ethylene glycol 중독 → 급성 신부전</b> (세뇨관 재흡수 장애 동반)</div>
+</div>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 7</span>3년령 cM Labrador — 혈당 84인데 요당 4+</div>
+<div class="cs">수개월 다음다뇨, 관절 경직 (뼈 통증) <span class="tag t-lnk">↔ 신장 Case 16</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem / UA (방광천자)</caption><tbody>
+<tr class="hi"><td class="kc">Glu (혈당)</td><td class="c">84 <span class="gray">61–95</span></td></tr>
+<tr><td class="kc">Urea / Cr</td><td class="c">45 / 1.4 (RR 안)</td></tr>
+<tr><td class="kc">Na / Cl</td><td class="c">146 ↓쪽 / 122 ↑쪽</td></tr>
+<tr class="hi"><td class="kc">TCO₂</td><td class="c"><span class="dn">15.3</span> <span class="gray">18–30</span></td></tr>
+<tr><td class="kc">K</td><td class="c"><span class="dn">3.5</span></td></tr>
+<tr><td class="kc">USG</td><td class="c">1.013</td></tr>
+<tr class="hi"><td class="kc">Prot / UPC</td><td class="c">2+ / <b>2.3</b></td></tr>
+<tr class="hi"><td class="kc">요당 / 케톤</td><td class="c"><b>4+</b> / 음성</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><span class="tag t-pen">필기</span> 혈당 정상 → "혈당 정상인데 요당뇨? → <b>Renal glucosuria or Fanconi syndrome</b> ← 보통 이거임"</li>
+<li>BUN·Cr 정상 = 배설 기능 OK → <b>재흡수</b> 문제</li>
+<li>단백(UPC 2.3) + 당 + HCO₃⁻(TCO₂↓, Cl 상한) + K 등 <b>여러 물질</b> 동시 소실</li>
+<li>CK 455는 붉은 표시지만 RR(0–460) 안 → 이상으로 읽지 말 것</li>
+</ol></div></div>
+<div class="cc">결론: <b>Fanconi-like syndrome</b> (복합 세뇨관 재흡수 장애)</div>
+</div>
+<span class="pno">14</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 8</span>Fanconi-like 두 번째 — 혈당 99, 요당 &gt;1000</div>
+<div class="cs">i-STAT 혈액가스까지 있는 케이스 (signalment 표시 없음)</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem / UA / i-STAT</caption><tbody>
+<tr class="hi"><td class="kc">혈당</td><td class="c"><b>99</b> (i-STAT 96)</td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">11 / 1.0</td></tr>
+<tr><td class="kc">ALT / ALKP</td><td class="c"><span class="up">227 / 327</span></td></tr>
+<tr><td class="kc">USG / pH</td><td class="c">1.037 / 5.5</td></tr>
+<tr class="hi"><td class="kc">요 GLU</td><td class="c"><span class="up">&gt;1000</span></td></tr>
+<tr><td class="kc">요 PRO / KET</td><td class="c">75 / <b>150</b> mg/dL</td></tr>
+<tr><td class="kc">요 BIL / ERY</td><td class="c">1+ / 4+</td></tr>
+<tr class="hi"><td class="kc">Na / Cl</td><td class="c"><span class="dn">141</span> / 124</td></tr>
+<tr class="hi"><td class="kc">pH / HCO₃⁻ / BE</td><td class="c"><span class="dn">7.241 / 15.3 / −12</span></td></tr>
+<tr><td class="kc">AG</td><td class="c">7 (정상)</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>혈당 정상 + 요당 &gt;1000 → 신성 요당</li>
+<li><span class="tag t-pen">필기</span> "<b>bicarbonate 감소하면서 (Cl) 보상성 증가</b>" — Na는 낮은데 Cl은 높은 쪽 = 단짝이 반대로</li>
+<li>대사성 산증 (pH 7.241, BE −12) + AG 정상 → HCO₃⁻를 <b>신장에서 잃는</b> 고Cl성 산증 = 근위세뇨관 산증 <span class="gray">(정리자 보충)</span></li>
+<li>케톤 150인데 혈당 정상 → <span class="tag t-pen">필기</span> "케톤뇨라고 무조건 당뇨 X" / Fanconi에선 케톤 재흡수 장애로 케톤뇨 가능 <span class="gray">(정리자 보충)</span></li>
+</ol></div></div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ Fanconi like syndrome</b></div>
+<div class="tr">구술 "Na 정상 하한"과 달리 표의 141은 RR(142–150)보다 <b>낮음</b> → 표 값 기준</div>
+</div>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 9</span>Mix 10년령 암컷 — 다음다뇨, 백내장, 헐떡임, 겸부 탈모</div>
+<div class="cs">숨 헐떡임, <b>겸부 미만성의 탈모***</b>, 유선 종괴(→ 유선염)</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Glu (혈당)</td><td class="c"><span class="up">297</span></td></tr>
+<tr><td class="kc">ALP</td><td class="c"><span class="up">458</span></td></tr>
+<tr><td class="kc">ALT / AST</td><td class="c">50 / 27</td></tr>
+<tr><td class="kc">Chol / TG</td><td class="c"><span class="up">426 / 746</span></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">14 / 0.7</td></tr>
+<tr><td class="kc">USG / pH</td><td class="c">1.027 / 6</td></tr>
+<tr class="hi"><td class="kc">Glu / Ket (요)</td><td class="c"><b>++++ / +</b></td></tr>
+<tr><td class="kc">Prot / Bil / Blood</td><td class="c">++ / ++ / ++++</td></tr>
+<tr><td class="kc">WBC</td><td class="c"><span class="up">20,380</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>혈당 297 &gt; 개 역치 → 요당 4+ + <b>케톤 +</b> → 당뇨병, 케톤까지 = DKA 위험 <span class="tag t-rec">수업</span></li>
+<li><span class="tag t-pen">필기</span> *<b>개에서는 당뇨병이 나왔을 때 쿠싱증후군인지 꼭 체크!</b> → PU/PD·헐떡임·<b>겸부 탈모</b>·ALP↑·Chol↑ = HAC 소견</li>
+<li>쿠싱 + DM 동반 가능성 <span class="tag t-rec">수업</span></li>
+<li>이 표엔 혈액가스 없음 → DKA의 산증까지 <b>수치로 확인된 케이스는 아님</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>Diabetes mellitus + Hyperadrenocorticism 의심</b> (케톤뇨 동반)</div>
+<div class="tr">HAC·DM 환자 = UTI 증상 안 보일 수 있음 → 배양 (Ⅸ장) / Blood 4+는 침사로 확인 필요</div>
+</div>
+<span class="pno">15</span>
+</section>
+
+<section class="page">
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 10</span>Old English Sheepdog m 2yr — 흑변, 창백, 며칠</div>
+<div class="cs">빌리루빈뇨 케이스</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Hct / RBC</td><td class="c"><span class="dn">15 / 1.79</span></td></tr>
+<tr><td class="kc">MCV / MCHC</td><td class="c"><span class="up">84</span> / <span class="dn">29.3</span></td></tr>
+<tr><td class="kc">Retic</td><td class="c"><span class="up">24% · 430k</span></td></tr>
+<tr class="hi"><td class="kc">형태</td><td class="c">대소부동, 농염적혈구, <b>구형적혈구</b></td></tr>
+<tr><td class="kc">PLT</td><td class="c">88</td></tr>
+<tr><td class="kc">WBC</td><td class="c"><span class="up">44.7</span></td></tr>
+<tr><td class="kc">ALP / ALT</td><td class="c"><span class="up">625 / 536</span></td></tr>
+<tr class="hi"><td class="kc">T.Bil / D.Bil</td><td class="c"><span class="up">9.8 / 4.3</span></td></tr>
+<tr class="hi"><td class="kc">요 Bil</td><td class="c"><b>++</b></td></tr>
+<tr><td class="kc">USG / Blood</td><td class="c">1.007 / −</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>심한 <b>재생성 빈혈</b> (retic↑, MCV↑ MCHC↓)</li>
+<li>구형적혈구 <span class="tag t-pen">필기</span> → <b>IMHA 의심</b></li>
+<li>용혈 → 빌리루빈 생성↑ → 간이 중합해 배설 → 혈중↑ + <b>요 빌리루빈 ++</b> (낮은 역치라 금방 나옴)</li>
+<li>요 blood (−) → 혈관외 용혈 위주 <span class="gray">(정리자 보충: 혈관내 용혈이면 혈색소뇨)</span> / ALT↑ = 빈혈성 저산소 간손상 가능 <span class="gray">(정리자 보충)</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>IMHA → hemolytic disease로 인한 빌리루빈뇨</b></div>
+<div class="tr">구술 품종 표현과 달라도 <b>원표</b>(Old English Sheepdog M 2yr) 기준</div>
+</div>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 11</span>3y DSH — sudden onset of dysuria 1 day, depressed</div>
+<div class="cs">"Occ. Blood = hematuria, not occult blood" <span class="tag t-lnk">↔ 신장 Case 12</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>UA / Chem</caption><tbody>
+<tr><td class="kc">색 / 혼탁</td><td class="c">red / cloudy</td></tr>
+<tr><td class="kc">USG / pH</td><td class="c">1.022 / 7.0</td></tr>
+<tr class="hi"><td class="kc">Prot</td><td class="c">3+</td></tr>
+<tr class="hi"><td class="kc">Occ. blood</td><td class="c"><b>4+</b></td></tr>
+<tr class="hi"><td class="kc">RBC</td><td class="c"><b>TNTC</b>/HPF</td></tr>
+<tr><td class="kc">WBC / 상피</td><td class="c">10–20 / 20–30</td></tr>
+<tr><td class="kc">Crystals</td><td class="c">many <b>triple phosphate</b></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c"><span class="up">225 / 9.2</span></td></tr>
+<tr><td class="kc">K / P</td><td class="c"><span class="up">7.2 / 11.0</span></td></tr>
+<tr><td class="kc">TCO₂ / AG</td><td class="c"><span class="dn">8</span> / <span class="up">30.2</span></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>Blood 4+ + RBC <b>TNTC</b>(too numerous to count) = 진짜 <b>혈뇨</b></li>
+<li>심한 혈액 혼입 → protein 3+를 신성 단백 소실로 해석 X → 출혈 처치 후 재검 <span class="tag t-rec">수업</span></li>
+<li>Triple phosphate = <b>struvite</b> → 고양이 요도 폐색 (요도 마개) 연결 <span class="gray">(정리자 보충)</span></li>
+<li>급성 배뇨곤란 + 고K + 대사성 산증 + 질소혈증 → <b>신후성</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>하부요로 폐색 + 혈뇨 (신후성 질소혈증)</b></div>
+</div>
+<span class="pno">16</span>
+</section>
+
+<section class="page">
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 12</span>6yr sF Dachshund — abdominal pain</div>
+<div class="cs"><span class="tag t-pen">필기</span> "보통 이러면 췌장염인데…" / voided UA</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA</caption><tbody>
+<tr><td class="kc">Hct</td><td class="c"><span class="dn">25.4</span></td></tr>
+<tr><td class="kc">WBC / band</td><td class="c"><span class="up">30,700 / 1,250</span></td></tr>
+<tr class="hi"><td class="kc">Lipase / Amyl</td><td class="c"><span class="up">8,593 / 2,195</span></td></tr>
+<tr><td class="kc">ALP / GGT</td><td class="c"><span class="up">2,745 / 155</span></td></tr>
+<tr><td class="kc">Alb / TP</td><td class="c"><span class="dn">1.6 / 4.0</span></td></tr>
+<tr><td class="kc">Chol / TG</td><td class="c"><span class="up">540 / 250</span></td></tr>
+<tr class="hi"><td class="kc">Occ. blood</td><td class="c"><b>1+</b></td></tr>
+<tr class="hi"><td class="kc">RBC / WBC</td><td class="c"><b>neg / neg</b></td></tr>
+<tr><td class="kc">USG / Prot</td><td class="c">1.014 / <b>4+</b></td></tr>
+<tr><td class="kc">Casts</td><td class="c">mod. hyaline and waxy</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>Blood 1+인데 <b>침사 RBC 0</b> → 혈뇨 아님 → <b>hematuria, Hgb-uria or myoglobinuria</b> 중 색소 쪽 → 용혈·근손상·위양성 검토 <span class="tag t-rec">수업</span></li>
+<li>복통 + lipase·amylase 크게↑ + 염증 → 췌장염 맥락 (빌리루빈·ALP·GGT↑ = 담즙 정체 동반 가능)</li>
+<li>침사 깨끗한데 단백 4+ + Alb 1.6 + Chol 540 + <b>hyaline·waxy cast</b> → 사구체성 단백 소실 + 만성 변화 <span class="gray">(정리자 보충)</span></li>
+<li>한 번의 약양성만으로 원인 확정 X <span class="tag t-rec">수업</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>Blood 1+ 단독 = 혈뇨 아님</b> → 색소·위양성 감별 / 췌장염 맥락</div>
+</div>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 13</span>용혈성 빈혈 — RBC 0.42, MCHC 80</div>
+<div class="cs">짧은 슬라이드 케이스 (p.34) + 위양성 목록</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / UA</caption><tbody>
+<tr class="hi"><td class="kc">RBC</td><td class="c"><span class="dn">0.42</span></td></tr>
+<tr><td class="kc">MCV</td><td class="c"><span class="up">141</span></td></tr>
+<tr class="hi"><td class="kc">MCHC</td><td class="c"><span class="up">80</span></td></tr>
+<tr><td class="kc">USG</td><td class="c">1.020</td></tr>
+<tr class="hi"><td class="kc">Blood</td><td class="c"><b>+++</b></td></tr>
+<tr><td class="kc">Glu / Bil</td><td class="c">+ / <b>++</b></td></tr>
+<tr><td class="kc">pH · Prt · Ket</td><td class="c">−</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>Blood +++ + 빌리루빈 ++ + 용혈성 빈혈 → <b>혈색소뇨</b>와 연결</li>
+<li>MCHC 80은 생체에서 불가능 → 용혈(유리 Hb는 재는데 RBC 수는 적음)·응집에 의한 <b>artifact</b> <span class="gray">(정리자 보충)</span></li>
+<li>혈장색 확인 → 분홍이면 Hb-emia (그림 4)</li>
+</ol></div></div>
+<div class="cc">결론: <b>용혈 → 혈색소뇨</b></div>
+<div class="tr">Blood pad 위양성: H₂O₂, <b>세균 peroxidase(방광염)</b>, hypochlorite·chlorine, formaldehyde, 오래된 시약</div>
+</div>
+<span class="pno">17</span>
+</section>
+
+<section class="page">
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 14</span>GSD M 6m — 후지 파행, 앞방 출혈, 혈뇨</div>
+<div class="cs"><b>암컷 동배 자견은 폐출혈로 사망</b></div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / 응고 / UA</caption><tbody>
+<tr><td class="kc">WBC / Mono</td><td class="c"><span class="up">25.6 / 4.096</span></td></tr>
+<tr><td class="kc">RBC / Hb / HCT</td><td class="c"><span class="dn">4.16 / 9.9 / 30</span></td></tr>
+<tr><td class="kc">PLT</td><td class="c">ADQ</td></tr>
+<tr><td class="kc">Alb / TP</td><td class="c">2.5 / <span class="dn">5.2</span></td></tr>
+<tr class="hi"><td class="kc">ACT</td><td class="c"><span class="up">290</span></td></tr>
+<tr class="hi"><td class="kc">APTT / OSPT</td><td class="c"><span class="up">35.7 / 30.2</span></td></tr>
+<tr><td class="kc">TCT</td><td class="c"><span class="up">5.25</span></td></tr>
+<tr><td class="kc">Fibrinogen / FDP</td><td class="c">256 / 32</td></tr>
+<tr class="hi"><td class="kc">U/A</td><td class="c">prt <b>++++</b>, Blood <b>++++</b></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>혈뇨 + 앞방 출혈 + 관절 출혈(파행) = <b>여러 곳 출혈</b> → 혈뇨 원인 중 "<b>응고계 이상</b>"</li>
+<li>혈소판 정상, ACT·APTT·PT 모두 연장 → 응고인자 문제 (2차 지혈)</li>
+<li>출혈 중 단백뇨 ++++ → 신성으로 해석 X (Case 4·11과 같은 원리) <span class="tag t-rec">수업</span></li>
+<li><span class="gray">(정리자 보충)</span> 동배가 같이 출혈 → 같은 환경의 <b>살서제(vitamin K 길항)</b> 중독 또는 선천성 응고인자 결핍 감별</li>
+</ol></div></div>
+<div class="cc">결론: <b>응고 이상에 의한 혈뇨</b></div>
+</div>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 15</span>American Eskimo dog sF 11.5yr — gross hematuria 1개월</div>
+<div class="cs">Bilateral renal hematuria in a dog, idiopathic (Can Vet J 2013)</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">HCT</td><td class="c"><span class="dn">23.4%</span> <span class="gray">36–60</span></td></tr>
+<tr><td class="kc">Retic</td><td class="c"><span class="up">207,000</span></td></tr>
+<tr><td class="kc">BUN</td><td class="c"><span class="dn">1.4 mmol/L</span></td></tr>
+<tr><td class="kc">ALT / ALKP</td><td class="c"><span class="up">184 / 300</span></td></tr>
+<tr class="hi"><td class="kc">혈뇨</td><td class="c"><b>&gt;50 RBC/hpf</b></td></tr>
+<tr class="hi"><td class="kc">응고검사</td><td class="c">RR 안</td></tr>
+<tr><td class="kc">방광</td><td class="c"><b>massive blood clot</b></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>1개월 육안적 혈뇨 → 실혈성 <b>재생성 빈혈</b> (retic↑)</li>
+<li>응고검사 정상 → Case 14와 다름</li>
+<li>다른 원인이 안 나옴 → <b>idiopathic renal hematuria</b> (논문 제목)</li>
+<li>슬라이드: "Renal vein anomalies, or telangiectasia?" — <b>물음표</b> = 확진 아님</li>
+</ol></div></div>
+<div class="cc">결론: <b>특발성 (양측) 신장 혈뇨</b></div>
+</div>
+<span class="pno">18</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 16</span>Saint Bernard M 4yr — 전신 피부 림프절 종대</div>
+<div class="cs">배뇨 검체 / 오른쪽에 <b>SDMA</b> 박스 (값은 없음)</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA</caption><tbody>
+<tr><td class="kc">Hct / Retic</td><td class="c"><span class="dn">31 / 0</span></td></tr>
+<tr><td class="kc">WBC / Mono</td><td class="c"><span class="up">23.4 / 2.691</span></td></tr>
+<tr class="hi"><td class="kc">Ca</td><td class="c"><span class="up">19.1</span></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c"><span class="up">61 / 6.9</span></td></tr>
+<tr><td class="kc">P</td><td class="c">4.5</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.011</b></td></tr>
+<tr><td class="kc">Prot</td><td class="c">trace</td></tr>
+<tr class="hi"><td class="kc">침사</td><td class="c"><b>1–2 granular cast/hpf</b>, 0–2 WBC/hpf</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>질소혈증 + USG 1.011 → 비농축</li>
+<li><b>Ca 19.1</b> = 심한 고칼슘혈증 → ADH 작용 방해로 농축 억제 (신성처럼 보이는 원인) <span class="tag t-lnk">↔ 신장 Ⅵ</span></li>
+<li>그런데 <b>granular cast</b>까지 → 실제 세뇨관 손상도 동반 가능 → 둘 다 평가 <span class="tag t-rec">수업</span></li>
+<li>림프절 종대 + 고Ca → 림프종 의심 <span class="gray">(정리자 보충)</span> / 비재생성 빈혈</li>
+</ol></div></div>
+<div class="cc">결론: <b>고칼슘혈증 + 세뇨관 손상</b> — cast가 "진짜 신장 손상"의 단서</div>
+<div class="tr">Cast 단위: 이 표는 /HPF, Case 2·17은 /LPF → 임의로 통일 X</div>
+</div>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 17</span>3yr f mixed breed — 2–3주 복부 팽대, BAR</div>
+<div class="cs">"과량의 혈청 단백이 세뇨관 내강에서 <b>Tamm-Horsfall 침전</b>을 촉진" (슬라이드) <span class="tag t-lnk">↔ 신장 Case 15</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Alb / TP</td><td class="c"><span class="dn">0.9 / 3.6</span></td></tr>
+<tr class="hi"><td class="kc">Chol</td><td class="c"><span class="up">430</span></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">15 / 0.5</td></tr>
+<tr><td class="kc">Ca</td><td class="c"><span class="dn">8.1</span></td></tr>
+<tr><td class="kc">USG / pH</td><td class="c">1.031 / 7.0</td></tr>
+<tr class="hi"><td class="kc">Prot</td><td class="c"><b>4+</b></td></tr>
+<tr><td class="kc">Blood / RBC / WBC</td><td class="c">neg / 0–1 / 0–1</td></tr>
+<tr class="hi"><td class="kc">Casts</td><td class="c"><b>2–3 hyaline</b>/LPF</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>침사 깨끗 + 단백 4+ → 출혈·염증 아님 → 신성</li>
+<li>Alb 0.9 + Chol 430 + 복부 팽대(복수 의심) → 신증후군 그림</li>
+<li>BUN·Cr 정상, USG 1.031 = 배설·농축 기능 유지 → 질소혈증 없음 = incomplete</li>
+<li><b>Hyaline cast</b> = 단백뇨(사구체 질환) 환자에서 보이는 cast (표 16)</li>
+</ol></div></div>
+<div class="cc">결론: <b>Nephrotic syndrome (incomplete) — 사구체 질환</b></div>
+</div>
+<span class="pno">19</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. 케이스 비교표</h3>
+<table>
+<caption>표 18. 17개 케이스 — 결정적 요검사 단서만</caption>
+<thead><tr><th style="width:5%">#</th><th style="width:22%">환자</th><th>결정적 단서</th><th style="width:28%">결론</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>Lab cM10</td><td>질소혈증 + <b>USG 1.045</b>, 혈당 185 → 요당 +</td><td>신전성 + 췌장염</td></tr>
+<tr class="hi"><td class="c">2</td><td>Irish Setter 4y</td><td>탈수인데 <b>1.011</b>, many granular cast, oxalate</td><td>급성 신부전 (신성)</td></tr>
+<tr><td class="c">3</td><td>Cat cM6</td><td>Na 178 + <b>USG 1.003–1.005</b></td><td>요붕증 (신기능 정상)</td></tr>
+<tr><td class="c">4</td><td>Cat DSH 3y</td><td>단백 3+ but 피·WBC·세균, 혈당 175 요당 −</td><td>단백 판단 보류 / 신후성</td></tr>
+<tr class="hi"><td class="c">5</td><td>복수·부종 개</td><td>USG 1.016 + 단백 4+, Alb 0.7, Chol 530</td><td>Complete nephrotic</td></tr>
+<tr class="hi"><td class="c">6</td><td>Lab F1</td><td>혈당 141인데 요당 +, <b>CaOx mono</b></td><td>EG → 급성 신부전</td></tr>
+<tr class="hi"><td class="c">7</td><td>Lab cM3</td><td>혈당 84 + 요당 4+, UPC 2.3, TCO₂↓</td><td>Fanconi-like</td></tr>
+<tr class="hi"><td class="c">8</td><td>(i-STAT)</td><td>혈당 99 + 요당 &gt;1000, 고Cl성 산증, 케톤 150</td><td>Fanconi-like</td></tr>
+<tr><td class="c">9</td><td>Mix F10</td><td>혈당 297, 요당 4+ <b>케톤 +</b>, 겸부 탈모·ALP↑</td><td>DM + 쿠싱</td></tr>
+<tr><td class="c">10</td><td>OES M2</td><td>구형적혈구 + T.Bil 9.8 + <b>요 Bil ++</b></td><td>IMHA</td></tr>
+<tr><td class="c">11</td><td>DSH 3y</td><td>Blood 4+ + RBC <b>TNTC</b>, struvite</td><td>혈뇨 + 신후성</td></tr>
+<tr><td class="c">12</td><td>Dachshund sF6</td><td>Blood 1+ but <b>RBC 0</b></td><td>색소·위양성 감별</td></tr>
+<tr><td class="c">13</td><td>용혈성 빈혈</td><td>Blood +++, Bil ++, MCHC 80</td><td>혈색소뇨</td></tr>
+<tr><td class="c">14</td><td>GSD M6m</td><td>다발 출혈 + ACT·APTT·PT↑</td><td>응고 이상 혈뇨</td></tr>
+<tr><td class="c">15</td><td>Am. Eskimo 11.5y</td><td>&gt;50 RBC, 응고 정상, 방광 혈괴</td><td>특발성 신장 혈뇨</td></tr>
+<tr class="hi"><td class="c">16</td><td>Saint Bernard 4y</td><td>Ca 19.1 + 1.011 + <b>granular cast</b></td><td>고Ca + 세뇨관 손상</td></tr>
+<tr class="hi"><td class="c">17</td><td>Mixed f3</td><td>단백 4+, Alb 0.9, <b>hyaline cast</b>, BUN·Cr 정상</td><td>Incomplete nephrotic</td></tr>
+</tbody></table>
+<span class="pno">20</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">★ 4장 총정리 — 시험 직전에 보는 표</h2>
+<table>
+<caption>표 19. 숫자 모음 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:30%">항목</th><th>값</th></tr></thead>
+<tbody>
+<tr><td class="kc">침사 원심</td><td><b>1,500–2,000 rpm, 5분</b>, 0.5 mL 재부유 / 100배 cast·결정·세포, 400배 세포·세균</td></tr>
+<tr class="hi"><td class="kc">농축 충분 (탈수+신기능 정상)</td><td>개 <b>≥1.030</b> / 고양이 <b>≥1.040</b> (10/2엔 1.035)</td></tr>
+<tr><td class="kc">요 pH</td><td>5.0–8.5 / pH ≥8 또는 USG &lt;1.008 → RBC 용혈</td></tr>
+<tr class="hi"><td class="kc">UPC</td><td>&lt;0.5 정상 · 0.5–1.0 possible · ≥2.0 severe · ≥5.0 GN · 8–12 amyloidosis</td></tr>
+<tr><td class="kc">Dipstick 단백 검출</td><td>약 30 mg/dL, 주로 albumin</td></tr>
+<tr class="hi"><td class="kc">요당 역치</td><td>개 <b>170–180</b> (180–220) / 고양이 <b>260–310</b> (290)</td></tr>
+<tr><td class="kc">저알부민 기준</td><td>Alb <b>1.5 g/dL 이하</b> → 간·신장·장 감별</td></tr>
+<tr><td class="kc">Leukocyte pad</td><td>개 Se 46% · Sp 93.2% / 고양이 Se 77% · Sp 34% (권장 X)</td></tr>
+<tr class="hi"><td class="kc">CaOx monohydrate (EG)</td><td>고양이 ~3시간, 개 4–6시간 후</td></tr>
+<tr><td class="kc">Hyaline cast 분해</td><td>USG &lt;1.003</td></tr>
+</tbody></table>
+<table>
+<caption>표 20. 헷갈리기 쉬운 짝</caption>
+<thead><tr><th style="width:24%">짝</th><th>구분 포인트</th></tr></thead>
+<tbody>
+<tr><td class="kc">1.007 trace vs 1.030 trace</td><td><b>1.007 쪽이 더 의미</b> (희석됐는데도 나옴)</td></tr>
+<tr class="hi"><td class="kc">사구체 vs 세뇨관 단백뇨</td><td>큰 단백·<b>저Alb</b> vs 작은 단백·<b>Alb 정상</b> (Case 5·17 vs Case 2)</td></tr>
+<tr><td class="kc">고혈당 요당 vs 신성 요당</td><td>혈당이 역치 넘나? — 넘으면 DM·쿠싱·스트레스 / 미만이면 Fanconi·신독성</td></tr>
+<tr class="hi"><td class="kc">혈뇨 vs 혈색소뇨 vs 근색소뇨</td><td>원심 후 상층 맑음 = 혈뇨 / 상층 붉고 <b>혈장 분홍</b> = Hb / 상층 갈색 <b>혈장 정상</b> = Mb</td></tr>
+<tr><td class="kc">Occult blood 1+ vs 4+ TNTC</td><td>침사 RBC 0이면 혈뇨 아님 (Case 12) / TNTC = 진짜 혈뇨 (Case 11)</td></tr>
+<tr class="hi"><td class="kc">BUN·Cr vs Cast</td><td>배설 <b>기능</b> vs 세뇨관 <b>손상</b> ("간의 AST·ALT")</td></tr>
+<tr><td class="kc">Granular vs Waxy</td><td>세포 변성 중(급성) vs granular가 <b>오래된</b> 것(만성)</td></tr>
+<tr class="hi"><td class="kc">CaOx di- vs monohydrate</td><td>봉투 = common(정상) / 울타리·덤벨 = <b>EG 중독</b></td></tr>
+<tr><td class="kc">Ammonium urate: 달마시안 vs 요키</td><td>달마시안·잉글리쉬 불독 = 품종 / 그 외 = <b>PSS 등 간부전</b> 의심</td></tr>
+<tr class="hi"><td class="kc">케톤: acetoacetate vs β-HB</td><td>nitroprusside 반응 O vs dipstick 검출 <b>X</b></td></tr>
+<tr><td class="kc">희석뇨 vs 등장뇨</td><td>희석 &lt;1.008 = 신장이 <b>일하는 중</b> (요붕증) / 등장뇨 = 신장이 손 놓음 (신성)</td></tr>
+<tr class="hi"><td class="kc">요 pH vs 혈액 pH</td><td>요 pH로 혈액 pH 판단 <b>불가</b> — 심한 구토(대사성 알칼리증)인데 산성뇨 가능</td></tr>
+</tbody></table>
+<span class="pno">21</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 — 개념 확인</h2>
+<table><caption>표 21. 개념 확인 (답은 오른쪽 칸 가리고 풀기)</caption><thead><tr><th style="width:5%">#</th><th>질문</th><th style="width:42%">답</th></tr></thead><tbody><tr><td class="c">1</td><td>USG를 dipstick으로 재면 안 되는 이유는?</td><td>정확도 낮음 — 굴절계가 osmolality와 상관성 좋음 (그래도 절대적 X)</td></tr><tr class="hi"><td class="c">2</td><td>탈수 + 정상 신기능일 때 개·고양이의 USG 기대값은?</td><td>개 ≥1.030 / 고양이 ≥1.040 (10/2: 1.035)</td></tr><tr><td class="c">3</td><td>USG 검사를 수액·이뇨제 전에 해야 하는 이유와, 비중을 낮추는 약물 3개 이상?</td><td>처치 후엔 신기능 반영 X / glucocorticoid, diuretics, aminoglycoside, fluid, anticonvulsant, thyroid hormone, methoxyflurane</td></tr><tr><td class="c">4</td><td>결석 + 알칼리뇨면 먼저 떠올릴 것과 처치는?</td><td>Urease 세균(Staph·Proteus) 감염 → 항생제</td></tr><tr><td class="c">5</td><td>후기 proximal RTA의 요 pH는?</td><td>산성뇨 (초기엔 알칼리뇨)</td></tr><tr class="hi"><td class="c">6</td><td>1.007 trace와 1.030 trace 중 의미 있는 쪽은?</td><td>1.007 (희석됐는데도 검출)</td></tr><tr><td class="c">7</td><td>단백뇨 판단을 보류해야 하는 상황은?</td><td>출혈·염증 심할 때 (UTI·창상·종양·채뇨 혈액 혼입)</td></tr><tr><td class="c">8</td><td>Glomerular와 tubular 단백뇨의 혈중 알부민 차이?</td><td>저알부민혈증 vs 정상</td></tr><tr><td class="c">9</td><td>Alb 1.5 이하일 때 간·신장·장 감별 포인트?</td><td>간: 합성↓(Glob↑ 가능) / 신장: Alb만↓ + 단백뇨 / 장: Alb·Glob 모두↓</td></tr><tr class="hi"><td class="c">10</td><td>개·고양이 요당 배설 역치는?</td><td>개 170–180 (180–220) / 고양이 260–310 (290)</td></tr><tr><td class="c">11</td><td>혈당 정상인데 요당 → 감별 2가지?</td><td>Renal glucosuria, Fanconi syndrome</td></tr><tr><td class="c">12</td><td>개에서 DM이 진단되면 꼭 같이 볼 것?</td><td>쿠싱증후군 (HAC)</td></tr><tr><td class="c">13</td><td>Dipstick이 검출 못 하는 케톤체는?</td><td>β-hydroxybutyric acid</td></tr><tr><td class="c">14</td><td>빌리루빈 검체 보관 주의점 2가지?</td><td>실온 방치 금지, 빛(직사광선) 차단</td></tr><tr><td class="c">15</td><td>Blood pad에서 RBC와 Hb의 반응 모양 차이?</td><td>점상(speckled) vs 균일 변색</td></tr><tr class="hi"><td class="c">16</td><td>혈색소뇨와 근색소뇨를 가르는 검사?</td><td>혈장 색 — 분홍(Hb) vs 정상(Mb)</td></tr><tr><td class="c">17</td><td>RBC가 소변 안에서 용혈되는 조건?</td><td>pH ≥8 또는 USG &lt;1.008</td></tr><tr><td class="c">18</td><td>Blood pad 위양성 원인 3개 이상?</td><td>H₂O₂, 세균 peroxidase, hypochlorite·chlorine, formaldehyde, 오래된 시약</td></tr><tr><td class="c">19</td><td>개·고양이 혈뇨의 가장 흔한 원인?</td><td>개: UTI &gt; 결석 (수컷 전립선) / 고양이: 특발성 방광염</td></tr><tr><td class="c">20</td><td>Nitrite pad를 무시하는 이유?</td><td>위음성 많음 → 도말 표본 확인</td></tr><tr><td class="c">21</td><td>고양이에서 leukocyte pad를 안 쓰는 이유?</td><td>Sp 34% — 백혈구 없어도 양성</td></tr><tr><td class="c">22</td><td>HAC·DM 환자 세균뇨 평가 원칙?</td><td>UTI 소견 없어도 배양</td></tr><tr><td class="c">23</td><td>실처럼 긴 세균이 보일 때 먼저 확인할 것?</td><td>항생제 투약 이력 (E. coli aberrant form)</td></tr><tr><td class="c">24</td><td>Cast의 기질 단백은? cast가 없으면 신장 정상인가?</td><td>Tamm-Horsfall mucoprotein / 아님 (만성·희석뇨·알칼리뇨에선 안 보임)</td></tr><tr><td class="c">25</td><td>Hyaline · granular · waxy · 상피성 · WBC cast의 의미?</td><td>이뇨·탈수교정·단백뇨 / 세뇨관 괴사 / 만성 / active tubular injury / 세뇨관간질 염증</td></tr><tr><td class="c">26</td><td>Common crystal 4개?</td><td>CaOx dihydrate, Ca carbonate, struvite, bilirubin</td></tr><tr class="hi"><td class="c">27</td><td>CaOx monohydrate가 나타나는 시간(고양이·개)?</td><td>~3시간 / 4–6시간 (EG 중독)</td></tr><tr><td class="c">28</td><td>Ammonium urate가 나오는 품종과 질환?</td><td>달마시안·잉글리쉬 불독 / PSS 등 간부전</td></tr></tbody></table>
+<span class="pno">22</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 ② — 미니 케이스</h2>
+<table><caption>표 22. 미니 케이스 (정리자 구성 — 답 가리고 풀기)</caption><thead><tr><th style="width:5%">#</th><th>상황</th><th style="width:42%">답</th></tr></thead><tbody><tr><td class="c">1</td><td>개 5세, 구토 3일, 탈수 7%. BUN 95, Cr 4.2, <b>USG 1.010</b>, 침사 granular cast 다수.</td><td>탈수인데 비농축 + granular cast → <b>신성 (급성 세뇨관 손상)</b>. 원인(독성·약물) 이력 확인</td></tr><tr><td class="c">2</td><td>고양이 8세, 혈당 <b>240</b>, 요당 음성, 최근 병원 와서 몹시 흥분.</td><td>고양이 역치(260–310) 미만 → 요당 음성 정상 / <b>스트레스 고혈당</b> 가능 → 프럭토사민 등 재평가 <span class="gray">(정리자 보충)</span></td></tr><tr><td class="c">3</td><td>개, 붉은 소변. Blood 4+, 침사 RBC 0–1, 원심 후에도 상층 붉음, <b>혈장 분홍</b>, Hct 18, 구형적혈구.</td><td><b>혈색소뇨</b> — 혈관내 용혈 (IMHA 등)</td></tr><tr><td class="c">4</td><td>개, 경련 후 갈색 소변. Blood 3+, 침사 RBC 0, <b>혈장 맑음</b>, CK 크게↑.</td><td><b>근색소뇨</b> (myoglobinuria)</td></tr><tr><td class="c">5</td><td>고양이, 자연배뇨 검체에서 단백 2+, USG 1.045, RBC TNTC, WBC 많음.</td><td>출혈·염증 → <b>단백뇨 판단 보류</b>, 처치 후 재검 → 그래도 지속되면 UPC</td></tr><tr><td class="c">6</td><td>개, 방광 결석 + <b>pH 8.5</b> + struvite 결정 + 세균.</td><td>Urease 세균(Staph·Proteus) → <b>배양 + 항생제</b> 먼저</td></tr><tr><td class="c">7</td><td>요크셔테리어 1세, 성장 부진, ammonium urate 결정, BUN↓.</td><td>달마시안·불독이 아니므로 → <b>PSS</b> 의심 (bile acid·영상) <span class="tag t-lnk">↔ 간 정리본</span></td></tr><tr><td class="c">8</td><td>개 9세, DM 치료 중. 요 케톤 1+, 혈당 420, 헐떡임, ALP↑, 겸부 탈모.</td><td>DM + 케톤 → DKA 위험 / <b>쿠싱 동반 체크</b> / UTI 증상 없어도 배양</td></tr><tr><td class="c">9</td><td>개, 다른 병으로 2주 항생제 복용. 방광천자 침사에 <b>실처럼 긴 막대균</b>.</td><td>불충분한 항생제 농도의 <b>aberrant E. coli</b> 가능 → Nocardia 단정 X, 배양</td></tr><tr><td class="c">10</td><td>개, BUN·Cr 정상, USG 1.025, 단백 4+, 침사 깨끗, Alb 1.2, Chol 480, 복수.</td><td><b>Incomplete nephrotic syndrome</b> (사구체) → UPC 측정 (≥5면 GN 수준)</td></tr></tbody></table>
+<div class="memo green">
+<div class="mt">✔ 녹음 정리본에서 "확인 필요"로 남긴 것 (이 정리본에서도 확정 안 함)</div>
+<ul class="d">
+<li>고양이 USG 1.035(10/2) ↔ 1.040(10/16) — 두 강의 기준이 다름</li>
+<li>Vitamin C와 요당 반응 — 구술로만 언급, 슬라이드 근거 없음 → 본문에 안 넣음</li>
+<li>Case 1·6 표에 Cr 단위가 g/dL로 적힘 (mg/dL로 읽음) / Hyaline "중성뇨에서 분해" 표현 / cast 복합 사진(p.52)의 1–4번 설명 순서</li>
+</ul></div>
+<span class="pno">23</span>
+</section>
+</body>
+</html>

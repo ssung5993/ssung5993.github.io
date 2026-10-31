@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5. 개의 심근병증(DCM·ARVC) 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative; overflow:hidden;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+h2.lv1 .en,h3.lv2 .en{font-size:12.6px;color:var(--gray);font-weight:400;margin-left:4px;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+ol.n{margin:0 0 0 34px;padding:0;counter-reset:n;list-style:none;}
+ol.n>li{counter-increment:n;padding-left:20px;}
+ol.n>li::before{content:counter(n,decimal) ")";color:var(--magenta);font-weight:700;}
+p.txt{margin:2px 0 4px 30px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+.t-why{background:#e6f6ee;color:#0b7a55;border:1px solid #8fd1b2;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.memo ol.n{margin-left:6px;}
+.memo p{margin:2px 0;}
+.side{float:right;width:44%;border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:4px 0 8px 12px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.blk::after{content:"";display:block;clear:both;}
+
+/* 원리 박스 (정리자 보충) */
+.why{border-left:5px solid #0f9268;background:#f2fbf6;padding:7px 12px 8px;margin:8px 4px 12px 20px;color:var(--ink);border-radius:0 6px 6px 0;}
+.why .mt{font-weight:700;color:#0b7a55;margin-bottom:2px;}
+.why .mt::before{content:"💡 ";}
+.why ul.d{margin-left:4px;}
+.why ul.d>li::before{color:#0f9268;}
+.why ul.c{margin-left:20px;}
+.why p{margin:2px 0;}
+
+/* 인과 사슬 */
+.chain{margin:6px 0 10px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;color:var(--ink);font-size:12.6px;line-height:17px;}
+.chain span{background:#fff;border:1.5px solid #4A6B66;border-radius:5px;padding:3px 7px;}
+.chain span.hot{border-color:var(--red);background:#fff1f1;font-weight:700;}
+.chain span.end{background:#13756A;border-color:#13756A;color:#fff;font-weight:700;}
+.chain i{font-style:normal;color:var(--red);font-weight:700;padding:0 5px;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;min-width:0;}
+.two table{margin-left:0;width:100%;}
+.three{display:flex;gap:6px;margin:6px 0 4px 20px;}
+.three>div{flex:1;min-width:0;background:#fff;border:1.5px solid #c9d3d1;border-radius:6px;padding:6px 4px 4px;}
+.three .cap{text-align:center;font-weight:700;color:#111;font-size:13px;margin-bottom:2px;}
+
+/* 순서도 */
+.tree{margin:6px 0 12px 20px;color:var(--ink);font-size:12.2px;line-height:16px;}
+.tree .row{display:flex;gap:8px;align-items:stretch;margin:0 0 6px;}
+.tree .nd{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:6px;padding:5px 8px;}
+.tree .nd.top{background:#13756A;color:#fff;border-color:#13756A;text-align:center;font-weight:700;}
+.tree .nd.q{background:#D8ECE7;font-weight:700;text-align:center;color:#12403B;}
+.tree .nd.hot{border-color:var(--red);background:#fff4f4;}
+.tree .nd b.h{display:block;color:#111;margin-bottom:1px;}
+.tree .ar{text-align:center;color:var(--red);font-weight:700;margin:-3px 0 3px;}
+
+/* 셀프체크 */
+.qa{margin:6px 4px 10px 20px;border:2px dashed #7B52C9;background:#faf7ff;padding:8px 12px;color:var(--ink);}
+.qa .mt{font-weight:700;color:#7B52C9;margin-bottom:3px;}
+.qa .q{font-weight:700;color:#111;margin-top:4px;}
+.qa .a{color:#3A4A63;font-size:12.6px;margin-left:14px;}
+
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two,.three{display:block;margin-left:0;}
+  .three>div{margin-bottom:6px;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo,.why,.qa,.tree,.chain{margin-left:0;}
+  .tree .row{flex-direction:column;}
+}
+</style>
+<style>
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.strip{margin:6px 4px 10px 20px;border:1.5px solid #e5b9b9;background:#fff;border-radius:5px;padding:4px 6px 3px;}
+.strip .st{font-weight:700;font-size:12.4px;color:#111;margin:0 0 2px 2px;line-height:17px;}
+ul+.tnote,ol+.tnote,div+.tnote,p+.tnote{margin-top:2px;}
+@media (max-width:800px){.strip{margin-left:0;}}
+</style>
+</head>
+<body>
+
+
+
+<section class="page" style=""><h1 class="doc-title"><span class="num">5.</span> 개의 심근병증 — DCM · ARVC · 타우린 결핍 <span class="en">Canine Cardiomyopathy</span></h1><p class="doc-sub">소동물내과 · 강의 PDF 1–23p + 슬라이드 필기 + 수업 녹음 ⑤ 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트 &nbsp;<span class="tag t-why">원리</span> 💡박스 = 강의에 없던 원리 설명(정리자 보충)</p><hr class="hr-hand"><table>
+<caption>표 1. 이번 강의 한눈에 — "약한 근육 → 늘어나는 심장 → 부정맥 또는 폐수종"</caption>
+<thead><tr><th style="width:18%">흐름</th><th style="width:30%">무슨 일?</th><th>키워드</th></tr></thead>
+<tbody>
+<tr><td class="kc">① 원인</td><td>심근 자체가 약하게 태어남 (대부분 유전)</td><td>순종견, <b>태어날 때부터 있다가 서서히 진행</b> / 영양성 = <b>타우린 결핍</b>(American cocker spaniel)</td></tr>
+<tr class="hi"><td class="kc">② 1차 이상</td><td>수축력↓ → 다 못 짜냄</td><td><b>ESD↑ (primary)</b> → FS <b>&lt; 25%</b> (심부전 시 &lt; 15%)</td></tr>
+<tr><td class="kc">③ 보상</td><td>더 크게 채워서 1회 박출량 유지</td><td><b>EDD↑ (secondary)</b> = 편심성 비대, 벽은 얇아짐 → <b>globoid</b> 심장, 기능성 MR(중심성 제트), S3 gallop, EPSS↑</td></tr>
+<tr class="hi"><td class="kc">④ 사망 경로 A</td><td>부정맥</td><td><b>VT → VF → 돌연사</b> (Doberman · Boxer) / AF(거대견 80%) / 서맥 = 말기 리듬</td></tr>
+<tr><td class="kc">⑤ 사망 경로 B</td><td>울혈성 심부전</td><td>LA 확대 → 폐수종 → 호흡곤란 (자연사 또는 안락사)</td></tr>
+<tr class="hi"><td class="kc">⑥ 치료</td><td>심부전 + 수축력 + 부정맥</td><td>Furosemide + ACEI + <b>Pimobendan(필수)</b> ± 항부정맥제 / ARVC = <b>Sotalol</b> / 타우린 결핍 = <b>Taurine ± carnitine</b></td></tr>
+</tbody>
+</table><h2 class="lv1">Ⅰ. 심근병증의 분류 <span class="en">Cardiomyopathy (WHO)</span></h2><div class="two">
+<div>
+<ul class="d">
+<li><b>Dilated</b> CM (DCM) — 확장성</li>
+<li><b>Hypertrophic</b> CM (HCM) — 비대성</li>
+<li><b>Restrictive</b> CM (RCM) — 제한성</li>
+<li><b>Arrhythmogenic RV</b> CM (ARVC) — 부정맥 유발성 우심실</li>
+<li>Unclassified CM — 미분류</li>
+<li>Specific CM — 원인이 명확한 2차성 (예: <b>Adriamycin(doxorubicin) 독성</b>)</li>
+</ul>
+</div>
+<div>
+<div class="memo">
+<div class="mt">Cats and dogs are different!!! <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li><b>개</b>: <b>DCM이 가장 흔함</b> (dilated, most common in dogs) → 그다음 HCM(± 폐쇄성), ARVC(Boxer), RCM, 미분류</li>
+<li><b>고양이</b>: HCM이 대부분 → 다음 강의</li>
+<li>같은 "심근병증"이라도 종에 따라 흔한 형태·원인·치료가 다름</li>
+</ul>
+</div>
+</div>
+</div><div class="memo blue">
+<div class="mt">Different and unknown — 아직 모르는 게 많은 병</div>
+<ul class="c">
+<li>근본적으로 미지(fundamentally unknown): <b>역학(epidemiology) · 자연 경과(natural history) · 원인(etiology)</b> 모두 불명확, 유전 연구는 진행 중</li>
+<li>과학적 근거 자료가 아직 "기술(descriptive)" 수준에 머묾 → 그래서 교과서마다 숫자·분류가 조금씩 다름</li>
+</ul>
+</div><div class="why">
+<div class="mt">"심근병증"의 의미 — 판막병·선천성 기형과 무엇이 다른가</div>
+<ul class="d">
+<li>1장(선천성)·4장(MMVD)은 <b>구조물(구멍·판막)</b>이 고장 나서 피의 흐름이 틀어지고, 그 부담을 심근이 떠안는 병</li>
+<li>심근병증은 거꾸로 <b>펌프 근육 자체</b>가 1차 고장. 판막·혈관이 멀쩡해도 근육이 약하거나(DCM) 두꺼워지거나(HCM) 굳거나(RCM) 전기적으로 불안정(ARVC)</li>
+<li>Adriamycin이 "specific"인 이유: 원인이 분명함. 독소루비신은 심근세포 미토콘드리아에서 <b>활성산소</b>를 만들고, 심근은 항산화 효소가 적어 손상이 <b>누적 용량</b>에 비례해 쌓임 → DCM과 비슷한 모양으로 끝남 <span class="tag t-why">원리</span></li>
+</ul>
+</div><span class="pno">1</span></section><section class="page" style=""><h2 class="lv1">Ⅱ. 개의 확장성 심근병증 <span class="en">Canine Dilated Cardiomyopathy</span></h2><h3 class="lv2">1. 정의 <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>Inherent disease of the myocardium that results in a decrease in myocardial contractility</b></span> — 심근 자체의 내재적 질환으로 <b>수축력이 떨어지는</b> 병</p><ul class="d">
+<li>대부분 <b>유전적 이상</b>일 가능성 — 주로 <b>순종견(purebred)</b>에서</li>
+<li>병은 아마 <b>태어날 때부터 있고</b>, 그때부터 <b>서서히 진행</b> (present at birth → slowly progresses)</li>
+<li>영양성 원인: <b>타우린 결핍(taurine deficiency)</b> → Ⅹ장</li>
+<li>질병을 정의할 때는 핵심 단어가 들어가야 함 → DCM = <b>심근이 얇아짐 + 편심성으로 바깥으로 퍼짐 + 수축(systolic) 기능 장애</b> <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">"태어날 때부터 있는데" 왜 중년이 돼서야 증상이 나오나</div>
+<ul class="d">
+<li>심장은 예비력이 큼. 수축력이 조금 떨어져도 <b>보상기전</b>(교감신경 → 심박·수축력↑, RAAS → 체액량↑, 심실 확장 → Frank-Starling)이 박출량을 정상처럼 맞춰 줌</li>
+<li>이 시기 = <b>잠복기(occult / preclinical DCM)</b>: 겉으론 멀쩡, 초음파·Holter로만 이상이 보임 → 그래서 Doberman은 <b>선별검사</b>를 함(Ⅴ-3)</li>
+<li>보상이 한계를 넘는 순간(보통 중년 이후) 갑자기 <b>심부전 또는 부정맥 증상</b>으로 내원 → 보호자 입장에선 "갑자기 생긴 병"</li>
+</ul>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 2. DCM 자연 경과 — 긴 잠복기 후 갑자기 드러남 (개념도)</div><svg viewBox="0 0 620 214" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="DCM 자연 경과와 잠복기"><path d="M60,24 L60,164 L580,164" stroke="#1B2A44" stroke-width="1.6" fill="none"></path><text x="320.0" y="198" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">나이 → (태어날 때부터 서서히 진행)</text><rect x="60" y="24" width="353.6" height="140" fill="#f2f6fb"></rect><text x="236.8" y="38" text-anchor="middle" font-size="11" fill="#2B5FC4" font-weight="700">잠복기 (occult) — 겉으론 정상</text><text x="496.8" y="38" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">임상기 (overt)</text><polyline points="60.0,156.0 73.0,156.0 86.0,156.0 99.0,155.9 112.0,155.7 125.0,155.5 138.0,155.2 151.0,154.8 164.0,154.3 177.0,153.7 190.0,153.0 203.0,152.2 216.0,151.2 229.0,150.1 242.0,148.8 255.0,147.4 268.0,145.8 281.0,144.1 294.0,142.2 307.0,140.1 320.0,137.9 333.0,135.4 346.0,132.8 359.0,129.9 372.0,126.9 385.0,123.6 398.0,120.1 411.0,116.4 424.0,112.5 437.0,108.3 450.0,103.9 463.0,99.3 476.0,94.4 489.0,89.3 502.0,83.9 515.0,78.3 528.0,72.4 541.0,66.2 554.0,59.7 567.0,53.0 580.0,46.0" fill="none" stroke="#7B52C9" stroke-width="2.6"></polyline><polyline points="60.0,54.0 73.0,54.0 86.0,54.0 99.0,54.0 112.0,54.0 125.0,54.0 138.0,54.0 151.0,54.0 164.0,54.0 177.0,54.0 190.0,54.0 203.0,54.0 216.0,54.2 229.0,54.5 242.0,54.9 255.0,55.5 268.0,56.2 281.0,57.1 294.0,58.2 307.0,59.4 320.0,60.8 333.0,62.4 346.0,64.2 359.0,66.1 372.0,68.3 385.0,70.6 398.0,73.2 411.0,75.9 424.0,78.9 437.0,82.0 450.0,85.3 463.0,88.9 476.0,92.7 489.0,96.6 502.0,100.8 515.0,105.2 528.0,109.8 541.0,114.6 554.0,119.7 567.0,125.0 580.0,130.5" fill="none" stroke="#0F9268" stroke-width="2.6"></polyline><text x="320.0" y="120" text-anchor="middle" font-size="9.5" fill="#7B52C9" font-weight="700">Holter VPC 수 (Doberman은 먼저 증가)</text><text x="164.0" y="64" text-anchor="middle" font-size="9.5" fill="#0F9268" font-weight="700">FS (수축력)</text><line x1="413.6" y1="24" x2="413.6" y2="164" stroke="#E23B3B" stroke-width="2" stroke-dasharray="5 3"></line><text x="419.6" y="74" text-anchor="start" font-size="10" fill="#E23B3B" font-weight="700">보상 소진</text><text x="486.4" y="98" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">CHF 또는</text><text x="486.4" y="112" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">돌연사</text><text x="236.8" y="180" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">← 선별검사(초음파 + Holter)로 찾을 수 있는 구간</text><text x="14" y="94.0" text-anchor="middle" font-size="9" fill="#1B2A44"></text></svg></div></div><h3 class="lv2">2. 신호 (Signalment)</h3><ul class="d">
+<li>대부분 <b>중년~노령견</b>이 <b>심부전 상태로</b> 내원</li>
+<li>더 일찍 발견되는 경우: <b>선별검사(screening)</b>를 했거나, 증상을 일으키거나 청진에서 들리는 <b>부정맥</b>이 먼저 생긴 경우</li>
+<li>대형·거대견은 소형견보다 <b>수명이 짧아서 5–6살이면 이미 중·노령</b>으로 분류 <span class="tag t-rec">수업</span></li>
+<li><b>성별</b>: 반성 유전(sex-linked)은 <b>아니지만</b> 수컷 우세처럼 보임 → 수컷이 <b>더 빨리 진행</b>, <b>더 심한</b> 경향 (증거는 없지만 같은 DCM이라도 수컷이 더 빨리 더 나쁜 상태로) <span class="tag t-ex">시험</span></li>
+</ul><span class="pno">2</span></section><section class="page" style=""><h3 class="lv2">3. 호발 품종 (&gt; 90%) <span class="tag t-ex">시험</span></h3><table>
+<caption>표 2. 흔히 이환되는 품종 — 90% 이상이 여기서</caption>
+<thead><tr><th style="width:24%">그룹</th><th style="width:30%">품종</th><th>특징 / 연결 포인트</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Doberman pinscher</td><td>가장 대표</td><td><b>VT·돌연사</b> 많음, 선별검사 기준 따로 있음, 예후 가장 나쁨 (돌연사 <b>20%</b>)</td></tr>
+<tr class="hi"><td class="kc">Boxer</td><td>—</td><td>VT 많음 → 따로 <b>ARVC("Boxer cardiomyopathy")</b> (Ⅸ장)</td></tr>
+<tr><td class="kc">Giant breeds</td><td>Great Dane, Irish wolfhound, St. Bernard, Newfoundland</td><td><b>AF</b>가 특징 (거대견의 <b>80%</b>)</td></tr>
+<tr><td class="kc">American cocker spaniel</td><td>중형견 중 거의 유일</td><td><b>타우린</b> 관련 — 정상 개체도 혈중 타우린이 낮게 유지 → 영양 불균형에 오래 노출되면 DCM <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">기타</td><td>Dalmatian, Portuguese water dog</td><td>—</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">왜 순종 · 대형견에 몰리나 <span class="tag t-why" style="margin-left:4px;">정리자 보충</span></div>
+<ul class="d">
+<li>순종 = 적은 수의 조상에서 근친 교배 → 특정 <b>유전자 변이가 집단 안에 농축</b>. 실제로 Doberman에선 PDK4·titin 유전자 변이, Boxer ARVC에선 striatin 변이가 보고됨(모든 개체를 설명하진 못함)</li>
+<li>대형견의 심장은 원래 크고, 큰 심실 = 벽응력(Laplace)이 큰 상태로 평생 일함 → 근육이 약하면 더 빨리 무너짐 (Ⅲ장 원리)</li>
+</ul>
+</div><h2 class="lv1">Ⅲ. 병리 — 어떻게 생긴 심장인가</h2><div class="three" style="display:block;"><div><div class="cap">심실 단면 비교 — 정상 vs DCM vs HCM (모식도)</div><svg viewBox="0 0 600 222" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="정상, DCM, HCM 심실 단면 비교"><circle cx="60" cy="96" r="51" fill="#c0392b" fill-opacity=".55" stroke="#7a1f1f" stroke-width="1.2"></circle><circle cx="60" cy="96" r="44" fill="#fff" stroke="#7a1f1f" stroke-width=".8"></circle><circle cx="100" cy="96" r="46" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="100" cy="96" r="28" fill="#fff" stroke="#7a1f1f" stroke-width="1"></circle><text x="102" y="100" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">LV</text><text x="30" y="100" text-anchor="middle" font-size="10" fill="#6C7787">RV</text><text x="92" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#6C7787">정상</text><circle cx="242" cy="96" r="60" fill="#c0392b" fill-opacity=".55" stroke="#7a1f1f" stroke-width="1.2"></circle><circle cx="242" cy="96" r="56" fill="#fff" stroke="#7a1f1f" stroke-width=".8"></circle><circle cx="300" cy="96" r="70" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="300" cy="96" r="61" fill="#fff" stroke="#7a1f1f" stroke-width="1"></circle><text x="302" y="100" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">LV</text><text x="200" y="100" text-anchor="middle" font-size="10" fill="#6C7787">RV</text><text x="292" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#E23B3B">DCM (개)</text><circle cx="461" cy="96" r="45" fill="#c0392b" fill-opacity=".55" stroke="#7a1f1f" stroke-width="1.2"></circle><circle cx="461" cy="96" r="38" fill="#fff" stroke="#7a1f1f" stroke-width=".8"></circle><circle cx="505" cy="96" r="54" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="505" cy="96" r="16" fill="#fff" stroke="#7a1f1f" stroke-width="1"></circle><text x="507" y="100" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">LV</text><text x="437" y="100" text-anchor="middle" font-size="10" fill="#6C7787">RV</text><text x="497" y="212" text-anchor="middle" font-size="13" font-weight="700" fill="#2B5FC4">HCM (고양이 · 참고)</text><text x="92" y="186" text-anchor="middle" font-size="10.5" fill="#1B2A44">RV 1 : IVS 3 : LVFW 3</text><text x="290" y="186" text-anchor="middle" font-size="10.5" fill="#1B2A44">벽 전부 얇아짐 + 내강↑↑ → 공 모양</text><text x="500" y="186" text-anchor="middle" font-size="10.5" fill="#1B2A44">벽 두꺼움 + 내강↓</text></svg></div></div><ul class="d">
+<li>정상 심근 두께 비율: <b>RV 1 : 심실중격(IVS) 3 : LV 자유벽 3</b> 정도 <span class="tag t-pen">필기</span> <span class="tag t-rec">수업</span></li>
+<li>DCM 부검 심장: 세 벽 두께가 <b>비슷비슷</b>해짐 = LV·중격이 <b>얇아짐</b> + 심실 내강이 <b>편심성으로 바깥으로 퍼짐</b> → 공처럼 둥근 심장 <span class="tag t-rec">수업</span></li>
+<li>기능적으로는 <b>수축이 안 되는 systolic dysfunction</b> <span class="tag t-ex">시험</span></li>
+</ul><span class="pno">3</span></section><section class="page" style=""><div class="why">
+<div class="mt">왜 "커지는데 얇아지나" — 편심성 확장과 Laplace 법칙</div>
+<ul class="d">
+<li>4장 MMVD처럼 심실이 커질 때는 근세포가 <b>직렬로 근절을 추가(길어짐)</b> → 내강↑. MMVD는 "피가 너무 많이 들어와서" 늘어나고, DCM은 "<b>못 짜내서 남은 피 + 보상용 체액 증가</b>" 때문에 늘어남</li>
+<li>근육 총량이 같거나 줄어든 상태로 풍선이 커지니 <b>벽이 얇아짐</b>. MMVD 보상기엔 벽 두께가 어느 정도 유지되는데, DCM은 근육 자체가 병들어 있어 두꺼워질 능력이 부족</li>
+<li><b>Laplace: 벽응력 ∝ 압력 × 반지름 / 벽 두께</b> → 반지름↑ + 두께↓ = 벽응력↑↑ → 근세포 하나하나가 더 세게 버텨야 함 → 산소 소모↑ → 근세포 손상·섬유화 → 수축력 더↓ → 더 늘어남 = <b>악순환</b></li>
+</ul>
+</div><div class="chain"><span class="hot">수축력↓ (1차)</span><i>→</i><span>ESV↑ (못 짜냄)</span><i>→</i><span>RAAS·교감 → 체액↑</span><i>→</i><span>EDV↑ (확장)</span><i>→</i><span>반지름↑·벽 얇아짐</span><i>→</i><span>벽응력↑</span><i>→</i><span class="end">수축력 더↓</span></div><div class="three" style="display:block;"><div><div class="cap">그림 1. DCM의 악순환 — 커질수록 더 나빠지는 이유</div><svg viewBox="0 0 640 300" width="100%" style="max-width:640px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="DCM 악순환"><defs><marker id="h18r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h18b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h18k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h18g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h18v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h18o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h18n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M360.8,40.9 A181.4,112.0 0 0 1 432.8,62.3" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M483.7,101.7 A181.4,112.0 0 0 1 501.4,149.7" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M483.3,198.8 A181.4,112.0 0 0 1 433.5,237.4" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M359.9,259.3 A181.4,112.0 0 0 1 280.1,259.3" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M206.5,237.4 A181.4,112.0 0 0 1 156.7,198.8" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M138.6,149.7 A181.4,112.0 0 0 1 156.3,101.7" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><path d="M207.2,62.3 A181.4,112.0 0 0 1 279.2,40.9" fill="none" stroke="#E23B3B" stroke-width="2.2" marker-end="url(#h18r)"></path><rect x="292.2" y="25.0" width="55.6" height="26" rx="8" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="320.0" y="42.5" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">수축력↓</text><rect x="401.2" y="67.2" width="121.4" height="26" rx="8" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="461.9" y="84.7" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">ESV↑ (못 짜냄)</text><rect x="426.8" y="161.9" width="140.2" height="26" rx="8" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="496.9" y="179.4" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">RAAS·교감 → 체액↑</text><rect x="333.3" y="237.9" width="130.8" height="26" rx="8" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="398.7" y="255.4" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">EDV↑ · 심실 확장</text><rect x="175.9" y="237.9" width="130.8" height="26" rx="8" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="241.3" y="255.4" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">반지름↑ · 벽 얇아짐</text><rect x="68.3" y="161.9" width="149.6" height="26" rx="8" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="143.1" y="179.4" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">벽응력↑ (Laplace)</text><rect x="79.8" y="67.2" width="196.6" height="26" rx="8" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="178.1" y="84.7" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">산소 소모↑ → 근세포 손상·섬유화</text><text x="320" y="144" text-anchor="middle" font-size="12" fill="#1B2A44" font-weight="700">벽응력 = 압력 × 반지름</text><text x="320" y="162" text-anchor="middle" font-size="12" fill="#1B2A44" font-weight="700">÷ 벽 두께</text><text x="320" y="184" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">커질수록 더 나빠진다</text></svg></div></div><h2 class="lv1">Ⅳ. 부정맥과 사망 경로 <span class="en">Arrhythmias</span></h2><table>
+<caption>표 3. DCM의 부정맥 3종 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:24%">부정맥</th><th style="width:36%">슬라이드</th><th>의미 <span class="tag t-rec" style="background:#fff;">수업</span></th></tr></thead>
+<tbody>
+<tr><td class="kc">Atrial fibrillation (AF)</td><td><b>거대견의 80%</b> / <b>Doberman의 30%</b></td><td>거대견은 정상이어도 심장·심방이 커서 흔히 보임. <b>AF 자체는 생명을 직접 위협하진 않음(not life-threatening)</b></td></tr>
+<tr class="hi"><td class="kc">Ventricular tachyarrhythmias</td><td><b>Doberman · Boxer</b>에서 가장 흔함 / <b>실신·돌연사의 가장 흔한 원인</b></td><td>더 치명적. VT → VF → 사망</td></tr>
+<tr><td class="kc">Bradyarrhythmias</td><td><b>말기 리듬(terminal rhythm)</b> / 덜 흔한 돌연사 원인</td><td>심부전에선 원래 빨리 뛰어야 정상(보상성 빈맥) → 지치면 서서히 느려지다 정지</td></tr>
+</tbody>
+</table><span class="pno">4</span></section><section class="page" style=""><div class="why">
+<div class="mt">세 부정맥이 왜 이렇게 다른 무게를 갖나</div>
+<ul class="d">
+<li><b>AF가 거대견에 흔한 이유</b>: 세동은 심방 안에 작은 재진입 회로 여러 개가 동시에 돌아야 유지됨 → 그만큼의 "공간(임계 질량)"이 필요. 거대견 심방은 원래 크고, DCM으로 LA까지 커지면 AF가 자리 잡기 쉬움 (3장 AF 원리)</li>
+<li><b>AF가 덜 치명적인 이유</b>: 심실은 여전히 규칙적인 전도계를 통해 수축. 잃는 건 <b>심방 수축(atrial kick)</b>과 리듬 규칙성 → 박출량은 줄지만 바로 죽지는 않음. 문제는 <b>너무 빠른 심실 반응</b> → 그래서 치료 목표는 "리듬 복원"보다 <b>심박수 조절(rate control)</b></li>
+<li><b>VT가 치명적인 이유</b>: 심실이 너무 빨리 뛰면 이완기가 짧아 <b>채울 시간이 없음</b> → 박출량 급감 → 뇌 관류↓ = <b>실신</b>. 늘어나고 섬유화된 DCM 심근은 전기적으로 불균일 → VT가 <b>VF</b>로 무너지면 = <b>돌연사</b></li>
+<li><b>서맥이 "말기"인 이유</b>: 저산소·산증·전해질 이상으로 동방결절·전도계마저 지치면 자동능이 꺼짐 → 심장이 멈추기 직전의 리듬</li>
+</ul>
+</div><h3 class="lv2">1. Holter로 본 돌연사 과정 <span class="tag t-rec">수업</span></h3><div class="chain"><span>정상 리듬 (Lead II)</span><i>→</i><span>VPC 산발</span><i>→</i><span>다형성 · bigeminy</span><i>→</i><span class="hot">VT</span><i>→</i><span class="hot">VF (거친 → 미세)</span><i>→</i><span class="end">사망</span></div><ul class="d">
+<li>진단용 짧은 ECG에서 VT가 이 정도 잡히면 → <b>Holter(24시간)</b>·이벤트 모니터링을 하면 훨씬 더 많은 이상이 나옴</li>
+<li>Holter 증례: AF가 있는 상태에서 VPC가 다형성·bigeminy로 나오다가 갑자기 VT → VF(거친 형태 → 미세한 형태)로 사망</li>
+</ul><h3 class="lv2">2. DCM 개가 죽는 두 갈래 <span class="tag t-ex">시험</span></h3><div class="tree">
+<div class="row"><div class="nd top">DCM (수축력↓ + 심장 확장 + 전기적 불안정)</div></div>
+<div class="ar">↙ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ↘</div>
+<div class="row">
+<div class="nd hot"><b class="h">A. 부정맥 → 돌연사</b>걷다가, 놀다가 갑자기 (VT → VF). Doberman 돌연사 <b>20%</b></div>
+<div class="nd"><b class="h">B. 울혈성 심부전</b>부정맥이 잘 조절되거나 잘 적응한 개 → 폐수종 → 호흡곤란 → 자연사 또는 안락사</div>
+</div>
+</div><ul class="c"><li>증례: 체중 매우 큰 거대견 — DCM + 심장사상충이 같이 있던 개. 흉부 X-ray에서 심장 전체가 커져 있고 폐포 패턴의 심한 폐수종 → 치료 후 퇴원했지만 결국 사망 <span class="tag t-rec">수업</span></li></ul><h2 class="lv1">Ⅴ. 진단 ① — 심장초음파 <span class="en">Echocardiography</span></h2><p class="txt kwn">DCM은 <b>심장초음파로 진단</b>. 핵심 체크 두 가지 = <b>FS(얼마나 수축하나)</b> + <b>EPSS(얼마나 늘어났나)</b> <span class="tag t-rec">수업</span></p><table>
+<caption>표 4. DCM의 초음파 소견 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:30%">소견</th><th style="width:30%">왜?</th><th>설명</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">ESD↑ <b>(primary)</b><br>end-systolic diameter</td><td>수축력↓ 때문</td><td>최대로 수축했을 때의 내경. 짜는 힘이 약해 다 못 짜냄</td></tr>
+<tr><td class="kc">EDD↑ <b>(secondary / compensatory)</b><br>end-diastolic diameter</td><td>편심성(용적 과부하) 비대</td><td>1회 박출량(SV)을 유지하려고 챔버가 커짐</td></tr>
+<tr class="hi"><td class="kc">FS↓ (shortening fraction)</td><td>ESD가 EDD에 가까워짐</td><td>정상 약 <b>35–50%</b> <span class="tag t-rec">수업</span> → DCM <b>&lt; 25%</b>, 심부전 시 <b>&lt; 15%</b></td></tr>
+<tr><td class="kc">LA 확대</td><td>기능성 MR + LV 충만압↑</td><td>심부전이면 <b>심하게</b> 확대</td></tr>
+<tr><td class="kc">벽 두께↓</td><td>Ⅲ장</td><td>심근이 얇아지고 전체 dimension 증가</td></tr>
+</tbody>
+</table><span class="pno">5</span></section><section class="page" style=""><h3 class="lv2">1. M-mode — FS 계산 <span class="tag t-pen">필기</span></h3><div class="three" style="display:block;"><div><div class="cap">LV M-mode 모식도 — 중격(위)과 자유벽(아래)이 수축기에 얼마나 다가오나</div><svg viewBox="0 0 600 232" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="정상과 DCM의 M-mode 비교"><clipPath id="mm0"><rect x="30" y="26" width="244" height="180" rx="4"></rect></clipPath><rect x="30" y="26" width="244" height="180" fill="#20262e" rx="4"></rect><text x="152.0" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a7a4b">정상</text><g clip-path="url(#mm0)"><polygon points="34.0,58.0 35.1,58.0 36.1,58.0 37.2,58.0 38.3,58.0 39.4,58.0 40.4,58.0 41.5,58.0 42.6,58.0 43.7,58.0 44.7,58.0 45.8,58.0 46.9,58.0 47.9,58.0 49.0,58.0 50.1,58.0 51.2,58.0 52.2,58.0 53.3,58.0 54.4,58.0 55.5,58.0 56.5,58.0 57.6,58.0 58.7,58.0 59.7,58.0 60.8,58.0 61.9,58.0 63.0,58.0 64.0,58.3 65.1,58.8 66.2,59.3 67.3,59.8 68.3,60.3 69.4,60.8 70.5,61.2 71.5,61.7 72.6,62.1 73.7,62.5 74.8,62.9 75.8,63.3 76.9,63.7 78.0,64.0 79.1,64.3 80.1,64.6 81.2,64.8 82.3,65.0 83.3,65.2 84.4,65.3 85.5,65.4 86.6,65.5 87.6,65.5 88.7,65.5 89.8,65.5 90.9,65.4 91.9,65.3 93.0,65.2 94.1,65.0 95.1,64.8 96.2,64.6 97.3,64.3 98.4,64.0 99.4,63.7 100.5,63.4 101.6,63.0 102.7,62.6 103.7,62.2 104.8,61.8 105.9,61.3 106.9,60.8 108.0,60.4 109.1,59.9 110.2,59.4 111.2,58.9 112.3,58.4 113.4,58.0 114.5,58.0 115.5,58.0 116.6,58.0 117.7,58.0 118.7,58.0 119.8,58.0 120.9,58.0 122.0,58.0 123.0,58.0 124.1,58.0 125.2,58.0 126.3,58.0 127.3,58.0 128.4,58.0 129.5,58.0 130.5,58.0 131.6,58.0 132.7,58.0 133.8,58.0 134.8,58.0 135.9,58.0 137.0,58.0 138.1,58.0 139.1,58.0 140.2,58.0 141.3,58.0 142.3,58.0 143.4,58.0 144.5,58.0 145.6,58.0 146.6,58.0 147.7,58.0 148.8,58.0 149.9,58.0 150.9,58.0 152.0,58.0 153.1,58.0 154.1,58.0 155.2,58.0 156.3,58.0 157.4,58.0 158.4,58.0 159.5,58.0 160.6,58.0 161.7,58.0 162.7,58.0 163.8,58.0 164.9,58.0 165.9,58.0 167.0,58.0 168.1,58.0 169.2,58.0 170.2,58.0 171.3,58.0 172.4,58.0 173.5,58.0 174.5,58.0 175.6,58.0 176.7,58.0 177.7,58.0 178.8,58.0 179.9,58.0 181.0,58.0 182.0,58.3 183.1,58.8 184.2,59.3 185.3,59.8 186.3,60.3 187.4,60.8 188.5,61.2 189.5,61.7 190.6,62.1 191.7,62.5 192.8,62.9 193.8,63.3 194.9,63.7 196.0,64.0 197.1,64.3 198.1,64.6 199.2,64.8 200.3,65.0 201.3,65.2 202.4,65.3 203.5,65.4 204.6,65.5 205.6,65.5 206.7,65.5 207.8,65.5 208.9,65.4 209.9,65.3 211.0,65.2 212.1,65.0 213.1,64.8 214.2,64.6 215.3,64.3 216.4,64.0 217.4,63.7 218.5,63.4 219.6,63.0 220.7,62.6 221.7,62.2 222.8,61.8 223.9,61.3 224.9,60.8 226.0,60.4 227.1,59.9 228.2,59.4 229.2,58.9 230.3,58.4 231.4,58.0 232.5,58.0 233.5,58.0 234.6,58.0 235.7,58.0 236.7,58.0 237.8,58.0 238.9,58.0 240.0,58.0 241.0,58.0 242.1,58.0 243.2,58.0 244.3,58.0 245.3,58.0 246.4,58.0 247.5,58.0 248.5,58.0 249.6,58.0 250.7,58.0 251.8,58.0 252.8,58.0 253.9,58.0 255.0,58.0 256.1,58.0 257.1,58.0 258.2,58.0 259.3,58.0 260.3,58.0 261.4,58.0 262.5,58.0 263.6,58.0 264.6,58.0 265.7,58.0 266.8,58.0 267.9,58.0 268.9,58.0 270.0,58.0 270.0,74.0 268.9,74.0 267.9,74.0 266.8,74.0 265.7,74.0 264.6,74.0 263.6,74.0 262.5,74.0 261.4,74.0 260.3,74.0 259.3,74.0 258.2,74.0 257.1,74.0 256.1,74.0 255.0,74.0 253.9,74.0 252.8,74.0 251.8,74.0 250.7,74.0 249.6,74.0 248.5,74.0 247.5,74.0 246.4,74.0 245.3,74.0 244.3,74.0 243.2,74.0 242.1,74.0 241.0,74.0 240.0,74.0 238.9,74.0 237.8,74.0 236.7,74.0 235.7,74.0 234.6,74.0 233.5,74.0 232.5,74.0 231.4,74.0 230.3,74.6 229.2,75.6 228.2,76.5 227.1,77.3 226.0,78.2 224.9,79.1 223.9,79.9 222.8,80.7 221.7,81.5 220.7,82.2 219.6,82.9 218.5,83.6 217.4,84.2 216.4,84.8 215.3,85.3 214.2,85.8 213.1,86.2 212.1,86.5 211.0,86.8 209.9,87.1 208.9,87.3 207.8,87.4 206.7,87.4 205.6,87.4 204.6,87.4 203.5,87.2 202.4,87.0 201.3,86.8 200.3,86.5 199.2,86.1 198.1,85.7 197.1,85.2 196.0,84.7 194.9,84.1 193.8,83.5 192.8,82.8 191.7,82.1 190.6,81.3 189.5,80.6 188.5,79.7 187.4,78.9 186.3,78.0 185.3,77.2 184.2,76.3 183.1,75.4 182.0,74.5 181.0,74.0 179.9,74.0 178.8,74.0 177.7,74.0 176.7,74.0 175.6,74.0 174.5,74.0 173.5,74.0 172.4,74.0 171.3,74.0 170.2,74.0 169.2,74.0 168.1,74.0 167.0,74.0 165.9,74.0 164.9,74.0 163.8,74.0 162.7,74.0 161.7,74.0 160.6,74.0 159.5,74.0 158.4,74.0 157.4,74.0 156.3,74.0 155.2,74.0 154.1,74.0 153.1,74.0 152.0,74.0 150.9,74.0 149.9,74.0 148.8,74.0 147.7,74.0 146.6,74.0 145.6,74.0 144.5,74.0 143.4,74.0 142.3,74.0 141.3,74.0 140.2,74.0 139.1,74.0 138.1,74.0 137.0,74.0 135.9,74.0 134.8,74.0 133.8,74.0 132.7,74.0 131.6,74.0 130.5,74.0 129.5,74.0 128.4,74.0 127.3,74.0 126.3,74.0 125.2,74.0 124.1,74.0 123.0,74.0 122.0,74.0 120.9,74.0 119.8,74.0 118.7,74.0 117.7,74.0 116.6,74.0 115.5,74.0 114.5,74.0 113.4,74.0 112.3,74.6 111.2,75.6 110.2,76.5 109.1,77.3 108.0,78.2 106.9,79.1 105.9,79.9 104.8,80.7 103.7,81.5 102.7,82.2 101.6,82.9 100.5,83.6 99.4,84.2 98.4,84.8 97.3,85.3 96.2,85.8 95.1,86.2 94.1,86.5 93.0,86.8 91.9,87.1 90.9,87.3 89.8,87.4 88.7,87.4 87.6,87.4 86.6,87.4 85.5,87.2 84.4,87.0 83.3,86.8 82.3,86.5 81.2,86.1 80.1,85.7 79.1,85.2 78.0,84.7 76.9,84.1 75.8,83.5 74.8,82.8 73.7,82.1 72.6,81.3 71.5,80.6 70.5,79.7 69.4,78.9 68.3,78.0 67.3,77.2 66.2,76.3 65.1,75.4 64.0,74.5 63.0,74.0 61.9,74.0 60.8,74.0 59.7,74.0 58.7,74.0 57.6,74.0 56.5,74.0 55.5,74.0 54.4,74.0 53.3,74.0 52.2,74.0 51.2,74.0 50.1,74.0 49.0,74.0 47.9,74.0 46.9,74.0 45.8,74.0 44.7,74.0 43.7,74.0 42.6,74.0 41.5,74.0 40.4,74.0 39.4,74.0 38.3,74.0 37.2,74.0 36.1,74.0 35.1,74.0 34.0,74.0" fill="#e9d3c8" fill-opacity=".95"></polygon><polygon points="34.0,166.0 35.1,166.0 36.1,166.0 37.2,166.0 38.3,166.0 39.4,166.0 40.4,166.0 41.5,166.0 42.6,166.0 43.7,166.0 44.7,166.0 45.8,166.0 46.9,166.0 47.9,166.0 49.0,166.0 50.1,166.0 51.2,166.0 52.2,166.0 53.3,166.0 54.4,166.0 55.5,166.0 56.5,166.0 57.6,166.0 58.7,166.0 59.7,166.0 60.8,166.0 61.9,166.0 63.0,166.0 64.0,165.4 65.1,164.1 66.2,162.9 67.3,161.6 68.3,160.4 69.4,159.2 70.5,158.1 71.5,156.9 72.6,155.9 73.7,154.8 74.8,153.8 75.8,152.9 76.9,152.1 78.0,151.3 79.1,150.5 80.1,149.9 81.2,149.3 82.3,148.8 83.3,148.3 84.4,148.0 85.5,147.7 86.6,147.5 87.6,147.5 88.7,147.4 89.8,147.5 90.9,147.7 91.9,147.9 93.0,148.3 94.1,148.7 95.1,149.2 96.2,149.7 97.3,150.4 98.4,151.1 99.4,151.9 100.5,152.7 101.6,153.7 102.7,154.6 103.7,155.6 104.8,156.7 105.9,157.8 106.9,159.0 108.0,160.2 109.1,161.4 110.2,162.6 111.2,163.9 112.3,165.1 113.4,166.0 114.5,166.0 115.5,166.0 116.6,166.0 117.7,166.0 118.7,166.0 119.8,166.0 120.9,166.0 122.0,166.0 123.0,166.0 124.1,166.0 125.2,166.0 126.3,166.0 127.3,166.0 128.4,166.0 129.5,166.0 130.5,166.0 131.6,166.0 132.7,166.0 133.8,166.0 134.8,166.0 135.9,166.0 137.0,166.0 138.1,166.0 139.1,166.0 140.2,166.0 141.3,166.0 142.3,166.0 143.4,166.0 144.5,166.0 145.6,166.0 146.6,166.0 147.7,166.0 148.8,166.0 149.9,166.0 150.9,166.0 152.0,166.0 153.1,166.0 154.1,166.0 155.2,166.0 156.3,166.0 157.4,166.0 158.4,166.0 159.5,166.0 160.6,166.0 161.7,166.0 162.7,166.0 163.8,166.0 164.9,166.0 165.9,166.0 167.0,166.0 168.1,166.0 169.2,166.0 170.2,166.0 171.3,166.0 172.4,166.0 173.5,166.0 174.5,166.0 175.6,166.0 176.7,166.0 177.7,166.0 178.8,166.0 179.9,166.0 181.0,166.0 182.0,165.4 183.1,164.1 184.2,162.9 185.3,161.6 186.3,160.4 187.4,159.2 188.5,158.1 189.5,156.9 190.6,155.9 191.7,154.8 192.8,153.8 193.8,152.9 194.9,152.1 196.0,151.3 197.1,150.5 198.1,149.9 199.2,149.3 200.3,148.8 201.3,148.3 202.4,148.0 203.5,147.7 204.6,147.5 205.6,147.5 206.7,147.4 207.8,147.5 208.9,147.7 209.9,147.9 211.0,148.3 212.1,148.7 213.1,149.2 214.2,149.7 215.3,150.4 216.4,151.1 217.4,151.9 218.5,152.7 219.6,153.7 220.7,154.6 221.7,155.6 222.8,156.7 223.9,157.8 224.9,159.0 226.0,160.2 227.1,161.4 228.2,162.6 229.2,163.9 230.3,165.1 231.4,166.0 232.5,166.0 233.5,166.0 234.6,166.0 235.7,166.0 236.7,166.0 237.8,166.0 238.9,166.0 240.0,166.0 241.0,166.0 242.1,166.0 243.2,166.0 244.3,166.0 245.3,166.0 246.4,166.0 247.5,166.0 248.5,166.0 249.6,166.0 250.7,166.0 251.8,166.0 252.8,166.0 253.9,166.0 255.0,166.0 256.1,166.0 257.1,166.0 258.2,166.0 259.3,166.0 260.3,166.0 261.4,166.0 262.5,166.0 263.6,166.0 264.6,166.0 265.7,166.0 266.8,166.0 267.9,166.0 268.9,166.0 270.0,166.0 270.0,182.0 268.9,182.0 267.9,182.0 266.8,182.0 265.7,182.0 264.6,182.0 263.6,182.0 262.5,182.0 261.4,182.0 260.3,182.0 259.3,182.0 258.2,182.0 257.1,182.0 256.1,182.0 255.0,182.0 253.9,182.0 252.8,182.0 251.8,182.0 250.7,182.0 249.6,182.0 248.5,182.0 247.5,182.0 246.4,182.0 245.3,182.0 244.3,182.0 243.2,182.0 242.1,182.0 241.0,182.0 240.0,182.0 238.9,182.0 237.8,182.0 236.7,182.0 235.7,182.0 234.6,182.0 233.5,182.0 232.5,182.0 231.4,182.0 230.3,181.4 229.2,180.5 228.2,179.7 227.1,178.8 226.0,178.0 224.9,177.2 223.9,176.4 222.8,175.7 221.7,174.9 220.7,174.2 219.6,173.6 218.5,173.0 217.4,172.4 216.4,171.8 215.3,171.4 214.2,170.9 213.1,170.5 212.1,170.2 211.0,169.9 209.9,169.7 208.9,169.5 207.8,169.4 206.7,169.3 205.6,169.4 204.6,169.4 203.5,169.5 202.4,169.7 201.3,170.0 200.3,170.2 199.2,170.6 198.1,171.0 197.1,171.4 196.0,171.9 194.9,172.5 193.8,173.1 192.8,173.7 191.7,174.4 190.6,175.1 189.5,175.8 188.5,176.6 187.4,177.4 186.3,178.2 185.3,179.0 184.2,179.9 183.1,180.7 182.0,181.6 181.0,182.0 179.9,182.0 178.8,182.0 177.7,182.0 176.7,182.0 175.6,182.0 174.5,182.0 173.5,182.0 172.4,182.0 171.3,182.0 170.2,182.0 169.2,182.0 168.1,182.0 167.0,182.0 165.9,182.0 164.9,182.0 163.8,182.0 162.7,182.0 161.7,182.0 160.6,182.0 159.5,182.0 158.4,182.0 157.4,182.0 156.3,182.0 155.2,182.0 154.1,182.0 153.1,182.0 152.0,182.0 150.9,182.0 149.9,182.0 148.8,182.0 147.7,182.0 146.6,182.0 145.6,182.0 144.5,182.0 143.4,182.0 142.3,182.0 141.3,182.0 140.2,182.0 139.1,182.0 138.1,182.0 137.0,182.0 135.9,182.0 134.8,182.0 133.8,182.0 132.7,182.0 131.6,182.0 130.5,182.0 129.5,182.0 128.4,182.0 127.3,182.0 126.3,182.0 125.2,182.0 124.1,182.0 123.0,182.0 122.0,182.0 120.9,182.0 119.8,182.0 118.7,182.0 117.7,182.0 116.6,182.0 115.5,182.0 114.5,182.0 113.4,182.0 112.3,181.4 111.2,180.5 110.2,179.7 109.1,178.8 108.0,178.0 106.9,177.2 105.9,176.4 104.8,175.7 103.7,174.9 102.7,174.2 101.6,173.6 100.5,173.0 99.4,172.4 98.4,171.8 97.3,171.4 96.2,170.9 95.1,170.5 94.1,170.2 93.0,169.9 91.9,169.7 90.9,169.5 89.8,169.4 88.7,169.3 87.6,169.4 86.6,169.4 85.5,169.5 84.4,169.7 83.3,170.0 82.3,170.2 81.2,170.6 80.1,171.0 79.1,171.4 78.0,171.9 76.9,172.5 75.8,173.1 74.8,173.7 73.7,174.4 72.6,175.1 71.5,175.8 70.5,176.6 69.4,177.4 68.3,178.2 67.3,179.0 66.2,179.9 65.1,180.7 64.0,181.6 63.0,182.0 61.9,182.0 60.8,182.0 59.7,182.0 58.7,182.0 57.6,182.0 56.5,182.0 55.5,182.0 54.4,182.0 53.3,182.0 52.2,182.0 51.2,182.0 50.1,182.0 49.0,182.0 47.9,182.0 46.9,182.0 45.8,182.0 44.7,182.0 43.7,182.0 42.6,182.0 41.5,182.0 40.4,182.0 39.4,182.0 38.3,182.0 37.2,182.0 36.1,182.0 35.1,182.0 34.0,182.0" fill="#e9d3c8" fill-opacity=".95"></polygon><polyline points="34.0,46.0 35.1,46.0 36.1,46.0 37.2,46.0 38.3,46.0 39.4,46.0 40.4,46.0 41.5,46.0 42.6,46.0 43.7,46.0 44.7,46.0 45.8,46.0 46.9,46.0 47.9,46.0 49.0,46.0 50.1,46.0 51.2,46.0 52.2,46.0 53.3,46.0 54.4,46.0 55.5,46.0 56.5,46.0 57.6,46.0 58.7,46.0 59.7,46.0 60.8,46.0 61.9,46.0 63.0,46.0 64.0,46.2 65.1,46.5 66.2,46.8 67.3,47.1 68.3,47.4 69.4,47.7 70.5,47.9 71.5,48.2 72.6,48.5 73.7,48.7 74.8,49.0 75.8,49.2 76.9,49.4 78.0,49.6 79.1,49.8 80.1,49.9 81.2,50.1 82.3,50.2 83.3,50.3 84.4,50.4 85.5,50.5 86.6,50.5 87.6,50.5 88.7,50.5 89.8,50.5 90.9,50.5 91.9,50.4 93.0,50.3 94.1,50.2 95.1,50.1 96.2,50.0 97.3,49.8 98.4,49.6 99.4,49.4 100.5,49.2 101.6,49.0 102.7,48.8 103.7,48.5 104.8,48.3 105.9,48.0 106.9,47.7 108.0,47.4 109.1,47.1 110.2,46.8 111.2,46.5 112.3,46.2 113.4,46.0 114.5,46.0 115.5,46.0 116.6,46.0 117.7,46.0 118.7,46.0 119.8,46.0 120.9,46.0 122.0,46.0 123.0,46.0 124.1,46.0 125.2,46.0 126.3,46.0 127.3,46.0 128.4,46.0 129.5,46.0 130.5,46.0 131.6,46.0 132.7,46.0 133.8,46.0 134.8,46.0 135.9,46.0 137.0,46.0 138.1,46.0 139.1,46.0 140.2,46.0 141.3,46.0 142.3,46.0 143.4,46.0 144.5,46.0 145.6,46.0 146.6,46.0 147.7,46.0 148.8,46.0 149.9,46.0 150.9,46.0 152.0,46.0 153.1,46.0 154.1,46.0 155.2,46.0 156.3,46.0 157.4,46.0 158.4,46.0 159.5,46.0 160.6,46.0 161.7,46.0 162.7,46.0 163.8,46.0 164.9,46.0 165.9,46.0 167.0,46.0 168.1,46.0 169.2,46.0 170.2,46.0 171.3,46.0 172.4,46.0 173.5,46.0 174.5,46.0 175.6,46.0 176.7,46.0 177.7,46.0 178.8,46.0 179.9,46.0 181.0,46.0 182.0,46.2 183.1,46.5 184.2,46.8 185.3,47.1 186.3,47.4 187.4,47.7 188.5,47.9 189.5,48.2 190.6,48.5 191.7,48.7 192.8,49.0 193.8,49.2 194.9,49.4 196.0,49.6 197.1,49.8 198.1,49.9 199.2,50.1 200.3,50.2 201.3,50.3 202.4,50.4 203.5,50.5 204.6,50.5 205.6,50.5 206.7,50.5 207.8,50.5 208.9,50.5 209.9,50.4 211.0,50.3 212.1,50.2 213.1,50.1 214.2,50.0 215.3,49.8 216.4,49.6 217.4,49.4 218.5,49.2 219.6,49.0 220.7,48.8 221.7,48.5 222.8,48.3 223.9,48.0 224.9,47.7 226.0,47.4 227.1,47.1 228.2,46.8 229.2,46.5 230.3,46.2 231.4,46.0 232.5,46.0 233.5,46.0 234.6,46.0 235.7,46.0 236.7,46.0 237.8,46.0 238.9,46.0 240.0,46.0 241.0,46.0 242.1,46.0 243.2,46.0 244.3,46.0 245.3,46.0 246.4,46.0 247.5,46.0 248.5,46.0 249.6,46.0 250.7,46.0 251.8,46.0 252.8,46.0 253.9,46.0 255.0,46.0 256.1,46.0 257.1,46.0 258.2,46.0 259.3,46.0 260.3,46.0 261.4,46.0 262.5,46.0 263.6,46.0 264.6,46.0 265.7,46.0 266.8,46.0 267.9,46.0 268.9,46.0 270.0,46.0" fill="none" stroke="#e9d3c8" stroke-width="3"></polyline><line x1="60.0" y1="76.0" x2="60.0" y2="164.0" stroke="#7fd1ff" stroke-width="2"></line><path d="M56.0,82.0 L60.0,76.0 L64.0,82.0 M56.0,158.0 L60.0,164.0 L64.0,158.0" stroke="#7fd1ff" stroke-width="1.6" fill="none"></path><text x="65.0" y="124.0" font-size="10.5" font-weight="700" fill="#7fd1ff">EDD</text><line x1="88.3" y1="89.4" x2="88.3" y2="145.4" stroke="#ffd166" stroke-width="2"></line><path d="M84.3,95.4 L88.3,89.4 L92.3,95.4 M84.3,139.4 L88.3,145.4 L92.3,139.4" stroke="#ffd166" stroke-width="1.6" fill="none"></path><text x="93.3" y="121.4" font-size="10.5" font-weight="700" fill="#ffd166">ESD</text></g><rect x="196" y="32" width="64" height="18" rx="4" fill="#fff"></rect><text x="228" y="45" text-anchor="middle" font-size="11" font-weight="700" fill="#2a7a4b">FS ≈ 35%</text><text x="40" y="54" font-size="9" fill="#fff">IVS</text><text x="40" y="194" font-size="9" fill="#fff">LVFW</text><clipPath id="mm300"><rect x="330" y="26" width="244" height="180" rx="4"></rect></clipPath><rect x="330" y="26" width="244" height="180" fill="#20262e" rx="4"></rect><text x="452.0" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E23B3B">DCM</text><g clip-path="url(#mm300)"><polygon points="334.0,47.0 335.1,47.0 336.1,47.0 337.2,47.0 338.3,47.0 339.4,47.0 340.4,47.0 341.5,47.0 342.6,47.0 343.7,47.0 344.7,47.0 345.8,47.0 346.9,47.0 347.9,47.0 349.0,47.0 350.1,47.0 351.2,47.0 352.2,47.0 353.3,47.0 354.4,47.0 355.5,47.0 356.5,47.0 357.6,47.0 358.7,47.0 359.7,47.0 360.8,47.0 361.9,47.0 363.0,47.0 364.0,47.2 365.1,47.5 366.2,47.8 367.3,48.1 368.3,48.4 369.4,48.7 370.5,49.0 371.5,49.3 372.6,49.5 373.7,49.8 374.8,50.0 375.8,50.2 376.9,50.5 378.0,50.7 379.1,50.8 380.1,51.0 381.2,51.2 382.3,51.3 383.3,51.4 384.4,51.5 385.5,51.5 386.6,51.6 387.6,51.6 388.7,51.6 389.8,51.6 390.9,51.6 391.9,51.5 393.0,51.4 394.1,51.3 395.1,51.2 396.2,51.0 397.3,50.9 398.4,50.7 399.4,50.5 400.5,50.3 401.6,50.1 402.7,49.8 403.7,49.6 404.8,49.3 405.9,49.0 406.9,48.7 408.0,48.4 409.1,48.1 410.2,47.8 411.2,47.5 412.3,47.2 413.4,47.0 414.5,47.0 415.5,47.0 416.6,47.0 417.7,47.0 418.7,47.0 419.8,47.0 420.9,47.0 422.0,47.0 423.0,47.0 424.1,47.0 425.2,47.0 426.3,47.0 427.3,47.0 428.4,47.0 429.5,47.0 430.5,47.0 431.6,47.0 432.7,47.0 433.8,47.0 434.8,47.0 435.9,47.0 437.0,47.0 438.1,47.0 439.1,47.0 440.2,47.0 441.3,47.0 442.3,47.0 443.4,47.0 444.5,47.0 445.6,47.0 446.6,47.0 447.7,47.0 448.8,47.0 449.9,47.0 450.9,47.0 452.0,47.0 453.1,47.0 454.1,47.0 455.2,47.0 456.3,47.0 457.4,47.0 458.4,47.0 459.5,47.0 460.6,47.0 461.7,47.0 462.7,47.0 463.8,47.0 464.9,47.0 465.9,47.0 467.0,47.0 468.1,47.0 469.2,47.0 470.2,47.0 471.3,47.0 472.4,47.0 473.5,47.0 474.5,47.0 475.6,47.0 476.7,47.0 477.7,47.0 478.8,47.0 479.9,47.0 481.0,47.0 482.0,47.2 483.1,47.5 484.2,47.8 485.3,48.1 486.3,48.4 487.4,48.7 488.5,49.0 489.5,49.3 490.6,49.5 491.7,49.8 492.8,50.0 493.8,50.2 494.9,50.5 496.0,50.7 497.1,50.8 498.1,51.0 499.2,51.2 500.3,51.3 501.3,51.4 502.4,51.5 503.5,51.5 504.6,51.6 505.6,51.6 506.7,51.6 507.8,51.6 508.9,51.6 509.9,51.5 511.0,51.4 512.1,51.3 513.1,51.2 514.2,51.0 515.3,50.9 516.4,50.7 517.4,50.5 518.5,50.3 519.6,50.1 520.7,49.8 521.7,49.6 522.8,49.3 523.9,49.0 524.9,48.7 526.0,48.4 527.1,48.1 528.2,47.8 529.2,47.5 530.3,47.2 531.4,47.0 532.5,47.0 533.5,47.0 534.6,47.0 535.7,47.0 536.7,47.0 537.8,47.0 538.9,47.0 540.0,47.0 541.0,47.0 542.1,47.0 543.2,47.0 544.3,47.0 545.3,47.0 546.4,47.0 547.5,47.0 548.5,47.0 549.6,47.0 550.7,47.0 551.8,47.0 552.8,47.0 553.9,47.0 555.0,47.0 556.1,47.0 557.1,47.0 558.2,47.0 559.3,47.0 560.3,47.0 561.4,47.0 562.5,47.0 563.6,47.0 564.6,47.0 565.7,47.0 566.8,47.0 567.9,47.0 568.9,47.0 570.0,47.0 570.0,55.0 568.9,55.0 567.9,55.0 566.8,55.0 565.7,55.0 564.6,55.0 563.6,55.0 562.5,55.0 561.4,55.0 560.3,55.0 559.3,55.0 558.2,55.0 557.1,55.0 556.1,55.0 555.0,55.0 553.9,55.0 552.8,55.0 551.8,55.0 550.7,55.0 549.6,55.0 548.5,55.0 547.5,55.0 546.4,55.0 545.3,55.0 544.3,55.0 543.2,55.0 542.1,55.0 541.0,55.0 540.0,55.0 538.9,55.0 537.8,55.0 536.7,55.0 535.7,55.0 534.6,55.0 533.5,55.0 532.5,55.0 531.4,55.0 530.3,55.3 529.2,55.6 528.2,56.0 527.1,56.4 526.0,56.7 524.9,57.1 523.9,57.4 522.8,57.7 521.7,58.0 520.7,58.3 519.6,58.6 518.5,58.9 517.4,59.2 516.4,59.4 515.3,59.6 514.2,59.8 513.1,60.0 512.1,60.1 511.0,60.2 509.9,60.3 508.9,60.4 507.8,60.4 506.7,60.5 505.6,60.5 504.6,60.4 503.5,60.4 502.4,60.3 501.3,60.2 500.3,60.1 499.2,59.9 498.1,59.7 497.1,59.6 496.0,59.3 494.9,59.1 493.8,58.8 492.8,58.6 491.7,58.3 490.6,58.0 489.5,57.7 488.5,57.3 487.4,57.0 486.3,56.6 485.3,56.3 484.2,55.9 483.1,55.6 482.0,55.2 481.0,55.0 479.9,55.0 478.8,55.0 477.7,55.0 476.7,55.0 475.6,55.0 474.5,55.0 473.5,55.0 472.4,55.0 471.3,55.0 470.2,55.0 469.2,55.0 468.1,55.0 467.0,55.0 465.9,55.0 464.9,55.0 463.8,55.0 462.7,55.0 461.7,55.0 460.6,55.0 459.5,55.0 458.4,55.0 457.4,55.0 456.3,55.0 455.2,55.0 454.1,55.0 453.1,55.0 452.0,55.0 450.9,55.0 449.9,55.0 448.8,55.0 447.7,55.0 446.6,55.0 445.6,55.0 444.5,55.0 443.4,55.0 442.3,55.0 441.3,55.0 440.2,55.0 439.1,55.0 438.1,55.0 437.0,55.0 435.9,55.0 434.8,55.0 433.8,55.0 432.7,55.0 431.6,55.0 430.5,55.0 429.5,55.0 428.4,55.0 427.3,55.0 426.3,55.0 425.2,55.0 424.1,55.0 423.0,55.0 422.0,55.0 420.9,55.0 419.8,55.0 418.7,55.0 417.7,55.0 416.6,55.0 415.5,55.0 414.5,55.0 413.4,55.0 412.3,55.3 411.2,55.6 410.2,56.0 409.1,56.4 408.0,56.7 406.9,57.1 405.9,57.4 404.8,57.7 403.7,58.0 402.7,58.3 401.6,58.6 400.5,58.9 399.4,59.2 398.4,59.4 397.3,59.6 396.2,59.8 395.1,60.0 394.1,60.1 393.0,60.2 391.9,60.3 390.9,60.4 389.8,60.4 388.7,60.5 387.6,60.5 386.6,60.4 385.5,60.4 384.4,60.3 383.3,60.2 382.3,60.1 381.2,59.9 380.1,59.7 379.1,59.6 378.0,59.3 376.9,59.1 375.8,58.8 374.8,58.6 373.7,58.3 372.6,58.0 371.5,57.7 370.5,57.3 369.4,57.0 368.3,56.6 367.3,56.3 366.2,55.9 365.1,55.6 364.0,55.2 363.0,55.0 361.9,55.0 360.8,55.0 359.7,55.0 358.7,55.0 357.6,55.0 356.5,55.0 355.5,55.0 354.4,55.0 353.3,55.0 352.2,55.0 351.2,55.0 350.1,55.0 349.0,55.0 347.9,55.0 346.9,55.0 345.8,55.0 344.7,55.0 343.7,55.0 342.6,55.0 341.5,55.0 340.4,55.0 339.4,55.0 338.3,55.0 337.2,55.0 336.1,55.0 335.1,55.0 334.0,55.0" fill="#e9d3c8" fill-opacity=".95"></polygon><polygon points="334.0,185.0 335.1,185.0 336.1,185.0 337.2,185.0 338.3,185.0 339.4,185.0 340.4,185.0 341.5,185.0 342.6,185.0 343.7,185.0 344.7,185.0 345.8,185.0 346.9,185.0 347.9,185.0 349.0,185.0 350.1,185.0 351.2,185.0 352.2,185.0 353.3,185.0 354.4,185.0 355.5,185.0 356.5,185.0 357.6,185.0 358.7,185.0 359.7,185.0 360.8,185.0 361.9,185.0 363.0,185.0 364.0,184.7 365.1,184.2 366.2,183.7 367.3,183.2 368.3,182.7 369.4,182.2 370.5,181.8 371.5,181.3 372.6,180.9 373.7,180.5 374.8,180.1 375.8,179.7 376.9,179.3 378.0,179.0 379.1,178.7 380.1,178.4 381.2,178.2 382.3,178.0 383.3,177.8 384.4,177.7 385.5,177.6 386.6,177.5 387.6,177.5 388.7,177.5 389.8,177.5 390.9,177.6 391.9,177.7 393.0,177.8 394.1,178.0 395.1,178.2 396.2,178.4 397.3,178.7 398.4,178.9 399.4,179.3 400.5,179.6 401.6,180.0 402.7,180.4 403.7,180.8 404.8,181.2 405.9,181.7 406.9,182.2 408.0,182.6 409.1,183.1 410.2,183.6 411.2,184.1 412.3,184.6 413.4,185.0 414.5,185.0 415.5,185.0 416.6,185.0 417.7,185.0 418.7,185.0 419.8,185.0 420.9,185.0 422.0,185.0 423.0,185.0 424.1,185.0 425.2,185.0 426.3,185.0 427.3,185.0 428.4,185.0 429.5,185.0 430.5,185.0 431.6,185.0 432.7,185.0 433.8,185.0 434.8,185.0 435.9,185.0 437.0,185.0 438.1,185.0 439.1,185.0 440.2,185.0 441.3,185.0 442.3,185.0 443.4,185.0 444.5,185.0 445.6,185.0 446.6,185.0 447.7,185.0 448.8,185.0 449.9,185.0 450.9,185.0 452.0,185.0 453.1,185.0 454.1,185.0 455.2,185.0 456.3,185.0 457.4,185.0 458.4,185.0 459.5,185.0 460.6,185.0 461.7,185.0 462.7,185.0 463.8,185.0 464.9,185.0 465.9,185.0 467.0,185.0 468.1,185.0 469.2,185.0 470.2,185.0 471.3,185.0 472.4,185.0 473.5,185.0 474.5,185.0 475.6,185.0 476.7,185.0 477.7,185.0 478.8,185.0 479.9,185.0 481.0,185.0 482.0,184.7 483.1,184.2 484.2,183.7 485.3,183.2 486.3,182.7 487.4,182.2 488.5,181.8 489.5,181.3 490.6,180.9 491.7,180.5 492.8,180.1 493.8,179.7 494.9,179.3 496.0,179.0 497.1,178.7 498.1,178.4 499.2,178.2 500.3,178.0 501.3,177.8 502.4,177.7 503.5,177.6 504.6,177.5 505.6,177.5 506.7,177.5 507.8,177.5 508.9,177.6 509.9,177.7 511.0,177.8 512.1,178.0 513.1,178.2 514.2,178.4 515.3,178.7 516.4,178.9 517.4,179.3 518.5,179.6 519.6,180.0 520.7,180.4 521.7,180.8 522.8,181.2 523.9,181.7 524.9,182.2 526.0,182.6 527.1,183.1 528.2,183.6 529.2,184.1 530.3,184.6 531.4,185.0 532.5,185.0 533.5,185.0 534.6,185.0 535.7,185.0 536.7,185.0 537.8,185.0 538.9,185.0 540.0,185.0 541.0,185.0 542.1,185.0 543.2,185.0 544.3,185.0 545.3,185.0 546.4,185.0 547.5,185.0 548.5,185.0 549.6,185.0 550.7,185.0 551.8,185.0 552.8,185.0 553.9,185.0 555.0,185.0 556.1,185.0 557.1,185.0 558.2,185.0 559.3,185.0 560.3,185.0 561.4,185.0 562.5,185.0 563.6,185.0 564.6,185.0 565.7,185.0 566.8,185.0 567.9,185.0 568.9,185.0 570.0,185.0 570.0,193.0 568.9,193.0 567.9,193.0 566.8,193.0 565.7,193.0 564.6,193.0 563.6,193.0 562.5,193.0 561.4,193.0 560.3,193.0 559.3,193.0 558.2,193.0 557.1,193.0 556.1,193.0 555.0,193.0 553.9,193.0 552.8,193.0 551.8,193.0 550.7,193.0 549.6,193.0 548.5,193.0 547.5,193.0 546.4,193.0 545.3,193.0 544.3,193.0 543.2,193.0 542.1,193.0 541.0,193.0 540.0,193.0 538.9,193.0 537.8,193.0 536.7,193.0 535.7,193.0 534.6,193.0 533.5,193.0 532.5,193.0 531.4,193.0 530.3,192.7 529.2,192.2 528.2,191.8 527.1,191.3 526.0,190.9 524.9,190.5 523.9,190.1 522.8,189.7 521.7,189.3 520.7,188.9 519.6,188.5 518.5,188.2 517.4,187.9 516.4,187.6 515.3,187.4 514.2,187.1 513.1,186.9 512.1,186.8 511.0,186.6 509.9,186.5 508.9,186.4 507.8,186.3 506.7,186.3 505.6,186.3 504.6,186.3 503.5,186.4 502.4,186.5 501.3,186.6 500.3,186.8 499.2,187.0 498.1,187.2 497.1,187.4 496.0,187.7 494.9,188.0 493.8,188.3 492.8,188.6 491.7,189.0 490.6,189.3 489.5,189.7 488.5,190.1 487.4,190.6 486.3,191.0 485.3,191.4 484.2,191.9 483.1,192.3 482.0,192.8 481.0,193.0 479.9,193.0 478.8,193.0 477.7,193.0 476.7,193.0 475.6,193.0 474.5,193.0 473.5,193.0 472.4,193.0 471.3,193.0 470.2,193.0 469.2,193.0 468.1,193.0 467.0,193.0 465.9,193.0 464.9,193.0 463.8,193.0 462.7,193.0 461.7,193.0 460.6,193.0 459.5,193.0 458.4,193.0 457.4,193.0 456.3,193.0 455.2,193.0 454.1,193.0 453.1,193.0 452.0,193.0 450.9,193.0 449.9,193.0 448.8,193.0 447.7,193.0 446.6,193.0 445.6,193.0 444.5,193.0 443.4,193.0 442.3,193.0 441.3,193.0 440.2,193.0 439.1,193.0 438.1,193.0 437.0,193.0 435.9,193.0 434.8,193.0 433.8,193.0 432.7,193.0 431.6,193.0 430.5,193.0 429.5,193.0 428.4,193.0 427.3,193.0 426.3,193.0 425.2,193.0 424.1,193.0 423.0,193.0 422.0,193.0 420.9,193.0 419.8,193.0 418.7,193.0 417.7,193.0 416.6,193.0 415.5,193.0 414.5,193.0 413.4,193.0 412.3,192.7 411.2,192.2 410.2,191.8 409.1,191.3 408.0,190.9 406.9,190.5 405.9,190.1 404.8,189.7 403.7,189.3 402.7,188.9 401.6,188.5 400.5,188.2 399.4,187.9 398.4,187.6 397.3,187.4 396.2,187.1 395.1,186.9 394.1,186.8 393.0,186.6 391.9,186.5 390.9,186.4 389.8,186.3 388.7,186.3 387.6,186.3 386.6,186.3 385.5,186.4 384.4,186.5 383.3,186.6 382.3,186.8 381.2,187.0 380.1,187.2 379.1,187.4 378.0,187.7 376.9,188.0 375.8,188.3 374.8,188.6 373.7,189.0 372.6,189.3 371.5,189.7 370.5,190.1 369.4,190.6 368.3,191.0 367.3,191.4 366.2,191.9 365.1,192.3 364.0,192.8 363.0,193.0 361.9,193.0 360.8,193.0 359.7,193.0 358.7,193.0 357.6,193.0 356.5,193.0 355.5,193.0 354.4,193.0 353.3,193.0 352.2,193.0 351.2,193.0 350.1,193.0 349.0,193.0 347.9,193.0 346.9,193.0 345.8,193.0 344.7,193.0 343.7,193.0 342.6,193.0 341.5,193.0 340.4,193.0 339.4,193.0 338.3,193.0 337.2,193.0 336.1,193.0 335.1,193.0 334.0,193.0" fill="#e9d3c8" fill-opacity=".95"></polygon><polyline points="334.0,35.0 335.1,35.0 336.1,35.0 337.2,35.0 338.3,35.0 339.4,35.0 340.4,35.0 341.5,35.0 342.6,35.0 343.7,35.0 344.7,35.0 345.8,35.0 346.9,35.0 347.9,35.0 349.0,35.0 350.1,35.0 351.2,35.0 352.2,35.0 353.3,35.0 354.4,35.0 355.5,35.0 356.5,35.0 357.6,35.0 358.7,35.0 359.7,35.0 360.8,35.0 361.9,35.0 363.0,35.0 364.0,35.1 365.1,35.2 366.2,35.3 367.3,35.4 368.3,35.5 369.4,35.6 370.5,35.7 371.5,35.8 372.6,35.9 373.7,36.0 374.8,36.1 375.8,36.1 376.9,36.2 378.0,36.3 379.1,36.3 380.1,36.4 381.2,36.5 382.3,36.5 383.3,36.5 384.4,36.6 385.5,36.6 386.6,36.6 387.6,36.6 388.7,36.6 389.8,36.6 390.9,36.6 391.9,36.6 393.0,36.5 394.1,36.5 395.1,36.5 396.2,36.4 397.3,36.4 398.4,36.3 399.4,36.2 400.5,36.2 401.6,36.1 402.7,36.0 403.7,35.9 404.8,35.8 405.9,35.7 406.9,35.6 408.0,35.5 409.1,35.4 410.2,35.3 411.2,35.2 412.3,35.1 413.4,35.0 414.5,35.0 415.5,35.0 416.6,35.0 417.7,35.0 418.7,35.0 419.8,35.0 420.9,35.0 422.0,35.0 423.0,35.0 424.1,35.0 425.2,35.0 426.3,35.0 427.3,35.0 428.4,35.0 429.5,35.0 430.5,35.0 431.6,35.0 432.7,35.0 433.8,35.0 434.8,35.0 435.9,35.0 437.0,35.0 438.1,35.0 439.1,35.0 440.2,35.0 441.3,35.0 442.3,35.0 443.4,35.0 444.5,35.0 445.6,35.0 446.6,35.0 447.7,35.0 448.8,35.0 449.9,35.0 450.9,35.0 452.0,35.0 453.1,35.0 454.1,35.0 455.2,35.0 456.3,35.0 457.4,35.0 458.4,35.0 459.5,35.0 460.6,35.0 461.7,35.0 462.7,35.0 463.8,35.0 464.9,35.0 465.9,35.0 467.0,35.0 468.1,35.0 469.2,35.0 470.2,35.0 471.3,35.0 472.4,35.0 473.5,35.0 474.5,35.0 475.6,35.0 476.7,35.0 477.7,35.0 478.8,35.0 479.9,35.0 481.0,35.0 482.0,35.1 483.1,35.2 484.2,35.3 485.3,35.4 486.3,35.5 487.4,35.6 488.5,35.7 489.5,35.8 490.6,35.9 491.7,36.0 492.8,36.1 493.8,36.1 494.9,36.2 496.0,36.3 497.1,36.3 498.1,36.4 499.2,36.5 500.3,36.5 501.3,36.5 502.4,36.6 503.5,36.6 504.6,36.6 505.6,36.6 506.7,36.6 507.8,36.6 508.9,36.6 509.9,36.6 511.0,36.5 512.1,36.5 513.1,36.5 514.2,36.4 515.3,36.4 516.4,36.3 517.4,36.2 518.5,36.2 519.6,36.1 520.7,36.0 521.7,35.9 522.8,35.8 523.9,35.7 524.9,35.6 526.0,35.5 527.1,35.4 528.2,35.3 529.2,35.2 530.3,35.1 531.4,35.0 532.5,35.0 533.5,35.0 534.6,35.0 535.7,35.0 536.7,35.0 537.8,35.0 538.9,35.0 540.0,35.0 541.0,35.0 542.1,35.0 543.2,35.0 544.3,35.0 545.3,35.0 546.4,35.0 547.5,35.0 548.5,35.0 549.6,35.0 550.7,35.0 551.8,35.0 552.8,35.0 553.9,35.0 555.0,35.0 556.1,35.0 557.1,35.0 558.2,35.0 559.3,35.0 560.3,35.0 561.4,35.0 562.5,35.0 563.6,35.0 564.6,35.0 565.7,35.0 566.8,35.0 567.9,35.0 568.9,35.0 570.0,35.0" fill="none" stroke="#e9d3c8" stroke-width="3"></polyline><line x1="360.0" y1="57.0" x2="360.0" y2="183.0" stroke="#7fd1ff" stroke-width="2"></line><path d="M356.0,63.0 L360.0,57.0 L364.0,63.0 M356.0,177.0 L360.0,183.0 L364.0,177.0" stroke="#7fd1ff" stroke-width="1.6" fill="none"></path><text x="365.0" y="124.0" font-size="10.5" font-weight="700" fill="#7fd1ff">EDD</text><line x1="388.3" y1="62.5" x2="388.3" y2="175.5" stroke="#ffd166" stroke-width="2"></line><path d="M384.3,68.5 L388.3,62.5 L392.3,68.5 M384.3,169.5 L388.3,175.5 L392.3,169.5" stroke="#ffd166" stroke-width="1.6" fill="none"></path><text x="393.3" y="123.0" font-size="10.5" font-weight="700" fill="#ffd166">ESD</text></g><rect x="496" y="32" width="64" height="18" rx="4" fill="#fff"></rect><text x="528" y="45" text-anchor="middle" font-size="11" font-weight="700" fill="#E23B3B">FS ≈ 10%</text><text x="340" y="43" font-size="9" fill="#fff">IVS</text><text x="340" y="202" font-size="9" fill="#fff">LVFW</text><text x="300" y="228" text-anchor="middle" font-size="11" fill="#1B2A44">FS = (EDD − ESD) / EDD × 100 — 위 = 심실중격, 아래 = 좌심실 자유벽, 가로축 = 시간(2박동)</text></svg></div></div><ul class="d">
+<li>M-mode = 초음파 빔 한 줄을 시간에 따라 펼친 것 → LV가 <b>얼마나 잘 수축하는지 1차원으로</b> 분석 <span class="tag t-rec">수업</span></li>
+<li>정상: 수축기에 중격과 자유벽이 크게 가까워짐 / DCM: <b>거의 수축하지 않음</b> → 단축률 15–20% 미만 <span class="tag t-rec">수업</span></li>
+<li><b>FS = (EDD − ESD) / EDD × 100</b></li>
+</ul><div class="why">
+<div class="mt">ESD가 "1차", EDD가 "2차"인 이유 — 순서를 이해하면 외울 필요 없음</div>
+<ul class="d">
+<li><b>ESD</b>는 "얼마나 작게 짜낼 수 있나" = <b>수축력(+후부하)</b>의 결과 → 근육이 약해지면 <b>가장 먼저</b> 커짐</li>
+<li>ESD만 커지면 SV(EDV − ESV)가 줄어듦 → 몸이 이를 감지 → RAAS로 체액↑ + 심실 리모델링 → <b>EDD를 키워서</b> 차이를 다시 벌림 = <b>보상</b></li>
+<li>큰 풍선은 조금만 줄어도 많은 양이 빠짐 → FS가 10%대여도 SV는 한동안 유지 가능 → 그래서 "FS 낮은데 증상 없음"이 잠복기의 모습</li>
+<li>대비: <b>MMVD(4장)</b>는 EDD↑인데 ESD는 정상 → FS가 오히려 <b>↑(&gt; 50%)</b>. <b>DCM</b>은 ESD↑가 먼저 → FS <b>↓</b>. 둘 다 "심장이 큰 개"지만 FS로 바로 갈림</li>
+</ul>
+</div><h3 class="lv2">2. FS 판정 기준 정리 <span class="tag t-ex">시험</span></h3><table>
+<caption>표 5. FS 값의 의미 (슬라이드 + 수업)</caption>
+<thead><tr><th style="width:26%">FS</th><th>해석</th></tr></thead>
+<tbody>
+<tr><td class="kc">35–50%</td><td>개 정상 범위 (수업). "아주 러프하게" <b>30% 이상</b>이면 정상으로 봄 <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td class="kc">&lt; 25%</td><td><b>DCM</b> 기준 (슬라이드)</td></tr>
+<tr class="hi"><td class="kc">&lt; 20%</td><td>러프하게 <b>기능성 장애가 있는 것으로 판정</b> <span class="tag t-pen">필기</span> / Doberman 선별에선 <b>confirmed</b></td></tr>
+<tr><td class="kc">&lt; 15%</td><td><b>심부전 상태</b>의 DCM</td></tr>
+</tbody>
+</table><h3 class="lv2">3. Doberman 선별검사 (Screening) <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<table>
+<caption>표 6. ① 심장초음파</caption>
+<tbody>
+<tr><td class="kc" style="width:44%">ESD</td><td>↑</td></tr>
+<tr><td class="kc">FS &gt; 25%</td><td>normal</td></tr>
+<tr class="hi"><td class="kc">FS 20–25%</td><td><b>gray zone</b></td></tr>
+<tr class="hi"><td class="kc">FS &lt; 20%</td><td><b>confirmed</b></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<caption>표 7. ② Holter (24시간 ECG)</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:44%">기준</td><td><b>&gt; 50 PVCs / 24시간</b></td></tr>
+<tr><td class="kc">진행하면</td><td>VPC의 <b>수·복잡성·속도</b>가 병의 중증도와 함께 증가</td></tr>
+<tr><td class="kc">심하면</td><td>하루 <b>수만 개</b>의 VPC</td></tr>
+</tbody>
+</table>
+</div>
+</div><span class="pno">6</span></section><section class="page" style=""><ul class="d">
+<li>부정맥이 있으면 Holter로 <b>심실성 부정맥이 얼마나 심한지</b> 보고 → <b>항부정맥제를 얼마나 써야 할지</b> 결정. 요즘 Holter는 꽤 쉽게 적용 <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">왜 Doberman은 초음파 + Holter 두 가지를 다 하나</div>
+<ul class="d">
+<li>Doberman DCM은 <b>전기적 이상(VPC)이 구조적 이상(확장)보다 먼저</b> 나타나는 경우가 많음 → 초음파가 정상이어도 Holter에서 VPC가 쏟아질 수 있음</li>
+<li>Doberman의 첫 증상이 <b>돌연사</b>일 수 있음 → 심부전 증상을 기다리면 늦음 → 무증상일 때 찾아야 함</li>
+<li>짧은 진료실 ECG(1–2분)는 하루 VPC 50개를 거의 못 잡음 (평균 30분에 1개) → <b>24시간 기록</b>이 필요한 이유</li>
+</ul>
+</div><h3 class="lv2">4. 기능성 승모판 역류 (Functional MR) — Central jet sign <span class="tag t-ex">시험</span></h3><div class="three" style="display:block;"><div><div class="cap">승모판 모식도 — 왜 DCM의 역류는 "가운데"로 뿜어지나</div><svg viewBox="0 0 600 244" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="정상, MMVD, DCM 기능성 MR 승모판 비교"><path d="M54,84 C34,56 52,30 98,28 C144,30 162,56 142,84" fill="#f6eef0" stroke="#9a7b80" stroke-width="1.3"></path><path d="M54,84 C34,124 52,184 98,190 C144,184 162,124 142,84" fill="#fbf3f1" stroke="#7a1f1f" stroke-width="3"></path><text x="98" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LA</text><text x="98" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LV</text><circle cx="64" cy="84" r="3.2" fill="#1B2A44"></circle><circle cx="132" cy="84" r="3.2" fill="#1B2A44"></circle><ellipse cx="64" cy="150" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><ellipse cx="132" cy="150" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><path d="M64,84 Q82.7,102 96.5,98" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M92,96 L64,140 M80,96 L64,140" stroke="#6C7787" stroke-width=".9"></path><path d="M132,84 Q113.3,102 99.5,98" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M104,96 L132,140 M116,96 L132,140" stroke="#6C7787" stroke-width=".9"></path><text x="98" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2a7a4b">정상: 가운데서 딱 맞물림</text><path d="M250,84 C230,56 252,30 298,28 C344,30 366,56 346,84" fill="#f6eef0" stroke="#9a7b80" stroke-width="1.3"></path><path d="M250,84 C230,124 248,184 298,190 C348,184 366,124 346,84" fill="#fbf3f1" stroke="#7a1f1f" stroke-width="3"></path><text x="298" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LA</text><text x="298" y="178" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LV</text><circle cx="260" cy="84" r="3.2" fill="#1B2A44"></circle><circle cx="336" cy="84" r="3.2" fill="#1B2A44"></circle><ellipse cx="262" cy="150" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><ellipse cx="334" cy="150" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><path d="M260,84 Q282,104 300,98" stroke="#1B2A44" stroke-width="5" fill="none" stroke-linecap="round"></path><path d="M336,84 C328,58 302,62 306,88" stroke="#1B2A44" stroke-width="5" fill="none" stroke-linecap="round"></path><path d="M292,100 L262,140" stroke="#6C7787" stroke-width=".9"></path><path d="M308,86 L316,114" stroke="#6C7787" stroke-width=".9" stroke-dasharray="2 2"></path><path d="M316,120 L334,140" stroke="#6C7787" stroke-width=".9"></path><text x="320" y="117" font-size="9" fill="#E23B3B">건삭↯</text><path d="M300,90 C290,70 268,58 254,44 L268,38 C280,54 300,66 306,88 Z" fill="#2B5FC4" fill-opacity=".35" stroke="#2B5FC4" stroke-width="1"></path><text x="234" y="22" font-size="10" font-weight="700" fill="#2B5FC4">편심성 제트</text><text x="298" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#2B5FC4">MMVD: 판막 변성·탈출</text><path d="M432,84 C412,56 454,30 500,28 C546,30 588,56 568,84" fill="#f6eef0" stroke="#9a7b80" stroke-width="1.3"></path><path d="M432,84 C408,124 426,198 500,204 C574,198 592,124 568,84" fill="#fbf3f1" stroke="#7a1f1f" stroke-width="1.6"></path><text x="530" y="54" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LA</text><text x="500" y="192" text-anchor="middle" font-size="11" font-weight="700" fill="#6C7787">LV</text><circle cx="442" cy="84" r="3.2" fill="#1B2A44"></circle><circle cx="558" cy="84" r="3.2" fill="#1B2A44"></circle><ellipse cx="438" cy="164" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><ellipse cx="562" cy="164" rx="7" ry="11" fill="#c0392b" fill-opacity=".8"></ellipse><path d="M442,84 Q468.1,104 488,104" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M484,103 L438,154 M466,100 L438,154" stroke="#6C7787" stroke-width=".9"></path><path d="M558,84 Q531.9,104 512,104" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M516,103 L562,154 M534,100 L562,154" stroke="#6C7787" stroke-width=".9"></path><path d="M490,102 C486,64 478,48 488,36 L512,36 C522,48 514,64 510,102 Z" fill="#E23B3B" fill-opacity=".3" stroke="#E23B3B" stroke-width="1"></path><text x="500" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#E23B3B">중심성 제트</text><path d="M442,76 L558,76" stroke="#E23B3B" stroke-width="1" stroke-dasharray="3 2"></path><text x="562" y="80" font-size="9" fill="#E23B3B">고리↑</text><path d="M440,178 l-8,6" stroke="#E23B3B" stroke-width="1.2"></path><path d="M560,178 l8,6" stroke="#E23B3B" stroke-width="1.2"></path><text x="500" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#E23B3B">DCM: 판막 정상, 고리가 벌어짐</text></svg></div></div><ul class="d">
+<li>정상: 판막엽이 잘 <b>접합(coaptation)</b> / DCM: 심장이 <b>중격 쪽 · 자유벽 쪽 · 심첨 쪽 모든 방향으로</b> 확장 → 판막엽 사이가 멀어짐 <span class="tag t-rec">수업</span></li>
+<li>판막엽·건삭은 태어난 그대로 <b>정상</b>인데 바깥 틀이 벌어지니 → 닫혀도 <b>가운데(central)</b>에 틈(orifice)이 생김 → <b>중심성 제트 = central jet sign</b> <span class="tag t-pen">필기</span> "LV의 eccentric hypertrophy로 인해 valvular orifice의 형성 → central jet"</li>
+<li>역류량: MMVD보다 <b>상대적으로 적음</b> (MMVD는 판막 자체가 변성돼 꺾이므로 훨씬 많음) <span class="tag t-rec">수업</span></li>
+<li>역류 <b>속도</b>는 MMVD와 <b>큰 차이 없음</b> — 어느 쪽이든 LV–LA 압력차가 비슷하니까 <span class="tag t-rec">수업</span></li>
+</ul><table>
+<caption>표 8. MMVD의 MR vs DCM의 Functional MR</caption>
+<thead><tr><th style="width:20%"></th><th>MMVD (4장)</th><th>DCM (기능성)</th></tr></thead>
+<tbody>
+<tr><td class="kc">1차 원인</td><td><b>판막</b> 변성 → 탈출(prolapse)</td><td><b>심근</b> → LV·판막륜 확장, 유두근이 바깥·아래로 끌려감</td></tr>
+<tr><td class="kc">판막엽</td><td>두껍고 결절성, 꺾임</td><td><b>정상</b> 모양 (잡아당겨져 덜 닫힐 뿐)</td></tr>
+<tr class="hi"><td class="kc">제트 방향</td><td><b>편심성</b> (탈출한 엽의 반대쪽 벽으로)</td><td><b>중심성 (central jet)</b></td></tr>
+<tr><td class="kc">역류량</td><td>많음</td><td>상대적으로 적음</td></tr>
+<tr><td class="kc">제트 속도</td><td colspan="2" class="c">LV–LA 압력차가 비슷 → <b>비슷</b> (~5 m/s 내외)</td></tr>
+<tr class="hi"><td class="kc">FS</td><td>↑ (&gt; 50%까지)</td><td><b>↓ (&lt; 25%)</b></td></tr>
+</tbody>
+</table><span class="pno">7</span></section><section class="page" style=""><div class="why">
+<div class="mt">속도는 "양"이 아니라 "압력차"가 정한다 — 단순화 Bernoulli</div>
+<ul class="d">
+<li><b>ΔP = 4v²</b> → 역류 속도는 구멍 크기나 역류량이 아니라 <b>LV와 LA의 수축기 압력차</b>로 결정 (1장 VSD 원리와 동일)</li>
+<li>LV 약 100–120, LA 약 10–20 mmHg → ΔP ≈ 100 → v ≈ 5 m/s. MMVD든 DCM이든 이 압력 구도는 비슷하므로 속도도 비슷</li>
+<li>다만 DCM 말기에 LV가 압력을 잘 못 만들고 LA압이 높으면 ΔP가 줄어 <b>약간 느려질 수</b> 있음 <span class="tag t-why">정리자 보충</span></li>
+<li>역류량이 적어도 DCM에선 이미 약한 LV가 더 손해 → 앞으로 나가는 박출량↓ + LA·폐정맥압↑ → 악순환에 기름</li>
+</ul>
+</div><h3 class="lv2">5. Gallop sound (S3) <span class="tag t-pen">필기</span> 3음성 gallop</h3><ul class="d">
+<li>DCM에선 <b>S3 gallop</b>이 보통 들림 → "떡 떡 떡" 하는 말발굽 리듬 <span class="tag t-rec">수업</span></li>
+<li>LV가 커지면서 <b>깊어지고 넓어져</b>, 이완기 초기에 혈액이 떨어질 때 공명이 일어나 생김 <span class="tag t-rec">수업</span></li>
+</ul><div class="three" style="display:block;"><div><div class="cap">그림 3. S3 vs S4 — 언제 들리나</div><svg viewBox="0 0 620 150" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="S3와 S4 갤럽 타이밍"><line x1="100" y1="40" x2="610" y2="40" stroke="#d0d6dc"></line><text x="8" y="44" text-anchor="start" font-size="11" fill="#E23B3B" font-weight="700">S3 (DCM)</text><rect x="118" y="26" width="4" height="28" fill="#1B2A44"></rect><text x="120" y="18" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">S1</text><rect x="288" y="26" width="4" height="28" fill="#1B2A44"></rect><text x="290" y="18" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">S2</text><rect x="558" y="26" width="4" height="28" fill="#1B2A44"></rect><text x="560" y="18" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">S1</text><rect x="347" y="31" width="6" height="18" rx="2" fill="#E23B3B"></rect><text x="350" y="27" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">S3</text><text x="355" y="64" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">이완기 초기 급속 충만 → 늘어난 심실이 "멈춰 세움"</text><line x1="100" y1="92" x2="610" y2="92" stroke="#d0d6dc"></line><text x="8" y="96" text-anchor="start" font-size="11" fill="#2B5FC4" font-weight="700">S4 (HCM)</text><rect x="118" y="78" width="4" height="28" fill="#1B2A44"></rect><rect x="288" y="78" width="4" height="28" fill="#1B2A44"></rect><rect x="558" y="78" width="4" height="28" fill="#1B2A44"></rect><rect x="521" y="83" width="6" height="18" rx="2" fill="#2B5FC4"></rect><text x="524" y="79" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">S4</text><text x="355" y="116" text-anchor="middle" font-size="9.5" fill="#2B5FC4" font-weight="700">이완기 말 심방 수축 → 뻣뻣한 심실 (AF면 없음)</text><text x="205" y="18" text-anchor="middle" font-size="9.5" fill="#6C7787">수축기</text><text x="425" y="18" text-anchor="middle" font-size="9.5" fill="#6C7787">이완기</text><text x="310" y="146" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">S1–S2–S3 = "떡 떡 떡" 말발굽(gallop) 리듬 · 저음 → 청진기 bell</text></svg></div></div><div class="why">
+<div class="mt">S3는 언제 · 왜 나나 (S4와 구분)</div>
+<ul class="d">
+<li><b>S3</b> = 이완기 <b>초기 급속 충만기</b>. LA압이 높아 피가 세게 쏟아지는데, 이미 꽉 찬 · 늘어난 심실이 더 받지 못하고 <b>갑자기 멈춰 세움</b> → 심실벽·판막 장치가 진동 = 저음. 개에서 들리면 대부분 비정상 → <b>DCM·용적 과부하</b>의 신호</li>
+<li><b>S4</b> = 이완기 <b>말기 심방 수축</b> 때 뻣뻣한(두꺼운) 심실로 피를 밀어 넣는 소리 → <b>HCM(고양이)</b>에서 더 전형적. AF면 심방 수축이 없으니 S4도 없음</li>
+<li>둘 다 저음이라 청진기 <b>벨(bell)</b>로, 심첨부에서 더 잘 들림. 4장의 systolic click(고음, 수축기)과 혼동 주의</li>
+</ul>
+</div><h3 class="lv2">6. EPSS (E-Point to Septal Separation)</h3><div class="three" style="display:block;"><div><div class="cap">승모판 M-mode 모식도 — E점(최대 개방)과 중격 사이 거리</div><svg viewBox="0 0 600 196" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="EPSS 정상과 DCM 비교"><rect x="30" y="26" width="244" height="150" fill="#20262e" rx="4"></rect><text x="152.0" y="18" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2a7a4b">정상: E점이 중격에 거의 닿음</text><rect x="34" y="42" width="236" height="14" fill="#e9d3c8"></rect><text x="38" y="52" font-size="9" fill="#20262e">IVS</text><polyline points="40.0,120.0 70.0,120.0 80.0,62.0 90.0,105.5 104.0,111.3 112.0,88.1 122.0,120.0 158.0,120.0 158.0,120.0 188.0,120.0 198.0,62.0 208.0,105.5 222.0,111.3 230.0,88.1 240.0,120.0 276.0,120.0" fill="none" stroke="#fff" stroke-width="2"></polyline><line x1="80" y1="57" x2="80" y2="61" stroke="#ffd166" stroke-width="2"></line><text x="86" y="63.0" font-size="10.5" font-weight="700" fill="#ffd166">EPSS</text><text x="77" y="75" font-size="10" font-weight="700" fill="#7fd1ff">E</text><text x="112" y="101.1" font-size="10" font-weight="700" fill="#7fd1ff">A</text><text x="40" y="168" font-size="9" fill="#cfd6df">승모판 전엽 (septal leaflet)</text><rect x="330" y="26" width="244" height="150" fill="#20262e" rx="4"></rect><text x="452.0" y="18" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E23B3B">DCM: E점–중격 거리↑</text><rect x="334" y="42" width="236" height="14" fill="#e9d3c8"></rect><text x="338" y="52" font-size="9" fill="#20262e">IVS</text><polyline points="340.0,134.0 370.0,134.0 380.0,94.0 390.0,124.0 404.0,128.0 412.0,112.0 422.0,134.0 458.0,134.0 458.0,134.0 488.0,134.0 498.0,94.0 508.0,124.0 522.0,128.0 530.0,112.0 540.0,134.0 576.0,134.0" fill="none" stroke="#fff" stroke-width="2"></polyline><line x1="380" y1="57" x2="380" y2="93" stroke="#ffd166" stroke-width="2"></line><text x="386" y="79.0" font-size="10.5" font-weight="700" fill="#ffd166">EPSS</text><text x="377" y="107" font-size="10" font-weight="700" fill="#7fd1ff">E</text><text x="412" y="125.0" font-size="10" font-weight="700" fill="#7fd1ff">A</text><text x="340" y="168" font-size="9" fill="#cfd6df">승모판 전엽 (septal leaflet)</text></svg></div></div><span class="pno">8</span></section><section class="page" style=""><ul class="d">
+<li>승모판 M-mode에서 판막이 이완기 초기에 <b>최대로 열린 점(E point)</b>과 <b>심실중격(septum)</b> 사이 거리 → DCM에선 <b>증가</b> (확장되니까) <span class="tag t-rec">수업</span></li>
+<li>E파(이완기 초기 수동 충만) 다음 A파(심방 수축) → M자 모양</li>
+</ul><div class="why">
+<div class="mt">EPSS가 늘어나는 두 가지 이유</div>
+<ul class="d">
+<li>① <b>공간</b>: LV가 커져 중격이 판막에서 멀리 밀려남</li>
+<li>② <b>흐름</b>: 수축력이 약하면 1회 박출량이 적고 → 그만큼 다음 이완기에 승모판을 통과하는 혈류도 적음 → 판막엽이 <b>덜 크게 열림</b></li>
+<li>→ 정상 개는 E점이 중격에 거의 닿을 정도로 크게 열림. EPSS는 "수축력↓ + 확장"을 동시에 반영해서 FS와 함께 DCM 진단의 핵심 체크</li>
+</ul>
+</div><h3 class="lv2">7. LA 확대 평가</h3><ul class="d">
+<li><b>LA/Ao ratio</b> 또는 <b>LA/Ao 면적비</b>로 평가 (기준값은 4장 표 18: ratio 정상 &lt; 1.5, 면적비 &lt; 3.5)</li>
+<li>DCM에서도 기능성 MR이 있어 LA가 커짐 → 심부전일 땐 심하게 확대</li>
+</ul><h2 class="lv1">Ⅵ. 진단 ② — 흉부 방사선 <span class="en">Thoracic radiography</span></h2><table>
+<caption>표 9. 중증 DCM의 X-ray 소견</caption>
+<thead><tr><th style="width:32%">소견</th><th>의미</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">"Globoid" 심장 음영</td><td>모든 방(특히 LV)이 확장 → <b>공처럼 둥근</b> 실루엣 (MMVD는 LA·LV 쪽이 두드러진 모양) <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">좌심방 확대</td><td>기능성 MR + 충만압↑</td></tr>
+<tr class="hi"><td class="kc">폐수종</td><td>심할수록 더 심함. 심하면 심장 윤곽이 안 보일 정도</td></tr>
+<tr><td class="kc">흉수 (pleural effusion)</td><td><b>Uncommon</b> — 때에 따라 나타날 수 있음</td></tr>
+</tbody>
+</table><ul class="d">
+<li><b>치료 전후 비교</b>(Prior to / After): 치료 전엔 폐수종 때문에 심장 윤곽이 묻혀 안 보임 → 이뇨 치료 후 폐가 맑아지면서 <b>커진 심장 실루엣이 드러남</b> (여전히 넓고 확장) <span class="tag t-rec">수업</span></li>
+<li>치료 중간중간 흉부 방사선을 찍어 폐수종 개선을 <b>시각적으로</b> 확인 <span class="tag t-rec">수업</span></li>
+</ul><div class="three" style="display:block;"><div><div class="cap">그림 4. DV 방사선 심장 윤곽 — 정상 · MMVD · DCM(globoid)</div><svg viewBox="0 0 620 196" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="흉부 DV 심장 윤곽 비교"><ellipse cx="105" cy="84" rx="50" ry="64" fill="#f1e2d8" stroke="#9c4d49" stroke-width="1.6"></ellipse><text x="105" y="172" text-anchor="middle" font-size="12" fill="#0F9268" font-weight="700">정상</text><text x="105" y="188" text-anchor="middle" font-size="9.5" fill="#6C7787">타원형</text><circle cx="368" cy="50" r="22" fill="#f1e2d8" stroke="#E0912B" stroke-width="2.4"></circle><ellipse cx="318" cy="88" rx="56" ry="70" fill="#f1e2d8"></ellipse><ellipse cx="318" cy="88" rx="56" ry="70" fill="none" stroke="#9c4d49" stroke-width="1.6"></ellipse><text x="380" y="32" text-anchor="middle" font-size="10" fill="#E0912B" font-weight="700">LA</text><text x="310" y="172" text-anchor="middle" font-size="12" fill="#E0912B" font-weight="700">MMVD</text><text x="310" y="188" text-anchor="middle" font-size="9.5" fill="#6C7787">LA·LV 쪽(좌측 뒤) 두드러짐</text><circle cx="515" cy="84" r="72" fill="#f1e2d8" stroke="#E23B3B" stroke-width="2.4"></circle><text x="515" y="172" text-anchor="middle" font-size="12" fill="#E23B3B" font-weight="700">DCM</text><text x="515" y="188" text-anchor="middle" font-size="9.5" fill="#6C7787">모든 방 확장 → 공(globoid)</text></svg></div></div><div class="why">
+<div class="mt">흉수가 "드문" 이유</div>
+<p>개의 흉수는 주로 <b>체정맥압↑</b>, 즉 <b>우심부전</b>에서 생김. DCM의 1차 부담은 <b>좌심(LV→LA→폐정맥)</b>이라 먼저 <b>폐수종</b>으로 나타나고, 흉수는 우심까지 같이 무너진 <b>양심실 부전</b> 단계에서야 나옴 <span class="tag t-why">정리자 보충</span></p>
+</div><span class="pno">9</span></section><section class="page" style=""><h2 class="lv1">Ⅶ. 치료 <span class="en">Treatment</span></h2><p class="txt kwn">DCM은 심근병이지만 <b>심부전 = 혈액 흐름의 문제</b>이므로 심부전 치료가 당연히 들어감. 기본 컨셉 = <b>이뇨제 + RAAS 억제제</b>, 그리고 DCM은 수축력이 떨어진 병이라 <b>양성 수축력 강화제(pimobendan)가 반드시</b> 들어가야 함 <span class="tag t-rec">수업</span></p><div class="chain"><span>Furosemide (울혈↓)</span><i>+</i><span>ACEI (RAAS↓)</span><i>+</i><span class="hot">Pimobendan (수축력↑ · 혈관 확장)</span><i>±</i><span class="end">항부정맥제</span></div><h3 class="lv2">1. 전통적 심부전 치료 (Conventional HF therapy) <span class="tag t-ex">시험</span></h3><table>
+<caption>표 10. Furosemide · ACEI · Pimobendan</caption>
+<thead><tr><th style="width:18%">약</th><th style="width:40%">용법 (슬라이드)</th><th>포인트 <span class="tag t-rec" style="background:#fff;">수업</span></th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc" rowspan="2">Furosemide</td><td><b>급성</b> — 심한 폐수종 안정화<br><b>4–8 mg/kg q 1–4 h</b></td><td>호흡곤란 심함 = 폐수종 심함 → 먹을 수 없으니 <b>주사</b>로. 입원 중</td></tr>
+<tr><td><b>만성</b> — <b>2–4 mg/kg q 8–12 h</b></td><td>외래·집에서 관리 (BID–TID)<br><b>고양이는 1–2 mg/kg</b> — 개 용량 그대로 쓰지 않음</td></tr>
+<tr><td class="kc">ACE inhibitor</td><td>만성 치료</td><td>Furosemide와 조합 (RAAS 억제)</td></tr>
+<tr class="hi"><td class="kc">Pimobendan</td><td>강력한 양성 수축력 강화제 + 약한 혈관 확장제 <span class="tag t-pen">필기</span> (= 양성 수축력 증강제)<br>미국·유럽·캐나다·호주·일본에서 사용</td><td>DCM엔 <b>반드시</b> 포함</td></tr>
+</tbody>
+</table><div class="memo red">
+<div class="mt">* 고양이는 왜 furosemide 용량이 더 적나 <span class="tag t-pen">필기</span> <span class="tag t-rec">수업</span></div>
+<p>고양이 심혈관계는 수분(fluid)이 들어오고 나가는 것에 개보다 훨씬 <b>민감</b> → 조금만 더 들어와도 금방 <b>폐수종</b>, 조금만 더 빠져도 금방 심한 <b>탈수</b> → 신장 쪽에 <b>AKI</b>. 그래서 개 용량을 고양이에 똑같이 적용하지 않음</p>
+</div><div class="memo blue">
+<div class="mt">Furosemide 효과 판정 — 가장 쉬운 방법 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>① <b>호흡수</b>: 폐수종으로 호흡곤란이면 호흡이 빠름 → 치료 전 대비 얼마나 정상에 가깝게 줄었나</li>
+<li>② <b>흉부 X-ray</b>: 폐수종 개선을 눈으로 확인 (Ⅵ장 치료 전후 사진)</li>
+<li>집에서는 보호자가 <b>안정 시·수면 시 호흡수</b>를 세어 기록하는 것이 일반적 모니터링 방법 <span class="tag t-why">정리자 보충</span></li>
+</ul>
+</div><div class="why">
+<div class="mt">각 약이 DCM 병태의 어디를 치나</div>
+<ul class="d">
+<li><b>Furosemide</b> (루프 이뇨제): 헨레고리 굵은 상행지의 Na-K-2Cl 운반체 차단 → Na·물 배설↑ → 체액량·<b>전부하↓</b> → LA압·폐정맥압↓ → 폐수종 해소. 수축력은 못 고침 = "증상(울혈)" 치료</li>
+<li><b>ACEI</b>: Angiotensin II·알도스테론↓ → Na·물 저류↓ + 혈관 수축↓(후부하↓) + 장기적으로 <b>심근 섬유화·리모델링 억제</b> (Ⅲ장 악순환 늦추기)</li>
+<li><b>Pimobendan</b>: 유일하게 "약한 근육" 자체를 도와줌 → 아래 2번</li>
+</ul>
+</div><span class="pno">10</span></section><section class="page" style=""><h3 class="lv2">2. Pimobendan — 왜 DCM의 필수 약인가 <span class="tag t-ex">시험</span></h3><div class="three" style="display:block;"><div><div class="cap">Pimobendan 작용 모식도 — inodilator (수축력↑ + 혈관 확장)</div><svg viewBox="0 0 600 270" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="피모벤단 작용 기전"><rect x="6" y="6" width="330" height="258" rx="10" fill="#fff7f5" stroke="#e5b9b9" stroke-width="1.4"></rect><text x="171" y="24" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E23B3B">① 심근세포 — 수축력↑ (positive inotrope)</text><rect x="18" y="36" width="92" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="64.0" y="50.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">β1 수용체</text><text x="64.0" y="63.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">(교감 NE)</text><rect x="128" y="36" width="92" height="34" rx="6" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="174.0" y="57.3" text-anchor="middle" font-size="12" fill="#1B2A44" font-weight="700">cAMP ↑</text><rect x="238" y="36" width="88" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="282.0" y="50.1" text-anchor="middle" font-size="10" fill="#1B2A44">PDE3</text><text x="282.0" y="63.1" text-anchor="middle" font-size="10" fill="#1B2A44">cAMP → AMP 분해</text><line x1="110" y1="53" x2="126" y2="53" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="126,53 119.7,56.0 119.7,50.0" fill="#E23B3B"></polygon><line x1="236" y1="53" x2="222" y2="53" stroke="#6C7787" stroke-width="1.6"></line><polygon points="222,53 228.3,50.0 228.3,56.0" fill="#6C7787"></polygon><circle cx="324" cy="38" r="10" fill="#0F9268"></circle><text x="324" y="42.5" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">✕</text><text x="282" y="86" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0F9268">피모벤단이 억제</text><line x1="174" y1="70" x2="174" y2="94" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="174,94 171.0,87.7 177.0,87.7" fill="#E23B3B"></polygon><rect x="118" y="96" width="112" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="174.0" y="117.0" text-anchor="middle" font-size="11" fill="#1B2A44">PKA → Ca²⁺ 유입↑</text><line x1="174" y1="130" x2="174" y2="152" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="174,152 171.0,145.7 177.0,145.7" fill="#E23B3B"></polygon><rect x="18" y="154" width="150" height="44" rx="6" fill="#eef9f4" stroke="#0F9268" stroke-width="1.4"></rect><text x="93.0" y="173.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">트로포닌 C의</text><text x="93.0" y="186.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">Ca²⁺ 감수성↑ (Ca sensitizer)</text><rect x="186" y="154" width="140" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="256.0" y="173.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">세포 내 Ca²⁺↑</text><text x="256.0" y="186.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">(PDE3 억제 효과)</text><line x1="93" y1="198" x2="150" y2="220" stroke="#0F9268" stroke-width="1.6"></line><polygon points="150,220 143.0,220.6 145.2,214.9" fill="#0F9268"></polygon><line x1="256" y1="198" x2="196" y2="220" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="196,220 200.9,215.0 203.0,220.7" fill="#E23B3B"></polygon><rect x="96" y="220" width="150" height="34" rx="6" fill="#13756A" stroke="#13756A" stroke-width="1.4"></rect><text x="171.0" y="241.3" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">수축력↑ (SV↑)</text><text x="20" y="214" font-size="9" fill="#6C7787">Ca를 더 안 넣고도 세짐</text><text x="252" y="214" font-size="9" fill="#6C7787">산소 소모↑ 부담</text><rect x="346" y="6" width="248" height="258" rx="10" fill="#f3f7ff" stroke="#9cbcf0" stroke-width="1.4"></rect><text x="470" y="24" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2B5FC4">② 혈관 평활근 — 혈관 확장</text><rect x="370" y="40" width="200" height="34" rx="6" fill="#fff" stroke="#2B5FC4" stroke-width="1.4"></rect><text x="470.0" y="61.0" text-anchor="middle" font-size="11" fill="#1B2A44">PDE3 억제 → cAMP↑</text><line x1="470" y1="74" x2="470" y2="96" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="470,96 467.0,89.7 473.0,89.7" fill="#2B5FC4"></polygon><rect x="370" y="98" width="200" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="470.0" y="119.0" text-anchor="middle" font-size="11" fill="#1B2A44">평활근 이완 = 혈관 확장</text><line x1="420" y1="132" x2="410" y2="156" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="410,156 409.6,149.0 415.2,151.4" fill="#2B5FC4"></polygon><line x1="520" y1="132" x2="530" y2="156" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="530,156 524.8,151.4 530.4,149.0" fill="#2B5FC4"></polygon><rect x="352" y="158" width="112" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="408.0" y="177.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">동맥 확장</text><text x="408.0" y="190.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">→ 후부하↓</text><rect x="476" y="158" width="112" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="532.0" y="177.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">정맥 확장</text><text x="532.0" y="190.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">→ 전부하↓</text><rect x="360" y="216" width="220" height="38" rx="6" fill="#13756A" stroke="#13756A" stroke-width="1.4"></rect><text x="470.0" y="232.0" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">수축력↑인데 혈압은</text><text x="470.0" y="245.5" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">크게 안 오름 (inodilator)</text></svg></div></div><table>
+<caption>표 11. 슬라이드 요약</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:30%">Potent positive inotrope</td><td>① <b>Phosphodiesterase(PDE3) 억제</b> ② 수축 단백의 <b>Ca²⁺ 감수성↑</b> (calcium sensitizer)</td></tr>
+<tr><td class="kc">Mild vasodilator</td><td>PDE 억제 → 말초 혈관 확장</td></tr>
+<tr class="hi"><td class="kc">효과</td><td><b>생존 기간 개선</b>, 특히 <b>Doberman</b>에서</td></tr>
+</tbody>
+</table><ul class="d">
+<li>보통 심장 수축력이 올라가면 말초 혈관 쪽 저항·<b>혈압이 올라감</b>. 피모벤단은 수축력을 올리면서 <b>말초 혈관을 확장</b>시키므로 혈압 상승 폭이 크지 않음 → "상당히 이상적인 메커니즘" <span class="tag t-rec">수업</span></li>
+<li>요즘 매우 많이 씀: MMVD, DCM은 당연히, 심지어 <b>HCM 말기</b>(수축 기능이 떨어진 end-stage)에도 효과가 있다고 함 <span class="tag t-rec">수업</span></li>
+</ul><div class="three" style="display:block;"><div><div class="cap">그림 5. 약한 심실은 전부하엔 둔하고 후부하엔 예민하다</div><svg viewBox="0 0 620 236" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="Frank-Starling 곡선과 후부하 민감도"><path d="M50,30 L50,190 L280,190" stroke="#1B2A44" stroke-width="1.6" fill="none"></path><text x="165.0" y="208" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">전부하 (EDV · 충만압) →</text><text x="40" y="24" text-anchor="start" font-size="10.5" fill="#1B2A44" font-weight="700">1회 박출량 (SV)</text><polyline points="50.0,190.0 55.8,178.9 61.5,168.7 67.2,159.3 73.0,150.6 78.8,142.5 84.5,135.1 90.2,128.3 96.0,121.9 101.8,116.1 107.5,110.7 113.2,105.7 119.0,101.1 124.8,96.9 130.5,93.0 136.2,89.4 142.0,86.0 147.8,83.0 153.5,80.1 159.2,77.5 165.0,75.1 170.8,72.8 176.5,70.8 182.2,68.9 188.0,67.1 193.8,65.5 199.5,64.0 205.2,62.6 211.0,61.3 216.8,60.2 222.5,59.1 228.2,58.1 234.0,57.1 239.8,56.3 245.5,55.5 251.2,54.8 257.0,54.1 262.8,53.5 268.5,52.9 274.2,52.4 280.0,51.9" fill="none" stroke="#0F9268" stroke-width="2.6"></polyline><polyline points="50.0,190.0 55.8,186.7 61.5,183.7 67.2,180.8 73.0,178.0 78.8,175.4 84.5,172.9 90.2,170.6 96.0,168.4 101.8,166.3 107.5,164.3 113.2,162.4 119.0,160.6 124.8,158.9 130.5,157.4 136.2,155.8 142.0,154.4 147.8,153.1 153.5,151.8 159.2,150.6 165.0,149.4 170.8,148.4 176.5,147.3 182.2,146.4 188.0,145.4 193.8,144.6 199.5,143.7 205.2,143.0 211.0,142.2 216.8,141.5 222.5,140.9 228.2,140.3 234.0,139.7 239.8,139.1 245.5,138.6 251.2,138.1 257.0,137.6 262.8,137.1 268.5,136.7 274.2,136.3 280.0,135.9" fill="none" stroke="#E23B3B" stroke-width="2.6"></polyline><text x="276" y="52" text-anchor="end" font-size="10.5" fill="#0F9268" font-weight="700">정상</text><text x="276" y="126" text-anchor="end" font-size="10.5" fill="#E23B3B" font-weight="700">DCM (납작)</text><text x="175.0" y="170" text-anchor="middle" font-size="9" fill="#E23B3B" font-weight="700">더 채워도 SV가 별로 안 늘고 충만압만↑ → 폐수종</text><path d="M360,30 L360,190 L590,190" stroke="#1B2A44" stroke-width="1.6" fill="none"></path><text x="475.0" y="208" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">후부하 (혈관 저항) →</text><text x="350" y="24" text-anchor="start" font-size="10.5" fill="#1B2A44" font-weight="700">1회 박출량 (SV)</text><path d="M360,60 L590,90" stroke="#0F9268" stroke-width="2.6"></path><path d="M360,100 L590,182" stroke="#E23B3B" stroke-width="2.6"></path><text x="586" y="82" text-anchor="end" font-size="10.5" fill="#0F9268" font-weight="700">정상: 완만</text><text x="586" y="172" text-anchor="end" font-size="10.5" fill="#E23B3B" font-weight="700">DCM: 가파름</text><path d="M510,154 L450,130" stroke="#2B5FC4" stroke-width="2"></path><path d="M458,126 L450,130 L458,136" stroke="#2B5FC4" stroke-width="2" fill="none"></path><text x="490" y="106" text-anchor="middle" font-size="9" fill="#2B5FC4" font-weight="700">혈관 확장(후부하↓)만으로</text><text x="490" y="118" text-anchor="middle" font-size="9" fill="#2B5FC4" font-weight="700">SV 크게 회복</text><text x="310" y="232" text-anchor="middle" font-size="9.5" fill="#6C7787">이해용 개념 그래프 — pimobendan·ACEI의 혈관 확장이 DCM에서 특히 효과적인 이유</text></svg></div></div><span class="pno">11</span></section><section class="page" style=""><div class="why">
+<div class="mt">"Ca 감수성↑"가 왜 중요한가 — 같은 힘을 더 싸게</div>
+<ul class="d">
+<li>수축의 최종 스위치 = Ca²⁺가 <b>트로포닌 C</b>에 붙는 것. 보통 수축력을 올리려면(교감신경·순수 PDE 억제제) 세포 안 <b>Ca²⁺ 양 자체를 늘림</b> → 산소·ATP 소모↑ + Ca 과부하로 <b>부정맥</b> 위험↑ → 약한 DCM 심근에겐 독이 될 수 있음</li>
+<li>Pimobendan은 트로포닌 C가 <b>같은 Ca²⁺에 더 잘 반응</b>하게 만듦 → Ca를 크게 늘리지 않고도 수축력↑ → 에너지 효율이 상대적으로 좋음</li>
+<li><b>혈관 확장(후부하↓)</b>이 DCM에서 특히 이득: 약한 심실은 Frank-Starling 곡선이 납작해서 전부하를 늘려도 박출량이 잘 안 늘지만, <b>후부하에는 매우 민감</b> → 뒤에서 미는 저항만 줄여도 박출량이 눈에 띄게 늘고 기능성 MR(뒤로 새는 양)도 줄어듦</li>
+<li>슬라이드 사진의 "Help PROTECT Dobermans" = 무증상(잠복기) Doberman DCM에 피모벤단을 쓰면 심부전·돌연사 발생이 늦춰지고 생존이 늘었다는 연구(PROTECT study) 홍보 <span class="tag t-why">정리자 보충</span></li>
+</ul>
+</div><h3 class="lv2">3. 항부정맥 치료 (Antiarrhythmic therapy) <span class="tag t-ex">시험</span></h3><table>
+<caption>표 12. 부정맥 종류별 약 (3장 Vaughan-Williams 분류 복습)</caption>
+<thead><tr><th style="width:18%">부정맥</th><th style="width:30%">약</th><th>특징</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">AF</td><td><b>Digoxin + atenolol</b>(β차단, class II) <b>또는 diltiazem</b>(Ca 채널 차단, class IV)</td><td>목표 = <b>심박수 조절</b> (AV 결절 전도를 늦춤)</td></tr>
+<tr><td class="kc" rowspan="3">심실성 부정맥 (VT)</td><td><b>Amiodarone</b> (class III)</td><td><b>간독성</b>, 그 밖의 독성 부작용 많음</td></tr>
+<tr><td><b>Mexiletine</b> (class I)</td><td>먹는 lidocaine 계열 (Na 채널 차단) <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td><b>Sotalol</b> (class III <b>+ II</b>)</td><td>특히 <b>LV 기능이 정상인 Boxer</b>에 / <b>음성 변력(negative inotropy)</b> 가능성</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">약 선택의 논리 — "AF는 속도, VT는 불씨, 그리고 수축력을 지켜라"</div>
+<ul class="d">
+<li><b>AF</b>: 심방은 어차피 세동 → 심실로 넘어가는 신호 수를 AV 결절에서 줄이는 게 목표. <b>Digoxin</b> = 미주신경 긴장↑로 AV 전도↓ + 약한 양성 변력(약한 심장에 유리). 단독으론 부족해 β차단제나 diltiazem을 더함</li>
+<li><b>Sotalol이 DCM 심장에 조심스러운 이유</b>: class II(β 차단) 성분이 교감신경의 수축력 지원을 끊음 → 이미 수축력이 떨어진 DCM에선 심부전 악화 가능 → 그래서 "<b>LV 기능이 정상인</b> Boxer"에 특히 권장</li>
+<li><b>Mexiletine</b>: Na 채널 차단 → 이상 자동능·재진입 억제. 수축력 영향이 적은 편</li>
+<li><b>Amiodarone</b>: K 채널 차단(불응기 연장)이 주지만 여러 class 작용을 다 가진 강력한 약 → 효과는 좋지만 간 등 전신 독성 때문에 모니터링 필요</li>
+</ul>
+</div><h3 class="lv2">4. 비전통적 치료 (Unconventional therapy)</h3><table>
+<caption>표 13. 아직 개에선 표준이 아닌 것들</caption>
+<tbody>
+<tr><td class="kc" style="width:30%">β-blocker (<b>carvedilol</b>)</td><td>사람에선 이득 있음 / <b>개에선 아직 입증된 이득 없음</b>. 3세대 β차단제 — 비싸지만 atenolol 쓰다가 구할 수 있으면 쓰는 병원도 꽤 있음 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">Automatic implantable defibrillator (<b>ICD</b>)</td><td>개에겐 아직 <b>너무 비쌈</b></td></tr>
+</tbody>
+</table><span class="pno">12</span></section><section class="page" style=""><div class="two">
+<div>
+<div class="memo">
+<div class="mt">Pacemaker vs ICD <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li><b>Pacemaker</b>: <b>느리게</b> 뛰는 심장을 정상에 가깝게 <b>빨리</b> 뛰게 함 (서맥 치료)</li>
+<li><b>ICD</b> (implantable cardiac defibrillator): <b>빨리</b> 뛰는 심장(VT·VF)을 전기충격으로 <b>재세동</b>시켜 정상 리듬으로</li>
+<li>시술 방법은 거의 비슷, <b>작동 원리가 다름</b></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="why">
+<div class="mt">사람에선 되는 β차단제가 왜 개 DCM에선 애매한가</div>
+<p>만성 심부전에서 계속 켜진 교감신경은 장기적으로 심근 독성(리모델링·부정맥) → 사람에선 아주 낮은 용량부터 천천히 올려 이득을 봄. 하지만 β 차단은 단기적으로 <b>수축력을 깎음</b> → 개 DCM은 진단 시 이미 말기인 경우가 많아 그 "적응 기간"을 버티기 어렵고, 아직 연구 근거도 부족 <span class="tag t-why">정리자 보충</span></p>
+</div>
+</div>
+</div><h2 class="lv1">Ⅷ. 예후 <span class="en">Prognosis</span></h2><table>
+<caption>표 14. 심부전이 있는 DCM 개의 예후 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<tbody>
+<tr><td class="kc" style="width:28%">단기</td><td><b>Guarded</b> — 대부분 퇴원은 함</td></tr>
+<tr class="hi"><td class="kc">장기</td><td><b>Poor to grave</b> — 대부분 생존 기간이 <b>몇 달</b> / <b>1년 생존은 10%</b></td></tr>
+<tr class="hi"><td class="kc">Doberman</td><td>다른 품종보다 예후가 <b>더 나쁨</b></td></tr>
+<tr><td class="kc">사망 형태</td><td>① <b>돌연사</b> — Doberman의 <b>20%</b> ② <b>심부전</b> (자연사 또는 안락사)</td></tr>
+</tbody>
+</table><ul class="d">
+<li>심부전이 있는 DCM은 상태가 안 좋고 <b>당장 내일, 하룻밤 자는 사이에도 죽을 수 있다</b> → 이런 심각한 질병이라는 걸 <b>보호자에게 꼭 이해시켜야</b> 함 <span class="tag t-rec">수업</span></li>
+<li>기본 사망 모드: 부정맥에 의한 돌연사 / 심부전에 의한 호흡곤란 <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">MMVD(6개월–2년)보다 예후가 훨씬 나쁜 이유</div>
+<ul class="d">
+<li>MMVD는 <b>판막</b> 문제라 심근은 오랫동안 튼튼 → 약으로 폐수종을 조절하면 꽤 오래 버팀. DCM은 <b>엔진 자체</b>가 고장 → 약으로 보조할 뿐 근육은 계속 나빠짐</li>
+<li>DCM은 <b>잠복기가 길고 조용</b>해서 증상이 나올 땐 이미 보상이 다 소진된 말기</li>
+<li>늘어나고 섬유화된 심근 = <b>부정맥의 온상</b> → 심부전을 잘 조절해도 언제든 VT·VF 돌연사 가능</li>
+</ul>
+</div><h2 class="lv1">Ⅸ. Boxer 심근병증 — ARVC <span class="en">Arrhythmogenic Right Ventricular Cardiomyopathy</span></h2><ul class="d">
+<li>"Boxer cardiomyopathy" — 미국에서 Boxer를 많이 키워 상대적으로 많음 <span class="tag t-rec">수업</span></li>
+<li>Boxer에서 실신(syncope)할 때 나타나는 전형적인 <b>심실 빈맥</b></li>
+</ul><div class="why">
+<div class="mt">이름 풀이 — 왜 "우심실" "부정맥 유발성"인가 <span class="tag t-why" style="margin-left:4px;">정리자 보충</span></div>
+<ul class="d">
+<li>주로 <b>우심실 심근이 지방·섬유 조직으로 바뀜</b>(fibrofatty replacement). 건강한 근육 사이사이에 전기가 안 통하는 조직이 끼면 → 전기가 돌아서 가는 <b>재진입 회로</b>가 생김 → <b>VPC·VT</b></li>
+<li>그래서 펌프 기능은 멀쩡해도(초기) <b>전기적으로만</b> 불안정할 수 있음 → "부정맥 유발성"</li>
+<li>VPC가 <b>우심실</b>에서 시작되면 흥분이 오른쪽 → 왼쪽으로 퍼짐(LBBB와 같은 방향) → <b>Lead II에서 QRS가 위로(양성)</b> 넓게 나옴 → Boxer VPC의 전형적 모양 (슬라이드 ECG도 Lead II 양성 VT)</li>
+</ul>
+</div><span class="pno">13</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 6. ARVC — 우심실 근육이 지방·섬유로 바뀌고, RV발 VT가 R on T로 VF가 됨</div><svg viewBox="0 0 620 250" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="ARVC 모식도와 R on T"><defs><marker id="h19r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h19b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h19k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h19g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h19v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h19o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h19n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M34.0,49.4 Q34.0,27.0 59.2,27.0 L104.0,27.0 Q112.4,27.0 112.4,36.8 L112.4,88.6 L34.0,88.6 Z" fill="#eef3fc" stroke="#9c4d49" stroke-width="1.4"></path><path d="M118.0,36.8 Q118.0,27.0 127.8,27.0 L171.2,27.0 Q196.4,27.0 196.4,49.4 L196.4,88.6 L118.0,88.6 Z" fill="#fdf0f0" stroke="#9c4d49" stroke-width="1.4"></path><path d="M31.2,97.0 L199.2,97.0 Q202.0,167.0 129.2,216.0 Q111.0,224.4 98.4,209.0 Q34.0,160.0 31.2,97.0 Z" fill="#d99a96" fill-opacity=".55" stroke="#9c4d49" stroke-width="1.4"></path><path d="M45.2,104.0 L106.8,104.0 L112.4,189.4 Q97.0,199.2 83.0,181.0 Q48.0,146.0 45.2,104.0 Z" fill="#eef3fc"></path><path d="M123.6,104.0 L186.6,104.0 Q188.0,164.2 134.8,202.0 L126.4,195.0 Z" fill="#fdf0f0"></path><circle cx="51.3" cy="115.0" r="2.8" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="47.4" cy="157.9" r="3.4" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="45.0" cy="151.7" r="3.0" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="41.2" cy="161.6" r="5.5" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="43.9" cy="142.1" r="3.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="34.5" cy="143.5" r="3.5" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="50.2" cy="147.8" r="4.2" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="34.4" cy="133.8" r="2.9" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="52.2" cy="158.2" r="3.0" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="48.5" cy="162.4" r="5.2" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="48.4" cy="135.8" r="5.4" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="36.9" cy="163.8" r="4.6" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="43.7" cy="145.3" r="5.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="49.1" cy="135.8" r="5.1" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="42.4" cy="150.7" r="5.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="42.9" cy="126.5" r="3.5" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="37.0" cy="174.6" r="3.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="39.6" cy="178.0" r="4.6" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="43.4" cy="156.6" r="4.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="37.8" cy="146.8" r="5.3" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="35.4" cy="168.4" r="4.7" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="37.5" cy="163.1" r="2.7" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="39.0" cy="126.9" r="5.1" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="43.5" cy="170.8" r="3.2" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="50.0" cy="140.6" r="4.7" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><circle cx="40.6" cy="123.0" r="4.5" fill="#f7e27a" stroke="#c9a400" stroke-width=".6"></circle><path d="M38.0,177.8 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M37.2,162.1 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M37.1,128.9 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M48.2,122.0 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M39.4,159.4 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M42.2,114.0 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M50.7,121.6 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M37.3,135.1 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M45.4,163.0 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M38.4,134.6 l6,3" stroke="#8b8b8b" stroke-width="2"></path><path d="M48.0,146.0 l4,-10 l4,10 l10,0 l-8,6 l3,10 l-9,-6 l-9,6 l3,-10 l-8,-6 z" fill="#E23B3B" stroke="#8c1f1f"></path><path d="M62.0,150.2 Q111.0,188.0 168.39999999999998,146.0" fill="none" stroke="#E23B3B" stroke-width="2.4" stroke-linecap="round" marker-end="url(#h19r)"></path><text x="115.19999999999999" y="220.0" text-anchor="middle" font-size="9.5" fill="#1B2A44" font-weight="700">RV 근육 → 지방·섬유(노랑·회색)로 대체</text><text x="115.19999999999999" y="234.0" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">→ 재진입 회로 → RV발 VPC·VT</text><text x="118.0" y="191.79999999999998" text-anchor="middle" font-size="9" fill="#E23B3B" font-weight="700">오른쪽 → 왼쪽으로 퍼짐</text><text x="250" y="22" text-anchor="start" font-size="10.5" fill="#1B2A44" font-weight="700">RV 기원 VPC = lead II에서 위로(LBBB 모양)</text><path d="M244,70 L250,70 Q256.0,60 262,70 L274.4,76 L277.4,32 L280.64,76 L284,70 L294,70 Q304.0,56 314,70 L322,70 L330,40 L344,24 L352,40 L358,70 Q374,94 390,70 L412,70" fill="none" stroke="#1B2A44" stroke-width="2" stroke-linejoin="round"></path><text x="250" y="120" text-anchor="start" font-size="10.5" fill="#E23B3B" font-weight="700">R on T → VF</text><path d="M244,176 L250,176 Q256.0,166 262,176 L274.4,182 L277.4,140 L280.64,182 L284,176 L294,176 Q309.0,152 324,176" fill="none" stroke="#1B2A44" stroke-width="2" stroke-linejoin="round"></path><path d="M307,152 L315,124 L325,194 L335,136 L345,204 L355,150.0 L365,198.1 L375,157.2 L385,192.0 L395,162.4 L405,187.5 L415,166.2 L425,184.3 L435,168.9 L445,182.0 L455,170.9 L465,180.4 L475,172.3 L485,179.1" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linejoin="round"></path><circle cx="309" cy="150" r="10" fill="none" stroke="#E23B3B" stroke-width="1.4"></circle><text x="250" y="220" text-anchor="start" font-size="9.5" fill="#E23B3B" font-weight="700">T파(재분극 중) 위에 다음 흥분이 떨어짐 = 취약기</text><text x="250" y="236" text-anchor="start" font-size="10" fill="#0F9268" font-weight="700">Sotalol: K 차단(불응기↑) + β 차단(흥분 시 촉발↓) → 회로 끊기</text></svg></div></div><h3 class="lv2">1. 두 가지 형태? (Two different forms ?) <span class="tag t-ex">시험</span></h3><table>
+<caption>표 15. ARVC의 두 형태</caption>
+<thead><tr><th style="width:50%">① 심근 기능 <b>정상</b> + 심실성 부정맥</th><th>② <b>심근 부전(DCM)</b> + 심실성 부정맥</th></tr></thead>
+<tbody>
+<tr><td>• 실신(syncope)<br>• 돌연사(sudden death)<br>• DCM으로 진행할 수도, 안 할 수도</td><td>• 실신<br>• 돌연사<br>• <b>심부전</b><br>• Carnitine (??) — 카르니틴 반응 가능성, 아직 불확실</td></tr>
+<tr class="hi"><td>구조 변화(RV 확장 등) 없이 부정맥만 <span class="tag t-rec">수업</span></td><td>부정맥 + 구조적으로 심근 확장(DCM 현상)까지 <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><ul class="c"><li>교재에 따라 ① 무증상(VPC만) ② 실신·VT ③ 수축 기능 저하(심부전)의 <b>3형</b>으로 나누기도 함 — 강의 기준은 2형 <span class="tag t-why">정리자 보충</span></li></ul><h3 class="lv2">2. 심한 심실 빈맥 (Severe VT) — R on T <span class="tag t-ex">시험</span></h3><table>
+<caption>표 16. ARVC의 VT 특징</caption>
+<tbody>
+<tr><td class="kc" style="width:36%">심실 초점</td><td>여러 속도로 발화 가능</td></tr>
+<tr class="hi"><td class="kc">심실 초점 속도</td><td>흔히 <b>&gt; 300 bpm</b> — 대형견에서 300이면 상당히 빠른 수치 <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td class="kc">실신하는 개</td><td>흔히 <b>&gt; 400 bpm</b> <span class="gray">(녹음엔 "40ppm"으로 받아써짐 → 슬라이드 400 bpm 기준)</span></td></tr>
+<tr><td class="kc">R on T</td><td>R파와 T파가 <b>겹친</b> 형태 → R-on-T 현상</td></tr>
+<tr><td class="kc">결과</td><td>가볍게는 <b>실신</b>, 심각하게는 <b>돌연사</b> <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">R on T가 왜 위험 신호인가</div>
+<ul class="d">
+<li>T파 = 심실 <b>재분극</b> 중. 이 순간 심근 일부는 이미 회복했고 일부는 아직 불응기 → 전기적으로 가장 <b>불균일한 시기(취약기, vulnerable period)</b></li>
+<li>여기에 다음 흥분(R)이 떨어지면 회복된 곳으로만 전기가 흘러 들어가 제멋대로 도는 회로 → <b>VF</b>로 넘어가기 쉬움 → 돌연사</li>
+<li>VT가 너무 빨라서 다음 R이 앞의 T 위에 얹힐 정도 = 이완기가 거의 없음 → 박출량↓ → 실신 (Ⅳ장 원리)</li>
+</ul>
+</div><span class="pno">14</span></section><section class="page" style=""><h3 class="lv2">3. 치료 <span class="tag t-ex">시험</span></h3><table>
+<caption>표 17. ARVC 치료</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:30%">VT에 의한 실신</td><td><b>Sotalol 40–120 mg BID</b> — "이 병의 <b>기적의 약(miracle drug)</b>"<br>Sotalol에 <b>불응</b>이면 <b>mexiletine 추가</b></td></tr>
+<tr><td class="kc">심부전</td><td>"The usual suspects" — 늘 쓰던 약 (furosemide + ACEI …) <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><ul class="d">
+<li>Sotalol을 더 추천하는 이유: mexiletine보다 <b>돌연사 위험률이 더 낮고</b> 더 안정적 <span class="tag t-rec">수업</span></li>
+<li>용량이 <b>mg/kg가 아니라 마리당 mg</b> (40–120 mg BID) 으로 적혀 있음에 주의 <span class="tag t-why">정리자 보충</span></li>
+</ul><div class="why">
+<div class="mt">왜 ARVC엔 sotalol이 "기적의 약"인가 (DCM에선 조심하면서)</div>
+<ul class="d">
+<li>Class III(K 차단): 활동전위·<b>불응기 연장</b> → 재진입 회로가 돌아올 때 조직이 아직 불응 상태 → 회로가 끊김</li>
+<li>Class II(β 차단): 운동·흥분 때 <b>교감신경이 부정맥을 촉발</b>하는 것을 막음 (Boxer 실신은 흥분·운동 중 흔함)</li>
+<li>ARVC ①형은 <b>LV 수축 기능이 정상</b> → β 차단의 음성 변력을 감당할 수 있음. 그래서 "LV 기능이 정상인 Boxer"라는 조건이 붙음 (Ⅶ-3과 연결)</li>
+</ul>
+</div><h2 class="lv1">Ⅹ. American Cocker Spaniel — 타우린 결핍성 DCM</h2><ul class="d">
+<li><b>혈장 타우린 농도가 일관되게 낮음 (&lt; 50 nmol/ml)</b> — 원인 불명 <span class="tag t-ex">시험</span></li>
+<li>정상인 American cocker spaniel도 혈중 타우린이 낮게 유지 → <b>영양적으로 불균형</b>하게 되면(장시간 노출) 타우린 결핍 때문에 DCM이 올 수 있음 <span class="tag t-pen">필기</span> "타우린 농도↓ → DCM?", "영양학적으로 불균형하게 되면" <span class="tag t-rec">수업</span></li>
+<li><b>타우린 단독</b> 또는 <b>타우린 + 카르니틴</b> 투여로 심근 기능 개선</li>
+<li>개선 정도는 <b>고양이만큼 크진 않지만</b>, 보통 <b>심부전 약이 더 이상 필요 없을 정도</b>까지 좋아짐</li>
+<li>예전 DCM을 잘 몰랐을 때는 DCM에 걸려 와도 해결책을 찾기 어려웠음 → 임상에서 <b>코카 DCM이면 타우린 측정</b>을 꼭 생각할 것 <span class="tag t-rec">수업</span></li>
+</ul><div class="three" style="display:block;"><div><div class="cap">그림 7. 타우린과 카르니틴이 심근세포에서 하는 일</div><svg viewBox="0 0 620 220" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="타우린과 카르니틴의 역할"><defs><marker id="h20r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h20b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h20k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h20g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h20v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h20o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h20n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="20" y="20" width="580" height="170" rx="40" fill="#fdf3f2" stroke="#9c4d49" stroke-width="1.6"></rect><text x="310" y="40" text-anchor="middle" font-size="12" fill="#9c4d49" font-weight="700">심근세포</text><path d="M60,90 q30,-24 60,0 q30,24 60,0 q30,-24 60,0" stroke="#2B5FC4" stroke-width="10" fill="none" opacity=".55"></path><text x="150" y="70" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">근소포체(SR) — Ca²⁺ 저장·방출</text><rect x="136.3" y="114.0" width="27.5" height="16.0" rx="4" fill="#fff" stroke="#0F9268" stroke-width="1.2"></rect><text x="150" y="125.5" text-anchor="middle" font-size="11" fill="#0F9268" font-weight="700">타우린</text><text x="150" y="146" text-anchor="middle" font-size="9.5" fill="#0F9268" font-weight="700">Ca²⁺ 처리 조절 · 삼투압 조절 · 항산화</text><text x="150" y="162" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">부족 → Ca 처리↓ → 수축력↓</text><path d="M300,74 L300,106" stroke="#1B2A44" stroke-width="2"></path><path d="M305,84 L321,84 M305,96 L321,96" stroke="#E23B3B" stroke-width="3"></path><path d="M326,74 L326,106" stroke="#1B2A44" stroke-width="2"></path><path d="M331,84 L347,84 M331,96 L347,96" stroke="#E23B3B" stroke-width="3"></path><path d="M352,74 L352,106" stroke="#1B2A44" stroke-width="2"></path><path d="M357,84 L373,84 M357,96 L373,96" stroke="#E23B3B" stroke-width="3"></path><path d="M378,74 L378,106" stroke="#1B2A44" stroke-width="2"></path><path d="M383,84 L399,84 M383,96 L399,96" stroke="#E23B3B" stroke-width="3"></path><path d="M404,74 L404,106" stroke="#1B2A44" stroke-width="2"></path><text x="352" y="124" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">수축 단백</text><path d="M232,90 L292,90" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round" marker-end="url(#h20b)"></path><text x="262" y="82" text-anchor="middle" font-size="9.5" fill="#2B5FC4" font-weight="700">Ca²⁺</text><ellipse cx="510" cy="96" rx="58" ry="30" fill="#fbe6c8" stroke="#E0912B" stroke-width="1.6"></ellipse><path d="M462,96 q8,-16 16,0 q8,16 16,0 q8,-16 16,0 q8,16 16,0 q8,-16 16,0 q8,16 16,0" stroke="#E0912B" fill="none"></path><text x="510" y="58" text-anchor="middle" font-size="10" fill="#E0912B" font-weight="700">미토콘드리아</text><path d="M440,150 L490,124" fill="none" stroke="#E0912B" stroke-width="2" stroke-linecap="round" marker-end="url(#h20o)"></path><rect x="412.9" y="150.0" width="34.3" height="16.0" rx="4" fill="#fff" stroke="#E0912B" stroke-width="1.2"></rect><text x="430" y="161.5" text-anchor="middle" font-size="11" fill="#E0912B" font-weight="700">카르니틴</text><text x="510" y="178" text-anchor="middle" font-size="9.5" fill="#E0912B" font-weight="700">지방산 운반 → ATP</text><path d="M454,96 L412,96" fill="none" stroke="#E0912B" stroke-width="2" stroke-linecap="round" marker-end="url(#h20o)"></path><text x="434" y="88" text-anchor="middle" font-size="9.5" fill="#E0912B" font-weight="700">ATP</text><text x="310" y="210" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">세포가 죽은 게 아니라 "원료 부족" → 보충하면 기능 회복 (이미 섬유화된 부분은 ✕)</text></svg></div></div><span class="pno">15</span></section><section class="page" style=""><div class="why">
+<div class="mt">타우린이 심근에 왜 필요하고, 왜 "되돌릴 수 있는" DCM인가</div>
+<ul class="d">
+<li>타우린은 심근세포 안에 가장 많은 유리 아미노산. 세포 <b>삼투압 조절</b>, <b>Ca²⁺ 처리</b>(근소포체 Ca 저장·방출 조절), 항산화에 관여 → 부족하면 Ca를 제대로 다루지 못해 <b>수축력↓</b></li>
+<li>세포가 <b>죽은 게 아니라 "원료 부족"으로 일을 못 하는</b> 상태라, 원료를 채우면 기능이 돌아옴 → 유전성 DCM과 달리 <b>가역적</b>. 단, 이미 섬유화된 부분은 회복 안 됨 → 그래서 고양이보다 회복 폭이 작을 수 있음</li>
+<li><b>고양이</b>는 타우린 합성 능력이 매우 낮아 <b>식이 필수</b> → 예전엔 고양이 DCM의 주원인이었지만 사료에 타우린을 넣은 뒤 크게 줄어듦. <b>개</b>는 원래 시스테인·메티오닌으로 합성 가능하지만 일부 품종(코카 등)은 취약</li>
+<li><b>카르니틴</b>: 지방산을 미토콘드리아로 운반 → 심근의 주 에너지원(지방산 산화) 공급 → 에너지 생산을 같이 보충</li>
+<li>최근엔 일부 <b>grain-free·콩류 위주 사료</b>와 개 DCM의 연관성도 보고되어 식이력 청취가 중요해짐 <span class="tag t-why">정리자 보충</span></li>
+</ul>
+</div><h2 class="lv1">★ 5장 총정리 — 시험 직전에 보는 표</h2><table>
+<caption>표 18. 개 심근병증 핵심 숫자 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:30%">항목</th><th>값</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">호발 품종</td><td><b>&gt; 90%</b>: Doberman, Boxer, 거대견(Great Dane, Irish wolfhound, St. Bernard, Newfoundland), American cocker(타우린), Dalmatian, Portuguese water dog</td></tr>
+<tr><td class="kc">정상 벽 두께 비율</td><td>RV <b>1</b> : IVS <b>3</b> : LVFW <b>3</b></td></tr>
+<tr class="hi"><td class="kc">AF 빈도</td><td>거대견 <b>80%</b> / Doberman <b>30%</b></td></tr>
+<tr class="hi"><td class="kc">FS</td><td>정상 35–50% (러프하게 ≥ 30%) / DCM <b>&lt; 25%</b> / 심부전 <b>&lt; 15%</b></td></tr>
+<tr class="hi"><td class="kc">Doberman 선별</td><td>FS &gt; 25% normal · <b>20–25% gray</b> · <b>&lt; 20% confirmed</b> / Holter <b>&gt; 50 PVCs/24h</b></td></tr>
+<tr><td class="kc">Furosemide</td><td>급성 <b>4–8 mg/kg q1–4h</b> / 만성 <b>2–4 mg/kg q8–12h</b> / 고양이 1–2 mg/kg</td></tr>
+<tr><td class="kc">예후</td><td>단기 guarded(대부분 퇴원) / 장기 poor–grave, <b>몇 달</b>, <b>1년 생존 10%</b></td></tr>
+<tr class="hi"><td class="kc">Doberman 돌연사</td><td><b>20%</b></td></tr>
+<tr><td class="kc">ARVC VT</td><td>초점 <b>&gt; 300 bpm</b> / 실신 <b>&gt; 400 bpm</b> / R on T</td></tr>
+<tr class="hi"><td class="kc">Sotalol (ARVC)</td><td><b>40–120 mg BID</b> (miracle drug) → 불응 시 + mexiletine</td></tr>
+<tr><td class="kc">ACS 타우린</td><td>혈장 <b>&lt; 50 nmol/ml</b> → taurine ± carnitine</td></tr>
+</tbody>
+</table><span class="pno">16</span></section><section class="page" style=""><table>
+<caption>표 19. 세 가지 개 심근병증 한눈 비교</caption>
+<thead><tr><th style="width:16%"></th><th>유전성 DCM</th><th>ARVC (Boxer)</th><th>타우린 결핍 DCM (ACS)</th></tr></thead>
+<tbody>
+<tr><td class="kc">대표 품종</td><td>Doberman, 거대견</td><td>Boxer</td><td>American cocker spaniel</td></tr>
+<tr><td class="kc">1차 문제</td><td>수축력↓ → 확장</td><td>(우)심실 <b>전기적 불안정</b></td><td>타우린 부족 → 수축력↓</td></tr>
+<tr><td class="kc">대표 부정맥</td><td>AF(거대견) / VT(Doberman)</td><td><b>VT</b> (&gt; 300 bpm, R on T)</td><td>—</td></tr>
+<tr><td class="kc">LV 기능</td><td>↓ (FS &lt; 25%)</td><td><b>정상</b>일 수도(①형) / ↓(②형)</td><td>↓</td></tr>
+<tr class="hi"><td class="kc">핵심 치료</td><td>Furosemide + ACEI + <b>Pimobendan</b> ± 항부정맥제</td><td><b>Sotalol</b> (+ mexiletine)</td><td><b>Taurine ± carnitine</b></td></tr>
+<tr><td class="kc">예후</td><td>나쁨 (몇 달)</td><td>약으로 실신 조절 시 비교적 양호, 돌연사 위험</td><td><b>가역적</b> — 약을 끊을 정도로 회복</td></tr>
+</tbody>
+</table><div class="memo">
+<div class="mt">*헷갈리기 쉬운 짝</div>
+<ul class="d">
+<li><b>ESD vs EDD</b>: ESD↑ = <b>1차</b>(수축력↓) ↔ EDD↑ = <b>2차·보상</b>(편심성 비대)</li>
+<li><b>DCM vs MMVD 초음파</b>: 둘 다 LV·LA 확대 / FS가 DCM <b>↓(&lt; 25%)</b> ↔ MMVD <b>↑(&gt; 50%)</b> / 판막 모양 정상 ↔ 변성·탈출</li>
+<li><b>Functional MR vs Primary MR</b>: 판막 정상 · 고리 벌어짐 · <b>중심성 제트</b> · 역류량 적음 ↔ 판막 변성 · <b>편심성 제트</b> · 역류량 많음 / 속도는 둘 다 비슷</li>
+<li><b>AF vs VT의 무게</b>: AF는 그 자체로 치명적이지 않음 → 심박수 조절 ↔ VT는 실신·돌연사의 주원인 → 적극 치료</li>
+<li><b>S3 vs S4</b>: 이완기 초기, 늘어난 심실(DCM) ↔ 이완기 말기 심방 수축, 뻣뻣한 심실(HCM) / AF면 S4 없음</li>
+<li><b>Pacemaker vs ICD</b>: 느린 심장 → 빠르게 ↔ 빠른 심장(VT·VF) → 전기충격으로 정상화</li>
+<li><b>Sotalol in DCM vs ARVC</b>: 음성 변력 → 수축력 나쁜 DCM엔 조심 ↔ <b>LV 정상 Boxer</b>엔 기적의 약</li>
+<li><b>DCM vs ARVC</b>: 펌프(구조)가 먼저 ↔ 전기가 먼저 (구조 정상일 수 있음)</li>
+<li><b>개 vs 고양이 타우린</b>: 개(코카)는 개선 폭이 고양이보다 작지만 약 끊을 정도 / 고양이는 식이 필수 아미노산</li>
+<li><b>개 vs 고양이 furosemide</b>: 2–4 mg/kg ↔ <b>1–2 mg/kg</b> (수분 민감 → 폐수종·탈수·AKI)</li>
+</ul>
+</div><span class="pno">17</span></section><section class="page" style=""><div class="qa">
+<div class="mt">✎ 원리 셀프체크 — 답을 가리고 설명해 보기</div>
+<div class="q">Q1. DCM이 "태어날 때부터" 있는데 왜 중년이 돼서야 증상이 나올까?</div>
+<div class="a">→ 교감신경·RAAS·심실 확장(Frank-Starling) 같은 보상기전이 박출량을 오래 유지 → 긴 잠복기 → 보상이 소진되면 심부전·부정맥으로 갑자기 드러남.</div>
+<div class="q">Q2. DCM에서 ESD가 먼저 커지고 EDD가 나중에 커지는 이유는?</div>
+<div class="a">→ 수축력↓ → 다 못 짜내서 ESD↑(1차). 그러면 SV가 줄어 몸이 체액을 늘리고 심실을 키워 EDD↑(2차)로 SV를 다시 맞춤.</div>
+<div class="q">Q3. 심장이 커진 개 두 마리. A는 FS 55%, B는 FS 14%. 각각 무엇을 의심?</div>
+<div class="a">→ A = 용적 과부하에 수축력은 보존(MMVD 등). B = 수축력 저하 = DCM, 그것도 심부전 수준(&lt; 15%).</div>
+<div class="q">Q4. DCM의 MR 제트는 왜 가운데로 뿜어지고, 속도는 MMVD와 왜 비슷한가?</div>
+<div class="a">→ 판막엽은 정상인데 LV·판막륜이 사방으로 벌어져 가운데에 틈이 생김(central jet). 속도는 LV–LA 압력차(ΔP = 4v²)가 정하는데 그 차이가 비슷하니까.</div>
+<div class="q">Q5. 커지고 얇아진 DCM 심장이 스스로 더 나빠지는 악순환을 Laplace로 설명하면?</div>
+<div class="a">→ 벽응력 ∝ 압력 × 반지름 / 두께. 반지름↑·두께↓ → 벽응력↑ → 산소 소모↑ → 근세포 손상·섬유화 → 수축력↓ → 더 확장.</div>
+<div class="q">Q6. 거대견 DCM에서 AF가 흔한데, 왜 VT보다 덜 무서워하나?</div>
+<div class="a">→ AF는 큰 심방(임계 질량)에서 잘 유지되지만 심실은 전도계로 계속 수축 → atrial kick만 잃음. VT는 이완기 소실로 박출량이 급감하고 VF로 넘어가 돌연사.</div>
+<div class="q">Q7. Pimobendan은 수축력을 올리는데도 혈압이 크게 안 오르는 이유는? DCM에서 혈관 확장이 특히 좋은 이유는?</div>
+<div class="a">→ PDE3 억제로 말초 혈관도 확장(inodilator). 약한 심실은 후부하에 매우 민감해서 저항만 줄여도 박출량↑ + 기능성 MR↓.</div>
+<div class="q">Q8. Doberman 선별에 초음파만으로 부족한 이유는?</div>
+<div class="a">→ VPC(전기적 이상)가 확장보다 먼저 올 수 있고 첫 증상이 돌연사일 수 있음 → Holter(&gt; 50 PVCs/24h)를 같이 봐야 함.</div>
+<div class="q">Q9. Sotalol은 ARVC의 "기적의 약"인데 수축력 나쁜 DCM에선 왜 조심하나?</div>
+<div class="a">→ Class II(β 차단) 성분의 음성 변력 → 이미 약한 LV를 더 약하게 할 수 있음. ARVC ①형은 LV 기능이 정상이라 감당 가능.</div>
+<div class="q">Q10. 실신하는 Boxer의 ECG에서 R-on-T가 보였다. 왜 위험한가?</div>
+<div class="a">→ T파(재분극) 시기는 심근 회복이 불균일한 취약기 → 그때 흥분이 떨어지면 VF로 넘어가기 쉬움 → 돌연사.</div>
+<div class="q">Q11. American cocker의 DCM은 왜 약을 끊을 정도로 좋아질 수 있나?</div>
+<div class="a">→ 세포가 죽은 게 아니라 타우린(Ca 처리·삼투 조절) 부족으로 기능을 못 하던 것 → 원료를 채우면 회복(단, 섬유화된 부분은 회복 X).</div>
+<div class="q">Q12. 고양이에게 개의 furosemide 용량을 그대로 쓰면?</div>
+<div class="a">→ 고양이는 수분 변화에 민감 → 과도한 이뇨로 금방 심한 탈수·AKI. (반대로 수액을 조금만 더 줘도 폐수종)</div>
+</div><span class="pno">18</span></section></body></html>

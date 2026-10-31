@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수생동물 바이러스성 질병 비교표</title>
+<style>
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-style:normal;}
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:700;font-style:normal;}
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-weight:300;font-style:normal;}
+@page{size:A4;margin:14mm 14mm 16mm 14mm;}
+*{box-sizing:border-box;}
+html{background:#e9e9e9;}
+body{font-family:'GmarketSans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:500;color:#111;font-size:10pt;line-height:1.62;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{background:#fff;max-width:210mm;margin:0 auto 10mm;padding:14mm 14mm 16mm;}
+@media print{html{background:#fff}.page{margin:0;padding:0;max-width:none}.pb{page-break-before:always;}figure,table,.box,.pt{break-inside:avoid;}}
+@media (max-width:600px){.page{padding:6mm 5mm}body{font-size:9.6pt}}
+.doc-title{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #111;padding-bottom:4px;margin-bottom:14px;gap:8px;}
+.doc-title .l{font-weight:700;font-size:11pt;}
+.doc-title .r{font-size:8pt;color:#555;font-weight:300;text-align:right;}
+h1{font-weight:700;font-size:15pt;margin:0 0 8px;letter-spacing:-.3px;}
+.comment{border:1px solid #111;padding:8px 11px;margin:0 0 16px;text-align:justify;font-size:9.4pt;font-weight:300;line-height:1.7;}
+.comment b.tag{display:block;font-weight:700;font-size:9.4pt;margin-bottom:2px;}
+h2{font-weight:700;font-size:12pt;margin:20px 0 6px;}
+h2::before{content:"● ";}
+h3{font-weight:700;font-size:10.6pt;margin:13px 0 4px;}
+h4{font-weight:700;font-size:10pt;margin:9px 0 3px;}
+p{margin:3px 0;text-align:justify;}
+ol.c{list-style:none;padding-left:4px;margin:3px 0;}
+ol.c>li{padding-left:1.4em;text-indent:-1.4em;margin:2px 0;}
+ul.d{margin:2px 0 2px 1.6em;padding:0;}
+ul.d li{margin:1px 0;}
+.red{color:#c62828;font-weight:700;}
+.blue{color:#1f4e8c;font-weight:700;}
+.u{text-decoration:underline;text-underline-offset:2px;}
+.sp{font-family:'Times New Roman',serif;font-style:italic;}
+.tw{overflow-x:auto;margin:6px 0 10px;}
+table{border-collapse:collapse;width:100%;font-size:9.2pt;line-height:1.5;}
+th,td{border:1px solid #444;padding:4px 6px;vertical-align:top;text-align:left;}
+thead th{background:#ededed;font-weight:700;text-align:center;}
+td.k,th.k{background:#f1ebe0;font-weight:700;white-space:nowrap;}
+th.rd{background:#f8d7d4;}
+th.bl{background:#d7e4f5;}
+th.gr{background:#dcefd9;}
+.note{border:1px solid #888;background:#fafafa;padding:6px 9px;margin:6px 0 10px;font-size:9pt;}
+.note::before{content:"※ ";font-weight:700;}
+.box{border:1px solid #111;padding:7px 10px;margin:6px 0 10px;}
+.box.red{border:1.5px solid #c62828;color:#111;font-weight:500;}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:6px 0 10px;font-size:9pt;}
+.flow span{border:1px solid #111;padding:3px 7px;background:#fff;}
+.flow span.hl{background:#f8d7d4;}
+.flow i{font-style:normal;font-weight:700;}
+.pt{border-left:4px solid #c62828;padding:4px 9px;margin:8px 0 10px;background:#fff6f5;font-size:9.2pt;}
+.pt b:first-child{color:#c62828;}
+.voc-title{font-weight:700;font-size:12pt;margin:22px 0 6px;border-bottom:1px solid #111;padding-bottom:2px;}
+.small{font-size:8.6pt;color:#444;font-weight:300;}
+/* 출처 태그 */
+.tg{display:inline-block;font-size:7.4pt;font-weight:700;padding:0 4px;border:1px solid;border-radius:2px;margin-left:3px;vertical-align:1px;line-height:1.45;text-indent:0;white-space:nowrap;}
+.tg.s{color:#c62828;border-color:#c62828;}
+.tg.b{color:#666;border-color:#999;font-weight:500;}
+.tg.x{color:#fff;background:#c62828;border-color:#c62828;}
+.legend{font-size:8.4pt;color:#444;margin:-6px 0 12px;}
+/* 그림 */
+figure.fg{margin:8px 0 12px;text-align:center;}
+figure.fg svg{width:100%;max-width:640px;height:auto;display:block;margin:0 auto;}
+figure.fg figcaption{font-size:8.6pt;color:#444;margin-top:3px;}
+svg text{font-family:'GmarketSans','Noto Sans KR',sans-serif;}
+.info{font-size:8.8pt;border:1px dashed #888;padding:5px 9px;margin:0 0 14px;color:#333;}
+
+.tg.n{color:#1f3a8a;border-color:#1f3a8a;}
+figure.ph{margin:8px 0 12px;text-align:center;}
+figure.ph img{max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #ccc;}
+figure.ph.sm img{max-width:62%;}
+figure.ph figcaption{font-size:8.6pt;color:#444;margin-top:3px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;}
+.two>figure{margin:4px 0;}
+@media (max-width:600px){.two{grid-template-columns:1fr}figure.ph.sm img{max-width:100%}}
+.part{font-weight:700;font-size:9pt;color:#c62828;letter-spacing:.5px;margin:0 0 2px;}
+h1 .en{font-size:10pt;font-weight:300;color:#444;margin-left:6px;}
+h2 .en{font-size:9pt;font-weight:300;color:#555;margin-left:4px;}
+.pg{font-size:7.6pt;color:#888;font-weight:300;margin-left:4px;}
+td.c,th.c{text-align:center;}
+tr.hl td{background:#fff6d8;}
+.box.blue{border:1.5px solid #1f4e8c;}
+.toc{font-size:9pt;border:1px solid #111;padding:6px 10px;margin:0 0 14px;columns:2;column-gap:18px;}
+.toc div{break-inside:avoid;margin:1px 0;}
+.toc b{color:#c62828;}
+@media (max-width:600px){.toc{columns:1}}
+
+table.s{font-size:7.9pt;line-height:1.42;}
+table.s th,table.s td{padding:3px 4px;}
+table.s td.k .small{font-weight:500;font-size:7.6pt;}
+table.s td{vertical-align:middle;}
+table.s td.k{white-space:normal;}
+h2::before{content:"";}
+h2{border-bottom:1.5px solid #111;padding-bottom:2px;margin-top:20px;}
+h3{margin-top:14px;}
+.toc{columns:2;}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 한눈에 보는 비교표</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+<h1>연관 질병끼리 묶은 비교표 <span class="en">Grouped by host &amp; differential</span></h1>
+<div class="info"><b>보는 법</b> · 바이러스 과(科)가 아니라 <b>같은 숙주에서 서로 헷갈리는 질병끼리</b> 묶었다(= 시험에서 감별을 묻는 단위). 비특이 증상(무기력·식욕부진·체색 흑화 등)은 빼고 <b>숙주, 감수 시기(치어·fingerling 등), 표적 장기, 전파(수평·수직·난표면), 수온·계절, 그 병에서만 보이는 소견, 조직 포인트</b>만 적었다. 정리본에 없는 칸은 "—". 빨강 = 꼭 외울 것. 각 표 아래 <b>감별 한 줄</b>. 맨 뒤 Ⅸ장에 <b>"봄 증식 &gt; 항체" 원칙에서 벗어나는 질병</b>을 따로 모았다.</div>
+
+<div class="toc">
+<div><b>1. 잉어·금붕어류</b> — CyHV-1·2·3, SVC, CEV</div>
+<div><b>2. 연어·송어·메기 등 담수 양식어</b> — CCVD, OMVD, EED, IHN, IPN, EHN</div>
+<div><b>3. 넙치</b> — VHS, HIRRV, VEH, 림포시스티스</div>
+<div><b>4. 돔·방어·복어 등 해산어</b> — RSIVD, VNN, MABV, 구백증</div>
+<div><b>5. 뱀장어</b> — AngHV-1, VECNE</div>
+<div><b>6. 양서·파충류</b> — Lucké, RaHV-3, 라나, LETD</div>
+<div><b>7. 패류</b> — OsHV-1 μVar, AVNV, AVG</div>
+<div><b>8. 새우·갑각류</b> — WSSV, IHHNV, DIV1, 배큘로, MrNV, CMNV</div>
+<div><b>9. ★ "봄 증식 &gt; 항체" 원칙의 예외</b></div>
+<div><b>10. 수온 한 장 정리</b></div>
+</div>
+
+<!-- 1. 잉어 -->
+<h2>1. 잉어·금붕어류 <span class="en">Cyprinids</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr><td class="k">잉어두창<br><span class="small">Carp pox</span><br><span class="small">CyHV-1<br><span class="small">Allo-herpes</span></span></td><td>잉어·코이</td><td>전 연령 (폐사는 아주 어린 치어 아가미를 덮을 때만)</td><td>피부·지느러미 <b>표피</b></td><td>생존어 평생 보균 → 어미 제외</td><td><span class="blue">&lt;15℃</span><br>겨울~이른 봄</td><td><span class="red">촛농 같은 우윳빛 융기 판</span>(1~3 mm), 양성종양, <b>폐사 거의 X</b></td><td>표피 22~35층 과형성, Cowdry A / <b>&gt;20℃면 자연치유</b></td></tr>
+<tr><td class="k">HVHN<br><span class="small">금붕어 헤르페스</span><br><span class="small">CyHV-2<br><span class="small">Allo-herpes</span></span></td><td>금붕어·붕어</td><td><span class="small">—</span></td><td><span class="red">조혈조직(두신)</span>·비장·신장</td><td>생존어 평생 보균 → 어미 금지</td><td>15~25℃<br>봄·가을</td><td><span class="red">조혈조직 파괴 → 아가미 극도로 창백</span>, 비장·신장 종대, 출혈성 복수</td><td>두신 표적, 신세뇨관 <b>핵 비대</b> / 온열 &gt;28℃는 일시적</td></tr>
+<tr class="hl"><td class="k">KHVD ★<br><span class="small">CyHV-3<br><span class="small">Allo-herpes</span></span></td><td>잉어·코이<b>만</b></td><td><span class="red">fingerling·육성어(2.5~6 g)</span> &gt; 유생·성어</td><td>아가미·피부 → 백혈구 → 신장·비장·뇌</td><td><b>수평</b>: 분변·오줌·아가미·피부 / 매개: 플랑크톤·말조개·민물새우·철새 / 평생 보균</td><td>16~25℃<br><span class="small">봄·가을</span> <span class="tg b">보충</span></td><td><span class="red">아가미 괴사</span>, <span class="red">안구함몰</span>, 사포 같은 피부 / 80~100%</td><td>새판 융합, <b>signet ring</b>, 핵내 호산성 / IL-10 유사 단백질, 24℃ 30일 검역, 생백신(미국)</td></tr>
+<tr class="hl"><td class="k">SVC ★<br><span class="small">SVCV<br><span class="small">Rhabdo (RNA)</span></span></td><td>잉어(잉어과)</td><td>전 연령, 특히 <span class="red">≤1년(70%)</span> / 치어는 22~23℃에서도</td><td><b>혈관내피</b>·조혈세포·대식세포 → 신장(주)·비장 / 침입: 아가미·장</td><td><b>수평</b>: 물·기구·매개체 / 무증상 보균어 / 난소액 검출 보고</td><td><span class="blue">10~17℃</span><br><b>봄</b></td><td><span class="red">부레 칠면조 알 출혈</span>, <span class="red">안구돌출</span>, 항문 돌출 + 점액변, 비늘 일어섬</td><td>혈관내피 → <b>전신</b>, 신장 주 표적, 봉입체 없음 / 백신 X</td></tr>
+<tr><td class="k">CEV<br><span class="small">KSD</span><br><span class="small">CEV<br><span class="small">Pox</span></span></td><td>잉어·코이</td><td>치어·성어, <b>치어</b>가 가장 높음</td><td><span class="red">아가미</span></td><td><b>수평</b></td><td>코이 15~25℃<br>잉어 <span class="blue">6~10℃</span></td><td><span class="red">바닥에 옆으로 누워 꼼짝 않음(수면병)</span>, 안구함몰, 피부 부종</td><td>아가미 2차 새판 곤봉화, <b>세포질</b> 봉입체</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 눈이 <b>들어가면</b> KHV·CEV(둘 다 아가미), <b>튀어나오면</b> SVC(전신). 수온은 잉어두창 &lt;15 / SVC 10~17 / KHV 16~25 / CEV 잉어 6~10. 확진은 결국 <b>PCR</b>.</div>
+
+<!-- 2. 연어 -->
+<h2>2. 연어·송어·메기 등 담수 양식어 <span class="en">Salmonids &amp; others</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr><td class="k">CCVD<br><span class="small">IcHV-1<br><span class="small">Allo-herpes</span></span></td><td>찬넬메기</td><td><span class="red">fry~fingerling (&lt;4개월)</span></td><td>신장·간·비장·소화관 (조혈조직·세뇨관), 혈관내피</td><td>보균어 → <span class="red">수직</span> 막으려 어미 금지</td><td><span class="red">&gt;25℃ 여름</span></td><td><span class="red">corkscrew(나선형) 유영</span>, 출혈성 복수, 안구돌출 / 최대 100%</td><td>출혈성 괴사, <b>봉입체 거의 X</b> / 보균어 어미 금지</td></tr>
+<tr><td class="k">OMVD<br><span class="small">SalHV-2<br><span class="small">Allo-herpes</span></span></td><td>송어·연어 (무지개송어 저항)</td><td><span class="red">1개월령 alevin</span>(&gt;80%) / 생존어 4~6개월 후 상피종</td><td>간·비장·신장 조혈조직 (송어: 장)</td><td><span class="red">난표면</span>(<span class="red">수직</span>): 산란 시 알 표면 → iodophor / <b>수평</b>: 분변·오줌·점액·생식산물</td><td><span class="blue">10~14℃</span><br>봄</td><td>간 흰 반점 / <span class="red">생존어 4~6개월 후 입 주위 상피종</span></td><td>합포체 + 핵내 호산성 / <b>난표면 전파 → iodophor</b> / 일본 풍토병</td></tr>
+<tr><td class="k">EED<br><span class="small">SalHV-3<br><span class="small">Allo-herpes</span></span></td><td>레이크트라우트</td><td>부화장 치어</td><td>지느러미·피부·각막 <b>상피</b></td><td><b>수평</b> — 보균어가 ~10년 간헐 배출</td><td>스트레스 시</td><td><span class="red">각막 혼탁·안구 내 출혈</span>, 얼룩진 피부</td><td>증식성 표피염 / <b>~10년 잠복</b></td></tr>
+<tr class="hl"><td class="k">IHN ★<br><span class="small">IHNV<br><span class="small">Novirhabdo</span></span></td><td>연어과</td><td><span class="red">fry 최고(≤2개월)</span> — 성어될수록 저항↑(산란기까지)</td><td><span class="red">조혈조직(신장·비장)</span> / 산란어 난소액·정액 / 침입: 아가미·지느러미 기부</td><td><b>수평</b>: 물·동거 / <span class="red">난표면</span> 오염(알 속 침입 X) → iodophor</td><td><span class="blue">&lt;15℃</span></td><td>주둥이 궤양, 지느러미 기부·지방조직 출혈, 장관 노란 점액</td><td><b>조혈조직 괴사 + 장 EGC 괴사</b>, NV 유전자 / 알 표면 → iodophor / DNA 백신(북미)</td></tr>
+<tr class="hl"><td class="k">IPN ★<br><span class="small">IPNV<br><span class="small">Aquabirna (dsRNA)</span></span></td><td>연어과(무지개송어·대서양연어)</td><td><span class="red">첫 먹이 치어</span> / post-smolt(해수 이동 후 8주)</td><td><span class="red">췌장(선방조직)·장</span> / post-smolt는 간</td><td><b>수평</b>: 보균어가 분변·알·정액·난소액으로 배출 + <span class="red">수직</span></td><td>10~15℃</td><td><span class="red">갑작스런 폐사 + 선회유영(whirling)</span>, 카타르성 장염(노란 점액)</td><td><b>췌장 선방조직 괴사 → 지방 대체</b> / post-smolt(해수 8주 → 간괴사) / 수직 O</td></tr>
+<tr><td class="k">EHN<br><span class="small">EHNV<br><span class="small">Ranavirus</span></span></td><td>유럽농어 ≫ 무지개송어</td><td>전 연령, <b>fingerling·juvenile</b>에서 심함</td><td>신장·비장·간</td><td><b>수평</b></td><td>송어 11~20℃<br>농어 봄·여름</td><td><span class="red">농어: 급사 외 증상 관찰 불가</span> / 송어: 서서히 폐사</td><td>간·신장·비장 괴사 + <b>세포질 호염기성</b> / <b>호주 풍토병</b></td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 연어 치어 둘 — <b>IHN</b>은 조혈조직(신장·비장)+장 EGC, <b>IPN</b>은 췌장·장 + 선회유영. 메기 <b>CCVD</b>만 고수온(&gt;25). 알 표면 소독(iodophor)이 답인 것: OMVD, IHN (+VHS).</div>
+</div>
+
+<div class="page pb">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 한눈에 보는 비교표</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+
+<!-- 3. 넙치 -->
+<h2>3. 넙치 <span class="en">Olive flounder</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr class="hl"><td class="k">VHS ★<br><span class="small">VHSV<br><span class="small">Novirhabdo</span></span></td><td>넙치(국내)·송어·터봇 등 50종↑</td><td><span class="small">—</span></td><td>앞쪽 신장·심장·비장, 혈관내피 / 만성기 <b>뇌</b></td><td>주로 <b>수평</b> + <span class="red">난표면</span></td><td><span class="blue">4~14℃</span><br>겨울~봄, <b>&gt;18℃ X</b></td><td><span class="red">급성 → 만성(빈혈) → 신경형</span>, 근육(등근육) 점상출혈, 암적색 비장 종대</td><td>한국 <b>Genotype Ⅳa</b> / 만성기 뇌 역가↑ / 지하해수(고수온)</td></tr>
+<tr><td class="k">HIRRV<br><span class="small">HIRRV<br><span class="small">Novirhabdo</span></span></td><td>넙치·참돔·조피볼락·연어과</td><td><span class="red">100~700 g (출하기)</span></td><td>신장·비장, <span class="red">생식선</span>, 근육</td><td><span class="small">—</span></td><td><span class="blue">2~14℃</span></td><td><span class="red">생식선 출혈·울혈</span>, 복수, 근육·지느러미 출혈</td><td>VHS와 비슷하나 <b>신경증상 적음</b></td></tr>
+<tr><td class="k">VEH<br><span class="small">표피증생증</span><br><span class="small">미분류 헤르페스</span></td><td>넙치</td><td><span class="red">10~30일령</span></td><td>지느러미·피부 <b>표피</b>만 (아가미·장 X)</td><td><span class="small">—</span></td><td>18~20℃</td><td><span class="red">지느러미·체표 불투명</span>, 표피가 떨어져 나감</td><td>Malpighian 세포 과형성, <b>표피에만 국한</b>, 아가미·장 정상</td></tr>
+<tr><td class="k">림포시스티스<br><span class="small">LCDV<br><span class="small">Lymphocystivirus</span></span></td><td>담수·해수어 (넙치·관상어)</td><td><span class="small">—</span></td><td>진피 <b>섬유모세포</b> (피부·지느러미, 드물게 아가미·내장)</td><td><b>수평</b>: 접촉·섭취·<b>상처</b></td><td>—</td><td><span class="red">꽃양배추 모양 결절</span>, 폐사 X → <b>상품가치↓</b></td><td>섬유모세포 거대 비대 + <b>hyaline capsule</b> + 세포질 호염기성 / GCO 25℃</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 넙치 저수온 출혈병 둘 — <b>VHS</b>(신경형까지, 18℃↑ X) vs <b>HIRRV</b>(생식선 출혈, 신경 적음, 출하 크기). 어린 넙치 체표가 하얗게 → VEH, 혹 → 림포시스티스.</div>
+
+<!-- 4. 해산어 -->
+<h2>4. 돔·방어·복어 등 해산어 <span class="en">Marine fish</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr class="hl"><td class="k">RSIVD ★<br><span class="small">RSIV<br><span class="small">Megalocytivirus</span></span></td><td>참돔 등 30종↑, <span class="red">돌돔 최고</span></td><td>전 연령, <b>치어 &gt; 성어</b></td><td>비장·신장·심장·장·아가미</td><td><b>수평</b>(물) / 회복어 보균·지속 배출</td><td><span class="red">≥25℃ 여름</span></td><td><span class="red">비장 비대</span>, 심한 빈혈(창백한 아가미), "갑자기 왔다 갑자기 죽임"</td><td><b>비장 stamp smear → Giemsa → 20 µm 이상비대세포</b> / 백신 O</td></tr>
+<tr class="hl"><td class="k">VNN (VER)<br><span class="small">Betanodavirus<br><span class="small">(+)ssRNA</span></span></td><td>해산어 50종↑</td><td><span class="red">자어·치어</span> (성어: 핼리벗·능성어·유럽농어)</td><td><span class="red">뇌·척수·망막</span></td><td><b>수평</b> + <span class="red">수직</span> → 어미 PCR·수정란 오존 소독</td><td>유전자형별<br>RGNNV 25~30 / BFNNV 15~20</td><td><span class="red">회전유영, 부레 과팽창 → 수면에 뜸</span> / 성어는 체색 변화만</td><td><b>뇌·척수·망막 공포변성</b> / SSN-1 / 어미 PCR + 오존 소독</td></tr>
+<tr><td class="k">MABV<br><span class="small">방어 복수증</span><br><span class="small">Aquabirna</span></td><td>방어 등 비연어과</td><td><span class="red">&lt;4 g</span></td><td>췌장·장·간</td><td><span class="small">—</span></td><td>20℃</td><td><span class="red">복수 + 척추 만곡(기형)</span></td><td>IPN과 같은 췌장괴사·장염</td></tr>
+<tr><td class="k">구백증<br><span class="small">Kuchijirosho v.<br><span class="small">Amnoonviridae</span></span></td><td>양식 복어</td><td>크기 무관</td><td>뇌연수·척수 신경세포·주세포 / 입 주변 피부</td><td><b>수평</b>(오염된 물)</td><td><span class="red">≥25℃ 여름</span></td><td><span class="red">광분·광폭 → 서로 물어 입이 하얗게</span>, 간 선상 출혈반</td><td>뇌연수·척수 신경세포 괴사 / 이빨 제거·급이 자주</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 여름 해산어 — <b>RSIV</b>는 비장 비대(도말로 바로 확인), <b>구백증</b>은 행동이상+입. <b>VNN</b>은 어린 고기 신경증상(뜨고 돈다).</div>
+
+<!-- 5. 뱀장어 -->
+<h2>5. 뱀장어 <span class="en">Eel</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr><td class="k">AngHV-1<br><span class="small">AngHV-1<br><span class="small">Allo-herpes</span></span></td><td>유럽·일본·미국 뱀장어, 열대종</td><td>입식 <b>~1개월 후</b> 발생</td><td><span class="red">아가미</span>·피부·간</td><td><b>수평</b>: 물·직접 접촉 / 평생 보균</td><td>16~26℃<br><b>연중(RAS)</b></td><td><span class="red">아가미 부종·두꺼운 점액·괴사</span> → 수면으로 올라옴</td><td>새판 융합, 합포체, <b>핵내 봉입체 O</b> / 입식 1개월 후, 3개월 ~50% / 온열 ~35℃</td></tr>
+<tr><td class="k">VECNE<br><span class="small">아가미울혈증</span><br><span class="small">JEECV<br><span class="small">Polyoma (키메라)</span></span></td><td>뱀장어속 전부</td><td>입식 <b>~3개월 후</b> 발생</td><td><span class="red">혈관내피</span> (아가미 중심정맥동)</td><td><span class="small">—</span></td><td><b>연중(RAS)</b></td><td><span class="red">아가미 검붉은 울혈</span>, 실 모양 출혈, <b>에메랄드색 담낭</b>, 흑갈색 비장</td><td><b>혈관내피</b> 표적, 중심정맥동 확장 / 입식 ~3개월 후</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 둘 다 아가미 + 복합감염 흔함 → 상피 과형성·점액·<b>봉입체 O</b>면 AngHV, 울혈·출혈·<b>에메랄드 담낭</b>이면 VECNE. 확진 PCR.</div>
+</div>
+
+<div class="page pb">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 한눈에 보는 비교표</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+
+<!-- 6. 양서파충 -->
+<h2>6. 양서·파충류 <span class="en">Amphibians &amp; reptiles</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr><td class="k">Lucké tumor<br><span class="small">RaHV-1<br><span class="small">Batravirus</span></span></td><td>북방표범개구리</td><td><b>성체</b>(종양) / 알·올챙이로 전파</td><td><span class="red">신장</span></td><td><b>수평</b> + <span class="red">수직</span>: 봄 번식기 성체 → 알·올챙이 / 오줌 배출</td><td>겨울 복제 / <b>여름 종양 성장</b></td><td><span class="red">신장 선암(크림색 종괴)</span>, 전이, 오줌으로 배출</td><td>호산성 핵내 봉입체 / 봄 번식기 전파</td></tr>
+<tr><td class="k">RaHV-3<br><span class="small">RaHV-3<br><span class="small">Batravirus</span></span></td><td>양서류</td><td>번식기(이른 봄)</td><td>피부 표피·점막</td><td><b>수평</b>(과밀 시 빠름)</td><td>이른 봄(번식기)</td><td><span class="red">비종양성</span> 회백색 판 → 궤양 → 피부호흡·삼투압 장애</td><td>표피 과형성+괴사, 호산성 핵내</td></tr>
+<tr class="hl"><td class="k">라나바이러스<br><span class="small">Ranavirus<br><span class="small">Irido</span></span></td><td>개구리과 최고, 유미목, 파충류</td><td><span class="red">부화 직후·올챙이·변태기</span> &gt; 알·성체</td><td>조혈조직·신세뇨관·섬유모세포·대식세포·신경절·혈관내피 (<b>전신</b>)</td><td><span class="small">—</span></td><td>따뜻한 여름</td><td><span class="red">만성 궤양 증후군 vs 급성 출혈 증후군</span> / 폐사만 보일 때 많음</td><td>hyaline cast·droplet, <b>세포질 호염기성</b></td></tr>
+<tr><td class="k">LETD<br><span class="small">Herpesviridae</span></td><td>바다거북</td><td><span class="small">—</span></td><td><span class="red">기관·폐·눈</span></td><td><span class="small">—</span></td><td>—</td><td><span class="red">기관·폐·눈에만</span> 치즈 같은 삼출물</td><td><b>핵내 호산성</b></td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 거북 호흡기·눈 — <b>라나</b>는 전신 + 세포질 호염기성(+혈관 섬유소 혈전), <b>LETD</b>는 국한 + 핵내 호산성. 개구리 헤르페스 둘은 종양(RaHV-1) vs 비종양(RaHV-3).</div>
+
+<!-- 7. 패류 -->
+<h2>7. 패류 <span class="en">Molluscs</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr class="hl"><td class="k">OsHV-1 μVar<br><span class="small">Malaco-herpes</span></td><td>참굴</td><td><span class="red">1년 미만</span> 유생·치패·어린 굴</td><td>침입: 아가미·외투막 → 결합조직 <b>섬유모세포</b></td><td><b>수평</b>(바닷물)이 주 경로</td><td><span class="red">&gt;16℃ 여름 폐사</span></td><td>며칠 만에 80~100% 급사, <b>입 벌리고(gaping) 죽음</b></td><td>결합조직 섬유모세포, 핵 비대·염색질 변연화, <b>염증 O</b> / ORF4·42/43 → apoptosis 차단</td></tr>
+<tr><td class="k">AVNV<br><span class="small">OsHV-1 변이</span></td><td>참가리비</td><td><span class="red">2년 이상 성체</span></td><td>결합조직 섬유모세포 (아가미·외투막·신장·소화관)</td><td><span class="small">—</span></td><td>≥18~20℃</td><td>최대 90% 대량폐사</td><td><span class="red">염증 없음 + 세포질 호산성 봉입체</span></td></tr>
+<tr><td class="k">AVG<br><span class="small">HaHV-1<br><span class="small">Malaco-herpes</span></span></td><td>전복</td><td><b>전 연령</b></td><td><span class="red">신경조직</span>(대뇌·측족·구강 신경절, 신경삭)</td><td><b>수평</b>: 물만으로 전파(접촉 불필요)</td><td>15~20℃</td><td><span class="red">부착 불능·뒤집혀 못 돌아옴</span>, 발 말림, 치설 돌출</td><td><b>신경절염</b>(혈구 침윤) / 2~5일 100% / WOAH, 국내 발생 X</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 굴(어린 것·염증 O) vs 가리비(성체·염증 X·세포질 봉입체) vs 전복(신경 → 못 붙음).</div>
+
+<!-- 8. 새우 -->
+<h2>8. 새우·갑각류 <span class="en">Crustaceans</span></h2>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:10%">질병<br><span class="small">원인</span></th><th style="width:10%">숙주</th><th style="width:12%">감수 시기</th><th style="width:13%">표적 장기</th><th style="width:12%">전파</th><th style="width:8%">수온·계절</th><th>특이 소견</th><th style="width:15%">조직·진단 포인트</th></tr></thead>
+<tbody>
+<tr class="hl"><td class="k">흰반점병 ★<br><span class="small">WSSV<br><span class="small">Nimaviridae, dsDNA, 꼬리</span></span></td><td>모든 십각류</td><td>모든 단계, 특히 <span class="red">후기 PL·치하·성하</span></td><td>큐티클 상피·피하 결합조직 (<b>외·중배엽</b>)</td><td><span class="red">수직</span>(trans-ovum) + <b>수평</b>: 공식·포식, 물</td><td>—</td><td><span class="red">급성 붉은 체색 → 만성 흰 반점(칼슘)</span>, 3~10일 100%, 수면·가장자리로 모임</td><td>초기 Cowdry A 유사 → 후기 호염기성 / 흰 반점은 고알칼리·세균병에도 → PCR</td></tr>
+<tr class="hl"><td class="k">IHHN<br><span class="small">IHHNV<br><span class="small">Parvo, ssDNA</span></span></td><td>blue shrimp 최고 / 흰다리 등</td><td>모든 단계 (알~성하), <b>치하</b>에서 증상 심함 / RDS는 유생·초기 PL 감염</td><td>아가미·큐티클·결합조직·조혈조직·LO·촉각선·신경삭 (<b>외·중배엽</b>, 내배엽 X)</td><td><span class="red">수직</span>(감염 어미 → 알·nauplius) + <b>수평</b></td><td>—</td><td>blue: 급성 ~100% / 흰다리: <span class="red">RDS(이마뿔·6번 체절 기형, 성장 불균일)</span></td><td><b>Cowdry A</b> 핵내 호산성 / 어미 검사(수직)</td></tr>
+<tr><td class="k">DIV1<br><span class="small">Decapod-iridovirus</span></td><td>흰다리·징거미</td><td><span class="red">PL~준성체, 4~7 cm</span></td><td>조혈조직·혈구·림프기관(LO)</td><td><span class="small">—</span></td><td>—</td><td>간췌장 위축·탈색, 위장 빔 / <span class="red">징거미 이마뿔 기부 흰 부분</span></td><td>호산성 세포질 봉입체 + 핵농축</td></tr>
+<tr><td class="k">배큘로<br><span class="small">Baculoviridae</span></td><td>새우</td><td>BP: 유생·PL·치하 / MBV: 후기 유생·PL·어린 치하 / BMN: 유생·초기 PL</td><td>간췌장 관·세관 상피 + 앞쪽 중장 (<b>내배엽</b>)</td><td>환경 배출 후 occlusion body로 감염력 유지</td><td>—</td><td>중장선이 하얗게</td><td>BP 사면체 / MBV 구형 / <span class="red">BMN occlusion X</span></td></tr>
+<tr><td class="k">흰꼬리병<br><span class="small">MrNV<br><span class="small">Noda</span></span></td><td>큰징거미새우</td><td><span class="red">유생·PL·어린 치하</span> (성체 저항·보균)</td><td><span class="red">근육</span>(머리·복부·꼬리)·심장·유영지·난소·아가미</td><td><span class="red">수직</span>(trans-ovum) + <b>수평</b>(물)</td><td>—</td><td><span class="red">복부 2·3체절부터 근육 백탁</span> → 앞뒤로, 5일 내 폐사</td><td>Zenker's necrosis, 세포질 호염기성 / 수직</td></tr>
+<tr><td class="k">VCMD<br><span class="small">CMNV<br><span class="small">Noda</span></span></td><td>새우·어류·해삼</td><td><span class="small">—</span></td><td>신경·간췌장·근육·난소 (어류: 뇌·눈·근육·아가미·장)</td><td><span class="red">수직</span> + <b>수평</b></td><td><span class="red">&gt;28℃</span></td><td><span class="red">깊은 바닥에 숨어 죽음</span>, 계속되는 저폐사(RMS), 복부 근육 백탁</td><td>간췌장 <b>연보라 봉입체</b>, LOS / <b>&gt;28℃</b>·NO₂↑</td></tr>
+</tbody></table></div>
+<div class="pt"><b>감별 한 줄:</b> 근육이 하얘지면 MrNV(징거미, 2·3체절)·CMNV(바닥에 숨음). 흰 반점은 WSSV지만 단정 금지. 조직에서 Cowdry A 같은 핵내 호산성 → IHHNV ↔ WSSV 초기, PCR로 구분.</div>
+</div>
+
+<!-- 9. EXCEPTIONS -->
+<div class="page pb">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 한눈에 보는 비교표</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+<p class="part">SPECIAL</p>
+<h1>9. ★ "봄 증식 &gt; 항체" 원칙에서 벗어나는 질병</h1>
+
+<div class="box red"><b class="red">기본 원칙 (수업)</b><br>
+겨울 저수온에는 바이러스가 거의 증식하지 않아 <b>보균 상태</b>로 있다 → 봄에 수온이 오르면 <b>바이러스가 먼저 증식</b>하는데, 변온동물인 어류는 수온이 낮아 <b>항체 생산이 못 따라간다</b> → 대량폐사 → 수온이 더 오르면 면역이 따라잡아 회복.<br>
+<span class="small">교과서 예시 = <b>SVC</b>: 10~12℃ 감염 → 폐사 90%·항체 음성 / 20~22℃ 감염 → 폐사 0%·항체 1:256.</span></div>
+<figure class="fg"><svg viewBox="0 -4 640 254" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="수온에 따른 바이러스 증식과 항체 반응 모식도">
+<rect x="246.7" y="30" width="123.7" height="160" fill="#fff6f5"/>
+<text x="308.5" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#c62828">위험 구간 (봄)</text>
+<text x="308.5" y="136" text-anchor="middle" font-size="9.5" fill="#c62828">바이러스 ≫ 항체</text>
+<line x1="70" y1="190" x2="600" y2="190" stroke="#111" stroke-width="1.3"/>
+<line x1="70" y1="190" x2="70" y2="25" stroke="#111" stroke-width="1.3"/>
+<path d="M70.0,189.1 L71.8,189.0 L73.5,188.9 L75.3,188.9 L77.1,188.8 L78.8,188.7 L80.6,188.6 L82.4,188.6 L84.1,188.5 L85.9,188.4 L87.7,188.3 L89.4,188.1 L91.2,188.0 L93.0,187.9 L94.7,187.8 L96.5,187.6 L98.3,187.5 L100.0,187.3 L101.8,187.2 L103.6,187.0 L105.3,186.8 L107.1,186.6 L108.9,186.4 L110.6,186.1 L112.4,185.9 L114.2,185.6 L115.9,185.4 L117.7,185.1 L119.5,184.8 L121.2,184.5 L123.0,184.1 L124.8,183.7 L126.5,183.4 L128.3,183.0 L130.1,182.5 L131.8,182.1 L133.6,181.6 L135.4,181.1 L137.1,180.5 L138.9,180.0 L140.7,179.4 L142.4,178.7 L144.2,178.1 L146.0,177.4 L147.7,176.7 L149.5,175.9 L151.3,175.1 L153.0,174.2 L154.8,173.3 L156.6,172.4 L158.3,171.4 L160.1,170.4 L161.9,169.3 L163.6,168.1 L165.4,167.0 L167.2,165.7 L168.9,164.5 L170.7,163.1 L172.5,161.7 L174.2,160.3 L176.0,158.8 L177.8,157.3 L179.5,155.7 L181.3,154.0 L183.1,152.3 L184.8,150.6 L186.6,148.8 L188.4,147.0 L190.1,145.1 L191.9,143.2 L193.7,141.2 L195.4,139.2 L197.2,137.1 L199.0,135.1 L200.7,133.0 L202.5,130.8 L204.3,128.7 L206.0,126.5 L207.8,124.4 L209.6,122.2 L211.3,120.0 L213.1,117.8 L214.9,115.6 L216.6,113.5 L218.4,111.3 L220.2,109.2 L221.9,107.0 L223.7,104.9 L225.5,102.9 L227.2,100.8 L229.0,98.8 L230.8,96.8 L232.5,94.9 L234.3,93.0 L236.1,91.2 L237.8,89.4 L239.6,87.7 L241.4,86.0 L243.1,84.3 L244.9,82.7 L246.7,81.2 L248.4,79.7 L250.2,78.3 L252.0,76.9 L253.7,75.5 L255.5,74.3 L257.3,73.0 L259.0,71.9 L260.8,70.7 L262.6,69.6 L264.3,68.6 L266.1,67.6 L267.9,66.7 L269.6,65.8 L271.4,64.9 L273.2,64.1 L274.9,63.3 L276.7,62.6 L278.5,61.9 L280.2,61.3 L282.0,60.6 L283.8,60.0 L285.5,59.5 L287.3,58.9 L289.1,58.4 L290.8,57.9 L292.6,57.5 L294.4,57.0 L296.1,56.6 L297.9,56.3 L299.7,55.9 L301.4,55.5 L303.2,55.2 L305.0,54.9 L306.7,54.6 L308.5,54.4 L310.3,54.1 L312.0,53.9 L313.8,53.6 L315.6,53.4 L317.3,53.2 L319.1,53.0 L320.9,52.8 L322.6,52.7 L324.4,52.5 L326.2,52.4 L327.9,52.2 L329.7,52.1 L331.5,52.0 L333.2,51.9 L335.0,51.7 L336.8,51.6 L338.5,51.5 L340.3,51.4 L342.1,51.4 L343.8,51.3 L345.6,51.2 L347.4,51.1 L349.1,51.1 L350.9,51.0 L352.7,50.9 L354.4,50.9 L356.2,50.8 L358.0,50.8 L359.7,50.7 L361.5,50.7 L363.3,50.6 L365.0,50.6 L366.8,50.6 L368.6,50.5 L370.3,50.5 L372.1,50.5 L373.9,50.4 L375.6,50.4 L377.4,50.4 L379.2,50.4 L380.9,50.3 L382.7,50.3 L384.5,50.3 L386.2,50.3 L388.0,50.3 L389.8,50.3 L391.5,50.2 L393.3,50.2 L395.1,50.2 L396.8,50.2 L398.6,50.2 L400.4,50.2 L402.1,50.2 L403.9,50.2 L405.7,50.1 L407.4,50.1 L409.2,50.1 L411.0,50.1 L412.7,50.1 L414.5,50.1 L416.3,50.1 L418.0,50.1 L419.8,50.1 L421.6,50.1 L423.3,50.1 L425.1,50.1 L426.9,50.1 L428.6,50.1 L430.4,50.1 L432.2,50.1 L433.9,50.1 L435.7,50.0 L437.5,50.0 L439.2,50.0 L441.0,50.0 L442.8,50.0 L444.5,50.0 L446.3,50.0 L448.1,50.0 L449.8,50.0 L451.6,50.0 L453.4,50.0 L455.1,50.0 L456.9,50.0 L458.7,50.0 L460.4,50.0 L462.2,50.0 L464.0,50.0 L465.7,50.0 L467.5,50.0 L469.3,50.0 L471.0,50.0 L472.8,50.0 L474.6,50.0 L476.3,50.0 L478.1,50.0 L479.9,50.0 L481.6,50.0 L483.4,50.0 L485.2,50.0 L486.9,50.0 L488.7,50.0 L490.5,50.0 L492.2,50.0 L494.0,50.0 L495.8,50.0 L497.5,50.0 L499.3,50.0 L501.1,50.0 L502.8,50.0 L504.6,50.0 L506.4,50.0 L508.1,50.0 L509.9,50.0 L511.7,50.0 L513.4,50.0 L515.2,50.0 L517.0,50.0 L518.7,50.0 L520.5,50.0 L522.3,50.0 L524.0,50.0 L525.8,50.0 L527.6,50.0 L529.3,50.0 L531.1,50.0 L532.9,50.0 L534.6,50.0 L536.4,50.0 L538.2,50.0 L539.9,50.0 L541.7,50.0 L543.5,50.0 L545.2,50.0 L547.0,50.0 L548.8,50.0 L550.5,50.0 L552.3,50.0 L554.1,50.0 L555.8,50.0 L557.6,50.0 L559.4,50.0 L561.1,50.0 L562.9,50.0 L564.7,50.0 L566.4,50.0 L568.2,50.0 L570.0,50.0 L571.7,50.0 L573.5,50.0 L575.3,50.0 L577.0,50.0 L578.8,50.0 L580.6,50.0 L582.3,50.0 L584.1,50.0 L585.9,50.0 L587.6,50.0 L589.4,50.0 L591.2,50.0 L592.9,50.0 L594.7,50.0 L596.5,50.0 L598.2,50.0 L600.0,50.0" fill="none" stroke="#c62828" stroke-width="2.6"/>
+<path d="M70.0,190.0 L71.8,190.0 L73.5,190.0 L75.3,190.0 L77.1,190.0 L78.8,190.0 L80.6,190.0 L82.4,190.0 L84.1,190.0 L85.9,190.0 L87.7,190.0 L89.4,190.0 L91.2,190.0 L93.0,190.0 L94.7,190.0 L96.5,190.0 L98.3,190.0 L100.0,190.0 L101.8,190.0 L103.6,190.0 L105.3,190.0 L107.1,190.0 L108.9,190.0 L110.6,190.0 L112.4,190.0 L114.2,190.0 L115.9,190.0 L117.7,190.0 L119.5,190.0 L121.2,190.0 L123.0,190.0 L124.8,189.9 L126.5,189.9 L128.3,189.9 L130.1,189.9 L131.8,189.9 L133.6,189.9 L135.4,189.9 L137.1,189.9 L138.9,189.9 L140.7,189.9 L142.4,189.9 L144.2,189.9 L146.0,189.9 L147.7,189.9 L149.5,189.9 L151.3,189.9 L153.0,189.9 L154.8,189.9 L156.6,189.9 L158.3,189.9 L160.1,189.8 L161.9,189.8 L163.6,189.8 L165.4,189.8 L167.2,189.8 L168.9,189.8 L170.7,189.8 L172.5,189.8 L174.2,189.8 L176.0,189.7 L177.8,189.7 L179.5,189.7 L181.3,189.7 L183.1,189.7 L184.8,189.7 L186.6,189.6 L188.4,189.6 L190.1,189.6 L191.9,189.6 L193.7,189.6 L195.4,189.5 L197.2,189.5 L199.0,189.5 L200.7,189.5 L202.5,189.4 L204.3,189.4 L206.0,189.4 L207.8,189.3 L209.6,189.3 L211.3,189.2 L213.1,189.2 L214.9,189.1 L216.6,189.1 L218.4,189.0 L220.2,189.0 L221.9,188.9 L223.7,188.9 L225.5,188.8 L227.2,188.7 L229.0,188.7 L230.8,188.6 L232.5,188.5 L234.3,188.4 L236.1,188.4 L237.8,188.3 L239.6,188.2 L241.4,188.1 L243.1,187.9 L244.9,187.8 L246.7,187.7 L248.4,187.6 L250.2,187.4 L252.0,187.3 L253.7,187.2 L255.5,187.0 L257.3,186.8 L259.0,186.6 L260.8,186.5 L262.6,186.3 L264.3,186.1 L266.1,185.8 L267.9,185.6 L269.6,185.4 L271.4,185.1 L273.2,184.8 L274.9,184.5 L276.7,184.2 L278.5,183.9 L280.2,183.6 L282.0,183.3 L283.8,182.9 L285.5,182.5 L287.3,182.1 L289.1,181.7 L290.8,181.2 L292.6,180.7 L294.4,180.3 L296.1,179.7 L297.9,179.2 L299.7,178.6 L301.4,178.0 L303.2,177.4 L305.0,176.7 L306.7,176.1 L308.5,175.3 L310.3,174.6 L312.0,173.8 L313.8,173.0 L315.6,172.1 L317.3,171.2 L319.1,170.3 L320.9,169.3 L322.6,168.3 L324.4,167.3 L326.2,166.2 L327.9,165.0 L329.7,163.9 L331.5,162.6 L333.2,161.4 L335.0,160.1 L336.8,158.7 L338.5,157.3 L340.3,155.9 L342.1,154.4 L343.8,152.9 L345.6,151.3 L347.4,149.7 L349.1,148.0 L350.9,146.3 L352.7,144.6 L354.4,142.8 L356.2,141.0 L358.0,139.1 L359.7,137.2 L361.5,135.3 L363.3,133.4 L365.0,131.4 L366.8,129.4 L368.6,127.4 L370.3,125.4 L372.1,123.3 L373.9,121.2 L375.6,119.2 L377.4,117.1 L379.2,115.0 L380.9,112.9 L382.7,110.8 L384.5,108.8 L386.2,106.7 L388.0,104.6 L389.8,102.6 L391.5,100.6 L393.3,98.6 L395.1,96.6 L396.8,94.7 L398.6,92.8 L400.4,90.9 L402.1,89.0 L403.9,87.2 L405.7,85.4 L407.4,83.7 L409.2,82.0 L411.0,80.3 L412.7,78.7 L414.5,77.1 L416.3,75.6 L418.0,74.1 L419.8,72.7 L421.6,71.3 L423.3,69.9 L425.1,68.6 L426.9,67.4 L428.6,66.1 L430.4,65.0 L432.2,63.8 L433.9,62.7 L435.7,61.7 L437.5,60.7 L439.2,59.7 L441.0,58.8 L442.8,57.9 L444.5,57.0 L446.3,56.2 L448.1,55.4 L449.8,54.7 L451.6,53.9 L453.4,53.3 L455.1,52.6 L456.9,52.0 L458.7,51.4 L460.4,50.8 L462.2,50.3 L464.0,49.7 L465.7,49.3 L467.5,48.8 L469.3,48.3 L471.0,47.9 L472.8,47.5 L474.6,47.1 L476.3,46.7 L478.1,46.4 L479.9,46.1 L481.6,45.8 L483.4,45.5 L485.2,45.2 L486.9,44.9 L488.7,44.6 L490.5,44.4 L492.2,44.2 L494.0,43.9 L495.8,43.7 L497.5,43.5 L499.3,43.4 L501.1,43.2 L502.8,43.0 L504.6,42.8 L506.4,42.7 L508.1,42.6 L509.9,42.4 L511.7,42.3 L513.4,42.2 L515.2,42.1 L517.0,41.9 L518.7,41.8 L520.5,41.7 L522.3,41.6 L524.0,41.6 L525.8,41.5 L527.6,41.4 L529.3,41.3 L531.1,41.3 L532.9,41.2 L534.6,41.1 L536.4,41.1 L538.2,41.0 L539.9,41.0 L541.7,40.9 L543.5,40.9 L545.2,40.8 L547.0,40.8 L548.8,40.7 L550.5,40.7 L552.3,40.6 L554.1,40.6 L555.8,40.6 L557.6,40.5 L559.4,40.5 L561.1,40.5 L562.9,40.5 L564.7,40.4 L566.4,40.4 L568.2,40.4 L570.0,40.4 L571.7,40.4 L573.5,40.3 L575.3,40.3 L577.0,40.3 L578.8,40.3 L580.6,40.3 L582.3,40.3 L584.1,40.2 L585.9,40.2 L587.6,40.2 L589.4,40.2 L591.2,40.2 L592.9,40.2 L594.7,40.2 L596.5,40.2 L598.2,40.2 L600.0,40.1" fill="none" stroke="#1f4e8c" stroke-width="2.6" stroke-dasharray="7 4"/>
+<line x1="90" y1="14" x2="118" y2="14" stroke="#c62828" stroke-width="2.6"/><text x="124" y="18" font-size="11" fill="#c62828" font-weight="700">바이러스 증식</text>
+<line x1="230" y1="14" x2="258" y2="14" stroke="#1f4e8c" stroke-width="2.6" stroke-dasharray="7 4"/><text x="264" y="18" font-size="11" fill="#1f4e8c" font-weight="700">항체 반응(면역)</text>
+<g font-size="10" fill="#444" text-anchor="middle">
+<text x="70.0" y="205">0℃</text><text x="158.3" y="205">5</text><text x="246.7" y="205">10</text><text x="335.0" y="205">15</text><text x="423.3" y="205">20</text><text x="511.7" y="205">25</text><text x="600.0" y="205">30℃</text></g>
+<g font-size="10.5" text-anchor="middle" font-weight="700">
+<text x="131.8" y="226">겨울: 보균 (둘 다 낮음)</text>
+<text x="308.5" y="226" fill="#c62828">봄: 대량폐사</text>
+<text x="476.3" y="226" fill="#1f4e8c">초여름: 회복·자연치유</text></g>
+<text x="62" y="34" text-anchor="end" font-size="9.5" fill="#444">높음</text>
+<text x="62" y="188" text-anchor="end" font-size="9.5" fill="#444">낮음</text>
+<text x="600" y="244" text-anchor="end" font-size="9" fill="#888">모식도 (SVC 실험 결과를 바탕으로 한 개념 그림)</text>
+</svg><figcaption>그림 1. 원칙 — 저수온에서는 바이러스 증식 속도를 면역(항체)이 못 따라가고, 수온이 오르면 역전된다</figcaption></figure>
+
+<p><b>원칙대로 가는 질병</b> (저수온·봄형, 수온 올리면 좋아짐): <b>SVC</b>(10~17℃, 봄) · <b>IHN</b>(&lt;15℃) · <b>VHS</b>(4~14℃, &gt;18℃ X) · <b>HIRRV</b>(2~14℃) · <b>OMVD</b>(10~14℃, 봄) · <b>IPN</b>(10~15℃).</p>
+
+<h3>예외 ① 고수온(여름)에 터지는 질병 — "따뜻하면 오히려 발병"</h3>
+<div class="tw"><table class="s">
+<thead><tr><th style="width:20%">질병</th><th style="width:16%">수온</th><th>왜 예외인가</th></tr></thead>
+<tbody>
+<tr><td class="k">CCVD (메기)</td><td class="red">&gt;25℃</td><td>메기는 온수성 — 여름 고수온에서 바이러스 복제가 폭발, 과밀·저산소가 겹침. 고수온기에 취급·운반 피하기</td></tr>
+<tr class="hl"><td class="k">RSIVD (돌돔·참돔)</td><td class="red">≥25℃</td><td>여름에만 발생, 수온이 오를수록 오히려 위험 → "수온 올리면 치료"가 안 통함 → <b>백신</b>으로 대응</td></tr>
+<tr><td class="k">복어 구백증</td><td class="red">≥25℃</td><td>여름 크기 무관 발생, 대책은 밀식·공식 방지</td></tr>
+<tr><td class="k">VNN — RGNNV</td><td class="red">25~30℃</td><td>온수성 유전자형(농어·바리류)은 여름형. 반면 BFNNV는 15~20℃ 냉수형 → <b>같은 병도 유전자형마다 반대</b></td></tr>
+<tr><td class="k">KHVD</td><td>16~25℃</td><td>잉어 질병 중 고수온 쪽. 잉어두창(&lt;15℃)과 반대</td></tr>
+<tr><td class="k">AngHV-1 / CyHV-2 / CEV(코이)</td><td>16~26 / 15~25 / 15~25℃</td><td>중간~고수온형. CyHV-2는 봄·가을 두 번</td></tr>
+<tr><td class="k">OsHV-1 (굴) · AVNV (가리비)</td><td class="red">&gt;16 / ≥18~20℃</td><td>"여름 폐사". 패류는 항체 자체가 없어 원칙 적용 X(→ 예외 ④)</td></tr>
+<tr><td class="k">VCMD (새우)</td><td class="red">&gt;28℃</td><td>고수온 + 날씨 급변·아질산↑에서 80% 폐사</td></tr>
+<tr><td class="k">라나바이러스 (양서류)</td><td>따뜻한 여름</td><td>수온 의존성 복제가 여름에 최대 + 올챙이·변태기와 겹침</td></tr>
+</tbody></table></div>
+
+<h3>예외 ② 수온을 올리면 "치료"되지만 발병은 한겨울 — 봄이 아니라 겨울형</h3>
+<ol class="c">
+<li>· <b>잉어두창(CyHV-1)</b>: <span class="blue">&lt;15℃ 겨울~이른 봄</span>에 발생, <b>&gt;20℃면 병변이 저절로 떨어져 치유</b> — 원칙의 "수온↑ = 회복"은 맞지만 증식 시점이 봄이 아니라 한겨울.</li>
+<li>· <b>CEV(일반 잉어)</b>: <span class="blue">6~10℃</span> — 같은 병이 코이에선 15~25℃. <b>숙주에 따라 계절이 뒤집힘</b>.</li>
+<li>· <b>VHS · HIRRV</b>: 4~14℃ / 2~14℃로 겨울까지 걸침(넙치 겨울철 질병). VHS는 지하해수로 수온을 올려 대응.</li>
+</ol>
+
+<h3>예외 ③ 증식과 병변이 반대 계절 — Lucké tumor</h3>
+<div class="box"><b>겨울</b>: 바이러스 <b>복제 ↑</b>, 종양 성장은 지연 → <b>여름</b>: 바이러스 복제 ↓, <b>종양이 빠르게 커지고 전이</b>. 봄에 물이 따뜻해지면 종양이 바이러스를 오줌으로 배출해 번식기 올챙이에게 전파.<br><span class="small">= "저수온에 바이러스가 쉰다"는 원칙과 정반대로, 저수온이 바이러스 복제기.</span></div>
+
+<h3>예외 ④ 항체가 아예 없는 숙주 — 원칙 자체가 성립 X</h3>
+<p>원칙의 핵심은 "<b>항체 형성 속도</b>"인데, <b>새우·게 등 갑각류와 굴·가리비·전복 등 패류</b>는 무척추동물이라 <b>획득면역(면역글로불린)이 없고 선천면역에만 의존</b>한다. → "수온이 오르면 항체가 따라잡아 회복"이 없다 → 발병하면 <b>며칠 안에 80~100%</b>(WSSV 3~10일, AVG 2~5일, OsHV-1 수일)로 끝나는 경우가 많고, <b>백신도 어렵다</b>. 대책은 SPF 종묘·어미 PCR·이동 제한 같은 <b>차단방역</b>뿐.</p>
+<p class="small">해당: WSSV · IHHNV · DIV1 · 배큘로 · MrNV · CMNV · OsHV-1 · AVNV · AVG</p>
+
+<h3>예외 ⑤ 수온보다 "스트레스·잠복 재활성화"가 방아쇠 — 헤르페스형</h3>
+<ol class="c">
+<li>· <b>EED(SalHV-3)</b>: 반복 취급 같은 부화장 스트레스 → 잠복 바이러스 재활성화. 생존어는 ~10년 보균.</li>
+<li>· <b>RaHV-3</b>: 번식기 스트레스·과밀·수온 급변 때.</li>
+<li>· <b>AngHV-1</b>: 선별·운반·과밀 스트레스 + 순환여과식 사육으로 <b>연중</b> 발생.</li>
+<li>· <b>KHV · CCVD · CyHV-1·2 등 헤르페스 전반</b>: 회복어 = 평생 보균어 → 계절이 아니라 스트레스 시점에 재발.</li>
+</ol>
+
+<h3>예외 ⑥ 계절이 사라진 질병 — 순환여과식(RAS) 양식</h3>
+<p><b>AngHV-1 · VECNE(뱀장어)</b>: 원래 여름~초가을 질병이었지만 실내 순환여과식으로 수온을 일정하게 유지하면서 <b>1년 내내</b> 발생. 계절보다 <b>입식 후 시점</b>(AngHV-1 ~1개월, VECNE ~3개월)이 더 중요.</p>
+
+<h3>예외 ⑦ 수온보다 "발달 단계"가 결정 — 연령형</h3>
+<ol class="c">
+<li>· <b>IPN</b>: 수온(10~15℃)보다 <b>첫 먹이를 먹기 시작하는 시점</b>이 결정 — 소화기(췌장)를 처음 쓸 때 터짐.</li>
+<li>· <b>VNN</b>: 자어·치어(신경계 발달기), <b>VEH</b>: 10~30일령, <b>MABV</b>: &lt;4 g, <b>라나바이러스</b>: 올챙이·변태기(에너지 소모로 면역↓).</li>
+<li>· 반대로 <b>AVNV</b>는 <b>2년 이상 성체</b>만, <b>HIRRV</b>는 100~700 g 출하 크기 — 어린 개체가 아니라 큰 개체를 침범.</li>
+</ol>
+</div>
+
+<!-- 10. TEMP -->
+<div class="page pb">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 한눈에 보는 비교표</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+<h1>10. 수온 한 장 정리</h1>
+<figure class="fg"><svg viewBox="0 0 640 624" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="전체 질병 발생 수온 막대그래프">
+<rect x="297.1" y="22" width="82.0" height="576" fill="#fff6f5"/>
+<line x1="180.0" y1="22" x2="180.0" y2="598" stroke="#e3e3e3"/><text x="180.0" y="18" text-anchor="middle" font-size="10" fill="#555">0℃</text>
+<line x1="238.6" y1="22" x2="238.6" y2="598" stroke="#e3e3e3"/><text x="238.6" y="18" text-anchor="middle" font-size="10" fill="#555">5℃</text>
+<line x1="297.1" y1="22" x2="297.1" y2="598" stroke="#e3e3e3"/><text x="297.1" y="18" text-anchor="middle" font-size="10" fill="#555">10℃</text>
+<line x1="355.7" y1="22" x2="355.7" y2="598" stroke="#e3e3e3"/><text x="355.7" y="18" text-anchor="middle" font-size="10" fill="#555">15℃</text>
+<line x1="414.3" y1="22" x2="414.3" y2="598" stroke="#e3e3e3"/><text x="414.3" y="18" text-anchor="middle" font-size="10" fill="#555">20℃</text>
+<line x1="472.9" y1="22" x2="472.9" y2="598" stroke="#e3e3e3"/><text x="472.9" y="18" text-anchor="middle" font-size="10" fill="#555">25℃</text>
+<line x1="531.4" y1="22" x2="531.4" y2="598" stroke="#e3e3e3"/><text x="531.4" y="18" text-anchor="middle" font-size="10" fill="#555">30℃</text>
+<line x1="590.0" y1="22" x2="590.0" y2="598" stroke="#e3e3e3"/><text x="590.0" y="18" text-anchor="middle" font-size="10" fill="#555">35℃</text>
+<text x="8" y="42" font-size="10.5" font-weight="700" fill="#c62828">잉어</text>
+<text x="172" y="61" text-anchor="end" font-size="10.5" font-weight="700">잉어두창</text>
+<rect x="203.4" y="52" width="152.3" height="11" fill="#1f4e8c" opacity=".35"/>
+<rect x="343.7" y="52" width="12" height="11" fill="#1f4e8c"/>
+<text x="360.7" y="61" font-size="9.5"><15</text>
+<text x="172" y="80" text-anchor="end" font-size="10.5" font-weight="700">CEV — 잉어</text>
+<rect x="250.3" y="71" width="46.9" height="11" fill="#1f4e8c"/>
+<text x="302.1" y="80" font-size="9.5">6~10</text>
+<text x="172" y="99" text-anchor="end" font-size="10.5" font-weight="700">SVC</text>
+<rect x="297.1" y="90" width="82.0" height="11" fill="#1f4e8c"/>
+<text x="384.1" y="99" font-size="9.5">10~17</text>
+<text x="172" y="118" text-anchor="end" font-size="10.5" font-weight="700">HVHN (CyHV-2)</text>
+<rect x="355.7" y="109" width="117.1" height="11" fill="#555"/>
+<text x="477.9" y="118" font-size="9.5">15~25</text>
+<text x="172" y="137" text-anchor="end" font-size="10.5" font-weight="700">CEV — 코이</text>
+<rect x="355.7" y="128" width="117.1" height="11" fill="#555"/>
+<text x="477.9" y="137" font-size="9.5">15~25</text>
+<text x="172" y="156" text-anchor="end" font-size="10.5" font-weight="700">KHVD</text>
+<rect x="367.4" y="147" width="105.4" height="11" fill="#c62828"/>
+<text x="477.9" y="156" font-size="9.5">16~25</text>
+<text x="8" y="175" font-size="10.5" font-weight="700" fill="#c62828">연어·송어·메기</text>
+<text x="172" y="194" text-anchor="end" font-size="10.5" font-weight="700">IHN</text>
+<rect x="215.1" y="185" width="140.6" height="11" fill="#1f4e8c" opacity=".35"/>
+<rect x="343.7" y="185" width="12" height="11" fill="#1f4e8c"/>
+<text x="360.7" y="194" font-size="9.5"><15</text>
+<text x="172" y="213" text-anchor="end" font-size="10.5" font-weight="700">OMVD</text>
+<rect x="297.1" y="204" width="46.9" height="11" fill="#1f4e8c"/>
+<text x="349.0" y="213" font-size="9.5">10~14</text>
+<text x="172" y="232" text-anchor="end" font-size="10.5" font-weight="700">IPN</text>
+<rect x="297.1" y="223" width="58.6" height="11" fill="#1f4e8c"/>
+<text x="360.7" y="232" font-size="9.5">10~15</text>
+<text x="172" y="251" text-anchor="end" font-size="10.5" font-weight="700">EHN (송어)</text>
+<rect x="308.9" y="242" width="105.4" height="11" fill="#555"/>
+<text x="419.3" y="251" font-size="9.5">11~20</text>
+<text x="172" y="270" text-anchor="end" font-size="10.5" font-weight="700">CCVD (메기)</text>
+<rect x="472.9" y="261" width="82.0" height="11" fill="#c62828" opacity=".35"/>
+<rect x="472.9" y="261" width="12" height="11" fill="#c62828"/>
+<text x="559.9" y="270" font-size="9.5">>25</text>
+<text x="8" y="289" font-size="10.5" font-weight="700" fill="#c62828">넙치</text>
+<text x="172" y="308" text-anchor="end" font-size="10.5" font-weight="700">HIRRV</text>
+<rect x="203.4" y="299" width="140.6" height="11" fill="#1f4e8c"/>
+<text x="349.0" y="308" font-size="9.5">2~14</text>
+<text x="172" y="327" text-anchor="end" font-size="10.5" font-weight="700">VHS</text>
+<rect x="226.9" y="318" width="117.1" height="11" fill="#1f4e8c"/>
+<text x="349.0" y="327" font-size="9.5">4~14</text>
+<text x="172" y="346" text-anchor="end" font-size="10.5" font-weight="700">VEH</text>
+<rect x="390.9" y="337" width="23.4" height="11" fill="#555"/>
+<text x="419.3" y="346" font-size="9.5">18~20</text>
+<text x="8" y="365" font-size="10.5" font-weight="700" fill="#c62828">해산어</text>
+<text x="172" y="384" text-anchor="end" font-size="10.5" font-weight="700">VNN — BFNNV</text>
+<rect x="355.7" y="375" width="58.6" height="11" fill="#555"/>
+<text x="419.3" y="384" font-size="9.5">15~20</text>
+<text x="172" y="403" text-anchor="end" font-size="10.5" font-weight="700">MABV</text>
+<rect x="408.4" y="394" width="11.7" height="11" fill="#555"/>
+<text x="425.1" y="403" font-size="9.5">20</text>
+<text x="172" y="422" text-anchor="end" font-size="10.5" font-weight="700">VNN — SJNNV</text>
+<rect x="414.3" y="413" width="58.6" height="11" fill="#555"/>
+<text x="477.9" y="422" font-size="9.5">20~25</text>
+<text x="172" y="441" text-anchor="end" font-size="10.5" font-weight="700">VNN — RGNNV</text>
+<rect x="472.9" y="432" width="58.6" height="11" fill="#c62828"/>
+<text x="536.4" y="441" font-size="9.5">25~30</text>
+<text x="172" y="460" text-anchor="end" font-size="10.5" font-weight="700">RSIVD</text>
+<rect x="472.9" y="451" width="82.0" height="11" fill="#c62828" opacity=".35"/>
+<rect x="472.9" y="451" width="12" height="11" fill="#c62828"/>
+<text x="559.9" y="460" font-size="9.5">≥25</text>
+<text x="172" y="479" text-anchor="end" font-size="10.5" font-weight="700">복어 구백증</text>
+<rect x="472.9" y="470" width="82.0" height="11" fill="#c62828" opacity=".35"/>
+<rect x="472.9" y="470" width="12" height="11" fill="#c62828"/>
+<text x="559.9" y="479" font-size="9.5">≥25</text>
+<text x="8" y="498" font-size="10.5" font-weight="700" fill="#c62828">뱀장어·패류·새우</text>
+<text x="172" y="517" text-anchor="end" font-size="10.5" font-weight="700">AVG (전복)</text>
+<rect x="355.7" y="508" width="58.6" height="11" fill="#555"/>
+<text x="419.3" y="517" font-size="9.5">15~20</text>
+<text x="172" y="536" text-anchor="end" font-size="10.5" font-weight="700">AngHV-1</text>
+<rect x="367.4" y="527" width="117.1" height="11" fill="#555"/>
+<text x="489.6" y="536" font-size="9.5">16~26 (연중)</text>
+<text x="172" y="555" text-anchor="end" font-size="10.5" font-weight="700">OsHV-1 (굴)</text>
+<rect x="367.4" y="546" width="164.0" height="11" fill="#c62828" opacity=".35"/>
+<rect x="367.4" y="546" width="12" height="11" fill="#c62828"/>
+<text x="536.4" y="555" font-size="9.5">>16</text>
+<text x="172" y="574" text-anchor="end" font-size="10.5" font-weight="700">AVNV (가리비)</text>
+<rect x="390.9" y="565" width="117.1" height="11" fill="#c62828" opacity=".35"/>
+<rect x="390.9" y="565" width="12" height="11" fill="#c62828"/>
+<text x="513.0" y="574" font-size="9.5">≥18~20</text>
+<text x="172" y="593" text-anchor="end" font-size="10.5" font-weight="700">VCMD (새우)</text>
+<rect x="508.0" y="584" width="70.3" height="11" fill="#c62828" opacity=".35"/>
+<rect x="508.0" y="584" width="12" height="11" fill="#c62828"/>
+<text x="583.3" y="593" font-size="9.5">>28</text>
+<text x="338.1" y="618" text-anchor="middle" font-size="10" fill="#c62828">10~17℃ = 원칙상 위험 구간(봄)</text>
+<text x="10" y="618" font-size="10" fill="#1f4e8c">■ 저수온형</text><text x="80" y="618" font-size="10" fill="#555">■ 중간</text><text x="128" y="618" font-size="10" fill="#c62828">■ 고수온형(예외 ①)</text>
+</svg><figcaption>그림 2. 숙주 그룹별 발생 수온 — 빨강은 "따뜻하면 오히려 발병"하는 예외</figcaption></figure>
+<div class="note">수온이 교본에 "이상(&gt;)·미만(&lt;)"으로만 나온 것은 옅은 막대로 표시했다. KHV의 "봄·가을"은 보충, 나머지 수치는 교본 기준. 교과서와 다르면 교과서 우선.</div>
+</div>
+
+</body>
+</html>

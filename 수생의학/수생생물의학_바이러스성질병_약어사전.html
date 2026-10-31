@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수생 바이러스 약어 사전</title>
+<style>
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');font-weight:500;font-style:normal;}
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');font-weight:700;font-style:normal;}
+@font-face{font-family:'GmarketSans';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');font-weight:300;font-style:normal;}
+@page{size:A4;margin:14mm 14mm 16mm 14mm;}
+*{box-sizing:border-box;}
+html{background:#e9e9e9;}
+body{font-family:'GmarketSans','Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:500;color:#111;font-size:10pt;line-height:1.62;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{background:#fff;max-width:210mm;margin:0 auto 10mm;padding:14mm 14mm 16mm;}
+@media print{html{background:#fff}.page{margin:0;padding:0;max-width:none}.pb{page-break-before:always;}figure,table,.box,.pt{break-inside:avoid;}}
+@media (max-width:600px){.page{padding:6mm 5mm}body{font-size:9.6pt}}
+.doc-title{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #111;padding-bottom:4px;margin-bottom:14px;gap:8px;}
+.doc-title .l{font-weight:700;font-size:11pt;}
+.doc-title .r{font-size:8pt;color:#555;font-weight:300;text-align:right;}
+h1{font-weight:700;font-size:15pt;margin:0 0 8px;letter-spacing:-.3px;}
+.comment{border:1px solid #111;padding:8px 11px;margin:0 0 16px;text-align:justify;font-size:9.4pt;font-weight:300;line-height:1.7;}
+.comment b.tag{display:block;font-weight:700;font-size:9.4pt;margin-bottom:2px;}
+h2{font-weight:700;font-size:12pt;margin:20px 0 6px;}
+h2::before{content:"● ";}
+h3{font-weight:700;font-size:10.6pt;margin:13px 0 4px;}
+h4{font-weight:700;font-size:10pt;margin:9px 0 3px;}
+p{margin:3px 0;text-align:justify;}
+ol.c{list-style:none;padding-left:4px;margin:3px 0;}
+ol.c>li{padding-left:1.4em;text-indent:-1.4em;margin:2px 0;}
+ul.d{margin:2px 0 2px 1.6em;padding:0;}
+ul.d li{margin:1px 0;}
+.red{color:#c62828;font-weight:700;}
+.blue{color:#1f4e8c;font-weight:700;}
+.u{text-decoration:underline;text-underline-offset:2px;}
+.sp{font-family:'Times New Roman',serif;font-style:italic;}
+.tw{overflow-x:auto;margin:6px 0 10px;}
+table{border-collapse:collapse;width:100%;font-size:9.2pt;line-height:1.5;}
+th,td{border:1px solid #444;padding:4px 6px;vertical-align:top;text-align:left;}
+thead th{background:#ededed;font-weight:700;text-align:center;}
+td.k,th.k{background:#f1ebe0;font-weight:700;white-space:nowrap;}
+th.rd{background:#f8d7d4;}
+th.bl{background:#d7e4f5;}
+th.gr{background:#dcefd9;}
+.note{border:1px solid #888;background:#fafafa;padding:6px 9px;margin:6px 0 10px;font-size:9pt;}
+.note::before{content:"※ ";font-weight:700;}
+.box{border:1px solid #111;padding:7px 10px;margin:6px 0 10px;}
+.box.red{border:1.5px solid #c62828;color:#111;font-weight:500;}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:6px 0 10px;font-size:9pt;}
+.flow span{border:1px solid #111;padding:3px 7px;background:#fff;}
+.flow span.hl{background:#f8d7d4;}
+.flow i{font-style:normal;font-weight:700;}
+.pt{border-left:4px solid #c62828;padding:4px 9px;margin:8px 0 10px;background:#fff6f5;font-size:9.2pt;}
+.pt b:first-child{color:#c62828;}
+.voc-title{font-weight:700;font-size:12pt;margin:22px 0 6px;border-bottom:1px solid #111;padding-bottom:2px;}
+.small{font-size:8.6pt;color:#444;font-weight:300;}
+/* 출처 태그 */
+.tg{display:inline-block;font-size:7.4pt;font-weight:700;padding:0 4px;border:1px solid;border-radius:2px;margin-left:3px;vertical-align:1px;line-height:1.45;text-indent:0;white-space:nowrap;}
+.tg.s{color:#c62828;border-color:#c62828;}
+.tg.b{color:#666;border-color:#999;font-weight:500;}
+.tg.x{color:#fff;background:#c62828;border-color:#c62828;}
+.legend{font-size:8.4pt;color:#444;margin:-6px 0 12px;}
+/* 그림 */
+figure.fg{margin:8px 0 12px;text-align:center;}
+figure.fg svg{width:100%;max-width:640px;height:auto;display:block;margin:0 auto;}
+figure.fg figcaption{font-size:8.6pt;color:#444;margin-top:3px;}
+svg text{font-family:'GmarketSans','Noto Sans KR',sans-serif;}
+.info{font-size:8.8pt;border:1px dashed #888;padding:5px 9px;margin:0 0 14px;color:#333;}
+
+.tg.n{color:#1f3a8a;border-color:#1f3a8a;}
+figure.ph{margin:8px 0 12px;text-align:center;}
+figure.ph img{max-width:100%;height:auto;display:block;margin:0 auto;border:1px solid #ccc;}
+figure.ph.sm img{max-width:62%;}
+figure.ph figcaption{font-size:8.6pt;color:#444;margin-top:3px;}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start;}
+.two>figure{margin:4px 0;}
+@media (max-width:600px){.two{grid-template-columns:1fr}figure.ph.sm img{max-width:100%}}
+.part{font-weight:700;font-size:9pt;color:#c62828;letter-spacing:.5px;margin:0 0 2px;}
+h1 .en{font-size:10pt;font-weight:300;color:#444;margin-left:6px;}
+h2 .en{font-size:9pt;font-weight:300;color:#555;margin-left:4px;}
+.pg{font-size:7.6pt;color:#888;font-weight:300;margin-left:4px;}
+td.c,th.c{text-align:center;}
+tr.hl td{background:#fff6d8;}
+.box.blue{border:1.5px solid #1f4e8c;}
+.toc{font-size:9pt;border:1px solid #111;padding:6px 10px;margin:0 0 14px;columns:2;column-gap:18px;}
+.toc div{break-inside:avoid;margin:1px 0;}
+.toc b{color:#c62828;}
+@media (max-width:600px){.toc{columns:1}}
+
+table.m{font-size:8.9pt;}
+table.m td{vertical-align:middle;}
+h2::before{content:"";}
+h2{border-bottom:1.5px solid #111;padding-bottom:2px;margin-top:18px;}
+.ini{color:#c62828;font-weight:700;}
+table.ab td{vertical-align:middle;}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="doc-title"><span class="l">수생동물 바이러스성 질병 — 약어 풀네임 사전</span><span class="r">수생생물의학 · 강의자료 p.1~140</span></div>
+<h1>약어 풀네임 사전 <span class="en">Abbreviations</span></h1>
+<div class="info"><b>보는 법</b> · 풀네임에서 <b class="ini">빨간 굵은 글자</b>만 이어 읽으면 약어가 된다. 약어 → 풀네임 → 한글 순서로 가리고 맞혀 보기. 괄호 속 글자는 붙기도 하고 빠지기도 하는 부분(예: KHV / KHVD).</div>
+<h2>헤르페스바이러스 (Ⅰ)</h2>
+<div class="tw"><table class="m ab"><thead><tr><th style="width:17%">약어</th><th style="width:45%">풀네임</th><th>뜻 · 메모</th></tr></thead><tbody>
+<tr><td class="k">CyHV-1·2·3</td><td><b class="ini">C</b>yprinid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1·2·3</td><td>잉어(잉어과) 헤르페스 — 1 잉어두창 · 2 HVHN · 3 KHV</td></tr>
+<tr><td class="k">RaHV-1·3</td><td><b class="ini">Ra</b>nid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1·3</td><td>개구리(Ranidae) 헤르페스 — 1 Lucké tumor · 3 피부병</td></tr>
+<tr><td class="k">IcHV-1</td><td><b class="ini">Ic</b>talurid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1</td><td>메기(Ictaluridae) 헤르페스 → CCVD</td></tr>
+<tr><td class="k">AciHV-2</td><td><b class="ini">Aci</b>penserid <b class="ini">h</b>erpes<b class="ini">v</b>irus 2</td><td>철갑상어 헤르페스</td></tr>
+<tr><td class="k">SalHV-2·3</td><td><b class="ini">Sal</b>monid <b class="ini">h</b>erpes<b class="ini">v</b>irus 2·3</td><td>연어과 헤르페스 — 2 OMVD · 3 EED</td></tr>
+<tr><td class="k">AngHV-1</td><td><b class="ini">Ang</b>uillid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1</td><td>뱀장어(Anguilla) 헤르페스</td></tr>
+<tr><td class="k">OsHV-1 μVar</td><td><b class="ini">Os</b>treid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1 <b class="ini">μ</b>-<b class="ini">Var</b>iant(microvariant)</td><td>굴(Ostreidae) 헤르페스 고병원성 변이주</td></tr>
+<tr><td class="k">HaHV-1</td><td><b class="ini">Ha</b>liotid <b class="ini">h</b>erpes<b class="ini">v</b>irus 1</td><td>전복(Haliotis) 헤르페스 → AVG</td></tr>
+<tr><td class="k">CCVD</td><td><b class="ini">C</b>hannel <b class="ini">C</b>atfish <b class="ini">V</b>irus <b class="ini">D</b>isease</td><td>찬넬메기 바이러스병</td></tr>
+<tr><td class="k">OMVD</td><td><b class="ini">O</b>ncorhynchus <b class="ini">M</b>asou <b class="ini">V</b>irus <b class="ini">D</b>isease</td><td>송어(마수연어) 바이러스병</td></tr>
+<tr><td class="k">EED(V)</td><td><b class="ini">E</b>pizootic <b class="ini">E</b>pitheliotropic <b class="ini">D</b>isease (<b class="ini">V</b>irus)</td><td>유행성 상피 친화성 질병 = SalHV-3</td></tr>
+<tr><td class="k">HVHN</td><td><b class="ini">H</b>erpes<b class="ini">v</b>iral <b class="ini">H</b>aematopoietic <b class="ini">N</b>ecrosis</td><td>헤르페스바이러스성 조혈기괴사증 = 금붕어 헤르페스</td></tr>
+<tr><td class="k">KHV(D)</td><td><b class="ini">K</b>oi <b class="ini">H</b>erpes<b class="ini">v</b>irus (<b class="ini">D</b>isease)</td><td>코이허피스바이러스(병)</td></tr>
+<tr><td class="k">VEH</td><td><b class="ini">V</b>iral <b class="ini">E</b>pidermal <b class="ini">H</b>yperplasia</td><td>넙치 바이러스성 표피증생증 (정리본에서 붙인 약칭)</td></tr>
+<tr><td class="k">AVNV</td><td><b class="ini">A</b>cute <b class="ini">V</b>iral <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>가리비 급성 바이러스성 괴사증</td></tr>
+<tr><td class="k">AVG</td><td><b class="ini">A</b>balone <b class="ini">V</b>iral <b class="ini">G</b>anglioneuritis</td><td>전복 바이러스성 신경절염</td></tr>
+<tr><td class="k">LETD</td><td><b class="ini">L</b>ung-<b class="ini">E</b>ye-<b class="ini">T</b>rachea <b class="ini">D</b>isease</td><td>거북 폐·눈·기관 질병 (헤르페스)</td></tr>
+</tbody></table></div>
+<h2>이리도바이러스 (Ⅱ)</h2>
+<div class="tw"><table class="m ab"><thead><tr><th style="width:17%">약어</th><th style="width:45%">풀네임</th><th>뜻 · 메모</th></tr></thead><tbody>
+<tr><td class="k">EHN(V)</td><td><b class="ini">E</b>pizootic <b class="ini">H</b>aematopoietic <b class="ini">N</b>ecrosis (<b class="ini">V</b>irus)</td><td>유행성 조혈기괴사증</td></tr>
+<tr><td class="k">LCDV</td><td><b class="ini">L</b>ympho<b class="ini">c</b>ystis <b class="ini">D</b>isease <b class="ini">V</b>irus</td><td>림포시스티스병 바이러스</td></tr>
+<tr><td class="k">RSIV(D)</td><td><b class="ini">R</b>ed <b class="ini">S</b>ea bream <b class="ini">I</b>rido<b class="ini">v</b>irus (<b class="ini">D</b>isease)</td><td>참돔 이리도바이러스(병)</td></tr>
+<tr><td class="k">ISKNV</td><td><b class="ini">I</b>nfectious <b class="ini">S</b>pleen and <b class="ini">K</b>idney <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>전염성 비장·신장 괴사 바이러스 (Megalocytivirus)</td></tr>
+<tr><td class="k">DIV1</td><td><b class="ini">D</b>ecapod <b class="ini">I</b>ridescent <b class="ini">V</b>irus <b class="ini">1</b></td><td>십각류 무지개 바이러스</td></tr>
+<tr><td class="k">SHIV</td><td><b class="ini">S</b>hrimp <b class="ini">H</b>emocyte <b class="ini">I</b>ridescent <b class="ini">V</b>irus</td><td>DIV1의 동의어</td></tr>
+<tr><td class="k">CQIV</td><td><b class="ini">C</b>herax <b class="ini">Q</b>uadricarinatus <b class="ini">I</b>rido<b class="ini">v</b>irus</td><td>DIV1의 동의어 (레드클로가재)</td></tr>
+</tbody></table></div>
+<h2>그 밖의 DNA 바이러스 (Ⅲ)</h2>
+<div class="tw"><table class="m ab"><thead><tr><th style="width:17%">약어</th><th style="width:45%">풀네임</th><th>뜻 · 메모</th></tr></thead><tbody>
+<tr><td class="k">JEECV</td><td><b class="ini">J</b>apanese <b class="ini">E</b>el <b class="ini">E</b>ndothelial <b class="ini">C</b>ell-infecting <b class="ini">V</b>irus</td><td>뱀장어 혈관내피세포 감염 바이러스 (Polyoma)</td></tr>
+<tr><td class="k">VECNE</td><td><b class="ini">V</b>iral <b class="ini">E</b>ndothelial <b class="ini">C</b>ell <b class="ini">N</b>ecrosis of <b class="ini">E</b>el</td><td>뱀장어 바이러스성 혈관내피괴사증 = 아가미울혈증</td></tr>
+<tr><td class="k">IHHN(V)</td><td><b class="ini">I</b>nfectious <b class="ini">H</b>ypodermal and <b class="ini">H</b>aematopoietic <b class="ini">N</b>ecrosis (<b class="ini">V</b>irus)</td><td>전염성 피하·조혈기괴사증</td></tr>
+<tr><td class="k">RDS</td><td><b class="ini">R</b>unt-<b class="ini">D</b>eformity <b class="ini">S</b>yndrome</td><td>난쟁이 기형 증후군 (만성 IHHN)</td></tr>
+<tr><td class="k">WSSV / WSD</td><td><b class="ini">W</b>hite <b class="ini">S</b>pot <b class="ini">S</b>yndrome <b class="ini">V</b>irus / <b class="ini">W</b>hite <b class="ini">S</b>pot <b class="ini">D</b>isease</td><td>흰반점병 바이러스 / 흰반점병</td></tr>
+<tr><td class="k">BP</td><td><b class="ini">B</b>aculovirus <b class="ini">p</b>enaei</td><td>보리새우속 배큘로 — 사면체 OB</td></tr>
+<tr><td class="k">MBV</td><td><b class="ini">M</b>onodon-type <b class="ini">B</b>aculo<b class="ini">v</b>irus</td><td>블랙타이거(P. monodon)형 배큘로 — 구형 OB</td></tr>
+<tr><td class="k">BMN</td><td><b class="ini">B</b>aculoviral <b class="ini">M</b>idgut gland <b class="ini">N</b>ecrosis</td><td>배큘로바이러스성 중장선괴사 — OB 없음</td></tr>
+<tr><td class="k">PjNOB</td><td><b class="ini">P</b>enaeus <b class="ini">j</b>aponicus <b class="ini">N</b>on-<b class="ini">O</b>ccluded <b class="ini">B</b>aculovirus</td><td>= BMN (보리새우, 결정성 봉입체 없음)</td></tr>
+<tr><td class="k">TOB / SOB</td><td><b class="ini">T</b>etrahedral / <b class="ini">S</b>pherical <b class="ini">O</b>cclusion <b class="ini">B</b>ody</td><td>사면체 / 구형 결정성 봉입체</td></tr>
+<tr><td class="k">CEV(D)</td><td><b class="ini">C</b>arp <b class="ini">E</b>dema <b class="ini">V</b>irus (<b class="ini">D</b>isease)</td><td>잉어부종바이러스(병) (Poxviridae)</td></tr>
+<tr><td class="k">KSD</td><td><b class="ini">K</b>oi <b class="ini">S</b>leepy <b class="ini">D</b>isease</td><td>비단잉어 수면병 = CEV</td></tr>
+</tbody></table></div>
+<h2>랍도·비르나·노다 (Ⅳ~Ⅶ)</h2>
+<div class="tw"><table class="m ab"><thead><tr><th style="width:17%">약어</th><th style="width:45%">풀네임</th><th>뜻 · 메모</th></tr></thead><tbody>
+<tr><td class="k">SVC(V)</td><td><b class="ini">S</b>pring <b class="ini">V</b>iraemia of <b class="ini">C</b>arp (<b class="ini">V</b>irus)</td><td>잉어봄바이러스혈증</td></tr>
+<tr><td class="k">IHN(V)</td><td><b class="ini">I</b>nfectious <b class="ini">H</b>aematopoietic <b class="ini">N</b>ecrosis (<b class="ini">V</b>irus)</td><td>전염성 조혈기괴사증 (연어과)</td></tr>
+<tr><td class="k">NV gene</td><td><b class="ini">N</b>on-<b class="ini">V</b>irion gene</td><td>virion에 없는 단백질 유전자 → Novirhabdovirus</td></tr>
+<tr><td class="k">VHS(V)</td><td><b class="ini">V</b>iral <b class="ini">H</b>aemorrhagic <b class="ini">S</b>epticaemia (<b class="ini">V</b>irus)</td><td>바이러스성 출혈성 패혈증</td></tr>
+<tr><td class="k">HIRRV</td><td><b class="ini">HIR</b>ame <b class="ini">R</b>habdo<b class="ini">v</b>irus</td><td>넙치(히라메) 랍도바이러스</td></tr>
+<tr><td class="k">SHRV</td><td><b class="ini">S</b>nake<b class="ini">h</b>ead <b class="ini">R</b>habdo<b class="ini">v</b>irus</td><td>가물치 랍도바이러스 (Novirhabdo)</td></tr>
+<tr><td class="k">EVEX · PRV · LTRV</td><td><b class="ini">E</b>el <b class="ini">V</b>irus <b class="ini">E</b>uropean <b class="ini">X</b> · <b class="ini">P</b>erch <b class="ini">R</b>habdo<b class="ini">v</b>irus · <b class="ini">L</b>ake <b class="ini">T</b>rout <b class="ini">R</b>habdo<b class="ini">v</b>irus</td><td>Perhabdovirus 속</td></tr>
+<tr><td class="k">GrCRV · PFRV · TenRV</td><td><b class="ini">Gr</b>ass <b class="ini">C</b>arp <b class="ini">R</b>habdo<b class="ini">v</b>irus · <b class="ini">P</b>ike <b class="ini">F</b>ry <b class="ini">R</b>habdo<b class="ini">v</b>irus · <b class="ini">Ten</b>ch <b class="ini">R</b>habdo<b class="ini">v</b>irus</td><td>Sprivivirus 속 (SVCV와 같은 속)</td></tr>
+<tr><td class="k">IPN(V)</td><td><b class="ini">I</b>nfectious <b class="ini">P</b>ancreatic <b class="ini">N</b>ecrosis (<b class="ini">V</b>irus)</td><td>전염성 췌장괴사증</td></tr>
+<tr><td class="k">MABV</td><td><b class="ini">M</b>arine <b class="ini">A</b>qua<b class="ini">b</b>irna<b class="ini">v</b>irus</td><td>해산어 아쿠아비르나바이러스</td></tr>
+<tr><td class="k">YTAV</td><td><b class="ini">Y</b>ellow<b class="ini">t</b>ail <b class="ini">A</b>scites <b class="ini">V</b>irus</td><td>방어 복수증 바이러스 (MABV)</td></tr>
+<tr><td class="k">IBDV</td><td><b class="ini">I</b>nfectious <b class="ini">B</b>ursal <b class="ini">D</b>isease <b class="ini">V</b>irus</td><td>닭 감보로병 (Avibirnavirus)</td></tr>
+<tr><td class="k">VNN / VER</td><td><b class="ini">V</b>iral <b class="ini">N</b>ervous <b class="ini">N</b>ecrosis / <b class="ini">V</b>iral <b class="ini">E</b>ncephalopathy and <b class="ini">R</b>etinopathy</td><td>바이러스성 신경괴사증 / 뇌·망막증 (같은 병)</td></tr>
+<tr><td class="k">SJNNV</td><td><b class="ini">S</b>triped <b class="ini">J</b>ack <b class="ini">N</b>ervous <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>줄전갱이형 (A형, 20~25℃)</td></tr>
+<tr><td class="k">TPNNV</td><td><b class="ini">T</b>iger <b class="ini">P</b>uffer <b class="ini">N</b>ervous <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>자주복형 (B형, 20℃)</td></tr>
+<tr><td class="k">RGNNV</td><td><b class="ini">R</b>ed-spotted <b class="ini">G</b>rouper <b class="ini">N</b>ervous <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>붉바리형 (C형, 25~30℃ 온수성)</td></tr>
+<tr><td class="k">BFNNV</td><td><b class="ini">B</b>ar<b class="ini">f</b>in <b class="ini">F</b>lounder <b class="ini">N</b>ervous <b class="ini">N</b>ecrosis <b class="ini">V</b>irus</td><td>범가자미형 (C형, 15~20℃ 냉수성) — 약어의 F는 barFin</td></tr>
+<tr><td class="k">MrNV</td><td><b class="ini">M</b>acrobrachium <b class="ini">r</b>osenbergii <b class="ini">N</b>oda<b class="ini">v</b>irus</td><td>큰징거미새우 노다바이러스</td></tr>
+<tr><td class="k">PvNV</td><td><b class="ini">P</b>enaeus <b class="ini">v</b>annamei <b class="ini">N</b>oda<b class="ini">v</b>irus</td><td>흰다리새우 노다바이러스</td></tr>
+<tr><td class="k">WTD / WMD</td><td><b class="ini">W</b>hite <b class="ini">T</b>ail <b class="ini">D</b>isease / <b class="ini">W</b>hite <b class="ini">M</b>uscle <b class="ini">D</b>isease</td><td>흰꼬리병 / 흰근육병 (= MrNV)</td></tr>
+<tr><td class="k">XSV</td><td>e<b class="ini">X</b>tra <b class="ini">S</b>mall <b class="ini">V</b>irus</td><td>MrNV와 함께 검출되는 위성 바이러스</td></tr>
+<tr><td class="k">CMNV</td><td><b class="ini">C</b>overt <b class="ini">M</b>ortality <b class="ini">N</b>oda<b class="ini">v</b>irus</td><td>잠복폐사 노다바이러스</td></tr>
+<tr><td class="k">VCMD</td><td><b class="ini">V</b>iral <b class="ini">C</b>overt <b class="ini">M</b>ortality <b class="ini">D</b>isease</td><td>바이러스성 잠복폐사증</td></tr>
+<tr><td class="k">RMS</td><td><b class="ini">R</b>unning <b class="ini">M</b>ortality <b class="ini">S</b>yndrome</td><td>양식 기간 내내 이어지는 저폐사 (농가 용어)</td></tr>
+<tr><td class="k">YHV · TSV · IMNV</td><td><b class="ini">Y</b>ellow <b class="ini">H</b>ead <b class="ini">V</b>irus · <b class="ini">T</b>aura <b class="ini">S</b>yndrome <b class="ini">V</b>irus · <b class="ini">I</b>nfectious <b class="ini">M</b>yo<b class="ini">n</b>ecrosis <b class="ini">V</b>irus</td><td>노랑머리병 · 타우라 증후군 · 전염성 근괴사 (LOS 형성)</td></tr>
+</tbody></table></div>
+<h2>공통 용어 · 세포주</h2>
+<div class="tw"><table class="m ab"><thead><tr><th style="width:17%">약어</th><th style="width:45%">풀네임</th><th>뜻 · 메모</th></tr></thead><tbody>
+<tr><td class="k">WOAH (OIE)</td><td><b class="ini">W</b>orld <b class="ini">O</b>rganisation for <b class="ini">A</b>nimal <b class="ini">H</b>ealth (<b class="ini">O</b>ffice <b class="ini">I</b>nternational des <b class="ini">E</b>pizooties)</td><td>세계동물보건기구 (옛 이름 OIE)</td></tr>
+<tr><td class="k">RAS</td><td><b class="ini">R</b>ecirculating <b class="ini">A</b>quaculture <b class="ini">S</b>ystem</td><td>순환여과식 양식 → 연중 발생</td></tr>
+<tr><td class="k">SPF</td><td><b class="ini">S</b>pecific <b class="ini">P</b>athogen <b class="ini">F</b>ree</td><td>특정 병원체 부재 종묘</td></tr>
+<tr><td class="k">PL</td><td><b class="ini">P</b>ost<b class="ini">l</b>arva</td><td>후기 유생 (새우)</td></tr>
+<tr><td class="k">HP</td><td><b class="ini">H</b>epato<b class="ini">p</b>ancreas</td><td>간췌장</td></tr>
+<tr><td class="k">LO / LOS</td><td><b class="ini">L</b>ymphoid <b class="ini">O</b>rgan / <b class="ini">L</b>ymphoid <b class="ini">O</b>rgan <b class="ini">S</b>pheroid</td><td>림프기관 / 림프기관 구형세포괴</td></tr>
+<tr><td class="k">MMC</td><td><b class="ini">M</b>elano-<b class="ini">M</b>acrophage <b class="ini">C</b>enter</td><td>멜라노대식세포 중심</td></tr>
+<tr><td class="k">EGC</td><td><b class="ini">E</b>osinophilic <b class="ini">G</b>ranular <b class="ini">C</b>ell</td><td>호산성 과립세포 (IHN 장 괴사)</td></tr>
+<tr><td class="k">TCID₅₀</td><td><b class="ini">T</b>issue <b class="ini">C</b>ulture <b class="ini">I</b>nfectious <b class="ini">D</b>ose 50%</td><td>세포 50%를 감염시키는 바이러스량</td></tr>
+<tr><td class="k">IHC · H&E · TEM</td><td><b class="ini">I</b>mmuno<b class="ini">h</b>isto<b class="ini">c</b>hemistry · <b class="ini">H</b>aematoxylin & <b class="ini">E</b>osin · <b class="ini">T</b>ransmission <b class="ini">E</b>lectron <b class="ini">M</b>icroscopy</td><td>면역조직화학 · HE 염색 · 투과전자현미경</td></tr>
+<tr><td class="k">ORF</td><td><b class="ini">O</b>pen <b class="ini">R</b>eading <b class="ini">F</b>rame</td><td>단백질 암호화 부위 (OsHV-1 ORF4·42/43)</td></tr>
+<tr><td class="k">DAFA</td><td><b class="ini">D</b>avidson's <b class="ini">A</b>lcohol-<b class="ini">F</b>ormalin-<b class="ini">A</b>cetic acid</td><td>갑각류 조직 고정액</td></tr>
+<tr><td class="k">EPC · FHM</td><td><b class="ini">E</b>pithelioma <b class="ini">P</b>apulosum <b class="ini">C</b>yprini · <b class="ini">F</b>at<b class="ini">h</b>ead <b class="ini">M</b>innow</td><td>잉어 상피종 세포 · 팻헤드미노 세포</td></tr>
+<tr><td class="k">CHSE-214 · BF-2</td><td><b class="ini">C</b>hinook <b class="ini">S</b>almon <b class="ini">E</b>mbryo · <b class="ini">B</b>lue<b class="ini">g</b>ill <b class="ini">F</b>ry</td><td>왕연어 배아 · 블루길 치어 세포 — BF의 F는 Fry</td></tr>
+<tr><td class="k">RTG-2 · GCO</td><td><b class="ini">R</b>ainbow <b class="ini">T</b>rout <b class="ini">G</b>onad · <b class="ini">G</b>rass <b class="ini">C</b>arp <b class="ini">O</b>vary</td><td>무지개송어 생식선 · 초어 난소 세포</td></tr>
+<tr><td class="k">SSN-1 · GF</td><td><b class="ini">S</b>triped <b class="ini">SN</b>akehead · <b class="ini">G</b>runt <b class="ini">F</b>in</td><td>가물치 세포(VNN) · grunt 지느러미 세포(RSIV)</td></tr>
+</tbody></table></div>
+</div>
+
+</body>
+</html>
