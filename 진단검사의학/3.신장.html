@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. 신장 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-pen2{background:#f1eafd;color:#6B3FC4;border:1px solid #c3a9f0;}
+.f2{background:#faf7ff;box-shadow:-4px 0 0 #9b7be0;}
+tr.f2 td{background:#faf7ff !important;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.side{border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:8px 4px 10px 20px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.clear{clear:both;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;}
+.two table{margin-left:0;width:100%;}
+
+table,.memo,.side,.two,tr{break-inside:avoid;page-break-inside:avoid;}
+h2,h3,h4,h5{break-after:avoid;page-break-after:avoid;}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two{display:block;margin-left:0;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo{margin-left:0;}
+}
+
+/* 자료해석 전용 */
+.flow{margin:8px 0 12px 20px;display:flex;flex-direction:column;gap:6px;}
+.fstep{display:flex;gap:8px;align-items:stretch;}
+.fnum{flex:0 0 30px;background:#13756A;color:#fff;font-weight:700;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.fbody{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:4px;padding:5px 9px;color:var(--ink);font-size:12.8px;line-height:18px;}
+.fbody .ft{font-weight:700;color:#12403B;}
+.fork{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.fork>div{flex:1;min-width:150px;border-radius:4px;padding:4px 7px;font-size:12px;line-height:16px;}
+.fk1{background:#E8F4EA;border:1px solid #0F9268;}
+.fk2{background:#FFF6D8;border:1px solid #C9A227;}
+.fk3{background:#FDECEC;border:1px solid #E23B3B;}
+.case{border:2px solid #13756A;border-radius:6px;margin:10px 0 14px 20px;background:#fff;color:var(--ink);overflow:hidden;}
+.case .ch{background:#13756A;color:#fff;font-weight:700;padding:5px 10px;font-size:14.5px;line-height:19px;}
+.case .ch .cn{display:inline-block;background:#fff;color:#13756A;border-radius:3px;padding:0 6px;margin-right:6px;font-size:12.5px;}
+.case .cs{padding:4px 10px;font-size:12.4px;line-height:17px;background:#F2F8F6;border-bottom:1px solid #D8ECE7;color:#3A4A63;}
+.case .cb{display:flex;gap:10px;padding:8px 10px;}
+.case .cd{flex:0 0 40%;}
+.case .cd table{margin:0;width:100%;font-size:11.2px;}
+.case .cd caption{font-size:12.5px;padding:3px 6px;}
+.case .ci{flex:1;}
+.case ol.st{margin:0;padding:0;list-style:none;counter-reset:s;}
+.case ol.st>li{counter-increment:s;position:relative;padding-left:24px;margin:0 0 4px;font-size:12.6px;line-height:18px;}
+.case ol.st>li::before{content:counter(s);position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:#2B5FC4;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.case .cc{margin:6px 10px 8px;padding:5px 9px;background:#FFF6D8;border-left:4px solid #E23B3B;font-size:12.8px;line-height:18px;}
+.case .cc b{color:#E23B3B;}
+.case .tr{margin:0 10px 8px;padding:4px 9px;background:#F4F9FF;border-left:4px solid #2B5FC4;font-size:12.2px;line-height:17px;}
+.cat-pre .ch{background:#0F9268;} .cat-pre{border-color:#0F9268;}
+.cat-ren .ch{background:#C0392B;} .cat-ren{border-color:#C0392B;}
+.cat-post .ch{background:#2B5FC4;} .cat-post{border-color:#2B5FC4;}
+.cat-mim .ch{background:#B7791F;} .cat-mim{border-color:#B7791F;}
+.cat-oth .ch{background:#6B4FA0;} .cat-oth{border-color:#6B4FA0;}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px 20px;font-size:11.5px;}
+.legend span{padding:1px 7px;border-radius:3px;color:#fff;font-weight:700;}
+@media (max-width:800px){.case .cb{display:block;}.case .cd{margin-bottom:6px;}.case{margin-left:0;}.flow{margin-left:0;}}
+</style>
+</head>
+<body>
+<section class="page">
+<h1 class="doc-title"><span class="num">3.</span> 신장 <span class="en">Kidney — Serum Chemistry &amp; Urinalysis</span></h1>
+<p class="doc-sub">진단검사의학 · 강의 PDF 1–56p + 수업 녹음 ①② + 슬라이드 필기 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-pen2">필기2</span> 동기 타이핑 필기에서 새로 추가한 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트 &nbsp;<span class="gray">(정리자 보충) = 강의에 없는 해석 보충</span></p>
+<hr class="hr-hand">
+<table>
+<caption>표 1. 신장 검사 한눈에 — "BUN · Cr · USG · SDMA 4가지만 잘 해석하면 된다"</caption>
+<thead><tr><th style="width:16%">항목</th><th style="width:30%">보는 기능</th><th>핵심</th></tr></thead>
+<tbody>
+<tr><td class="kc">BUN</td><td>배설 기능 (간에서 생성)</td><td>신전성 원인 다양, <b>BUN만 단독↑</b> 가능, 요 flow rate에 따라 재흡수 달라짐 → Cr보다 덜 신뢰</td></tr>
+<tr><td class="kc">Creatinine</td><td>배설 기능 (근육에서 생성)</td><td>"순수한(?)" 신장 지표, <b>근육량</b> 영향 (마르면 낮음)</td></tr>
+<tr class="hi"><td class="kc">USG (요비중)</td><td><b>농축·희석</b> 기능</td><td>질소혈증이 <b>신장 때문인지</b> 판단하는 열쇠 — <span class="r">BUN·Cr 검사 시 반드시 같이</span></td></tr>
+<tr><td class="kc">SDMA</td><td>배설 기능 (GFR)</td><td><b>25% 손실</b>부터↑ (조기). 개 27개월·고양이 48개월 전부터↑</td></tr>
+<tr class="hi"><td class="kc">손실 정도</td><td colspan="2">SDMA ~25% → 농축기능 소실 <b>2/3 (66–75%)</b> = renal insufficiency → BUN·Cr↑ <b>3/4 (75%)</b> = renal failure</td></tr>
+</tbody>
+</table>
+<h2 class="lv1">Ⅰ. 신장의 기능</h2>
+<ul class="d">
+<li>간은 세포 구성이 단순(대부분 간세포) ↔ <b>신장은 세포 종류가 매우 많음</b> → 기능도 다양 <span class="tag t-rec">수업</span></li>
+<li class="f2">한 줄 비교: <b>간은 "합성"</b>이 주 기능, <b>신장은 "조절"</b>이 주 기능 / 사구체 필터 = <b>모세혈관(capillary) + 족세포(podocyte)</b> (전자현미경 사진 슬라이드) <span class="tag t-pen2">필기2</span></li>
+</ul>
+<table>
+<caption>표 2. 신장의 기능</caption>
+<thead><tr><th style="width:24%">기능</th><th>내용</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">노폐물 배설</td><td>Waste products — BUN, Cr로 평가</td></tr>
+<tr class="hi"><td class="kc">수분 조절</td><td>요 농축·희석 → USG로 평가 → Blood pressure</td></tr>
+<tr><td class="kc">EPO 합성</td><td>조혈 (EPO 생성 세포는 섬유모세포 닮은 세포). → <b>만성 신부전 = 비재생성 빈혈</b></td></tr>
+<tr><td class="kc">Na 배설</td><td>웬만하면 가둬두고 필요할 때 배설 → 궁극적으로 <b>혈압 조절</b></td></tr>
+<tr><td class="kc">Acid–base balance</td><td>대사로 끊임없이 생기는 H⁺를 배출 (특화된 세포 있음)</td></tr>
+<tr><td class="kc">K 조절</td><td>→ Cardiac activity</td></tr>
+<tr><td class="kc">Ca 대사 · Vit D 활성</td><td>→ Bone structure</td></tr>
+</tbody>
+</table>
+<div class="memo blue">
+<div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>태어날 때부터 뼈가 취약한 애들은 해당 process가 결여된 수준. <b>Ex. 허스키 – 태생적으로 Renal failure</b> → Vit D 활성↓·Ca 조절 안 됨 → 뼈를 녹여 Ca 유지 → 섬유조직 치환 = <b>rubber jaw</b>(위턱이 붓고 말랑) <span class="tag t-rec">수업</span></li>
+<li>요<b>희석</b> = 배출되는 뇨의 <b>양이 증가</b> / 요<b>농축</b> = 배출되는 뇨의 <b>양이 감소</b> — 용질 농도 개념이 아니라 <b>한 번 배출하는 양</b>의 개념</li>
+<li>*<b>신장의 기능은 BUN, 크레아티닌으로 평가 → But, 얘네는 신장에서 만들어지지도 X → 민감도 낮고, 특이도 높음 → ∴ 신장이 한참 망가져야 해당 값들이 변화함 ; Early phase에 발견하는 것이 관건</b></li>
+</ul>
+</div>
+<ul class="d">
+<li>루틴 항목 조건(저렴·쉬움·장기 특이성)을 맞추다 보니 남은 게 → 노폐물 배설: <b>BUN·Cr</b>(화학적으로 쉬움) / 수분 조절: <b>USG</b>(굴절계) / 최근: <b>SDMA</b>(IDEXX가 돈 많이 범) <span class="tag t-rec">수업</span></li>
+</ul>
+<span class="pno">1</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅱ. 신장 질환 용어와 진행</h2>
+<table>
+<caption>표 3. 용어 정리 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:24%">용어</th><th>정의</th><th style="width:22%">검출 지표</th></tr></thead>
+<tbody>
+<tr><td class="kc">Renal disease<br>신장 질병</td><td>신장에서 발생하는 <b>모든 질병</b>의 통칭 (감염·종양·기능 이상 포함)</td><td></td></tr>
+<tr class="hi"><td class="kc">Renal insufficiency<br>신장 기능 부전</td><td>기능 저하는 있으나 <b>질소혈증은 없는</b> 상태. 대개 <b>요 농축 기능이 상실</b>됨. 신장 기능 <b>66–75%</b> 정도 소실</td><td><b>요비중</b></td></tr>
+<tr class="hi"><td class="kc">Renal failure<br>신부전</td><td><b>질소혈증</b>을 일으킬 정도로 기능 저하. <b>75% 이상</b> 소실 <span class="tag t-pen">필기</span> "75% 이상 기능 소실은 되어야 BUN, Creatine 값이 유의미하게 변화"</td><td><b>BUN, Cr</b></td></tr>
+<tr><td class="kc">Azotemia<br>질소혈증</td><td><b>비단백 질소 노폐물</b>의 혈중 농도 증가</td><td>BUN·Cr</td></tr>
+<tr><td class="kc">Uremia<br>요독증</td><td>질소혈증에 의해 유발되는 <b>임상증상</b>이 있는 경우</td><td>주로 BUN 관련</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>잔존 신기능(GFR) 그래프: 100% → 75%까지는 농축 능력 유지·질소혈증 없음 → 50%: 탈수 보상 능력·농축 능력 감소, 아직 질소혈증 없음 → <b>~25% 남았을 때 Onset of azotemia</b> → 0%: 질소혈증 악화·요독증</li>
+<li><b>25% loss – SDMA</b> (72% patients) <span class="tag t-pen">필기</span> 25% 잃었을 때부터 변한다? ; 상당히 Sensitive</li>
+</ul>
+<div class="side"><div class="mt">*"만성 신부전인데 BUN·Cr 정상?" <span class="tag t-rec">수업</span></div>제자의 여자친구 노령견: "신부전 있는데 스케일링 해도 되나요?" → 술전 검사 BUN·Cr 정상. 진짜 신장 때문에 올랐던 거라면(75% 이상 손상) <b>다시 정상으로 떨어질 수 없다</b> → 애초에 신부전이 아니라 <b>신전성</b>으로 올랐다가 치료로 내려간 것으로 추정 → "건강검진 다시 해보자". <span class="r">BUN·Cr을 과대해석(over-interpretation)하지 말 것.</span></div>
+<h3 class="lv2">1. 요독증 (Uremia)</h3>
+<ul class="d">
+<li><b>BUN과 관련</b> — 기면, 침울, 식욕 감퇴, 구토, 체중 감소, 신경증상, <b>구강궤양</b>(혀 괴사), 소화기 출혈 등</li>
+<li>독작용 기전? <b>BUN 자체로 독성 없음</b> → <span class="hl">소화기 내 분비되어 암모니아로 전환 시 궤양, HE 등 유발</span> (간질환 때와 비슷한 신경증상)</li>
+</ul>
+<h2 class="lv1">Ⅲ. BUN (blood urea nitrogen)</h2>
+<h3 class="lv2">1. 특징</h3>
+<ul class="d">
+<li>포유류의 주요 질소 노폐물 / <b>신장에서 배설</b> / <b>작은 분자량, no charge, no protein binding</b> → 몸 전체에서 자유롭게 이동, 평형이 빠름</li>
+<li>대사: 장(colon)에서 dietary·bacterial·cellular 단백질 → protease·urease → <b>NH₃</b> → portal circ.(~85%) → 간 <b>urea cycle</b> → urea → 신장 배설(~75%) / 일부(~25%)는 장으로 다시 배출</li>
+<li>주된 source = <b>식이 단백질</b> + 내인성 아미노산 대사 <span class="tag t-rec">수업</span></li>
+<li><span class="tag t-pen">필기</span> *<b>BUN은 Creatine 냅두고 혼자 값이 증가할 수도 있음</b> (Cr은 "순수한(?) 신전성")</li>
+</ul>
+<span class="pno">2</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. BUN만 증가한 경우</h3>
+<div class="memo blue">
+<div class="mt">✎ 필기 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>→ <b>요검사를 함께 병행하는 것이 중요.</b></li>
+<li>= <b>암모니아가 많이 생성되었음</b>을 의미 → ddx: ① <b>단백질이 장에 많이 공급</b> ② <b>단백질의 이화작용이 많이 발생</b> } Ex. 염증 있거나, 열이 난 경우</li>
+</ul>
+</div>
+<table>
+<caption>표 4. BUN만 단독 증가 — 원인</caption>
+<thead><tr><th style="width:26%">분류</th><th>원인</th></tr></thead>
+<tbody>
+<tr><td class="kc">장으로 단백 공급↑</td><td><b>고단백 식이</b>, <b>소장출혈</b>(혈장 단백 g/dL 단위 → 고단백식 먹은 것과 같은 상황)</td></tr>
+<tr class="hi"><td class="kc">단백 이화↑ (생산 증가)</td><td><b>고열, 기아</b>, 격렬하고 오랜 운동, <b>당질 코르티코이드</b>, 화상·패혈증·괴사 — 실제론 <b>염증 + 못 먹음 + 열</b>이 거의 대부분</td></tr>
+<tr><td class="kc">Renal perfusion 감소</td><td>→ flow rate↓ → 재흡수↑ (아래)</td></tr>
+<tr><td class="kc">Azotemia 초기</td><td>BUN이든 Cr이든 <b>하나만</b> 올라도 보통은 <b>질소혈증 초기</b>로 심플하게 해석</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>개체마다 RR 안에서의 <b>시작점(baseline)</b>이 달라 BUN이 먼저 오를 수도, Cr이 먼저 오를 수도 있음. 보호자가 증상을 인지하고 오면 보통 <b>둘 다</b> 올라 있음 <span class="tag t-rec">수업</span></li>
+<li><span class="r">질소혈증 – 신장 관련 여부 판단이 제일 중요!</span> → <b>USG = 1.035 이상?</b></li>
+</ul>
+<h3 class="lv2">3. BUN과 urine flow rate</h3>
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> 세뇨관에서 재흡수됨 → <b>그래서 BUN보다는 Creatine을 신뢰</b>.</p>
+<table>
+<caption>표 5. 세뇨관 재흡수는 urine flow rate 속도와 반비례 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:18%">flow rate</th><th style="width:16%">재흡수</th><th>상황</th><th style="width:22%">결과</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Low</td><td class="c"><b>~70%</b></td><td>탈수, 폐색, shock, cardiovascular disease 등 → ADH → 집합관에서 간질로 확산 → 신수질 농도 차 → 수분 흡수</td><td><b>실제보다 높은 BUN</b> (급격히↑)</td></tr>
+<tr><td class="kc">High</td><td class="c"><b>~40%</b></td><td>수액, 과수화, 요붕증, 당뇨</td><td><b>실제보다 낮은 BUN</b> (씻겨 나감)</td></tr>
+</tbody>
+</table>
+<ul class="c"><li>→ BUN은 신기능 손실과 <b>1:1(linear)로 증가하지 않음</b> — 복잡한 함수 <span class="tag t-rec">수업</span></li></ul>
+<h3 class="lv2">4. BUN 감소</h3>
+<table>
+<caption>표 6. BUN↓ 원인 — 신장과 연관시키지 않음</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:26%">간 부전*</td><td>BUN은 간에서 만듦 → Alb, Chol, glucose도 같이 감소 (특히 선천성 PSS)</td></tr>
+<tr><td class="kc">저단백 식이</td><td></td></tr>
+<tr><td class="kc">Anabolic steroids</td><td></td></tr>
+<tr><td class="kc">근위 세뇨관 재흡수 장애</td><td>(glucosuria) → 요 당이 물을 끌고 나가 BUN 씻김</td></tr>
+<tr><td class="kc">요붕증</td><td>(diabetes insipidus) — <span class="tag t-pen2">필기2</span> = <b>ADH 분비 결핍</b>(중추성) 또는 <b>ADH 반응성↓</b>(신성)</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>악순환: <b>BUN 감소 → 농축 장애 → 다뇨 → BUN 감소</b> (BUN이 신수질 농도 차에 기여) <span class="tag t-pen">필기</span> <b>BUN 증가는 신장과 관련있지, BUN 감소는 딱히 관련 없음</b></li>
+<li><span class="tag t-pen">필기</span> 뇨에 당이 많은 경우: 1. <b>당뇨병</b>(혈당↑ → 넘쳐서) 2. <b>혈액 속 혈당량 자체는 괜찮으나, 세뇨관에서만 재흡수 잘 안 됨</b>(신성 당뇨)</li>
+</ul>
+<span class="pno">3</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅳ. Creatinine</h2>
+<h3 class="lv2">1. 특징</h3>
+<ul class="d">
+<li>신체 <b>근육 크레아틴의 분해</b> — 비효소적, 비가역적 / 신체 크레아틴 중 <b>1.6–2.0%/day</b> / <b>신체 근육량(muscle mass)</b>과 관련</li>
+<li>Creatine~phosphate = high energy molecule for muscle contractions → 살아 있으면 계속 만들어짐</li>
+<li>심장이 계속 뛰어야 하는 이유: 온몸에서 생기는 배설물을 신장으로 옮겨야 하니까 <span class="tag t-rec">수업</span></li>
+<li>Cr↑은 BUN과 달리 심플 → <b>신장 기능(GFR)</b>과 관련된 것으로만 접근 (신전성·신성·신후성)</li>
+</ul>
+<h3 class="lv2">2. Creatinine, body size?</h3>
+<table>
+<caption>표 7. Effect of size on plasma creatinine in dogs (Craig et al, ACVIM 2006)</caption>
+<thead><tr><th>Size</th><th>n</th><th>BW (kg)</th><th>Mean ± SD</th><th>Reference interval</th></tr></thead>
+<tbody>
+<tr><td class="kc">Mini</td><td class="c">36</td><td class="c">8.0 ± 1.4</td><td class="c">0.7 ± 0.1</td><td class="c"><b>0.5–0.9</b></td></tr>
+<tr><td class="kc">Medium</td><td class="c">130</td><td class="c">19.5 ± 3.8</td><td class="c">0.8 ± 0.2</td><td class="c">0.5–1.2</td></tr>
+<tr><td class="kc">Maxi</td><td class="c">127</td><td class="c">31.3 ± 23</td><td class="c">1.0 ± 0.3</td><td class="c">0.7–1.8</td></tr>
+<tr><td class="kc">Giant</td><td class="c">24</td><td class="c">48.7 ± 8.7</td><td class="c">1.2 ± 0.2</td><td class="c"><b>0.7–1.7</b></td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>일반적으로 일일이 고려 않고 universal RR 사용 — 하지만 Cr은 <b>자기만의 RR</b>이 필요한 항목 → 건강검진마다 <b>Cr 추세</b>를 보는 게 의미 큼 (RR 안에서의 변화도) <span class="tag t-rec">수업</span></li>
+<li>Cr <b>&lt;0.2</b> (말티즈 사진: 앙상한 체구) → 나이 든 개에서 이 정도면 장기 소화흡수 장애 또는 <b>종양(소모성 질환)</b> + 식욕↓</li>
+</ul>
+<h3 class="lv2">3. 소화관 내 배설 · 체액 내 평형</h3>
+<div class="two">
+<div>
+<div class="memo" style="margin:4px 0 0 0;">
+<div class="mt">소화관내 배설</div>
+<ul class="d">
+<li>확산(diffusible) → 장내 세균에 의한 분해, 배설 (반추류는 세균이 다 처리해 문제없음)</li>
+<li><b>말기 신부전 환자</b>: <span class="hl">질병 정도에 비해 낮은 크레아티닌 농도</span></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo" style="margin:4px 0 0 0;">
+<div class="mt">체액 내 평형 ; 4시간</div>
+<ul class="d">
+<li>이뇨나 투석 또는 치료 반응 시 <b>BUN보다 하강 속도가 느림</b></li>
+<li><span class="tag t-pen">필기</span> *<b>요복(uroabdomen)</b>을 판단할 땐 혈장과 복수의 BUN, Creatine 농도를 분석 후 차이를 계산</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="memo blue">
+<div class="mt">요복(방광 rupture) 판별 원리 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>대사성 원인 복수: 혈장 ≈ 복수 농도 / <b>요복</b>: 복수의 BUN·Cr이 <b>훨씬 높음</b></li>
+<li>내원이 늦으면 <b>BUN</b>(분자량 작음)은 금방 평형 → 차이 사라짐 / <b>Cr</b>은 평형까지 오래 걸림 → <span class="r">복수 Cr ≫ 혈장 Cr</span>로 판단</li>
+</ul>
+</div>
+<span class="pno">4</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">4. 신전성 vs 신성 구별 지표 — 쓸모 있나?</h3>
+<table>
+<caption>표 8. Creatinine 관련 index</caption>
+<thead><tr><th style="width:24%">지표</th><th>기준</th><th style="width:28%">평가</th></tr></thead>
+<tbody>
+<tr><td class="kc">Urine Cr / serum Cr</td><td>&gt;50:1 신전성(pre-renal) / &lt;37:1 신성(renal) — values vary according to sources… Pre, 20&gt;* or &gt;40 or &gt;50 / *&lt;20 = acute tubular necrosis (Waldrop 2008)</td><td>좀 더 의미 있게 보긴 하나 문헌마다 값이 달라 <b>실효성 떨어짐</b></td></tr>
+<tr class="hi"><td class="kc">Serum UN / Cr ratio</td><td>Pre-renal 10–260 (평균 55.3) / renal 7–102 (29.8) / post 12–128 (30.5)</td><td><b>"of no value for this purpose"</b> <span class="tag t-pen">필기</span> 해석: 쓸모없다네…</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 일부 장비는 자동 계산돼 나오지만 참고하지 않아도 됨 → 결국 <b>USG</b>로 구별</p>
+<h2 class="lv1">Ⅴ. 질소혈증 접근 — 신전성 · 신성 · 신후성</h2>
+<ul class="d">
+<li><span class="tag t-pen">필기</span> BUN, Cr 증가 → <b>이럴 땐 3가지 시나리오로 고려함</b> <span class="tag t-ex">시험</span></li>
+</ul>
+<table>
+<caption>표 9. 질소혈증의 3분류</caption>
+<thead><tr><th style="width:14%"></th><th style="width:26%">원인</th><th>USG</th><th style="width:26%">특징</th></tr></thead>
+<tbody>
+<tr><td class="kc">신전성<br>pre-renal</td><td><b>탈수, 순환 장애</b> (쇽, 심혈관 질환, 패혈증) <span class="tag t-pen">필기</span> 신장 자체는 괜찮은데 GFR이 감소</td><td><b>농축</b>: 개 <b>≥1.030</b>, 고양이 <b>≥1.035</b></td><td>적절한 수액 처치 시 <b>1–2일 내 회복</b></td></tr>
+<tr class="hi"><td class="kc">신성<br>renal</td><td>감염, 선천성, <b>독성 물질</b> (커피찌꺼기, 아플라톡신 사료, 부동액, 렙토)</td><td><b>1.007–1.029</b> (대개 1.012~), 1.006–1.007인 경우도</td><td>요 생성 자체가 안 됨</td></tr>
+<tr><td class="kc">신후성<br>post-renal</td><td><b>결석; 염증; 종양</b> 등 <span class="tag t-pen">필기</span> *신장결석은 보통 뇨관, 깔때기에 주로 생김</td><td><b>다양</b> → USG로 구별 어려움</td><td>임상 소견·<b>영상</b>(excretory urography)으로</td></tr>
+</tbody>
+</table>
+<h3 class="lv2">1. 신-전성</h3>
+<ul class="d">
+<li>질소혈증 + <b>농축 요비중</b> (1.030 &lt;, 개) (1.035 &lt;, 고양이) → 노폐물은 쌓였지만 <b>농축이 충분 = 신장 때문 아님</b></li>
+<li>신장 관류량 감소(GFR 감소): <span class="hl">쇽, 탈수, 심혈관 질환</span> → ADH 분비 → 요 농축 → 농축 비중, 근위세뇨관 Na⁺·H₂O 흡수 증가 / 세뇨관 flow rate 감소 → 흡수 증가</li>
+<li><b>신전성 또는 신후성 방치 → 신성 질소혈증으로 발전 가능</b> (허혈 심해지면 신장 세포 손상 → 급성 신부전)</li>
+<li><b>적절한 수액 처치 시 1–2일 내 회복</b> → <span class="tag t-pen">필기</span> 이런 경우 해결된다고 해서 신장이 망가진 건 아님 → "급성/만성 신부전"이라 하면 안 됨</li>
+<li>신전성 환자에 <b>스테로이드·NSAID</b> 쓰면 난리 — 대동물 수의사 출신이 meloxicam 계산 실수로 과용량 투여할 뻔한 일화 <span class="tag t-rec">수업</span></li>
+<li class="f2"><b>왜 안 되나?</b> 신혈류가 줄면 신장은 GFR을 지키려고 <b>프로스타글란딘(PG)</b>을 분비해 <b>수입세동맥을 확장</b>(보상기전) → ① <b>NSAID</b>는 COX를 억제해 PG 합성 차단 → 수입세동맥 수축 → 사구체 혈류 차단 → 심한 신장 허혈·<b>급성 세뇨관 괴사</b> ② <b>스테로이드</b>는 더 상위 단계인 <b>phospholipase A2</b>를 억제 → 역시 PG↓ → 회복 가능한 신전성이 <b>비가역적 신성</b>으로 악화될 수 있음 <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+</ul>
+<div class="memo red">
+<div class="mt">★ 비중 검사는 처치 전에 <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>수액 처치</b>, <b>약물</b>(이뇨제, 스테로이드) → 요비중이 바뀌어 해석 불가</li>
+<li>요 비중 감소(&lt;1.030) + 질소혈증? → 요비중 1.008 미만인 경우도 있음</li>
+</ul>
+</div>
+<span class="pno">5</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. 신성</h3>
+<ul class="d">
+<li>질소혈증 + &lt;1.030 (개) (&lt;1.035, 고양이) / 요비중 <b>1.007–1.029</b> (대개 1.012~), 1.006–1.007인 경우도 있음</li>
+<li><b>2/3 소실 – 농축기능 소실</b> → <b>3/4 소실 – 배설기능 소실</b></li>
+<li>Contributing factors – loss of nephrons, decreased vascular patency within kidney, decreased glomerular permeability, increased renal interstitial pressure, increased intratubular pressure…</li>
+<li>급성 신부전 = <b>핍뇨·무뇨</b> / 만성 = 오랜 <b>다음다뇨</b> → 임상증상도 다름</li>
+<li>우리나라는 원인(etiology)을 명확히 못 찾는 <b>특발성</b>이 많음 <span class="tag t-rec">수업</span></li>
+</ul>
+<div class="side"><div class="mt">*독성 물질 옛날 얘기 <span class="tag t-rec">수업</span></div>◆ 스타벅스 국내 첫 오픈 무렵 "커피 찌꺼기를 화분에" 나눠줬더니 개들이 먹고 신장 손상 → 회수·주의 권고<br>◆ 수십 년 전 <b>아플라톡신</b> 오염 사료 사건 → 회사가 비용 부담<br>◆ 미국은 <b>부동액 중독</b> 종종, 국내는 드묾 / 렙토스피라도 드물게 있음</div>
+<h3 class="lv2">3. 신-후성</h3>
+<ul class="d">
+<li><b>Excretory urography</b> — 결석 확인 / 신우신염, 신결석, 뇨관결석증 / renal size and shape</li>
+<li>고양이는 <b>이중 조영</b>해야 ureter 내 작은 결석이 보이기도 / 고양이 <b>요도 플러그</b>가 대표적</li>
+<li>나이 든 개체 증가로 <b>종양</b>에 의한 신후성도</li>
+</ul>
+<h2 class="lv1">Ⅵ. '신성'이 아닌데 신성처럼 보이는 경우</h2>
+<p style="margin:0 0 0 20px;">azotemia + <b>1.007~1.029</b>인데 <span class="r">신장 기능은 살아있음~</span> <span class="tag t-pen">필기</span> = <b>신전성임에도 불구하고 신성처럼 보이는 케이스들</b> <span class="tag t-ex">시험</span></p>
+<table>
+<caption>표 10. 신성 mimic — 농축이 일시적으로 억제되는 상황</caption>
+<thead><tr><th style="width:26%">원인</th><th>기전</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc"><b>E.coli 패혈증, 자궁축농증, 전립선염</b></td><td><span class="tag t-pen">필기</span> <b>개에서 Case 많음</b> / 뇨비중이 농축이 아니라 신성으로 보임? → E. coli <b>독소(endotoxin)</b>에 의해 <b>ADH가 제대로 작동 못 함</b> (일시적). 수액 + 수술 후 회복되면 질소혈증 사라지고 농축뇨로 돌아옴</td></tr>
+<tr class="hi"><td class="kc"><b>Addison 병</b></td><td><span class="tag t-pen">필기</span> 농축을 하고 싶어도 농축이 잘 안 됨. K↑·Na↓ → 신수질 농도 차 유지 안 됨 → ADH 분비돼도 농축 X. 신장 자체는 건전 (로컬에서 생각보다 많음)</td></tr>
+<tr><td class="kc">Ca↑, Prolonged Na↓, K↓</td><td><span class="tag t-pen">필기</span> <b>전해질에 문제 있을 때도 농축 잘 안 됨</b> (예: 림프종 고칼슘혈증)</td></tr>
+<tr class="f2"><td class="kc">↳ 각각의 기전</td><td><span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span> <b>고칼슘혈증</b> → 신장이 ADH에 정상 반응 못 함 = <b>신성 요붕증</b> 상태(세뇨관이 수분 흡수 못 하고 다음다뇨) / <b>저나트륨혈증</b> → 신수질이 소변보다 "짜야" 삼투로 물을 흡수하는데 그 <b>농도 기울기가 무너짐</b> / <b>저칼륨혈증</b> → 고칼슘혈증처럼 <b>2차성 신성 요붕증</b></td></tr>
+<tr><td class="kc">당뇨병, 탈수+쿠싱병, 탈수+요붕증</td><td><span class="tag t-pen">필기</span> 당뇨병 aka. <b>삼투성 이뇨</b> — 요 당이 물을 잡아당김 / 요붕증은 ADH 분비 안 되거나 신장이 반응 X</td></tr>
+<tr><td class="kc">신우신염</td><td>엄밀히 신성이지만 <b>항생제로 빠르게 회복</b> → 진정한 신부전과 분리 (사람으로 치면 투석 안 해도 됨)</td></tr>
+<tr><td class="kc">그 외</td><td>간부전(BUN 감소, 농축 상태 나쁨), 신후성</td></tr>
+</tbody>
+</table>
+<span class="pno">6</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅶ. 자료해석 — 질소혈증 케이스 읽는 법</h2>
+<div class="memo red">
+<div class="mt">★ 교수님 요약: "BUN, Cr, USG, SDMA 이 4가지를 잘 해석할 수 있으면 된다" <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>BUN·Cr 둘 다 또는 <b>하나라도</b> 증가 → 질소혈증 → <b>항상 신전성·신성·신후성 감별</b> → 감별이 어려우니 신장의 다른 기능인 <b>USG</b>로 구분</li>
+<li>특수한 경우 신전성임에도 <b>일시적으로 농축이 억제</b>돼 신성처럼 보일 수 있음</li>
+<li>수의사들이 간보다 신장이 어렵다고 하는 이유: 간은 효소가 초기부터 올라 초기 개입 가능 ↔ 신장은 <b>이미 75% 손상</b> 후에야 BUN·Cr↑ → 조기 발견 + "진짜 신장 문제냐"가 핵심</li>
+</ul>
+</div>
+<h3 class="lv2">1. 해석 순서 (정리자 구성 — 강의 논리를 단계화)</h3>
+<div class="flow">
+<div class="fstep"><div class="fnum">0</div><div class="fbody"><span class="ft">채혈·채뇨가 처치 전인가?</span> 수액·이뇨제·스테로이드 후라면 USG·혈당·전해질·PCV 해석 불가 → 응급이라도 <b>최소 시료 먼저 확보</b></div></div>
+<div class="fstep"><div class="fnum">1</div><div class="fbody"><span class="ft">BUN·Cr 중 하나라도↑ = 질소혈증</span> → BUN만↑면 식이단백·소장출혈·이화(열·염증·기아·스테로이드)·flow rate↓ 먼저 떠올리되, 실전에선 그냥 ② USG로 / BUN↓는 신장과 연결 X (간부전·저단백식·다뇨) / Cr↓ = 근육량↓(마름)</div></div>
+<div class="fstep"><div class="fnum">2</div><div class="fbody"><span class="ft">USG를 본다 (가장 중요)</span>
+<div class="fork">
+<div class="fk1"><b>개 ≥1.030 · 고양이 ≥1.035</b><br>농축 충분 → <b>신전성</b><br>(탈수·쇽·심혈관·패혈증)</div>
+<div class="fk2"><b>1.007–1.029 (대개 1.012~)</b><br>→ <b>신성</b> 의심<br>단, mimic 먼저 배제 (③)</div>
+<div class="fk3"><b>&lt;1.007 (희석뇨)</b><br>희석도 신기능이 있어야 가능 → <b>신장 기능 충분</b><br>→ 요붕증·다음·신후성 등</div>
+</div></div></div>
+<div class="fstep"><div class="fnum">3</div><div class="fbody"><span class="ft">비농축인데 mimic인가?</span> 발열·백혈구↑·자궁/전립선(<b>E. coli</b>) / <b>Na↓·K↑</b>·저혈당·호산구(<b>Addison</b>) / <b>Ca↑</b>(림프종) / 요당(<b>DM·쿠싱</b>) / 요붕증 / 요 WBC·세균·cast(<b>신우신염</b>)</div></div>
+<div class="fstep"><div class="fnum">4</div><div class="fbody"><span class="ft">신후성인가?</span> 배뇨곤란·방광 팽대·혈뇨, 결석 crystal → USG는 다양하니 <b>임상소견·영상</b>으로</div></div>
+<div class="fstep"><div class="fnum">5</div><div class="fbody"><span class="ft">동반 소견으로 확인</span> <b>P↑</b>(질소혈증 거의 동반) · <b>amylase/lipase↑</b>(신장 배설 장애 — 췌장염 아님!) · K↑·TCO₂↓·AG↑ · <b>비재생성 빈혈</b>(만성, EPO↓) · 구강궤양(요독증) · 요침사(cast·crystal·WBC) · 단백뇨(UPC)</div></div>
+<div class="fstep"><div class="fnum">6</div><div class="fbody"><span class="ft">치료 반응으로 확정</span> 수액 1–2일에 정상화 → <b>신전성</b> / 항생제로 정상화 → <b>신우신염</b> / 원인 수술(자궁·결석) 후 정상화 → mimic·신후성</div></div>
+</div>
+<h3 class="lv2">2. 케이스 풀이</h3>
+<div class="legend"><span style="background:#0F9268">신전성</span><span style="background:#C0392B">신성</span><span style="background:#B7791F">신성처럼 보이는 신전성</span><span style="background:#2B5FC4">신후성</span><span style="background:#6B4FA0">BUN↓·기타</span></div>
+<span class="pno">7</span>
+</section>
+
+<section class="page">
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 1</span>Misty, 3세 f Boxer — BUN만↑, 그런데 Ca 18.8</div>
+<div class="cs">3주간 5kg <b>체중감소</b>, 말초 림프절 종대 → <b>림프종</b> 환자</div>
+<div class="cb">
+<div class="cd"><table><caption>Chemistry / UA</caption><tbody>
+<tr class="hi"><td class="kc">Urea</td><td class="c up">69</td><td class="c">15–57</td></tr>
+<tr><td class="kc">Creatinine</td><td class="c">1.70</td><td class="c">0.68–1.81</td></tr>
+<tr><td class="kc">Globulin</td><td class="c up">4.7</td><td class="c">2.5–4.5</td></tr>
+<tr class="hi"><td class="kc">Calcium</td><td class="c up">18.8</td><td class="c">7.6–11.6</td></tr>
+<tr><td class="kc">Phosphate</td><td class="c">3.4</td><td class="c">2.8–6.2</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c" colspan="2"><b>1.036</b></td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li><b>BUN만↑</b>, Cr은 RR 안 <span class="tag t-pen">필기</span> 오직 BUN만 증가 → ddx: 소장출혈, 단백식이, 열남, anorexia</li>
+<li>이 환자에 맞춰 보면: 체중감소(악액질)·식욕부진 → <b>단백 이화↑</b> / 못 먹고 못 마심 → 자유수↓ → 농축 → <b>flow rate↓ → BUN 재흡수↑</b> / 종양 자체 염증 → 이화↑ <span class="tag t-rec">수업</span></li>
+<li>하지만 실전은 심플하게 → <b>USG 1.036</b> = 개 기준 ≥1.030 → <b>충분히 농축 = 신장 건전</b></li>
+<li>신후성(결석 등)은 임상적으로 배제 → <b>신전성</b></li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>USG 1.036 (= prerenal azotemia)</b> <span class="tag t-pen">필기</span> 정상 USG 기준: 개 1.030≤, 고양이 1.035≤ → If 이게 충족 못한다? ∴ '신전성'으로 판단(충족하면)</div>
+<div class="tr">함정: Ca 18.8 = 림프종 <b>고칼슘혈증</b>(악성종양 연관). Ca↑은 농축을 일시적으로 방해할 수 있는 요인인데도 1.036까지 농축됨 → 그만큼 신장이 건전하다는 뜻. 단, 고칼슘혈증이 길어지면 신장 손상 위험 <span class="gray">(정리자 보충)</span></div>
+</div>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 2</span>Cat DSH M 10개월 — 탈수 + 고도 농축뇨</div>
+<div class="cs">구토, 심한 설사(18시간), 탈수 약 7%, 고열, 식욕부진, 치은염, 전신 림프절 종대 <span class="tag t-pen">필기</span> <b>BUN만 증가할 수도 있는 상황</b></div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr><td class="kc">Hct</td><td class="c up">49</td><td class="kc">BUN</td><td class="c up">46</td></tr>
+<tr><td class="kc">TP / Alb</td><td class="c up">8.0 / 3.4</td><td class="kc">TCO₂</td><td class="c dn">10</td></tr>
+<tr class="hi"><td class="kc">WBC</td><td class="c dn">1.9</td><td class="kc">Seg</td><td class="c dn">0.038</td></tr>
+<tr><td class="kc">Na / Cl</td><td class="c">148 / 126</td><td class="kc">K</td><td class="c">4.2</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c" colspan="3"><b>1.065</b> (cystocentesis)</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN↑ = 질소혈증. 설사·못 먹음·탈수·고열·염증 → BUN만 오를 조건 다 갖춤 <span class="tag t-rec">수업</span></li>
+<li><b>USG 1.065</b> → 고양이 기준 ≥1.035 훨씬 초과 <span class="tag t-pen">필기</span> <b>충분히 농축됨 → 신장에 문제 없음 ; Free renal</b> → 신전성(pre-renal)</li>
+<li>Hct·TP·Alb 모두↑ = <b>혈액농축</b>(탈수)으로 뒷받침 <span class="gray">(정리자 보충)</span></li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>신전성 질소혈증</b> (탈수)</div>
+<div class="tr">더 보기 <span class="gray">(정리자 보충)</span>: 어린 고양이 + 구토·설사 + <b>심한 백혈구·호중구 감소</b>(1.9 / 0.038) → 범백(panleukopenia) 의심 소견. TCO₂ 10↓ + Cl 126(Na 148 대비 Cl이 더 높음) → 설사로 <b>중탄산 소실</b> → 고클로르성 대사성 산증 (Ⅹ장 Na·Cl 해석 참고)</div>
+</div>
+<span class="pno">8</span>
+</section>
+
+<section class="page">
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 3</span>Yorkshire terrier &lt;1yr — BUN↓ (PSS)</div>
+<div class="cs">간 단원에서 본 PSS 환자</div>
+<div class="cb">
+<div class="cd"><table><caption>Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">BUN</td><td class="c dn">4</td><td class="c">7–25</td></tr>
+<tr class="hi"><td class="kc">Chol</td><td class="c dn">72</td><td class="c">125–270</td></tr>
+<tr><td class="kc">ALB</td><td class="c">3.3</td><td class="c">2.5–4.4</td></tr>
+<tr><td class="kc">Bile acid</td><td class="c up">46</td><td class="c">0–25</td></tr>
+<tr><td class="kc">ALP / ALT / GGT</td><td class="c up">570 / 125 / 30</td><td class="c"></td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN↓ + Chol↓ + BA↑ → <b>간 저형성(PSS)</b>으로 BUN 생성↓ (Alb는 아직 RR 안)</li>
+<li><span class="r">BUN이 떨어진 건 신장과 연관 짓지 않음</span> — 신장과 연관시키는 건 BUN이 <b>증가</b>했을 때만 <span class="tag t-rec">수업</span></li>
+</ol></div>
+</div>
+</div>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 4</span>식욕부진·고열·전립선 종대 개 — BUN↓ + Cr &lt;0.2 + USG 1.004</div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr><td class="kc">WBC</td><td class="c up">27.4</td><td class="c">6.0–17.0</td></tr>
+<tr><td class="kc">MCV</td><td class="c">60</td><td class="c">60–74</td></tr>
+<tr class="hi"><td class="kc">Urea</td><td class="c dn">4</td><td class="c">7–25</td></tr>
+<tr class="hi"><td class="kc">Creatinine</td><td class="c dn">&lt;0.2</td><td class="c">0.3–1.4</td></tr>
+<tr><td class="kc">Glob</td><td class="c">5.0</td><td class="c">2.3–5.2</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c" colspan="2"><b>1.004</b> · Prot +1 · Blood +1</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN↓ → 간 문제? 다른 간 항목은 연결되는 게 없음 → 요붕증·요당 등 따져봄</li>
+<li><b>USG 1.004</b> <span class="tag t-pen">필기</span> <b>뇨가 꽤 희석된 상태</b> → 다뇨로 BUN이 <b>씻겨 나감</b> (요붕증 가능성도)</li>
+<li>식욕부진·고열이면 원래 BUN이 오를 수 있는데도 낮음 → 원래 <b>저단백식</b>이었을 수도</li>
+<li><b>Cr &lt;0.2</b> <span class="tag t-pen">필기</span> <b>근육 적고 조금 마른 상태구나~</b> (muscle mass↓)</li>
+<li>진짜 중요한 건 따로 → 고열 + 전립선 종대 <span class="tag t-pen">필기</span> <b>전립선염으로 의심</b> (prostatitis)</li>
+</ol></div>
+</div>
+<div class="cc">결론: BUN↓·Cr↓·희석뇨는 신장 문제로 해석하지 않음 → <b>전립선염</b>이 주 문제</div>
+<div class="tr">연결 <span class="gray">(정리자 보충)</span>: 전립선염 = Ⅵ장 mimic 목록(E. coli 독소 → ADH 작동 저하)에 들어가는 질환 → 희석뇨의 한 원인일 수 있음</div>
+</div>
+<span class="pno">9</span>
+</section>
+
+<section class="page">
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 5</span>Labrador cM 10yr — BUN·Cr 둘 다↑, 그런데 USG 1.045</div>
+<div class="cs">비만, 복부팽대, <b>복통</b>, 침울, 구토, 다음다뇨, 탈수 → 실제로 <b>췌장염</b></div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">88 / 3.8</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.045</b></td></tr>
+<tr><td class="kc">Amyl / Lip</td><td class="c up">6021 / 1400</td></tr>
+<tr><td class="kc">ALP / ALT</td><td class="c">616 H / 112</td></tr>
+<tr><td class="kc">Glu</td><td class="c up">185</td></tr>
+<tr><td class="kc">TP / Alb</td><td class="c up">8.9 / 4.0</td></tr>
+<tr><td class="kc">WBC / Band</td><td class="c up">24.6 / 0.738</td></tr>
+<tr><td class="kc">요</td><td class="c">glu +, bil +</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN·Cr 둘 다↑ = 질소혈증</li>
+<li><b>USG 1.045</b> <span class="tag t-pen">필기</span> <b>농축 괜찮네? 신장문제 없는데? ∴ 신전성</b></li>
+<li>원인: 탈수 + 식욕부진 + 구토가 겹침</li>
+<li>ALP·ALT↑ <span class="tag t-pen">필기</span> <b>간에 문제 생겨서 속발성 증가</b> — 다른 부위 심한 염증(췌장염)이면 간이 대표적으로 영향받음 (간 단원)</li>
+<li>Amylase·Lipase↑ + 복통 + 좌방이동·toxic change → 췌장염</li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>신전성 질소혈증</b> (췌장염 → 탈수) — "BUN·Cr 검사할 땐 할 수 있으면 요검사를 같이"</div>
+<div class="tr">참고: 요 bilirubin +는 수컷의 농축뇨에선 나올 수 있어 해석이 애매 <span class="tag t-rec">수업</span> / 혈당 185 → 신장 역치(~180) 근처라 요당 + <span class="gray">(정리자 보충)</span>. 이런 탈수 환자는 검사 전 수액·약물이 비중을 바꾸니 주의</div>
+</div>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 6</span>Labrador F 1yr — 신성 (1.011 + CaOx 결정)</div>
+<div class="cs">무기력, 침울, <b>운동실조</b>, 구토, 탈수</div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">75 / 5.7</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.011</b></td></tr>
+<tr><td class="kc">P / Ca</td><td class="c">10.2 H / 8.6 L</td></tr>
+<tr><td class="kc">Hct</td><td class="c up">56.5</td></tr>
+<tr><td class="kc">WBC / Band</td><td class="c up">29.7 / 2.079</td></tr>
+<tr class="hi"><td class="kc">침사</td><td class="c"><b>CaOx mono</b></td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN·Cr↑ = 질소혈증</li>
+<li><b>USG 1.011</b> → 1.007–1.029 = 탈수인데도 <b>농축 못 함</b> → <b>신성</b></li>
+<li>P↑ 동반 (질소혈증 시 거의 항상)</li>
+<li>Hct 56.5↑ = 탈수(혈액농축)</li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>신성 질소혈증</b> (급성 신부전)</div>
+<div class="tr">원인 단서 <span class="gray">(정리자 보충)</span>: 어린 개 + 운동실조 + <b>calcium oxalate monohydrate 결정</b> + Ca↓ = 전형적인 <b>에틸렌글리콜(부동액) 중독</b> 패턴 — 녹음 ②도 "부동액 중독 환자"로 이어짐</div>
+</div>
+<span class="pno">10</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 7</span>4yr Irish Setter — 등장뇨 + amylase·lipase↑</div>
+<div class="cs">갑작스런 구토, 식욕부진, 침울, 이틀 경과, 탈수 8%</div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">240 / 5.2</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.011</b></td></tr>
+<tr><td class="kc">Amylase</td><td class="c up">2,780</td></tr>
+<tr><td class="kc">Lipase</td><td class="c up">3,000</td></tr>
+<tr><td class="kc">P</td><td class="c up">12.4</td></tr>
+<tr><td class="kc">Cl / AG</td><td class="c">102 L / <b>64 H</b></td></tr>
+<tr><td class="kc">TP / Alb</td><td class="c up">7.5 / 4.3</td></tr>
+<tr><td class="kc">침사</td><td class="c">many granular casts, <b>many oxalates</b></td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN·Cr↑ + 탈수 8%인데 USG 1.011 <span class="tag t-pen">필기</span> <b>등장뇨</b> (1.007–1.012 정도 = 신장이 손대지 않고 가만히 있는 상태) → <b>신성</b></li>
+<li><span class="tag t-pen">필기</span> *<b>헷갈리게 하는 놈들 : Amylase, Lipase</b> → 췌장염? 그런데 임상적으로 췌장염 증상 없음</li>
+<li>Amylase·lipase는 쓰고 난 뒤 <b>신장으로 배출</b> → 신장 배출 장애로↑ (개체에 따라 둘 다 또는 하나만↑) <span class="tag t-rec">수업</span></li>
+<li>P↑ 동반, granular cast = 세뇨관 손상</li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>신성 질소혈증</b> (급성 신부전) — amylase/lipase↑는 신장 배설 장애 때문</div>
+<div class="tr">더 보기 <span class="gray">(정리자 보충)</span>: <b>oxalate 결정 다수 + 음이온차 64</b>(매우 높음) → 이것도 에틸렌글리콜 중독을 의심할 소견</div>
+</div>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 8</span>8yr m Dachshund — 만성 신부전</div>
+<div class="cs">다음·다뇨, 수 개월 <b>야뇨증</b>, 지난주부터 식욕부진, 마르고 침울, 탈수 5%, <b>점막 창백</b>, 볼 점막 얕은 <b>궤양</b></div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">165 / 4.9</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.016</b></td></tr>
+<tr class="hi"><td class="kc">HCT</td><td class="c dn">23</td></tr>
+<tr><td class="kc">P / K</td><td class="c up">14.2 / 6.0</td></tr>
+<tr><td class="kc">TCO₂ / AG</td><td class="c">8 L / 31 H</td></tr>
+<tr><td class="kc">Amylase</td><td class="c up">2,330</td></tr>
+<tr><td class="kc">침사</td><td class="c">occ. granular cast</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN·Cr↑ + USG 1.016 → <b>신성</b></li>
+<li><b>수개월</b> 다음다뇨·야뇨 = 만성 경과 (급성은 핍뇨·무뇨)</li>
+<li>빈혈(HCT 23) → EPO 합성↓ <span class="gray">(정리자 보충: 만성 신부전의 비재생성 빈혈)</span></li>
+<li>구강 궤양 = <b>요독증</b>(BUN이 암모니아로) / P·K↑, 대사성 산증</li>
+<li>Amylase↑ = 신장 배설 장애</li>
+</ol></div>
+</div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ 만성 신부전</b></div>
+</div>
+<span class="pno">11</span>
+</section>
+
+<section class="page">
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 9</span>9yr M Lab Ret — 신성처럼 보였는데 항생제로 회복</div>
+<div class="cs">무력감, 체중 감소 2개월, 최근 구토</div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">145 / 3.9</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.013</b></td></tr>
+<tr><td class="kc">P / Amylase</td><td class="c up">13.2 / 1,864</td></tr>
+<tr><td class="kc">WBC / Neut</td><td class="c up">33,300 / 26,900</td></tr>
+<tr><td class="kc">HCT</td><td class="c dn">32</td></tr>
+<tr class="hi"><td class="kc">요 WBC</td><td class="c"><b>100–125/HPF</b></td></tr>
+<tr><td class="kc">요 RBC / 세균</td><td class="c">20–30 / 2+</td></tr>
+<tr><td class="kc">요단백 / cast</td><td class="c">3+ / 4–6 granular</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>BUN·Cr↑ + 비농축 1.013 → 처음 보면 <b>신성</b> (구토로 탈수도 있을 텐데 농축 X)</li>
+<li>요침사 <b>WBC 100–125/HPF</b> (HPF = <span class="tag t-pen">필기</span> 현미경 배율 400배) + 세균 2+ → 방광염이 매우 심함</li>
+<li>방광염이 <b>상행성</b>으로 신장까지 파급 → 신우신염</li>
+<li><b>항생제 처치 후 금방 회복</b> → 진정한 신부전과 구분</li>
+</ol></div>
+</div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ 신우신염</b> — 비농축 질소혈증이라도 요침사(WBC·세균)를 꼭 확인</div>
+</div>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 10</span>2yr Malinois — Addison 병</div>
+<div class="cs">1개월간 다량의 설사, 가끔 혈변·점액 증가, 식욕 감퇴, 체중 감소, <b>collapse</b> — 신장과 연결하기 어려운 증상</div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / ACTH</caption><tbody>
+<tr class="hi"><td class="kc">Na / K</td><td class="c"><span class="dn">131.7</span> / <span class="up">8.99</span></td></tr>
+<tr><td class="kc">Glu</td><td class="c dn">55.9</td></tr>
+<tr class="hi"><td class="kc">Urea / Cr</td><td class="c up">179.8 / 6.0</td></tr>
+<tr><td class="kc">Ca / P</td><td class="c up">13.3 / 15.8</td></tr>
+<tr><td class="kc">Alb</td><td class="c dn">2.2</td></tr>
+<tr><td class="kc">Eosin</td><td class="c up">3.3</td></tr>
+<tr class="hi"><td class="kc">Cortisol pre / post ACTH</td><td class="c dn">&lt;6.0 / &lt;6.0</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li><b>Na↓·K↑</b> <span class="tag t-pen">필기</span> <b>전해질의 불균형 상당히 심함</b> → Addison 전형 패턴</li>
+<li>동반 소견: <b>간헐적 저혈당 · 질소혈증 · 고칼슘혈증</b> — Addison에서 거의 빠지지 않음 <span class="tag t-rec">수업</span></li>
+<li>ACTH 자극 전후 cortisol 모두 &lt;6 <span class="tag t-pen">필기</span> <b>너무 낮음 ∴ 부신피질저하증</b> (ACTH로 자극해도 반응 X)</li>
+<li>요 검사해도 <b>농축이 잘 안 됨</b> → 결과만 보면 신성처럼 보이지만 신장 자체는 건전</li>
+</ol></div>
+</div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ 에디슨병</b> (신성 mimic) — 질소혈증 + 비농축뇨 + Na↓K↑이면 Addison을 먼저 떠올릴 것</div>
+<div class="tr">보충 <span class="gray">(정리자 보충)</span>: Na:K 비 = 131.7/8.99 ≈ <b>14.6</b> (보통 &lt;27이면 Addison 의심) / 스트레스 상황인데 <b>호산구 증가</b>(stress leukogram 부재)도 cortisol 결핍 소견</div>
+</div>
+<span class="pno">12</span>
+</section>
+
+<section class="page">
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 11</span>Pyometra — 자궁축농증</div>
+<div class="cs">발열, 탈수, 질소혈증 — 외과에서 수액 후 바로 수술하면 다 회복</div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Creat</td><td class="c up">85 / 3.7</td></tr>
+<tr><td class="kc">Phos</td><td class="c up">5.8</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.015</b></td></tr>
+<tr><td class="kc">요단백 / RBC / WBC</td><td class="c">+2 / +3 / +2</td></tr>
+<tr><td class="kc">WBC (혈액)</td><td class="c">12.9</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>질소혈증 + P↑ + USG 1.015 <span class="tag t-pen">필기</span> <b>농축 안 됐음</b> → 신성 질소혈증처럼 보임</li>
+<li>초음파 → <b>자궁축농증</b></li>
+<li>기전: 실제로는 <b>신전성</b>(탈수)인데 <b>E. coli 독소</b>가 ADH 작동을 일시적으로 억제 → 농축 못 함</li>
+<li>수액 + 수술 + 후처치 → 질소혈증 사라지고 <b>농축뇨</b>로 돌아옴</li>
+</ol></div>
+</div>
+<div class="cc">결론: <span class="tag t-pen">필기</span> <b>∴ pyometra</b> — 신성 패턴이지만 신전성 (교수님도 자궁축농증에 진짜 신부전 동반은 들어본 적 없음)</div>
+</div>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 12</span>3yr DSH M — 신후성</div>
+<div class="cs">하루 전 갑작스런 <b>배뇨곤란</b>, 침울, 탈수, <b>방광 커짐</b></div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">225 / 9.2</td></tr>
+<tr><td class="kc">K</td><td class="c up">7.2</td></tr>
+<tr><td class="kc">P</td><td class="c up">11.0</td></tr>
+<tr><td class="kc">TCO₂ / AG</td><td class="c">8 L / 30.2 H</td></tr>
+<tr><td class="kc">Glu</td><td class="c up">156</td></tr>
+<tr class="hi"><td class="kc">USG</td><td class="c"><b>1.022</b></td></tr>
+<tr><td class="kc">요 RBC / WBC</td><td class="c">TNTC / 10–20</td></tr>
+<tr><td class="kc">결정</td><td class="c">many triple phosphate</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>심한 질소혈증 + USG 1.022 → 숫자만 보면 신성처럼 보임</li>
+<li>그러나 신후성은 USG가 <b>다양</b>하게 나와 USG로 구분 어려움 → <b>임상 소견</b>: 갑작스런 배뇨곤란 + 커진 방광 = 요도 폐색</li>
+<li>혈뇨·triple phosphate(struvite) 결정 → 요도 플러그/결석</li>
+<li>K↑ = 배출 막힘으로 축적 (응급) <span class="gray">(정리자 보충)</span></li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>신후성 질소혈증</b> (고양이 요도 폐색) — 신후성은 영상·임상으로 빠르게 배제/확인</div>
+</div>
+<span class="pno">13</span>
+</section>
+
+<section class="page">
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 13</span>"생각해 볼 케이스" — 6yr F Maltese 2.6kg, 양측 신결석</div>
+<div class="cs">혈뇨(2년간 간헐적), 식욕부진, 구토, 배뇨 장애 / X-ray·sono: 양측 신장 결석 의심</div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">BUN / Cr</td><td class="c up">160 / 3.6</td></tr>
+<tr><td class="kc">Cl</td><td class="c dn">102</td></tr>
+<tr><td class="kc">ALP / Amyl</td><td class="c up">262 / 2758</td></tr>
+<tr class="hi"><td class="kc">SG</td><td class="c"><b>1.005</b></td></tr>
+<tr><td class="kc">pH / Prt</td><td class="c">8 / ++</td></tr>
+<tr><td class="kc">수술 후</td><td class="c">BUN 30, Cr 1.4</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>Diagnosis: <b>신장 결석에 의한 신후성 질소혈증</b> → 내원 다음 날 수술: 우신 적출, 좌신 bisection nephrotomy</li>
+<li>BUN·Cr이 꽤 높은데 한쪽 떼고 한쪽 반 잘랐는데도 회복해서 잘 삶 (BUN 30, Cr 1.4) — 왜?</li>
+<li><b>SG 1.005</b> <span class="tag t-pen">필기</span> <b>1.007 미만은 희석뇨 ; 신장기능 정상</b></li>
+<li><span class="tag t-pen">필기</span> ※ <b>뇨농축과 마찬가지로 희석뇨도 신장기능이 정상이어야 가능함</b> → 충분한 신기능이 남아 있었으니 수술해도 됐던 것</li>
+<li>조직병리: 만성 신결석에 의한 만성 세뇨관간질 신염 (신우신염에서 시작됨)</li>
+</ol></div>
+</div>
+<div class="cc">결론: 신후성 + <b>희석 능력 보존 = 신기능 충분</b> → 신결석 수술 여부 판단의 근거가 될 수 있음</div>
+<div class="tr">왜 희석 기능은 잘 안 쓰나? 농축 시험은 안전(안 먹고 안 마시고 1–2시간마다 USG 체크)하지만 <b>희석 시험</b>은 물을 계속 먹여야 해 위험 (물 빨리 마시기 대회 1등 → 뇌부종 사망 사례). 이 케이스는 의도치 않게 희석 테스트가 된 것 (아마 수액) <span class="tag t-rec">수업</span></div>
+<div class="tr"><span class="tag t-pen">필기</span> BUN, Cre ┬ 신전성 case ├ 신성 case ├ 신후성 case └ + 신전성인데 신성처럼 보이는 case</div>
+</div>
+<h2 class="lv1">Ⅷ. 조기 지표 — GFR · SDMA · 기타 marker</h2>
+<h3 class="lv2">1. GFR 검사</h3>
+<ul class="d">
+<li><b>Cr 농도는 신 기능 저하에 비례하여 증가하지 않음</b> → 내인성·외인성 creatinine 배설 시험 권장</li>
+<li><span class="hl"><b>GFR – 20% 감소</b> vs. <b>Cr – 75% 감소</b></span>부터 검출 <span class="tag t-ex">시험</span></li>
+<li>내인성 creatinine clearance = urine Cr × urine volume(mL) / serum Cr × 시간(min) × BW(kg)</li>
+<li>외인성 creatinine clearance = single IV bolus injection 후 600분까지 혈장 농도 측정해 계산 (JVIM 2002)</li>
+<li>너무 <b>노동집약적</b>이고 시간이 많이 걸려 잘 안 함 → SDMA 나온 뒤엔 주로 SDMA <span class="tag t-rec">수업</span></li>
+</ul>
+<h3 class="lv2">2. Other renal markers notable</h3>
+<table>
+<caption>표 11. 기타 신장 marker</caption>
+<tbody>
+<tr><td class="kc" style="width:30%">NAG (N-acetyl-β-glucosaminidase)</td><td>From damaged renal tubule / 24hr ≫ spot test</td></tr>
+<tr><td class="kc">NGAL (Neutrophil gelatinase-associated lipocalin)</td><td>marker of AKI in human — 출시 가능성 높음</td></tr>
+<tr class="hi"><td class="kc">SDMA (symmetric dimethylarginine)</td><td>유일하게 <b>혈청</b> 검사 (나머지는 요 검사라 번거로움)</td></tr>
+<tr><td class="kc">요 GGT</td><td>간에서 GGT = induction 지표 ↔ <b>요 GGT = 세뇨관 손상(injury) 지표</b>. RR 잡기 어려워 잘 안 씀</td></tr>
+</tbody>
+</table>
+<span class="pno">14</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. Microalbuminuria 미소단백뇨</h3>
+<ul class="d">
+<li><b>요스틱 검출 한계 이하 1~30 mg/dL</b> (요스틱 단백은 30 mg/dL 이상에서 검출) → 초기 신장 질환 indicator (세뇨관 질환 and/or 사구체 질환)</li>
+<li>Albumin은 음전하 basement membrane을 잘 통과 못 하니 조금이라도 나오면 이상 — 그러나 개·고양이는 <b>방광염</b> 흔하고 <b>천자 시 혈액 혼입</b>도 있어 순수 병적 단백뇨인지 해석 어려움 → 한때 유행하다 지금은 거의 안 씀 (사람 당뇨에선 중요) <span class="tag t-rec">수업</span></li>
+</ul>
+<h3 class="lv2">4. CKD and SDMA</h3>
+<table>
+<caption>표 12. SDMA 근거</caption>
+<tbody>
+<tr><td class="kc" style="width:30%">GFR 상관</td><td>Serum SDMA (r = 0.79), sCr (r = 0.77) 모두 GFR과 유의한 상관</td></tr>
+<tr><td class="kc">고양이</td><td>SDMA가 sCr보다 먼저↑: 17/21 cats (평균 17.0개월; 1.5–48개월)</td></tr>
+<tr class="hi"><td class="kc">SDMA vs [sCr]</td><td>sensitivity <b>100%</b> [17%] / specificity 91% [100%] / PPV 86% [100%]</td></tr>
+<tr class="hi"><td class="kc">조기성</td><td><b>25%</b> 신기능 손실부터↑ / SDMA 한 번 검사로 <b>72%</b> 환자에서 추가적인 GFR 손상 예측 / 개 <b>27개월</b>, 고양이 <b>48개월</b> 전부터↑</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>한계: SDMA도 <b>신장으로 배설</b>되므로 신전성·신후성 해석 제한이 똑같이 붙음 / n수가 늘며 해석 애매한 경우 증가 — 특히 <b>고양이</b>에서 감정이 상한 수의사 많음 <span class="tag t-rec">수업</span></li>
+<li>Cystatin C · urine NGAL 논문 (개 CKD, 2021): 민감도 <b>CysC 93.55%</b> &gt; UNCR 90% &gt; SDMA 84.37% &gt; CREA 43.75% (특이도 모두 100%) / IRIS stage I: CysC·UNCR 88.89%/100% vs CREA 88.89%/66.67%, SDMA 88.89%/88.89% → CysC(GFR)·NGAL(세뇨관 손상)이 조기 발견에 더 나음</li>
+</ul>
+<h3 class="lv2">5. AKI · CKD grading (IRIS) — 진단보다 치료 지표</h3>
+<div class="two">
+<div>
+<table>
+<caption>표 13. AKI Grade (blood Cr)</caption>
+<thead><tr><th>Grade</th><th>Cr (mg/dL)</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td class="kc">Ⅰ</td><td class="c">&lt;1.6</td><td>Nonazotemic AKI (Cr ≥0.3 상승/48h, 핍뇨 등)</td></tr>
+<tr><td class="kc">Ⅱ</td><td class="c">1.7–2.5</td><td>Mild AKI</td></tr>
+<tr><td class="kc">Ⅲ</td><td class="c">2.6–5.0</td><td rowspan="3">Moderate to Severe AKI</td></tr>
+<tr><td class="kc">Ⅳ</td><td class="c">5.1–10.0</td></tr>
+<tr><td class="kc">Ⅴ</td><td class="c">&gt;10.0</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<caption>표 14. CKD Stage (IRIS)</caption>
+<thead><tr><th>Stage</th><th>Cr 개 / 고양이</th><th>SDMA 개 / 고양이</th></tr></thead>
+<tbody>
+<tr><td class="kc">1</td><td class="c">&lt;1.4 / &lt;1.6</td><td class="c">&lt;18 / &lt;18</td></tr>
+<tr><td class="kc">2</td><td class="c">1.4–2.8 / 1.6–2.8</td><td class="c">18–35 / 18–25</td></tr>
+<tr><td class="kc">3</td><td class="c">2.9–5.0</td><td class="c">36–54 / 26–38</td></tr>
+<tr><td class="kc">4</td><td class="c">&gt;5.0</td><td class="c">&gt;54 / &gt;38</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<table>
+<caption>표 15. CKD sub-grading</caption>
+<thead><tr><th>UP/C 개</th><th>UP/C 고양이</th><th>Substage</th><th>수축기 혈압</th><th>Substage</th></tr></thead>
+<tbody>
+<tr><td class="c">&lt;0.2</td><td class="c">&lt;0.2</td><td class="c">Non-proteinuric</td><td class="c">&lt;140</td><td class="c">Normotensive</td></tr>
+<tr><td class="c">0.2–0.5</td><td class="c">0.2–0.4</td><td class="c">Borderline</td><td class="c">140–159</td><td class="c">Prehypertensive</td></tr>
+<tr><td class="c">&gt;0.5</td><td class="c">&gt;0.4</td><td class="c">Proteinuric</td><td class="c">160–179 / ≥180</td><td class="c">Hypertensive / Severely</td></tr>
+</tbody>
+</table>
+<span class="pno">15</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅸ. 사구체 질환 — Nephrotic syndrome</h2>
+<ul class="d">
+<li>간을 간·담관으로 나누듯 신장도 <b>사구체만</b>, <b>세뇨관만</b> 손상되는 경우가 있음 <span class="tag t-rec">수업</span></li>
+<li>사구체 basement membrane은 <b>음전하</b> → albumin 통과 못 함 → 단백뇨가 심하면 사구체 손상</li>
+</ul>
+<table>
+<caption>표 16. Nephrotic syndrome <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:24%">구분</th><th>소견</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">3요소</td><td><b>저알부민혈증</b>(심함) + <b>고콜레스테롤혈증</b>(알부민 보상) + <b>심한 단백뇨</b>(대부분 알부민)</td></tr>
+<tr><td class="kc">Complete</td><td>사구체 손상이 진행돼 <b>요 생성 기능까지</b> 망가짐 → <b>BUN·Cr↑</b> (질소혈증 동반)</td></tr>
+<tr><td class="kc">Incomplete glomerulonephritis</td><td>BUN·Cr 정상 — 3요소만. 방치하면 complete로 진행</td></tr>
+</tbody>
+</table>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 14</span>구토·다음다뇨·복수·사지부종 — Complete nephrotic syndrome</div>
+<div class="cb">
+<div class="cd"><table><caption>CBC / Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Alb / A:G</td><td class="c dn">0.7 / 0.28</td></tr>
+<tr class="hi"><td class="kc">CHOL</td><td class="c up">530</td></tr>
+<tr class="hi"><td class="kc">요단백</td><td class="c"><b>++++</b></td></tr>
+<tr><td class="kc">BUN / CR</td><td class="c up">133 / 4.1</td></tr>
+<tr><td class="kc">USG</td><td class="c">1.016</td></tr>
+<tr><td class="kc">Hct</td><td class="c dn">18</td></tr>
+<tr><td class="kc">침사</td><td class="c">granular cast</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li><b>낮은 비중에 단백뇨 극심!!</b> <span class="tag t-pen">필기</span> 단백뇨 매우 심함</li>
+<li>Alb 0.7 + Chol 530 + 단백뇨 ++++ = nephrotic syndrome <span class="tag t-pen">필기</span> <b>말 그대로 사구체가 손상된 것 → 알부민이 투과로 못함</b>(빠져나감)</li>
+<li>granular cast <b>방광염; 세뇨관 손상</b></li>
+<li>BUN·Cr↑ + USG 1.016 → 요 생성까지 손상 = <b>Complete</b></li>
+<li>복수·부종 = 저알부민 / Hct 18 = 만성 신장병 빈혈 <span class="gray">(정리자 보충)</span></li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>사구체 질환 — complete nephrotic syndrome</b></div>
+</div>
+<span class="pno">16</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 15</span>3yr f mixed breed — Incomplete glomerulonephritis</div>
+<div class="cs">2–3주 동안 복부 팽대, BAR</div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Albumin</td><td class="c dn">0.9</td></tr>
+<tr class="hi"><td class="kc">Cholesterol</td><td class="c up">430</td></tr>
+<tr class="hi"><td class="kc">요단백</td><td class="c"><b>4+</b></td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">15 / 0.5</td></tr>
+<tr><td class="kc">USG</td><td class="c">1.031</td></tr>
+<tr><td class="kc">TP / Ca</td><td class="c dn">3.6 / 8.1</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>Alb 0.9 + Chol 430 + 단백뇨 4+ = nephrotic syndrome</li>
+<li><span class="tag t-pen">필기</span> <b>질소혈증은 없기 때문에 Incomplete nephrotic syndrome</b> (USG 1.031 농축 OK)</li>
+<li>복부 팽대 = <b>복수</b> → <span class="tag t-pen">필기</span> 알부민이 떨어지면 회수가 잘 안 됨 : 맑은 복수 형성 / ∴ <b>If 알부민 1.5 g/dL↓, 맑은 복수가 만들어짐</b> (대표적인 <b>Transudate</b>)</li>
+<li>Ca 8.1↓은 알부민 결합 Ca 감소로 총 Ca가 낮게 나온 것일 가능성 <span class="gray">(정리자 보충)</span></li>
+</ol></div>
+</div>
+<div class="cc">결론: <b>사구체 질환 — nephrotic syndrome, incomplete glomerulonephritis</b></div>
+<div class="tr">복수 기전: 동맥 쪽은 압이 세서 혈장 일부가 빠져나가고, 정맥 쪽은 단백질(교질삼투압)이 혈압보다 세서 다시 회수 → 알부민↓ → 회수 안 됨 → 맑은 복수. 단, <b>portal hypertension</b>(간·심장 문제)이 있으면 1.5 이상에서도 transudate <span class="tag t-rec">수업</span></div>
+<div class="tr f2" style="background:#faf7ff;border-left-color:#9b7be0;"><span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: ChatGPT 인용)</span><br>◆ <b>Transudate(여출액)</b> = 혈관 벽 염증 없이 혈관 안팎 <b>압력 균형</b>이 바뀌어 수분이 빠져나온 액체(단백 낮음) ↔ <b>Exudate(삼출액)</b> = 혈관 <b>투과성↑</b>으로 단백·세포가 풍부하게 빠져나온 액체<br>◆ <b>정수압</b> = 혈관 안→밖으로 물을 미는 힘 / <b>교질삼투압</b> = 알부민 등이 혈관 안으로 물을 당기는 힘<br>◆ Transudate 원인: <b>저알부민혈증</b>(교질삼투압↓) · <b>심부전</b>(정수압↑) · <b>간경변 문맥고혈압</b>(문맥계 정수압↑)<br>◆ 간경변(섬유화) → 문맥고혈압 → 저알부민 → 몸이 유효 순환량 부족으로 인식해 <b>신장이 Na·수분 저류</b> → 복수 더 증가<br>◆ <b>SAAG</b> = 혈청 알부민 − 복수 알부민: <b>≥1.1 g/dL</b> → 문맥고혈압 원인 가능성↑ / <b>&lt;1.1</b> → 그 외 원인 고려 <span class="gray">(SAAG는 주로 사람 의학 기준 — 정리자 보충)</span></div>
+</div>
+<h2 class="lv1">Ⅹ. 세뇨관 질환 (근위세뇨관 재흡수 장애)</h2>
+<table>
+<caption>표 17. 세뇨관 질환</caption>
+<thead><tr><th style="width:28%">질환</th><th>내용</th><th style="width:22%">호발</th></tr></thead>
+<tbody>
+<tr><td class="kc">Cystinuria</td><td>아미노산 중 <b>시스틴만</b> 재흡수 못 함 — 거의 선천적</td><td>Dachshunds, English bulldogs</td></tr>
+<tr><td class="kc">Renal glucosuria</td><td><b>혈당 정상</b>인데 요에만 당 = <b>신성 당뇨</b></td><td>Norwegian elkhounds; other breeds</td></tr>
+<tr><td class="kc">Nephrogenic DI</td><td><b>신성 요붕증</b> — ADH 분비는 정상, 신장 세포가 반응 X</td><td></td></tr>
+<tr><td class="kc">Renal tubular acidosis</td><td>Type Ⅱ (HCO₃⁻ 재흡수 장애, 근위) / Type Ⅰ (H⁺ 배출 장애, 원위)</td><td></td></tr>
+<tr class="hi"><td class="kc"><b>Fanconi (like) syndrome</b></td><td>위 재흡수 장애들이 <b>복합</b>된 것 — glucose, bicarbonate, phosphates, uric acid, potassium, certain amino acids가 과도하게 요로 배설</td><td>Basenjis, Norwegian elkhounds, Shetland sheepdogs, schnauzers</td></tr>
+</tbody>
+</table>
+<span class="pno">17</span>
+</section>
+
+<section class="page">
+<ul class="d">
+<li>근위세뇨관: 여과된 HCO₃⁻가 H⁺와 결합 → 탄산으로 흡수 → 세포 안에서 다시 H⁺ + HCO₃⁻ → HCO₃⁻ <b>재흡수</b> / 원위세뇨관: <span class="tag t-pen">필기</span> *<b>원위곡세뇨관에서 하는 일</b> — H₂O → H⁺ + OH⁻, OH⁻ + CO₂ → HCO₃⁻(탄산탈수효소) → 혈액으로(AE1: HCO₃⁻ ↔ Cl⁻), H⁺는 펌프(ATP)로 관강 배출</li>
+<li>사람과 비슷한 병이면 이름 그대로 안 붙이고 <b>"-like"</b>를 붙임 → Fanconi-like syndrome <span class="tag t-rec">수업</span></li>
+<li>세뇨관 질환은 BUN·Cr(배설 기능)과 <b>별개</b>로도 나타날 수 있음 — 하나만(신성 요붕증만, 신성 당뇨만…) 또는 함께</li>
+</ul>
+<h3 class="lv2">1. Fractional excretion (FE, 분획 배설)</h3>
+<div class="two">
+<div>
+<div class="memo" style="margin:4px 0 0 0;">
+<div class="mt">공식</div>
+<p style="margin:2px 0;color:var(--ink);"><b>FE(%) = (Urine<sub>so</sub> / Serum<sub>so</sub>) ÷ (Urine<sub>cr</sub> / Serum<sub>cr</sub>) × 100</b></p>
+<p class="gray" style="margin:0;">so = 요중·혈중 용질 농도, cr = 요중·혈중 Cr 농도</p>
+</div>
+</div>
+<div>
+<ul class="d" style="margin:4px 0 0 4px;">
+<li>전해질 조절 기능 평가 (Na, K, Cl, P, Mg)</li>
+<li>주의: <b>12시간 이상 절식</b> / K·P·Mg는 수일~수 주 식이 조절 필요</li>
+<li>참고치: Na <b>0–0.7</b> · K 0–29 · Ca 0–0.4 · P 3–39</li>
+</ul>
+</div>
+</div>
+<ul class="d">
+<li>Indication: 전해질·아미노산·포도당 FE / 질소혈증보다 민감한 신장 손상 지표 — 그러나 <b>Not commonly used in VM</b>, RR 얻기 어려움 (다른 assay, 다른 식이)</li>
+<li>Lefebvre 리뷰(Vet Clin Pathol): FE의 진단적 가치는 제한적, <b>canine Fanconi's syndrome 진단 예외</b> — 대부분 영양 연구·신장학 연구에 한정</li>
+</ul>
+<div class="memo red">
+<div class="mt">★ Na·Cl로 산–염기를 읽는 법 <span class="tag t-rec">수업</span> <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li>평소 <b>Cl은 Na를 따라감</b> — 같은 방향, 비슷한 정도 (<span class="tag t-pen">필기</span> 둘은 단짝친구 → 증가·감소의 정도, 방향 모두 같음)</li>
+<li>전기적 중성: 대표 음이온 = <b>Cl⁻, HCO₃⁻</b> / 대표 양이온 = Na⁺, K⁺ → HCO₃⁻가 부족하면 Cl⁻이 <b>보상적으로↑</b>, HCO₃⁻가 넘치면 Cl⁻↓</li>
+<li>판정법: 각 항목이 <b>RR 중간값에서 얼마나</b> 벗어났나 비교 → <b>Cl이 Na보다 더 크게↑</b> = HCO₃⁻ 부족(대사성 산증)</li>
+<li>HCO₃⁻ 감소의 흔한 원인 = <b>구토·설사</b> → 그런 증상이 없으면 → <b>신장</b>(재흡수·합성 장애) 의심 <span class="tag t-pen">필기</span> *중탄산염이 감소하는 경우? → 구토, 설사, 신장문제</li>
+</ul>
+</div>
+<span class="pno">18</span>
+</section>
+
+<section class="page">
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 16</span>3년령 cM 래브라도 리트리버 — Fanconi-like syndrome</div>
+<div class="cs">수 개월 동안 <b>다음다뇨</b> + 최근 <b>관절 경직</b>(관절 이상 없음; 뼈의 통증, 특히 골간단(metaphysis) 부근) <span class="tag t-pen">필기</span> <b>묶을 수가 없는 임상증상</b></div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA / FE</caption><tbody>
+<tr class="hi"><td class="kc">Na / Cl</td><td class="c">146 / 122</td><td class="c">145–158 / 105–122</td></tr>
+<tr><td class="kc">K</td><td class="c dn">3.5</td><td class="c">3.6–5.8</td></tr>
+<tr class="hi"><td class="kc">TCO₂</td><td class="c dn">15.3</td><td class="c">18–30</td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">45 / 1.4</td><td class="c">RR 안</td></tr>
+<tr><td class="kc">ALT / ALP / CK</td><td class="c up">139 / 242 / 455</td><td class="c"></td></tr>
+<tr><td class="kc">USG</td><td class="c" colspan="2">1.013 (방광천자)</td></tr>
+<tr class="hi"><td class="kc">요단백 / 요당</td><td class="c" colspan="2">2+ (UP/C 2.3) / <b>4+</b></td></tr>
+<tr><td class="kc">FE Na / K</td><td class="c up" colspan="2">1.3% (0–0.7) / 24% (0–20)</td></tr>
+<tr><td class="kc">FE Ca / P</td><td class="c up" colspan="2">3.1% (0–0.4) / 65% (3–39)</td></tr>
+<tr><td class="kc">FE AA</td><td class="c" colspan="2">16 / 23 비정상</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li><b>요당 4+</b>(<span class="tag t-pen">필기</span> 아주 심하게 증가) → 그런데 chemistry에 혈당 언급 없음 = <b>혈당 정상</b> <span class="tag t-pen">필기</span> *혈당량은 정상인데, 뇨당량이 매우 높다? → ∴ <b>Renal glucosuria</b></li>
+<li>BUN·Cr은 RR 안 → 배설 기능 문제 아님 → <b>세뇨관 재흡수 기능</b> 문제</li>
+<li>단백뇨(UP/C 2.3)도 동반 → 하나만이 아니라 여러 물질 → <b>Fanconi 가능성</b> 염두</li>
+<li><b>Na·Cl 해석</b>: Na 146은 RR <b>하한</b> 근처, Cl 122는 RR <b>상한</b> → 단짝인데 반대로 놂 → HCO₃⁻ 부족 (TCO₂ 15.3↓로 확인) → 구토·설사 없음 → <b>신장에서 HCO₃⁻ 소실</b></li>
+<li>K 3.5↓ = 배설↑ 예상 / FE 검사: Na·K·Ca·P 모두 과배설, 아미노산 23개 중 16개 비정상</li>
+<li>뼈 통증 = 인산·Ca 소실로 인한 골 이상으로 연결 가능 <span class="gray">(정리자 보충)</span> / CK·ALT 등은 관절 경직 주변 근육 영향 가능 <span class="tag t-rec">수업</span></li>
+</ol></div>
+</div>
+<div class="cc">결론: 아미노산·HCO₃⁻·단백·당·Ca·Na·K 등 <b>복합적 재흡수 장애</b> = <b>Fanconi-like syndrome</b></div>
+<div class="tr">루틴 전해질(Na·K·Cl)에서 늘 보는 것: <b>Na와 Cl이 불균형하게 움직이는가</b> <span class="tag t-rec">수업</span></div>
+</div>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 17</span>5yr cM Schipperke — zonisamide 복용 중 (free water change and more!)</div>
+<div class="cs">mild increase in BUN, Cr / 3년 간질 발작, <b>zonisamide 18개월</b> / alert and responsive, panting 외 특이 소견 없음</div>
+<div class="cb">
+<div class="cd"><table><caption>Chem / UA</caption><tbody>
+<tr class="hi"><td class="kc">Cl</td><td class="c up">124</td><td class="c">107–116</td></tr>
+<tr class="hi"><td class="kc">Na</td><td class="c up">150</td><td class="c">139–147</td></tr>
+<tr><td class="kc">K</td><td class="c dn">3.1</td><td class="c">3.3–4.6</td></tr>
+<tr><td class="kc">P</td><td class="c dn">1.6</td><td class="c">2.9–6.2</td></tr>
+<tr class="hi"><td class="kc">TCO₂</td><td class="c dn">11</td><td class="c">21–28</td></tr>
+<tr><td class="kc">BUN / Cr</td><td class="c">25 / 1.5</td><td class="c">RR 안</td></tr>
+<tr><td class="kc">USG</td><td class="c" colspan="2">1.039 · protein trace</td></tr>
+</tbody></table></div>
+<div class="ci"><ol class="st">
+<li>Na·Cl 둘 다↑ — <b>방향은 같음</b></li>
+<li>정도 비교: Na 중간값 143 → 150 (<b>+7</b>) / Cl 중간값 111.5 → 124 (<b>+12.5</b>) <span class="gray">(정리자 계산)</span> → Cl이 훨씬 더 올라감</li>
+<li><span class="tag t-pen">필기</span> 둘다 방향성 자체는 증가로 같으나, 정도가 다름 ∴ "<b>중탄산염이 부족하구나</b>" (TCO₂ 11↓로 확인)</li>
+<li>Na↑(free water 손실 — panting 등)도 함께 있음 = "free water change and more!"</li>
+</ol></div>
+</div>
+<div class="cc">결론: Na·Cl 불균형 → <b>HCO₃⁻ 부족(대사성 산증)</b> — 신장성 원인(Fanconi-like/RTA 계열) 의심. 이런 경우는 드물지만 종종 있음</div>
+<div class="tr">보충 <span class="gray">(정리자 보충)</span>: zonisamide는 <b>탄산탈수효소 억제</b> 작용이 있는 약물 → 세뇨관 HCO₃⁻ 재흡수 저하(RTA 유사 산증) 가능 — 원위세뇨관 그림의 CA 단계를 떠올릴 것</div>
+</div>
+<span class="pno">19</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅺ. 해석 함정 — Non-creatinine chromogen · 고양이 USG</h2>
+<h3 class="lv2">1. Non-creatinine chromogen</h3>
+<ul class="d">
+<li><b>Jaffe 법</b>: Creatinine + Picrate →(OH⁻)→ red–orange color (Janovsky complex)</li>
+<li>Jaffe 법으로 검사할 때 시약과 반응하는 <b>Cr 외 물질</b>: acetoacetate, glucose, vitamin C, uric acid, pyruvate, <b>cephalosporin</b>, AA… → Cr이 오를 상황이 아닌데 Cr↑</li>
+<li>건강검진에서 건강한데 Cr만 오르면 당황 → 요검사 등으로 신장 문제인지 확인</li>
+<li>이 물질들은 <b>요에는 없음 → 요 Cr 검사는 정확</b></li>
+</ul>
+<h3 class="lv2">2. CKD and urine concentration — 고양이 주의</h3>
+<ul class="d">
+<li>dog, SG – 1.030 / cat, SG – 1.035, <b>but……</b></li>
+<li><b>In hyperthyroid cats, concurrent kidney disease with USG up to 1.040 or even above 1.040!!!</b> → 1.04대로 농축돼도 신장 문제 있을 수 있음</li>
+<li>고양이는 <b>사막</b> 동물 → 원래 고도로 농축(~1.060)하는 게 특징 → 그보다 떨어지면 이상하다고 보는 임상의도 있음 → 1.035 기준이 고양이 신장 상태를 대변 못 할 수도 → <b>영상(초음파: 신장 크기·margin)</b>도 중요 <span class="tag t-rec">수업</span></li>
+</ul>
+<div class="two">
+<div>
+<table>
+<caption>표 18. 고양이 비중 교정식</caption>
+<thead><tr><th>Medical refractometer</th><th>Feline SG</th></tr></thead>
+<tbody>
+<tr><td class="c">1.005</td><td class="c">1.004</td></tr>
+<tr><td class="c">1.010</td><td class="c">1.008</td></tr>
+<tr><td class="c">1.015</td><td class="c">1.013</td></tr>
+<tr><td class="c">1.020</td><td class="c">1.017</td></tr>
+<tr><td class="c">1.025</td><td class="c">1.021</td></tr>
+<tr class="hi"><td class="c">1.030</td><td class="c">1.025</td></tr>
+<tr class="hi"><td class="c">1.035</td><td class="c">1.030</td></tr>
+<tr><td class="c">1.040</td><td class="c">1.034</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="memo" style="margin:8px 0 0 0;">
+<div class="mt">공식</div>
+<p style="margin:2px 0;color:var(--ink);"><b>Feline SG = (0.846 × medical refractometer SG) + 0.154</b></p>
+<ul class="d"><li>사람용(medical) 굴절계는 고양이 요비중을 <b>과대평가</b> → 사람용 1.035 = 고양이 실제 1.030</li></ul>
+</div>
+</div>
+</div>
+<div class="memo green">
+<div class="mt">교수님 마무리 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>신장은 여러 얘기 같지만 간단 — <b>BUN, Cr, USG, SDMA</b> 4가지를 잘 해석하면 됨</li>
+<li>항상 <b>"진짜 신장 때문에 BUN·Cr이 올랐나"</b>를 신중히</li>
+<li>간은 효소가 초기부터 올라 개입 가능, 신장은 75% 손상 후에야 → 어렵다 / 국내 투석 가능한 로컬도 몇 곳 (세팅 어려움), 이식은 아직 어려움 → <b>조기 발견</b> + <b>진짜 신장 문제인지</b>가 핵심</li>
+</ul>
+</div>
+<span class="pno">20</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">★ 3장 총정리 — 시험 직전에 보는 표</h2>
+<table>
+<caption>표 19. 케이스 한 장 정리 — 숫자만 보고 답하기</caption>
+<thead><tr><th style="width:21%">케이스</th><th style="width:16%">BUN / Cr</th><th style="width:10%">USG</th><th>결정적 단서</th><th style="width:17%">결론</th></tr></thead>
+<tbody>
+<tr><td>Boxer 3세 (림프종)</td><td class="c">69↑ / 1.70</td><td class="c">1.036</td><td>BUN만↑, 체중감소, Ca 18.8</td><td><b>신전성</b></td></tr>
+<tr><td>Cat 10개월</td><td class="c">46↑ / –</td><td class="c">1.065</td><td>탈수 7%, Hct·TP↑, WBC 1.9</td><td><b>신전성</b></td></tr>
+<tr><td>Yorkie &lt;1yr</td><td class="c">4↓ / –</td><td class="c">–</td><td>Chol↓, BA↑</td><td>PSS (BUN↓ 신장 무관)</td></tr>
+<tr><td>전립선 종대 개</td><td class="c">4↓ / &lt;0.2↓</td><td class="c">1.004</td><td>희석뇨, 마름, 고열</td><td>전립선염</td></tr>
+<tr><td>Labrador 10yr</td><td class="c">88 / 3.8</td><td class="c">1.045</td><td>amylase·lipase↑, 복통</td><td><b>신전성</b> (췌장염)</td></tr>
+<tr class="hi"><td>Labrador 1yr</td><td class="c">75 / 5.7</td><td class="c">1.011</td><td>CaOx mono, 운동실조</td><td><b>신성</b> (급성)</td></tr>
+<tr class="hi"><td>Irish Setter 4yr</td><td class="c">240 / 5.2</td><td class="c">1.011</td><td>등장뇨, amylase·lipase↑(배설장애)</td><td><b>신성</b> (급성)</td></tr>
+<tr class="hi"><td>Dachshund 8yr</td><td class="c">165 / 4.9</td><td class="c">1.016</td><td>수개월 PU/PD, 빈혈, 구강궤양</td><td><b>만성 신부전</b></td></tr>
+<tr><td>Lab Ret 9yr</td><td class="c">145 / 3.9</td><td class="c">1.013</td><td>요 WBC 100–125/HPF, 세균</td><td><b>신우신염</b> (항생제 회복)</td></tr>
+<tr><td>Malinois 2yr</td><td class="c">179.8 / 6.0</td><td class="c">비농축</td><td>Na↓ K↑, 저혈당, Ca↑, ACTH 무반응</td><td><b>Addison</b> (mimic)</td></tr>
+<tr><td>Pyometra</td><td class="c">85 / 3.7</td><td class="c">1.015</td><td>자궁축농증, E. coli</td><td><b>신전성</b> (mimic)</td></tr>
+<tr><td>DSH 3yr M</td><td class="c">225 / 9.2</td><td class="c">1.022</td><td>배뇨곤란, 방광 팽대, K↑</td><td><b>신후성</b></td></tr>
+<tr><td>Maltese 6yr</td><td class="c">160 / 3.6</td><td class="c">1.005</td><td>양측 신결석, 희석 가능</td><td><b>신후성</b>, 신기능 충분</td></tr>
+<tr><td>복수·부종 개</td><td class="c">133 / 4.1</td><td class="c">1.016</td><td>Alb 0.7, Chol 530, 단백뇨 ++++</td><td>Complete nephrotic</td></tr>
+<tr><td>Mixed 3yr f</td><td class="c">15 / 0.5</td><td class="c">1.031</td><td>Alb 0.9, Chol 430, 단백뇨 4+</td><td>Incomplete GN</td></tr>
+<tr><td>Labrador 3yr cM</td><td class="c">45 / 1.4</td><td class="c">1.013</td><td>요당 4+ 혈당 정상, Cl↑ Na↓, TCO₂↓</td><td>Fanconi-like</td></tr>
+<tr><td>Schipperke 5yr</td><td class="c">25 / 1.5</td><td class="c">1.039</td><td>Cl이 Na보다 더↑, TCO₂ 11</td><td>HCO₃⁻ 부족 (zonisamide)</td></tr>
+</tbody>
+</table>
+<table>
+<caption>표 20. USG 숫자 하나로 읽기</caption>
+<thead><tr><th style="width:24%">USG</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">&lt;1.007</td><td><b>희석뇨(hyposthenuria)</b> — 희석도 신기능이 있어야 가능 → 신장 기능 충분 (요붕증·다음·수액 등)</td></tr>
+<tr class="hi"><td class="kc">1.007–1.012</td><td><b>등장뇨(isosthenuria)</b> — 신장이 손대지 않은 상태. 질소혈증과 같이 있으면 신성의 전형</td></tr>
+<tr><td class="kc">1.013–1.029 (개)<br>1.013–1.034 (고양이)</td><td>최소한의 농축. 탈수·질소혈증과 같이 있으면 → 신성 or <b>mimic</b></td></tr>
+<tr class="hi"><td class="kc">≥1.030 (개)<br>≥1.035 (고양이)</td><td><b>충분히 농축</b> → 질소혈증이 있으면 <b>신전성</b> (단, 갑상선 항진 고양이는 1.040에도 신장병 가능)</td></tr>
+</tbody>
+</table>
+<span class="pno">21</span>
+</section>
+
+<section class="page">
+<div class="memo">
+<div class="mt">*헷갈리기 쉬운 짝</div>
+<ul class="d">
+<li><b>Renal insufficiency vs failure</b> — 66–75% 소실·농축 상실·질소혈증 X / 75%↑·질소혈증 O</li>
+<li><b>Azotemia vs Uremia</b> — 검사 수치 / 임상증상 (BUN이 장에서 암모니아로 → 궤양·HE)</li>
+<li><b>BUN vs Cr</b> — 간 생성·식이/이화/flow rate 영향·평형 빠름 / 근육 생성·근육량 영향·평형 4시간·더 신뢰</li>
+<li><b>Low vs High flow rate</b> — 재흡수 ~70%(BUN 실제보다↑) / ~40%(BUN 실제보다↓)</li>
+<li><b>BUN↑ vs BUN↓</b> — 신장과 연관 / 신장과 무관 (간부전·저단백식·anabolic steroid·glucosuria·요붕증)</li>
+<li><b>요복 판정</b> — 늦게 오면 BUN은 이미 평형 → <b>Cr</b>로 (복수 Cr ≫ 혈장 Cr)</li>
+<li><b>UCr/SCr vs SUN/Cr</b> — 문헌마다 값 다름(&gt;50 신전성, &lt;37 신성, &lt;20 ATN) / 쓸모없음</li>
+<li><b>신성 vs 신성 mimic</b> — 진짜 손상 / E. coli(자궁축농증·전립선염)·Addison·Ca↑·전해질·DM·쿠싱·요붕증·신우신염</li>
+<li><b>Amylase·lipase↑</b> — 췌장염 vs <b>신장 배설 장애</b>(임상 증상으로 구분)</li>
+<li><b>GFR 검사 vs Cr</b> — 20% 감소부터 / 75% 감소부터</li>
+<li><b>SDMA</b> — 25% 손실부터, 혈청 검사(NAG·NGAL·GGT는 요), 개 27개월·고양이 48개월 전, 고양이에서 해석 애매</li>
+<li><b>Complete vs Incomplete nephrotic</b> — 질소혈증 O / X</li>
+<li><b>Renal glucosuria vs DM</b> — 혈당 정상 / 혈당↑ (넘쳐서 요당)</li>
+<li><b>Na·Cl</b> — 같이 움직여야 정상, Cl이 Na보다 더↑(또는 반대로) = HCO₃⁻ 부족</li>
+<li><b>요 GGT vs 혈청 GGT</b> — 세뇨관 손상(injury) / 담관 induction</li>
+<li><b>Jaffe 간섭</b> — 혈청 Cr만 위(僞)증가, 요 Cr은 정확</li>
+<li><b>사람용 굴절계 vs 고양이</b> — 과대평가 → 0.846×SG + 0.154</li>
+</ul>
+</div>
+<span class="pno">22</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 — 자료해석 연습</h2>
+<table>
+<caption>표 21. 개념 확인 (답은 오른쪽 칸 가리고 풀기)</caption>
+<thead><tr><th style="width:5%">#</th><th>질문</th><th style="width:40%">답</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>BUN·Cr이 민감도는 낮고 특이도가 높은 이유는?</td><td>신장에서 만들지 않는 배설물 → 신장이 <b>75%</b> 망가져야 변함</td></tr>
+<tr><td class="c">2</td><td>Renal insufficiency와 failure의 손실 정도와 지표는?</td><td>66–75%·USG(농축 상실) / 75%↑·BUN·Cr</td></tr>
+<tr><td class="c">3</td><td>요독증 증상이 생기는 기전은?</td><td>BUN 자체 무독 → 소화기로 분비돼 <b>암모니아</b>로 → 궤양·HE</td></tr>
+<tr><td class="c">4</td><td>BUN만 단독 증가하는 원인 4가지 이상?</td><td>고단백식, 소장출혈, 고열·기아, 운동, 글루코코르티코이드, 화상·패혈증·괴사, 관류↓</td></tr>
+<tr><td class="c">5</td><td>Low/high urine flow rate일 때 BUN 재흡수율과 결과는?</td><td>~70% → 실제보다↑ / ~40% → 실제보다↓</td></tr>
+<tr><td class="c">6</td><td>BUN↓의 원인과 신장과의 관계는?</td><td>간부전·저단백식·anabolic steroid·glucosuria·요붕증 — <b>신장과 연관 X</b></td></tr>
+<tr><td class="c">7</td><td>요복 판정에 BUN보다 Cr을 쓰는 이유?</td><td>BUN은 빨리 평형, Cr은 평형 4시간 → 차이가 오래 유지</td></tr>
+<tr><td class="c">8</td><td>Serum UN/Cr ratio의 가치는?</td><td>"of no value" — 쓸모없음</td></tr>
+<tr class="hi"><td class="c">9</td><td>신전성 질소혈증의 USG 기준(개/고양이)과 회복 기간은?</td><td>≥1.030 / ≥1.035, 수액 1–2일</td></tr>
+<tr><td class="c">10</td><td>신성 질소혈증의 USG 범위는?</td><td>1.007–1.029 (대개 1.012~), 1.006–1.007도</td></tr>
+<tr class="hi"><td class="c">11</td><td>신전성인데 신성처럼 보이는 원인을 5개 이상?</td><td>E. coli 패혈증·자궁축농증·전립선염, Addison, Ca↑, Na↓·K↓, DM, 탈수+쿠싱, 탈수+요붕증, 신우신염</td></tr>
+<tr><td class="c">12</td><td>자궁축농증에서 농축이 안 되는 기전은?</td><td>E. coli 독소 → <b>ADH</b> 작동 일시 억제</td></tr>
+<tr><td class="c">13</td><td>USG 1.005가 의미하는 신기능은?</td><td>희석 가능 = 신기능 충분 (Maltese 신결석)</td></tr>
+<tr><td class="c">14</td><td>질소혈증 환자에서 amylase·lipase↑의 해석은?</td><td>신장 배설 장애 (췌장염 증상 없으면)</td></tr>
+<tr><td class="c">15</td><td>GFR 검사와 Cr이 변하는 신기능 손실 정도?</td><td>20% / 75%</td></tr>
+<tr><td class="c">16</td><td>SDMA가 변하는 손실 정도와 개·고양이 선행 기간?</td><td>25% / 27개월·48개월</td></tr>
+<tr><td class="c">17</td><td>미소단백뇨의 범위와 해석 어려움?</td><td>1–30 mg/dL / 방광염·천자 시 혈액 혼입</td></tr>
+<tr class="hi"><td class="c">18</td><td>Nephrotic syndrome 3요소와 complete/incomplete 구분?</td><td>저Alb·고Chol·심한 단백뇨 / 질소혈증 유무</td></tr>
+<tr><td class="c">19</td><td>맑은 복수(transudate)가 차는 알부민 수준은?</td><td><b>1.5 g/dL 이하</b> (portal hypertension이면 그 이상에서도)</td></tr>
+<tr><td class="c">20</td><td>Fanconi syndrome에서 과배설되는 물질?</td><td>glucose, HCO₃⁻, phosphate, uric acid, K, 아미노산</td></tr>
+<tr><td class="c">21</td><td>FE 공식과 Na의 참고치?</td><td>(U<sub>so</sub>/S<sub>so</sub>)/(U<sub>cr</sub>/S<sub>cr</sub>)×100 / 0–0.7</td></tr>
+<tr class="hi"><td class="c">22</td><td>Na 정상 하한, Cl 상한, TCO₂↓, 구토·설사 없음 → 해석은?</td><td>Cl이 따로 놂 = HCO₃⁻ 부족 → <b>신장성</b> 소실</td></tr>
+<tr><td class="c">23</td><td>Jaffe 법 간섭 물질과 요 Cr이 정확한 이유?</td><td>acetoacetate·glucose·vit C·uric acid·pyruvate·cephalosporin / 요에는 없음</td></tr>
+<tr><td class="c">24</td><td>갑상선 항진 고양이 USG 해석 주의점?</td><td>1.040 이상이어도 신장병 동반 가능</td></tr>
+<tr><td class="c">25</td><td>사람용 굴절계 1.035는 고양이에서 얼마?</td><td>1.030 (0.846×SG+0.154)</td></tr>
+<tr><td class="c">26</td><td>신전성 환자에 NSAID를 쓰면 안 되는 기전? <span class="tag t-pen2">필기2</span></td><td>PG에 의한 <b>수입세동맥 확장</b>(보상) 차단 → 사구체 허혈·급성 세뇨관 괴사</td></tr>
+<tr><td class="c">27</td><td>고칼슘·저칼륨혈증이 농축을 막는 기전? <span class="tag t-pen2">필기2</span></td><td>ADH 반응↓ = <b>2차성 신성 요붕증</b></td></tr>
+<tr><td class="c">28</td><td>Transudate vs Exudate? <span class="tag t-pen2">필기2</span></td><td>압력 균형 변화·단백 낮음 / 혈관 투과성↑·단백·세포 풍부</td></tr>
+</tbody>
+</table>
+<span class="pno">23</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 ② — 미니 케이스</h2>
+<table>
+<caption>표 22. 숫자를 보고 분류해보기 (강의 케이스 변형 — 답은 가리고)</caption>
+<thead><tr><th style="width:5%">#</th><th>데이터</th><th style="width:34%">답 · 근거</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>개, 구토 3일·탈수 8%. BUN 70, Cr 2.4, USG 1.042</td><td><b>신전성</b> — 개 ≥1.030 농축 / 수액 후 1–2일 회복 예상</td></tr>
+<tr><td class="c">2</td><td>개, 다음다뇨 6개월·체중↓·빈혈. BUN 120, Cr 4.5, P↑, USG 1.012</td><td><b>신성(만성 신부전)</b> — 등장뇨 + 만성 경과 + 빈혈</td></tr>
+<tr><td class="c">3</td><td>중년 암컷 개, 발열·외음부 분비물. BUN 80, Cr 3.0, USG 1.016, WBC↑</td><td><b>신전성(mimic, 자궁축농증)</b> — E. coli → ADH 억제, 수술 후 정상화</td></tr>
+<tr><td class="c">4</td><td>개, 무기력·설사. Na 128, K 7.9, Glu 50, BUN 150, Cr 4.0, USG 1.018</td><td><b>Addison</b> — Na↓K↑·저혈당 → ACTH 자극 시험</td></tr>
+<tr><td class="c">5</td><td>수컷 고양이, 하루 전부터 배뇨곤란·방광 팽대. BUN 200, Cr 8.5, K 7.0, USG 1.025</td><td><b>신후성</b> — USG 무관, 임상·영상 (요도 폐색)</td></tr>
+<tr><td class="c">6</td><td>개, 체중↓·림프절 종대. BUN 60↑, Cr 정상, USG 1.040</td><td>BUN만↑ — 이화↑·flow rate↓, USG로 <b>신전성</b></td></tr>
+<tr><td class="c">7</td><td>개, 다음다뇨. 혈당 95, 요당 4+, BUN·Cr 정상</td><td><b>Renal glucosuria</b> (다른 재흡수 장애 동반 시 Fanconi-like)</td></tr>
+<tr><td class="c">8</td><td>개, 복부팽대. Alb 1.0, Chol 450, 요단백 4+, BUN·Cr 정상, USG 1.030</td><td><b>Incomplete</b> nephrotic syndrome (질소혈증 없음), 맑은 복수</td></tr>
+<tr><td class="c">9</td><td>개, BUN 140, Cr 3.8, USG 1.014, 요 WBC 많음·세균 +, granular cast</td><td><b>신우신염</b> 의심 → 항생제 반응 확인</td></tr>
+<tr><td class="c">10</td><td>건강검진 개, Cr만 약간↑, 세팔로스포린 복용 중, USG 1.045</td><td><b>Non-creatinine chromogen</b>(Jaffe 간섭) 가능 → 요 Cr·재검</td></tr>
+<tr><td class="c">11</td><td>개, BUN 3, Chol 70, Alb 2.0, BA↑, 어린 나이·소간증</td><td><b>간 저형성(PSS)</b> — BUN↓은 신장 무관</td></tr>
+<tr><td class="c">12</td><td>고양이, 사람용 굴절계 USG 1.035, BUN·Cr 약간↑</td><td>실제 고양이 SG ≈ <b>1.030</b> → 1.035 미달 → 신전성이라 단정 못 함</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 표 22는 강의 케이스를 바탕으로 정리자가 만든 연습 문제 — 수치는 예시</p>
+<span class="pno">24</span>
+</section>
+</body>
+</html>

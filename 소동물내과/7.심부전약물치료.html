@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7. 심부전 약물치료 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative; overflow:hidden;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+h2.lv1 .en,h3.lv2 .en{font-size:12.6px;color:var(--gray);font-weight:400;margin-left:4px;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+ol.n{margin:0 0 0 34px;padding:0;counter-reset:n;list-style:none;}
+ol.n>li{counter-increment:n;padding-left:20px;}
+ol.n>li::before{content:counter(n,decimal) ")";color:var(--magenta);font-weight:700;}
+p.txt{margin:2px 0 4px 30px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+.t-why{background:#e6f6ee;color:#0b7a55;border:1px solid #8fd1b2;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.memo ol.n{margin-left:6px;}
+.memo p{margin:2px 0;}
+.side{float:right;width:44%;border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:4px 0 8px 12px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.blk::after{content:"";display:block;clear:both;}
+
+/* 원리 박스 (정리자 보충) */
+.why{border-left:5px solid #0f9268;background:#f2fbf6;padding:7px 12px 8px;margin:8px 4px 12px 20px;color:var(--ink);border-radius:0 6px 6px 0;}
+.why .mt{font-weight:700;color:#0b7a55;margin-bottom:2px;}
+.why .mt::before{content:"💡 ";}
+.why ul.d{margin-left:4px;}
+.why ul.d>li::before{color:#0f9268;}
+.why ul.c{margin-left:20px;}
+.why p{margin:2px 0;}
+
+/* 인과 사슬 */
+.chain{margin:6px 0 10px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;color:var(--ink);font-size:12.6px;line-height:17px;}
+.chain span{background:#fff;border:1.5px solid #4A6B66;border-radius:5px;padding:3px 7px;}
+.chain span.hot{border-color:var(--red);background:#fff1f1;font-weight:700;}
+.chain span.end{background:#13756A;border-color:#13756A;color:#fff;font-weight:700;}
+.chain i{font-style:normal;color:var(--red);font-weight:700;padding:0 5px;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;min-width:0;}
+.two table{margin-left:0;width:100%;}
+.three{display:flex;gap:6px;margin:6px 0 4px 20px;}
+.three>div{flex:1;min-width:0;background:#fff;border:1.5px solid #c9d3d1;border-radius:6px;padding:6px 4px 4px;}
+.three .cap{text-align:center;font-weight:700;color:#111;font-size:13px;margin-bottom:2px;}
+
+/* 순서도 */
+.tree{margin:6px 0 12px 20px;color:var(--ink);font-size:12.2px;line-height:16px;}
+.tree .row{display:flex;gap:8px;align-items:stretch;margin:0 0 6px;}
+.tree .nd{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:6px;padding:5px 8px;}
+.tree .nd.top{background:#13756A;color:#fff;border-color:#13756A;text-align:center;font-weight:700;}
+.tree .nd.q{background:#D8ECE7;font-weight:700;text-align:center;color:#12403B;}
+.tree .nd.hot{border-color:var(--red);background:#fff4f4;}
+.tree .nd b.h{display:block;color:#111;margin-bottom:1px;}
+.tree .ar{text-align:center;color:var(--red);font-weight:700;margin:-3px 0 3px;}
+
+/* 셀프체크 */
+.qa{margin:6px 4px 10px 20px;border:2px dashed #7B52C9;background:#faf7ff;padding:8px 12px;color:var(--ink);}
+.qa .mt{font-weight:700;color:#7B52C9;margin-bottom:3px;}
+.qa .q{font-weight:700;color:#111;margin-top:4px;}
+.qa .a{color:#3A4A63;font-size:12.6px;margin-left:14px;}
+
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two,.three{display:block;margin-left:0;}
+  .three>div{margin-bottom:6px;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo,.why,.qa,.tree,.chain{margin-left:0;}
+  .tree .row{flex-direction:column;}
+}
+</style>
+<style>
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+ul+.tnote,ol+.tnote,div+.tnote,p+.tnote{margin-top:2px;}
+.chain span{line-height:1.35;}
+ul.d ul.c{margin-top:2px;}
+</style>
+</head>
+<body>
+
+
+
+<section class="page" style=""><h1 class="doc-title"><span class="num">7.</span> 개와 고양이의 심부전 — 약물 치료와 관리 (최신 경향) <span class="en">Heart Failure Therapy</span></h1><p class="doc-sub">소동물내과 · 강의 PDF(50p) + 슬라이드 필기 + 수업 녹음 ①(9/28)·②(9/30) 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트 &nbsp;<span class="tag t-why">원리</span> 💡박스 = 강의에 없던 원리 설명(정리자 보충)</p><hr class="hr-hand"><table>
+<caption>표 1. 이번 강의 한눈에 — "펌프가 약해지면 몸이 잘못 보상한다 → 약은 그 보상을 끊고, 물을 빼고, 길을 넓힌다"</caption>
+<thead><tr><th style="width:17%">흐름</th><th style="width:30%">무슨 일?</th><th>키워드</th></tr></thead>
+<tbody>
+<tr><td class="kc">① 정의</td><td>몸이 필요한 만큼 피를 못 보냄</td><td>Heart disease(구조 이상) ≠ Heart failure(CO 부족) / <b>모든 심장병은 심부전의 원인</b></td></tr>
+<tr class="hi"><td class="kc">② 몸의 반응</td><td>"혈압이 낮다"고 착각한 보상</td><td>교감신경(EARLY) → RAAS(LATER) → ADH · ET-1 / ANP·BNP는 브레이크 / 말기 = <b>비동기화·부정맥</b></td></tr>
+<tr><td class="kc">③ 인지 · 분류</td><td>청진이 가장 기본</td><td>NYHA · ISACHC · <b>ACVIM A–B1–B2–C–D</b> (C = 표준치료, D = + TOPS)</td></tr>
+<tr class="hi"><td class="kc">④ 치료 원칙</td><td>4(+1)가지 표적</td><td>부종(전부하↓) · 심기능↑ · 일 부담(후부하↓) · 심박/리듬 · 혈압 / 기본 조합 = <b>이뇨제 + ACEI (+ pimobendan)</b></td></tr>
+<tr><td class="kc">⑤ 이뇨제 · 신장</td><td>숨 먼저, 그다음 신장</td><td>Furosemide = <b>용량보다 횟수↑</b>, CRI / <b>Cardiorenal syndrome</b> / SGLT2i · spironolactone 재조명</td></tr>
+<tr class="hi"><td class="kc">⑥ 나머지 약</td><td>RAAS · 혈관 · 수축력 · 리듬</td><td>ACEI → <b>ARB</b> / 정맥(NTG·nitroprusside) vs 동맥(amlodipine·hydralazine) / <b>Pimobendan</b> = inodilator / 칵테일 FON·FOND·FAP… / <b>SRR &lt; 30</b></td></tr>
+</tbody>
+</table><h2 class="lv1">Ⅰ. 심부전이란 <span class="en">Heart Failure</span></h2><h3 class="lv2">1. 정의 <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>The pathophysiological state in which the heart is unable to pump blood at a rate of body requirement</b></span> — 심장이 몸이 요구하는 속도로 피를 펌프하지 못하는 병태생리적 상태</p><ul class="d">
+<li>필기: <span class="hlp">"= 심장의 제1기능인 'Pumping'이 약해지는 것"</span> <span class="tag t-pen">필기</span></li>
+<li><b>Congestive</b>(울혈성 — 물이 차서 증상) vs <b>Compensated</b>(보상성 — 아직 버팀) / 예전엔 울혈성일 때만 적극 치료 → 지금은 <b>보상기(early stage)부터</b> 진단해서 약을 하나씩 넣어 악화를 늦추는 방향 <span class="tag t-rec">수업</span></li>
+<li>예: LV에 100이 들어왔는데 수축 때 100을 다 못 내보냄 = 펌핑 실패 <span class="tag t-rec">수업</span></li>
+</ul><div class="memo">
+<div class="mt">모든 심장병은 심장부전의 원인이 된다 <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li>MVI(승모판 폐쇄부전) · TVI(삼첨판) · DCM · 선천성(PDA, ASD, VSD…) · HCM · HW(심장사상충) … = MMVD, MTVD, DCM, HCM, HW, Congenital heart dz.</li>
+</ul>
+</div><h3 class="lv2">2. Heart Disease vs Heart Failure — 왜 구분하나 <span class="tag t-ex">시험</span></h3><table>
+<caption>표 2. 심장병과 심부전</caption>
+<thead><tr><th style="width:20%"></th><th style="width:38%">Heart disease (심장병)</th><th>Heart failure (심부전)</th></tr></thead>
+<tbody>
+<tr><td class="kc">뜻</td><td>심장의 <b>구조적 문제</b> (판막·심근·단락)</td><td><b>Inadequate CO</b> — 기능 이상이 생긴 상태</td></tr>
+<tr class="hi"><td class="kc">대응</td><td>Preclinical이면 <b>monitor</b> (정기검진 3–6개월)</td><td><b>일반적으로 언제나 치료</b></td></tr>
+</tbody>
+</table><span class="pno">1</span></section><section class="page" style=""><ul class="d">
+<li>심장병이 있으면 일단 <b>전임상(preclinical)</b>으로 보고, 언젠가 심부전으로 갈 것 → 지속 모니터 <span class="tag t-rec">수업</span></li>
+<li>요즘은 심장병만 있어도 쓸 수 있는 약이 많아져서 <b>치료 선택 폭이 넓어짐</b> (예: 무증상 HCM 고양이에 rapamycin, 혈전 예방제, β-blocker 등) <span class="tag t-rec">수업</span></li>
+</ul><h3 class="lv2">3. 원인 · 임상 증상</h3><div class="two">
+<div>
+<ul class="d">
+<li><b>호흡곤란 · 기침</b> — 필기: <span class="hlp">"폐의 Edema에 의해 발생"</span> <span class="tag t-pen">필기</span></li>
+<li><b>운동불내성</b></li>
+<li><b>액체저류</b>: 폐수종 → <b>좌심부전</b> / 복수 → <b>우심부전</b> <span class="tag t-pen">필기</span></li>
+<li><b>실신 (syncope)</b></li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>흉수는 좌·우 어느 쪽인지 절대적이지 않음 / 고양이는 특발성으로도, HCM에서도 흉수 흔함 <span class="tag t-rec">수업</span></li>
+<li>개에서는 우심방 <b>혈관육종</b> 같은 것도 심낭·흉강 삼출을 일으킴 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 1. 심부전은 심장만의 병이 아님 — 앞(폐)으로 밀리고, 뒤(신장)로 덜 가고, 간에 고임 (필기 + 정리자 모식도)</div><svg viewBox="0 0 660 230" width="100%" style="max-width:660px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="심부전이 영향을 주는 장기"><defs><marker id="h10r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h10b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h10k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h10g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h10v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h10o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h10n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><ellipse cx="330" cy="105" rx="70" ry="52" fill="#f6d5d3" stroke="#9c4d49" stroke-width="2"></ellipse><text x="330" y="98" text-anchor="middle" font-size="13" fill="#9c4d49" font-weight="700">심장</text><text x="330" y="116" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">펌프 실패 (CO↓)</text><rect x="30" y="62" width="170" height="70" rx="8" fill="#eef4ff" stroke="#2B5FC4" stroke-width="1.5"></rect><text x="115.0" y="89.0" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">폐 (심장 앞)</text><text x="115.0" y="104.0" text-anchor="middle" font-size="9.3" fill="#6C7787">뒤로 밀림(역류·울혈)</text><text x="115.0" y="117.0" text-anchor="middle" font-size="9.3" fill="#6C7787">→ 폐수종 · 기침 · 호흡곤란</text><path d="M258,96 L206,96" fill="none" stroke="#2B5FC4" stroke-width="2.4" stroke-linecap="round" marker-end="url(#h10b)"></path><text x="232" y="88" text-anchor="middle" font-size="9" fill="#2B5FC4" font-weight="700">backward</text><rect x="460" y="62" width="175" height="70" rx="8" fill="#fff6ea" stroke="#E0912B" stroke-width="1.5"></rect><text x="547.5" y="89.0" text-anchor="middle" font-size="12" fill="#E0912B" font-weight="700">신장 (심장 뒤)</text><text x="547.5" y="104.0" text-anchor="middle" font-size="9.3" fill="#6C7787">앞으로 덜 감(관류↓)</text><text x="547.5" y="117.0" text-anchor="middle" font-size="9.3" fill="#6C7787">→ Na·물 저류 · 신부전</text><path d="M402,96 L454,96" fill="none" stroke="#E0912B" stroke-width="2.4" stroke-linecap="round" marker-end="url(#h10o)"></path><text x="428" y="88" text-anchor="middle" font-size="9" fill="#E0912B" font-weight="700">forward</text><rect x="250" y="172" width="160" height="48" rx="8" fill="#f6efff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="330.0" y="194.0" text-anchor="middle" font-size="11.5" fill="#7B52C9" font-weight="700">간 (정맥 울혈)</text><text x="330.0" y="208.0" text-anchor="middle" font-size="9.3" fill="#6C7787">우심부전 → 간 비대·복수</text><path d="M330,158 L330,168" fill="none" stroke="#7B52C9" stroke-width="2.2" stroke-linecap="round" marker-end="url(#h10v)"></path><text x="330" y="22" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">심장 앞 = 폐, 심장 뒤 = 신장 (필기) → 심부전은 "심장만의 병"이 아님</text><text x="110" y="155" text-anchor="middle" font-size="9.5" fill="#2B5FC4" font-weight="700">Cardio-pulmonary</text><text x="548" y="155" text-anchor="middle" font-size="9.5" fill="#E0912B" font-weight="700">Cardio-renal</text><text x="548" y="168" text-anchor="middle" font-size="9" fill="#6C7787">(이뇨제가 신장을 계속 자극)</text></svg></div></div><ul class="d">
+<li>필기: <span class="hlp">"심장 앞 = 폐 有, 심장 뒤 = 신장 有"</span> <span class="tag t-pen">필기</span> — 혈관을 따라 심장 바로 앞은 폐, 뒤쪽의 주요 장기는 신장 <span class="tag t-rec">수업</span></li>
+<li>판막 역류 → <b>뒤로(backward)</b> 밀려 폐수종 / 100을 다 못 내보내니 <b>앞으로(forward)</b> 가장 가까운 신장이 영향 / 정맥은 간에 모였다 우심으로 → <b>cardio-hepatic</b> <span class="tag t-rec">수업</span></li>
+<li>폐수종으로 안 죽게 살려 놓으면 → 그다음엔 <b>심장으로 인한 신장 문제(cardiorenal)</b>까지 치료해야 함. 이걸 잘 관리하면 아주 오래 삶 <span class="tag t-rec">수업</span></li>
+</ul><h2 class="lv1">Ⅱ. 심장부전에서 전신적 반응 <span class="en">Response to "Cardiac Injury"</span></h2><div class="two">
+<div>
+<ul class="d">
+<li><b>Sympathetic activation</b> (교감신경 활성화)</li>
+<li><b>RAAS 활성화</b> — 필기: <span class="hlp">"특히 Left ventricle 비대"</span> <span class="tag t-pen">필기</span></li>
+<li><b>Hypertrophy (편심성)</b></li>
+<li>Structural, functional, electrical <b>remodeling</b> → 근육 비동기화 · 부정맥</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li><b>ADH (vasopressin)</b> activation</li>
+<li><b>Endothelin-1</b> activation (혈관 내피에서 분비 → 혈관 수축·혈압↑) <span class="tag t-rec">수업</span></li>
+<li><b>ANP · BNP</b> activation — 필기: BNP "생산", ANP "심방이 커지면서 생산" <span class="tag t-pen">필기</span></li>
+<li>Metabolic switches · 염증성 사이토카인 …</li>
+</ul>
+</div>
+</div><span class="pno">2</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 2. 심부전의 신경호르몬 반응 — 단기 보상이 장기적으로 심장을 더 망가뜨리는 악순환 (정리자 모식도)</div><svg viewBox="0 0 700 330" width="100%" style="max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="심부전의 신경호르몬 반응 악순환"><defs><marker id="h11r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h11b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h11k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h11g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h11v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h11o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h11n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="255" y="8" width="190" height="40" rx="8" fill="#fdecec" stroke="#E23B3B" stroke-width="1.5"></rect><text x="350.0" y="32.0" text-anchor="middle" font-size="12.5" fill="#E23B3B" font-weight="700">CO ↓ (펌프 실패)</text><path d="M350,48 L350,66" fill="none" stroke="#1B2A44" stroke-width="2" stroke-linecap="round" marker-end="url(#h11k)"></path><rect x="225" y="70" width="250" height="34" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.5"></rect><text x="350.0" y="91.0" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">압수용체 감지 (대동맥·경동맥·신장)</text><path d="M350,104 L115,122" fill="none" stroke="#E0912B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11o)"></path><path d="M350,104 L350,122" fill="none" stroke="#7B52C9" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11v)"></path><path d="M350,104 L585,122" fill="none" stroke="#2B5FC4" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11b)"></path><rect x="15" y="126" width="210" height="96" rx="9" fill="#fff6ea" stroke="#E0912B" stroke-width="1.5"></rect><text x="120" y="144" text-anchor="middle" font-size="11" fill="#E0912B" font-weight="700">① 교감신경 ↑ (EARLY)</text><text x="25" y="162" text-anchor="start" font-size="9.6" fill="#1B2A44">부교감↓ → 운동 후 HR 회복 안 됨</text><text x="25" y="177" text-anchor="start" font-size="9.6" fill="#1B2A44">β1: 심박·수축력↑ (빈맥)</text><text x="25" y="192" text-anchor="start" font-size="9.6" fill="#1B2A44">α1: 혈관 수축 → 후부하↑</text><text x="25" y="207" text-anchor="start" font-size="9.6" fill="#1B2A44">부정맥 유발성↑ · 말초 관류↓</text><rect x="245" y="126" width="210" height="96" rx="9" fill="#f6efff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="350" y="144" text-anchor="middle" font-size="11" fill="#7B52C9" font-weight="700">② RAAS (EARLY→LATER)</text><text x="255" y="162" text-anchor="start" font-size="9.6" fill="#1B2A44">β1 자극 → 신장 renin 분비</text><text x="255" y="177" text-anchor="start" font-size="9.6" fill="#1B2A44">AngⅡ: 혈관 수축</text><text x="255" y="192" text-anchor="start" font-size="9.6" fill="#1B2A44">알도스테론: Na·물 재흡수</text><text x="255" y="207" text-anchor="start" font-size="9.6" fill="#1B2A44">섬유화 · 혈관 리모델링</text><rect x="475" y="126" width="210" height="96" rx="9" fill="#eef4ff" stroke="#2B5FC4" stroke-width="1.5"></rect><text x="580" y="144" text-anchor="middle" font-size="11" fill="#2B5FC4" font-weight="700">③ ADH · ET-1</text><text x="485" y="162" text-anchor="start" font-size="9.6" fill="#1B2A44">ADH(vasopressin): 물 재흡수</text><text x="485" y="177" text-anchor="start" font-size="9.6" fill="#1B2A44">Endothelin-1: 강한 혈관 수축</text><text x="485" y="192" text-anchor="start" font-size="9.6" fill="#1B2A44">BNP·ANP: 늘어난 심장이 분비</text><text x="485" y="207" text-anchor="start" font-size="9.6" fill="#1B2A44">→ 이뇨·혈관확장 (브레이크, 역부족)</text><path d="M120,222 L200,252" fill="none" stroke="#E23B3B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11r)"></path><path d="M350,222 L350,248" fill="none" stroke="#E23B3B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11r)"></path><path d="M580,222 L500,252" fill="none" stroke="#E23B3B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h11r)"></path><rect x="130" y="254" width="440" height="46" rx="9" fill="#fdecec" stroke="#E23B3B" stroke-width="1.6"></rect><text x="350" y="273" text-anchor="middle" font-size="10.8" fill="#E23B3B" font-weight="700">후부하↑ + 전부하↑(울혈·부종) + 심근 리모델링(편심성 비대·섬유화)</text><text x="350" y="291" text-anchor="middle" font-size="10.2" fill="#1B2A44" font-weight="700">→ 심장 일은 더 늘고 펌프는 더 약해짐 = 악순환</text><path d="M570,277 Q690,277 690,150 Q690,28 452,28" fill="none" stroke="#E23B3B" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="5 4" marker-end="url(#h11r)"></path><text x="632" y="316" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">말기: 비동기화 수축 · VPC→VT</text><text x="632" y="328" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">카테콜라민 고갈 → 서맥</text></svg></div></div><div class="why">
+<div class="mt">왜 몸은 "잘못된" 보상을 하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>압수용체(대동맥궁·경동맥동·신장 수입세동맥)는 <b>"압력/흐름"</b>만 잼. CO가 줄면 몸은 이것을 <b>출혈·탈수</b>와 똑같이 해석함</li>
+<li>출혈이라면 혈관을 조이고(α1), 심장을 빨리 뛰게 하고(β1), 물과 Na를 붙잡는 것(RAAS·ADH)이 정답 → 실제로 단기적으로 혈압·CO를 지켜 줌</li>
+<li>하지만 심부전은 피가 모자란 게 아니라 <b>이미 넘치는데 못 보내는</b> 상태 → 붙잡은 물은 울혈(폐수종·복수), 조인 혈관은 후부하↑, 빠른 심박은 산소 소모↑, AngⅡ·알도스테론은 <b>섬유화·리모델링</b> → 펌프 더 약해짐</li>
+<li>→ 그래서 심부전 약의 절반은 <b>이 보상을 끊는 약</b>(ACEI·ARB·spironolactone·β-blocker)이고, 나머지는 결과를 처리하는 약(이뇨제·혈관확장제·강심제)</li>
+</ul>
+</div><h3 class="lv2">1. Sympathetics — EARLY in CHF</h3><ul class="d">
+<li><b>부교감 감소</b> (필기: <span class="hlp">"↔ 교감신경계는 활성화"</span> <span class="tag t-pen">필기</span>) → 운동 후 심박 회복이 늦음</li>
+<li><b>반사 조절 변화</b>: 운동해도 빈맥을 못 올림(수용체 감소), 혈관확장 / <b>기립성 저혈압(orthostasis)</b> → 갑자기 흥분·운동 시 실신 가능 <span class="tag t-rec">수업</span></li>
+<li><b>부정맥 유발성 ↑</b> — tachycardia</li>
+<li><b>혈관 수축</b> — <b>α1 수용체 항진</b> / CO가 100 → 70으로 줄면 압수용체가 "압력이 적다"고 느껴 뇌가 혈관 수축·심박↑로 보상 <span class="tag t-rec">수업</span></li>
+</ul><h3 class="lv2">2. More Sympathetics — EARLY to Progressed</h3><ul class="d">
+<li><b>RAAS 활성화</b> (β1 수용체 경유) — 필기: <span class="hlp">"혈관을 수축시킴"</span> <span class="tag t-pen">필기</span> / β-blocker가 RAAS를 어느 정도 억제하는 이유 <span class="tag t-rec">수업</span></li>
+<li>카테콜라민(도파민·노르에피네프린·에피네프린) 농도가 증상에 비례해 ↑ → 그러나 <b>노르에피네프린 저장고는 고갈</b> (만드는 속도보다 쓰는 속도가 빠름) → 말기엔 오히려 <b>정상~느린 심박</b> <span class="tag t-rec">수업</span></li>
+<li><b>혈류 재분배</b> → <b>말초 저관류</b> (큰 혈관은 괜찮지만 말초는 혈관수축으로 under-circulation)</li>
+<li>아드레날린계가 RAAS를 활성화</li>
+<li>심부전에서 심박이 빠른 건 어느 정도 괜찮음 — 하지만 <b>갑자기 느려지면</b>(체중도 함께 빠지면) 좋지 않은 신호 → 보호자에게 미리 알려 줄 것 <span class="tag t-rec">수업</span></li>
+</ul><span class="pno">3</span></section><section class="page" style=""><h3 class="lv2">3. RAAS · Dysynchronization — LATER in CHF</h3><div class="two">
+<div>
+<ul class="d">
+<li>RAAS는 <b>bradykinin 시스템</b>과 맞물림: 혈관수축의 보상으로 bradykinin(혈관확장)도 활성화되지만, 말기엔 RAAS가 더 항진되어 bradykinin을 간섭·차단 → <b>혈관확장 보상마저 사라짐</b> <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li><b>Dysynchronization</b>: 비정상 수축 · 전도 → <b>wide QRS → VPCs → VT</b>, discordant ventricular contraction</li>
+<li>재동기화(resynchronization) 시도 = <b>failed</b> (역학·에너지 개선 X)</li>
+<li>"확실한 것 하나는 심장부전 환자의 심장은 잘 동기화되어 움직이지 않는다는 것"</li>
+<li>폐수종으로 안 죽으면 → <b>부정맥으로 죽음</b> <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="why">
+<div class="mt">ANP·BNP는 "착한" 호르몬인데 왜 못 막나 · 왜 검사에 쓰나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>ANP(심방)·BNP(주로 심실)는 벽이 <b>늘어나면(stretch)</b> 분비 → Na 배설·혈관확장·RAAS 억제 = 몸의 자체 브레이크</li>
+<li>하지만 심부전에선 수용체 반응이 둔해지고 RAAS·교감의 힘이 훨씬 커서 역부족</li>
+<li>"늘어난 만큼 나온다" → 혈중 <b>NT-proBNP</b>가 심장 부담의 지표(호흡곤란이 심장 때문인지 감별) (정리자 보충) / 치료제 "Natriuretic peptide agonists"는 이 브레이크를 약으로 강화하려는 개념</li>
+</ul>
+</div><h2 class="lv1">Ⅲ. 심장부전의 인지 <span class="en">Recognition</span></h2><div class="two">
+<div>
+<div class="memo">
+<div class="mt">임상에서 만나는 심장부전의 종류</div>
+<ul class="c">
+<li><b>1. Acute (Emergency)</b> — 호흡곤란, 심인성 폐수종(CPE)으로 응급 내원 → 살려내야 함</li>
+<li><b>2. Stable</b> — 정기 신체검사에서 심장병·심부전 유무를 인지하는 <b>가장 좋은 방법은 심장청진</b> <span class="tag t-ex">시험</span></li>
+<li><b>3. …</b> — 비정형: 갑자기 <b>눈이 안 보인다</b>(전신 고혈압 → 시력 소실)로 오는 경우가 늘고 있음 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo blue">
+<div class="mt">Basic — Auscultation (청진) 목표</div>
+<ul class="c">
+<li>1. 심잡음이 있는지? (<b>모든 노령동물은 주의 깊은 청진이 필요</b>)</li>
+<li>2. 어떤 종류의 심잡음인지? (수축기? 이완기?)</li>
+<li>3. 이 심잡음이 의미하는 것은? — 개 / 고양이</li>
+<li>어떤 환자든(예방접종·피부·종양…) 일단 <b>모두 청진</b> 권장 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+</div><ul class="d">
+<li><b>개</b>: 심잡음이 있으면 <b>~99% 심장병</b> → 추가 검사(X-ray·초음파·ECG) <span class="tag t-rec">수업</span></li>
+<li><b>고양이</b>: 심잡음 = 무조건 심장병은 아님. 그래도 이상한 것이므로 추가 검사 / 고양이 심장은 근육질이라 내강이 넉넉지 않음 → 병원 스트레스로 심박↑ 시 RV 유출로에서 난류 = <b>DRVOTO</b>(dynamic right ventricular outflow tract obstruction) · white coat 효과로 정상도 잡음 <span class="tag t-rec">수업</span></li>
+</ul><h3 class="lv2">AV Valve Degeneration (승모판·삼첨판 역류) <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li>Breeds: <b>소형견</b>에서 다발 / Ages: <b>노령성</b></li>
+<li>소형견 심장질병 중 <b>약 75%</b></li>
+<li>승모판과 삼첨판의 <b>점액종성 퇴행성 변성</b>이 가장 큰 원인</li>
+<li>판막이 굵어지고 두꺼워지고 뭉툭해짐 → 잘 안 닫혀 역류 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>X-ray 필기: <span class="hlp">"심장 커짐 (Trachea 올라감)"</span> <span class="tag t-pen">필기</span> — LA·LV가 커지면 기관이 등쪽으로 밀려 올라감</li>
+<li>한국도 미국도 소형견 비율이 높음 → MMVD가 심부전의 대표 원인 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><span class="pno">4</span></section><section class="page" style=""><h2 class="lv1">Ⅳ. 심장병 · 심부전의 분류 <span class="en">Classification &amp; Staging</span></h2><table>
+<caption>표 3. 기능 분류(NYHA) vs 단계 분류(ACVIM) <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:50%">Functional — NYHA (사람 기준)</th><th>Stages — ACVIM</th></tr></thead>
+<tbody>
+<tr><td><b>Class Ⅰ</b> — 운동해도 무증상</td><td><b>Stage A</b> — 심장병 위험군</td></tr>
+<tr><td><b>Class Ⅱ</b> — 격한 운동 시에만 증상</td><td><b>Stage B</b> — 구조적 심장병, CHF 없음</td></tr>
+<tr><td><b>Class Ⅲ</b> — 일상 활동에서 증상</td><td><b>Stage C</b> — 과거 또는 현재 CHF</td></tr>
+<tr><td><b>Class Ⅳ</b> — 휴식 시에도 심한 증상</td><td><b>Stage D</b> — 표준치료에 불응하는 CHF</td></tr>
+</tbody>
+</table><div class="two">
+<div>
+<table>
+<caption>표 4. ISACHC (심각정도) — 필기 "유럽에서 쓰는 방식" <span class="tag t-pen">필기</span></caption>
+<tbody>
+<tr><td class="kc" style="width:24%">Class Ⅰ</td><td>심장병 있음, 증상 없음, ECG 이상 가능</td></tr>
+<tr><td class="kc">Class Ⅱ</td><td>휴식·간단한 운동 시 약간의 증상</td></tr>
+<tr class="hi"><td class="kc">Class Ⅲa</td><td>현저한 운동불내성, 심한 호흡곤란, 복수</td></tr>
+<tr class="hi"><td class="kc">Class Ⅲb</td><td><b>병원 입원 치료 필요</b></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<table>
+<caption>표 5. ACVIM Consensus 2009 (+필기)</caption>
+<tbody>
+<tr><td class="kc" style="width:22%">Stage A</td><td>위험군, 현재 구조 이상 없음 — 필기 "심장에 구조적인 문제는 없음"</td></tr>
+<tr><td class="kc">Stage B (B1, B2)</td><td>구조적 심장병, 증상 없음 — 필기 "판막·심근 등에 구조적인 문제 있음" / B1 "이 단계까지는 약물치료 그다지 권장 X"</td></tr>
+<tr><td class="kc">Stage C</td><td>구조 이상 + 과거·현재 증상</td></tr>
+<tr class="hi"><td class="kc">Stage D</td><td>말기 — 필기 "약물 쓰더라도 신장도 영향받는 단계" <span class="tag t-pen">필기</span></td></tr>
+</tbody>
+</table>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 3. ACVIM Consensus 2019 Updated Classification — 단계별 치료 (슬라이드 + 필기 재구성)</div><svg viewBox="0 0 700 215" width="100%" style="max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="ACVIM 단계별 치료"><polygon points="20,50 136,50 150,78 136,106 20,106" fill="#efe9fb" stroke="#7B52C9" stroke-width="1.3"></polygon><text x="88.0" y="86" text-anchor="middle" font-size="22" fill="#3b2a6b" font-weight="700">A</text><polygon points="150,50 266,50 280,78 266,106 150,106 164,78" fill="#e6dcfa" stroke="#7B52C9" stroke-width="1.3"></polygon><text x="218.0" y="86" text-anchor="middle" font-size="22" fill="#3b2a6b" font-weight="700">B1</text><polygon points="280,50 396,50 410,78 396,106 280,106 294,78" fill="#d8c8f6" stroke="#7B52C9" stroke-width="1.3"></polygon><text x="348.0" y="86" text-anchor="middle" font-size="22" fill="#3b2a6b" font-weight="700">B2</text><polygon points="410,50 526,50 540,78 526,106 410,106 424,78" fill="#c9b1f2" stroke="#7B52C9" stroke-width="1.3"></polygon><text x="478.0" y="86" text-anchor="middle" font-size="22" fill="#3b2a6b" font-weight="700">C</text><polygon points="540,50 666,50 680,78 666,106 540,106 554,78" fill="#b896ec" stroke="#7B52C9" stroke-width="1.3"></polygon><text x="613.0" y="86" text-anchor="middle" font-size="22" fill="#3b2a6b" font-weight="700">D</text><text x="345" y="101" text-anchor="middle" font-size="9" fill="#3b2a6b" font-weight="700">Remodeling</text><line x1="410" y1="18" x2="410" y2="46" stroke="#E23B3B" stroke-width="2"></line><text x="405" y="28" text-anchor="end" font-size="10" fill="#6C7787" font-weight="700">← 무증상</text><text x="416" y="28" text-anchor="start" font-size="10" fill="#E23B3B" font-weight="700">임상증상 발현 →</text><text x="86" y="124" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">위험군 (소형견 등)</text><text x="216" y="124" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">구조 이상 · 비대 없음</text><text x="346" y="124" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">심장 비대 있음</text><text x="476" y="124" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">현재·과거 CHF</text><text x="606" y="124" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">표준치료 불응</text><text x="86" y="150" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">구조 정상</text><text x="216" y="150" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">치료 X · 정기검진</text><text x="346" y="150" text-anchor="middle" font-size="10" fill="#0F9268" font-weight="700">약물 시작 (pimobendan)</text><text x="476" y="150" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">Diuretics + ACEI</text><text x="476" y="164" text-anchor="middle" font-size="9.3" fill="#E23B3B" font-weight="700">+ Pimobendan</text><text x="606" y="150" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">+ TOPS</text><text x="606" y="164" text-anchor="middle" font-size="9.3" fill="#E23B3B" font-weight="700">Torsemide·O₂·Pimo·Sedation</text><text x="350" y="194" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">단계는 "추정" — B1이라 진단해도 B2일 수 있고, B2가 갑자기 C로 넘어가기도 함 → 정기 재검(3–6개월) (수업)</text><text x="350" y="209" text-anchor="middle" font-size="9.6" fill="#6C7787" font-weight="700">Stage D: 카디오레날 증후군으로 신장까지 나빠져 쓸 수 있는 약의 폭이 좁음</text></svg></div></div><ul class="d">
+<li><b>B1</b>: 흉부방사선·심초음파에서 심장 크기·모양 변화 없음 → <b>약물치료 하지 않음</b> / <b>B2</b>: <b>심장 비대(remodeling)</b> 있음 → 약물치료 시작. 보호자가 보는 증상도 B2 중간쯤부터 보일 수 있음 <span class="tag t-rec">수업</span></li>
+<li><b>C</b> = 표준치료(standard therapy): <b>Diuretics + ACEI + Pimobendan</b> <span class="tag t-ex">시험</span></li>
+<li><b>D</b> = 표준치료 불응 + 카디오레날 → 신장 때문에 약 선택 폭이 좁음 → <b>+ TOPS</b> (필기: Torsemide, 피모벤단) <span class="tag t-pen">필기</span></li>
+<li><b>TOPS</b> (2018–19년부터): <b>T</b>orsemide(furosemide보다 강력) · <b>O</b>xygen · <b>P</b>imobendan(오랄 솔루션 액상 / 응급엔 IV <b>levosimendan</b>) · <b>S</b>edation(호흡곤란으로 흥분하면 악화 → 진정시켜 천천히 숨쉬게) <span class="tag t-rec">수업</span></li>
+</ul><span class="pno">5</span></section><section class="page" style=""><div class="why">
+<div class="mt">왜 B1은 치료 안 하고 B2부터 하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>B1은 판막이 새도 양이 적어 심장이 커지지 않은 상태 → 상당수는 평생 CHF까지 안 가고, 약을 써도 이득이 증명되지 않음 (약값·부작용만)</li>
+<li>B2는 <b>심장이 커질 만큼 역류가 많다</b>(LA·LV 확대 = 용적 과부하가 실제로 일하는 중) → 이때 pimobendan을 쓰면 CHF 발생이 의미 있게 늦춰졌다는 연구(EPIC study, 약 15개월 지연) 이후 2019 지침에 반영 (정리자 보충)</li>
+<li>단계는 영상으로 "추정"한 것 → 정확히 몇 % 진행했는지는 모름 → 보호자에게 한계를 설명하고 <b>정기 재검</b>으로 설득 <span class="tag t-rec">수업</span></li>
+</ul>
+</div><h2 class="lv1">Ⅴ. 심부전 치료의 원칙 <span class="en">Management of Heart Failure</span></h2><div class="two">
+<div>
+<table>
+<caption>표 6. 치료 목표 <span class="tag t-ex">시험</span></caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:44%">Control edema</td><td>→ <b>reduce preload</b></td></tr>
+<tr><td class="kc">Improve cardiac function</td><td>→ 수축기 또는 이완기 기능 개선</td></tr>
+<tr class="hi"><td class="kc">Reduce cardiac work load</td><td>→ <b>reduce afterload</b></td></tr>
+<tr><td class="kc">Control HR &amp; rhythm</td><td>→ tachy or brady → back to normal</td></tr>
+<tr><td class="kc">Control blood pressure</td><td>→ hyper or hypo → back to normal (최신)</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="memo">
+<div class="mt">심장부전의 치료: 질병과 보상</div>
+<ul class="c">
+<li>Diet = 영양학적 고려 · Preload · Afterload · Contractility · Heart Rate &amp; Rhythm · Adjustment of Sympathetics</li>
+<li><b>Neurohormonal Adjustments</b>: <b>ACE inhibitors</b> · Angiotensin-receptor blockers · Aldosterone-receptor blockers · Natriuretic peptide agonists</li>
+<li>The Common Drugs of Today: <b>Diuretics + ACEI = 기본 조합</b> · Vasodilators · Digoxin · Pimobendan · Antiarrhythmics · ARBs · Diet</li>
+</ul>
+</div>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 4. 치료 표적 — 정맥(전부하) · 심장(펌프) · 동맥(후부하) 어디를 겨냥하나 (정리자 모식도)</div><svg viewBox="0 0 700 270" width="100%" style="max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="심부전 치료 표적"><defs><marker id="h12r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h12b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h12k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h12g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h12v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h12o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h12n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="20" y="40" width="170" height="60" rx="8" fill="#eef4ff" stroke="#2B5FC4" stroke-width="1.5"></rect><text x="105.0" y="68.0" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">정맥 = 전부하</text><text x="105.0" y="82.0" text-anchor="middle" font-size="9.3" fill="#6C7787">심장으로 돌아오는 양</text><rect x="265" y="30" width="170" height="80" rx="8" fill="#f6d5d3" stroke="#9c4d49" stroke-width="1.5"></rect><text x="350.0" y="68.0" text-anchor="middle" font-size="12.5" fill="#9c4d49" font-weight="700">심장 (펌프)</text><text x="350.0" y="82.0" text-anchor="middle" font-size="9.3" fill="#6C7787">수축력 · 이완 · 심박/리듬</text><rect x="510" y="40" width="170" height="60" rx="8" fill="#fdecec" stroke="#E23B3B" stroke-width="1.5"></rect><text x="595.0" y="68.0" text-anchor="middle" font-size="12" fill="#E23B3B" font-weight="700">동맥 = 후부하</text><text x="595.0" y="82.0" text-anchor="middle" font-size="9.3" fill="#6C7787">심장이 밀어내야 할 저항</text><path d="M190,70 L259,70" fill="none" stroke="#2B5FC4" stroke-width="2.4" stroke-linecap="round" marker-end="url(#h12b)"></path><path d="M435,70 L504,70" fill="none" stroke="#E23B3B" stroke-width="2.4" stroke-linecap="round" marker-end="url(#h12r)"></path><text x="24" y="124" text-anchor="start" font-size="10" fill="#2B5FC4">① 부종 조절 = 전부하↓</text><text x="24" y="139" text-anchor="start" font-size="10" fill="#2B5FC4">• 이뇨제 (furosemide·torsemide)</text><text x="24" y="154" text-anchor="start" font-size="10" fill="#2B5FC4">• 정맥확장 (nitroglycerin·</text><text x="24" y="169" text-anchor="start" font-size="10" fill="#2B5FC4">   nitroprusside)</text><text x="268" y="132" text-anchor="start" font-size="10" fill="#9c4d49">② 심기능 개선</text><text x="268" y="147" text-anchor="start" font-size="10" fill="#9c4d49">• 수축↑: pimobendan·digoxin·</text><text x="268" y="162" text-anchor="start" font-size="10" fill="#9c4d49">   dobutamine</text><text x="268" y="177" text-anchor="start" font-size="10" fill="#9c4d49">④ 심박·리듬 → 정상으로</text><text x="268" y="192" text-anchor="start" font-size="10" fill="#9c4d49">• 항부정맥제 · digoxin</text><text x="514" y="124" text-anchor="start" font-size="10" fill="#E23B3B">③ 일 부담↓ = 후부하↓</text><text x="514" y="139" text-anchor="start" font-size="10" fill="#E23B3B">• 동맥확장 (amlodipine·</text><text x="514" y="154" text-anchor="start" font-size="10" fill="#E23B3B">   hydralazine)</text><text x="514" y="169" text-anchor="start" font-size="10" fill="#E23B3B">⑤ 혈압 조절 (고·저 → 정상)</text><rect x="120" y="222" width="460" height="40" rx="9" fill="#f6efff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="350" y="238" text-anchor="middle" font-size="10.4" fill="#7B52C9" font-weight="700">+ 신경호르몬 조절: ACEI · ARB · Spironolactone (RAAS 차단, 동·정맥 완만한 확장)</text><text x="350" y="254" text-anchor="middle" font-size="9.8" fill="#6C7787" font-weight="700">+ 교감 조절 (β-blocker) · 식이 (타우린·L-carnitine)</text></svg></div></div><span class="pno">6</span></section><section class="page" style=""><ul class="d">
+<li><b>수업 정리</b> <span class="tag t-rec">수업</span>
+<ul class="c">
+<li>① 부종: 폐수종·흉수·복수 어디든 <b>전부하를 줄이는 것</b>이 개념 → 이뇨제. 이뇨제엔 신경호르몬 약(ACEI 또는 알도스테론 차단제)을 <b>꼭 조합</b></li>
+<li>② 심기능: 수축력이 많이 떨어졌으면 <b>pimobendan</b> 같은 양성 수축력제 / 이완기능은 β-blocker·CCB(음성 변력) — 이완기능만 올려 주는 특화 약은 아직 없음</li>
+<li>③ 후부하: 동맥 확장제 <b>amlodipine · hydralazine</b></li>
+<li>④ 심박·리듬: <b>rate control</b>(심박을 정상으로) vs <b>rhythm control</b>(동리듬으로 되돌림) — 기본은 rate control</li>
+<li>식이: <b>타우린 · L-carnitine</b> 같은 아미노산 보충 고려</li>
+<li>Vasodilators 필기: <span class="hlp">"어디(Vein, Artery)를 확장시키냐에 따라 쓰는 게 달라짐"</span> <span class="tag t-pen">필기</span></li>
+</ul></li>
+<li><b>혈압</b>: 요즘 개도 혈압을 많이 잼. 고지방 식이·췌장염 등 환경 요인으로 고혈압 환자가 꽤 많음 → 고혈압이면 혈압 조절도 같이. 고양이는 교감 우세라 원래 심박이 빠르고 고혈압이 많음 <span class="tag t-rec">수업</span></li>
+</ul><div class="memo red">
+<div class="mt">Heart failure in Cats — 고양이는 개가 아님 <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li>심장부전의 <b>기전</b>이 다름 (필기: <span class="hlp">"HCM 때문에 Heart failure가 옴"</span> <span class="tag t-pen">필기</span>) · <b>치료와 접근</b>이 다름 · <b>모니터와 follow-up</b>도 다름</li>
+<li>Pimobendan은 고양이에선 개처럼 적극 추천되는 약이 아님 / furosemide 용량도 개보다 낮게 <span class="tag t-rec">수업</span></li>
+</ul>
+</div><h2 class="lv1">Ⅵ. 산소 치료 <span class="en">Oxygen Therapy — 응급처치</span></h2><div class="two">
+<div>
+<div class="memo">
+<div class="mt">Rescue breathing (Clinics) — CPA 시</div>
+<ul class="c">
+<li><b>Ambu bag</b> 또는 마취기 (<b>마취가스를 모두 빼고</b>)</li>
+<li><b>100% 산소</b> 권장(실내공기도 가능) → 안정되면 <b>60%로 낮춤</b></li>
+<li>호흡수 <b>10–24회/분</b> (작은 동물은 더 높게)</li>
+<li>일회호흡량 <b>10–15 ml/kg</b> — 과팽창 → <b>barotrauma</b>, 병든 폐는 쉽게 과팽창</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo blue">
+<div class="mt">일반 산소 치료</div>
+<ul class="c">
+<li>적응증: 급성 호흡부전</li>
+<li><b>30–40% 산소</b> (일반적으로)</li>
+<li>유속: 처음 <b>10 L/min</b> → 유지 <b>5 L/min</b></li>
+<li>코 카테터 · 마스크 · 산소방(ICU) — <b>Stabilization!!!</b></li>
+</ul>
+</div>
+</div>
+</div><ul class="d">
+<li>산소 공급을 가볍게 생각하지 말 것 — 산소만 잘 줘도 호흡곤란이 많이 완화됨. 고압산소 치료실도 많이 씀 <span class="tag t-rec">수업</span></li>
+<li>CPE는 furosemide + 산소로 처음 2–3번은 극적으로 좋아지지만, 반복될수록 반응이 떨어지는 시점이 옴 <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">왜 100%를 계속 주지 않고 60%로 낮추나 · 왜 일회호흡량을 제한하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>고농도 산소를 오래 마시면 활성산소가 폐포 상피를 손상 = <b>산소 독성</b>(대략 &gt; 60%를 24시간 이상) → 안정되면 낮춤</li>
+<li>폐수종 폐는 물 찬 폐포와 멀쩡한 폐포가 섞여 있음 → 같은 양을 불어넣으면 <b>멀쩡한 폐포만 과하게 늘어나</b> 터짐(barotrauma) → 10–15 ml/kg로 제한</li>
+<li>산소 자체가 <b>폐동맥 확장</b>(저산소성 폐혈관수축 해제) 효과가 있어 우심 부담도 줄임</li>
+</ul>
+</div><span class="pno">7</span></section><section class="page" style=""><h2 class="lv1">Ⅶ. 이뇨제 <span class="en">Diuretics</span></h2><h3 class="lv2">1. 신장 관류 — 정상 vs 심부전 <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>Sodium and water retention is the most significant renal response to CHF!!!</b></span></p><ul class="d">
+<li>필기: <span class="hlp">"Fluid · Sodium retention이 동시에 일어남 ∴ 부종 발생"</span>, 심부전 그림에 "혈류 감소" <span class="tag t-pen">필기</span></li>
+<li>심부전이면 신장으로 오는 혈류가 적음(역류만큼 줄어 예: 70) → 걸러지는 양도 적고, 신장은 정상에 맞추려 <b>재흡수를 과도하게</b> 함 → 체내에 물·Na 동시 저류 <span class="tag t-rec">수업</span></li>
+<li>이뇨제 = 사구체·세뇨관에 작용해 오줌으로 더 빠져나가게(재흡수↓) → 저류 최소화. 뒤집어 말하면 <b>네프론을 계속 자극</b> → 장기적으로 신장에 영향 <span class="tag t-rec">수업</span></li>
+</ul><h3 class="lv2">2. 이뇨제 종류 — "이뇨제란 한마디로 오줌 생산을 촉진하는 약이다"</h3><div class="three" style="display:block;"><div><div class="cap">그림 5. 네프론에서 이뇨제 작용 부위 — 어디서 Na를 막느냐가 효과의 크기를 정한다 (정리자 모식도)</div><svg viewBox="0 0 700 330" width="100%" style="max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="이뇨제 작용 부위"><defs><marker id="h13r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h13b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h13k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h13g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h13v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h13o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h13n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><circle cx="70" cy="60" r="26" fill="#fbe3e8" stroke="#9c4d49" stroke-width="1.8"></circle><path d="M58,52 q6,-10 12,0 q6,10 12,0 M56,66 q7,-9 14,0 q7,9 14,0" stroke="#d24a4a" stroke-width="1.6" fill="none"></path><text x="70" y="25" text-anchor="middle" font-size="9.5" fill="#1B2A44" font-weight="700">사구체</text><path d="M96,60 C130,60 120,90 150,90 C180,90 170,62 200,62 C222,62 225,80 225,100 L225,250 C225,272 265,272 265,250 L265,110 C265,90 285,88 300,95 C318,104 330,84 345,84 L360,84 L360,290" stroke="#e9a7b5" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"></path><path d="M96,60 C130,60 120,90 150,90 C180,90 170,62 200,62 C222,62 225,80 225,100 L225,250 C225,272 265,272 265,250 L265,110 C265,90 285,88 300,95 C318,104 330,84 345,84 L360,84 L360,290" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></path><circle cx="160" cy="90" r="11" fill="#0F9268"></circle><text x="160" y="94" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">1</text><circle cx="265" cy="180" r="11" fill="#E23B3B"></circle><text x="265" y="184" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">2</text><circle cx="322" cy="96" r="11" fill="#E0912B"></circle><text x="322" y="100" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">3</text><circle cx="360" cy="230" r="11" fill="#7B52C9"></circle><text x="360" y="234" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">4</text><text x="140" y="118" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">근위세뇨관</text><text x="196" y="286" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">헨레 고리</text><text x="300" y="66" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">원위세뇨관</text><text x="388" y="300" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">집합관</text><rect x="410" y="30" width="280" height="52" rx="8" fill="#fff" stroke="#0F9268" stroke-width="1.5"></rect><text x="420" y="49" text-anchor="start" font-size="10.6" fill="#0F9268" font-weight="700">① SGLT2 억제제</text><text x="420" y="65" text-anchor="start" font-size="9.2" fill="#1B2A44">포도당·Na 재흡수 차단 → 소변에 당 → 삼투성 이뇨</text><rect x="410" y="92" width="280" height="52" rx="8" fill="#fff" stroke="#E23B3B" stroke-width="1.5"></rect><text x="420" y="111" text-anchor="start" font-size="10.6" fill="#E23B3B" font-weight="700">② Loop: Furosemide · Torsemide</text><text x="420" y="127" text-anchor="start" font-size="9.2" fill="#1B2A44">굵은 상행지 NKCC2 차단 · Na 약 25% 재흡수 지점 → 가장 강력</text><rect x="410" y="154" width="280" height="52" rx="8" fill="#fff" stroke="#E0912B" stroke-width="1.5"></rect><text x="420" y="173" text-anchor="start" font-size="10.6" fill="#E0912B" font-weight="700">③ Thiazide: Hydrochlorothiazide</text><text x="420" y="189" text-anchor="start" font-size="9.2" fill="#1B2A44">원위세뇨관 NCC 차단 · Na 5–10%</text><text x="420" y="201" text-anchor="start" font-size="9.2" fill="#1B2A44">단독은 약하나 loop와 병용 시 강력</text><rect x="410" y="216" width="280" height="52" rx="8" fill="#fff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="420" y="235" text-anchor="start" font-size="10.6" fill="#7B52C9" font-weight="700">④ Spironolactone (K⁺ 보존)</text><text x="420" y="251" text-anchor="start" font-size="9.2" fill="#1B2A44">알도스테론 수용체 차단 · Na 1–3% → 이뇨 약함</text><text x="420" y="263" text-anchor="start" font-size="9.2" fill="#1B2A44">K⁺ 배설↓</text><text x="205" y="322" text-anchor="middle" font-size="9.6" fill="#E23B3B" font-weight="700">앞에서 Na를 막을수록 ④에 Na가 많이 도착 → Na↔K 교환↑ → 저칼륨혈증</text></svg></div></div><table>
+<caption>표 7. 이뇨제 3계열 (+필기)</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:24%">Loop diuretics</td><td><b>Furosemide</b> / <b>Torsemide</b> — 필기 "∴ 메인 약" / 심부전에서 쓰는 이뇨제의 기본, 효과 가장 좋음 · Torsemide는 furosemide보다 <b>약 10배</b> 강력 (Stage D·TOPS) <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">Thiazide diuretics</td><td><b>Hydrochlorothiazide</b> — 필기 "→ 이뇨효과가 더 세긴 한데… 위험" → 그래서 효율적인 loop를 씀 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">Aldosterone-receptor blockers</td><td>→ <b>K⁺ sparing diuretics</b> — <b>Spironolactone</b> (Ⅷ-3)</td></tr>
+</tbody>
+</table><span class="pno">8</span></section><section class="page" style=""><div class="why">
+<div class="mt">loop 이뇨제가 강한 이유 · 저칼륨혈증이 생기는 이유 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>헨레 고리 굵은 상행지는 걸러진 Na의 <b>약 25%</b>를 NKCC2로 재흡수 + 여기서 수질 삼투 기울기를 만듦 → 막으면 Na도 물도 대량으로 빠지고 농축도 못 함 → 가장 강력</li>
+<li>Furosemide는 <b>근위세뇨관에서 분비되어 관 안쪽(lumen)</b>에서 작용 → 신장 혈류가 줄면 작용 부위까지 덜 도착 = 심부전·신부전에서 <b>이뇨제 내성</b>의 한 원인</li>
+<li>앞에서 Na를 막으면 뒤(집합관)로 Na가 많이 도착 → 알도스테론 작용으로 Na를 붙잡는 대신 <b>K⁺를 내보냄</b> → 저칼륨혈증. 그리고 K는 <b>오줌으로만 나가는</b> 이온이라 오줌이 많을수록 손실 <span class="tag t-rec">수업</span></li>
+<li>Spironolactone은 맨 끝에서 알도스테론을 막으니 이뇨는 약하지만 K를 지켜 줌 → loop와 섞어 저칼륨 방지</li>
+</ul>
+</div><h3 class="lv2">3. Furosemide 사용법 <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>To increase the dose, ideally increase the frequency</b> — 용량을 높이기보다는 횟수를 늘리는 것이 이상적이다</span></p><ul class="d">
+<li>예: 4 mg을 한 번에 주기보다 <b>2 mg씩 두 번</b>으로 나누면 신장 부담↓ + 이뇨 효율↑ / 보호자가 집에 오래 있으면 BID → <b>TID</b>로 <span class="tag t-rec">수업</span></li>
+</ul><div class="two">
+<div>
+<div class="memo red">
+<div class="mt">Fulminant Pulmonary Edema / 급성 폐수종</div>
+<ul class="c">
+<li>Furosemide <b>TO Effect IV</b>: <b>4 mg/kg IV q2h</b></li>
+<li>Onset <b>10 min</b>, peak <b>20–30 min</b></li>
+<li>호흡수를 <b>30–40회/분</b>까지 낮춤</li>
+<li>이후 <b>4 mg/kg IV q6h</b> 또는 <b>CRI</b></li>
+<li>Oxygen (intranasal)</li>
+<li>급할 땐 8 mg/kg 정도까지도 / 효과 판단 = 호흡수(60 → 50 → 40) <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo green">
+<div class="mt">Diuresis / 이뇨 — 순서</div>
+<ul class="c">
+<li><b>First a breath</b> — 먼저 숨부터 (응급은 강하게 써도 됨)</li>
+<li><b>Then the kidneys</b> — 그다음 신장</li>
+<li><b>The cost to pay</b> — 대가(신장 부담)는 치르게 됨</li>
+<li>응급: bolus로 빨리 → 호흡이 좋아지면 <b>CRI로 전환</b> → 카디오레날 예방 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+</div><h3 class="lv2">4. Furosemide Infusion vs Bolus</h3><p class="txt"><b>Cardiorenal Syndrome: Common Problem in Dogs and Cats</b> — <span class="hl">Furosemide를 사용하면서 신장의 기능평가에 대한 각별한 관심이 필요하다</span> (필기: "kidney에 영향…") <span class="tag t-pen">필기</span></p><div class="two">
+<div>
+<ul class="d">
+<li><b>Constant Furosemide Infusion</b>
+<ul class="c">
+<li><b>More effective diuresis</b> — 근위세뇨관에 일정하게 전달</li>
+<li><b>Better in diuretic resistance</b> — 심한 CHF의 신기능 저하, 만성 이뇨제에 대한 신장 적응</li>
+<li><b>No rebound sodium retention</b></li>
+<li><b>Lower total doses</b> required</li>
+</ul></li>
+</ul>
+</div>
+<div>
+<div class="memo">
+<div class="mt">Furosemide CRI 용량 <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li>Initial loading: <b>0.5–0.7 mg/kg/hr</b></li>
+<li>Infusion rate titrated: <b>0.1–0.7 mg/kg/hr</b></li>
+<li>예: 10 kg → 1시간에 5 mg을 적정량 생리식염수에 섞어 주입, <b>빛 차단 튜브</b> 사용 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+</div><span class="pno">9</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 6. Bolus vs CRI — 같은 총량이라도 "문턱 위에 있는 시간"이 다르다 (정리자 모식도)</div><svg viewBox="0 0 680 230" width="100%" style="max-width:680px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="furosemide bolus vs CRI"><path d="M50,25 L50,185 L430,185" stroke="#1B2A44" stroke-width="1.5" fill="none"></path><text x="240.0" y="207" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">시간 (h) →  0 · · · 6 · · · 12</text><text x="46" y="15" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">세뇨관 내 furosemide 농도</text><line x1="50" y1="135.0" x2="430" y2="135.0" stroke="#6C7787" stroke-dasharray="5 4"></line><text x="428" y="130.0" text-anchor="end" font-size="9.3" fill="#6C7787" font-weight="700">이뇨 문턱</text><polyline points="50.0,35.0 51.6,40.7 53.2,46.1 54.8,51.3 56.3,56.4 57.9,61.2 59.5,65.9 61.1,70.4 62.7,74.7 64.2,78.9 65.8,82.9 67.4,86.7 69.0,90.5 70.6,94.0 72.2,97.5 73.8,100.8 75.3,103.9 76.9,107.0 78.5,109.9 80.1,112.8 81.7,115.5 83.2,118.1 84.8,120.6 86.4,123.1 88.0,125.4 89.6,127.7 91.2,129.8 92.8,131.9 94.3,133.9 95.9,135.8 97.5,137.7 99.1,139.5 100.7,141.2 102.2,142.8 103.8,144.4 105.4,146.0 107.0,147.4 108.6,148.9 110.2,150.2 111.8,151.5 113.3,152.8 114.9,154.0 116.5,155.2 118.1,156.3 119.7,157.4 121.2,158.4 122.8,159.4 124.4,160.4 126.0,161.3 127.6,162.2 129.2,163.1 130.8,163.9 132.3,164.7 133.9,165.5 135.5,166.2 137.1,166.9 138.7,167.6 140.2,168.3 141.8,168.9 143.4,169.5 145.0,170.1 146.6,170.6 148.2,171.2 149.8,171.7 151.3,172.2 152.9,172.7 154.5,173.2 156.1,173.6 157.7,174.0 159.2,174.4 160.8,174.8 162.4,175.2 164.0,175.6 165.6,175.9 167.2,176.3 168.8,176.6 170.3,176.9 171.9,177.2 173.5,177.5 175.1,177.8 176.7,178.1 178.2,178.3 179.8,178.6 181.4,178.8 183.0,179.1 184.6,179.3 186.2,179.5 187.8,179.7 189.3,179.9 190.9,180.1 192.5,180.3 194.1,180.5 195.7,180.6 197.2,180.8 198.8,181.0 200.4,181.1 202.0,181.3 203.6,181.4 205.2,181.5 206.8,181.7 208.3,181.8 209.9,181.9 211.5,182.0 213.1,182.1 214.7,182.3 216.2,182.4 217.8,182.5 219.4,182.6 221.0,182.6 222.6,182.7 224.2,182.8 225.8,182.9 227.3,183.0 228.9,183.1 230.5,183.1 232.1,183.2 233.7,183.3 235.2,183.3 236.8,183.4 238.4,183.5 240.0,35.0 241.6,40.7 243.2,46.1 244.8,51.3 246.3,56.4 247.9,61.2 249.5,65.9 251.1,70.4 252.7,74.7 254.2,78.9 255.8,82.9 257.4,86.7 259.0,90.5 260.6,94.0 262.2,97.5 263.8,100.8 265.3,103.9 266.9,107.0 268.5,109.9 270.1,112.8 271.7,115.5 273.2,118.1 274.8,120.6 276.4,123.1 278.0,125.4 279.6,127.7 281.2,129.8 282.8,131.9 284.3,133.9 285.9,135.8 287.5,137.7 289.1,139.5 290.7,141.2 292.2,142.8 293.8,144.4 295.4,146.0 297.0,147.4 298.6,148.9 300.2,150.2 301.8,151.5 303.3,152.8 304.9,154.0 306.5,155.2 308.1,156.3 309.7,157.4 311.2,158.4 312.8,159.4 314.4,160.4 316.0,161.3 317.6,162.2 319.2,163.1 320.8,163.9 322.3,164.7 323.9,165.5 325.5,166.2 327.1,166.9 328.7,167.6 330.2,168.3 331.8,168.9 333.4,169.5 335.0,170.1 336.6,170.6 338.2,171.2 339.8,171.7 341.3,172.2 342.9,172.7 344.5,173.2 346.1,173.6 347.7,174.0 349.2,174.4 350.8,174.8 352.4,175.2 354.0,175.6 355.6,175.9 357.2,176.3 358.8,176.6 360.3,176.9 361.9,177.2 363.5,177.5 365.1,177.8 366.7,178.1 368.2,178.3 369.8,178.6 371.4,178.8 373.0,179.1 374.6,179.3 376.2,179.5 377.8,179.7 379.3,179.9 380.9,180.1 382.5,180.3 384.1,180.5 385.7,180.6 387.2,180.8 388.8,181.0 390.4,181.1 392.0,181.3 393.6,181.4 395.2,181.5 396.8,181.7 398.3,181.8 399.9,181.9 401.5,182.0 403.1,182.1 404.7,182.3 406.2,182.4 407.8,182.5 409.4,182.6 411.0,182.6 412.6,182.7 414.2,182.8 415.8,182.9 417.3,183.0 418.9,183.1 420.5,183.1 422.1,183.2 423.7,183.3 425.2,183.3 426.8,183.4 428.4,183.5 430.0,35.0" fill="none" stroke="#E23B3B" stroke-width="2.4"></polyline><rect x="95.9" y="135.0" width="144.1" height="50.0" fill="#E23B3B" opacity=".08"></rect><rect x="285.9" y="135.0" width="144.1" height="50.0" fill="#E23B3B" opacity=".08"></rect><text x="164.0" y="162.5" text-anchor="middle" font-size="9.3" fill="#E23B3B" font-weight="700">반동 Na 재흡수</text><line x1="50" y1="112.5" x2="430" y2="112.5" stroke="#0F9268" stroke-width="2.6"></line><text x="335.0" y="105.50000000000001" text-anchor="middle" font-size="9.8" fill="#0F9268" font-weight="700">CRI: 계속 문턱 위</text><text x="90" y="39.0" text-anchor="start" font-size="10" fill="#E23B3B" font-weight="700">Bolus</text><text x="455" y="40" text-anchor="start" font-size="10.5" fill="#1B2A44" font-weight="700">같은 하루 총량이라도</text><text x="455" y="62" text-anchor="start" font-size="9.8" fill="#1B2A44">• Bolus: 문턱 위는 짧고 대부분 시간은</text><text x="455" y="79" text-anchor="start" font-size="9.8" fill="#1B2A44">  효과 없음 + 그 사이 Na를 다시 붙잡음</text><text x="455" y="96" text-anchor="start" font-size="9.8" fill="#1B2A44">• CRI: 근위세뇨관에 일정하게 전달</text><text x="455" y="113" text-anchor="start" font-size="9.8" fill="#1B2A44">  → 이뇨 효율↑ · 내성↓ · 반동 없음</text><text x="455" y="130" text-anchor="start" font-size="9.8" fill="#1B2A44">  → 총 용량↓ = 신장 부담↓</text><text x="455" y="147" text-anchor="start" font-size="9.8" fill="#1B2A44">• 횟수↑(BID→TID)도 같은 원리</text></svg></div></div><div class="why">
+<div class="mt">왜 횟수↑ · CRI가 더 좋은가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>Furosemide는 <b>반감기가 짧고(1–2시간)</b>, 세뇨관 농도가 <b>이뇨 문턱</b>을 넘어야만 효과 → 큰 bolus는 잠깐 과하게 넘었다가 금방 문턱 아래로 떨어짐</li>
+<li>문턱 아래 시간 동안 신장은 빠져나간 Na를 되찾으려 <b>오히려 더 붙잡음</b>(반동 Na 저류, "braking") → 하루 전체로 보면 이뇨 효과 상쇄</li>
+<li>같은 총량을 나눠 주거나(BID→TID) 계속 흘려 주면(CRI) 문턱 위 시간이 길어짐 → 적은 총량으로 더 많은 이뇨 + 저혈량·저혈압 급변이 적어 <b>신장 부담↓</b></li>
+</ul>
+</div><h3 class="lv2">5. 증례</h3><table>
+<caption>표 8. 증례 1 · 2 — 급성 심부전의 실제 치료 흐름</caption>
+<thead><tr><th style="width:12%"></th><th style="width:44%">증례 1: 둘리 (13세 SF Shihtzu)</th><th>증례 2: 마리 (10세 IF Maltese)</th></tr></thead>
+<tbody>
+<tr><td class="kc">주증</td><td>호흡곤란 · <b>객혈(hemoptysis)</b> — 객혈 = 폐포가 터질 정도로 심함 <span class="tag t-rec">수업</span></td><td>청색증 · 호흡곤란</td></tr>
+<tr><td class="kc">검사</td><td>심잡음, <b>폐포성 폐수종</b> / 심초음파 MMVD, 부정맥</td><td>수축기성 심잡음(심원성 호흡곤란), <b>폐포성 폐수종</b>, 승모판폐쇄부전 확진</td></tr>
+<tr class="hi"><td class="kc">진단</td><td><b>급성 심장부전</b> — ISACHC Ⅲb, ACVIM C</td><td><b>급성 심(장)부전</b> — ACVIM Stage C, Acute</td></tr>
+<tr><td class="kc">치료</td><td>FON → <b>FON + Nitroprusside CRI 2 mcg/kg/min</b>, furosemide 4 → 6 mg/kg → FON/Nitroprusside CRI + PO ACEI → PO only → 퇴원</td><td>FON → <b>Furosemide 2 mg/kg SC</b>(RR 40–50) → <b>0.5 mg/kg/hr CRI</b>(RR 20–30 → 안정화) → 4 mg SC q12h → PO only → 퇴원 (X-ray 폐수종 소실)</td></tr>
+</tbody>
+</table><p class="tnote">IV 라인 잡기가 어렵고 너무 약한 환자는 라인 잡다 CPA로 갈 수 있음 → SC furosemide로 시작, 호흡이 나아지면 라인 / Nitroglycerin은 패치·연고(ointment) 형태 — 바를 땐 장갑 <span class="tag t-rec">수업</span></p><h2 class="lv1">Ⅷ. 카디오레날 증후군 · 새로운 이뇨 전략 <span class="en">Cardiorenal Syndrome</span></h2><div class="two">
+<div>
+<ul class="d">
+<li><b>Heart failure → Kidney failure</b> <span class="tag t-ex">시험</span>
+<ul class="c">
+<li><b>만성 심부전</b>일수록 위험↑</li>
+<li><b>장기간 이뇨(long term diuresis)</b></li>
+</ul></li>
+<li><span class="hl"><b>Inability to excrete volume precedes diminution of cardiac output</b></span> — 체액 배설 능력 저하가 CO 감소보다 <b>먼저</b> 옴</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li><b>이뇨 요구량이 늘면 → 신기능 소실을 의심</b></li>
+<li>기전: <b>산화 스트레스 · 염증 반응</b> (+ 교감신경 자극 관여) — Paterna 2000</li>
+<li>슬라이드 그림: 심기능 저하 + <b>전신 혈관확장(이뇨제 치료)</b> → 저혈압 → 신관류↓ → <b>신허혈</b> → 세뇨관 손상·괴사 → <b>AKI</b></li>
+</ul>
+</div>
+</div><span class="pno">10</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 7. 카디오레날 증후군 — 심부전과 그 치료가 함께 신장을 때리는 악순환 (정리자 모식도)</div><svg viewBox="0 0 680 270" width="100%" style="max-width:680px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="카디오레날 증후군 악순환"><defs><marker id="h14r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h14b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h14k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h14g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h14v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h14o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h14n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="288" y="14" width="104" height="32" rx="9" fill="#fdecec" stroke="#E23B3B" stroke-width="1.5"></rect><text x="340" y="34" text-anchor="middle" font-size="10.8" fill="#E23B3B" font-weight="700">심부전 · CO↓</text><rect x="523" y="79" width="73" height="32" rx="9" fill="#fff6ea" stroke="#E0912B" stroke-width="1.5"></rect><text x="560" y="99" text-anchor="middle" font-size="10.8" fill="#E0912B" font-weight="700">신장 관류↓</text><rect x="432" y="189" width="175" height="32" rx="9" fill="#fff6ea" stroke="#E0912B" stroke-width="1.5"></rect><text x="520" y="209" text-anchor="middle" font-size="10.8" fill="#E0912B" font-weight="700">신허혈 → GFR↓ · AKI</text><rect x="57" y="189" width="206" height="32" rx="9" fill="#eef4ff" stroke="#2B5FC4" stroke-width="1.5"></rect><text x="160" y="209" text-anchor="middle" font-size="10.8" fill="#2B5FC4" font-weight="700">Na·물 배설 못함 → 체액 과부하</text><rect x="38" y="79" width="165" height="32" rx="9" fill="#f6efff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="120" y="99" text-anchor="middle" font-size="10.8" fill="#7B52C9" font-weight="700">울혈 악화 → 이뇨제 용량↑</text><path d="M420,40 Q520,50 545,76" fill="none" stroke="#E23B3B" stroke-width="1.9" stroke-linecap="round" marker-end="url(#h14r)"></path><path d="M565,113 L545,186" fill="none" stroke="#E23B3B" stroke-width="1.9" stroke-linecap="round" marker-end="url(#h14r)"></path><path d="M425,212 L285,212" fill="none" stroke="#E23B3B" stroke-width="1.9" stroke-linecap="round" marker-end="url(#h14r)"></path><path d="M140,188 L125,114" fill="none" stroke="#E23B3B" stroke-width="1.9" stroke-linecap="round" marker-end="url(#h14r)"></path><path d="M150,76 Q200,40 262,34" fill="none" stroke="#E23B3B" stroke-width="1.9" stroke-linecap="round" marker-end="url(#h14r)"></path><rect x="250" y="80" width="190" height="80" rx="9" fill="#fff" stroke="#6C7787" stroke-width="1.2" stroke-dasharray="4 3"></rect><text x="345" y="98" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">치료가 신장을 때림</text><text x="345" y="115" text-anchor="middle" font-size="9.4" fill="#1B2A44">과도한 이뇨 · ACEI · 혈관확장제</text><text x="345" y="129" text-anchor="middle" font-size="9.4" fill="#1B2A44">→ 저혈압 → 관류↓</text><text x="345" y="143" text-anchor="middle" font-size="9.4" fill="#1B2A44">+ 교감신경 · 산화스트레스 · 염증</text><path d="M440,112 L516,100" fill="none" stroke="#6C7787" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#h14g)"></path><text x="340" y="255" text-anchor="middle" font-size="9.8" fill="#1B2A44" font-weight="700">신장은 심장보다 먼저 변함: "CO 감소보다 체액 배설 능력 저하가 먼저" → 이뇨제 필요량↑ = 신기능 저하 신호</text></svg></div></div><div class="memo blue">
+<div class="mt">수업 포인트 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>신장은 체액·전해질·호르몬을 조절하는 <b>섬세한 장기</b> → 심장 기능 변화보다 <b>앞서</b> 변화가 나타나는데, 수치·증상으로 드러나야 알 수 있음</li>
+<li>응급 때 4 mg/kg로 잡은 용량을 <b>조절 없이 몇 달씩</b> 계속 먹이면 → 저혈압·신부전 → 카디오레날 증후군</li>
+<li>그래서 처방 후 <b>1–2주 사이에 반드시 재내원</b>: kidney panel · 혈압 체크 → furosemide 용량 조절. 자주 recheck할수록 안전하고 효과적. 보호자는 돈을 아끼고 싶어 하지만 <b>설득</b>해야 함</li>
+<li>Furosemide를 얼마나 <b>최적화(optimal)</b>하느냐가 관건 / 진행하면 CKD(네프론 70% 이상 소실) → 신장 수치 계속 상승 → 수액 치료도 병행해야 하는 말기</li>
+<li>고양이는 체액 출입에 특히 민감 → 신장 모니터를 더 주기적으로</li>
+</ul>
+</div><div class="why">
+<div class="mt">왜 신장이 심장보다 먼저 무너지나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>신장은 CO의 약 20–25%를 받는 <b>관류 의존 장기</b> → CO가 조금만 줄어도 신장 혈류는 먼저, 크게 줄어듦 (교감신경이 신장 혈관부터 조임)</li>
+<li>여기에 치료(이뇨 → 혈장량↓, ACEI → 수출세동맥 이완, 혈관확장제 → 혈압↓)가 겹치면 사구체 여과압이 무너짐 (Ⅸ-2 그림 9)</li>
+<li>신기능이 떨어지면 furosemide가 작용 부위(세뇨관 내강)에 덜 도착 → 같은 효과를 내려면 더 많은 용량 → 신장 더 손상 = <b>"이뇨제 요구량 증가 = 신기능 저하 신호"</b></li>
+</ul>
+</div><h3 class="lv2">1. 고장성 식염수 + 고용량 furosemide</h3><ul class="d">
+<li><b>Low dose hypertonic saline</b> with <b>high dose furosemide</b> (1.4–7.5% NaCl) — Paterna 2000
+<ul class="c">
+<li>단기·장기 <b>생존 기간 개선</b></li>
+<li><b>Normal salt diet better than low salt diet</b> <span class="tag t-ex">시험</span></li>
+<li>불응성(refractory) CHF에서 이뇨 증진</li>
+</ul></li>
+<li>거의 말기(심부전 + 카디오레날)에서 반복될 때 쓸 수 있는 방법 <span class="tag t-rec">수업</span></li>
+</ul><span class="pno">11</span></section><section class="page" style=""><div class="why">
+<div class="mt">심부전인데 소금을 주면 왜 좋아지나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>고장성 식염수는 조직의 물을 <b>혈관 안으로 끌어와</b> 유효 순환량·신장 관류를 올림 → furosemide가 작용 부위에 잘 도착 + 원위 세뇨관에 Na가 많이 와서 이뇨가 잘 됨</li>
+<li>저염식은 몸이 "Na가 부족하다"고 느껴 <b>RAAS를 더 활성화</b> → 이뇨제 효과를 상쇄 → 그래서 정상 염분 식이가 더 나았음</li>
+</ul>
+</div><h3 class="lv2">2. SGLT2 억제제 — 최신 경향 <span class="tag t-ex">시험</span></h3><ul class="d">
+<li><b>SGLT2 inhibitors induce osmotic diuresis via glucosuria</b> — 포도당을 소변으로 내보내며 삼투성 이뇨</li>
+<li>슬라이드 그림: Natriuresis/삼투성 이뇨 → 세뇨관-사구체 되먹임↑ → 수입세동맥 수축 → 사구체압↓ → <b>단백뇨↓, 신기능 보존</b> / 혈압↓ → 후부하↓ / 혈관 내 용적↓ → 전부하↓ → 심실 부하 개선</li>
+<li>Cardio-oncology (Dabour 2024): 심장 보호(에너지 대사·미토콘드리아 생성·자가포식·케톤체↑ / ER 스트레스·페롭토시스·산화스트레스·염증↓) + 항암 효과</li>
+<li><b>수업</b>: 원래 당뇨약(혈당 강하) → 혈당과 함께 물도 빠져나감 = 이뇨 효과. 정상견에서 고용량에도 <b>혈당 변화·부작용 없었음</b> → <b>B1·B2 환자에서 furosemide 쓰기 전에 SGLT2i</b>를 쓰는 프로토콜을 교수님 연구팀이 제안·임상시험 중 (사람도 그렇게 함) → 신장 부담 없이 시간을 버는 약이 되지 않을까 <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">왜 정상 혈당에서는 저혈당이 안 오나 · 왜 신장을 "보호"하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>SGLT2는 근위세뇨관에서 걸러진 포도당의 대부분을 Na와 함께 회수하는 운반체 → 막으면 혈당이 <b>높을수록 많이</b> 빠지고, 정상이면 조금만 빠짐 (인슐린과 무관) → 저혈당 위험 낮음</li>
+<li>Na가 근위에서 덜 흡수되면 치밀반(macula densa)에 Na가 많이 도착 → "여과가 너무 많다"고 판단해 <b>수입세동맥을 조임</b>(TG feedback) → 사구체 과여과·압력↓ → 장기적으로 네프론 보호</li>
+</ul>
+</div><h3 class="lv2">3. Spironolactone — 재조명 <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li><b>Old drug → 재조명되고 있음</b> (싸고 오래된 약)</li>
+<li><b>Aldosterone inhibitor</b> (알도스테론 수용체 차단)</li>
+<li><b>Combination에 의한 이뇨작용은 미약함</b></li>
+<li><span class="hl"><b>이뇨 효과가 없을 용량에서도 기대수명 유의하게 개선</b></span> — <b>1 mg/kg SID–BID</b></li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li><b>Myocardial effects; decrease fibrosis</b> (심근 섬유화↓)</li>
+<li>Side effect: 구토 · 설사 · <b>고칼륨혈증</b> · 저나트륨혈증</li>
+<li>미세한 이뇨라도 보려면 1 mg/kg 이상 필요 → 지금은 이뇨가 아닌 <b>항섬유화·RAAS 억제</b> 목적으로 씀 <span class="tag t-rec">수업</span></li>
+<li>Furosemide로 저칼륨이 오면 → furosemide 줄이고 spironolactone 추가 (K 보존) <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="why">
+<div class="mt">"이뇨 안 되는 용량"이 왜 수명을 늘리나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>알도스테론 수용체(MR)는 신장뿐 아니라 <b>심근·혈관벽·섬유모세포</b>에도 있음 → 알도스테론은 콜라겐 합성·염증·혈관 리모델링을 직접 자극</li>
+<li>Na 배설(이뇨)에는 많은 수용체를 막아야 하지만, 심장의 섬유화 신호는 <b>적은 용량으로도</b> 차단됨 → 이뇨 효과 없이 리모델링만 늦춤</li>
+<li>ACEI를 써도 알도스테론이 다시 오르는 <b>"aldosterone escape"</b>(그림 8)가 있어서, 끝단에서 막는 spironolactone이 의미가 있음</li>
+</ul>
+</div><span class="pno">12</span></section><section class="page" style=""><h2 class="lv1">Ⅸ. ACE 억제제 · ARB <span class="en">ACEI &amp; Angiotensin Receptor Blocker</span></h2><h3 class="lv2">1. ACEI <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li><b>Enalapril · Benazepril · Ramipril</b> … (필기 "ACE inhibitor", -pril로 끝나는 약)</li>
+<li><b>MOA</b>: <b>↓ serum ACE activity · aldosterone levels</b>, <b>↑ plasma renin activity</b>(되먹임)</li>
+<li>동·정맥을 <b>완만하게(mild) 둘 다</b> 확장하는 혈관확장제 + 교감·RAAS 항진을 보상 <span class="tag t-rec">수업</span></li>
+<li><b>Enalapril · benazepril</b>이 가장 흔함, 최근 <b>ramipril</b>이 새 선택지 — ramipril은 대사가 주로 <b>간</b> → 신장 문제 있는 심부전 환자에 유리 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+<div>
+<div class="memo red">
+<div class="mt">RAAS — 심부전의 보상/진행 (Cardiac compensation/Progression)</div>
+<ul class="c">
+<li>1) 교감신경 자극 2) RAAS 활성화</li>
+<li><b>Aldosterone elevation</b>: AngⅡ 때문만은 아님 — <b>카테콜라민 · endothelin-1 · ADH(arginine vasopressin)</b> …</li>
+</ul>
+</div>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 8. RAAS 경로와 약물 차단 지점 — ACE 경로 · Non-ACE 경로 · AT1 · 알도스테론 수용체 (슬라이드 재구성)</div><svg viewBox="0 0 700 320" width="100%" style="max-width:700px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="RAAS와 차단 약물"><defs><marker id="h15r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h15b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h15k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h15g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h15v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h15o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h15n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="20" y="20" width="150" height="36" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.5"></rect><text x="95.0" y="42.0" text-anchor="middle" font-size="10.2" fill="#1B2A44" font-weight="700">Angiotensinogen (간)</text><path d="M170,38 L222,38" fill="none" stroke="#1B2A44" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h15k)"></path><text x="196" y="30" text-anchor="middle" font-size="9.5" fill="#E0912B" font-weight="700">Renin</text><text x="196" y="52" text-anchor="middle" font-size="8.8" fill="#6C7787">(신장)</text><rect x="228" y="20" width="110" height="36" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.5"></rect><text x="283.0" y="42.0" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">Angiotensin Ⅰ</text><path d="M283,56 L283,112" fill="none" stroke="#1B2A44" stroke-width="2" stroke-linecap="round" marker-end="url(#h15k)"></path><text x="276" y="82" text-anchor="end" font-size="9.6" fill="#1B2A44" font-weight="700">ACE 경로</text><rect x="293.9" y="77.0" width="44.2" height="15.0" rx="4" fill="#fff" stroke="#E23B3B" stroke-width="1.2"></rect><text x="316" y="87.5" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">ACEI ✕</text><path d="M338,38 Q430,38 430,90 Q430,118 352,124" fill="none" stroke="#6C7787" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="5 4" marker-end="url(#h15g)"></path><text x="440" y="62" text-anchor="start" font-size="9.6" fill="#6C7787" font-weight="700">Non-ACE 경로</text><text x="440" y="76" text-anchor="start" font-size="9" fill="#6C7787">(chymase · tissue ACE ·</text><text x="440" y="89" text-anchor="start" font-size="9" fill="#6C7787"> cathepsin G · t-PA)</text><text x="440" y="103" text-anchor="start" font-size="9.4" fill="#E23B3B" font-weight="700">→ ACEI로 못 막음</text><rect x="228" y="116" width="110" height="36" rx="8" fill="#fdecec" stroke="#E23B3B" stroke-width="1.5"></rect><text x="283.0" y="138.0" text-anchor="middle" font-size="10.8" fill="#E23B3B" font-weight="700">Angiotensin Ⅱ</text><path d="M283,152 L283,180" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h15r)"></path><rect x="311.0" y="163.0" width="38.0" height="15.0" rx="4" fill="#fff" stroke="#2B5FC4" stroke-width="1.2"></rect><text x="330" y="173.5" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">ARB ✕</text><rect x="218" y="184" width="130" height="30" rx="8" fill="#fff" stroke="#E23B3B" stroke-width="1.5"></rect><text x="283.0" y="203.0" text-anchor="middle" font-size="10.3" fill="#E23B3B" font-weight="700">AT1 수용체</text><path d="M283,214 L100,242" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-linecap="round" marker-end="url(#h15r)"></path><text x="100" y="256" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">혈관 수축</text><path d="M283,214 L215,242" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-linecap="round" marker-end="url(#h15r)"></path><text x="215" y="256" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">교감 증강</text><path d="M283,214 L430,242" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-linecap="round" marker-end="url(#h15r)"></path><text x="430" y="256" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">세포 성장 · 섬유화</text><path d="M283,214 L560,242" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-linecap="round" marker-end="url(#h15r)"></path><text x="560" y="256" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">알도스테론 분비</text><rect x="475" y="268" width="170" height="28" rx="8" fill="#f6efff" stroke="#7B52C9" stroke-width="1.5"></rect><text x="560.0" y="286.0" text-anchor="middle" font-size="10" fill="#7B52C9" font-weight="700">알도스테론 → Na·물 저류</text><rect x="482.1" y="303.4" width="155.8" height="14.6" rx="4" fill="#fff" stroke="#7B52C9" stroke-width="1.2"></rect><text x="560" y="313.5" text-anchor="middle" font-size="9.6" fill="#7B52C9" font-weight="700">Spironolactone ✕ (수용체 차단)</text><text x="110" y="110" text-anchor="middle" font-size="9.6" fill="#0F9268" font-weight="700">ACE는 bradykinin도 분해</text><text x="110" y="124" text-anchor="middle" font-size="9.4" fill="#0F9268">→ ACEI: bradykinin↑ = 혈관확장(+)</text><text x="110" y="160" text-anchor="middle" font-size="9.6" fill="#7B52C9" font-weight="700">알도스테론은 AngⅡ 말고도</text><text x="110" y="174" text-anchor="middle" font-size="9.4" fill="#7B52C9">카테콜라민·ET-1·ADH로 ↑</text><text x="110" y="188" text-anchor="middle" font-size="9.4" fill="#7B52C9">(aldosterone escape)</text></svg></div></div><table>
+<caption>표 9. Actions of Aldosterone — 과도하면 전부 해로움</caption>
+<tbody>
+<tr><td class="kc" style="width:30%">신장</td><td>원위 집합관 상피에 작용 → <b>Na 흡수↑ · 체액 저류↑ · K⁺ 배설</b></td></tr>
+<tr class="hi"><td class="kc">혈관 · 혈소판</td><td><b>혈소판 응집 촉진</b> · <b>혈관 수축</b> · <b>압수용체 반응 소실</b></td></tr>
+<tr><td class="kc">심장 · 조직</td><td><b>염증·섬유화의 매개체</b> · <b>혈관 리모델링 촉진</b></td></tr>
+</tbody>
+</table><ul class="d">
+<li>ACE 경로는 알도스테론 생성의 <b>일부(~20%)</b>만 담당, 나머지는 non-ACE 경로 → <b>ACEI만으로는 RAAS를 100% 차단할 수 없음</b> → ACEI로 부족하면 <b>ARB</b> 병용·전환 <span class="tag t-rec">수업</span> <span class="tag t-ex">시험</span></li>
+</ul><h3 class="lv2">2. 신장 관류와 ACEI — "과도한 이뇨로 저혈압이 오지 않게" <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>Be careful not to use excessive diuresis that leads to hypotension</b></span> (Renal Perfusion: Normal / HF / HF + ACEI / HF + ACEI + hypotension)</p><span class="pno">13</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 9. 사구체 여과압 — 심부전은 AngⅡ가 수출세동맥을 조여 GFR을 지키는데, ACEI + 과이뇨·저혈압이면 무너짐 (정리자 모식도)</div><svg viewBox="0 0 640 205" width="100%" style="max-width:640px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="ACEI와 과이뇨에서 GFR"><defs><marker id="h16r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h16b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h16k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h16g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h16v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h16o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h16n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><text x="160" y="20" text-anchor="middle" font-size="11" fill="#0F9268" font-weight="700">심부전: AngⅡ가 수출세동맥 조임</text><path d="M20,95 L118,95" stroke="#d24a4a" stroke-width="8" stroke-linecap="round"></path><path d="M202,95 L300,95" stroke="#d24a4a" stroke-width="4" stroke-linecap="round" opacity=".75"></path><circle cx="160" cy="95" r="40" fill="#fbe3e8" stroke="#9c4d49" stroke-width="1.8"></circle><text x="160" y="92" text-anchor="middle" font-size="9.5" fill="#1B2A44" font-weight="700">사구체압</text><text x="160" y="107" text-anchor="middle" font-size="10.5" fill="#0F9268" font-weight="700">유지</text><text x="65" y="80" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">수입</text><text x="255" y="80" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">수출</text><path d="M160,137 L160,158" fill="none" stroke="#E0912B" stroke-width="2" stroke-linecap="round" marker-end="url(#h16o)"></path><text x="160" y="172" text-anchor="middle" font-size="11" fill="#0F9268" font-weight="700">GFR 유지 (보상)</text><text x="160" y="190" text-anchor="middle" font-size="9.3" fill="#1B2A44">관류↓를 수출 쪽 조여서 버팀</text><text x="480" y="20" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">+ ACEI + 과도한 이뇨 · 저혈압</text><path d="M340,95 L438,95" stroke="#d24a4a" stroke-width="4" stroke-linecap="round"></path><path d="M522,95 L620,95" stroke="#d24a4a" stroke-width="9" stroke-linecap="round" opacity=".75"></path><circle cx="480" cy="95" r="40" fill="#fbe3e8" stroke="#9c4d49" stroke-width="1.8"></circle><text x="480" y="92" text-anchor="middle" font-size="9.5" fill="#1B2A44" font-weight="700">사구체압</text><text x="480" y="107" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">↓↓</text><text x="385" y="80" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">수입</text><text x="575" y="80" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">수출</text><path d="M480,137 L480,158" fill="none" stroke="#E0912B" stroke-width="2" stroke-linecap="round" marker-end="url(#h16o)"></path><text x="480" y="172" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">GFR↓ → BUN·Cr↑</text><text x="480" y="190" text-anchor="middle" font-size="9.3" fill="#1B2A44">들어오는 압력↓ + 수출 쪽 풀림</text></svg></div></div><div class="why">
+<div class="mt">ACEI가 왜 BUN·Cr을 올릴 수 있나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>사구체압은 수도꼭지(수입세동맥)와 출구(수출세동맥) 사이의 압력. 관류가 줄면 AngⅡ가 <b>출구를 조여</b> 압력을 유지 → GFR 보존</li>
+<li>ACEI는 AngⅡ를 줄여 <b>출구를 풀어 버림</b> → 평소엔 괜찮지만, 이뇨 과다·혈관확장제로 <b>들어오는 압력까지 낮으면</b> GFR이 뚝 떨어져 고질소혈증</li>
+<li>→ 그래서 "furosemide + ACEI"를 시작하면 <b>7–14일 후</b> BUN·Cr·혈압을 반드시 확인 (아래 표)</li>
+</ul>
+</div><table>
+<caption>표 10. 어떻게 Furosemide + ACEI 치료를 시작할 것인가? <span class="tag t-ex">시험</span></caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:32%">Full Data Base<br>(recheck in 7–14 days)</td><td><b>BUN · Creatinine · BP(혈압)</b> · Urinalysis(뇨분석)</td></tr>
+<tr><td class="kc">Assess hemodynamic status</td><td><b>수축기 혈압</b> · <b>탈수/과이뇨</b> · <b>저칼륨혈증/저나트륨혈증</b></td></tr>
+<tr><td class="kc">수업</td><td>과하게 들어가면 BUN↑ + 수축기 혈압 현저히↓ → furosemide·ACEI 용량 조절 / furosemide 과하면 탈수 / K는 오줌으로만 배출 → 저칼륨 <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><h3 class="lv2">3. ARB (Angiotensin Receptor Blocker)</h3><div class="two">
+<div>
+<ul class="d">
+<li><b>ACEI와 유사한 작용 기전</b> (similar mode of action)</li>
+<li>혈관 확장 · 혈압 강하</li>
+<li><span class="hl"><b>vasopressin · aldosterone 분비를 더 강력하게 감소</b></span> — 알도스테론 생성 바로 앞(AT1)에서 차단 <span class="tag t-ex">시험</span></li>
+<li>담당 비율 ACE ~20 : ARB 쪽 ~80 → 최대로 쓰면 강압 능력 ARB &gt; ACEI <span class="tag t-rec">수업</span></li>
+<li>많이 쓰는 것: <b>irbesartan · telmisartan · losartan</b> (-sartan) — 사람에선 10년 이상 많이 쓰임 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+<div>
+<table>
+<caption>표 11. ARB 용량 · 배설</caption>
+<tbody>
+<tr><td class="kc" style="width:28%">Irbesartan</td><td><b>5–10 mg/kg BID</b> (5–30 mg/kg SID) / 주로 <b>간</b> 청소</td></tr>
+<tr><td class="kc">Telmisartan</td><td><b>0.1–1 mg/kg SID</b> / 주로 <b>간</b> 청소</td></tr>
+<tr class="hi"><td class="kc">Losartan</td><td>처음 <b>0.125–0.25 mg/kg BID</b> 1주 → <b>0.5–2 mg/kg BID</b> / <b>요산 저하</b>(URAT1 억제, uricosuric)</td></tr>
+<tr><td class="kc">신장 배설 비율</td><td>carboxylosartan(losartan 활성대사체) 60% · olmesartan·candesartan 40% · valsartan 30% · azilsartan 20% · losartan 10%</td></tr>
+</tbody>
+</table>
+</div>
+</div><p class="tnote">환자가 신장 문제인지 간 문제인지에 따라 ARB를 골라 쓰면 더 섬세한 치료 가능 <span class="tag t-rec">수업</span></p><span class="pno">14</span></section><section class="page" style=""><div class="why">
+<div class="mt">ACEI와 ARB의 차이 — 막는 위치 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>ACEI는 "AngⅡ를 만드는 효소 하나"를 막음 → chymase 등 다른 길로 AngⅡ가 다시 생김(escape) / 대신 bradykinin 분해도 막아 bradykinin↑(혈관확장, 사람에선 마른기침 부작용)</li>
+<li>ARB는 AngⅡ가 <b>어디서 만들어졌든</b> 그것이 붙는 <b>AT1 수용체</b>를 막음 → 더 완전한 차단, bradykinin은 건드리지 않음</li>
+<li>AT2 수용체(혈관확장·항증식)는 오히려 남은 AngⅡ로 자극받음 → 추가 이득 가능</li>
+</ul>
+</div><h2 class="lv1">Ⅹ. 혈관확장제 <span class="en">Vasodilators</span></h2><table>
+<caption>표 12. 정맥 확장 vs 동맥 확장 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:16%"></th><th style="width:42%">Venous dilation → 전부하↓</th><th>Arterial dilation = Afterload reducers</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">약</td><td><b>Nitrates</b>(nitroglycerin) · <b>Nitroprusside</b></td><td><b>Amlodipine</b> · <b>Hydralazine</b></td></tr>
+<tr><td class="kc">효과</td><td>정맥에 피를 담아 둠 → 심장으로 오는 양↓ → 폐울혈↓</td><td>전신 세동맥 확장 → 앞으로 가는 저항↓ → <b>앞으로 더 가고 뒤로(역류) 덜 감</b></td></tr>
+<tr><td class="kc">쓰임</td><td><b>급성 폐수종</b>(FON의 N)</td><td>만성 MR · 고혈압, pimobendan과 조합(FAPA·FAPH)</td></tr>
+</tbody>
+</table><div class="memo red">
+<div class="mt">Fulminant Pulmonary Edema</div>
+<ul class="c">
+<li><b>Transdermal Nitroglycerin</b> (연고나 패취) <b>2%</b> — 털 적은 곳(겨드랑이·귀 안쪽) <span class="tag t-rec">수업</span></li>
+<li><b>Sodium Nitroprusside 1–5 µg/kg/min CRI</b></li>
+<li>예: 10 kg, 3 µg/kg/min × 10 kg × 60 min = 1800 µg/hr</li>
+</ul>
+</div><p class="tnote">슬라이드엔 "1800 µg/hr ÷ 1000 = 18 mg/hr"로 적혀 있지만 1800 µg = <b>1.8 mg</b> → 시간당 1.8 mg이 맞는 계산 (확인 필요)</p><div class="three" style="display:block;"><div><div class="cap">그림 10. 동맥확장제와 MR — 저항이 낮은 쪽으로 피가 감 (정리자 모식도)</div><svg viewBox="0 0 600 210" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="동맥확장제와 MR"><defs><marker id="h17r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h17b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h17k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h17g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h17v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h17o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h17n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><text x="150" y="18" text-anchor="middle" font-size="10.8" fill="#E23B3B" font-weight="700">후부하 높음 (혈관 수축)</text><path d="M90,60 Q70,150 150,175 Q225,150 200,60 Z" fill="#f6d5d3" stroke="#9c4d49" stroke-width="1.8"></path><text x="148" y="132" text-anchor="middle" font-size="12" fill="#9c4d49" font-weight="700">LV</text><path d="M180,70 L225,32" fill="none" stroke="#E23B3B" stroke-width="2.5" stroke-linecap="round" marker-end="url(#h17r)"></path><text x="246" y="46" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">대동맥</text><text x="246" y="60" text-anchor="middle" font-size="9" fill="#6C7787">(앞으로)</text><path d="M115,70 L70,32" fill="none" stroke="#2B5FC4" stroke-width="6" stroke-linecap="round" marker-end="url(#h17b)"></path><text x="50" y="46" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">LA</text><text x="50" y="60" text-anchor="middle" font-size="9" fill="#6C7787">(역류)</text><text x="450" y="18" text-anchor="middle" font-size="10.8" fill="#0F9268" font-weight="700">동맥확장제 (amlodipine·hydralazine)</text><path d="M390,60 Q370,150 450,175 Q525,150 500,60 Z" fill="#f6d5d3" stroke="#9c4d49" stroke-width="1.8"></path><text x="448" y="132" text-anchor="middle" font-size="12" fill="#9c4d49" font-weight="700">LV</text><path d="M480,70 L525,32" fill="none" stroke="#E23B3B" stroke-width="6" stroke-linecap="round" marker-end="url(#h17r)"></path><text x="546" y="46" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">대동맥</text><text x="546" y="60" text-anchor="middle" font-size="9" fill="#6C7787">(앞으로)</text><path d="M415,70 L370,32" fill="none" stroke="#2B5FC4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#h17b)"></path><text x="350" y="46" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">LA</text><text x="350" y="60" text-anchor="middle" font-size="9" fill="#6C7787">(역류)</text><text x="300" y="200" text-anchor="middle" font-size="10.2" fill="#1B2A44" font-weight="700">저항이 낮은 쪽으로 피가 감 → "More flow goes forward; less goes backward"</text></svg></div></div><span class="pno">15</span></section><section class="page" style=""><table>
+<caption>표 13. Amlodipine · Hydralazine in CHF <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:15%"></th><th style="width:44%">Amlodipine (CCB)</th><th>Hydralazine</th></tr></thead>
+<tbody>
+<tr><td class="kc">특징</td><td>전신 세동맥 확장 / <b>Amlodipine + ACEI</b> = 더 효과적(ACEI 0.25–0.5 mg/kg), <b>BUN·Cr 관찰</b> 필요</td><td><b>매우 강력한</b> 혈관확장제 (<b>동맥 &gt; 정맥</b>), <b>IV · IM · PO</b> 다 가능 (투여 경로 다양 = 좋은 약 · 응급→경구 전환 쉬움) <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td class="kc">개</td><td><b>0.1–0.4 mg/kg SID</b></td><td><b>0.5 mg/kg</b>; 30분 후 BP 재측정 → 0.5 mg/kg씩 증량 (max 2–3 mg/kg q12–24h) / 효과 날 때까지 누적 용량을 유지 용량으로</td></tr>
+<tr class="hi"><td class="kc">고양이</td><td><b>0.625 mg/cat (5 kg 미만) ~ 1.25 mg/cat (5 kg 이상)</b></td><td><b>2.5 mg/cat q12h</b></td></tr>
+<tr><td class="kc">목표</td><td><b>20–50 mmHg</b> 정도 혈압을 떨어뜨리는 것이 이상적 / 목표 <b>&lt; 150 mmHg</b> / <b>BP check 1–2주마다</b></td><td>부작용: <b>빈맥</b>, Na⁺/물 저류, GI 장애</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">혈관확장제의 공통 함정 — 반사성 빈맥과 Na 저류 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>혈압이 갑자기 떨어지면 압수용체가 즉시 교감신경을 켬 → <b>반사성 빈맥</b>(hydralazine 부작용) + RAAS → <b>Na·물 저류</b> → 그래서 혈관확장제는 이뇨제·ACEI와 함께, 혈압을 재며 천천히 올림</li>
+<li>Nitroprusside는 NO를 내놓아 동·정맥을 모두 강하게 확장하고 반감기가 몇 분 → CRI로만, 혈압 감시 필수 (장시간·고용량은 시안화물 독성; 정리자 보충)</li>
+<li>Nitroglycerin은 주로 정맥(용량혈관) 확장 → 폐울혈을 빨리 줄이는 응급용</li>
+</ul>
+</div><h2 class="lv1">Ⅺ. 양성 수축력 증강제 <span class="en">Positive Inotropes — Increase Contractility</span></h2><p class="txt"><b>Digoxin · Dobutamine · Pimobendan</b> — 전통적으로 digoxin, dobutamine(지금은 잘 안 씀) → 지금은 <b>pimobendan</b>(IV는 levosimendan) <span class="tag t-rec">수업</span></p><h3 class="lv2">1. Digoxin — "There are Digoxin Haters"</h3><div class="two">
+<div>
+<ul class="d">
+<li><b>자율신경 균형 회복</b> (restore autonomic balance)</li>
+<li><b>약한</b> 양성 수축력 (mild positive inotrope)</li>
+<li><b>Renin 억제</b> → RAAS 하향 (ACEI와 비슷한 효과) <span class="tag t-rec">수업</span></li>
+<li><b>동심박수 감소</b> (good negative chronotrope)</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>Cardiac glycoside — <b>디기탈리스(foxglove, Digitalis purpurea)</b> 식물 유래</li>
+<li>적응증: <b>AF(↓HR)</b> · <b>SVT(rate↓)</b> · <b>DCM(↑수축력)</b></li>
+<li>SA·AV node에 작용해 심박을 늦추는 rate control의 기본 약 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="why">
+<div class="mt">digoxin은 왜 "약한 강심 + 강한 심박 감소"인가 · 왜 미움받나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>심근 Na⁺/K⁺-ATPase 억제 → 세포 안 Na↑ → Na/Ca 교환이 덜 돌아 Ca↑ → 수축력 약간↑</li>
+<li>더 큰 효과는 <b>미주신경 강화</b> → AV node 전도↓ → AF에서 심실 반응 속도↓, 압수용체 민감도 회복(= 자율신경 균형)</li>
+<li>치료역이 좁고, <b>저칼륨혈증이면 독성↑</b>(K와 같은 자리를 다툼) — 이뇨제와 함께 쓰는 심부전 환자에서 특히 위험 → "haters"가 생긴 이유 (정리자 보충)</li>
+</ul>
+</div><span class="pno">16</span></section><section class="page" style=""><h3 class="lv2">2. Pimobendan — Inodilator <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li>① <b>심근 칼슘 민감도↑</b>: myofilament의 <b>troponin C에 칼슘 결합력↑</b> → Inotropic effect</li>
+<li>② <b>말초혈관 확장</b>: <b>PDE Ⅲ 억제 → cAMP↑</b> → Vasodilation</li>
+<li>↑ L-type Ca current · ↑ 심근 장력 · ↓ 혈관저항 · <b>↓ LV 이완기말 압력</b> · <b>↓ norepinephrine</b></li>
+<li><b>↓ 염증성 사이토카인</b>(TNF, IL-1) → <b>식욕부진(#1 안락사 이유)</b> · 심장 악액질(근육 이화) 감소</li>
+</ul>
+</div>
+<div>
+<table>
+<caption>용량</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:24%">Dogs</td><td><b>0.15–0.25 mg/kg PO SID</b> or up to <b>0.25–0.3 mg/kg PO BID</b></td></tr>
+<tr class="hi"><td class="kc">Cats</td><td><b>1.25 mg/cat PO SID</b></td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>"Another Fad(유행) or Truly Rules?" — 처음 <b>DCM</b>용 → <b>MMVD</b>로 확장, 표준 치료제로 자리 잡음 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 11. Pimobendan = inodilator — 심근(수축력↑)과 혈관(확장) 두 곳에서 (5장 그림 재사용)</div><svg viewBox="0 0 600 270" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="피모벤단 작용 기전"><rect x="6" y="6" width="330" height="258" rx="10" fill="#fff7f5" stroke="#e5b9b9" stroke-width="1.4"></rect><text x="171" y="24" text-anchor="middle" font-size="12.5" font-weight="700" fill="#E23B3B">① 심근세포 — 수축력↑ (positive inotrope)</text><rect x="18" y="36" width="92" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="64.0" y="50.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">β1 수용체</text><text x="64.0" y="63.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">(교감 NE)</text><rect x="128" y="36" width="92" height="34" rx="6" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="174.0" y="57.3" text-anchor="middle" font-size="12" fill="#1B2A44" font-weight="700">cAMP ↑</text><rect x="238" y="36" width="88" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="282.0" y="50.1" text-anchor="middle" font-size="10" fill="#1B2A44">PDE3</text><text x="282.0" y="63.1" text-anchor="middle" font-size="10" fill="#1B2A44">cAMP → AMP 분해</text><line x1="110" y1="53" x2="126" y2="53" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="126,53 119.7,56.0 119.7,50.0" fill="#E23B3B"></polygon><line x1="236" y1="53" x2="222" y2="53" stroke="#6C7787" stroke-width="1.6"></line><polygon points="222,53 228.3,50.0 228.3,56.0" fill="#6C7787"></polygon><circle cx="324" cy="38" r="10" fill="#0F9268"></circle><text x="324" y="42.5" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">✕</text><text x="282" y="86" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0F9268">피모벤단이 억제</text><line x1="174" y1="70" x2="174" y2="94" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="174,94 171.0,87.7 177.0,87.7" fill="#E23B3B"></polygon><rect x="118" y="96" width="112" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="174.0" y="117.0" text-anchor="middle" font-size="11" fill="#1B2A44">PKA → Ca²⁺ 유입↑</text><line x1="174" y1="130" x2="174" y2="152" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="174,152 171.0,145.7 177.0,145.7" fill="#E23B3B"></polygon><rect x="18" y="154" width="150" height="44" rx="6" fill="#eef9f4" stroke="#0F9268" stroke-width="1.4"></rect><text x="93.0" y="173.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">트로포닌 C의</text><text x="93.0" y="186.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">Ca²⁺ 감수성↑ (Ca sensitizer)</text><rect x="186" y="154" width="140" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="256.0" y="173.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">세포 내 Ca²⁺↑</text><text x="256.0" y="186.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">(PDE3 억제 효과)</text><line x1="93" y1="198" x2="150" y2="220" stroke="#0F9268" stroke-width="1.6"></line><polygon points="150,220 143.0,220.6 145.2,214.9" fill="#0F9268"></polygon><line x1="256" y1="198" x2="196" y2="220" stroke="#E23B3B" stroke-width="1.6"></line><polygon points="196,220 200.9,215.0 203.0,220.7" fill="#E23B3B"></polygon><rect x="96" y="220" width="150" height="34" rx="6" fill="#13756A" stroke="#13756A" stroke-width="1.4"></rect><text x="171.0" y="241.3" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">수축력↑ (SV↑)</text><text x="20" y="214" font-size="9" fill="#6C7787">Ca를 더 안 넣고도 세짐</text><text x="252" y="214" font-size="9" fill="#6C7787">산소 소모↑ 부담</text><rect x="346" y="6" width="248" height="258" rx="10" fill="#f3f7ff" stroke="#9cbcf0" stroke-width="1.4"></rect><text x="470" y="24" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2B5FC4">② 혈관 평활근 — 혈관 확장</text><rect x="370" y="40" width="200" height="34" rx="6" fill="#fff" stroke="#2B5FC4" stroke-width="1.4"></rect><text x="470.0" y="61.0" text-anchor="middle" font-size="11" fill="#1B2A44">PDE3 억제 → cAMP↑</text><line x1="470" y1="74" x2="470" y2="96" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="470,96 467.0,89.7 473.0,89.7" fill="#2B5FC4"></polygon><rect x="370" y="98" width="200" height="34" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="470.0" y="119.0" text-anchor="middle" font-size="11" fill="#1B2A44">평활근 이완 = 혈관 확장</text><line x1="420" y1="132" x2="410" y2="156" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="410,156 409.6,149.0 415.2,151.4" fill="#2B5FC4"></polygon><line x1="520" y1="132" x2="530" y2="156" stroke="#2B5FC4" stroke-width="1.6"></line><polygon points="530,156 524.8,151.4 530.4,149.0" fill="#2B5FC4"></polygon><rect x="352" y="158" width="112" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="408.0" y="177.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">동맥 확장</text><text x="408.0" y="190.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">→ 후부하↓</text><rect x="476" y="158" width="112" height="44" rx="6" fill="#fff" stroke="#4A6B66" stroke-width="1.4"></rect><text x="532.0" y="177.0" text-anchor="middle" font-size="10.5" fill="#1B2A44">정맥 확장</text><text x="532.0" y="190.5" text-anchor="middle" font-size="10.5" fill="#1B2A44">→ 전부하↓</text><rect x="360" y="216" width="220" height="38" rx="6" fill="#13756A" stroke="#13756A" stroke-width="1.4"></rect><text x="470.0" y="232.0" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">수축력↑인데 혈압은</text><text x="470.0" y="245.5" text-anchor="middle" font-size="10.5" fill="#fff" font-weight="700">크게 안 오름 (inodilator)</text></svg></div></div><table>
+<caption>표 14. Pimobendan 적응증의 변화 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:50%">기존의 적응증</th><th>변화된 적응증</th></tr></thead>
+<tbody>
+<tr><td>• 단독사용<br>• 주로 수축력 증가<br>• 초기부터 사용 (B1부터 쓰라고 했었음)</td><td>• <b>조합사용 (Pimo + Amlo/Hyd)</b><br>• <b>심장부전 중기 이후</b>나 <b>심근부전이 있는 경우</b>에 사용 추천 (B2·C) <span class="tag t-rec">수업</span><br>• <b>Oral solution Pimo</b> (상태 나쁜 환자에 액상)</td></tr>
+</tbody>
+</table><div class="two">
+<div>
+<div class="memo">
+<div class="mt">Levosimendan</div>
+<ul class="c">
+<li><b>Another pimobendan</b> — <b>IV 제재</b>로 응급상황에서 유용</li>
+<li>장점: <b>Myocardial oxygen consumption – None</b> (수축력은 올리되 심근 부담↓)</li>
+<li>Loading <b>6–12 mcg/kg</b> (10분 이상) → 유지 <b>0.1–0.2 mcg/kg/min</b> (처음 30–60분)</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo red">
+<div class="mt">Drug Selection for Acute Severe HF</div>
+<ul class="c">
+<li><b>Furosemide · Oxygen · Nitrates · Nitroprusside</b></li>
+<li><b>DOBUTAMINE 2–15 µg/kg/min CRI</b></li>
+</ul>
+</div>
+</div>
+</div><span class="pno">17</span></section><section class="page" style=""><div class="why">
+<div class="mt">"칼슘 민감제"가 왜 산소를 덜 쓰나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>Dobutamine(β1 작용)·digoxin은 세포 안 <b>Ca 양</b>을 늘려 수축력을 올림 → Ca를 다시 퍼 담는 데 ATP가 들고, 심박↑·부정맥 위험↑ → 산소 소모↑</li>
+<li>Pimobendan·levosimendan은 Ca 양은 크게 늘리지 않고 <b>트로포닌 C가 같은 Ca에 더 잘 반응</b>하게 함 → 같은 연료로 더 센 수축 + 혈관확장으로 후부하까지↓ → 심근 에너지 효율이 좋음</li>
+<li>그래서 만성은 pimobendan(경구), 응급은 levosimendan(IV) / dobutamine은 반감기가 몇 분 → CRI로만</li>
+</ul>
+</div><h2 class="lv1">Ⅻ. 항부정맥제 <span class="en">Antiarrhythmics</span></h2><div class="memo red">
+<div class="mt">Control Heart Rate &amp; Rhythm <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li><span class="hl"><b>정상 개의 심박수가 180 bpm으로 4주간 지속되면 심근병증</b>이 생기고, <b>240 bpm에서는 3일</b>이면 나타난다</span> (빈맥 유발성 심근병증)</li>
+<li>약: Digoxin / Lidocaine(IV) · Esmolol · Procainamide · Mexiletine · Diltiazem · Atenolol · Sotalol · Amiodarone …</li>
+</ul>
+</div><div class="two">
+<div>
+<div class="memo">
+<div class="mt">Atrial Fibrillation — 대개 LA 크기 증가와 동반</div>
+<ul class="c">
+<li><b>대형견: DCM</b></li>
+<li><b>소형견: 심한 MR</b></li>
+<li><b>고양이: LA 큰 HCM</b></li>
+<li>심방이 클수록 AF↑ — 소·말은 심장이 커서 정상에서도 AF가 잘 생김 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="why" style="margin-top:0;">
+<div class="mt">왜 빨리 뛰기만 해도 심근병증이 오나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>빈맥 → 이완기(관상동맥 혈류·채움 시간)↓ + 산소 소모↑ → 만성 에너지 고갈 · Ca 처리 단백 감소 → DCM 같은 확장·수축력↓</li>
+<li>심박을 조절하면 상당 부분 <b>회복 가능</b> → 그래서 rate control이 심부전 치료의 한 축</li>
+</ul>
+</div>
+</div>
+</div><div class="three" style="display:block;"><div><div class="cap">그림 12. Vaughan Williams 분류 — 활동전위의 어디를 막나 (3장 그림 재사용)</div><svg viewBox="0 0 620 250" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="활동전위와 항부정맥제 작용 부위"><rect x="10" y="12" width="290" height="226" rx="8" fill="#fff" stroke="#d4dbe0"></rect><text x="155" y="30" text-anchor="middle" font-size="11.5" fill="#1B2A44" font-weight="700">심방·심실 근육 (빠른 반응)</text><path d="M20,190 L60,190 L66,46 L78,64 Q140,68 170,86 Q200,190 240,190 L290,190" fill="none" stroke="#1B2A44" stroke-width="2.6" stroke-linejoin="round"></path><text x="50" y="86" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">0기 Na⁺</text><text x="120" y="60" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">2기 Ca²⁺</text><text x="212" y="128" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">3기 K⁺</text><text x="260" y="182" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">4기</text><rect x="52.8" y="87.0" width="50.4" height="15.0" rx="4" fill="#fff" stroke="#2B5FC4" stroke-width="1.2"></rect><text x="78" y="97.5" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">Ⅰ Na 차단</text><text x="78" y="116" text-anchor="middle" font-size="9" fill="#2B5FC4" font-weight="700">0기 상승 느리게</text><rect x="197.9" y="61.0" width="44.2" height="15.0" rx="4" fill="#fff" stroke="#7B52C9" stroke-width="1.2"></rect><text x="220" y="71.5" text-anchor="middle" font-size="10" fill="#7B52C9" font-weight="700">Ⅲ K 차단</text><text x="220" y="90" text-anchor="middle" font-size="9" fill="#7B52C9" font-weight="700">3기 지연 = 불응기↑</text><path d="M170,86 Q216,190 258,190" fill="none" stroke="#7B52C9" stroke-width="1.6" stroke-linejoin="round"></path><text x="155" y="228" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">홀수(Ⅰ·Ⅲ) → 심실성 빈맥</text><rect x="320" y="12" width="290" height="226" rx="8" fill="#fff" stroke="#d4dbe0"></rect><text x="465" y="30" text-anchor="middle" font-size="11.5" fill="#1B2A44" font-weight="700">SA · AV node (느린 반응)</text><line x1="330" y1="140" x2="600" y2="140" stroke="#6C7787" stroke-dasharray="4 3"></line><path d="M330,180 L390,140 Q406,66 420,58 Q450,76 470,180 L530,140 Q546,66 560,58 Q580,86 598,176" fill="none" stroke="#1B2A44" stroke-width="2.6" stroke-linejoin="round"></path><path d="M330,180 L426,140" fill="none" stroke="#0F9268" stroke-width="1.8" stroke-linejoin="round"></path><rect x="357.9" y="97.0" width="44.2" height="15.0" rx="4" fill="#fff" stroke="#0F9268" stroke-width="1.2"></rect><text x="380" y="107.5" text-anchor="middle" font-size="10" fill="#0F9268" font-weight="700">Ⅱ β 차단</text><text x="364" y="210" text-anchor="middle" font-size="9" fill="#0F9268" font-weight="700">4기 기울기↓ → 느리게</text><rect x="464.8" y="61.0" width="50.4" height="15.0" rx="4" fill="#fff" stroke="#E0912B" stroke-width="1.2"></rect><text x="490" y="71.5" text-anchor="middle" font-size="10" fill="#E0912B" font-weight="700">Ⅳ Ca 차단</text><text x="490" y="90" text-anchor="middle" font-size="9" fill="#E0912B" font-weight="700">0기(Ca)·AV 전도↓</text><text x="538" y="210" text-anchor="middle" font-size="9" fill="#1B2A44" font-weight="700">Digoxin: 미주신경↑</text><text x="465" y="228" text-anchor="middle" font-size="11" fill="#2B5FC4" font-weight="700">짝수(Ⅱ·Ⅳ) → 심실상성 / AF 속도</text></svg></div></div><span class="pno">18</span></section><section class="page" style=""><table>
+<caption>표 15. 항부정맥제 분류 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:12%">Class</th><th style="width:30%">기전</th><th style="width:26%">약</th><th>적응증 · 비고</th></tr></thead>
+<tbody>
+<tr><td class="kc">Ⅰ</td><td><b>Na⁺ 채널 차단</b> (0기 상승 → 전도속도↓)</td><td>ⅠA: quinidine, procainamide (재분극 연장)<br>ⅠB: <b>lidocaine(IV), mexiletine(PO)</b> (재분극 단축)<br>ⅠC: 수의학에선 안 씀</td><td><b>VT</b> / ⅠB 부작용: 구토·설사·식욕부진·<b>발작</b></td></tr>
+<tr class="hi"><td class="kc">Ⅱ</td><td><b>β 차단</b> → 교감↓ · HR↓ · 수축력↓</td><td><b>Atenolol(β1)</b>, propranolol(β1·β2), esmolol(β1)</td><td><b>SVT(AF 포함)</b> · VT · <b>HCM의 SAM 감소</b> · <b>SAS 부정맥 예방</b></td></tr>
+<tr><td class="kc">Ⅱ (3세대)</td><td><b>Carvedilol</b>: 비선택 β1·β2 차단(항부정맥) + <b>α1 차단</b>(혈관확장·고혈압 치료) + <b>항산화</b></td><td>개 <b>0.4–0.5 mg/kg PO BID</b> → up to 0.7–0.9 BID<br>고양이 <b>0.1–0.3 mg/kg PO BID</b></td><td>심부전에서 β-blocker를 써 보고 효과가 떨어지면 class Ⅰ·Ⅲ로 <span class="tag t-rec">수업</span></td></tr>
+<tr class="hi"><td class="kc">Ⅲ</td><td><b>K⁺ 채널 차단</b> → 활동전위 기간↑ (재분극 연장)</td><td><b>Sotalol</b>(β 차단도), <b>Amiodarone</b></td><td>심실성 부정맥, 특히 <b>DCM Doberman · ARVC Boxer</b> / <b>Sotalol은 VF에 의한 돌연사 위험↓</b> (lidocaine·mexiletine보다 안전) <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">Ⅳ</td><td>SA·AV node Ca²⁺ 차단 → HR↓ / 심근 Ca²⁺ 차단 → 수축력↓</td><td><b>Diltiazem</b>, verapamil</td><td><b>SVT · AF · HCM</b></td></tr>
+<tr><td class="kc">기타</td><td>Cardiac glycoside</td><td><b>Digoxin</b></td><td>약한 강심 + 좋은 음성 변시 / AF · SVT · DCM</td></tr>
+</tbody>
+</table><h2 class="lv1">ⅩⅢ. 칵테일 — 약물 조합 <span class="en">Cocktails</span></h2><table>
+<caption>표 16. 심부전 약물 조합 <span class="tag t-ex">시험</span></caption>
+<thead><tr><th style="width:15%">이름</th><th style="width:43%">구성</th><th>언제</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">FON</td><td><b>F</b>urosemide + <b>O</b>xygen + <b>N</b>itroglycerin</td><td><b>급성 중증 CHF</b>의 기본 (가장 많이 씀)</td></tr>
+<tr class="hi"><td class="kc">FOND</td><td>FON + <b>D</b>obutamine</td><td>급성 + 수축력 저하 / ♨ 현재는 <b>TOPS</b> (Torsemide + Oxygen + Pimobendan + Sedation)</td></tr>
+<tr><td class="kc">FA</td><td>Furosemide + ACEI</td><td>만성 기본 조합</td></tr>
+<tr><td class="kc">FAP</td><td>Furosemide + ACEI + <b>Pimobendan</b></td><td>표준 치료 (Stage C)</td></tr>
+<tr><td class="kc">FAD</td><td>Furosemide + ACEI + <b>Digoxin</b></td><td>※ 부정맥이 관찰되면 항부정맥제 추가</td></tr>
+<tr><td class="kc">FAPA / FAPH</td><td>FAP + <b>Amlodipine</b> / FAP + <b>Hydralazine</b></td><td>후부하 감소 추가 (변화된 pimobendan 적응증)</td></tr>
+<tr><td class="kc" style="color:#c0392b">Bad: SAD</td><td><b>S</b>pironolactone + ACEI + Digoxin</td><td>spironolactone을 <b>이뇨제로</b> 쓰는 건 좋지 않음 (이뇨 미약 → 부종 조절 안 됨) <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc" style="color:#c0392b">Bad: BAD</td><td><b>B</b>eta-blocker + ACEI + Digoxin</td><td><b>이뇨제가 없음</b> → 울혈성 환자엔 아주 좋지 않음 + β-blocker의 음성 변력 <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><span class="pno">19</span></section><section class="page" style=""><div class="two">
+<div>
+<table>
+<caption>표 17. Current Options — 최근 추가 선택지</caption>
+<tbody>
+<tr><td class="kc" style="width:28%">Sildenafil</td><td><b>2 mg/kg PO BID</b> — 폐혈관 확장 (<b>폐고혈압</b> 동반 시)</td></tr>
+<tr class="hi"><td class="kc">Clopidogrel</td><td><b>1–2 mg/kg PO SID</b> — 항혈소판</td></tr>
+<tr><td class="kc">ARBs</td><td>Irbesartan <b>5 mg/kg PO BID</b>, losartan — ACEI 한계 시</td></tr>
+<tr><td class="kc">Aspirin</td><td><b>5–7 mg/kg PO SID</b> — 항혈소판</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<ul class="d">
+<li>응고 검사가 다양해짐(D-dimer → <b>TEG</b>, 혈소판 기능 검사 등) → 응고 문제가 있으면 clopidogrel 같은 항혈소판제 <span class="tag t-rec">수업</span></li>
+<li>Aspirin은 싸고 구하기 쉬움 → 최근 사람용 <b>저용량 심장 보호 aspirin</b>으로 출혈 부작용을 줄여 볼 만함 (기존엔 출혈 때문에 clopidogrel 권장) <span class="tag t-rec">수업</span></li>
+<li>반려동물은 오래 살고 가족처럼 키움 → 한 번 고치고 끝이 아니라 <b>평생 관리(lifelong management)</b> 개념 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><h2 class="lv1">ⅩⅣ. 관찰과 평가 <span class="en">Monitor &amp; Assess</span></h2><div class="two">
+<div>
+<div class="memo">
+<div class="mt">Monitor and Assess (관찰과 평가)</div>
+<ul class="c">
+<li>임상증상 · 신체검사 / <b>체중</b>(올 때마다, 갑자기 빠지면 악화) <span class="tag t-rec">수업</span></li>
+<li><b>ECG</b> (심박수/리듬) — 예: 초기 AF → digoxin + diltiazem 후 심박 감소</li>
+<li>X-ray(심장 크기·폐수종 분포) · <b>BUN/Creatinine · K⁺</b> · <b>혈압</b> · 심초음파</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo red">
+<div class="mt">Contraindications &amp; Warnings <span class="tag t-ex">시험</span></div>
+<ul class="c">
+<li>과도한 전부하 감소 · 저심박출 상태</li>
+<li><b>저칼륨혈증 (고양이 → 더 민감함)</b></li>
+<li>약물 상호작용 · 저나트륨혈증</li>
+<li><b>신장 질환</b> · <b>저혈압</b></li>
+</ul>
+</div>
+</div>
+</div><h3 class="lv2">1. Sleeping Respiratory Rate (SRR) <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li>보호자가 SRR을 평가·기록에 참여 → <b>홈 모니터링</b>에 유용</li>
+<li><b>폐수종 · 흉수의 가장 민감한 지표</b> (개·고양이)</li>
+<li>정상 <b>&lt; 30 bpm</b> (보통 10대 후반–20대 초반; Rishniw 2012, Ljungvall 2013)</li>
+<li>심장병 있는 개에서 <b>지속적으로 &gt; 30</b> → CHF 진행 강력 시사 (단, 1차 호흡기 질환 배제)</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>어린 고양이(개는 X)는 SRR이 약간 높고 <b>4살 무렵까지 감소</b></li>
+<li><b>RRR</b>(안정 시 호흡수)는 변동이 크고 약간 높음 — 움직임·운동 후·흥분·온도·통증 영향</li>
+<li>보호자가 "내가 치료에 참여한다"는 느낌 → 30 이상 계속이면 병원에 연락하도록 교육 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><h3 class="lv2">2. 저칼륨혈증 (Hypokalemia)</h3><div class="two">
+<div>
+<ul class="d">
+<li><b>Potassium gluconate</b>: 개 <b>0.5 mEq/kg PO SID–BID</b> / 고양이 <b>1–4 mEq/cat PO BID</b></li>
+<li><b>Spironolactone</b>(개·고양이) <b>2–4 mg/kg PO SID</b> (1–2 mg/kg PO BID)</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>이뇨제를 과하게 쓰면 오줌으로 K 소실 → 대표적 혈액 이상 / 고양이가 특히 민감 <span class="tag t-rec">수업</span></li>
+<li>💡 저칼륨 → 근육 약화(고양이 경부 굴곡), 부정맥, <b>digoxin 독성↑</b> (정리자 보충)</li>
+</ul>
+</div>
+</div><span class="pno">20</span></section><section class="page" style=""><h3 class="lv2">3. 심부전에서의 수액 치료 (Fluid Therapy in CHF)</h3><table>
+<caption>표 18. 언제 · 무엇을 · 어떻게</caption>
+<tbody>
+<tr><td class="kc" style="width:20%">Indication</td><td>① <b>Dehydration</b> — 과도한 이뇨, 지속적 식욕부진·음수 거부(adipsia)<br>② <b>Maintenance</b> — 고질소혈증의 급성 악화, 약물 유발 저혈압<br>③ <b>심장약 투여 경로</b> — 이뇨제·항부정맥제·혈관확장제 CRI</td></tr>
+<tr class="hi"><td class="kc">Fluid types</td><td><b>저나트륨 수액</b>: D5W, ½LRS + 2.5% Dextrose, Plasmalyte 56 / 부종 위험 vs CO·조직 수화 사이의 <b>미세한 균형</b> / 이뇨제 손실 → <b>K 보충</b></td></tr>
+<tr><td class="kc">Flow rates</td><td><b>SLOWLY</b> — <b>6시간</b>에 걸쳐 천천히 / CRT · 체중 · 폐음 · 호흡 양상 · 혈압 · 청진 확인</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">심부전 환자에게 수액은 왜 "저나트륨 + 천천히"인가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>물은 Na를 따라감 → 0.9% 식염수처럼 Na가 많은 수액은 혈관 밖(간질·폐)에 오래 남아 부종을 만듦. 포도당 수액은 포도당이 대사되면 "자유수"가 되어 세포 안팎으로 퍼짐 → 혈관 내 과부하가 덜함</li>
+<li>뻣뻣하거나 약한 심장은 <b>속도</b>에 민감 → 같은 양도 빨리 들어가면 이완기압이 치솟아 폐수종 → 6시간에 걸쳐, 호흡수·폐음을 보며</li>
+</ul>
+</div><h2 class="lv1">총정리 — 심부전 약 한 장 <span class="tag t-ex">시험</span></h2><table>
+<caption>표 19. 계열별 핵심 · 용량</caption>
+<thead><tr><th style="width:15%">계열</th><th style="width:28%">약</th><th style="width:30%">핵심</th><th>용량</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Loop 이뇨제</td><td>Furosemide · Torsemide</td><td>전부하↓, 횟수↑·CRI, 신장 모니터</td><td>급성 4 mg/kg IV q2h → q6h · CRI 0.5–0.7 → 0.1–0.7 mg/kg/hr</td></tr>
+<tr><td class="kc">K 보존</td><td>Spironolactone</td><td>항섬유화, 이뇨 미약</td><td>1 mg/kg SID–BID (저K: 2–4 mg/kg SID)</td></tr>
+<tr><td class="kc">신규</td><td>SGLT2i</td><td>당뇨 → 삼투성 이뇨, 신장 보호</td><td>(임상시험 중)</td></tr>
+<tr class="hi"><td class="kc">ACEI</td><td>Enalapril · Benazepril · Ramipril</td><td>ACE·알도스테론↓, renin↑ / 7–14일 재검</td><td>(amlodipine 병용 시 0.25–0.5 mg/kg)</td></tr>
+<tr><td class="kc">ARB</td><td>Irbesartan · Telmisartan · Losartan</td><td>AT1 차단, ADH·알도스테론 더↓</td><td>5–10 BID · 0.1–1 SID · 0.125–0.25 → 0.5–2 BID</td></tr>
+<tr class="hi"><td class="kc">정맥확장</td><td>Nitroglycerin · Nitroprusside</td><td>급성 폐수종</td><td>NTG 2% 연고 · NP 1–5 µg/kg/min</td></tr>
+<tr><td class="kc">동맥확장</td><td>Amlodipine · Hydralazine</td><td>후부하↓, MR↓, 목표 &lt;150</td><td>개 0.1–0.4 SID · 고양이 0.625–1.25 mg/cat / 개 0.5 → max 2–3 · 고양이 2.5 mg/cat</td></tr>
+<tr class="hi"><td class="kc">강심제</td><td>Pimobendan · Levosimendan · Dobutamine · Digoxin</td><td>inodilator · IV 응급 · CRI · 약한 강심+음성 변시</td><td>개 0.15–0.25 SID~0.25–0.3 BID · 고양이 1.25 mg/cat / 6–12 → 0.1–0.2 µg/kg/min / 2–15 µg/kg/min</td></tr>
+<tr><td class="kc">항부정맥</td><td>Ⅰ lidocaine · Ⅱ atenolol·carvedilol · Ⅲ sotalol · Ⅳ diltiazem</td><td>rate vs rhythm control</td><td>Carvedilol 개 0.4–0.5 BID · 고양이 0.1–0.3 BID</td></tr>
+<tr><td class="kc">기타</td><td>Sildenafil · Clopidogrel · Aspirin</td><td>폐고혈압 · 항혈소판</td><td>2 mg/kg BID · 1–2 mg/kg SID · 5–7 mg/kg SID</td></tr>
+</tbody>
+</table><span class="pno">21</span></section><section class="page" style=""><div class="memo">
+<div class="mt">⚡ 헷갈리는 짝</div>
+<ul class="c">
+<li><b>Heart disease vs Heart failure</b>: 구조 이상 → monitor ↔ CO 부족 → 언제나 치료</li>
+<li><b>NYHA vs ACVIM</b>: 증상(기능) 분류 ↔ 진행 단계 분류 / ISACHC = 유럽식 Ⅰ·Ⅱ·Ⅲa·Ⅲb</li>
+<li><b>B1 vs B2</b>: 비대 없음 → 치료 X ↔ remodeling → 약물 시작 / <b>C vs D</b>: 표준치료(이뇨제+ACEI+pimo) ↔ 불응 → + TOPS</li>
+<li><b>EARLY vs LATER</b>: 교감신경(부교감↓·α1·β1) ↔ RAAS · 비동기화</li>
+<li><b>Loop vs Thiazide vs Spironolactone</b>: 메인·강력 ↔ 더 세지만 위험 ↔ K 보존·이뇨 미약·항섬유화</li>
+<li><b>Bolus vs CRI</b>: 응급에 빠르게 ↔ 효율↑·내성↓·반동 없음·총량↓</li>
+<li><b>ACEI vs ARB</b>: ACE(~20%)만 차단 · bradykinin↑ ↔ AT1 차단 · ADH·알도스테론 더 강하게↓</li>
+<li><b>정맥 vs 동맥 확장</b>: nitrates·nitroprusside(전부하↓, 급성 폐수종) ↔ amlodipine·hydralazine(후부하↓, MR↓)</li>
+<li><b>Pimobendan vs Levosimendan</b>: 경구(oral solution) ↔ IV 응급, 산소 소모 없음</li>
+<li><b>FON vs FOND vs TOPS</b>: F+O+N ↔ + Dobutamine ↔ Torsemide+O₂+Pimo+Sedation / Bad = SAD · BAD</li>
+<li><b>SRR vs RRR</b>: 수면 시·가장 민감·&lt; 30 ↔ 안정 시·변동 큼</li>
+</ul>
+</div><span class="pno">22</span></section><section class="page" style=""><div class="qa">
+<div class="mt">✎ 원리 셀프체크 — 답을 가리고 설명해 보기</div>
+<div class="q">Q1. 심부전에서 교감신경·RAAS가 켜지는 건 "보상"인데 왜 결국 해로운가?</div>
+<div class="a">→ 압수용체가 CO↓를 출혈처럼 해석 → 혈관 수축·빈맥·Na/물 저류. 피는 이미 넘치는데 붙잡으니 울혈↑, 후부하↑, 산소 소모↑, AngⅡ·알도스테론이 섬유화·리모델링 → 펌프 더 약해지는 악순환.</div>
+<div class="q">Q2. ACVIM B1과 B2를 가르는 기준과 치료 차이는?</div>
+<div class="a">→ 심장 비대(remodeling) 유무. B1은 크기 변화 없음 → 치료 X·정기검진, B2는 비대 있음 → 약물(pimobendan) 시작.</div>
+<div class="q">Q3. Furosemide 용량을 올려야 할 때 "횟수"를 늘리라는 이유는?</div>
+<div class="a">→ 반감기가 짧고 문턱 이상에서만 효과. 큰 bolus는 금방 문턱 아래로 떨어져 반동 Na 저류. 나눠 주거나 CRI면 문턱 위 시간이 길어져 적은 총량으로 더 효율적, 신장 부담↓.</div>
+<div class="q">Q4. 급성 폐수종에서 furosemide 효과를 무엇으로 판단하고, 목표는?</div>
+<div class="a">→ 호흡수. 4 mg/kg IV q2h로 30–40회/분까지 낮춘 뒤 q6h 또는 CRI로 전환.</div>
+<div class="q">Q5. "이뇨제 필요량이 늘었다"는 것이 왜 신기능 저하의 신호인가?</div>
+<div class="a">→ Furosemide는 세뇨관 내강에서 작용 → 신혈류·GFR이 줄면 작용 부위에 덜 도착 → 같은 효과에 더 많은 용량 필요(카디오레날). 체액 배설 능력 저하가 CO 감소보다 먼저 옴.</div>
+<div class="q">Q6. Furosemide + ACEI 시작 후 7–14일에 BUN·Cr·혈압을 꼭 보는 이유는?</div>
+<div class="a">→ 심부전은 AngⅡ가 수출세동맥을 조여 GFR을 유지하는데, ACEI는 이를 풀고, 과이뇨·저혈압이 겹치면 사구체압이 무너져 고질소혈증. 저칼륨·저나트륨·탈수도 확인.</div>
+<div class="q">Q7. ACEI를 쓰는데도 ARB를 추가·전환하는 이유는?</div>
+<div class="a">→ AngⅡ는 non-ACE 경로(chymase 등)로도 생성 + 알도스테론은 카테콜라민·ET-1·ADH로도↑ → ACEI만으로 RAAS 100% 차단 불가. ARB는 AT1에서 출처와 무관하게 차단, ADH·알도스테론을 더 강하게 줄임.</div>
+<div class="q">Q8. 이뇨 효과가 없는 용량의 spironolactone이 수명을 늘리는 이유는?</div>
+<div class="a">→ 심근·혈관의 알도스테론 수용체를 막아 섬유화·리모델링 억제(적은 용량으로 충분) + aldosterone escape 차단. 덤으로 K 보존.</div>
+<div class="q">Q9. 동맥확장제가 MR 환자에서 "앞으로 더 가게" 하는 원리는?</div>
+<div class="a">→ LV는 수축 때 대동맥과 LA 두 출구로 피를 보냄 → 대동맥 쪽 저항(후부하)을 낮추면 더 많이 앞으로, 역류는 줄어듦.</div>
+<div class="q">Q10. Pimobendan을 inodilator라 부르는 이유, dobutamine보다 유리한 점은?</div>
+<div class="a">→ 트로포닌 C의 Ca 민감도↑(수축력) + PDE3 억제로 cAMP↑(혈관확장). Ca 양을 크게 늘리지 않아 산소 소모·부정맥 부담이 적고 경구 장기 사용 가능.</div>
+<div class="q">Q11. 심박수 240 bpm이 3일 지속되면 생기는 일과 그 의미는?</div>
+<div class="a">→ 빈맥 유발성 심근병증. 이완기·관류 시간↓ + 에너지 고갈 → 확장·수축력↓. 그래서 rate control 자체가 치료.</div>
+<div class="q">Q12. BAD 칵테일(β-blocker + ACEI + digoxin)이 나쁜 이유는?</div>
+<div class="a">→ 이뇨제가 없어 울혈(부종) 조절이 안 되고, β-blocker의 음성 변력이 약한 심장을 더 누름.</div>
+<div class="q">Q13. 심부전 환자에게 수액이 필요할 때 종류와 속도는?</div>
+<div class="a">→ 저나트륨 수액(D5W, ½LRS+2.5% dextrose, Plasmalyte 56), 필요 시 K 보충, 6시간에 걸쳐 천천히, CRT·체중·폐음·호흡·혈압 확인.</div>
+</div><span class="pno">23</span></section></body></html>

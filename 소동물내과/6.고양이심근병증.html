@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. 고양이 심근병증 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative; overflow:hidden;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+h2.lv1 .en,h3.lv2 .en{font-size:12.6px;color:var(--gray);font-weight:400;margin-left:4px;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+ol.n{margin:0 0 0 34px;padding:0;counter-reset:n;list-style:none;}
+ol.n>li{counter-increment:n;padding-left:20px;}
+ol.n>li::before{content:counter(n,decimal) ")";color:var(--magenta);font-weight:700;}
+p.txt{margin:2px 0 4px 30px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+.t-why{background:#e6f6ee;color:#0b7a55;border:1px solid #8fd1b2;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.memo ol.n{margin-left:6px;}
+.memo p{margin:2px 0;}
+.side{float:right;width:44%;border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:4px 0 8px 12px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.blk::after{content:"";display:block;clear:both;}
+
+/* 원리 박스 (정리자 보충) */
+.why{border-left:5px solid #0f9268;background:#f2fbf6;padding:7px 12px 8px;margin:8px 4px 12px 20px;color:var(--ink);border-radius:0 6px 6px 0;}
+.why .mt{font-weight:700;color:#0b7a55;margin-bottom:2px;}
+.why .mt::before{content:"💡 ";}
+.why ul.d{margin-left:4px;}
+.why ul.d>li::before{color:#0f9268;}
+.why ul.c{margin-left:20px;}
+.why p{margin:2px 0;}
+
+/* 인과 사슬 */
+.chain{margin:6px 0 10px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;color:var(--ink);font-size:12.6px;line-height:17px;}
+.chain span{background:#fff;border:1.5px solid #4A6B66;border-radius:5px;padding:3px 7px;}
+.chain span.hot{border-color:var(--red);background:#fff1f1;font-weight:700;}
+.chain span.end{background:#13756A;border-color:#13756A;color:#fff;font-weight:700;}
+.chain i{font-style:normal;color:var(--red);font-weight:700;padding:0 5px;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;min-width:0;}
+.two table{margin-left:0;width:100%;}
+.three{display:flex;gap:6px;margin:6px 0 4px 20px;}
+.three>div{flex:1;min-width:0;background:#fff;border:1.5px solid #c9d3d1;border-radius:6px;padding:6px 4px 4px;}
+.three .cap{text-align:center;font-weight:700;color:#111;font-size:13px;margin-bottom:2px;}
+
+/* 순서도 */
+.tree{margin:6px 0 12px 20px;color:var(--ink);font-size:12.2px;line-height:16px;}
+.tree .row{display:flex;gap:8px;align-items:stretch;margin:0 0 6px;}
+.tree .nd{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:6px;padding:5px 8px;}
+.tree .nd.top{background:#13756A;color:#fff;border-color:#13756A;text-align:center;font-weight:700;}
+.tree .nd.q{background:#D8ECE7;font-weight:700;text-align:center;color:#12403B;}
+.tree .nd.hot{border-color:var(--red);background:#fff4f4;}
+.tree .nd b.h{display:block;color:#111;margin-bottom:1px;}
+.tree .ar{text-align:center;color:var(--red);font-weight:700;margin:-3px 0 3px;}
+
+/* 셀프체크 */
+.qa{margin:6px 4px 10px 20px;border:2px dashed #7B52C9;background:#faf7ff;padding:8px 12px;color:var(--ink);}
+.qa .mt{font-weight:700;color:#7B52C9;margin-bottom:3px;}
+.qa .q{font-weight:700;color:#111;margin-top:4px;}
+.qa .a{color:#3A4A63;font-size:12.6px;margin-left:14px;}
+
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two,.three{display:block;margin-left:0;}
+  .three>div{margin-bottom:6px;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo,.why,.qa,.tree,.chain{margin-left:0;}
+  .tree .row{flex-direction:column;}
+}
+</style>
+<style>
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+ul+.tnote,ol+.tnote,div+.tnote,p+.tnote{margin-top:2px;}
+.chain span{line-height:1.35;}
+</style>
+</head>
+<body>
+
+
+
+<section class="page" style=""><h1 class="doc-title"><span class="num">6.</span> 고양이 심근병증 — HCM · RCM · DCM · ARVC · ATE <span class="en">Feline Cardiomyopathy</span></h1><p class="doc-sub">소동물내과 · 강의 PDF(고양이 심근병증의 진단 및 치료관리) + 슬라이드 필기 + 수업 녹음 ⑥ 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트 &nbsp;<span class="tag t-why">원리</span> 💡박스 = 강의에 없던 원리 설명(정리자 보충)</p><hr class="hr-hand"><table>
+<caption>표 1. 이번 강의 한눈에 — "두꺼운 벽 → 못 채움 → LA 확대 → 폐수종·흉수·혈전"</caption>
+<thead><tr><th style="width:17%">흐름</th><th style="width:30%">무슨 일?</th><th>키워드</th></tr></thead>
+<tbody>
+<tr><td class="kc">① 분류</td><td>고양이는 <b>HCM이 압도적</b></td><td>HCM(± 폐쇄성) &gt; RCM &gt; DCM(타우린) · ARVC · 미분류 — <b>개(DCM 최다)와 정반대</b></td></tr>
+<tr class="hi"><td class="kc">② 1차 이상</td><td>벽이 두껍고 뻣뻣 → <b>이완기 장애</b></td><td>벽 <b>≥ 6 mm</b>(정상 4–5.5), 심실 내강↓, <b>SAM</b>(LVOT 폐쇄 + MR)</td></tr>
+<tr><td class="kc">③ 결과</td><td>같은 양을 채우려면 압력↑</td><td>LA압↑ → <b>LA 확대(&gt; 2 cm = 위험)</b> → 폐수종 + <b>흉수</b>(고양이 흔함)</td></tr>
+<tr class="hi"><td class="kc">④ 합병증</td><td>커진 LA에 피가 고임</td><td>"연기"(spontaneous contrast) → LA 혈전 → <b>ATE(saddle thrombus)</b> → 급성 뒷다리 마비</td></tr>
+<tr><td class="kc">⑤ 진단</td><td>X-ray는 덜 커 보임 → <b>초음파가 핵심</b></td><td>벽 두께 · LA 크기 · SAM / ECG 이상 20–70% / 2차 원인(고혈압·갑상선) 배제</td></tr>
+<tr class="hi"><td class="kc">⑥ 치료</td><td>무증상은 논란, CHF는 확실</td><td>β-blocker(atenolol) / CCB(diltiazem) / CHF = <b>흉강천자 + furosemide + ACEI</b> / 혈전 예방 = <b>clopidogrel</b> / 집에서 <b>SRR &lt; 30</b></td></tr>
+</tbody>
+</table><h2 class="lv1">Ⅰ. 고양이 심근병증의 분류 <span class="en">Feline Cardiomyopathies</span></h2><div class="two">
+<div>
+<ul class="d">
+<li><b>Hypertrophic</b> CM (HCM) — <b>가장 흔함</b> (most common), 폐쇄성(obstructive) ± <span class="tag t-ex">시험</span></li>
+<li><b>Restrictive</b> CM (RCM) — 제한성</li>
+<li><b>Dilated</b> CM (DCM) — 특발성 &amp; <b>타우린 결핍성</b></li>
+<li><b>ARVC</b> — 부정맥 유발성 우심실 심근병증</li>
+<li>Unclassified CM — 미분류</li>
+</ul>
+</div>
+<div>
+<div class="memo">
+<div class="mt">진행 순서 (슬라이드)</div>
+<div class="chain"><span>Cardiomyopathy<br>(심근의 구조 이상)</span><i>→</i><span>Myocardial failure<br>(심근 기능 실패)</span><i>→</i><span class="end">Heart failure<br>(울혈 · 증상)</span></div>
+<ul class="c">
+<li>"심근병증 = 곧 심부전"이 아님. 벽이 두꺼워도 <b>오랫동안 무증상</b>으로 지낼 수 있음</li>
+</ul>
+</div>
+</div>
+</div><div class="memo blue">
+<div class="mt">수업에서 강조한 배경 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>고양이는 <b>환경·스트레스에 민감</b> → 검사·입원·보정 자체가 위험 요인이 될 수 있음 (호흡곤란 고양이를 무리하게 잡지 말 것)</li>
+<li>예전(1960–70년대)에는 사료의 <b>타우린 부족</b>으로 DCM이 많았음 → 사료 개선 후 지금은 드묾. 대신 요즘은 <b>채식·수제식(home-made)</b> 식단, 냉장 보관 중 오염된 식단에서 다시 보일 수 있음</li>
+<li>HCM은 2차 원인 없이 <b>심장 자체(heart's own)</b>가 두꺼워지는 병 — 다른 장기 병 때문에 두꺼워진 것은 "HCM phenotype"으로 따로 구분해야 함</li>
+</ul>
+</div><span class="pno">1</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 1. "HCM phenotype" — 벽이 두꺼워 보이는 모든 경우 중 진짜 HCM은 일부 (정리자 모식도)</div><svg viewBox="0 0 620 250" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="HCM 표현형의 원인들"><defs><marker id="h10r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h10b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h10k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h10g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h10v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h10o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h10n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><ellipse cx="310" cy="125" rx="118" ry="80" fill="#e8f0fd" stroke="#2B5FC4" stroke-width="2"></ellipse><ellipse cx="335" cy="132" rx="70" ry="50" fill="#cfe0fb" stroke="#2B5FC4" stroke-width="1.5"></ellipse><text x="310" y="66" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">HCM phenotype</text><text x="310" y="82" text-anchor="middle" font-size="9.5" fill="#1B2A44">= LV 벽이 두꺼워 보이는 모든 경우</text><text x="335" y="128" text-anchor="middle" font-size="12" fill="#1B2A44" font-weight="700">진짜 HCM</text><text x="335" y="144" text-anchor="middle" font-size="9.5" fill="#6C7787">(1차 심근병, 유전)</text><rect x="10" y="40" width="150" height="40" rx="8" fill="#f6f0fd" stroke="#7B52C9" stroke-width="1.5"></rect><text x="85.0" y="58.0" text-anchor="middle" font-size="10.5" fill="#7B52C9" font-weight="700">고혈압</text><text x="85.0" y="72.0" text-anchor="middle" font-size="9" fill="#6C7787">후부하↑</text><path d="M160,60 L196,110" fill="none" stroke="#7B52C9" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10v)"></path><rect x="10" y="104" width="150" height="40" rx="8" fill="#f6f0fd" stroke="#7B52C9" stroke-width="1.5"></rect><text x="85.0" y="122.0" text-anchor="middle" font-size="10.5" fill="#7B52C9" font-weight="700">갑상선기능항진증</text><text x="85.0" y="136.0" text-anchor="middle" font-size="9" fill="#6C7787">노령묘 · 대사↑</text><path d="M160,124 L196,124" fill="none" stroke="#7B52C9" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10v)"></path><rect x="10" y="168" width="150" height="40" rx="8" fill="#f6f0fd" stroke="#7B52C9" stroke-width="1.5"></rect><text x="85.0" y="186.0" text-anchor="middle" font-size="10.5" fill="#7B52C9" font-weight="700">말단비대증</text><text x="85.0" y="200.0" text-anchor="middle" font-size="9" fill="#6C7787">GH↑</text><path d="M160,188 L196,138" fill="none" stroke="#7B52C9" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10v)"></path><rect x="460" y="40" width="150" height="40" rx="8" fill="#fff8ec" stroke="#E0912B" stroke-width="1.5"></rect><text x="535.0" y="58.0" text-anchor="middle" font-size="10.5" fill="#E0912B" font-weight="700">탈수 · preload↓</text><text x="535.0" y="72.0" text-anchor="middle" font-size="9" fill="#6C7787">가짜 비대 (pseudo)</text><path d="M460,60 L426,110" fill="none" stroke="#E0912B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10o)"></path><rect x="460" y="104" width="150" height="40" rx="8" fill="#fff8ec" stroke="#E0912B" stroke-width="1.5"></rect><text x="535.0" y="122.0" text-anchor="middle" font-size="10.5" fill="#E0912B" font-weight="700">종양 침윤</text><text x="535.0" y="136.0" text-anchor="middle" font-size="9" fill="#6C7787">림프종 등</text><path d="M460,124 L426,124" fill="none" stroke="#E0912B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10o)"></path><rect x="460" y="168" width="150" height="40" rx="8" fill="#fff8ec" stroke="#E0912B" stroke-width="1.5"></rect><text x="535.0" y="186.0" text-anchor="middle" font-size="10.5" fill="#E0912B" font-weight="700">일시적 심근 비후 (TMT)</text><text x="535.0" y="200.0" text-anchor="middle" font-size="9" fill="#6C7787">어린 고양이 · 가역</text><path d="M460,188 L426,138" fill="none" stroke="#E0912B" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h10o)"></path><text x="310" y="236" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">→ 진단 전에 2차 원인(특히 혈압 · T4 · 탈수)을 반드시 배제</text></svg></div></div><div class="why">
+<div class="mt">"HCM phenotype"과 진짜 HCM을 왜 구분하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>심근은 <b>압력 부하</b>를 받으면 벽을 두껍게 만들어 버팀(Laplace: 벽응력 ∝ 압력 × 반지름 / 두께 → 두께↑로 응력↓) = <b>구심성 비대</b>. 그래서 <b>고혈압</b>(후부하↑)만 있어도 벽이 두꺼워짐</li>
+<li><b>갑상선기능항진증</b>: T4가 심근 단백 합성·β 수용체를 늘리고 심박수·대사↑ → 벽 두께↑ (노령 고양이에서 흔함 → 노령묘는 T4 꼭 측정) <span class="tag t-rec">수업</span></li>
+<li><b>말단비대증</b>(GH↑ → IGF-1↑): 성장인자가 심근을 직접 키움</li>
+<li><b>탈수 = 가짜(pseudo) 비대</b>: 심실에 피가 덜 차면 벽이 "접혀서" 두꺼워 보임 → 수액 후 재측정하면 정상</li>
+<li><b>종양 침윤</b>(림프종 등)·<b>일시적 심근 비후(TMT)</b>: 어린 고양이가 스트레스·감염 후 일시적으로 벽이 두꺼워졌다가 수 주–수 개월 뒤 회복되는 경우 보고</li>
+<li>→ 원인을 고치면 되돌아가는 것들이므로, <b>HCM으로 진단하기 전에 반드시 배제</b>. 2차 원인이 없을 때만 "1차성 HCM"</li>
+</ul>
+</div><h2 class="lv1">Ⅱ. 비대성 심근병증 <span class="en">Hypertrophic Cardiomyopathy (HCM)</span></h2><h3 class="lv2">1. 정의 · 병리 <span class="tag t-ex">시험</span></h3><p class="txt"><span class="hl"><b>HCM = ※ Diastolic dysfunction</b></span> — 좌심실 벽(중격 · 자유벽)이 <b>대칭적으로 두꺼워져</b> 내강이 좁아지고, 뻣뻣해서 <b>이완기에 피를 못 채우는</b> 병</p><ul class="d">
+<li><b>구심성(concentric) 비대</b>: 벽이 안쪽으로 자라 <b>LV 내강이 좁아짐</b> (DCM·MMVD의 편심성 확장과 반대) <span class="tag t-rec">수업</span></li>
+<li>원래 고양이 심장은 체구에 비해 <b>근육량이 상대적으로 많은</b> 편 → 정상 기준을 잘 알고 있어야 과진단을 피함 <span class="tag t-rec">수업</span></li>
+<li>부검 사진(심장이 꽉 쥐어진 모양) 필기: <span class="hlp">"사후경직 때문에 수축이 멈춰진 Case"</span> → 사후경직으로 수축된 상태로 굳으면 정상 심장도 두꺼워 보일 수 있음 <span class="tag t-pen">필기</span></li>
+<li>어린 고양이는 태어난 뒤 좌심이 본격적으로 일하기 시작하면서 <b>일시적으로 벽이 두꺼워질</b> 수 있음 → 한 번 측정으로 단정하지 말 것 <span class="tag t-rec">수업</span></li>
+</ul><span class="pno">2</span></section><section class="page" style=""><div class="why">
+<div class="mt">왜 "수축은 정상인데" 심부전이 오나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>심장 한 박동 = 수축기(짜내기) + 이완기(채우기). DCM은 짜내기가 고장, <b>HCM은 채우기가 고장</b></li>
+<li>두꺼운 벽 + 섬유화 = <b>고무호스 대신 쇠파이프</b>. 늘어나지 않으니 같은 양을 넣으려면 압력이 훨씬 높아야 함 (그림 2)</li>
+<li>이완은 <b>능동 과정</b>: 근소포체가 Ca²⁺를 ATP로 다시 퍼 담아야 근육이 풀림. 비대 심근은 이 Ca 재흡수가 느리고, 두꺼운 벽은 산소 공급이 부족해 ATP도 모자람 → <b>이완 지연(relaxation↓) + 순응도 저하(stiffness↑)</b> 두 가지가 겹침</li>
+<li>그래서 FS(수축 지표)는 정상이거나 오히려 높게 나오는데도 LA압은 올라가 폐수종·흉수가 생김</li>
+</ul>
+</div><h3 class="lv2">2. 신호 (Signalment)</h3><table>
+<caption>표 2. HCM 잘 걸리는 고양이</caption>
+<thead><tr><th style="width:22%">항목</th><th>내용</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">유전</td><td><b>Maine Coon</b>에서 유전(heritable) 확인 <span class="tag t-ex">시험</span> / 국내에서도 Maine coon 혈통 유전자 분석을 계획 중 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">품종</td><td>Ragdoll, American shorthair, British shorthair, Scottish fold, Persian, <b>Korean shorthair???</b> (슬라이드에 물음표 — 코숏 데이터는 아직 부족)</td></tr>
+<tr class="hi"><td class="kc">성별</td><td><b>수컷 &gt; 암컷</b> — 수업에서 "수컷이 훨씬 많다" <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">나이</td><td><b>중년</b>이 많지만 범위가 넓음(large range) — <b>5–6개월령</b> 어린 고양이가 HCM + saddle thrombus로 뒷다리 마비 왔다가 회복한 증례도 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">국내 상황</td><td>노령묘는 <b>갑상선기능항진증</b>이 함께 진단되는 경우 많음 / 한국 고양이 집단은 아직 본격적인 <b>고령화 전</b>이라 앞으로 더 늘 것 <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">유전성 HCM은 무엇이 고장난 것인가 <span class="tag t-why" style="margin-left:4px;">정리자 보충</span></div>
+<ul class="d">
+<li>Maine Coon(<b>MYBPC3 A31P</b>), Ragdoll(<b>MYBPC3 R820W</b>) 변이가 알려져 있음. MYBPC3 = 근절(sarcomere)의 미오신 결합 단백 C → 수축 단백 자체의 결함</li>
+<li>고장난 근절은 에너지를 비효율적으로 씀 → 세포가 "더 많이 만들어서" 보상하려다 <b>비대 + 근섬유 배열 흐트러짐(myofiber disarray) + 섬유화</b></li>
+<li>상염색체 우성 + 불완전 침투 → 변이가 있어도 발병 시기·정도가 제각각 (그래서 "large range")</li>
+</ul>
+</div><h3 class="lv2">3. 신체검사 · 임상 증상 (Physical Examination)</h3><div class="two">
+<div>
+<ul class="d">
+<li><b>수축기 심잡음 (80%)</b> — SAM에 의한 LVOT 난류 + MR <span class="tag t-ex">시험</span></li>
+<li><b>Gallop (S3 / S4)</b></li>
+<li>호흡곤란 · 빈호흡 (dyspnea / tachypnea)</li>
+<li><b>폐음 감소(muffled lung sounds)</b> — 흉수</li>
+<li>부정맥</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>식욕부진 · 구토 / 기침(드묾)</li>
+<li><b>ATE</b> (동맥 혈전색전증) — 급성 뒷다리 마비</li>
+<li><b>돌연사 (sudden death)</b></li>
+<li>고양이는 심박수가 빨라서 <b>gallop을 듣기가 어려움</b> <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div><div class="memo">
+<div class="mt">임상에서 기억할 것 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>HCM 고양이는 <b>흉수(pleural effusion)</b>가 자주 동반 — 그리고 고양이는 뚜렷한 이유 없이도 흉수가 차 있는 경우가 있음</li>
+<li><b>갑자기 호흡곤란으로 온 고양이 → 기저 심장병부터 의심</b>. 고양이는 증상을 숨기다가 한계에 다다라서야 드러냄</li>
+</ul>
+</div><span class="pno">3</span></section><section class="page" style=""><div class="why">
+<div class="mt">왜 고양이의 좌심부전은 "흉수"까지 만들고, 왜 gallop이 들리나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>흉수</b>: 개는 흉막 장측(visceral pleura)의 정맥이 주로 체순환으로 빠지지만, 고양이는 장측 흉막 정맥이 <b>폐정맥 → LA</b>로 빠지는 비중이 큼 → LA압↑만으로도 흉막에서 액체가 새어 흉수가 생김. 그래서 고양이는 <b>좌심부전 = 폐수종 + 흉수</b></li>
+<li><b>S4</b>: 이완기 말 심방이 뻣뻣한 심실로 피를 억지로 밀어 넣을 때 심실벽이 "탁" 진동 → HCM의 전형적 gallop (AF면 심방 수축이 없어 S4 소실)</li>
+<li><b>S3</b>: 이완기 초기 높은 LA압으로 피가 확 쏟아지다 뻣뻣한 벽에 갑자기 멈출 때 → 심부전 진행 신호</li>
+<li><b>잡음이 변하는 이유</b>: SAM은 <b>동적(dynamic)</b> 폐쇄 → 흥분·심박수↑ 때 커지고 안정 시 작아짐. 같은 고양이도 진료실에서 잡음 강도가 달라질 수 있음</li>
+</ul>
+</div><h3 class="lv2">4. 심부전의 병태생리 (CHF Pathophysiology) <span class="tag t-ex">시험</span></h3><ul class="d">
+<li><b>↑ LV stiffness</b> — 벽 두께↑, 섬유화(fibrosis)</li>
+<li><b>↓ Relaxation</b> — 부하 조건 변화(altered loading)</li>
+<li><b>SAM</b> — 승모판 전엽의 수축기 전방 운동 → LVOT 폐쇄 + MR</li>
+<li>→ <b>좌심부전 (Left heart failure)</b>: 폐수종(pulmonary edema), 흉수(pleural effusion)</li>
+</ul><div class="three" style="display:block;"><div><div class="cap">그림 2. 뻣뻣한 심실의 이완기 압력–용적 곡선 — "같은 양을 채우려면 압력이 치솟는다" (정리자 모식도)</div><svg viewBox="0 0 620 252" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="이완기 압력-용적 관계"><path d="M60,24 L60,194 L360,194" stroke="#1B2A44" stroke-width="1.6" fill="none"></path><text x="210.0" y="214" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">LV 이완기 용적 (채운 양) →</text><text x="54" y="16" text-anchor="start" font-size="10.5" fill="#1B2A44" font-weight="700">LV 이완기 압력 (= LA압)</text><polyline points="60.0,194.0 63.8,193.8 67.5,193.6 71.2,193.4 75.0,193.2 78.8,193.0 82.5,192.7 86.2,192.5 90.0,192.3 93.8,192.0 97.5,191.8 101.2,191.5 105.0,191.2 108.8,191.0 112.5,190.7 116.2,190.4 120.0,190.1 123.8,189.7 127.5,189.4 131.2,189.1 135.0,188.7 138.8,188.4 142.5,188.0 146.2,187.6 150.0,187.2 153.8,186.8 157.5,186.4 161.2,186.0 165.0,185.5 168.8,185.1 172.5,184.6 176.2,184.1 180.0,183.6 183.8,183.1 187.5,182.5 191.2,182.0 195.0,181.4 198.8,180.8 202.5,180.2 206.2,179.5 210.0,178.9 213.8,178.2 217.5,177.5 221.2,176.8 225.0,176.1 228.8,175.3 232.5,174.5 236.2,173.7 240.0,172.9 243.8,172.0 247.5,171.1 251.2,170.2 255.0,169.3 258.8,168.3 262.5,167.3 266.2,166.2 270.0,165.2 273.8,164.1 277.5,162.9 281.2,161.7 285.0,160.5 288.8,159.3 292.5,158.0 296.2,156.6 300.0,155.2 303.8,153.8 307.5,152.4 311.2,150.8 315.0,149.3 318.8,147.7 322.5,146.0 326.2,144.3 330.0,142.5 333.8,140.7 337.5,138.8 341.2,136.9 345.0,134.9 348.8,132.8 352.5,130.6 356.2,128.4 360.0,126.2" fill="none" stroke="#0F9268" stroke-width="2.6"></polyline><text x="265" y="109" text-anchor="start" font-size="10.5" fill="#0F9268" font-weight="700">정상: 잘 늘어남</text><polyline points="60.0,194.0 63.8,193.7 67.5,193.3 71.2,193.0 75.0,192.6 78.8,192.2 82.5,191.8 86.2,191.4 90.0,190.9 93.8,190.4 97.5,189.9 101.2,189.4 105.0,188.8 108.8,188.2 112.5,187.6 116.2,186.9 120.0,186.3 123.8,185.5 127.5,184.8 131.2,184.0 135.0,183.1 138.8,182.3 142.5,181.3 146.2,180.4 150.0,179.3 153.8,178.3 157.5,177.1 161.2,176.0 165.0,174.7 168.8,173.4 172.5,172.0 176.2,170.6 180.0,169.0 183.8,167.4 187.5,165.7 191.2,164.0 195.0,162.1 198.8,160.2 202.5,158.1 206.2,155.9 210.0,153.7 213.8,151.3 217.5,148.7 221.2,146.1 225.0,143.3 228.8,140.4 232.5,137.3 236.2,134.1 240.0,130.7 243.8,127.1 247.5,123.4 251.2,119.4 255.0,115.3 258.8,110.9 262.5,106.4 266.2,101.5 270.0,96.5 273.8,91.1 277.5,85.6 281.2,79.7 285.0,73.5 288.8,67.0 292.5,60.1 296.2,53.0 300.0,45.4 303.8,37.5" fill="none" stroke="#E23B3B" stroke-width="2.6"></polyline><text x="185" y="46" text-anchor="start" font-size="10.5" fill="#E23B3B" font-weight="700">HCM · RCM: 뻣뻣함</text><line x1="225.0" y1="194" x2="225.0" y2="34" stroke="#6C7787" stroke-dasharray="4 3"></line><circle cx="225.0" cy="176.1" r="4" fill="#0F9268"></circle><line x1="60" y1="176.1" x2="225.0" y2="176.1" stroke="#0F9268" stroke-dasharray="3 3"></line><circle cx="225.0" cy="143.3" r="4" fill="#E23B3B"></circle><line x1="60" y1="143.3" x2="225.0" y2="143.3" stroke="#E23B3B" stroke-dasharray="3 3"></line><text x="64" y="138.32549270876973" text-anchor="start" font-size="9.5" fill="#E23B3B" font-weight="700">압력 ↑↑</text><text x="64" y="171.07529958700795" text-anchor="start" font-size="9.5" fill="#0F9268" font-weight="700">압력 낮음</text><text x="231.0" y="188" text-anchor="start" font-size="9.5" fill="#6C7787" font-weight="700">같은 양</text><rect x="400" y="26" width="210" height="40" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.4"></rect><text x="505" y="43" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">벽 두꺼움 + 섬유화</text><text x="505" y="57" text-anchor="middle" font-size="9.5" fill="#6C7787">stiffness↑ · 이완↓</text><text x="505" y="76" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">↓</text><rect x="400" y="78" width="210" height="40" rx="8" fill="#fff" stroke="#E23B3B" stroke-width="1.4"></rect><text x="505" y="95" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">같은 양을 채우려면 압력↑</text><text x="505" y="109" text-anchor="middle" font-size="9.5" fill="#6C7787">(곡선이 가파름)</text><text x="505" y="128" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">↓</text><rect x="400" y="130" width="210" height="40" rx="8" fill="#fff" stroke="#E0912B" stroke-width="1.4"></rect><text x="505" y="147" text-anchor="middle" font-size="10.5" fill="#E0912B" font-weight="700">LA압↑ → LA 확장</text><text x="505" y="161" text-anchor="middle" font-size="9.5" fill="#6C7787">LA &gt; 2 cm = 위험</text><text x="505" y="180" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">↓</text><rect x="400" y="182" width="210" height="40" rx="8" fill="#fff" stroke="#2B5FC4" stroke-width="1.4"></rect><text x="505" y="199" text-anchor="middle" font-size="10.5" fill="#2B5FC4" font-weight="700">폐정맥압↑</text><text x="505" y="213" text-anchor="middle" font-size="9.5" fill="#6C7787">폐수종 + 흉수(고양이 흔함)</text><text x="505" y="246" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">수축력은 정상 — 문제는 "못 채움"</text></svg></div></div><h3 class="lv3">SAM (Systolic Anterior Motion of the mitral valve)</h3><ul class="d">
+<li>정상 슬라이드 필기: <span class="hlp">"Aorta로 나가는 길이 거의 고속도로"</span> — 정상은 LVOT(좌심실 유출로)가 넓게 뚫려 있음 <span class="tag t-pen">필기</span></li>
+<li>HCM: 두꺼운 중격이 LVOT를 좁힘 → 승모판 <b>중격쪽 엽(septal/anterior leaflet)이 길어져</b> 좁아진 유출로 쪽으로 <b>빨려 들어가 펄럭임</b> → ① <b>LVOT 폐쇄 + 난류</b> ② 판막이 제대로 닫히지 못해 <b>MR</b> <span class="tag t-rec">수업</span></li>
+<li>초음파 기준에서 "severe(&gt; 7 mm) <b>and SAM</b>" = 심각한 상태로 봄</li>
+</ul><span class="pno">4</span></section><section class="page" style=""><div class="three" style="display:block;"><div><div class="cap">그림 3. 정상 LVOT "고속도로" vs HCM의 SAM — 앞엽이 유출로로 빨려 들어가며 폐쇄 + MR (정리자 모식도)</div><svg viewBox="0 0 620 292" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="정상 LVOT와 HCM의 SAM"><defs><marker id="h11r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h11b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h11k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h11g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h11v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h11o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h11n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M50,60 L120,60 Q134,60 134,74 L134,120 L64,120 Q50,120 50,106 Z" fill="#fdf0f0" stroke="#7a1f1f" stroke-width="1.2"></path><text x="90" y="94" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LA</text><path d="M180,120 L180,20 L226,20 L226,120" fill="#fde1e1" stroke="#d24a4a" stroke-width="2.4"></path><text x="203" y="40" text-anchor="middle" font-size="11" fill="#d24a4a" font-weight="700">Ao</text><path d="M130,122 Q90,140 100,196 Q120,256 190,250 Q262,240 258,170 Q256,134 236,122 Z" fill="#c0392b" fill-opacity=".8" stroke="#7a1f1f"></path><path d="M142,126 Q114,146 122,194 Q134,236 190,232 Q242,226 242,172 Q242,138 224,126 Z" fill="#fdf3f2"></path><text x="182" y="200" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><path d="M134,120 Q150,136 162,150" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M200,220 Q220,170 203,110" fill="none" stroke="#1B2A44" stroke-width="2.2" stroke-linecap="round" marker-end="url(#h11k)"></path><text x="140" y="280" text-anchor="middle" font-size="11" fill="#0F9268" font-weight="700">정상: LVOT 넓음 = "고속도로"</text><path d="M360,60 L430,60 Q444,60 444,74 L444,120 L374,120 Q360,120 360,106 Z" fill="#fdf0f0" stroke="#7a1f1f" stroke-width="1.2"></path><text x="400" y="94" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LA</text><path d="M490,120 L490,20 L536,20 L536,120" fill="#fde1e1" stroke="#d24a4a" stroke-width="2.4"></path><text x="513" y="40" text-anchor="middle" font-size="11" fill="#d24a4a" font-weight="700">Ao</text><path d="M440,122 Q400,140 410,196 Q430,256 500,250 Q572,240 568,170 Q566,134 546,122 Z" fill="#c0392b" fill-opacity=".8" stroke="#7a1f1f"></path><path d="M462,132 Q452,160 464,196 Q476,214 500,212 Q524,208 526,176 Q526,146 518,132 Z" fill="#fdf3f2"></path><text x="492" y="196" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><path d="M536,122 Q516,140 522,160" stroke="#7a1f1f" stroke-width="10" fill="none" opacity=".8"></path><path d="M444,120 Q466,128 490,124" stroke="#1B2A44" stroke-width="3" fill="none" stroke-linecap="round"></path><path d="M478,134 L492,126" fill="none" stroke="#7B52C9" stroke-width="2" stroke-linecap="round" marker-end="url(#h11v)"></path><path d="M506,200 Q516,160 508,112" fill="none" stroke="#E23B3B" stroke-width="2.6" stroke-linecap="round" marker-end="url(#h11r)"></path><path d="M500,108 q4,-4 8,0" stroke="#7B52C9" stroke-width="1.4" fill="none"></path><path d="M504,98 q4,-4 8,0" stroke="#7B52C9" stroke-width="1.4" fill="none"></path><path d="M508,88 q4,-4 8,0" stroke="#7B52C9" stroke-width="1.4" fill="none"></path><path d="M512,78 q4,-4 8,0" stroke="#7B52C9" stroke-width="1.4" fill="none"></path><path d="M516,68 q4,-4 8,0" stroke="#7B52C9" stroke-width="1.4" fill="none"></path><path d="M478,124 C460,110 436,96 418,84" stroke="#E23B3B" stroke-width="5" opacity=".55" fill="none"></path><text x="404" y="74" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">MR</text><text x="556" y="108" text-anchor="start" font-size="9.5" fill="#7B52C9" font-weight="700">난류</text><text x="450" y="280" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">HCM: 두꺼운 중격 + 앞엽이 빨려 감 = SAM</text></svg></div></div><div class="why">
+<div class="mt">왜 판막이 "빨려" 들어가나 — 끌림(drag) 효과 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>좁은 관을 통과하는 흐름은 빨라짐(연속 방정식). 빠른 흐름이 <b>판막엽을 옆에서 밀고 끌어당김</b>(drag; 고전적 설명은 Venturi 효과) → 긴 앞엽이 중격 쪽으로 붙음</li>
+<li>판막이 붙으면 유출로가 더 좁아지고 → 흐름이 더 빨라지고 → 더 붙는 <b>양성 되먹임</b> → 수축기 중·후반에 폐쇄가 심해짐</li>
+<li>심박수↑·수축력↑(흥분, 카테콜아민)이면 내강이 더 작아져 SAM 악화 → 그래서 <b>β-blocker가 SAM을 줄이는 데 가장 좋은 약</b>(Ⅲ장). 반대로 <b>탈수·혈관확장제·양성 변력제</b>는 SAM을 악화시킬 수 있음</li>
+</ul>
+</div><h3 class="lv2">5. 흉부 방사선 (Thoracic Radiography)</h3><ul class="d">
+<li>필기: <span class="hlp">"고양이는 심장부전에 의한 폐수종이 덧엽에서 많이 관찰된다"</span> <span class="tag t-pen">필기</span> — 덧엽(accessory lobe) = 미엽(후대정맥 옆, 심장 뒤쪽). 개처럼 "폐문부 주변 + 후엽 대칭"으로 딱 떨어지지 않고 <b>얼룩덜룩(patchy)·비대칭</b>으로 흩어지는 것이 고양이 심인성 폐수종의 특징</li>
+<li>HCM 심장은 X-ray에서 <b>극적으로 커 보이지 않음</b> (안으로 두꺼워지니까) <span class="tag t-rec">수업</span></li>
+<li>반대로 고양이 심장이 X-ray에서 <b>확연히 커 보이면 = 이미 심한 심부전</b> <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">X-ray가 HCM을 놓치는 이유 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>X-ray는 심장의 <b>바깥 윤곽(실루엣)</b>만 봄. 구심성 비대는 벽이 안쪽으로 자라 실루엣 변화가 작음 → 초기 HCM은 정상처럼 보임</li>
+<li>실루엣이 커지는 건 주로 <b>심방이 커질 때</b> → 양쪽 심방이 커지면 VD 상에서 심장 머리쪽이 넓어진 <b>"밸런타인 하트(valentine heart)"</b> 모양 (정리자 보충) → 이미 LA압이 높다는 뜻</li>
+<li>→ 고양이 심근병증의 확진·중증도 판단은 <b>초음파</b>. X-ray는 폐수종·흉수(=CHF 여부) 확인용</li>
+</ul>
+</div><span class="pno">5</span></section><section class="page" style=""><h3 class="lv2">6. 심전도 (ECG) — 이상 소견 20–70%</h3><table>
+<caption>표 3. HCM 고양이의 ECG 소견</caption>
+<thead><tr><th style="width:28%">소견</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">VPC · SVPC</td><td>두꺼운 벽·섬유화 → 전기적 불안정 (심실성 · 상심실성 조기수축)</td></tr>
+<tr class="hi"><td class="kc">AF (very severe)</td><td><b>↑ LAE</b> — 고양이에서 AF = 매우 심한 상태. <b>AF의 빈도는 LA 확대 정도에 비례</b> <span class="tag t-rec">수업</span> <span class="tag t-ex">시험</span></td></tr>
+<tr><td class="kc">Left axis deviation</td><td>좌전속지 차단(LAFB) 양상 — 비대·섬유화가 전도를 방해</td></tr>
+<tr><td class="kc">LVH</td><td>R파 <b>&gt; 1 mV</b> (고양이 기준)</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">고양이의 AF가 "very severe"인 이유 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>AF는 무질서한 재진입 회로가 여러 개 돌 만큼 <b>심방이 충분히 커야(임계 질량)</b> 유지됨. 고양이 심장은 약 <b>25 g</b>밖에 안 되는데 AF가 생겼다 = LA가 엄청나게 늘어났다는 뜻</li>
+<li>게다가 HCM은 뻣뻣한 심실을 채우는 데 <b>심방 수축(atrial kick)</b> 의존도가 큼 → AF로 이걸 잃고 심박까지 빨라지면 채움이 급감 → CHF 악화 + 심방 내 혈류 정체 → 혈전 위험↑</li>
+</ul>
+</div><h3 class="lv2">7. 심초음파 (Echocardiography) — 진단의 핵심 <span class="tag t-ex">시험</span></h3><div class="three" style="display:block;"><div><div class="cap">그림 4. 이완기 말 LV 단면 비교 — 정상 · HCM · RCM · DCM (정리자 모식도)</div><svg viewBox="0 0 640 236" width="100%" style="max-width:640px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="고양이 심근병증 단면 비교"><circle cx="82" cy="96" r="44" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="82" cy="96" r="30" fill="#fff" stroke="#7a1f1f"></circle><text x="82" y="100" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><text x="82" y="186" text-anchor="middle" font-size="13" fill="#6C7787" font-weight="700">정상</text><text x="82" y="202" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">벽 4–5.5 mm</text><circle cx="240" cy="96" r="52" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="240" cy="96" r="16" fill="#fff" stroke="#7a1f1f"></circle><text x="240" y="100" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><text x="240" y="186" text-anchor="middle" font-size="13" fill="#2B5FC4" font-weight="700">HCM</text><text x="240" y="202" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">벽 ≥ 6 mm (대칭)</text><text x="240" y="217" text-anchor="middle" font-size="9.5" fill="#6C7787">내강↓ · 이완 장애</text><circle cx="400" cy="96" r="44" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="400" cy="96" r="28" fill="#fff" stroke="#7a1f1f"></circle><circle cx="400" cy="96" r="29" fill="none" stroke="#f3f3f3" stroke-width="5"></circle><circle cx="400" cy="96" r="26" fill="#fff" stroke="#bbb" stroke-dasharray="2 2"></circle><text x="400" y="100" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><text x="400" y="186" text-anchor="middle" font-size="13" fill="#7B52C9" font-weight="700">RCM</text><text x="400" y="202" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">벽 정상~약간↑</text><text x="400" y="217" text-anchor="middle" font-size="9.5" fill="#6C7787">심내막 섬유화 · LA↑↑</text><circle cx="560" cy="96" r="62" fill="#c0392b" fill-opacity=".85" stroke="#7a1f1f" stroke-width="1.5"></circle><circle cx="560" cy="96" r="54" fill="#fff" stroke="#7a1f1f"></circle><text x="560" y="100" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">LV</text><text x="560" y="186" text-anchor="middle" font-size="13" fill="#E23B3B" font-weight="700">DCM</text><text x="560" y="202" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">LV &gt; 18 mm · 벽↓</text><text x="560" y="217" text-anchor="middle" font-size="9.5" fill="#6C7787">FS↓ · 수축 장애</text><text x="320" y="232" text-anchor="middle" font-size="9.5" fill="#6C7787">이완기말(end-diastole) 단축상 · 고양이는 체격 차가 작아 mm 절대 기준을 그대로 씀</text></svg></div></div><table>
+<caption>표 4. 이완기 말(end-diastole) LV 벽 두께 기준 (IVS · LVFW)</caption>
+<thead><tr><th style="width:28%">판정</th><th style="width:24%">벽 두께</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td class="kc">Normal</td><td><b>&lt; 5.5 mm</b> (4–5.5)</td><td>—</td></tr>
+<tr><td class="kc">Equivocal / Mild</td><td><b>6.0 mm</b> 전후</td><td>"6.0이면 HCM으로 본다" <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">Moderate</td><td><b>&gt; 6.0 mm</b></td><td>대칭성 IVS &amp; FW 비대</td></tr>
+<tr class="hi"><td class="kc">Severe</td><td><b>&gt; 7.0 mm</b> (and SAM??)</td><td><b>≥ 7 mm + SAM</b>이면 심각 <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><span class="pno">6</span></section><section class="page" style=""><div class="two">
+<div>
+<div class="memo">
+<div class="mt">초음파 기준 정리 (DCM · HCM 비교)</div>
+<ul class="c">
+<li>정상 벽: 이완기 말 <b>4–5.5 mm</b></li>
+<li><b>HCM</b>: 대칭성 IVS &amp; FW <b>&gt; 6 mm</b></li>
+<li><b>DCM</b>: 공 모양(globoid) LV, 이완기 <b>&gt; 18 mm</b>, 얇은 벽, <b>FS↓</b></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo red">
+<div class="mt">위험 인자 (Smith, JVIM 2003)</div>
+<ul class="c">
+<li>동반 심장병 (concurrent heart disease)</li>
+<li><b>LA &gt; 2 cm</b> — 고양이에게 2 cm는 <b>엄청 큰</b> 것 <span class="tag t-rec">수업</span></li>
+<li>LA 안에 <b>연기 같은 혈액(smoke)</b> → 혈전 전 단계 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+</div><div class="why">
+<div class="mt">개는 체중으로 보정하는데 고양이는 왜 "mm 절대값"을 쓰나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>개는 1 kg 치와와부터 80 kg 거대견까지 체구 차가 커서 심장 치수를 체중·체표면적으로 보정(정규화)해야 함</li>
+<li>고양이는 대부분 <b>3–6 kg</b>로 체구 차가 작음 → <b>절대 수치(6 mm, 2 cm)</b>를 그대로 기준으로 써도 됨 <span class="tag t-rec">수업</span> (단, 아주 큰 Maine Coon은 약간 고려)</li>
+<li>측정은 반드시 <b>이완기 말</b>: 수축기엔 정상 벽도 두꺼워지니까. 그리고 <b>탈수 상태</b>에서 재면 가짜로 두꺼움(그림 1)</li>
+</ul>
+</div><h2 class="lv1">Ⅲ. HCM의 치료 <span class="en">Treatment of HCM</span></h2><h3 class="lv2">1. 단계별 치료 원칙</h3><table>
+<caption>표 5. 상태에 따른 치료 — 슬라이드 요약</caption>
+<thead><tr><th style="width:30%">상태</th><th>치료</th></tr></thead>
+<tbody>
+<tr><td class="kc">무증상 · 보상기 (asymptomatic, compensated)</td><td><b>논란(controversial)</b> — 치료가 생존을 늘린다는 근거 없음</td></tr>
+<tr><td class="kc">Severe, CHF 없음</td><td><b>데이터 없음</b> (no data)</td></tr>
+<tr class="hi"><td class="kc">Severe + CHF</td><td><b>Lasix(furosemide) + ACEI</b></td></tr>
+<tr class="hi"><td class="kc">혈전 예방 (thromboprevention)</td><td><b>Aspirin 5 mg/cat PO q48–72h</b> 또는 <b>Clopidogrel 18.75 mg/cat PO SID</b></td></tr>
+</tbody>
+</table><div class="memo blue">
+<div class="mt">무증상인데 보호자가 치료를 원할 때 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>한국 보호자들은 "진단받았으면 뭔가 해 달라"는 경우가 많음 → <b>β-blocker · CCB · ACEI</b>를 쓰는 것 자체는 괜찮음</li>
+<li>단, 쓰면 <b>반드시 부작용 모니터링</b> — 정기 재검: <b>2주 → 1개월 → 3개월 → 6개월</b>. 약을 시작한 이상 그 책임은 수의사에게 있음</li>
+<li>CHF가 있고 응고 검사 결과가 나쁘면 → <b>aspirin 또는 clopidogrel</b> 추가</li>
+</ul>
+</div><span class="pno">7</span></section><section class="page" style=""><h3 class="lv2">2. β-blocker vs CCB vs ACEI <span class="tag t-ex">시험</span></h3><table>
+<caption>표 6. HCM에 쓰는 세 계열 비교</caption>
+<thead><tr><th style="width:16%">계열</th><th style="width:42%">근거 / 효과</th><th>용량 · 수업 포인트</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">β-blocker<br>(Atenolol)</td><td>• <b>SAM을 줄이는 데 최고</b>의 약<br>• CHF·ATE 동반 시 생존 이득 <b>없음</b><br>• LVH 감소는 일화적(anecdotal)<br>• 이완기능을 <b>직접</b> 개선하지는 않음<br>• 빈맥성 부정맥 치료<br>• CCB보다 나음 (<b>더 강한 음성 변력</b>)</td><td><b>6.25–12.5 mg PO BID</b> (2–3 mg/kg bid, 목표 HR까지)<br>심박수를 늦춤(항부정맥) + 음성 변력 → 이완에 도움. <b>심박이 어느 정도 빠르다는 전제</b>가 필요 <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">CCB<br>(Diltiazem)</td><td>• <b>초기 이완(early diastolic relaxation) 개선</b><br>• 순응도(compliance)에는 효과 없음<br>• 심박수 감소 작음<br>• LVH 줄일 수도<br>• 생존 근거 없음</td><td><b>7.5 mg PO TID</b> (0.5–2.5 mg/kg tid)</td></tr>
+<tr><td class="kc">ACEI<br>(Enalapril)</td><td>• 조기 ACEI: 이득 <b>없음</b>, 섬유화 감소 가능성<br>• Stable CHF에서는 furosemide와 병용</td><td><b>0.5 mg/kg SID–BID</b><br>알도스테론↓ → 이론적으로 <b>항섬유화</b> <span class="tag t-rec">수업</span></td></tr>
+</tbody>
+</table><div class="three" style="display:block;"><div><div class="cap">그림 5. 심박수와 이완기 채움 시간 — 수축기 길이는 거의 고정, 빨라지면 이완기만 잘려 나감 (정리자 모식도)</div><svg viewBox="0 0 620 170" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="심박수와 이완기 충만 시간"><text x="8" y="52" text-anchor="start" font-size="11" fill="#0F9268" font-weight="700">160 bpm (β-blocker 후)</text><rect x="170" y="34" width="165.0" height="26" fill="#f4c0c0" stroke="#E23B3B"></rect><rect x="335.0" y="34" width="247.5" height="26" fill="#cde3f7" stroke="#2B5FC4"></rect><text x="252.5" y="51" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">수축</text><text x="458.75" y="51" text-anchor="middle" font-size="9.5" fill="#2B5FC4" font-weight="700">이완(채움)</text><text x="8" y="108" text-anchor="start" font-size="11" fill="#E23B3B" font-weight="700">240 bpm (빈맥)</text><rect x="170" y="90" width="165.0" height="26" fill="#f4c0c0" stroke="#E23B3B"></rect><rect x="335.0" y="90" width="110.0" height="26" fill="#cde3f7" stroke="#2B5FC4"></rect><text x="252.5" y="107" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">수축</text><text x="390.0" y="107" text-anchor="middle" font-size="9.5" fill="#2B5FC4" font-weight="700">이완(채움)</text><text x="310" y="160" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">수축 시간은 거의 그대로, 심박이 빨라지면 이완기만 줄어듦 → 뻣뻣한 HCM 심실은 더 못 채움</text></svg></div></div><div class="why">
+<div class="mt">β-blocker는 "이완을 직접 개선하지 않는데" 왜 HCM에 쓰나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>① 심박수↓ → 채울 시간↑</b>: 심박이 빨라질 때 줄어드는 건 주로 이완기. 뻣뻣한 심실은 천천히 채워지므로 시간을 벌어 주는 것만으로 LA압이 내려감 (그림 5)</li>
+<li><b>② 음성 변력 → SAM↓</b>: 수축이 덜 세면 수축기 내강이 덜 좁아지고 유출로 속도가 줄어 판막이 덜 빨려 들어감 → 동적 폐쇄·MR 감소</li>
+<li><b>③ 산소 소모↓</b>: 두꺼운 벽은 늘 산소가 부족(심내막하 허혈) → 심박·수축력↓로 수요를 줄이면 허혈·섬유화·부정맥이 줄어듦</li>
+<li>→ 즉 "근육을 부드럽게" 하는 약이 아니라 <b>조건을 바꿔 주는</b> 약. 그래서 심박이 이미 느린 고양이엔 이득이 적고, CHF로 박출량이 겨우 유지되는 고양이엔 음성 변력이 오히려 해가 될 수 있음 → CHF·ATE에서 생존 이득 없음</li>
+<li><b>Diltiazem</b>: L형 Ca 채널 차단 → 세포 내 Ca 과부하를 줄여 <b>이완 초기를 빠르게</b>. 하지만 이미 굳은 섬유 조직(순응도)은 못 바꿈</li>
+</ul>
+</div><h3 class="lv2">3. 급성(전격성) 심부전 — Fulminant CHF</h3><div class="chain"><span class="hot">흉수 있으면<br>흉강천자 먼저</span><i>→</i><span>Furosemide<br>1–2 mg/kg IV/IM/SQ q1–4h</span><i>→</i><span>RR 떨어질 때까지 반복</span><i>→</i><span>± Nitroglycerin</span><i>→</i><span class="end">산소 (Oxygen)</span></div><span class="pno">8</span></section><section class="page" style=""><ul class="d">
+<li><b>Thoracocentesis (흉강천자)</b>: <span class="hl"><b>흉수는 이뇨제로 제거되지 않는다</b></span> → <b>물리적으로 빼야</b> 함 <span class="tag t-ex">시험</span> <span class="tag t-rec">수업</span></li>
+<li><b>Furosemide = life saving</b>: 1–2 mg/kg IV/IM/SQ <b>q1–4h</b>, <b>호흡수(RR)가 줄 때까지</b> — 효과가 빠름</li>
+<li>고양이는 금방 탈수됨 → 1–2회 해도 좋아지지 않으면 <b>큰 용량을 한 번에 IV로 때리기보다 적은 용량을 반복</b>. 판단 기준은 <b>호흡수</b> <span class="tag t-rec">수업</span></li>
+<li><b>Nitroglycerin</b>(정맥 확장 → 전부하↓), <b>산소</b>(고압산소 치료도 가능) <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">왜 흉수는 이뇨제로 안 빠지고, 폐수종은 빠지나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>이뇨제는 혈관 안 물을 콩팥으로 내보내 <b>정맥압을 낮춤</b> → 새로 새어 나오는 것(생성)을 멈추게 함</li>
+<li>폐간질의 부종액은 양이 적고 림프관·혈관이 바로 옆에 있어 압력만 내려가면 빨리 재흡수됨</li>
+<li>흉강은 <b>큰 빈 공간</b>이라 수십–수백 mL가 고여 있고, 흉막 림프 배액 속도는 느림 → 압력이 내려가도 이미 고인 물은 며칠 걸려야 빠짐. 그 사이 폐가 눌려 숨을 못 쉼 → <b>바늘로 빼는 게 가장 빠른 치료이자 진단</b>(액체 성상 확인)</li>
+</ul>
+</div><h3 class="lv2">4. 안정기 심부전 — Stable CHF</h3><ul class="d">
+<li><b>Furosemide 1–2 mg/kg SID–BID</b> — 처음엔 <b>낮게(0.5–1 mg/kg)</b> 시작 <span class="tag t-rec">수업</span></li>
+<li><b>Enalapril 0.5 mg/kg SID–BID</b> — 목표: LVH·섬유화 감소 / 한 연구에서 LVH·LA 감소 / 증상·생존 개선은 일화적</li>
+<li>Furosemide <b>단독 장기 사용 → RAAS 활성화</b> → 반드시 <b>ACEI(enalapril) 병용</b> <span class="tag t-rec">수업</span></li>
+</ul><div class="why">
+<div class="mt">왜 furosemide만 오래 쓰면 안 되나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>이뇨 → 혈액량↓ → 콩팥이 "혈압이 떨어졌다"고 인식 → 레닌↑ → 안지오텐신 Ⅱ·알도스테론↑</li>
+<li>Ang Ⅱ = 혈관 수축(후부하↑), 알도스테론 = Na·물 재흡수(이뇨 효과 상쇄) + <b>심근 섬유화 촉진</b> → HCM의 뻣뻣함을 더 악화</li>
+<li>ACEI가 이 되먹임을 끊어 줌 → 이뇨제 효과 유지 + 섬유화 억제(이론)</li>
+</ul>
+</div><table>
+<caption>표 7. HCM 치료 요약 — 무증상 vs 증상 (슬라이드 표)</caption>
+<thead><tr><th style="width:50%">Asymptomatic (무증상)</th><th>Symptomatic (증상)</th></tr></thead>
+<tbody>
+<tr><td>• 실내 생활 (indoor)<br>• <b>Atenolol 2–3 mg/kg bid</b> → 목표 HR까지<br>• ± Aspirin (LA 크기에 따라)<br>• ± Enalapril / benazepril (LVH 감소 목적)</td><td>• 실내 생활<br>• <b>Diltiazem 0.5–2.5 mg/kg tid</b> 또는 <b>Atenolol 2–3 mg/kg bid</b> 또는 <b>아침 diltiazem + 저녁 atenolol</b><br>• <b>Furosemide</b><br>• ± Nitroglycerin &amp; O₂<br>• ± Aspirin (LA 크기에 따라)<br>• ± Enalapril (LVH · 삼출액 · 반응 없을 때)</td></tr>
+</tbody>
+</table><h3 class="lv2">5. 집에서 재는 수면 호흡수 — SRR (Sleeping Respiratory Rate) <span class="tag t-ex">시험</span></h3><div class="two">
+<div>
+<ul class="d">
+<li>보호자가 기록 → 폐수종·흉수의 <b>가장 민감한 지표</b></li>
+<li>정상 <b>&lt; 30회/분</b> (보통 10대 후반–20대 초반; Rishniw 2012, Ljungvall 2013)</li>
+<li>심장병 있는 개에서 <b>지속적으로 &gt; 30</b> → CHF 진행 중 (단, 1차 호흡기 질환 배제)</li>
+<li>어린 고양이는 SRR이 더 높고 <b>4살 무렵까지 점차 감소</b></li>
+<li>안정 시 호흡수(RRR)는 변동이 더 크고 높음 — 움직임·운동·흥분·온도·통증 영향</li>
+</ul>
+</div>
+<div>
+<div class="memo">
+<div class="mt">수업: "숙제"를 내주는 이유 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>보호자에게 <b>"30회 이상이면 연락하세요"</b>라고 지시</li>
+<li>보호자들은 이런 미션을 좋아하고, 직접 참여하면서 관리에 대한 <b>책임도 나눠 가짐</b></li>
+<li>병원에선 흥분해서 호흡수가 올라가니 <b>집에서 잘 때</b> 재는 값이 진짜</li>
+</ul>
+</div>
+</div>
+</div><span class="pno">9</span></section><section class="page" style=""><div class="why">
+<div class="mt">왜 SRR이 "가장 민감한" 지표인가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>폐간질에 물이 차면 폐가 뻣뻣해짐(순응도↓) → 한 번에 깊게 못 쉬니 <b>얕고 빠르게</b> 쉼. 또 간질의 J-수용체가 자극돼 호흡이 빨라짐</li>
+<li>이 변화는 X-ray에서 보이기 전, 기침·호흡곤란이 나타나기 <b>며칠 전부터</b> 시작됨</li>
+<li>잠잘 때는 흥분·통증·운동 같은 잡음이 빠져 순수하게 "폐 상태"만 반영 → 그래서 RRR보다 SRR</li>
+</ul>
+</div><h3 class="lv2">6. 항혈소판제 · 항응고제 <span class="tag t-ex">시험</span></h3><div class="three" style="display:block;"><div><div class="cap">그림 6. 혈전 예방 약물의 작용 지점 — 혈소판(1차 지혈) vs 응고 인자(2차 지혈) (정리자 모식도)</div><svg viewBox="0 0 620 250" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="항혈소판제와 항응고제 작용 부위"><defs><marker id="h14r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h14b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h14k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h14g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h14v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h14o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h14n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="10" y="14" width="290" height="226" rx="10" fill="#fff7f5" stroke="#e5b9b9"></rect><text x="155" y="34" text-anchor="middle" font-size="12" fill="#E23B3B" font-weight="700">① 혈소판 (1차 지혈)</text><ellipse cx="155" cy="110" rx="70" ry="40" fill="#f8d9a6" stroke="#b07a1a"></ellipse><text x="155" y="104" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">혈소판</text><text x="155" y="120" text-anchor="middle" font-size="9.5" fill="#6C7787">활성화 → 응집</text><rect x="44.8" y="57.0" width="50.4" height="15.0" rx="4" fill="#fff" stroke="#6C7787" stroke-width="1.2"></rect><text x="70" y="67.5" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">Aspirin</text><text x="70" y="84" text-anchor="middle" font-size="9" fill="#6C7787" font-weight="700">COX → TXA₂ 차단</text><rect x="202.4" y="57.0" width="75.2" height="15.0" rx="4" fill="#fff" stroke="#E23B3B" stroke-width="1.2"></rect><text x="240" y="67.5" text-anchor="middle" font-size="10" fill="#E23B3B" font-weight="700">Clopidogrel</text><text x="240" y="84" text-anchor="middle" font-size="9" fill="#E23B3B" font-weight="700">ADP 수용체 차단</text><text x="155" y="176" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">Clopidogrel: 더 강력 · 세로토닌 방출↓</text><text x="155" y="192" text-anchor="middle" font-size="9.5" fill="#E23B3B" font-weight="700">· GI 부작용 적음 → 현재 더 권장</text><text x="155" y="214" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">Aspirin: ATE 발생률 유의한 감소 ✕</text><rect x="320" y="14" width="290" height="226" rx="10" fill="#f3f7ff" stroke="#9cbcf0"></rect><text x="465" y="34" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">② 응고 인자 (2차 지혈)</text><rect x="405" y="46" width="120" height="26" rx="6" fill="#fff" stroke="#2B5FC4"></rect><text x="465" y="64" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">XII · XI · IX</text><rect x="405" y="86" width="120" height="26" rx="6" fill="#fff" stroke="#2B5FC4"></rect><text x="465" y="104" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">Xa</text><rect x="405" y="126" width="120" height="26" rx="6" fill="#fff" stroke="#2B5FC4"></rect><text x="465" y="144" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">Thrombin (IIa)</text><rect x="405" y="166" width="120" height="26" rx="6" fill="#fff" stroke="#2B5FC4"></rect><text x="465" y="184" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">Fibrin 혈전</text><path d="M465,74 L465,84" fill="none" stroke="#2B5FC4" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h14b)"></path><path d="M465,114 L465,124" fill="none" stroke="#2B5FC4" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h14b)"></path><path d="M465,154 L465,164" fill="none" stroke="#2B5FC4" stroke-width="1.8" stroke-linecap="round" marker-end="url(#h14b)"></path><rect x="347.1" y="91.0" width="31.8" height="15.0" rx="4" fill="#fff" stroke="#0F9268" stroke-width="1.2"></rect><text x="363" y="101.5" text-anchor="middle" font-size="10" fill="#0F9268" font-weight="700">LMWH</text><text x="363" y="118" text-anchor="middle" font-size="9" fill="#0F9268" font-weight="700">Xa 선택적</text><rect x="547.2" y="111.0" width="25.6" height="15.0" rx="4" fill="#fff" stroke="#7B52C9" stroke-width="1.2"></rect><text x="560" y="121.5" text-anchor="middle" font-size="10" fill="#7B52C9" font-weight="700">UFH</text><text x="560" y="138" text-anchor="middle" font-size="9" fill="#7B52C9" font-weight="700">thrombin +</text><text x="560" y="150" text-anchor="middle" font-size="9" fill="#7B52C9" font-weight="700">IX·X·XI·XII</text><text x="465" y="214" text-anchor="middle" font-size="9.5" fill="#0F9268" font-weight="700">LMWH: 응고시간 영향 적음 · 반감기 김</text><text x="465" y="228" text-anchor="middle" font-size="9.5" fill="#0F9268" font-weight="700">(dalteparin · enoxaparin)</text></svg></div></div><table>
+<caption>표 8. 혈전 예방 약물</caption>
+<thead><tr><th style="width:20%">약</th><th style="width:44%">특징</th><th>용량</th></tr></thead>
+<tbody>
+<tr><td class="kc">Aspirin</td><td>COX 억제 → TXA₂↓ / ATE 발생을 <b>유의하게 줄이지 못함</b></td><td>5 mg/cat PO q48–72h</td></tr>
+<tr class="hi"><td class="kc">Clopidogrel</td><td>ADP 수용체(P2Y12) 차단 / <b>더 강력</b>, 세로토닌 방출↓, <b>GI 부작용 적음</b> → <b>현재 aspirin보다 권장</b>(비쌈) <span class="tag t-rec">수업</span></td><td>고양이 <b>18.75 mg/cat SID</b> / 개 10 mg/kg loading → 2–4 mg/kg SID</td></tr>
+<tr><td class="kc">UFH<br>(비분획 헤파린)</td><td>Antithrombin 통해 <b>thrombin + IX·X·XI·XII</b> 억제</td><td>—</td></tr>
+<tr class="hi"><td class="kc">LMWH<br>(dalteparin, enoxaparin, tinzaparin)</td><td><b>Xa 선택적</b> 억제, 응고시간에 영향 적음(모니터링 부담↓), <b>반감기 김</b> → 고양이에서 주사제로 많이 씀 <span class="tag t-rec">수업</span></td><td>Dalteparin <b>100 IU/kg SC SID–BID</b></td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">고양이 혈전엔 왜 "혈소판"을 막나 · aspirin이 고양이에게 약한 이유 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>고양이 혈소판은 <b>세로토닌을 많이 함유</b>하고 반응성이 큼. 혈전이 생기면 세로토닌·TXA₂가 주변 <b>측부순환 혈관까지 수축</b>시켜 허혈을 키움 → clopidogrel이 세로토닌 방출까지 줄이는 게 장점</li>
+<li>Aspirin은 COX 한 경로만 막음 → 혈소판을 활성화하는 다른 경로(ADP 등)는 그대로라 효과가 약함. 또 고양이는 <b>글루쿠론산 포합이 약해</b> aspirin 대사가 느림 → 그래서 <b>2–3일에 한 번</b>만 줌</li>
+<li>대규모 연구(FAT CAT, 2015)에서 clopidogrel이 aspirin보다 ATE <b>재발이 적었음</b> (정리자 보충)</li>
+<li>LMWH가 응고시간(aPTT)에 영향이 적은 이유: aPTT는 thrombin 쪽 억제를 주로 반영하는데, LMWH는 사슬이 짧아 thrombin을 거의 못 잡고 <b>Xa만</b> 잡음 → 출혈 위험·모니터링 부담이 적음</li>
+</ul>
+</div><span class="pno">10</span></section><section class="page" style=""><h3 class="lv2">7. 예후 (Prognosis)</h3><div class="two">
+<div>
+<div class="memo green">
+<div class="mt">경증–중등도</div>
+<ul class="c">
+<li>매우 다양함 (highly variable)</li>
+<li><b>어릴수록 빨리 진행</b></li>
+<li>연속 초음파로 <b>LVH · LA</b> 추적</li>
+<li>LVH 정체 + <b>LA 정상 = 좋음</b></li>
+<li>마취 · <b>수액 과부하</b> 위험 주의</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo red">
+<div class="mt">중증 + CHF</div>
+<ul class="c">
+<li>단기: guarded(조심스러움)</li>
+<li>장기: <b>poor (수개월)</b></li>
+<li>≥ 7 mm, ATE, 흉수, CHF가 있는 고양이는 <b>당장 내일 죽을 수도</b> 있음 <span class="tag t-rec">수업</span></li>
+</ul>
+</div>
+</div>
+</div><div class="why">
+<div class="mt">왜 HCM 고양이에게 "수액·마취"가 위험한가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>뻣뻣한 심실은 <b>조금만 더 채워도 압력이 급등</b>(그림 2 곡선의 가파른 구간) → 개에겐 평범한 수액량도 고양이 HCM에선 바로 폐수종·흉수</li>
+<li>마취제(케타민 등)는 심박수·교감 자극으로 SAM·이완기 단축을 악화시키고, 다른 약은 혈압↓ → 두꺼운 벽의 관류 부족 → 그래서 무증상 HCM이라도 <b>중성화·스케일링 전</b> 초음파 평가가 의미 있음</li>
+</ul>
+</div><h3 class="lv2">8. 증례 — HCM with ATE</h3><table>
+<caption>표 9. 증례 요약 (K.S.H.)</caption>
+<tbody>
+<tr><td class="kc" style="width:22%">신호</td><td>중성화 수컷, 8세, 6.64 kg, BCS 5/5</td></tr>
+<tr><td class="kc">주증</td><td><b>급성 뒷다리 마비</b>, <b>청색증 발바닥(cyanotic foot pad)</b> → HCM + ATE</td></tr>
+<tr><td class="kc">응고 검사</td><td>FDPs <b>5</b> (0–10), D-dimer <b>0.1</b> (&lt; 0.5) → 둘 다 정상 범위 (고양이 ATE에서 흔함, Ⅶ장)</td></tr>
+<tr class="hi"><td class="kc">치료</td><td><b>Enoxaparin 1 mg/kg SC</b> (LMWH) + <b>Amlodipine 0.18 mg/kg PO SID</b> + <b>Clopidogrel 18.75 mg/cat SID</b></td></tr>
+</tbody>
+</table><p class="tnote">Amlodipine은 혈관확장 CCB(디하이드로피리딘) → 혈압↓·측부순환 개선 목적으로 추정. 다만 혈관확장은 SAM을 악화시킬 수 있어 고혈압 동반 여부와 함께 판단 (정리자 보충)</p><h2 class="lv1">Ⅳ. 제한성 심근병증 <span class="en">Restrictive Cardiomyopathy (RCM)</span></h2><div class="two">
+<div>
+<ul class="d">
+<li><b>심내막–심근 섬유화</b>(endomyocardial fibrosis), 비정상 침윤</li>
+<li>벽이 <b>뻣뻣함</b> → <b>순응도↓</b> → 채움↓ → <b>이완기압↑</b></li>
+<li><b>수축 기능은 정상</b>, 벽 두께는 정상–경미하게 증가</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>초음파: <b>LA ± RA 확대</b>, EDD 정상–감소(이완기 용적↓), 심내막하 섬유화, <b>restrictive filling</b>(Doppler), <b>SAM 없음</b> <span class="tag t-ex">시험</span></li>
+<li>치료: 완화 목적 <b>furosemide + ACEI</b>, HCM에 준함 / <b>diltiazem은 적응증 없음</b></li>
+<li>예후: <b>나쁨 (poor)</b></li>
+</ul>
+</div>
+</div><div class="memo blue">
+<div class="mt">수업 포인트 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>부검 시 심내막이 <b>하얗게</b> 보임 = 섬유화</li>
+<li><b>수축은 잘 되는데 이완이 안 됨</b> / LV 용적은 HCM보다 약간 넓음</li>
+<li>치료는 HCM과 비슷하게, 예후는 좋지 않음</li>
+</ul>
+</div><span class="pno">11</span></section><section class="page" style=""><div class="why">
+<div class="mt">HCM과 RCM — 둘 다 "못 채우는" 병인데 무엇이 다른가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>HCM</b> = 근육이 <b>너무 많아서</b> 뻣뻣함 (두께↑) → 벽 ≥ 6 mm, 내강 좁음, SAM 가능</li>
+<li><b>RCM</b> = 근육 양은 비슷한데 <b>흉터(섬유)가 끼어서</b> 뻣뻣함 → 벽 두께 정상 근처, 내강도 거의 정상, 대신 <b>심방이 엄청 큼</b>(특히 양쪽)</li>
+<li>Diltiazem이 RCM에 소용없는 이유: CCB는 근세포의 <b>능동 이완(Ca 재흡수)</b>을 돕는 약 → 이미 섬유 조직으로 굳은 벽(수동적 순응도)은 못 바꿈. 벽이 얇지 않으니 SAM도 없어 β-blocker의 장점도 적음</li>
+<li>Restrictive filling(Doppler): LA압이 너무 높아 이완기 초기에 피가 <b>확 쏟아졌다가(E파↑) 곧바로 멈춤</b>(감속시간↓) → 심방 수축 때는 이미 꽉 차 거의 못 들어감(A파↓) → E/A &gt; 2</li>
+</ul>
+</div><h2 class="lv1">Ⅴ. 확장성 심근병증 <span class="en">Feline Dilated Cardiomyopathy</span></h2><p class="txt"><span class="hl"><b>DCM = Systolic dysfunction</b></span> — 수축력이 떨어져 심실이 커지고 벽이 얇아지는 병 (HCM의 반대편)</p><h3 class="lv2">1. 타우린 결핍 — 원인의 변화 <span class="tag t-ex">시험</span></h3><table>
+<caption>표 10. 고양이 DCM 원인 — 과거 vs 현재</caption>
+<thead><tr><th style="width:18%">시기</th><th>원인</th></tr></thead>
+<tbody>
+<tr><td class="kc">과거 (historical)</td><td>• 건사료에 타우린이 너무 적음 → 지금은 드묾<br>• 습식(캔) 사료의 <b>장내 세균 과증식</b> → 타우린 분해·손실</td></tr>
+<tr class="hi"><td class="kc">현재 (current)</td><td>• 드묾 (rare)<br>• <b>수제식(home-cooked)</b>: 삶은 닭고기, <b>채식(vegetarian)</b> 식단<br>• 특정 캔 사료 한 종류</td></tr>
+</tbody>
+</table><div class="two">
+<div>
+<div class="memo">
+<div class="mt">고양이에게 타우린 (삽입 슬라이드)</div>
+<ul class="c">
+<li><b>필수 아미노산</b> (essential AA)</li>
+<li>체내 합성 능력 <b>제한적</b></li>
+<li>담즙산 배설에 <b>반드시 타우린으로 포합(obligate conjugation)</b></li>
+<li>혈장 정상 <b>109 ± 18 nmol/ml</b> ↔ DCM <b>8 ± 4</b></li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo blue">
+<div class="mt">수업 포인트 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>DCM 고양이는 <b>모두 타우린 측정</b> (외부 검사 의뢰 → 시간 걸림)</li>
+<li>타우린은 <b>동물성 단백질에만</b> 있음 → 고양이가 쥐를 잡아먹는 이유</li>
+<li>조직형 두 가지: 느슨하게 배열된 근섬유 vs <b>지방 침윤</b>형 → 지방형은 반응이 떨어질 수 있음</li>
+</ul>
+</div>
+</div>
+</div><div class="why">
+<div class="mt">왜 고양이만 타우린이 "필수"이고, 부족하면 왜 심장이 늘어나나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>합성이 적음</b>: 타우린은 시스테인 → (cysteine sulfinic acid decarboxylase) → 타우린으로 만들어지는데, 고양이는 이 효소 활성이 매우 낮음 (육식 진화 — 먹이에 늘 있으니 만들 필요가 없었음)</li>
+<li><b>손실은 계속됨</b>: 개는 담즙산을 글리신으로도 포합할 수 있지만 고양이는 <b>타우린만</b> 씀 → 담즙으로 매일 빠져나감 → 섭취가 끊기면 금방 바닥</li>
+<li>캔 사료 문제: 가열 처리된 사료는 장내 세균이 타우린을 분해하기 쉬운 환경을 만들어 → 사료에 표시된 양보다 실제 흡수가 적음</li>
+<li><b>심장에서의 역할</b>: 심근세포 내 타우린은 <b>Ca²⁺ 처리(근소포체 저장·방출 조절)</b>와 <b>삼투 조절</b>, 항산화 작용 → 부족하면 수축이 약해짐 → 수축력↓ → 확장(DCM)</li>
+<li>세포가 죽은 게 아니라 "재료 부족"이라 → <b>보충하면 회복 가능</b>(타우린 반응성 DCM). 섬유화·지방 침윤이 이미 진행된 부분은 회복 안 됨</li>
+</ul>
+</div><span class="pno">12</span></section><section class="page" style=""><h3 class="lv2">2. 진단 (초음파)</h3><ul class="d">
+<li><b>ESD &gt; 10 mm</b> (1차: 못 짜냄) → 보상성 <b>EDD↑</b> (LV &amp; RV)</li>
+<li><b>FS &lt; 25%</b>, CHF 시 <b>FS &lt; 15%</b> (정상 FS는 30–35% 이상) <span class="tag t-rec">수업</span></li>
+<li>판막륜이 늘어나 <b>기능성 MR</b></li>
+<li>MMVD와 DCM은 둘 다 편심성(eccentric) 확장이지만 <b>DCM은 벽이 얇음</b> <span class="tag t-rec">수업</span></li>
+</ul><h3 class="lv2">3. 치료</h3><table>
+<caption>표 11. 고양이 DCM 치료</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:22%">심부전</td><td><b>Furosemide</b> 급성 2–4 mg/kg q1–4h SC/IM/IV, 만성 1–2 mg/kg sid–bid + <b>ACEI(반드시 병용)</b> + <b>Pimobendan</b><br>한 번에 크게 주기보다 <b>두 번에 나눠서</b> (독일·이탈리아 경험담) <span class="tag t-rec">수업</span></td></tr>
+<tr><td class="kc">SVT / AF</td><td><b>Digoxin + atenolol</b> 또는 <b>diltiazem</b></td></tr>
+<tr><td class="kc">VT</td><td><b>Amiodarone</b>(간독성), <b>Mexiletine</b>(돌연사 위험), <b>Sotalol</b></td></tr>
+<tr class="hi"><td class="kc">원인 치료</td><td><b>Taurine + L-carnitine</b> 보충</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">같은 고양이인데 HCM과 DCM의 약이 왜 정반대인가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>HCM</b>(채우기 고장, 수축은 과함): 수축을 <b>약하게</b>·심박을 <b>느리게</b>(β-blocker, CCB) → 채울 시간 확보, SAM↓. <b>양성 변력제는 SAM 악화</b> 우려</li>
+<li><b>DCM</b>(짜내기 고장): 수축을 <b>강하게</b>(pimobendan, digoxin) + 후부하↓ → 박출량↑. 여기에 음성 변력 약을 쓰면 남은 수축력마저 꺾임 → β-blocker는 조심스럽게(심박 조절 목적에서만)</li>
+<li>공통: 울혈은 <b>furosemide + ACEI</b>로 뺀다 (원인과 상관없이 LA압↑의 결과는 같으니까)</li>
+</ul>
+</div><h2 class="lv1">Ⅵ. 부정맥 유발성 우심실 심근병증 <span class="en">Feline ARVC</span></h2><div class="two">
+<div>
+<ul class="d">
+<li>최근에 인식된 질환 (약 <b>20년 전</b>부터) <span class="tag t-rec">수업</span></li>
+<li><b>RV 심근의 진행성 위축</b> → <b>섬유성 / 섬유–지방 조직으로 대체</b> <span class="tag t-ex">시험</span></li>
+<li>감별: <b>삼첨판 이형성(TVD)</b>, 삼첨판 기능부전(TVI), DCM 동반</li>
+<li><b>심실성 부정맥(VA)</b> 흔함 (개에선 Boxer)</li>
+<li>X-ray: <b>RV/RA 확대</b>, 흉수 &amp; 복수</li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>초음파: <b>RV 심한 분절성·미만성 확장</b>, <b>RV 동맥류(aneurysm)</b>, RV 벽 얇아짐, <b>RA 심한 확대</b>, TR, ± 경미한 LV/LA 확대</li>
+<li>확진: <b>조직병리</b></li>
+<li>치료: 이뇨제 + ACEI, pimobendan, class Ⅰ 또는 Ⅲ 항부정맥제, 영양 보충</li>
+<li>예후: <b>매우 나쁨 (grave)</b></li>
+</ul>
+</div>
+</div><div class="memo blue">
+<div class="mt">수업 포인트 <span class="tag t-rec">수업</span></div>
+<ul class="c">
+<li>조직 슬라이드에서 지방이 <b>방울(버블)처럼 빈 공간</b>으로 보임 → 조직 처리 과정의 <b>알코올이 지방을 녹여서</b></li>
+<li>RV 확장은 <b>분절성(segmental) 또는 미만성(diffuse)</b></li>
+<li>고양이는 원인 없이도 흉수가 잘 참 → 흉수만으로 질환을 단정하지 말 것</li>
+</ul>
+</div><div class="why">
+<div class="mt">왜 "지방으로 바뀐 근육"이 부정맥을 만드나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>지방·섬유 조직은 <b>전기를 전달하지 못함</b> → 살아남은 근섬유 다발이 지방 사이로 <b>구불구불한 섬</b>처럼 남음</li>
+<li>전기 신호가 이 좁은 길을 느리게 돌아가다 원래 자리로 돌아오면 → <b>재진입(re-entry) 회로</b> → VPC·VT</li>
+<li>얇아진 RV는 펌프력도 잃어 RV/RA가 늘어나고 → 우심부전(복수·흉수). 고양이는 우심부전에서도 흉수가 잘 생김</li>
+</ul>
+</div><span class="pno">13</span></section><section class="page" style=""><h2 class="lv1">Ⅶ. 동맥 혈전색전증 <span class="en">Arterial Thromboembolism (ATE)</span></h2><p class="tnote">이 장은 슬라이드(“260929” 표시) 중심 정리 — 녹음은 ARVC 무렵까지라 ATE 부분은 수업 멘트가 거의 없음</p><h3 class="lv2">1. 발생 · 임상 소견 <span class="tag t-ex">시험</span></h3><div class="three" style="display:block;"><div><div class="cap">그림 7. 커진 LA의 "연기" → 혈전 → 대동맥 삼분지 saddle thrombus (정리자 모식도)</div><svg viewBox="0 0 640 280" width="100%" style="max-width:640px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="고양이 동맥 혈전색전증 경로"><defs><marker id="h12r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h12b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h12k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h12g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h12v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h12o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h12n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><ellipse cx="110" cy="100" rx="78" ry="62" fill="#fde1e1" stroke="#7a1f1f" stroke-width="2.4"></ellipse><text x="110" y="30" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">커진 LA (&gt; 2 cm)</text><path d="M60,100 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><path d="M74,108 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><path d="M88,100 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><path d="M102,108 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><path d="M116,100 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><path d="M130,108 q8,-12 16,0 q8,12 16,0" stroke="#aab" stroke-width="1.4" fill="none" opacity=".8"></path><ellipse cx="148" cy="128" rx="18" ry="12" fill="#6b1b1b"></ellipse><text x="110" y="182" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">느린 흐름 = "연기"(spontaneous</text><text x="110" y="195" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">contrast) → 혈전</text><path d="M190,100 L300,100 Q330,100 330,130 L330,196" stroke="#d24a4a" stroke-width="18" fill="none"></path><path d="M190,100 L300,100 Q330,100 330,130 L330,196" stroke="#fde1e1" stroke-width="12" fill="none"></path><path d="M330,196 L290,262 M330,196 L370,262" stroke="#d24a4a" stroke-width="12" fill="none"></path><path d="M330,196 L290,262 M330,196 L370,262" stroke="#fde1e1" stroke-width="7" fill="none"></path><ellipse cx="330" cy="198" rx="12" ry="9" fill="#6b1b1b"></ellipse><path d="M210,90 L290,90" fill="none" stroke="#E23B3B" stroke-width="2.2" stroke-linecap="round" marker-end="url(#h12r)"></path><text x="380" y="202" text-anchor="start" font-size="11" fill="#E23B3B" font-weight="700">saddle thrombus</text><text x="380" y="216" text-anchor="start" font-size="9.5" fill="#6C7787">(대동맥 삼분지)</text><text x="330" y="276" text-anchor="middle" font-size="10" fill="#1B2A44" font-weight="700">뒷다리</text><rect x="440" y="20" width="194" height="150" rx="10" fill="#fff5f5" stroke="#E23B3B" stroke-width="1.4"></rect><text x="537" y="40" text-anchor="middle" font-size="11.5" fill="#E23B3B" font-weight="700">임상 소견</text><text x="452" y="60" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 급성 뒷다리 마비 · 통증</text><text x="452" y="78" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 대퇴맥 소실 (80%)</text><text x="452" y="96" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 청색 · 어두운 발바닥</text><text x="452" y="114" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 차가운 뒷다리</text><text x="452" y="132" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 초음파: saddle TE</text><text x="452" y="150" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">• 심초음파: LAE (HCM 최다)</text><text x="537" y="186" text-anchor="middle" font-size="10" fill="#2B5FC4" font-weight="700">DDx: 신경·정형외과 질환</text></svg></div></div><div class="two">
+<div>
+<ul class="d">
+<li>특발성(idiopathic) vs <b>심근병증 동반</b></li>
+<li><b>맥박 소실 80%</b>, <b>어두운(청색) 발바닥</b>, 차가운 뒷다리</li>
+<li>US: <b>saddle TE</b> (대동맥 삼분지)</li>
+<li>Echo: <b>LAE</b> — 원인 심근병증은 <b>HCM이 가장 흔함</b></li>
+<li>위험 인자: <b>LA &gt; 2 cm</b></li>
+<li>LA의 spontaneous contrast + LA 혈전 — 필기 <span class="hlp">"여기 좀 Embolism 생성"</span> <span class="tag t-pen">필기</span></li>
+</ul>
+</div>
+<div>
+<ul class="d">
+<li>X-ray: <b>심비대 90%</b>(LAE), <b>CHF 70%</b></li>
+<li>경미한 응고 이상, <b>혈소판은 정상</b></li>
+<li>혈청 화학: <b>AST · ALT · glucose · BUN · creatinine · CK · K↑</b></li>
+<li>ECG: 동성 빈맥</li>
+<li><b>신경계·정형외과 질환과 감별</b> 필요</li>
+<li><span class="hl"><b>LA 혈전이 있으면 혈전용해제 쓰지 말 것!!</b></span></li>
+</ul>
+</div>
+</div><div class="why">
+<div class="mt">혈전이 왜 LA에서 생기고, 왜 하필 "뒷다리"인가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>Virchow 삼요소</b>: ① <b>혈류 정체</b> — 커진 LA에서 피가 느리게 소용돌이(초음파의 "연기" = 적혈구가 엉겨 반사) ② <b>내피 손상</b> — 늘어난 심방벽 ③ <b>과응고</b> — 고양이 혈소판의 높은 반응성. 셋 다 충족</li>
+<li>LA → LV → 대동맥으로 떨어져 나간 혈전은 혈류 따라 흘러가다 <b>대동맥이 좁아지며 갈라지는 첫 지점</b> = 삼분지(외장골동맥 분지)에 걸림 → <b>안장(saddle)</b> 모양</li>
+<li>5P: 통증(Pain), 마비(Paralysis), 맥박 소실(Pulselessness), 창백/청색(Pallor), 냉감(Poikilothermia) — 근육 허혈로 <b>CK·AST·K↑</b></li>
+<li>혈전용해제 금기 이유: LA에 남은 혈전까지 <b>부분적으로 녹아 떨어지면</b> 새 색전(뇌·신장 등) + 대량 재관류 손상</li>
+</ul>
+</div><span class="pno">14</span></section><section class="page" style=""><h3 class="lv2">2. D-dimer</h3><table>
+<caption>표 12. D-dimer cut-off (개 자료)</caption>
+<thead><tr><th style="width:30%">Cut-off</th><th style="width:25%">Sensitivity</th><th>Specificity</th></tr></thead>
+<tbody>
+<tr><td class="kc">&gt; 0.5 µg/ml</td><td>100%</td><td>70%</td></tr>
+<tr class="hi"><td class="kc">&gt; 1 µg/ml</td><td>80%</td><td>94%</td></tr>
+<tr><td class="kc">&gt; 2 µg/ml</td><td>36%</td><td>98.5%</td></tr>
+</tbody>
+</table><ul class="d">
+<li>D-dimer = 응고·혈전 형성의 지표 <span class="tag t-rec">수업</span></li>
+<li>그러나 <b>고양이 ATE에서는 D-dimer가 대개 특이 소견 없음</b>(unremarkable) → 증례에서도 0.1 <span class="tag t-ex">시험</span></li>
+</ul><div class="why">
+<div class="mt">왜 혈전이 있는데 D-dimer가 정상일까 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>D-dimer는 <b>교차결합된 fibrin이 plasmin에 녹을 때</b> 나오는 조각 → "혈전이 있다"가 아니라 "혈전이 <b>녹고 있다</b>"를 보여 줌</li>
+<li>고양이 ATE 혈전은 혈소판이 풍부하고 혈류가 끊긴 부위에 박혀 있어 섬유소 용해가 적게 일어남 + 고양이의 섬유소 용해 활성이 원래 낮음 → 정상으로 나오기 쉬움</li>
+<li>Cut-off를 낮추면 민감도↑(놓치지 않음) 특이도↓, 높이면 반대 → 개에서 0.5는 "배제용", 2는 "확진용"</li>
+</ul>
+</div><h3 class="lv2">3. 재관류 증후군 (Reperfusion syndrome)</h3><div class="three" style="display:block;"><div><div class="cap">그림 8. 재관류 증후군 — 막혔던 곳이 뚫리는 순간 쌓였던 K⁺·H⁺·젖산이 심장으로 (정리자 모식도)</div><svg viewBox="0 0 620 150" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="재관류 증후군"><defs><marker id="h13r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h13b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h13k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h13g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h13v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h13o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h13n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><rect x="8" y="22" width="140" height="54" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.4"></rect><text x="78" y="44" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">혈전으로 관류 ✕</text><text x="78" y="62" text-anchor="middle" font-size="9.5" fill="#6C7787">혐기성 대사</text><path d="M149,49 L160,49" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h13r)"></path><rect x="162" y="22" width="140" height="54" rx="8" fill="#fff" stroke="#1B2A44" stroke-width="1.4"></rect><text x="232" y="44" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">젖산 산증 · 세포 괴사</text><text x="232" y="62" text-anchor="middle" font-size="9.5" fill="#6C7787">세포 안 K⁺ 유출</text><path d="M303,49 L314,49" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h13r)"></path><rect x="316" y="22" width="140" height="54" rx="8" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="386" y="44" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">혈전 풀림 = 재관류</text><text x="386" y="62" text-anchor="middle" font-size="9.5" fill="#6C7787">H⁺ · K⁺ · 젖산이 전신으로</text><path d="M457,49 L468,49" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h13r)"></path><rect x="470" y="22" width="140" height="54" rx="8" fill="#fff1f1" stroke="#E23B3B" stroke-width="1.4"></rect><text x="540" y="44" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">고칼륨혈증</text><text x="540" y="62" text-anchor="middle" font-size="9.5" fill="#6C7787">서맥 · 심정지 위험</text><rect x="80" y="96" width="460" height="40" rx="8" fill="#eef9f4" stroke="#0F9268"></rect><text x="310" y="114" text-anchor="middle" font-size="10.5" fill="#0F9268" font-weight="700">치료: 포도당 + 인슐린 (K⁺를 세포 안으로) · 칼슘 (심근 보호)</text><text x="310" y="129" text-anchor="middle" font-size="10" fill="#0F9268" font-weight="700">· 아트로핀 · ± 에피네프린</text></svg></div></div><ul class="d">
+<li>혐기성 대사 → <b>젖산 산증</b> → 세포 괴사 → <b>K⁺ 유출</b></li>
+<li>재관류 시 <b>H⁺, K⁺, 젖산</b>이 한꺼번에 전신으로</li>
+<li>치료: <b>포도당/인슐린</b>, <b>칼슘</b>, 아트로핀, ± 에피네프린</li>
+</ul><div class="why">
+<div class="mt">고칼륨혈증 치료에 왜 "칼슘"과 "인슐린"인가 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li><b>칼슘</b>: K⁺ 수치는 그대로지만 심근의 <b>역치 전위를 올려</b> 막 흥분성을 안정화 → 몇 분 안에 서맥·심정지 위험을 막는 "방패"</li>
+<li><b>인슐린(+ 포도당)</b>: Na⁺/K⁺-ATPase를 활성화해 <b>K⁺를 세포 안으로</b> 이동 → 실제 혈중 K⁺↓. 포도당은 저혈당 방지용</li>
+<li>산증 교정도 K⁺를 세포 안으로 넣는 데 도움. 아트로핀은 고칼륨성 서맥 대응</li>
+</ul>
+</div><span class="pno">15</span></section><section class="page" style=""><h3 class="lv2">4. 치료 전략 — "무엇이 생명을 위협하는가"</h3><table>
+<caption>표 13. ATE 치료 선택지</caption>
+<tbody>
+<tr><td class="kc" style="width:24%">혈전용해 (thrombolytics)</td><td>Streptokinase, t-PA — 재관류 증후군·출혈 위험</td></tr>
+<tr><td class="kc">카테터 혈전제거술</td><td>흡인(aspiration), 파쇄(fragmentation), rheolytic</td></tr>
+<tr><td class="kc">혈전 예방 (thromboprophylaxis)</td><td>Heparin, warfarin, aspirin, <b>clopidogrel</b></td></tr>
+<tr class="hi"><td class="kc">Tincture of time<br>(시간이 약)</td><td>2–3일 지켜보기, <b>진통</b> ± 혈관확장 / <b>최대 50%</b>가 1–6주 안에 스스로 혈전을 녹임</td></tr>
+<tr><td class="kc">확정적 치료</td><td>혈전용해제, rheolytic 혈전제거술, 수술 / 풍선 색전제거술</td></tr>
+</tbody>
+</table><div class="why">
+<div class="mt">왜 "적극적으로 뚫는" 것보다 "기다리기"를 많이 택하나 <span class="tag t-why" style="margin-left:4px;">원리</span></div>
+<ul class="d">
+<li>혈전이 생긴 지 몇 시간이 지나면 하지 근육은 이미 상당히 괴사 → 갑자기 뚫으면 그 독소가 한꺼번에 심장으로(그림 8) → <b>치료가 사인이 될 수 있음</b></li>
+<li>시간이 지나면 <b>측부순환</b>이 열리고 고양이 스스로 혈전을 녹여 기능이 점차 돌아오는 경우가 많음 → 그 사이 <b>통증 조절 + CHF 관리 + 재발 방지(clopidogrel)</b>가 핵심</li>
+<li>"무엇이 생명을 위협하는가": 대개 다리가 아니라 <b>동반 CHF·고칼륨혈증·저체온</b> → 이것부터 해결</li>
+</ul>
+</div><h2 class="lv1">총정리 — 고양이 심근병증 비교 <span class="tag t-ex">시험</span></h2><table>
+<caption>표 14. 네 가지 심근병증 한 장 비교</caption>
+<thead><tr><th style="width:12%"></th><th style="width:22%">HCM</th><th style="width:22%">RCM</th><th style="width:22%">DCM</th><th>ARVC</th></tr></thead>
+<tbody>
+<tr><td class="kc">1차 고장</td><td>이완기 (두꺼움)</td><td>이완기 (섬유화)</td><td>수축기</td><td>RV 근육 → 지방·섬유</td></tr>
+<tr class="hi"><td class="kc">벽 두께</td><td><b>≥ 6 mm</b> (≥ 7 중증)</td><td>정상–약간↑</td><td>얇음</td><td>RV 얇음</td></tr>
+<tr><td class="kc">LV 내강</td><td>좁음</td><td>정상–↓</td><td><b>&gt; 18 mm</b>, globoid</td><td>LV 대개 정상</td></tr>
+<tr class="hi"><td class="kc">FS</td><td>정상–↑</td><td>정상</td><td><b>&lt; 25%</b> (CHF &lt; 15%)</td><td>—</td></tr>
+<tr><td class="kc">특징</td><td><b>SAM</b>, LA 확대, S4</td><td>LA(± RA) 크게, <b>SAM 없음</b>, restrictive filling</td><td><b>타우린</b> 109 → 8, 기능성 MR</td><td>RV 동맥류, VA, 흉·복수</td></tr>
+<tr class="hi"><td class="kc">치료</td><td>Atenolol / diltiazem, CHF = furosemide + ACEI</td><td>Furosemide + ACEI (diltiazem ✕)</td><td>Furosemide + ACEI + pimobendan + <b>taurine</b></td><td>이뇨제 + ACEI, pimobendan, 항부정맥제</td></tr>
+<tr><td class="kc">예후</td><td>경증 다양 / 중증+CHF 수개월</td><td>나쁨</td><td>타우린 반응 시 좋음</td><td>매우 나쁨 (grave)</td></tr>
+</tbody>
+</table><span class="pno">16</span></section><section class="page" style=""><div class="memo">
+<div class="mt">⚡ 헷갈리는 짝</div>
+<ul class="c">
+<li><b>개 vs 고양이 심근병증</b>: 개 = DCM 최다(수축기) ↔ 고양이 = HCM 최다(이완기)</li>
+<li><b>HCM vs HCM phenotype</b>: 1차성(유전) ↔ 고혈압·갑상선·말단비대·탈수(가짜)·종양·TMT → 진단 전 배제</li>
+<li><b>HCM vs RCM</b>: 근육이 많아서 뻣뻣(벽 두꺼움, SAM) ↔ 섬유화로 뻣뻣(벽 정상 근처, SAM 없음, 심방 매우 큼)</li>
+<li><b>β-blocker vs CCB</b>: SAM 감소·빈맥 조절·더 강한 음성 변력 ↔ 초기 이완 개선, 순응도 효과 없음 / atenolol 6.25–12.5 mg BID ↔ diltiazem 7.5 mg TID</li>
+<li><b>Aspirin vs Clopidogrel</b>: 5 mg/cat q48–72h, ATE 유의한 감소 ✕ ↔ 18.75 mg/cat SID, 더 강력·GI 부작용 적음 → 현재 권장</li>
+<li><b>UFH vs LMWH</b>: thrombin + IX–XII ↔ Xa 선택적, 응고시간 영향 적음, 반감기 김</li>
+<li><b>흉수 vs 폐수종</b>: 이뇨제로 안 빠짐 → <b>흉강천자</b> ↔ furosemide로 빠르게 호전</li>
+<li><b>SRR vs RRR</b>: 수면 시, 민감·안정적, &lt; 30 ↔ 안정 시, 흥분·온도·통증 영향 큼</li>
+<li><b>개 vs 고양이 furosemide</b>: 2–4 mg/kg ↔ <b>1–2 mg/kg</b>, 고양이는 탈수 빨라서 소량 반복</li>
+<li><b>X-ray의 의미</b>: HCM 초기는 정상처럼 보임 ↔ 심장이 확 커 보이면 이미 심한 심부전</li>
+</ul>
+</div><span class="pno">17</span></section><section class="page" style=""><div class="qa">
+<div class="mt">✎ 원리 셀프체크 — 답을 가리고 설명해 보기</div>
+<div class="q">Q1. HCM 고양이는 FS가 정상인데 왜 폐수종이 생기나?</div>
+<div class="a">→ 문제는 수축이 아니라 이완. 두껍고 섬유화된 벽은 늘어나지 않아 같은 양을 채우려면 이완기압이 치솟음 → LA압↑ → 폐정맥압↑ → 폐수종(+ 고양이는 흉수).</div>
+<div class="q">Q2. 노령 고양이의 LV 벽이 6.5 mm다. HCM이라고 진단하기 전에 확인할 것은?</div>
+<div class="a">→ HCM phenotype의 2차 원인: 혈압(고혈압), T4(갑상선기능항진증), 탈수 여부(수액 후 재측정), GH/IGF-1(말단비대), 종양 침윤.</div>
+<div class="q">Q3. SAM은 왜 생기고, 흥분하면 왜 잡음이 커지나?</div>
+<div class="a">→ 두꺼운 중격이 LVOT를 좁힘 → 빠른 흐름이 길어진 앞엽을 끌어당김(drag). 흥분 시 심박·수축력↑ → 내강이 더 작아지고 속도↑ → 폐쇄·MR 악화(동적 폐쇄).</div>
+<div class="q">Q4. 고양이 HCM에서 AF가 "매우 심한" 상태를 의미하는 이유는?</div>
+<div class="a">→ AF는 심방이 충분히 커야(임계 질량) 유지됨 → 25 g짜리 심장에서 AF = LA가 극도로 확대. 게다가 atrial kick을 잃어 채움↓ + 혈전 위험↑.</div>
+<div class="q">Q5. β-blocker는 이완을 직접 개선하지 않는데 왜 HCM에 쓰나?</div>
+<div class="a">→ 심박수↓로 이완기 채움 시간↑, 음성 변력으로 SAM↓, 산소 소모↓로 허혈·부정맥↓. 조건을 바꿔 주는 약.</div>
+<div class="q">Q6. 호흡곤란 고양이 X-ray에서 흉수가 보였다. furosemide만 주면 안 되는 이유는?</div>
+<div class="a">→ 이뇨제는 새로 생기는 것만 막고, 이미 흉강에 고인 대량의 액체는 재흡수가 느림 → 흉강천자로 물리적으로 빼야 즉시 호흡이 나아짐.</div>
+<div class="q">Q7. Furosemide를 장기 단독으로 쓰면 왜 안 되나?</div>
+<div class="a">→ 혈액량↓ → RAAS 활성 → Ang Ⅱ(혈관 수축)·알도스테론(Na 저류, 섬유화) → 이뇨 효과 상쇄 + 심근 섬유화. ACEI 병용.</div>
+<div class="q">Q8. 집에서 SRR을 재게 하는 이유와 기준은?</div>
+<div class="a">→ 폐간질 부종이 X-ray·증상보다 먼저 호흡수를 올림. 수면 중은 잡음이 없어 가장 민감. &lt; 30 정상, 지속적으로 30 이상이면 연락.</div>
+<div class="q">Q9. 고양이 혈전 예방에 aspirin보다 clopidogrel을 쓰는 이유는?</div>
+<div class="a">→ ADP 경로 차단으로 더 강력, 고양이 혈소판의 세로토닌 방출(혈관 수축)↓, GI 부작용↓. Aspirin은 ATE를 유의하게 줄이지 못함.</div>
+<div class="q">Q10. 고양이 DCM이 지금은 드문데, 다시 보인다면 어떤 식단을 의심? 왜 고양이만 타우린이 필수?</div>
+<div class="a">→ 수제식(삶은 닭고기)·채식. 고양이는 타우린 합성 효소 활성이 낮고, 담즙산을 타우린으로만 포합해 계속 잃음 → 동물성 단백질로 섭취해야 함.</div>
+<div class="q">Q11. HCM과 RCM은 둘 다 "못 채우는" 병인데 초음파에서 어떻게 구분하나?</div>
+<div class="a">→ HCM: 벽 ≥ 6 mm, 내강 좁음, SAM. RCM: 벽 정상 근처, 심내막 섬유화, 심방(± RA) 매우 큼, SAM 없음, restrictive filling.</div>
+<div class="q">Q12. Saddle thrombus 고양이의 혈전을 서둘러 녹이면 생길 수 있는 문제는?</div>
+<div class="a">→ 재관류 증후군: 괴사 근육의 K⁺·H⁺·젖산이 한꺼번에 유입 → 고칼륨혈증성 부정맥·심정지. LA에 혈전이 남아 있으면 새 색전. → 칼슘·인슐린/포도당 대비, 대개 진통 + 시간 + clopidogrel.</div>
+<div class="q">Q13. ATE 고양이의 D-dimer가 정상이었다. 혈전이 없다는 뜻인가?</div>
+<div class="a">→ 아님. D-dimer는 fibrin이 "녹을 때" 나오는 산물 → 고양이 ATE는 섬유소 용해가 적어 정상으로 나오는 경우가 흔함(증례 0.1).</div>
+</div><span class="pno">18</span></section></body></html>

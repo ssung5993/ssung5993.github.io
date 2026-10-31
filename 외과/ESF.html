@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외과 ESF 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+:root{--ink:#111;--red:#c62828;--navy:#1f3a68;--gray:#6b6b6b;--th:#dee6ef;--key:#f2efe8;--pr:#fadcdc;--pb:#dce6f5;--line:#9a9a9a;}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:#d6d6d6;font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--ink);font-size:8.2pt;line-height:1.38;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:210mm;max-width:100%;min-height:297mm;margin:12px auto;padding:9mm 9mm 11mm;background:#fff;
+  box-shadow:0 2px 8px rgba(0,0,0,.22);position:relative;overflow:hidden;}
+.pno{position:absolute;right:9mm;bottom:5mm;font-size:7pt;color:#999;}
+/* 제목 */
+.title{font-size:15pt;font-weight:700;margin:0 0 1px;letter-spacing:-.3px;line-height:1.3;border-bottom:2px solid var(--ink);padding-bottom:3px;}
+.title .m{font-size:8.5pt;color:var(--gray);font-weight:400;}
+.title .num{color:var(--red);}
+.comment{border:1.2px solid var(--navy);padding:5px 8px;margin:6px 0 8px;text-align:justify;font-size:7.6pt;line-height:1.45;}
+.comment b.h{color:var(--navy);}
+/* 위계 */
+h2.sec{font-size:10.5pt;font-weight:700;margin:10px 0 3px;padding:0 0 1px;border-bottom:1px solid var(--ink);line-height:1.35;}
+h2.sec .en{font-size:7.6pt;color:var(--gray);font-weight:400;margin-left:4px;}
+h2.sec .star{color:var(--red);font-size:8pt;margin-left:4px;}
+h3.sub{font-size:8.8pt;font-weight:700;margin:6px 0 2px;line-height:1.35;}
+h3.sub .en{font-size:7.4pt;color:var(--gray);font-weight:400;margin-left:3px;}
+p{margin:1px 0 3px;}
+ul{margin:1px 0 3px;padding-left:13px;}
+ul li{margin:0.5px 0;}
+ul.b{list-style:none;padding-left:0;}
+ul.b>li{padding-left:11px;position:relative;}
+ul.b>li::before{content:"①";position:absolute;left:0;}
+ol.c{list-style:none;padding-left:0;margin:1px 0 3px;counter-reset:c;}
+ol.c>li{counter-increment:c;padding-left:13px;position:relative;margin:.5px 0;}
+ol.c>li::before{content:counter(c,decimal);position:absolute;left:0;top:0;font-size:6.6pt;border:1px solid var(--ink);border-radius:50%;width:9px;height:9px;line-height:9px;text-align:center;margin-top:1.5px;}
+.s{font-size:7.3pt;color:#333;margin:1px 0 3px;}
+.s::before{content:"‧ ";}
+.r{color:var(--red);font-weight:700;}
+.n{color:var(--navy);font-weight:700;}
+.g{color:var(--gray);}
+.src{display:inline-block;font-size:6.3pt;line-height:10px;padding:0 3px;border:1px solid var(--red);color:var(--red);border-radius:2px;margin:0 2px;vertical-align:1px;font-weight:700;}
+.src.p{border-color:var(--navy);color:var(--navy);}
+.src.w{border-color:#555;color:#555;}
+/* 표 */
+table{width:100%;border-collapse:collapse;margin:3px 0 5px;font-size:7.7pt;line-height:1.33;}
+th,td{border:1px solid var(--line);padding:2px 4px;vertical-align:middle;text-align:left;}
+th{background:var(--th);font-weight:700;text-align:center;}
+td.k{background:var(--key);font-weight:700;text-align:center;}
+td.c{text-align:center;}
+tr.hi td{background:#fff7f7;}
+th.pr{background:var(--pr);} th.pb{background:var(--pb);}
+caption{caption-side:top;text-align:left;font-weight:700;font-size:8pt;padding:0 0 2px;}
+/* 박스 */
+.box{border:1.2px dashed var(--red);padding:4px 7px;margin:5px 0 6px;font-size:7.4pt;line-height:1.42;}
+.box .bt{color:var(--red);font-weight:700;margin-bottom:1px;}
+.quote{border:1px solid #aaa;padding:4px 7px;margin:4px 0 6px;font-size:7.4pt;color:#222;background:#fafafa;}
+.quote .bt{font-weight:700;margin-bottom:1px;}
+.why{border-left:3px solid var(--ink);padding:2px 7px;margin:4px 0 6px;font-size:7.4pt;line-height:1.42;background:#f7f7f7;}
+.why .bt{font-weight:700;margin-bottom:1px;}
+.two{display:flex;gap:8px;align-items:flex-start;}
+.two>div{flex:1;min-width:0;}
+.fig{margin:4px 0 6px;text-align:center;}
+.fig .cap{font-size:7.2pt;font-weight:700;text-align:left;margin-bottom:2px;}
+.fig svg{font-family:inherit;}
+.pb{}
+@media (max-width:800px){.two{display:block;}.page{width:100%;padding:16px;min-height:auto;}}
+@media print{body{background:#fff;}.page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}}
+@page{size:A4;margin:0;}
+</style></head>
+<body>
+<section class="page"><div class="title"><span class="num">외과.</span> 외부골격고정 (External Skeletal Fixation, ESF) — 원리 · 구성 · 생체역학 · 적용 · Circular <span class="m">｜ 허수영 교수</span></div>
+<div class="comment"><b class="h">자료</b> — ① <b>"ESF: Principles"</b>(20장, AO 스타일 영문 슬라이드: 위치 비교 · strain 개념 · 강성 · wire 장력 표 · pin–bone 실패 원인 · safe corridor · 핀 순서) ② <b>"Principles of External Fixation"</b>(62장, 허수영 교수: 종류 · 장단점 · Type Ⅰ–Ⅲ · 생체역학 · 장치 · 적용 원칙 · acrylic · circular). 두 자료가 같은 내용을 다른 각도로 설명해서 <b>주제별로 합쳤다</b>. ②는 지난 「골절의 진단 및 관리」 강의의 ESF 파트와 같은 슬라이드라, 그때 녹음과 손필기를 그대로 녹였다. <b class="h">학습 목표</b> — ESF를 정의·분류하고, strain·강성 개념으로 frame을 고르고(골절 생물학 + 해부 + 환자 하중), 안전하고 재현 가능한 linear ESF 순서를 적용하며, pin-tract 문제와 이완을 예방·관리할 수 있다. <span class="src">수업</span> = 녹음, <span class="src p">필기</span> = 슬라이드 손필기, <span class="src w">보충</span> = 정리자 보충, <span class="src" style="border-color:#13756a;color:#13756a">AO</span> = ① "ESF: Principles" 슬라이드에만 있는 내용. 그림은 이해용 모식도다.</div>
+
+<h2 class="sec">Ⅰ. ESF란? — 고정법 중 어디에 있나 <span class="en">Where ESF fits among fixation options</span></h2>
+<div class="two"><div>
+<p>피부를 뚫고 뼈에 박은 <b>핀/wire</b>를 몸 밖의 <b>bar·clamp(또는 ring)</b>로 연결해 뼈를 고정하는 장치.</p>
+<ul class="b">
+<li><b>생물학적 골접합</b>(biological osteosynthesis)을 지원 — 골절부를 최소한으로 건드림</li>
+<li><b>구성을 나중에 바꿀 수 있다</b>(adjustability)는 게 고유한 장점</li>
+<li>연조직(상처) 접근성이 내고정보다 좋음 — <b>개방골절</b>에 유리</li>
+<li>한계: <b>핀 관리 부담</b> · pin-tract 문제 · 환자가 불편해함</li>
+</ul>
+<p class="s"><span class="src">수업</span> plate·wire·ILN은 결국 골절부 조직을 건드린다. ESF는 골절부를 <b>전혀</b> 건드리지 않으니 생물학적으로 가장 이상적이다.</p>
+</div><div>
+<table><caption>ESF vs Plate vs ILN <span class="src" style="border-color:#13756a;color:#13756a">AO</span></caption>
+<thead><tr><th style="width:30%">항목</th><th>ESF</th><th>Bone plate</th><th>Interlocking nail</th></tr></thead>
+<tr><td class="k">생물학적 보존</td><td class="c r">★★★★</td><td class="c">★★–★★★</td><td class="c">★★★</td></tr>
+<tr><td class="k">구성 조절성</td><td class="c r">★★★★</td><td class="c">★</td><td class="c">★</td></tr>
+<tr><td class="k">연조직 접근</td><td class="c r">★★★★</td><td class="c">★★</td><td class="c">★★★</td></tr>
+<tr class="hi"><td class="k">환자 편안함</td><td class="c r">★★</td><td class="c">★★★★</td><td class="c">★★★★</td></tr>
+<tr class="hi"><td class="k">핀·임플란트 관리</td><td class="c r">High</td><td class="c">Low</td><td class="c">Low</td></tr>
+</table>
+<p class="s">→ ESF는 <b>생물학·조절성·연조직 접근은 최고</b>, 대신 <b>편안함과 관리 부담은 최악</b>.</p>
+</div></div>
+
+<h3 class="sub">1) 장점 · 단점 · 적응증</h3>
+<div class="two"><div>
+<table><caption>장점</caption>
+<tr><td class="k" style="width:30%">Minimally invasive</td><td><b>골절부에 임플란트 없음</b></td></tr>
+<tr><td class="k">Versatility (build to fit)</td><td><span class="src">수업</span> plate는 크기(1.0·1.5·2.0·2.4·2.7·3.5·4.5·5.5)와 구멍 간격이 정해져 있지만, 핀은 방향·간격을 자유롭게 → 환자에 맞게 조립</td></tr>
+<tr><td class="k">임시 · 최종 모두</td><td><span class="src">수업</span> 교통사고 환자 — 다른 장기를 검사하는 동안 골편이 흔들려 연조직 손상·개방골절이 되는 걸 막는 임시 고정</td></tr>
+<tr><td class="k">다른 고정과 병용</td><td>IM pin tie-in, ring과 hybrid 등</td></tr>
+<tr><td class="k">저렴 (재사용)</td><td><span class="src">수업</span> 핀만 버리고 bar·clamp는 10–20회 재사용 → plate의 약 <b>1/10 비용</b></td></tr>
+</table>
+<table><caption>적응증 / 금기</caption>
+<tr><td class="k" style="width:30%">Ideal</td><td><b>Radius · Tibia</b> · 상·하악 골절 · <b>개방골절</b> · closed reduction 골절 · <b>각변형 교정</b> · <b>골신장술</b>(distraction osteogenesis)</td></tr>
+<tr class="hi"><td class="k">금기</td><td><b>관절(연골면) 골절 ✕</b> → screw · bone plate <span class="src p">필기</span> <span class="src">수업</span> ESF는 relative stability → <b>100% 2차 유합</b>. 골편을 압박해 정확히 맞추는 장치가 아니다</td></tr>
+</table>
+</div><div>
+<table><caption>단점 → 결국 "조기 핀 이완(premature pin loosening)"</caption>
+<tr><td class="k" style="width:30%">Pin–bone 경계 파괴</td><td>핀이 헐거워짐</td></tr>
+<tr><td class="k">감염 (pin tract)</td><td>핀이 밖으로 나와 있어 <b>피할 수 없다</b></td></tr>
+<tr><td class="k">근육 tethering</td><td>근육 움직임을 핀이 붙잡음 → 통증</td></tr>
+<tr><td class="k">연조직 구축</td><td></td></tr>
+<tr><td class="k">연결부가 중심축 밖</td><td>bar가 뼈 축에서 떨어져 있어 역학적으로 불리</td></tr>
+</table>
+<div class="box"><div class="bt">※ ESF의 시간 한계 = ~12주 <span class="src">수업</span> <span class="src p">필기</span></div>
+연구상 핀은 <b>6주부터</b> 미세하게 흔들리기 시작해 <b>12주</b>엔 많이 흔들린다 → 교수님은 <b>12주</b>를 한계로 보고, <b>12주(3개월) 안에 붙을 골절에만</b> ESF를 쓴다. 잘 설치된 부위는 1년 넘게 문제없기도 하다.<br>
+→ 그래서 <b>생물학적 요인이 나쁜(오래 걸리는) 골절엔 ESF ✕</b>: 감염 → 핀 흔들림 → 처음의 기계적 강도를 유지 못함.</div>
+</div></div><span class="pno">1</span></section>
+<section class="page"><h2 class="sec">Ⅱ. 구성과 분류 <span class="en">Definition · components · construct classification</span></h2>
+<div class="fig"><div class="cap">Linear ESF의 구성요소 3가지 (+ 관절을 건너는 transarticular ESF)</div><svg viewBox="0 0 680 190" width="100%" style="max-width:580px;display:block;margin:0 auto" role="img" aria-label="ESF 구성"><defs><marker id="hsk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="hsr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="hsn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="hsmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="hsmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><rect x="70.0" y="96.0" width="200.0" height="30.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="280.0" y="96.0" width="210.0" height="30.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><line x1="275.0" y1="90.0" x2="275.0" y2="132.0" stroke="#c62828" stroke-width="1.2" stroke-dasharray="3 2" /><rect x="60.0" y="34.0" width="440.0" height="8.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="90.0" y1="42.0" x2="90.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="83.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="150.0" y1="42.0" x2="150.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="143.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="230.0" y1="42.0" x2="230.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="223.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="320.0" y1="42.0" x2="320.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="313.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="400.0" y1="42.0" x2="400.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="393.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="470.0" y1="42.0" x2="470.0" y2="130.0" stroke="#8d959e" stroke-width="3" /><rect x="463.0" y="30.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><line x1="230.0" y1="150.0" x2="320.0" y2="150.0" stroke="#c62828" stroke-width="1.2" marker-end="url(#hsr)" marker-start="url(#hsr)" /><text x="275.0" y="164.0" text-anchor="middle" font-size="7.6" fill="#c62828" font-weight="700">working length</text><line x1="506.0" y1="38.0" x2="506.0" y2="96.0" stroke="#1f3a68" stroke-width="1" marker-end="url(#hsn)" marker-start="url(#hsn)" /><text x="512.0" y="64.0" text-anchor="start" font-size="7.2" fill="#1f3a68" font-weight="700">bone–bar</text><text x="512.0" y="76.0" text-anchor="start" font-size="7.2" fill="#1f3a68" font-weight="700">거리</text><text x="60.0" y="16.0" text-anchor="start" font-size="7.8" fill="#3a3f45" font-weight="700">② Bar (connector) — 연결 막대 / acrylic column / ring</text><text x="160.0" y="112.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">① Pin (fastener)</text><text x="338.0" y="26.0" text-anchor="start" font-size="7.6" fill="#555" font-weight="700">③ Clamp (linkage)</text><text x="170.0" y="146.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">근위 골편</text><text x="390.0" y="146.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">원위 골편</text><path d="M606,20 L626,20 L626,92 Q630,104 642,112 L666,120 L662,134 L636,126 Q612,116 606,96 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><line x1="590.0" y1="26.0" x2="590.0" y2="130.0" stroke="#3a3f45" stroke-width="4" /><line x1="590.0" y1="34.0" x2="622.0" y2="34.0" stroke="#8d959e" stroke-width="2.2" /><line x1="590.0" y1="60.0" x2="622.0" y2="60.0" stroke="#8d959e" stroke-width="2.2" /><line x1="590.0" y1="112.0" x2="646.0" y2="118.0" stroke="#8d959e" stroke-width="2.2" /><line x1="590.0" y1="118.0" x2="660.0" y2="124.0" stroke="#8d959e" stroke-width="2.2" /><text x="626.0" y="152.0" text-anchor="middle" font-size="7.6" fill="#111" font-weight="700">Transarticular</text><text x="626.0" y="164.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">관절을 건너 임시 고정</text></svg></div>
+<div class="two"><div>
+<ul class="b">
+<li><b>Transosseous element</b>: 뼈를 관통하는 <b>핀 · wire</b> (Fastener)</li>
+<li><b>External connection</b>: <b>rod/bar + clamp</b> 또는 <b>ring/arch</b> (Connector + Linkage) · acrylic column</li>
+<li><b>Hybridization</b>(linear + circular) · <b>Augmentation</b>(IM–ESF tie-in)을 더할 수 있다</li>
+</ul>
+</div><div>
+<table><caption>Construct 분류</caption>
+<tr><td class="k" style="width:28%">Linear</td><td>unilateral · biplanar · bilateral — Type Ⅰa · Ⅰb · Ⅱ · Ⅲ</td></tr>
+<tr><td class="k">Circular (ring)</td><td>ring/arch + <b>장력 건 가는 wire</b> (Ilizarov)</td></tr>
+<tr><td class="k">Hybrid</td><td><b>ring block + linear segment</b></td></tr>
+<tr><td class="k">Acrylic / free-form</td><td>bar 대신 아크릴 기둥</td></tr>
+<tr><td class="k">Transarticular <span class="src" style="border-color:#13756a;color:#13756a">AO</span></td><td>관절을 건너 걸어 <b>임시 부동화</b>(관절 손상·인대 손상·연조직 상처 등) <span class="src w">보충</span></td></tr>
+</table>
+<p class="s"><span class="src">수업</span> <b>Tie-in(IM pin + ESF)은 hybrid가 아니다</b> — hybrid는 ring + linear. 교수님이 콕 집어 강조.</p>
+</div></div>
+
+<h3 class="sub">1) Linear ESF의 4가지 형태 <span class="en">Type Ⅰa · Ⅰb · Ⅱ · Ⅲ</span><span class="star">★최빈출</span></h3>
+<div class="fig"><div class="cap">Linear ESF 4가지 형태 — 단면으로 보면 쉽다</div><svg viewBox="0 0 640 238" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="ESF 형태"><defs><marker id="gek" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="ger" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="gen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="gemv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="gemh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><line x1="36.0" y1="56.0" x2="80.0" y2="56.0" stroke="#8d959e" stroke-width="3" /><circle cx="30.0" cy="56.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="80.0" cy="56.0" r="16.0" fill="#f5c400" stroke="#b38f00" stroke-width="1" /><text x="80.0" y="104.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">Type Ⅰa</text><text x="80.0" y="116.0" text-anchor="middle" font-size="7.4" fill="#6b6b6b">한쪽 · 한 평면</text><text x="80.0" y="128.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">half pin</text><line x1="196.0" y1="56.0" x2="240.0" y2="56.0" stroke="#8d959e" stroke-width="3" /><line x1="240.0" y1="12.0" x2="240.0" y2="56.0" stroke="#8d959e" stroke-width="3" /><circle cx="190.0" cy="56.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="240.0" cy="6.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="240.0" cy="56.0" r="16.0" fill="#f5c400" stroke="#b38f00" stroke-width="1" /><text x="240.0" y="104.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">Type Ⅰb</text><text x="240.0" y="116.0" text-anchor="middle" font-size="7.4" fill="#6b6b6b">한쪽 · 두 평면</text><text x="240.0" y="128.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">half pin (V자)</text><line x1="350.0" y1="56.0" x2="450.0" y2="56.0" stroke="#8d959e" stroke-width="3" /><circle cx="350.0" cy="56.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="450.0" cy="56.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="400.0" cy="56.0" r="16.0" fill="#f5c400" stroke="#b38f00" stroke-width="1" /><text x="400.0" y="104.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">Type Ⅱ</text><text x="400.0" y="116.0" text-anchor="middle" font-size="7.4" fill="#6b6b6b">양쪽 · 한 평면</text><text x="400.0" y="128.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">full pin</text><line x1="516.0" y1="62.0" x2="604.0" y2="62.0" stroke="#8d959e" stroke-width="3" /><line x1="560.0" y1="16.0" x2="560.0" y2="62.0" stroke="#8d959e" stroke-width="3" /><line x1="510.0" y1="62.0" x2="560.0" y2="10.0" stroke="#999" stroke-width="1.2" /><line x1="610.0" y1="62.0" x2="560.0" y2="10.0" stroke="#999" stroke-width="1.2" /><circle cx="510.0" cy="62.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="610.0" cy="62.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="560.0" cy="10.0" r="7.0" fill="#222" stroke="#222" stroke-width="1" /><circle cx="560.0" cy="62.0" r="16.0" fill="#f5c400" stroke="#b38f00" stroke-width="1" /><text x="560.0" y="104.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">Type Ⅲ</text><text x="560.0" y="116.0" text-anchor="middle" font-size="7.4" fill="#6b6b6b">양쪽 · 두 평면(Ⅰ+Ⅱ)</text><text x="560.0" y="128.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">가장 강함 · 임상 ✕</text><text x="10.0" y="150.0" text-anchor="start" font-size="8.2" fill="#111" font-weight="700">강성(실험 하중)</text><text x="118.0" y="169.0" text-anchor="end" font-size="7.6" fill="#111">Ⅰa</text><rect x="124.0" y="160.0" width="42.5" height="11.0" rx="2" fill="#9fb6d6" stroke="none" stroke-width="0" /><text x="170.5" y="169.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">25 kg</text><text x="118.0" y="184.0" text-anchor="end" font-size="7.6" fill="#111">Ⅰa + 이중 bar</text><rect x="124.0" y="175.0" width="76.5" height="11.0" rx="2" fill="#9fb6d6" stroke="none" stroke-width="0" /><text x="204.5" y="184.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">45 kg</text><text x="118.0" y="199.0" text-anchor="end" font-size="7.6" fill="#111">Ⅰb</text><rect x="124.0" y="190.0" width="112.2" height="11.0" rx="2" fill="#9fb6d6" stroke="none" stroke-width="0" /><text x="240.2" y="199.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">66 kg</text><text x="118.0" y="214.0" text-anchor="end" font-size="7.6" fill="#111">Ⅱ</text><rect x="124.0" y="205.0" width="238.0" height="11.0" rx="2" fill="#5b7fb3" stroke="none" stroke-width="0" /><text x="366.0" y="214.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">140 kg</text><text x="118.0" y="229.0" text-anchor="end" font-size="7.6" fill="#111">Ⅲ</text><rect x="124.0" y="220.0" width="309.4" height="11.0" rx="2" fill="#5b7fb3" stroke="none" stroke-width="0" /><text x="437.4" y="229.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">182 kg</text><text x="630.0" y="176.0" text-anchor="end" font-size="7.4" fill="#6b6b6b">노란 원 = 뼈 단면 · 검은 점 = bar</text><text x="630.0" y="190.0" text-anchor="end" font-size="7.4" fill="#333">임상: Type Ⅱ는 modified(minimal) —</text><text x="630.0" y="202.0" text-anchor="end" font-size="7.4" fill="#333">근육 때문에 일부를 half pin으로</text><text x="630.0" y="220.0" text-anchor="end" font-size="7.4" fill="#c62828" font-weight="700">수치는 절대값이 아니라 순서로 기억</text></svg></div>
+<div class="two"><div>
+<table><caption>형태 정리</caption>
+<thead><tr><th style="width:16%">Type</th><th>구성</th><th style="width:24%">특징</th></tr></thead>
+<tr><td class="k">Ⅰa</td><td>Unilateral <b>uniplanar</b> — 한쪽, 한 평면, half pin</td><td>가장 약함 · femur·humerus는 사실상 이것</td></tr>
+<tr><td class="k">Ⅰb</td><td>Unilateral <b>biplanar</b> — 한쪽에서 두 평면(~90°) <span class="src p">필기</span> half pin</td><td>radius에 좋음</td></tr>
+<tr><td class="k">Ⅱ</td><td>Bilateral <b>uniplanar</b> — 양쪽, <b>full pin</b></td><td>tibia에 좋음</td></tr>
+<tr><td class="k">Ⅲ</td><td>Bilateral <b>biplanar</b> — <b>Ⅰ + Ⅱ = Ⅲ</b></td><td><b>가장 rigid</b> · 임상 ✕</td></tr>
+</table>
+<p class="s">강성: <b>Ⅰa &lt; Ⅰb &lt; Ⅱ &lt; Ⅲ</b> (실험 하중 25 · 이중 bar Ⅰa 45 · 66 · 140 · 182 kg) <span class="src">수업</span> 수치 자체가 아니라 "이 체중이 실릴 것 같으면 Ⅱ 이상" 같은 감으로.</p>
+</div><div>
+<ul class="b">
+<li><b>Half pin vs Full pin</b> (교재 p.990 그림 32-22): half = 한쪽 피질·한쪽 피부(unilateral) / full = 양쪽 피부까지 관통(bilateral). <b>full이 더 강하지만</b> 양쪽 연조직을 다 뚫는다 <span class="src p">필기</span> half pin(*)은 연조직 손상↓</li>
+<li><b>Modified(minimal) Type Ⅱ</b>: 진짜 Type Ⅱ(maximal)는 전부 full pin인데 근육·신경 때문에 다 관통할 수 없음 → 일부를 half pin으로 <span class="src p">필기</span> <b>임상에선 이걸 씀</b> (교재 p.998 그림 32-21에 Type Ⅲ는 없음)</li>
+<li><b>Type Ⅲ를 안 쓰는 이유</b> <span class="src">수업</span> ① bar 3개를 동시에 정확히 맞추기가 거의 불가능 — ESF 장점(자유로운 조립)이 사라짐 ② 요즘 carbon bar·강한 clamp로 <b>Type Ⅱ가 충분히 강해짐</b></li>
+</ul>
+</div></div><span class="pno">2</span></section>
+<section class="page"><h3 class="sub">2) 강성 높이기 — Augmentation <span class="en">Increasing ESF rigidity</span></h3>
+<div class="two"><div>
+<table><caption>Augmentation options <span class="src" style="border-color:#13756a;color:#13756a">AO</span></caption>
+<tr><td class="k" style="width:34%">두 번째 bar</td><td>Ⅰa → <b>Ⅰb</b> (평면 추가)</td></tr>
+<tr><td class="k">Diagonal · Articulation</td><td>bar끼리 연결 <span class="src p">필기</span> link 넣으면 더 강력 · 같은 Ⅰa라도 기계적 요인이 낮으면 이걸로 보강 <span class="src">수업</span></td></tr>
+<tr><td class="k">Tie-in</td><td>IM pin 끝을 ESF bar에 연결 → bending·torsion 저항↑ (특히 <b>femur</b>) · radius엔 ✕(IM pin 금지 뼈)</td></tr>
+<tr><td class="k">Hybridization</td><td><b>ring block</b> 추가 — 관절 가까운 짧은 골편</td></tr>
+</table>
+</div><div>
+<div class="why"><div class="bt">*Dynamization (staged disassembly) — 반대로 강성 낮추기 <span class="src">수업</span></div>
+처음엔 강하게 → 뼈가 붙어 가면 <b>bar·핀을 빼서 강성↓</b> → <b>micromotion = 가골 형성</b>(2차 유합 촉진). plate는 다시 열어야 하지만 <b>ESF는 밖에서 자르기만 하면 된다</b>. 예: 큰 clamp를 작은 것으로, Ⅰb → Ⅰa로.<br>
+단, micromotion이 도움 되는 건 <b>gap이 있는 2차 유합 환경</b>. 압박해서 붙인 횡골절(1차 유합)에선 오히려 지연. "micro" = 미크론(세포) 단위.</div>
+</div></div>
+
+<h2 class="sec">Ⅲ. 생체역학 <span class="en">Biomechanics</span><span class="star">★</span></h2>
+<h3 class="sub">1) Strain management concept <span class="src" style="border-color:#13756a;color:#13756a">AO</span></h3>
+<div class="fig"><div class="cap">Strain management concept — 골절 틈의 strain을 "견딜 만한" 범위로</div><svg viewBox="0 0 640 164" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="strain"><defs><marker id="hnk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="hnr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="hnn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="hnmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="hnmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><rect x="40.0" y="30.0" width="50.0" height="26.0" rx="0" fill="#d9d9d9" stroke="#888" stroke-width="0.7" /><text x="65.0" y="47.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">0%</text><text x="65.0" y="72.0" text-anchor="middle" font-size="7.6" fill="#333" font-weight="700">가골 유도 없음</text><text x="65.0" y="84.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">(완전 고정)</text><rect x="90.0" y="30.0" width="150.0" height="26.0" rx="0" fill="#e6d9bb" stroke="#888" stroke-width="0.7" /><text x="165.0" y="47.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">< 2%</text><text x="165.0" y="72.0" text-anchor="middle" font-size="7.6" fill="#333" font-weight="700">층판골(lamellar)</text><text x="165.0" y="84.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">이 견딤</text><rect x="240.0" y="30.0" width="180.0" height="26.0" rx="0" fill="#f6e7b0" stroke="#888" stroke-width="0.7" /><text x="330.0" y="47.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">2–10%</text><text x="330.0" y="72.0" text-anchor="middle" font-size="7.6" fill="#333" font-weight="700">직조골(woven)</text><text x="330.0" y="84.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">이 견딤</text><rect x="420.0" y="30.0" width="180.0" height="26.0" rx="0" fill="#cfe0f3" stroke="#888" stroke-width="0.7" /><text x="510.0" y="47.0" text-anchor="middle" font-size="9" fill="#111" font-weight="700">> 10%</text><text x="510.0" y="72.0" text-anchor="middle" font-size="7.6" fill="#333" font-weight="700">연골(cartilage)</text><text x="510.0" y="84.0" text-anchor="middle" font-size="7.2" fill="#6b6b6b">만 견딤</text><text x="40.0" y="20.0" text-anchor="start" font-size="8.4" fill="#1f3a68" font-weight="700">Interfragmentary strain (골편 사이 움직임 ÷ 틈 폭)</text><line x1="40.0" y1="104.0" x2="600.0" y2="104.0" stroke="#111" stroke-width="1" marker-end="url(#hnk)" marker-start="url(#hnk)" /><text x="40.0" y="120.0" text-anchor="start" font-size="7.8" fill="#111" font-weight="700">움직임 너무 적음(상황에 따라)</text><text x="40.0" y="133.0" text-anchor="start" font-size="7.4" fill="#333">→ 관절 강직, frame 기간↑ 등 다른 문제</text><text x="600.0" y="120.0" text-anchor="end" font-size="7.8" fill="#c62828" font-weight="700">움직임 너무 많음</text><text x="600.0" y="133.0" text-anchor="end" font-size="7.4" fill="#c62828">→ 지연유합·불유합, 핀 이완</text><text x="320.0" y="156.0" text-anchor="middle" font-size="7.8" fill="#1f3a68" font-weight="700">"필요한 안정성"은 생물학(골절 형태·환자)이 정한다 — ESF는 강성을 조립으로 조절할 수 있다는 게 무기</text></svg></div>
+<div class="two"><div>
+<ul class="b">
+<li>고정의 목표 = 골편 사이 <b>strain을 견딜 만한 수준</b>으로 유지</li>
+<li><b>너무 많이 움직임</b> → 지연유합·불유합, <b>핀 이완</b></li>
+<li><b>너무 적게 움직임</b>(상황에 따라) → 관절 강직, frame 착용 기간↑ 같은 다른 문제</li>
+<li><b>생물학이 "필요한 안정성"을 결정</b>한다</li>
+</ul>
+</div><div>
+<div class="why"><div class="bt">*왜 이게 ESF에서 중요하나? <span class="src w">보충</span></div>
+ESF는 relative stability 장치라 <b>2차 유합(가골)</b>로 붙는다. 그래서 "얼마나 단단히?"가 아니라 <b>"이 골절에 맞는 strain은?"</b>을 먼저 묻는다. 분쇄골절은 gap이 여러 개라 움직임이 나눠져 strain이 낮다 → bridging으로 충분. 단순 횡골절은 gap이 작아 조금만 움직여도 strain이 커진다.</div>
+</div></div>
+
+<h3 class="sub">2) Linear ESF 강성을 정하는 요소</h3>
+<p class="s">단측(monolateral) frame 안정성 요소 (Rockwood &amp; Green): <b>골절선에서 핀까지 거리 · 핀 간격 · bone–bar 거리 · bar 크기·재질 · 핀 직경 · 핀 개수 · pin–bone interface</b></p>
+<div class="fig"><div class="cap">ESF를 강하게 만드는 요소 (회색 = 뼈, 가운데 틈 = 골절)</div><svg viewBox="0 0 640 220" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="ESF 생체역학"><defs><marker id="gbk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="gbr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="gbn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="gbmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="gbmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><text x="10.0" y="14.0" text-anchor="start" font-size="8.6" fill="#111" font-weight="700">Bone–bar 거리</text><text x="310.0" y="14.0" text-anchor="end" font-size="7.6" fill="#1f3a68" font-weight="700">짧을수록 강함 (강성 ∝ 1/L³)</text><rect x="14.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="78.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="12.0" y="30.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="24.0" y1="35.0" x2="24.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="64.0" y1="35.0" x2="64.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="84.0" y1="35.0" x2="84.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="124.0" y1="35.0" x2="124.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><rect x="178.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="242.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="176.0" y="50.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="188.0" y1="55.0" x2="188.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="228.0" y1="55.0" x2="228.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="248.0" y1="55.0" x2="248.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="288.0" y1="55.0" x2="288.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><text x="74.0" y="96.0" text-anchor="middle" font-size="7.4" fill="#c62828" font-weight="700">약함</text><text x="238.0" y="96.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">강함</text><text x="330.0" y="14.0" text-anchor="start" font-size="8.6" fill="#111" font-weight="700">핀 개수</text><text x="630.0" y="14.0" text-anchor="end" font-size="7.6" fill="#1f3a68" font-weight="700">골편당 3–4개</text><rect x="334.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="398.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="332.0" y="50.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="348.0" y1="55.0" x2="348.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="438.0" y1="55.0" x2="438.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><rect x="498.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="562.0" y="64.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="496.0" y="50.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="506.0" y1="55.0" x2="506.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="528.0" y1="55.0" x2="528.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="548.0" y1="55.0" x2="548.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="570.0" y1="55.0" x2="570.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="590.0" y1="55.0" x2="590.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><line x1="610.0" y1="55.0" x2="610.0" y2="82.0" stroke="#8d959e" stroke-width="2.2" /><text x="394.0" y="96.0" text-anchor="middle" font-size="7.4" fill="#c62828" font-weight="700">약함</text><text x="558.0" y="96.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">강함</text><text x="10.0" y="114.0" text-anchor="start" font-size="8.6" fill="#111" font-weight="700">핀 간격</text><text x="310.0" y="114.0" text-anchor="end" font-size="7.6" fill="#1f3a68" font-weight="700">넓게 벌릴수록 강함</text><rect x="14.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="78.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="12.0" y="150.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="50.0" y1="155.0" x2="50.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="64.0" y1="155.0" x2="64.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="86.0" y1="155.0" x2="86.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="100.0" y1="155.0" x2="100.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><rect x="178.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="242.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="176.0" y="150.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="184.0" y1="155.0" x2="184.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="228.0" y1="155.0" x2="228.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="250.0" y1="155.0" x2="250.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="294.0" y1="155.0" x2="294.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><text x="74.0" y="196.0" text-anchor="middle" font-size="7.4" fill="#c62828" font-weight="700">약함</text><text x="238.0" y="196.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">강함</text><text x="330.0" y="114.0" text-anchor="start" font-size="8.6" fill="#111" font-weight="700">핀 위치</text><text x="630.0" y="114.0" text-anchor="end" font-size="7.6" fill="#1f3a68" font-weight="700">far-near-near-far · 골절선 ≥1 cm</text><rect x="334.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="398.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="332.0" y="150.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="354.0" y1="155.0" x2="354.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="368.0" y1="155.0" x2="368.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="420.0" y1="155.0" x2="420.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="434.0" y1="155.0" x2="434.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><rect x="498.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="562.0" y="164.0" width="56.0" height="16.0" rx="0" fill="#ddd" stroke="#999" stroke-width="0.6" /><rect x="496.0" y="150.0" width="124.0" height="5.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="504.0" y1="155.0" x2="504.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="546.0" y1="155.0" x2="546.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="572.0" y1="155.0" x2="572.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><line x1="614.0" y1="155.0" x2="614.0" y2="182.0" stroke="#8d959e" stroke-width="2.2" /><text x="394.0" y="196.0" text-anchor="middle" font-size="7.4" fill="#c62828" font-weight="700">약함</text><text x="558.0" y="196.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">강함</text><text x="320.0" y="212.0" text-anchor="middle" font-size="7.8" fill="#333" font-weight="700">+ 핀 직경은 크게(단, 뼈 직경의 20–30% 이하) · threaded pin · bar 두껍게/2개 · full pin > half pin</text></svg></div>
+<div class="two"><div>
+<table><caption>Linear ESF stiffness <span class="src" style="border-color:#13756a;color:#13756a">AO</span></caption>
+<tr><td class="k" style="width:9%">1</td><td><b>Pin–bone interface의 질</b>이 피로 수명(fatigue life)을 좌우 — 가장 중요</td></tr>
+<tr><td class="k">2</td><td>핀 <b>직경·개수↑</b> — 단, safe corridor 안에서</td></tr>
+<tr><td class="k">3</td><td><b>bar–bone 거리↓</b> — 단, 부종이 생겨도 피부를 누르지 않을 만큼</td></tr>
+<tr><td class="k">4</td><td><b>near 핀으로 working length↓</b></td></tr>
+<tr><td class="k">5</td><td><b>평면 추가</b>(biplanar) 또는 <b>augmentation</b>(tie-in)</td></tr>
+</table>
+<p class="s"><span class="src p">필기</span> bar가 가까이 갈수록 강함, 멀어지면 약함 · bar 두껍고 개수 많을수록↑ · bar–bar 간격 넓을수록↑ · 핀 간격 넓을수록↑</p>
+</div><div>
+<div class="why"><div class="bt">*수치로 기억할 것</div>
+<b>강성 ∝ 1/L³</b>(L = 핀의 노출 길이 = bone–bar 거리) → bar를 반만 가깝게 해도 강성 ~8배 <span class="src w">보충</span><br>
+<b>핀 직경 ≤ 뼈 직경의 20–30%</b> <span class="src">수업</span> 30% 넘는 구멍은 뼈를 크게 약화(나사도 같은 원리). 1.75 vs 2.x mm처럼 <b>작은 직경 차이가 강도는 크게</b> 다르다(굽힘 강성은 반지름의 4제곱에 비례 <span class="src w">보충</span>)<br>
+<b>Bone–bar 거리</b> <span class="src">수업</span> 최대한 가깝게, 단 <b>손가락 하나</b> 이상 여유 · SK clamp는 핀 잡는 부분의 <b>방향</b>에 따라 거리가 달라짐</div>
+<div class="why"><div class="bt">*Pin–bone interface (radial preload vs eccentric load)</div>
+하중이 핀에 고르게(반경 방향) 걸리면 괜찮지만, <b>편심 하중</b>이 반복되면 핀 구멍 한쪽만 눌려 <b>타원형으로 넓어지며</b> 이완된다. <span class="src p">필기</span> 골절의 중심부 쪽으로 핀을 넣는 것이 중요 / 핀을 너무 깊이 넣으면 반대편 연조직 자극</div>
+</div></div><span class="pno">3</span></section>
+<section class="page"><h3 class="sub">3) Pin–bone interface — 왜 실패하나? <span class="src" style="border-color:#13756a;color:#13756a">AO</span></h3>
+<table>
+<thead><tr><th style="width:24%">실패 원인</th><th>기전</th><th style="width:30%">예방</th></tr></thead>
+<tr><td class="k">Micro-motion</td><td>핀–뼈 사이 반복적 미세 움직임 → <b>골용해(osteolysis)</b> → 구멍 확대 → 이완</td><td>강성 충분히 · threaded pin</td></tr>
+<tr><td class="k">Thermal necrosis</td><td>드릴·핀 삽입 마찰열 → 구멍 주위 뼈 괴사(necrotic depth) → ring sequestrum</td><td><b>predrill</b> · <b>저속(&lt;150 rpm)</b></td></tr>
+<tr><td class="k">Cis cortex thread stripping</td><td>가까운 쪽(near/cis) 피질의 나사산이 뭉개짐</td><td>predrill · 적절한 드릴 크기</td></tr>
+<tr><td class="k">Poor purchase</td><td><b>직경이 작거나 · 잘못된 위치</b>(얇은 피질·해면골, corridor 밖)</td><td>적절한 직경 · safe corridor</td></tr>
+</table>
+
+<h2 class="sec">Ⅳ. 장치 <span class="en">Devices of ESFs</span></h2>
+<div class="two"><div>
+<p class="s"><b>ESF 시스템</b>: <b>Kirschner-Ehmer(KE)</b> <span class="src p">필기</span> 현재 사용 · <b>SK</b> · Meynard · Tubular · Acrylic</p>
+<table><caption>Bar · Clamp</caption>
+<tr><td class="k" style="width:24%">Bar 재질</td><td>Stainless steel · Aluminum · Titanium · <b>Carbon fiber</b> — 굵을수록·carbon일수록 강함 (같은 크기면 carbon &gt; titanium)</td></tr>
+<tr><td class="k">Clamp</td><td><b>Single</b> = pin to rod (bar 1개) / <b>Double</b> = rod to rod</td></tr>
+</table>
+<table><caption>IMEX SK clamp 규격</caption>
+<thead><tr><th>Clamp</th><th>핀 직경</th><th>Rod 직경</th><th>Nut</th></tr></thead>
+<tr><td class="k">Mini</td><td class="c">0.9–2.5 mm</td><td class="c">3.2 mm</td><td class="c">7 mm</td></tr>
+<tr><td class="k">Small</td><td class="c">2.0–4.0 mm</td><td class="c">6.3 mm</td><td class="c">8 mm</td></tr>
+<tr><td class="k">Large</td><td class="c">3.0–4.8 mm</td><td class="c">9.5 mm</td><td class="c">10 mm</td></tr>
+</table>
+<p class="s"><span class="src p">필기</span> 장점: 핀 크기가 다양 · 범위가 겹쳐 상황에 맞게 선택</p>
+</div><div>
+<table><caption>고정 핀</caption>
+<tr><td class="k" style="width:28%">Smooth</td><td>뽑힘 저항↓, 일찍 헐거워짐 → ESF엔 비추천 <span class="src p">필기</span> 어린 개(빨리 붙는) 등에서 제한적 사용 가능</td></tr>
+<tr><td class="k">Negative profile</td><td>나사산을 <b>깎아</b> 만듦 → core &lt; shank, 경계가 응력 집중부(stress riser) <span class="src p">필기</span> positive보다 약함, 구식이라 잘 안 씀</td></tr>
+<tr class="hi"><td class="k">Positive profile</td><td>나사산을 <b>덧붙임</b> → core = shank → 응력 집중↓ (권장)</td></tr>
+<tr><td class="k">Cortical / Cancellous</td><td>나사산 모양 차이 — 해면골용은 산이 깊고 넓음</td></tr>
+<tr><td class="k">Half / Full</td><td>half = <b>end-threaded</b> / full = <b>center-threaded</b></td></tr>
+</table>
+<p class="s"><b>Smooth vs Threaded</b>: smooth는 고정력이 처음부터·시간이 지나도 낮음 / <b>threaded는 뽑힘 저항 4–5배</b> / 임상 연구 2건에서 smooth가 훨씬 일찍 이완 · 슬라이드 그림: 한쪽 피질만 무는 negative 핀(Ellis 등)은 stress riser가 뼈 안에 묻혀 "보호"되지만, 두 피질용 negative 핀은 피질 사이에 노출됨</p>
+</div></div>
+<div class="fig"><div class="cap">ESF 고정 핀의 종류</div><svg viewBox="0 0 640 176" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="ESF 핀"><defs><marker id="gpk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="gpr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="gpn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="gpmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="gpmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><text x="10.0" y="20.0" text-anchor="start" font-size="8.4" fill="#111" font-weight="700">Smooth</text><rect x="120.0" y="12.0" width="210.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="330.0,12.0 342.0,16.0 330.0,20.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><text x="352.0" y="20.0" text-anchor="start" font-size="7.6" fill="#c62828" font-weight="700">뽑힘 저항↓ · 일찍 헐거워짐 → ESF에 비추천</text><text x="10.0" y="50.0" text-anchor="start" font-size="8.4" fill="#111" font-weight="700">Negative profile</text><rect x="120.0" y="42.0" width="130.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="250.0,43.4 253.0,42.0 256.0,43.4 259.0,42.0 262.0,43.4 265.0,42.0 268.0,43.4 271.0,42.0 274.0,43.4 277.0,42.0 280.0,43.4 283.0,42.0 286.0,43.4 289.0,42.0 292.0,43.4 295.0,42.0 298.0,43.4 301.0,42.0 304.0,43.4 307.0,42.0 310.0,43.4 313.0,42.0 316.0,43.4 319.0,42.0 322.0,43.4 325.0,42.0 328.0,43.4 331.0,42.0 330.0,43.4 330.0,48.6 331.0,50.0 328.0,48.6 325.0,50.0 322.0,48.6 319.0,50.0 316.0,48.6 313.0,50.0 310.0,48.6 307.0,50.0 304.0,48.6 301.0,50.0 298.0,48.6 295.0,50.0 292.0,48.6 289.0,50.0 286.0,48.6 283.0,50.0 280.0,48.6 277.0,50.0 274.0,48.6 271.0,50.0 268.0,48.6 265.0,50.0 262.0,48.6 259.0,50.0 256.0,48.6 253.0,50.0 250.0,48.6" fill="url(#gpmv)" stroke="#555" stroke-width="0.6" /><polygon points="330.0,43.4 342.0,46.0 330.0,48.6" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><line x1="250.0" y1="34.0" x2="250.0" y2="41.0" stroke="#c62828" stroke-width="1.2" marker-end="url(#gpr)" /><text x="352.0" y="50.0" text-anchor="start" font-size="7.6" fill="#c62828" font-weight="700">나사산을 깎아 만듦 → core < shank, 경계에 응력 집중(구식)</text><text x="10.0" y="80.0" text-anchor="start" font-size="8.4" fill="#111" font-weight="700">Positive profile</text><rect x="120.0" y="72.0" width="130.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="250.0,72.0 253.0,70.0 256.0,72.0 259.0,70.0 262.0,72.0 265.0,70.0 268.0,72.0 271.0,70.0 274.0,72.0 277.0,70.0 280.0,72.0 283.0,70.0 286.0,72.0 289.0,70.0 292.0,72.0 295.0,70.0 298.0,72.0 301.0,70.0 304.0,72.0 307.0,70.0 310.0,72.0 313.0,70.0 316.0,72.0 319.0,70.0 322.0,72.0 325.0,70.0 328.0,72.0 331.0,70.0 330.0,72.0 330.0,80.0 331.0,82.0 328.0,80.0 325.0,82.0 322.0,80.0 319.0,82.0 316.0,80.0 313.0,82.0 310.0,80.0 307.0,82.0 304.0,80.0 301.0,82.0 298.0,80.0 295.0,82.0 292.0,80.0 289.0,82.0 286.0,80.0 283.0,82.0 280.0,80.0 277.0,82.0 274.0,80.0 271.0,82.0 268.0,80.0 265.0,82.0 262.0,80.0 259.0,82.0 256.0,80.0 253.0,82.0 250.0,80.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.6" /><polygon points="330.0,72.0 342.0,76.0 330.0,80.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><text x="352.0" y="80.0" text-anchor="start" font-size="7.6" fill="#333">나사산을 덧붙임 → core = shank, 응력 집중↓ (권장)</text><text x="10.0" y="110.0" text-anchor="start" font-size="8.4" fill="#111" font-weight="700">Half pin</text><rect x="120.0" y="102.0" width="160.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="280.0,102.0 283.0,100.0 286.0,102.0 289.0,100.0 292.0,102.0 295.0,100.0 298.0,102.0 301.0,100.0 304.0,102.0 307.0,100.0 310.0,102.0 313.0,100.0 316.0,102.0 319.0,100.0 322.0,102.0 325.0,100.0 328.0,102.0 331.0,100.0 330.0,102.0 330.0,110.0 331.0,112.0 328.0,110.0 325.0,112.0 322.0,110.0 319.0,112.0 316.0,110.0 313.0,112.0 310.0,110.0 307.0,112.0 304.0,110.0 301.0,112.0 298.0,110.0 295.0,112.0 292.0,110.0 289.0,112.0 286.0,110.0 283.0,112.0 280.0,110.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.6" /><polygon points="330.0,102.0 342.0,106.0 330.0,110.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><text x="352.0" y="110.0" text-anchor="start" font-size="7.6" fill="#333">end-threaded — 한쪽 피질·한쪽 피부만</text><text x="10.0" y="140.0" text-anchor="start" font-size="8.4" fill="#111" font-weight="700">Full pin</text><rect x="120.0" y="132.0" width="85.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="205.0,132.0 208.0,130.0 211.0,132.0 214.0,130.0 217.0,132.0 220.0,130.0 223.0,132.0 226.0,130.0 229.0,132.0 232.0,130.0 235.0,132.0 238.0,130.0 241.0,132.0 244.0,130.0 247.0,132.0 250.0,130.0 253.0,132.0 256.0,130.0 255.0,132.0 255.0,140.0 256.0,142.0 253.0,140.0 250.0,142.0 247.0,140.0 244.0,142.0 241.0,140.0 238.0,142.0 235.0,140.0 232.0,142.0 229.0,140.0 226.0,142.0 223.0,140.0 220.0,142.0 217.0,140.0 214.0,142.0 211.0,140.0 208.0,142.0 205.0,140.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.6" /><rect x="255.0" y="132.0" width="75.0" height="8.0" rx="0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><polygon points="330.0,132.0 342.0,136.0 330.0,140.0" fill="url(#gpmv)" stroke="#555" stroke-width="0.7" /><text x="352.0" y="140.0" text-anchor="start" font-size="7.6" fill="#333">center-threaded — 양쪽으로 관통</text><text x="320.0" y="168.0" text-anchor="middle" font-size="7.8" fill="#1f3a68" font-weight="700">Threaded pin은 smooth보다 뽑힘 저항 4–5배 · smooth는 임상 연구에서 훨씬 일찍 헐거워짐</text></svg></div><span class="pno">4</span></section>
+<section class="page"><h2 class="sec">Ⅴ. 적용 원칙 — Linear ESF workflow <span class="en">Application technique principles</span><span class="star">★최빈출</span></h2>
+<div class="two"><div>
+<div class="box"><div class="bt">※ 수술 순서 한눈에 <span class="src">수업</span> <span class="src" style="border-color:#13756a;color:#13756a">AO</span></div>
+① <b>Hanging limb</b>으로 다리를 매달아 체중으로 견인 →<br>
+② <b>far 핀 2개 먼저</b>(predrill → 저속 삽입) →<br>
+③ far 핀을 <b>손잡이로 정복</b>(closed: 견인·forceps / 필요하면 open) →<br>
+④ <b>near 핀</b>을 골절선 가까이(≥1 cm) 넣어 working length 단축 →<br>
+⑤ 중간 핀 추가(골편당 3–4개) · bar 연결 · 필요하면 augmentation →<br>
+⑥ 피부 장력 풀기 · 방사선 확인 · 패딩<br>
+<span class="r">핀이 3개 이상 들어갈 때까지 정복을 놓지 말 것</span> — 2개면 꺾여 버린다 <span class="src">수업</span></div>
+</div><div>
+<div class="why"><div class="bt">*Load sharing에 맞춰 frame을 고른다</div>
+<b>횡골절</b>: 정복하면 뼈가 하중을 같이 받음 → 단순한 frame / <b>사선</b>: 미끄러짐 → 중간 / <b>분쇄</b>: 뼈가 못 받음 → frame이 하중 전부 → 복잡·강하게 <span class="src p">필기</span> ESF가 점점 복잡해짐</div>
+<div class="why"><div class="bt">*Hanging limb position</div>
+다리를 천장에 매달아 <b>동물 자기 체중을 countertraction</b>으로 이용 → 근육 수축이 서서히 풀리며 정렬, 그 상태로 핀 삽입 <span class="src">수업</span> 핵심은 "당겨 놓는 것"</div>
+</div></div>
+<div class="fig"><div class="cap">핀 넣는 순서 — far–far–near–near</div><svg viewBox="0 0 640 198" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="핀 순서"><defs><marker id="hok" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="hor" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="hon" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="homv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="homh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><rect x="40.0" y="92.0" width="260.0" height="28.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="316.0" y="92.0" width="270.0" height="28.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><line x1="308.0" y1="84.0" x2="308.0" y2="128.0" stroke="#c62828" stroke-width="1.2" stroke-dasharray="3 2" /><rect x="30.0" y="36.0" width="570.0" height="8.0" rx="2" fill="#3a3f45" stroke="none" stroke-width="0" /><line x1="64.0" y1="44.0" x2="64.0" y2="124.0" stroke="#8d959e" stroke-width="3" /><rect x="57.0" y="32.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><circle cx="64.0" cy="18.0" r="9.0" fill="#1f3a68" stroke="none" stroke-width="0" /><text x="64.0" y="21.5" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">1</text><line x1="562.0" y1="44.0" x2="562.0" y2="124.0" stroke="#8d959e" stroke-width="3" /><rect x="555.0" y="32.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><circle cx="562.0" cy="18.0" r="9.0" fill="#1f3a68" stroke="none" stroke-width="0" /><text x="562.0" y="21.5" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">2</text><line x1="250.0" y1="44.0" x2="250.0" y2="124.0" stroke="#8d959e" stroke-width="3" /><rect x="243.0" y="32.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><circle cx="250.0" cy="18.0" r="9.0" fill="#c62828" stroke="none" stroke-width="0" /><text x="250.0" y="21.5" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">3</text><line x1="366.0" y1="44.0" x2="366.0" y2="124.0" stroke="#8d959e" stroke-width="3" /><rect x="359.0" y="32.0" width="14.0" height="16.0" rx="2" fill="#555" stroke="none" stroke-width="0" /><circle cx="366.0" cy="18.0" r="9.0" fill="#c62828" stroke="none" stroke-width="0" /><text x="366.0" y="21.5" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">4</text><line x1="150.0" y1="44.0" x2="150.0" y2="124.0" stroke="#bbb" stroke-width="2" stroke-dasharray="3 3" /><line x1="460.0" y1="44.0" x2="460.0" y2="124.0" stroke="#bbb" stroke-width="2" stroke-dasharray="3 3" /><line x1="250.0" y1="138.0" x2="366.0" y2="138.0" stroke="#c62828" stroke-width="1.2" marker-end="url(#hor)" marker-start="url(#hor)" /><text x="308.0" y="152.0" text-anchor="middle" font-size="7.6" fill="#c62828" font-weight="700">near 핀이 working length를 결정</text><text x="64.0" y="146.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">far — 골편 끝</text><text x="562.0" y="146.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">far — 골편 끝</text><text x="150.0" y="146.0" text-anchor="middle" font-size="7" fill="#6b6b6b">(중간 핀 추가)</text><text x="460.0" y="146.0" text-anchor="middle" font-size="7" fill="#6b6b6b">(중간 핀 추가)</text><text x="320.0" y="176.0" text-anchor="middle" font-size="7.8" fill="#1f3a68" font-weight="700">순서 = far → far → near → near: ①② 먼저 박아 "손잡이(handle)"로 정복 → ③④ 마지막에 골절선 가까이(≥1 cm) 넣어 working length 단축</text><text x="320.0" y="190.0" text-anchor="middle" font-size="7.6" fill="#333">위치로 부르면 far-near-near-far (골편당 3–4개)</text></svg></div>
+<table>
+<thead><tr><th style="width:21%">원칙</th><th>내용</th></tr></thead>
+<tr><td class="k">Predrill</td><td>드릴 sleeve 끼고 <b>고속</b> · 드릴은 <b>핀보다 &lt;0.1 mm 작게</b> · 해면골은 보통 불필요 · 단단한 뼈는 같은 크기 <span class="src" style="border-color:#13756a;color:#13756a">AO</span> 삽입 토크·뽑힘 저항↑(보고됨), <b>cis 피질 stripping↓</b>, 단 <b>과열 주의</b> <span class="src">수업</span> 안 하면 열 발생 → 핀 주위 골용해 · 핀마다 맞는 드릴이 없으면 가장 가까운 것 <span class="src p">필기</span> 4 mm → 3.8, 3.5…</td></tr>
+<tr><td class="k">Threaded pin</td><td>smooth ✕ · positive profile 권장</td></tr>
+<tr><td class="k">핀 삽입 속도</td><td><b>저속 &lt;150 rpm</b> 파워드릴 <span class="src">수업</span> 척(chuck)의 나선이 눈에 보일 정도 · IM pin으로 공간 정렬을 잡기도 함</td></tr>
+<tr class="hi"><td class="k">핀 위치</td><td><b>Far-near-near-far</b> · 골편당 <b>3–4개</b> · 골절선에서 <b>≥1 cm</b>(소형견은 더 짧게, 초대형견은 더 길게) · <b>safe corridor</b>(혈관·신경·두꺼운 근육 피함)</td></tr>
+<tr><td class="k">핀 길이 · bar 거리</td><td>강성은 길이의 세제곱에 반비례 → <b>bar를 뼈에 최대한 가깝게</b>, 연조직을 누르지 않게(손가락 하나 여유)</td></tr>
+<tr><td class="k">핀 직경</td><td>크게, 단 <b>뼈 직경의 20–30% 이하</b></td></tr>
+<tr><td class="k">연조직 장력 피하기</td><td>피부가 핀에 당겨지면 <b>절개해 풀어 줌</b>(봉합 ✕) <span class="src p">필기</span> 이유: ① 환자 불편 ② 핀이 더 빨리 빠짐 · 근육 많고 많이 움직이는 부위엔 넣지 말 것</td></tr>
+<tr><td class="k">최신 장비</td><td><span class="src">수업</span> "새 것"이라서가 아니라 <b>근거가 인정된</b> 현대 장비를 (clamp·carbon bar·positive profile pin)</td></tr>
+</table>
+
+<h3 class="sub">1) Safe corridor <span class="en">Safe / hazardous / unsafe zones</span></h3>
+<div class="two"><div>
+<table><caption>뼈별 Safe zone <span class="src">수업</span> (초록 = 안전 · 노랑 = 주의 · 빨강 = 금지)</caption>
+<tr class="hi"><td class="k" style="width:20%">Tibia</td><td>관절면 빼고 거의 전부 가능, 노랑은 cranial tibial 신경·동맥 → <b>ESF의 ideal zone</b> · Type Ⅰ·Ⅱ 모두</td></tr>
+<tr><td class="k">Radius</td><td>앞(cranial)은 좋음 · 관절면 금지 · 내측은 근육 많음 → <b>외측·앞쪽</b>으로 · <b>Ⅰa·Ⅰb 좋고 Type Ⅱ는 어려움</b></td></tr>
+<tr><td class="k">Humerus</td><td>뒤쪽 신경(요골신경 등) 때문에 제한 → 가능하지만 <b>더 어렵다</b></td></tr>
+<tr><td class="k">Femur</td><td>대부분 빨강·노랑 <span class="src p">필기</span> 웬만한 부분이 위험 → <b>Type Ⅰa밖에 못 씀</b> → 그래서 <b>tie-in</b>으로 강화</td></tr>
+</table>
+</div><div>
+<ul class="b">
+<li><span class="src" style="border-color:#13756a;color:#13756a">AO</span> <b>Corridor 선택이 frame 선택을 결정</b>한다 — 넣을 수 있는 방향이 없으면 그 Type은 못 만든다</li>
+<li><b>Corridor 위반 → 합병증·실패</b>(신경·혈관 손상, 근육 관통 → 진물·통증·이완)</li>
+<li>개(canine)와 <b>고양이(feline)</b>의 corridor가 따로 정리되어 있다 — 단면 해부(근육·신경·혈관 번호)로 SAFE 부채꼴을 표시</li>
+<li><span class="src">수업</span> Tie-in은 tibia·humerus에도 쓸 수 있지만 <b>radius엔 ✕</b></li>
+</ul>
+</div></div><span class="pno">5</span></section>
+<section class="page"><h2 class="sec">Ⅵ. FCAS로 frame 고르기 <span class="en">Preoperative decision making</span></h2>
+<p class="s">Decision-making 원칙: 수술 직후 초기엔 <b>absolute stability</b> · <b>FCAS</b> 사용 · 골절과 고정장치의 생체역학 이해 · 적용·유지 원칙 · 국소 해부 / <span class="src" style="border-color:#13756a;color:#13756a">AO</span> frame은 <b>골절 생물학 + 해부 + 환자 하중</b>으로 고른다</p>
+<div class="two"><div>
+<table><caption>Mechanical FCAS → ESF 구성 (1 = 나쁨 ↔ 10 = 좋음)</caption>
+<thead><tr><th style="width:22%"></th><th>1 (나쁨)</th><th>중간</th><th>10 (좋음)</th></tr></thead>
+<tr><td class="k">Femur·Humerus</td><td>3-frame Ⅰb (+IM pin tie-in)</td><td>2-frame Ⅰb (+tie-in)</td><td><b>Ⅰa + IM pin tie-in</b></td></tr>
+<tr><td class="k">Radius</td><td>Ⅰb</td><td>Ⅰb</td><td>Ⅰa</td></tr>
+<tr><td class="k">Tibia</td><td>minimal Ⅲ or Ⅰb</td><td>Ⅱ or Ⅰb</td><td>Ⅰa</td></tr>
+<tr><td class="k">핀 수(골편당)</td><td><b>3+4 or 4+4</b></td><td>3+3</td><td>2+2</td></tr>
+<tr><td class="k">DuraFace 핀 <span class="src w">보충</span> positive profile</td><td>모든 핀</td><td>대부분</td><td>Ideal</td></tr>
+<tr><td class="k">Articulation</td><td>Double diagonal</td><td>Single diagonal</td><td>Horizontal</td></tr>
+</table>
+</div><div>
+<table><caption>Biologic FCAS → ESF 접근법</caption>
+<thead><tr><th style="width:24%"></th><th>1 (나쁨)</th><th>중간</th><th>10 (좋음)</th></tr></thead>
+<tr><td class="k">접근</td><td><b>Closed / OBNT</b> <span class="src p">필기</span> Open But No Touch</td><td>Mini-open</td><td>Open</td></tr>
+<tr><td class="k">이식골</td><td><b>Yes</b></td><td>보통 함</td><td>미성숙 개체는 불필요</td></tr>
+<tr><td class="k">핀 위치</td><td>연조직 손상 구역 <b>밖으로</b></td><td></td><td>손상 구역 핀 허용</td></tr>
+<tr><td class="k">수술 시간</td><td><b>&lt; 2 h</b></td><td>2–3 h</td><td>&gt; 3 h</td></tr>
+</table>
+<p class="s"><span class="src">수업</span> 생물학적 지수가 낮은 환자일수록 <b>수술 시간을 짧게</b>. Simple FCAS에서 <b>ESF는 생물학적 요인이 poor면 ✕</b>(12주 한계), 기계적 요인이 poor여도 생물학이 괜찮으면 가능.</p>
+</div></div>
+
+<h2 class="sec">Ⅶ. 수술 후 관리 · 제거 · 합병증 <span class="en">Postoperative care · removal · complications</span></h2>
+<div class="two"><div>
+<table><caption>수술 후 관리</caption>
+<tr><td class="k" style="width:22%">Pin tract</td><td>잘 설치되면(근육 없는 부위) 진물이 거의 없고 <b>피부가 핀 주위를 감싸 붙는다</b>(절단 환자 의족 임플란트와 같은 원리) <span class="src">수업</span> 근육 부위 핀일수록 진물 많음 · 패딩은 <b>수술 스크럽 스펀지</b>를 씻어 잘라 쓰면 좋음</td></tr>
+<tr><td class="k">핀 끝</td><td><span class="src">수업</span> 굵은 핀을 자른 끝은 칼처럼 날카로움 → 보호자·아이·본인 다칠 수 있음 → 덮개</td></tr>
+<tr><td class="k">계획</td><td><span class="src" style="border-color:#13756a;color:#13756a">AO</span> 수술 후 관리와 <b>staged disassembly를 Day 0부터</b> 계획 · pin-tract 문제는 <b>일찍 치료</b>해 연쇄 실패(감염 → 이완 → 강성 상실 → 불유합)를 막는다</td></tr>
+<tr><td class="k">제거</td><td><b>진정만</b> 필요 · 렌치, hand chuck ± pin cutter <span class="src">수업</span> 잘 박힌 핀은 쉽게 안 빠짐 → 잘 빠지면 감염 등 문제가 있었던 것</td></tr>
+</table>
+</div><div>
+<table><caption>합병증</caption>
+<tr><td class="k" style="width:30%">Pin-tract 감염·이완</td><td>가장 흔함</td></tr>
+<tr><td class="k">Frame/pin/wire 파손</td><td>강성 부족 · 피로</td></tr>
+<tr><td class="k">부정유합 · 불유합</td><td>정렬 불량 · 불안정</td></tr>
+<tr><td class="k">연조직 관통</td><td>corridor 위반</td></tr>
+</table>
+<div class="box"><div class="bt">※ Application principles 5가지 + 강도 올리기</div>① Threaded pin ② 삽입 술기(predrill · 저속) ③ 충분히 강한 구성 ④ 적절한 핀 수 ⑤ 수술 후 관리<br>강도↑: <b>bone–bar 거리↓ · bar 추가 · 핀 추가 · 더 굵은 핀 · full pin</b></div>
+</div></div>
+<div class="quote"><div class="bt">"What's wrong in these cases?" <span class="src">수업</span></div>
+골편당 <b>핀 2개뿐</b>(3개 이상이어야) · <b>bar가 뼈에서 멀다</b> · <b>핀이 골절선에서 너무 멀다</b> · 핀 직경이 작다 · 약한 clamp(Meynard) — 같은 2개라도 더 약한 구성. femur는 디바이스가 더 강해야 하는데도 그렇다. 남의 케이스를 2시간 비판할 수 있으면 내 케이스도 1시간은 비판할 수 있어야 한다.</div>
+
+<h3 class="sub">Acrylic ESF <span class="en">Free-form</span></h3>
+<div class="two"><div>
+<p class="s">핀을 꽂고 임시 clamp로 잡은 뒤, 관(예전엔 <b>마취 회로 튜브</b>)을 틀로 써서 <b>치과용 아크릴</b>(가루 + 액체)을 붓는다 <span class="src">수업</span> 요즘은 기성품 · 짜서 쓰는 gun도 있음</p>
+<table><caption>장점</caption>
+<tr><td class="k" style="width:30%">핀 직경 자유</td><td>SK mini가 0.9–2.5 mm인데 아크릴은 0.7 mm도 OK <span class="src p">필기</span> ★</td></tr>
+<tr><td class="k">방향·간격 자유</td><td>clamp 크기 때문에 생기는 최소 간격 제한 없음</td></tr>
+<tr><td class="k">방사선 투과</td><td>골절면이 잘 보임</td></tr>
+<tr><td class="k">기타</td><td>column–뼈 거리 최소 · 가벼움 · 재고 적음 · 쌈</td></tr>
+</table>
+</div><div>
+<table><caption>단점</caption>
+<tr><td class="k" style="width:30%">정복 유지 어려움</td><td>굳는 동안 계속 잡고 있어야 · 아크릴은 <b>멸균 ✕</b> <span class="src">수업</span></td></tr>
+<tr><td class="k">경화 시 발열</td><td>화상 가능 → 피부에서 떨어뜨려 · 경화 시간이 온도에 따라 다름(여름 ~10분, 겨울 20–30분) <span class="src">수업</span></td></tr>
+<tr><td class="k">유독 가스</td><td>noxious · toxic · <b>teratogenic</b></td></tr>
+<tr><td class="k">조정 어려움 · 기술 오류</td><td>굳으면 끝 · 기포·틈 → 약해짐</td></tr>
+</table>
+</div></div><span class="pno">6</span></section>
+<section class="page"><h2 class="sec">Ⅷ. Circular ESF · Hybrid · 골신장술 · 각변형 교정 <span class="en">Ilizarov (교재 p.1003·1007)</span></h2>
+<div class="two"><div>
+<ul class="b">
+<li><span class="src" style="border-color:#13756a;color:#13756a">AO</span> <b>ring/arch + 장력을 건 wire</b> · <b>축 방향 강성을 조절</b>(tunable axial stiffness) · <b>짧은 골편·관절 주위</b>에 유용</li>
+<li>구성: <b>ring</b> · 나사막대(threaded rod) · nut · <b>K-wire / olive wire</b> · 철사고정볼트 · 렌치 <span class="src">수업</span> 실제론 길이·각도 조절 기구가 훨씬 많다</li>
+<li><b>Olive wire</b>: 구슬이 뼈에 걸려 당기거나 멈추게 함 <span class="src p">필기</span> 1.4 mm 이하 → K-wire</li>
+<li><b>Tensioning</b>: 가는 wire를 한쪽 고정 후 <b>tensioner</b>로 탄성 한계 직전까지 당김 → 강도↑ <span class="src" style="border-color:#13756a;color:#13756a">AO</span> 장력이 너무 낮으면 → 불안정, wire 움직임</li>
+<li>교재 상자 32.9: 연조직 위치 확인 후 · 고속 드릴로 밀어 넣기 · 가능하면 <b>wire끼리 90°</b> · ring을 당기지 않게 · 적절한 장력 · <b>olive wire는 안정성↑</b></li>
+</ul>
+</div><div>
+<table><caption>Wire 직경 — 체중 기준 <span class="src" style="border-color:#13756a;color:#13756a">AO</span></caption>
+<thead><tr><th style="width:22%">Wire</th><th>대상</th></tr></thead>
+<tr><td class="k">1.0 mm</td><td>초소형견 · 아주 작은 골간단 골편</td></tr>
+<tr><td class="k">1.2 mm</td><td>소형견 (&lt;5–7 kg)</td></tr>
+<tr><td class="k">1.4 mm</td><td>5–15 kg</td></tr>
+<tr><td class="k">1.6 mm</td><td>중형견 (15–30 kg)</td></tr>
+<tr><td class="k">1.8 mm</td><td>대형견 (&gt;30 kg)</td></tr>
+<tr><td class="k">2.0 mm</td><td>대형견 (&gt;50 kg)</td></tr>
+</table>
+<table><caption>Ring 직경 → 권장 장력 <span class="src" style="border-color:#13756a;color:#13756a">AO</span></caption>
+<thead><tr><th>Ring</th><th>권장 장력</th><th>Tensioner 눈금</th></tr></thead>
+<tr><td class="k">Mini (35/45 mm)</td><td class="c r">0 kg</td><td class="c r">Tensioner 쓰지 말 것</td></tr>
+<tr><td class="k">50 mm</td><td class="c">0 kg</td><td class="c">느슨함만 제거</td></tr>
+<tr><td class="k">66 mm</td><td class="c">~57 kg</td><td class="c">1st line</td></tr>
+<tr><td class="k">84 mm</td><td class="c">~81 kg</td><td class="c">2nd line</td></tr>
+<tr><td class="k">118 mm</td><td class="c">~95 kg</td><td class="c">3rd line</td></tr>
+</table>
+<p class="s">→ <b>ring이 클수록 장력↑</b> (수업: tensioner 눈금 30·50·90·120…, ring 크기에 맞춰 끊어지기 전까지)</p>
+</div></div>
+<div class="fig"><div class="cap">Circular ESF (Ilizarov) — 위에서 본 ring / 옆에서 본 골신장</div><svg viewBox="0 0 640 194" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="Circular ESF"><defs><marker id="gxk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="gxr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="gxn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="gxmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="gxmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><circle cx="92.0" cy="86.0" r="62.0" fill="none" stroke="#777" stroke-width="9" /><circle cx="154.0" cy="86.0" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="150.3" cy="107.2" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="139.5" cy="125.9" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="123.0" cy="139.7" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="102.8" cy="147.1" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="81.2" cy="147.1" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="61.0" cy="139.7" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="44.5" cy="125.9" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="33.7" cy="107.2" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="30.0" cy="86.0" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="33.7" cy="64.8" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="44.5" cy="46.1" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="61.0" cy="32.3" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="81.2" cy="24.9" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="102.8" cy="24.9" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="123.0" cy="32.3" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="139.5" cy="46.1" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="150.3" cy="64.8" r="2.2" fill="#fff" stroke="none" stroke-width="0" /><circle cx="92.0" cy="86.0" r="16.0" fill="#f5c400" stroke="#b38f00" stroke-width="1" /><line x1="38.3" y1="55.0" x2="145.7" y2="117.0" stroke="#333" stroke-width="1.4" /><line x1="52.1" y1="133.5" x2="131.9" y2="38.5" stroke="#333" stroke-width="1.4" /><circle cx="72.9" cy="75.0" r="3.4" fill="#c62828" stroke="none" stroke-width="0" /><line x1="147.4" y1="118.0" x2="164.7" y2="128.0" stroke="#1f3a68" stroke-width="1.4" marker-end="url(#gxn)" /><text x="170.0" y="32.0" text-anchor="start" font-size="8.2" fill="#111" font-weight="700">ring + 가는 wire 2개</text><text x="170.0" y="46.0" text-anchor="start" font-size="7.4" fill="#6b6b6b">(소형 1.0–1.2 / 대형 1.4–1.5 mm)</text><text x="170.0" y="66.0" text-anchor="start" font-size="7.6" fill="#c62828" font-weight="700">빨간 점 = olive wire의 구슬</text><text x="170.0" y="78.0" text-anchor="start" font-size="7.4" fill="#111">→ 뼈를 걸어 당기거나 멈추게 함</text><text x="170.0" y="98.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">파란 화살표 = tensioner로 당김</text><text x="170.0" y="110.0" text-anchor="start" font-size="7.4" fill="#111">(ring 크기에 맞는 장력, 끊어지기 전까지)</text><text x="170.0" y="130.0" text-anchor="start" font-size="7.6" fill="#111" font-weight="700">wire끼리 되도록 90°</text><rect x="400.0" y="20.0" width="140.0" height="6.0" rx="2" fill="#888" stroke="none" stroke-width="0" /><rect x="400.0" y="60.0" width="140.0" height="6.0" rx="2" fill="#888" stroke="none" stroke-width="0" /><rect x="400.0" y="118.0" width="140.0" height="6.0" rx="2" fill="#888" stroke="none" stroke-width="0" /><rect x="400.0" y="158.0" width="140.0" height="6.0" rx="2" fill="#888" stroke="none" stroke-width="0" /><line x1="412.0" y1="20.0" x2="412.0" y2="164.0" stroke="#555" stroke-width="2" /><line x1="528.0" y1="20.0" x2="528.0" y2="164.0" stroke="#555" stroke-width="2" /><rect x="458.0" y="10.0" width="24.0" height="76.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="458.0" y="96.0" width="24.0" height="78.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><line x1="470.0" y1="92.0" x2="470.0" y2="80.0" stroke="#c62828" stroke-width="1.4" marker-end="url(#gxr)" /><line x1="470.0" y1="86.0" x2="470.0" y2="100.0" stroke="#c62828" stroke-width="1.4" marker-end="url(#gxr)" /><text x="550.0" y="92.0" text-anchor="start" font-size="7.6" fill="#c62828" font-weight="700">절골 틈</text><text x="550.0" y="106.0" text-anchor="start" font-size="7.4" fill="#111">천천히 벌림</text><text x="320.0" y="186.0" text-anchor="middle" font-size="7.8" fill="#1f3a68" font-weight="700">골신장술: 절골 → 잠복기(~5–7일, 어리면 3–4일) → 하루 ~1 mm (¼바퀴씩 4회) 신장 → 경화(consolidation)</text></svg></div>
+<div class="two"><div>
+<table><caption>교재 상자 32.10 — 잠복기(latency) 결정 요소</caption>
+<tr><td class="k" style="width:22%">감소</td><td>미성숙 동물 · 아주 건강 · 뼈막하 골절개술(corticotomy) · 연조직 외상 최소</td></tr>
+<tr><td class="k">증가</td><td>성숙 · 건강 문제 · 진동톱 절골술 · 광범위 연조직 외상</td></tr>
+</table>
+<p class="s"><span class="src">수업</span> 잠복기 = 뼈를 자르고 바로 늘리지 않고 놔두는 기간(보통 ~1주, 어리면 3–4일). nut 한 바퀴를 4등분(점 1·2·3·4)해 ¼씩 하루 4번 돌려 늘린다 <span class="src w">보충</span> 표준은 한 바퀴 1 mm → 하루 ~1 mm.</p>
+</div><div>
+<p class="s"><b>Hybrid ESF</b>: ring block + linear — 골절이 <b>골간단(metaphysis) 가까이</b> 있어 관절 쪽 골편이 짧을 때. tie-in·각도 조절도 가능 (교재 그림 32.33: Ⅰa hybrid · Ⅰb hybrid · IM pin tie-in hybrid)</p>
+<p class="s"><span class="src">수업</span> 일리자로프(러시아, 정형외과 전문의가 아닌 일반의)가 이 고정법으로 골절을 아주 잘 치료해 유명해졌다.</p>
+</div></div>
+<div class="fig"><div class="cap">각변형(ALD) 용어 + circular ESF 교정 원리(hinge · motor)</div><svg viewBox="0 0 640 162" width="100%" style="max-width:560px;display:block;margin:0 auto" role="img" aria-label="각변형"><defs><marker id="gdk" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#111"/></marker><marker id="gdr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#c62828"/></marker><marker id="gdn" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#1f3a68"/></marker><linearGradient id="gdmv" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient><linearGradient id="gdmh" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#e2e5e9"/><stop offset=".45" stop-color="#a3abb4"/><stop offset="1" stop-color="#6c747d"/></linearGradient></defs><path d="M40,20 Q40,65.0 40,110 L52,110 Q52,65.0 52,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="36.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="46.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">정상</text><text x="46.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b"></text><path d="M114,20 Q114,65.0 130,110 L142,110 Q126,65.0 126,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="126.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="120.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">Valgus</text><text x="120.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b">원위가 바깥(외측)으로</text><path d="M188,20 Q188,65.0 172,110 L184,110 Q200,65.0 200,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="168.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="194.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">Varus</text><text x="194.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b">원위가 안(내측)으로</text><path d="M262,20 Q276,65.0 262,110 L274,110 Q288,65.0 274,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="258.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="268.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">Procurvatum</text><text x="268.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b">앞(cranial)으로 휨</text><path d="M336,20 Q322,65.0 336,110 L348,110 Q334,65.0 348,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><rect x="332.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="342.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">Recurvatum</text><text x="342.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b">뒤(caudal)로 휨</text><path d="M410,20 Q410,65.0 410,110 L422,110 Q422,65.0 422,20 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><path d="M402,108 Q416,118 430,108" fill="none" stroke="#c62828" stroke-width="1.4" marker-end="url(#gdr)"/><rect x="406.0" y="110.0" width="20.0" height="6.0" rx="2" fill="#bbb" stroke="none" stroke-width="0" /><text x="416.0" y="134.0" text-anchor="middle" font-size="8" fill="#111" font-weight="700">Torsion</text><text x="416.0" y="146.0" text-anchor="middle" font-size="6.8" fill="#6b6b6b">장축 기준 회전</text><text x="150.0" y="10.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">정면(frontal)</text><text x="305.0" y="10.0" text-anchor="middle" font-size="7.4" fill="#1f3a68" font-weight="700">측면(sagittal)</text><rect x="510.0" y="10.0" width="22.0" height="56.0" rx="0" fill="#e6d9bb" stroke="#111" stroke-width="1" /><path d="M510,74 L532,70 L542,126 L520,130 Z" fill="#e6d9bb" stroke="#111" stroke-width="1" /><circle cx="510.0" cy="70.0" r="4.0" fill="#c62828" stroke="none" stroke-width="0" /><text x="504.0" y="66.0" text-anchor="end" font-size="7.6" fill="#c62828" font-weight="700">힌지</text><line x1="546.0" y1="50.0" x2="546.0" y2="88.0" stroke="#1f3a68" stroke-width="2.4" /><line x1="546.0" y1="66.0" x2="546.0" y2="52.0" stroke="#1f3a68" stroke-width="1.2" marker-end="url(#gdn)" /><line x1="546.0" y1="72.0" x2="546.0" y2="86.0" stroke="#1f3a68" stroke-width="1.2" marker-end="url(#gdn)" /><text x="552.0" y="72.0" text-anchor="start" font-size="7.6" fill="#1f3a68" font-weight="700">모터</text><text x="530.0" y="146.0" text-anchor="middle" font-size="7" fill="#111">힌지는 휜 꼭짓점(CORA)에,</text><text x="530.0" y="156.0" text-anchor="middle" font-size="7" fill="#111">모터는 반대쪽 → 조금씩 벌려 교정</text></svg></div>
+<div class="two"><div>
+<p class="s"><span class="src">수업</span> 앞에서 볼 때(frontal) 바깥으로 휘면 <b>valgus</b>, 안으로 휘면 <b>varus</b> / 옆에서 볼 때 앞으로 휘면 <b>procurvatum(antecurvatum)</b>, 뒤로 휘면 <b>recurvatum</b>. 정상 요골도 약간(5–10°) 휘어 있다. <b>두 면(α·β)이 다 휘면 두 면을 같이 교정</b>해야 한다 (교재 p.1007).</p>
+</div><div>
+<p class="s"><span class="src">수업</span> 힌지를 꼭짓점에, 반대편 모터(나사막대)를 돌려 <b>조금씩 벌림</b>. 힌지·모터 위치 계산이 필요하고 직관적이지 않아 <b>실제로는 plate가 더 많이 쓰인다</b>. 장점: 천천히 교정 → <b>연조직·피부가 적응할 시간</b>.</p>
+</div></div><span class="pno">7</span></section>
+<section class="page"><h2 class="sec">★ 총정리 — 시험 직전에 보는 표</h2>
+<table>
+<thead><tr><th style="width:18%">주제</th><th>핵심 한 줄</th></tr></thead>
+<tr><td class="k">위치</td><td>생물학 보존·조절성·연조직 접근 ★★★★ / 편안함 ★★ · 관리 부담 High</td></tr>
+<tr><td class="k">구성</td><td>① 핀(fastener) ② bar·acrylic column(connector) ③ clamp(linkage) / Linear · Circular · Hybrid(ring+linear) · Acrylic · Transarticular</td></tr>
+<tr><td class="k">적응·금기</td><td>Radius·Tibia · 개방골절 · 상하악 · 각변형 · 골신장 / <b>관절골절 ✕</b> · <b>생물학 poor ✕</b>(~12주 한계)</td></tr>
+<tr><td class="k">Type</td><td>Ⅰa(한쪽·한 면) &lt; Ⅰb(한쪽·두 면) &lt; Ⅱ(양쪽·full) &lt; Ⅲ(Ⅰ+Ⅱ) · 25/66/140/182 kg · 임상은 modified Ⅱ, Ⅲ ✕</td></tr>
+<tr><td class="k">Strain</td><td>&lt;2% 층판골 · 2–10% 직조골 · &gt;10% 연골 · 너무 많이 움직이면 불유합·이완, 너무 적으면 강직·기간↑</td></tr>
+<tr><td class="k">강성↑</td><td>pin–bone interface(가장 중요) · 핀 굵게/많이(≤20–30%) · bar 가깝게(∝1/L³) · near 핀으로 working length↓ · 평면 추가 · tie-in</td></tr>
+<tr><td class="k">핀 실패</td><td>micro-motion(골용해) · 열 괴사 · cis 피질 stripping · 작은 직경/잘못된 위치</td></tr>
+<tr><td class="k">핀</td><td>threaded(positive) &gt;&gt; smooth(뽑힘 저항 4–5배) · half = end-threaded · full = center-threaded</td></tr>
+<tr><td class="k">술기</td><td>hanging limb · predrill(−0.1 mm, 고속) · 삽입 &lt;150 rpm · <b>far → far → near → near</b> · 골편당 3–4개 · 골절선 ≥1 cm · 3개 박을 때까지 정복 유지 · 피부 장력 절개</td></tr>
+<tr><td class="k">Corridor</td><td>Tibia ideal(Ⅰ·Ⅱ) · Radius Ⅰa·Ⅰb(외측·앞) · Humerus 어려움 · Femur Ⅰa만 + tie-in · Radius tie-in ✕</td></tr>
+<tr><td class="k">FCAS</td><td>Mech 나쁨 → Ⅰb 3-frame/minimal Ⅲ, 3+4~4+4핀, double diagonal / Bio 나쁨 → closed·OBNT, 이식, &lt;2 h</td></tr>
+<tr><td class="k">Circular</td><td>tensioned wire · ring 클수록 장력↑(mini 0 kg) · wire 1.0–2.0 mm 체중별 · olive wire · 잠복기 → 하루 ~1 mm</td></tr>
+</table>
+<div class="box"><div class="bt">*헷갈리기 쉬운 짝</div>
+<b>Tie-in vs Hybrid</b>: IM pin + ESF ↔ ring + linear · <b>Ⅰb vs Ⅱ</b>: 한쪽에서 두 평면(half) ↔ 양쪽 한 평면(full) · <b>Maximal vs Minimal Ⅱ</b>: 전부 full ↔ 일부 half(임상) · <b>Half vs Full pin</b>: end-threaded ↔ center-threaded · <b>Negative vs Positive profile</b>: 깎음(stress riser) ↔ 덧붙임 · <b>위치 vs 순서</b>: far-near-near-far ↔ far-far-near-near · <b>Predrill(고속) vs 핀 삽입(저속 &lt;150 rpm)</b> · <b>Working length vs Bone–bar 거리</b>: 골절 양쪽 near 핀 사이 ↔ 뼈에서 bar까지 핀 노출 길이 · <b>Dynamization vs Augmentation</b>: 강성↓(가골 유도) ↔ 강성↑</div><span class="pno">8</span></section>
+</body></html>

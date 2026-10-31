@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. 심전도 기초 압축본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative; overflow:hidden;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+h2.lv1 .en,h3.lv2 .en{font-size:12.6px;color:var(--gray);font-weight:400;margin-left:4px;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+ol.n{margin:0 0 0 34px;padding:0;counter-reset:n;list-style:none;}
+ol.n>li{counter-increment:n;padding-left:20px;}
+ol.n>li::before{content:counter(n,decimal) ")";color:var(--magenta);font-weight:700;}
+p.txt{margin:2px 0 4px 30px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+.t-why{background:#e6f6ee;color:#0b7a55;border:1px solid #8fd1b2;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.memo ol.n{margin-left:6px;}
+.memo p{margin:2px 0;}
+.side{float:right;width:44%;border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:4px 0 8px 12px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.blk::after{content:"";display:block;clear:both;}
+
+/* 원리 박스 (정리자 보충) */
+.why{border-left:5px solid #0f9268;background:#f2fbf6;padding:7px 12px 8px;margin:8px 4px 12px 20px;color:var(--ink);border-radius:0 6px 6px 0;}
+.why .mt{font-weight:700;color:#0b7a55;margin-bottom:2px;}
+.why .mt::before{content:"💡 ";}
+.why ul.d{margin-left:4px;}
+.why ul.d>li::before{color:#0f9268;}
+.why ul.c{margin-left:20px;}
+.why p{margin:2px 0;}
+
+/* 인과 사슬 */
+.chain{margin:6px 0 10px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;color:var(--ink);font-size:12.6px;line-height:17px;}
+.chain span{background:#fff;border:1.5px solid #4A6B66;border-radius:5px;padding:3px 7px;}
+.chain span.hot{border-color:var(--red);background:#fff1f1;font-weight:700;}
+.chain span.end{background:#13756A;border-color:#13756A;color:#fff;font-weight:700;}
+.chain i{font-style:normal;color:var(--red);font-weight:700;padding:0 5px;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;min-width:0;}
+.two table{margin-left:0;width:100%;}
+.three{display:flex;gap:6px;margin:6px 0 4px 20px;}
+.three>div{flex:1;min-width:0;background:#fff;border:1.5px solid #c9d3d1;border-radius:6px;padding:6px 4px 4px;}
+.three .cap{text-align:center;font-weight:700;color:#111;font-size:13px;margin-bottom:2px;}
+
+/* 순서도 */
+.tree{margin:6px 0 12px 20px;color:var(--ink);font-size:12.2px;line-height:16px;}
+.tree .row{display:flex;gap:8px;align-items:stretch;margin:0 0 6px;}
+.tree .nd{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:6px;padding:5px 8px;}
+.tree .nd.top{background:#13756A;color:#fff;border-color:#13756A;text-align:center;font-weight:700;}
+.tree .nd.q{background:#D8ECE7;font-weight:700;text-align:center;color:#12403B;}
+.tree .nd.hot{border-color:var(--red);background:#fff4f4;}
+.tree .nd b.h{display:block;color:#111;margin-bottom:1px;}
+.tree .ar{text-align:center;color:var(--red);font-weight:700;margin:-3px 0 3px;}
+
+/* 셀프체크 */
+.qa{margin:6px 4px 10px 20px;border:2px dashed #7B52C9;background:#faf7ff;padding:8px 12px;color:var(--ink);}
+.qa .mt{font-weight:700;color:#7B52C9;margin-bottom:3px;}
+.qa .q{font-weight:700;color:#111;margin-top:4px;}
+.qa .a{color:#3A4A63;font-size:12.6px;margin-left:14px;}
+
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two,.three{display:block;margin-left:0;}
+  .three>div{margin-bottom:6px;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo,.why,.qa,.tree,.chain{margin-left:0;}
+  .tree .row{flex-direction:column;}
+}
+</style>
+<style>
+:root{--line-h:17px;}
+body{font-size:11.6px;}
+.page{padding:9mm 9mm 12mm;}
+.pno{bottom:5mm;right:9mm;}
+.doc-title{font-size:19px;margin-bottom:2px;}
+.doc-title .en{font-size:11px;}
+.doc-sub{font-size:10.5px;margin:0 0 3px;line-height:15px;}
+.hr-hand{margin:0 0 6px;}
+h2.lv1{font-size:14.5px;margin:9px 0 3px;border-bottom-width:2.5px;}
+h3.lv2{font-size:12.8px;margin:6px 0 2px 2px;}
+h2.lv1 .en,h3.lv2 .en{font-size:10.5px;}
+li{padding-left:12px;}
+ul.d{margin-left:10px;} ul.d>li::before{font-size:7px;top:0;}
+ul.c{margin-left:20px;} ul.c>li{font-size:11px;}
+p.txt{margin:1px 0 3px 10px;}
+table{width:100%;margin:4px 0 7px 0;font-size:10.4px;line-height:13.6px;}
+caption{font-size:12px;padding:3px 7px;line-height:16px;}
+th,td{padding:2.5px 4px;}
+.memo,.why{margin:5px 0 7px 0;padding:5px 9px;font-size:11px;line-height:15.5px;}
+.why .mt,.memo .mt{font-size:11.6px;}
+.two{margin-left:0;gap:8px;}
+.three{margin:4px 0 6px 0;}
+.three>div{padding:3px 3px 2px;}
+.three .cap{font-size:11px;line-height:14px;}
+.tag{font-size:9px;line-height:12px;padding:0 3px;margin:0 2px;}
+.chain{margin:4px 0 6px 0;font-size:10.6px;line-height:14px;}
+.chain span{padding:2px 5px;}
+.tnote{margin:-4px 0 6px 2px;font-size:10px;line-height:13px;}
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.st{font-weight:700;color:#111;}
+.box3{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mini{font-size:10.6px;line-height:14.5px;}
+@media (max-width:800px){.box3{display:block;}}
+</style>
+</head>
+<body>
+
+
+
+<section class="page" style=""><h1 class="doc-title"><span class="num">2.</span> 심전도 기초 (ECG I) — 압축본 <span class="en">Basic Electrocardiography · 시험 직전용</span></h1><p class="doc-sub">원본 정리본(20p) 핵심만 압축 · <b class="r">★</b> = 시험 강조 · 💡 = 원리 한 줄</p><hr class="hr-hand"><div class="two">
+<div>
+<table>
+<caption>ECG가 잘하는 것 vs 못하는 것 ★</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:26%">Best</td><td>① <b>부정맥</b>(가장 큰 목적) ② 심박수 ③ <b>전도 장애</b></td></tr>
+<tr><td class="kc">Inaccurate</td><td><b>방 확대</b> — 민감도 <b>50%</b> · 특이도 <b>80%</b> / 비대 vs 확장 <b>구분 ✕</b> → 심초음파</td></tr>
+</tbody>
+</table>
+<ul class="d mini">
+<li>적응증: 청진 이상(빠름·느림·불규칙·맥박 결손), <b>실신</b>, 마취·수술·ICU 모니터링, 항부정맥제 효과, <b>전해질(고K⁺ → 서맥)</b></li>
+<li>💡 전압은 흉벽 두께·비만·흉수·자세에도 변함 → 방 크기 판정이 부정확</li>
+</ul>
+<table>
+<caption>자동성 — 고유 박동수 (개) ★</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:30%">SA node</td><td><b>&gt; 60 bpm</b> — 페이스메이커</td></tr>
+<tr class="hi"><td class="kc">AV node</td><td><b>40–60</b> → junctional escape</td></tr>
+<tr class="hi"><td class="kc">Purkinje</td><td><b>20–40</b> → ventricular escape</td></tr>
+</tbody>
+</table>
+<p class="tnote" style="margin-top:2px;">💡 4기 탈분극 기울기가 가장 가파른 SA node가 아래를 리셋(overdrive suppression) → 위가 멈추면 다음 예비 페이스메이커 등장</p>
+</div>
+<div>
+<div class="three" style="display:block;margin-top:4px;"><div><div class="cap">자극전도계 ★</div><svg viewBox="0 0 620 330" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="자극전도계 모식도"><defs><marker id="h10r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h10b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h10k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h10g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h10v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h10o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h10n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M190.0,68.0 Q190.0,36.0 226.0,36.0 L290.0,36.0 Q302.0,36.0 302.0,50.0 L302.0,124.0 L190.0,124.0 Z" fill="#eef3fc" stroke="#9c4d49" stroke-width="1.4"></path><path d="M310.0,50.0 Q310.0,36.0 324.0,36.0 L386.0,36.0 Q422.0,36.0 422.0,68.0 L422.0,124.0 L310.0,124.0 Z" fill="#fdf0f0" stroke="#9c4d49" stroke-width="1.4"></path><path d="M186.0,136.0 L426.0,136.0 Q430.0,236.0 326.0,306.0 Q300.0,318.0 282.0,296.0 Q190.0,226.0 186.0,136.0 Z" fill="#d99a96" fill-opacity=".55" stroke="#9c4d49" stroke-width="1.4"></path><path d="M206.0,146.0 L294.0,146.0 L302.0,268.0 Q280.0,282.0 260.0,256.0 Q210.0,206.0 206.0,146.0 Z" fill="#eef3fc"></path><path d="M318.0,146.0 L408.0,146.0 Q410.0,232.0 334.0,286.0 L322.0,276.0 Z" fill="#fdf0f0"></path><rect x="186.0" y="125.0" width="240.0" height="10.0" fill="#cdb98f" stroke="#9a8457" stroke-width=".8"></rect><rect x="300.0" y="124.0" width="12.0" height="12.0" fill="#cdb98f"></rect><path d="M228,60 Q270,54 300,114" stroke="#E0912B" stroke-width="2" fill="none"></path><path d="M226,66 Q252,90 298,116" stroke="#E0912B" stroke-width="2" fill="none"></path><path d="M222,68 Q220,114 296,118" stroke="#E0912B" stroke-width="2" fill="none"></path><path d="M230,54 Q306,28 386,60" stroke="#7B52C9" stroke-width="2.4" fill="none" stroke-dasharray="5 3"></path><path d="M306,118 L306,156" stroke="#0F9268" stroke-width="5" stroke-linecap="round"></path><path d="M304,156 Q296,206 280,256" stroke="#0F9268" stroke-width="3" fill="none"></path><path d="M308,156 Q346,174 378,186" stroke="#0F9268" stroke-width="1.6" fill="none"></path><path d="M308,158 Q320,220 346,268" stroke="#0F9268" stroke-width="4.5" fill="none"></path><path d="M280,256 L242,236" stroke="#0F9268" stroke-width="1.1"></path><path d="M280,256 L270,284" stroke="#0F9268" stroke-width="1.1"></path><path d="M242,236 L216,202" stroke="#0F9268" stroke-width="1.1"></path><path d="M242,236 L228,256" stroke="#0F9268" stroke-width="1.1"></path><path d="M346,268 L380,250" stroke="#0F9268" stroke-width="1.1"></path><path d="M346,268 L320,292" stroke="#0F9268" stroke-width="1.1"></path><path d="M380,250 L404,206" stroke="#0F9268" stroke-width="1.1"></path><path d="M378,186 L406,166" stroke="#0F9268" stroke-width="1.1"></path><path d="M378,186 L396,216" stroke="#0F9268" stroke-width="1.1"></path><circle cx="224" cy="60" r="9" fill="#F2B705" stroke="#a37a00" stroke-width="1.4"></circle><ellipse cx="300" cy="116" rx="9" ry="7" fill="#E23B3B" stroke="#8c1f1f" stroke-width="1.4"></ellipse><text x="246" y="106" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">RA</text><text x="370" y="106" text-anchor="middle" font-size="12" fill="#E23B3B" font-weight="700">LA</text><text x="246" y="206" text-anchor="middle" font-size="12" fill="#2B5FC4" font-weight="700">RV</text><text x="372" y="232" text-anchor="middle" font-size="12" fill="#E23B3B" font-weight="700">LV</text><path d="M216,58 L120,30" stroke="#a37a00" stroke-width="1"></path><text x="116" y="29" text-anchor="end" font-size="11" fill="#a37a00" font-weight="700">SA node</text><text x="116" y="42" text-anchor="end" font-size="9.5" fill="#6C7787">페이스메이커 · &gt; 60 bpm</text><path d="M220,96 L120,92" stroke="#E0912B" stroke-width="1"></path><text x="116" y="91" text-anchor="end" font-size="11" fill="#E0912B" font-weight="700">결절간 경로 (3개)</text><text x="116" y="104" text-anchor="end" font-size="9.5" fill="#6C7787">Ant · Mid · Post</text><path d="M292,118 L120,150" stroke="#E23B3B" stroke-width="1"></path><text x="116" y="149" text-anchor="end" font-size="11" fill="#E23B3B" font-weight="700">AV node</text><text x="116" y="162" text-anchor="end" font-size="9.5" fill="#6C7787">지연(문지기) · 40–60 bpm</text><path d="M290,130 L120,196" stroke="#9a8457" stroke-width="1"></path><text x="116" y="195" text-anchor="end" font-size="11" fill="#9a8457" font-weight="700">절연 결합조직</text><text x="116" y="208" text-anchor="end" font-size="9.5" fill="#6C7787">His만 통과 가능</text><path d="M260,266 L120,262" stroke="#0F9268" stroke-width="1"></path><text x="116" y="261" text-anchor="end" font-size="11" fill="#0F9268" font-weight="700">Purkinje</text><text x="116" y="274" text-anchor="end" font-size="9.5" fill="#6C7787">20–40 bpm</text><path d="M346,42 L470,30" stroke="#7B52C9" stroke-width="1"></path><text x="474" y="29" text-anchor="start" font-size="11" fill="#7B52C9" font-weight="700">Bachmann's bundle</text><text x="474" y="42" text-anchor="start" font-size="9.5" fill="#6C7787">RA → LA</text><path d="M306,138 L470,112" stroke="#0F9268" stroke-width="1"></path><text x="474" y="111" text-anchor="start" font-size="11" fill="#0F9268" font-weight="700">Bundle of His</text><path d="M296,206 L470,150" stroke="#0F9268" stroke-width="1"></path><text x="474" y="149" text-anchor="start" font-size="11" fill="#0F9268" font-weight="700">Right bundle branch</text><text x="474" y="162" text-anchor="start" font-size="9.5" fill="#6C7787">가늘다</text><path d="M360,180 L470,190" stroke="#0F9268" stroke-width="1"></path><text x="474" y="189" text-anchor="start" font-size="11" fill="#0F9268" font-weight="700">Left 전방 분지 (thin)</text><text x="474" y="202" text-anchor="start" font-size="9.5" fill="#6C7787">고양이 HCM: 차단되기 쉬움</text><path d="M328,234 L470,236" stroke="#0F9268" stroke-width="1"></path><text x="474" y="235" text-anchor="start" font-size="11" fill="#0F9268" font-weight="700">Left 후방 분지 (thick)</text></svg></div></div>
+</div>
+</div><ul class="d mini">
+<li><b>심방–심실은 절연</b>(결합조직) → 전기는 <b>오직 His로만</b> 내려감 / <b>AV junction = AV node + His</b> ("nodal" ≈ "junctional")</li>
+<li><b>AV node</b> = 전기적 문지기: AN·N·NH 3구역, <b>AN·N이 가장 느림</b>, N은 재분극 후 불응기 → 💡 ① 심방 수축으로 심실 채울 시간(= <b>PR</b>) ② AF 때 일부만 통과시키는 필터</li>
+<li>좌각 = <b>얇은 전방 분지</b>(고양이 HCM에서 차단 → 좌축편위) + 두꺼운 후방 분지</li>
+<li>Purkinje 침투: <b>개·고양이·영장류 1/3</b> ↔ <b>말·소 전층</b>(동시 흥분 → 벡터 상쇄 → 크기 평가 ✕, base-apex 유도)</li>
+<li><b>WPW</b>: His 외 우회로(지연 없음) → <b>짧은 PR + delta파 + 넓은 QRS</b>, 회귀성 빈맥 회로 / ECG로만 진단</li>
+</ul><h2 class="lv1">Ⅰ. 파형 ★</h2><div class="three" style="display:block;"><div><svg viewBox="0 0 560 246" width="100%" style="max-width:600px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="P-QRS-T 파형 구간"><line x1="0" y1="0" x2="0" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="10" y1="0" x2="10" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="20" y1="0" x2="20" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="30" y1="0" x2="30" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="40" y1="0" x2="40" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="50" y1="0" x2="50" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="60" y1="0" x2="60" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="70" y1="0" x2="70" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="80" y1="0" x2="80" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="90" y1="0" x2="90" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="100" y1="0" x2="100" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="110" y1="0" x2="110" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="120" y1="0" x2="120" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="130" y1="0" x2="130" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="140" y1="0" x2="140" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="150" y1="0" x2="150" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="160" y1="0" x2="160" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="170" y1="0" x2="170" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="180" y1="0" x2="180" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="190" y1="0" x2="190" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="200" y1="0" x2="200" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="210" y1="0" x2="210" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="220" y1="0" x2="220" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="230" y1="0" x2="230" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="240" y1="0" x2="240" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="250" y1="0" x2="250" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="260" y1="0" x2="260" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="270" y1="0" x2="270" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="280" y1="0" x2="280" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="290" y1="0" x2="290" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="300" y1="0" x2="300" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="310" y1="0" x2="310" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="320" y1="0" x2="320" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="330" y1="0" x2="330" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="340" y1="0" x2="340" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="350" y1="0" x2="350" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="360" y1="0" x2="360" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="370" y1="0" x2="370" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="380" y1="0" x2="380" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="390" y1="0" x2="390" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="400" y1="0" x2="400" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="410" y1="0" x2="410" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="420" y1="0" x2="420" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="430" y1="0" x2="430" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="440" y1="0" x2="440" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="450" y1="0" x2="450" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="460" y1="0" x2="460" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="470" y1="0" x2="470" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="480" y1="0" x2="480" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="490" y1="0" x2="490" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="500" y1="0" x2="500" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="510" y1="0" x2="510" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="520" y1="0" x2="520" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="530" y1="0" x2="530" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="540" y1="0" x2="540" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="550" y1="0" x2="550" y2="246" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="560" y1="0" x2="560" y2="246" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="0" x2="560" y2="0" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="0" y1="10" x2="560" y2="10" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="20" x2="560" y2="20" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="30" x2="560" y2="30" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="40" x2="560" y2="40" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="50" x2="560" y2="50" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="0" y1="60" x2="560" y2="60" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="70" x2="560" y2="70" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="80" x2="560" y2="80" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="90" x2="560" y2="90" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="100" x2="560" y2="100" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="0" y1="110" x2="560" y2="110" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="120" x2="560" y2="120" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="130" x2="560" y2="130" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="140" x2="560" y2="140" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="150" x2="560" y2="150" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="0" y1="160" x2="560" y2="160" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="170" x2="560" y2="170" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="180" x2="560" y2="180" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="190" x2="560" y2="190" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="200" x2="560" y2="200" stroke="#f6c9c9" stroke-width="1.2"></line><line x1="0" y1="210" x2="560" y2="210" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="220" x2="560" y2="220" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="230" x2="560" y2="230" stroke="#f6c9c9" stroke-width="0.5"></line><line x1="0" y1="240" x2="560" y2="240" stroke="#f6c9c9" stroke-width="0.5"></line><path d="M20,140 L60,140 Q80,110 100,140 L130,140 L136,150 L148,40 L160,158 L168,140 L225,140 Q268,84 310,140 L540,140" fill="none" stroke="#111" stroke-width="2.6" stroke-linejoin="round"></path><text x="78" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#E23B3B">P</text><text x="133" y="166" text-anchor="middle" font-size="15" font-weight="700" fill="#E23B3B">Q</text><text x="148" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#E23B3B">R</text><text x="162" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#E23B3B">S</text><text x="268" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#E23B3B">T</text><path d="M60,177 L60,172 L100,172 L100,177" fill="none" stroke="#2B5FC4" stroke-width="1.8"></path><text x="80.0" y="187" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2B5FC4">P 폭</text><path d="M60,201 L60,196 L130,196 L130,201" fill="none" stroke="#2B5FC4" stroke-width="1.8"></path><text x="95.0" y="211" text-anchor="middle" font-size="11.5" font-weight="700" fill="#2B5FC4">PR(PQ) 간격</text><path d="M130,177 L130,172 L168,172 L168,177" fill="none" stroke="#E23B3B" stroke-width="1.8"></path><text x="149.0" y="187" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E23B3B">QRS 폭</text><path d="M130,225 L130,220 L310,220 L310,225" fill="none" stroke="#0F9268" stroke-width="1.8"></path><text x="220.0" y="235" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0F9268">QT 간격 (Q 시작 → T 끝)</text><path d="M168,107 L168,112 L225,112 L225,107" fill="none" stroke="#7B52C9" stroke-width="1.8"></path><text x="196.5" y="107" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7B52C9">ST 분절</text><line x1="112" y1="140" x2="112" y2="40" stroke="#6C7787" stroke-width="1.5" stroke-dasharray="4 3"></line><text x="106" y="60" text-anchor="end" font-size="11.5" fill="#6C7787" font-weight="700">R 진폭</text><rect x="380" y="12" width="170" height="54" fill="#fff" stroke="#c9d3d1"></rect><text x="388" y="30" font-size="11.5" fill="#1B2A44">작은 칸 1 mm · 큰 칸 5 mm</text><text x="388" y="46" font-size="11.5" fill="#1B2A44">50 mm/s: 작은 칸 0.02 s</text><text x="388" y="61" font-size="11.5" fill="#1B2A44">1 cm = 1 mV: 작은 칸 0.1 mV</text></svg></div></div><table>
+<caption>파형 = 전기적 사건</caption>
+<tbody>
+<tr class="hi"><td class="kc" style="width:16%">P</td><td style="width:34%"><b>심방 탈분극</b></td><td>심방 재분극(Ta)은 QRS에 묻혀 안 보임</td></tr>
+<tr><td class="kc">PR (= PQ)</td><td>SA → <b>AV node 대기</b> → His</td><td><b>PR 길면 AV node 문제</b> / 최근 수의 전문서는 PQ</td></tr>
+<tr class="hi"><td class="kc">QRS</td><td><b>심실 탈분극</b></td><td>Q(중격, 아래) → <b>R(LV 압도, 위)</b> → S(기저부, 아래)</td></tr>
+<tr><td class="kc">T</td><td><b>심실 재분극</b></td><td>개는 양성·음성·이상성 모두 정상 가능</td></tr>
+<tr><td class="kc">ST / QT</td><td>ST = 전체 탈분극 상태(기선)</td><td>ST 하강·상승 = 허혈·비대·전해질 / QT는 HR 빠를수록 짧음</td></tr>
+</tbody>
+</table><div class="two">
+<div>
+<ul class="d mini">
+<li><b>★ R파는 항상 위</b>: 이름 규칙 — R = 첫 위쪽 꺾임 / Q = R 앞 아래 / S = R 뒤 아래 / 위쪽 파가 없으면 QS → 아래로 깊은 파 = "뒤집힌 R"이 아니라 <b>deep S</b></li>
+<li><b>Supraventricular</b> = AV node·His 절연면 위(SA·심방·AV node) → P 이상, <b>QRS 정상(좁음)</b> / <b>심실성</b> → QRS 넓고 기괴 (💡 His–Purkinje 고속도로를 타느냐)</li>
+</ul>
+</div>
+<div>
+<ul class="d mini">
+<li>전기 ≠ 기계: 실제 수축은 QRS 뒤 / 승모판 도플러 <b>E파 = 이완 초기 수동 유입</b>, <b>A파 = 심방 수축(= P의 기계적 결과)</b></li>
+<li>P 흐린 서맥 → 아트로핀 후 P 사라짐 → 심초음파로 A파 확인 → P·A 모두 없으면 <b>atrial standstill</b></li>
+</ul>
+</div>
+</div><span class="pno">1</span></section><section class="page" style=""><h2 class="lv1">Ⅱ. 유도 (Lead) ★</h2><div class="two">
+<div style="flex:1.15;">
+<table>
+<caption>사지유도 6개</caption>
+<thead><tr><th>유도</th><th>− 극</th><th>+ 극</th><th>축</th></tr></thead>
+<tbody>
+<tr><td class="kc">I</td><td class="c">RA</td><td class="c">LA</td><td class="c">0°</td></tr>
+<tr class="hi"><td class="kc">II</td><td class="c">RA</td><td class="c"><b>LL</b></td><td class="c"><b>+60°</b></td></tr>
+<tr><td class="kc">III</td><td class="c">LA</td><td class="c">LL</td><td class="c">+120°</td></tr>
+<tr><td class="kc">aVR / aVL / aVF</td><td class="c">나머지 평균</td><td class="c">RA / LA / LL</td><td class="c">−150 / −30 / +90°</td></tr>
+</tbody>
+</table>
+<ul class="d mini">
+<li>유도 = +극·−극 사이 전위. 높이 ≈ 벡터 × <b>cos(각도)</b> → 평행 = 최대 / 수직 = 평평 / 반대 = 최대 음성</li>
+<li>Bipolar(I·II·III) = <b>Einthoven 삼각형</b>, <b>II = I + III</b>(전극 오류 검산) / Unipolar = aV(augmented)</li>
+<li><b>Lead II가 표준</b>: 심장 전기 흐름(SA → 심첨)과 축이 거의 같아 P·R 가장 큼</li>
+<li>흉부유도 V1–V6는 보통 안 함 / <b>Holter</b> = 24시간 (간헐적 부정맥·실신)</li>
+<li>개·고양이 <b>right lateral 표준</b>, 다리 겹치지 않게(합선) / 말·소는 <b>base-apex</b></li>
+</ul>
+</div>
+<div style="flex:0.85;"><svg viewBox="0 0 300 300" width="100%" style="max-width:300px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="육축 좌표계"><path d="M150,150 L130.6,260.3 A112,112 0 0 1 38.0,150.0 Z" fill="rgba(226,59,59,.10)"></path><path d="M150,150 L150.0,38.0 A112,112 0 0 1 235.8,222.0 Z" fill="rgba(43,95,196,.08)"></path><path d="M150,150 L235.8,222.0 A112,112 0 0 1 130.6,260.3 Z" fill="rgba(15,146,104,.28)"></path><line x1="38.0" y1="150.0" x2="262.0" y2="150.0" stroke="#1B2A44" stroke-width="1.3"></line><circle cx="262.0" cy="150.0" r="3.2" fill="#1B2A44"></circle><text x="282.0" y="154.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">I</text><text x="248.0" y="154.0" text-anchor="middle" font-size="9.5" fill="#6C7787">+0°</text><line x1="94.0" y1="53.0" x2="206.0" y2="247.0" stroke="#E23B3B" stroke-width="2.6"></line><circle cx="206.0" cy="247.0" r="3.2" fill="#E23B3B"></circle><text x="216.0" y="268.3" text-anchor="middle" font-size="11.5" font-weight="700" fill="#E23B3B">II</text><text x="199.0" y="238.9" text-anchor="middle" font-size="9.5" fill="#6C7787">+60°</text><line x1="206.0" y1="53.0" x2="94.0" y2="247.0" stroke="#1B2A44" stroke-width="1.3"></line><circle cx="94.0" cy="247.0" r="3.2" fill="#1B2A44"></circle><text x="84.0" y="268.3" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">III</text><text x="101.0" y="238.9" text-anchor="middle" font-size="9.5" fill="#6C7787">+120°</text><line x1="150.0" y1="38.0" x2="150.0" y2="262.0" stroke="#1B2A44" stroke-width="1.3"></line><circle cx="150.0" cy="262.0" r="3.2" fill="#1B2A44"></circle><text x="150.0" y="286.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">aVF</text><text x="150.0" y="252.0" text-anchor="middle" font-size="9.5" fill="#6C7787">+90°</text><line x1="53.0" y1="206.0" x2="247.0" y2="94.0" stroke="#1B2A44" stroke-width="1.3"></line><circle cx="247.0" cy="94.0" r="3.2" fill="#1B2A44"></circle><text x="264.3" y="88.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">aVL</text><text x="234.9" y="105.0" text-anchor="middle" font-size="9.5" fill="#6C7787">−30°</text><line x1="247.0" y1="206.0" x2="53.0" y2="94.0" stroke="#1B2A44" stroke-width="1.3"></line><circle cx="53.0" cy="94.0" r="3.2" fill="#1B2A44"></circle><text x="35.7" y="88.0" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1B2A44">aVR</text><text x="65.1" y="105.0" text-anchor="middle" font-size="9.5" fill="#6C7787">−150°</text><text x="150" y="18" text-anchor="middle" font-size="10" fill="#6C7787">−90° (머리 쪽)</text><text x="212" y="200" font-size="10.5" font-weight="700" fill="#0F9268">개 정상</text><text x="212" y="213" font-size="10.5" font-weight="700" fill="#0F9268">+40~+100°</text><text x="38" y="194" font-size="10" font-weight="700" fill="#E23B3B">우축편위</text><text x="194" y="114" font-size="10" font-weight="700" fill="#2B5FC4">좌축편위</text></svg></div>
+</div><h2 class="lv1">Ⅲ. 판독 — 종이 · 심박수 · 정상값 · MEA ★</h2><div class="two">
+<div>
+<table>
+<caption>기본 세팅: 50 mm/s · 1 mV = 1 cm</caption>
+<thead><tr><th></th><th>작은 칸 1 mm</th><th>큰 칸 5 mm</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">50 mm/s</td><td class="c"><b>0.02 s</b></td><td class="c"><b>0.1 s</b></td></tr>
+<tr><td class="kc">25 mm/s</td><td class="c"><b>0.04 s</b></td><td class="c">0.2 s</td></tr>
+<tr class="hi"><td class="kc">1 cm/mV</td><td class="c"><b>0.1 mV</b></td><td class="c"><b>0.5 mV</b></td></tr>
+</tbody>
+</table>
+<ul class="d mini">
+<li><b>판독 전 속도·보정 먼저</b> — 착각하면 시간·진폭이 모두 2배 틀림</li>
+<li><b>HR = 60 ÷ R–R(s)</b> / 50 mm/s: <b>3000 ÷ 작은 칸</b> (25 mm/s: 1500 ÷) / 6초 × 10 / 3초 마크 × 20 / <b>오래 셀수록 정확</b></li>
+<li>예) 0.4 s → 150 bpm / 작은 칸 25개(50 mm/s) → 120 bpm</li>
+</ul>
+</div>
+<div>
+<table>
+<caption>정상값 (lead II) — 정리자 보충 표준값</caption>
+<thead><tr><th></th><th>개</th><th>고양이</th></tr></thead>
+<tbody>
+<tr><td class="kc">HR</td><td>70–160 (강아지 ~220)</td><td>120–240</td></tr>
+<tr class="hi"><td class="kc">P</td><td>≤ 0.04 s / ≤ 0.4 mV</td><td>≤ 0.04 s / ≤ 0.2 mV</td></tr>
+<tr><td class="kc">PR</td><td>0.06–0.13 s</td><td>0.05–0.09 s</td></tr>
+<tr class="hi"><td class="kc">QRS 폭</td><td>소형 ≤ 0.05 / 대형 ≤ 0.06 s</td><td>≤ 0.04 s</td></tr>
+<tr class="hi"><td class="kc">R</td><td>소형 ≤ 2.5 / 대형 ≤ 3.0 mV</td><td>≤ 0.9 mV</td></tr>
+<tr><td class="kc">MEA</td><td><b>+40 ~ +100°</b></td><td>0 ~ +160°</td></tr>
+</tbody>
+</table>
+<p class="tnote" style="margin-top:2px;">교수님: 정상 P 폭 작은 칸 2개, 높이 3개 / 고양이 R은 큰 칸 2개 넘는 일 거의 없음</p>
+</div>
+</div><div class="memo blue mini">
+<div class="mt">평균 전기축(MEA) 그리기</div>
+<p>① 두 유도(예: I, III)의 QRS 순 진폭(위 − 아래) ② 각 축 위에 점 ③ 점에서 수직선 → 교점과 중심 = MEA. 예) I +4.5, III +22 → <b>≈ +81°</b>(정상) / I +6, III +9 → ≈ +67°<br>
+빠른 법: <b>I·aVF 둘 다 양성 → 0~+90° 정상 쪽</b> / <b>I 음성 + aVF 양성 → 우축편위</b> / 등전위 유도에 <b>수직</b> = 축<br>
+<b>우축편위(&gt; +100°)</b> = RVH(PS·TOF·HWD·폐고혈압), RBBB / <b>좌축편위(&lt; +40°)</b> = LBBB, 고양이 LAFB(HCM)</p>
+</div><h2 class="lv1">Ⅳ. 방 확대 · 각차단 ★</h2><div class="three" style="display:block;"><div><div class="cap">lead II QRS 모양 비교 (작은 원 = 평균 전기축)</div><svg viewBox="0 0 620 200" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="LVH, RVH, 각차단의 QRS"><defs><marker id="h16r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h16b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h16k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h16g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h16v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h16o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h16n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M8,110 L16,110 Q23.0,100 30,110 L46,115.1 L54,50.5 L62,118.5 L66,110.0 L78,110 Q90.0,94 102,110 L126,110" fill="none" stroke="#1B2A44" stroke-width="2.2" stroke-linejoin="round"></path><text x="66" y="184" text-anchor="middle" font-size="10.5" fill="#1B2A44" font-weight="700">정상</text><circle cx="108" cy="26" r="16" fill="#fff" stroke="#ccd"></circle><path d="M108,26 L115.0,38.1" fill="none" stroke="#1B2A44" stroke-width="2" stroke-linecap="round" marker-end="url(#h16k)"></path><path d="M131,110 L139,110 Q146.0,100 153,110 L169,115.1 L177,16.5 L185,118.5 L189,110.0 L201,110 Q213.0,94 225,110 L249,110" fill="none" stroke="#E23B3B" stroke-width="2.2" stroke-linejoin="round"></path><text x="189" y="184" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">LVH: tall R</text><circle cx="231" cy="26" r="16" fill="#fff" stroke="#ccd"></circle><path d="M231,26 L238.0,38.1" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h16r)"></path><path d="M254,110 L262,110 Q269.0,100 276,110 L292,113.4 L298,84.5 L308,169.5 L316,110.0 L328,110 Q340.0,94 352,110 L372,110" fill="none" stroke="#2B5FC4" stroke-width="2.2" stroke-linejoin="round"></path><text x="312" y="184" text-anchor="middle" font-size="10.5" fill="#2B5FC4" font-weight="700">RVH: deep S</text><circle cx="354" cy="26" r="16" fill="#fff" stroke="#ccd"></circle><path d="M354,26 L347.0,38.1" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round" marker-end="url(#h16b)"></path><path d="M377,110 L385,110 Q392.0,100 399,110 L415,84.5 L427,42.0 L435,53.9 L449,33.5 L463,110.0 L475,110 Q487.0,94 499,110 L495,110" fill="none" stroke="#E23B3B" stroke-width="2.2" stroke-linejoin="round"></path><text x="435" y="184" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">LBBB: 넓고 큰 R</text><circle cx="477" cy="26" r="16" fill="#fff" stroke="#ccd"></circle><path d="M477,26 L489.1,33.0" fill="none" stroke="#E23B3B" stroke-width="2" stroke-linecap="round" marker-end="url(#h16r)"></path><path d="M500,110 L508,110 Q515.0,100 522,110 L538,113.4 L544,81.1 L554,152.5 L576,161.0 L588,110.0 L600,110 Q612.0,94 624,110 L618,110" fill="none" stroke="#2B5FC4" stroke-width="2.2" stroke-linejoin="round"></path><text x="558" y="184" text-anchor="middle" font-size="10.5" fill="#2B5FC4" font-weight="700">RBBB: 넓고 깊은 S</text><circle cx="600" cy="26" r="16" fill="#fff" stroke="#ccd"></circle><path d="M600,26 L589.3,35.0" fill="none" stroke="#2B5FC4" stroke-width="2" stroke-linecap="round" marker-end="url(#h16b)"></path><text x="8" y="198" text-anchor="start" font-size="9.5" fill="#6C7787">작은 원 = 평균 전기축 방향(오른쪽 0°, 아래 +90°) · BBB는 P와 PR 정상인데 QRS가 매우 넓음</text></svg></div></div><span class="pno">2</span></section><section class="page" style=""><table>
+<caption>방 확대 → ECG (Se 50%, Sp 80%)</caption>
+<thead><tr><th style="width:14%"></th><th style="width:36%">ECG</th><th>대표 질환 / 💡 원리</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">LAE</td><td><b>P 폭↑ = P mitrale</b> (&gt; 0.04 s, notched)</td><td>MMVD·MVD·PDA·DCM / 💡 LA는 나중에 흥분 → P 뒷부분이 길어짐</td></tr>
+<tr class="hi"><td class="kc">RAE</td><td><b>P 높이↑ = P pulmonale</b> (&gt; 0.4 mV, 뾰족)</td><td>TVD·폐고혈압·호흡기 / 💡 RA는 먼저 흥분, 겹치는 구간 전압↑</td></tr>
+<tr><td class="kc">RVH</td><td><b>deep S</b> + 우축편위</td><td><b>PS · TOF · TR(TVD) · 심장사상충 · 폐고혈압</b> / 개는 RV가 얇아 많이 커져야 보임</td></tr>
+<tr><td class="kc">LVH</td><td><b>tall R</b> (&gt; 2.5 / 3.0 mV) ± QRS↑ ± ST</td><td><b>SAS·HCM(동심성)</b> + <b>PDA·DCM·MMVD(편심성)</b> → 정반대 기전인데 ECG는 똑같음</td></tr>
+</tbody>
+</table><div class="three" style="display:block;"><div><div class="cap">P파 = RA + LA 흥분의 합</div><svg viewBox="0 0 620 190" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="P mitrale와 P pulmonale"><line x1="20" y1="130" x2="200" y2="130" stroke="#ccd" stroke-width="1"></line><polyline points="30.0,130.0 32.2,130.0 34.4,130.0 36.6,130.0 38.8,130.0 41.0,130.0 43.2,130.0 45.4,130.0 47.6,130.0 49.8,130.0 52.0,130.0 54.2,126.2 56.4,122.5 58.6,118.9 60.8,115.5 63.0,112.3 65.2,109.3 67.4,106.6 69.6,104.3 71.8,102.4 74.0,100.8 76.2,99.7 78.4,99.0 80.6,98.8 82.8,99.0 85.0,99.7 87.2,100.8 89.4,102.4 91.6,104.3 93.8,106.6 96.0,109.3 98.2,112.3 100.4,115.5 102.6,118.9 104.8,122.5 107.0,126.2 109.2,130.0 111.4,130.0 113.6,130.0 115.8,130.0 118.0,130.0 120.2,130.0 122.4,130.0 124.6,130.0 126.8,130.0 129.0,130.0 131.2,130.0 133.4,130.0 135.6,130.0 137.8,130.0 140.0,130.0 142.2,130.0 144.4,130.0 146.6,130.0 148.8,130.0 151.0,130.0 153.2,130.0 155.4,130.0 157.6,130.0 159.8,130.0 162.0,130.0 164.2,130.0 166.4,130.0 168.6,130.0 170.8,130.0 173.0,130.0 175.2,130.0 177.4,130.0 179.6,130.0 181.8,130.0 184.0,130.0 186.2,130.0 188.4,130.0 190.6,130.0 192.8,130.0 195.0,130.0 197.2,130.0 199.4,130.0 201.6,130.0 203.8,130.0" fill="none" stroke="#2B5FC4" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="30.0,130.0 32.2,130.0 34.4,130.0 36.6,130.0 38.8,130.0 41.0,130.0 43.2,130.0 45.4,130.0 47.6,130.0 49.8,130.0 52.0,130.0 54.2,130.0 56.4,130.0 58.6,130.0 60.8,130.0 63.0,130.0 65.2,130.0 67.4,130.0 69.6,130.0 71.8,130.0 74.0,130.0 76.2,130.0 78.4,130.0 80.6,126.2 82.8,122.5 85.0,118.9 87.2,115.5 89.4,112.3 91.6,109.3 93.8,106.6 96.0,104.3 98.2,102.4 100.4,100.8 102.6,99.7 104.8,99.0 107.0,98.8 109.2,99.0 111.4,99.7 113.6,100.8 115.8,102.4 118.0,104.3 120.2,106.6 122.4,109.3 124.6,112.3 126.8,115.5 129.0,118.9 131.2,122.5 133.4,126.2 135.6,130.0 137.8,130.0 140.0,130.0 142.2,130.0 144.4,130.0 146.6,130.0 148.8,130.0 151.0,130.0 153.2,130.0 155.4,130.0 157.6,130.0 159.8,130.0 162.0,130.0 164.2,130.0 166.4,130.0 168.6,130.0 170.8,130.0 173.0,130.0 175.2,130.0 177.4,130.0 179.6,130.0 181.8,130.0 184.0,130.0 186.2,130.0 188.4,130.0 190.6,130.0 192.8,130.0 195.0,130.0 197.2,130.0 199.4,130.0 201.6,130.0 203.8,130.0" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="30.0,130.0 32.2,130.0 34.4,130.0 36.6,130.0 38.8,130.0 41.0,130.0 43.2,130.0 45.4,130.0 47.6,130.0 49.8,130.0 52.0,130.0 54.2,126.2 56.4,122.5 58.6,118.9 60.8,115.5 63.0,112.3 65.2,109.3 67.4,106.6 69.6,104.3 71.8,102.4 74.0,100.8 76.2,99.7 78.4,99.0 80.6,95.0 82.8,91.6 85.0,88.6 87.2,86.3 89.4,84.7 91.6,83.6 93.8,83.3 96.0,83.6 98.2,84.7 100.4,86.3 102.6,88.6 104.8,91.6 107.0,95.0 109.2,99.0 111.4,99.7 113.6,100.8 115.8,102.4 118.0,104.3 120.2,106.6 122.4,109.3 124.6,112.3 126.8,115.5 129.0,118.9 131.2,122.5 133.4,126.2 135.6,130.0 137.8,130.0 140.0,130.0 142.2,130.0 144.4,130.0 146.6,130.0 148.8,130.0 151.0,130.0 153.2,130.0 155.4,130.0 157.6,130.0 159.8,130.0 162.0,130.0 164.2,130.0 166.4,130.0 168.6,130.0 170.8,130.0 173.0,130.0 175.2,130.0 177.4,130.0 179.6,130.0 181.8,130.0 184.0,130.0 186.2,130.0 188.4,130.0 190.6,130.0 192.8,130.0 195.0,130.0 197.2,130.0 199.4,130.0 201.6,130.0 203.8,130.0" fill="none" stroke="#1B2A44" stroke-width="2.6"></polyline><text x="110" y="160" text-anchor="middle" font-size="11" fill="#1B2A44" font-weight="700">정상</text><text x="110" y="176" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">≤ 0.04 s · ≤ 0.4 mV</text><line x1="225" y1="130" x2="405" y2="130" stroke="#ccd" stroke-width="1"></line><polyline points="235.0,130.0 237.2,130.0 239.4,130.0 241.6,130.0 243.8,130.0 246.0,130.0 248.2,130.0 250.4,130.0 252.6,130.0 254.8,130.0 257.0,130.0 259.2,126.2 261.4,122.5 263.6,118.9 265.8,115.5 268.0,112.3 270.2,109.3 272.4,106.6 274.6,104.3 276.8,102.4 279.0,100.8 281.2,99.7 283.4,99.0 285.6,98.8 287.8,99.0 290.0,99.7 292.2,100.8 294.4,102.4 296.6,104.3 298.8,106.6 301.0,109.3 303.2,112.3 305.4,115.5 307.6,118.9 309.8,122.5 312.0,126.2 314.2,130.0 316.4,130.0 318.6,130.0 320.8,130.0 323.0,130.0 325.2,130.0 327.4,130.0 329.6,130.0 331.8,130.0 334.0,130.0 336.2,130.0 338.4,130.0 340.6,130.0 342.8,130.0 345.0,130.0 347.2,130.0 349.4,130.0 351.6,130.0 353.8,130.0 356.0,130.0 358.2,130.0 360.4,130.0 362.6,130.0 364.8,130.0 367.0,130.0 369.2,130.0 371.4,130.0 373.6,130.0 375.8,130.0 378.0,130.0 380.2,130.0 382.4,130.0 384.6,130.0 386.8,130.0 389.0,130.0 391.2,130.0 393.4,130.0 395.6,130.0 397.8,130.0 400.0,130.0 402.2,130.0 404.4,130.0 406.6,130.0 408.8,130.0" fill="none" stroke="#2B5FC4" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="235.0,130.0 237.2,130.0 239.4,130.0 241.6,130.0 243.8,130.0 246.0,130.0 248.2,130.0 250.4,130.0 252.6,130.0 254.8,130.0 257.0,130.0 259.2,130.0 261.4,130.0 263.6,130.0 265.8,130.0 268.0,130.0 270.2,130.0 272.4,130.0 274.6,130.0 276.8,130.0 279.0,130.0 281.2,130.0 283.4,130.0 285.6,130.0 287.8,130.0 290.0,130.0 292.2,130.0 294.4,130.0 296.6,130.0 298.8,130.0 301.0,130.0 303.2,130.0 305.4,130.0 307.6,130.0 309.8,130.0 312.0,130.0 314.2,130.0 316.4,127.2 318.6,124.3 320.8,121.6 323.0,118.9 325.2,116.2 327.4,113.7 329.6,111.4 331.8,109.2 334.0,107.1 336.2,105.3 338.4,103.7 340.6,102.3 342.8,101.1 345.0,100.1 347.2,99.4 349.4,99.0 351.6,98.8 353.8,98.9 356.0,99.2 358.2,99.8 360.4,100.7 362.6,101.8 364.8,103.1 367.0,104.6 369.2,106.4 371.4,108.3 373.6,110.5 375.8,112.8 378.0,115.2 380.2,117.8 382.4,120.5 384.6,123.2 386.8,126.0 389.0,128.9 391.2,130.0 393.4,130.0 395.6,130.0 397.8,130.0 400.0,130.0 402.2,130.0 404.4,130.0 406.6,130.0 408.8,130.0" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="235.0,130.0 237.2,130.0 239.4,130.0 241.6,130.0 243.8,130.0 246.0,130.0 248.2,130.0 250.4,130.0 252.6,130.0 254.8,130.0 257.0,130.0 259.2,126.2 261.4,122.5 263.6,118.9 265.8,115.5 268.0,112.3 270.2,109.3 272.4,106.6 274.6,104.3 276.8,102.4 279.0,100.8 281.2,99.7 283.4,99.0 285.6,98.8 287.8,99.0 290.0,99.7 292.2,100.8 294.4,102.4 296.6,104.3 298.8,106.6 301.0,109.3 303.2,112.3 305.4,115.5 307.6,118.9 309.8,122.5 312.0,126.2 314.2,130.0 316.4,127.2 318.6,124.3 320.8,121.6 323.0,118.9 325.2,116.2 327.4,113.7 329.6,111.4 331.8,109.2 334.0,107.1 336.2,105.3 338.4,103.7 340.6,102.3 342.8,101.1 345.0,100.1 347.2,99.4 349.4,99.0 351.6,98.8 353.8,98.9 356.0,99.2 358.2,99.8 360.4,100.7 362.6,101.8 364.8,103.1 367.0,104.6 369.2,106.4 371.4,108.3 373.6,110.5 375.8,112.8 378.0,115.2 380.2,117.8 382.4,120.5 384.6,123.2 386.8,126.0 389.0,128.9 391.2,130.0 393.4,130.0 395.6,130.0 397.8,130.0 400.0,130.0 402.2,130.0 404.4,130.0 406.6,130.0 408.8,130.0" fill="none" stroke="#1B2A44" stroke-width="2.6"></polyline><text x="315" y="160" text-anchor="middle" font-size="11" fill="#E23B3B" font-weight="700">LAE → P mitrale (넓음·쌍봉)</text><text x="315" y="176" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">폭↑ (&gt; 0.04 s)</text><line x1="430" y1="130" x2="610" y2="130" stroke="#ccd" stroke-width="1"></line><polyline points="440.0,130.0 442.2,130.0 444.4,130.0 446.6,130.0 448.8,130.0 451.0,130.0 453.2,130.0 455.4,130.0 457.6,130.0 459.8,130.0 462.0,130.0 464.2,121.9 466.4,113.8 468.6,106.0 470.8,98.6 473.0,91.6 475.2,85.2 477.4,79.4 479.6,74.4 481.8,70.1 484.0,66.8 486.2,64.4 488.4,62.9 490.6,62.4 492.8,62.9 495.0,64.4 497.2,66.8 499.4,70.1 501.6,74.4 503.8,79.4 506.0,85.2 508.2,91.6 510.4,98.6 512.6,106.0 514.8,113.8 517.0,121.9 519.2,130.0 521.4,130.0 523.6,130.0 525.8,130.0 528.0,130.0 530.2,130.0 532.4,130.0 534.6,130.0 536.8,130.0 539.0,130.0 541.2,130.0 543.4,130.0 545.6,130.0 547.8,130.0 550.0,130.0 552.2,130.0 554.4,130.0 556.6,130.0 558.8,130.0 561.0,130.0 563.2,130.0 565.4,130.0 567.6,130.0 569.8,130.0 572.0,130.0 574.2,130.0 576.4,130.0 578.6,130.0 580.8,130.0 583.0,130.0 585.2,130.0 587.4,130.0 589.6,130.0 591.8,130.0 594.0,130.0 596.2,130.0 598.4,130.0 600.6,130.0 602.8,130.0 605.0,130.0 607.2,130.0 609.4,130.0 611.6,130.0 613.8,130.0" fill="none" stroke="#2B5FC4" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="440.0,130.0 442.2,130.0 444.4,130.0 446.6,130.0 448.8,130.0 451.0,130.0 453.2,130.0 455.4,130.0 457.6,130.0 459.8,130.0 462.0,130.0 464.2,130.0 466.4,130.0 468.6,130.0 470.8,130.0 473.0,130.0 475.2,130.0 477.4,130.0 479.6,130.0 481.8,130.0 484.0,130.0 486.2,130.0 488.4,130.0 490.6,126.2 492.8,122.5 495.0,118.9 497.2,115.5 499.4,112.3 501.6,109.3 503.8,106.6 506.0,104.3 508.2,102.4 510.4,100.8 512.6,99.7 514.8,99.0 517.0,98.8 519.2,99.0 521.4,99.7 523.6,100.8 525.8,102.4 528.0,104.3 530.2,106.6 532.4,109.3 534.6,112.3 536.8,115.5 539.0,118.9 541.2,122.5 543.4,126.2 545.6,130.0 547.8,130.0 550.0,130.0 552.2,130.0 554.4,130.0 556.6,130.0 558.8,130.0 561.0,130.0 563.2,130.0 565.4,130.0 567.6,130.0 569.8,130.0 572.0,130.0 574.2,130.0 576.4,130.0 578.6,130.0 580.8,130.0 583.0,130.0 585.2,130.0 587.4,130.0 589.6,130.0 591.8,130.0 594.0,130.0 596.2,130.0 598.4,130.0 600.6,130.0 602.8,130.0 605.0,130.0 607.2,130.0 609.4,130.0 611.6,130.0 613.8,130.0" fill="none" stroke="#E23B3B" stroke-width="1.4" stroke-dasharray="4 3"></polyline><polyline points="440.0,130.0 442.2,130.0 444.4,130.0 446.6,130.0 448.8,130.0 451.0,130.0 453.2,130.0 455.4,130.0 457.6,130.0 459.8,130.0 462.0,130.0 464.2,121.9 466.4,113.8 468.6,106.0 470.8,98.6 473.0,91.6 475.2,85.2 477.4,79.4 479.6,74.4 481.8,70.1 484.0,66.8 486.2,64.4 488.4,62.9 490.6,58.6 492.8,55.4 495.0,53.3 497.2,52.3 499.4,52.4 501.6,53.7 503.8,56.0 506.0,59.5 508.2,64.0 510.4,69.4 512.6,75.7 514.8,82.8 517.0,90.7 519.2,99.0 521.4,99.7 523.6,100.8 525.8,102.4 528.0,104.3 530.2,106.6 532.4,109.3 534.6,112.3 536.8,115.5 539.0,118.9 541.2,122.5 543.4,126.2 545.6,130.0 547.8,130.0 550.0,130.0 552.2,130.0 554.4,130.0 556.6,130.0 558.8,130.0 561.0,130.0 563.2,130.0 565.4,130.0 567.6,130.0 569.8,130.0 572.0,130.0 574.2,130.0 576.4,130.0 578.6,130.0 580.8,130.0 583.0,130.0 585.2,130.0 587.4,130.0 589.6,130.0 591.8,130.0 594.0,130.0 596.2,130.0 598.4,130.0 600.6,130.0 602.8,130.0 605.0,130.0 607.2,130.0 609.4,130.0 611.6,130.0 613.8,130.0" fill="none" stroke="#1B2A44" stroke-width="2.6"></polyline><text x="520" y="160" text-anchor="middle" font-size="11" fill="#2B5FC4" font-weight="700">RAE → P pulmonale (높음·뾰족)</text><text x="520" y="176" text-anchor="middle" font-size="10" fill="#6C7787" font-weight="700">높이↑ (&gt; 0.4 mV)</text><text x="20" y="16" text-anchor="start" font-size="10" fill="#1B2A44" font-weight="700">파랑 점선 = RA 흥분(먼저) · 빨강 점선 = LA 흥분(나중, Bachmann 경유) · 검정 = 실제 P파(합)</text></svg></div></div><table>
+<caption>각차단(BBB) = <u>P 정상 + 정상 PR</u> + 넓고 기괴한 QRS</caption>
+<thead><tr><th style="width:14%"></th><th style="width:36%">lead II</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">LBBB</td><td><b>Very wide R</b>(&gt; 2½ 작은 칸, notched)</td><td>좌각은 굵어 통째로 막히려면 <b>LV 병변</b> 多</td></tr>
+<tr><td class="kc">RBBB</td><td><b>Very deep S + very wide QRS</b></td><td>우각은 가늘어 정상 개에서도 / RV 확장·사상충</td></tr>
+</tbody>
+</table><div class="three" style="display:block;"><div><div class="cap">각차단 — 막힌 쪽(보라)이 늦게·천천히</div><svg viewBox="0 0 620 214" width="100%" style="max-width:620px;display:block;margin:0 auto;font-family:inherit" role="img" aria-label="좌각차단과 우각차단"><defs><marker id="h17r" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E23B3B"></path></marker><marker id="h17b" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2B5FC4"></path></marker><marker id="h17k" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1B2A44"></path></marker><marker id="h17g" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6C7787"></path></marker><marker id="h17v" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7B52C9"></path></marker><marker id="h17o" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E0912B"></path></marker><marker id="h17n" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4.2" markerHeight="4.2" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0F9268"></path></marker></defs><path d="M34.0,41.2 Q34.0,22.0 55.6,22.0 L94.0,22.0 Q101.2,22.0 101.2,30.4 L101.2,74.8 L34.0,74.8 Z" fill="#eef3fc" stroke="#9c4d49" stroke-width="1.4"></path><path d="M106.0,30.4 Q106.0,22.0 114.4,22.0 L151.6,22.0 Q173.2,22.0 173.2,41.2 L173.2,74.8 L106.0,74.8 Z" fill="#fdf0f0" stroke="#9c4d49" stroke-width="1.4"></path><path d="M31.6,82.0 L175.6,82.0 Q178.0,142.0 115.6,184.0 Q100.0,191.2 89.2,178.0 Q34.0,136.0 31.6,82.0 Z" fill="#d99a96" fill-opacity=".55" stroke="#9c4d49" stroke-width="1.4"></path><path d="M43.6,88.0 L96.4,88.0 L101.2,161.2 Q88.0,169.6 76.0,154.0 Q46.0,124.0 43.6,88.0 Z" fill="#eef3fc"></path><path d="M110.8,88.0 L164.8,88.0 Q166.0,139.6 120.4,172.0 L113.2,166.0 Z" fill="#fdf0f0"></path><path d="M103.6,71.2 L103.6,94.0" stroke="#0F9268" stroke-width="3"></path><path d="M102.39999999999999,94.0 Q97.6,124.0 88.0,154.0" stroke="#0F9268" stroke-width="3" fill="none"></path><path d="M104.8,95.2 Q112.0,132.4 127.6,161.2" stroke="#bbb" stroke-width="3" fill="none"></path><path d="M102.6,102.6 L116.6,116.6 M116.6,102.6 L102.6,116.6" stroke="#E23B3B" stroke-width="3.2"></path><path d="M112.0,89.2 L163.6,89.2 Q164.79999999999998,139.6 120.39999999999999,170.79999999999998 L113.2,164.79999999999998 Z" fill="#7B52C9" fill-opacity=".3"></path><path d="M76.0,136.0 Q100.0,154.0 136.0,136.0" fill="none" stroke="#7B52C9" stroke-width="2" stroke-linecap="round" marker-end="url(#h17v)"></path><path d="M184,120 L190,120 Q197.0,108 204,120 L222,90 L234,40 L242,54 L256,30 L270,120 L280,120 Q292.0,104 304,120 L310,120" fill="none" stroke="#E23B3B" stroke-width="2.2" stroke-linejoin="round"></path><text x="160" y="200" text-anchor="middle" font-size="10.5" fill="#E23B3B" font-weight="700">LBBB: LV가 마지막·천천히 → 넓고 큰(notched) R</text><text x="240" y="150" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">P·PR 정상</text><path d="M344.0,41.2 Q344.0,22.0 365.6,22.0 L404.0,22.0 Q411.2,22.0 411.2,30.4 L411.2,74.8 L344.0,74.8 Z" fill="#eef3fc" stroke="#9c4d49" stroke-width="1.4"></path><path d="M416.0,30.4 Q416.0,22.0 424.4,22.0 L461.6,22.0 Q483.2,22.0 483.2,41.2 L483.2,74.8 L416.0,74.8 Z" fill="#fdf0f0" stroke="#9c4d49" stroke-width="1.4"></path><path d="M341.6,82.0 L485.6,82.0 Q488.0,142.0 425.6,184.0 Q410.0,191.2 399.2,178.0 Q344.0,136.0 341.6,82.0 Z" fill="#d99a96" fill-opacity=".55" stroke="#9c4d49" stroke-width="1.4"></path><path d="M353.6,88.0 L406.4,88.0 L411.2,161.2 Q398.0,169.6 386.0,154.0 Q356.0,124.0 353.6,88.0 Z" fill="#eef3fc"></path><path d="M420.8,88.0 L474.8,88.0 Q476.0,139.6 430.4,172.0 L423.2,166.0 Z" fill="#fdf0f0"></path><path d="M413.6,71.2 L413.6,94.0" stroke="#0F9268" stroke-width="3"></path><path d="M412.4,94.0 Q407.6,124.0 398.0,154.0" stroke="#bbb" stroke-width="3" fill="none"></path><path d="M414.8,95.2 Q422.0,132.4 437.6,161.2" stroke="#0F9268" stroke-width="3" fill="none"></path><path d="M402.4,102.6 L416.4,116.6 M416.4,102.6 L402.4,116.6" stroke="#E23B3B" stroke-width="3.2"></path><path d="M354.8,89.2 L405.2,89.2 L410.0,160.0 Q396.8,168.4 386.0,154.0 Q357.2,124.0 354.8,89.2 Z" fill="#7B52C9" fill-opacity=".3"></path><path d="M446.0,136.0 Q416.0,154.0 380.0,136.0" fill="none" stroke="#7B52C9" stroke-width="2" stroke-linecap="round" marker-end="url(#h17v)"></path><path d="M494,120 L500,120 Q507.0,108 514,120 L532,124 L538,86 L548,170 L570,180 L582,120 L592,120 Q604.0,104 616,120 L622,120" fill="none" stroke="#2B5FC4" stroke-width="2.2" stroke-linejoin="round"></path><text x="470" y="200" text-anchor="middle" font-size="10.5" fill="#2B5FC4" font-weight="700">RBBB: RV가 마지막·천천히 → 넓고 깊은 S</text><text x="550" y="150" text-anchor="middle" font-size="9.5" fill="#6C7787" font-weight="700">P·PR 정상</text></svg></div></div><p class="tnote" style="margin-top:2px;">💡 막힌 쪽 심실이 반대쪽에서 근육→근육으로 늦게 흥분 → QRS 넓고, 후반 벡터가 막힌 쪽을 향함</p><div class="memo">
+<div class="mt">*헷갈리기 쉬운 짝</div>
+<ul class="d mini">
+<li>P mitrale <b>넓다</b>(LA·시간) ↔ P pulmonale <b>높다</b>(RA·전압) / RVH vs RBBB: 둘 다 deep S ↔ RBBB는 QRS <b>매우 넓음</b> / LVH vs LBBB 동일 논리</li>
+<li><b>BBB vs VPC·VT</b>: 둘 다 넓고 기괴 ↔ BBB는 <b>P와 정상 PR이 앞에 있음</b> / HCM vs DCM: 둘 다 tall R → ECG로 구분 ✕</li>
+<li>Junctional escape <b>40–60</b> ↔ ventricular escape <b>20–40</b> / 25 vs 50 mm/s: 작은 칸 0.04 ↔ 0.02 s</li>
+</ul>
+</div><span class="pno">3</span></section></body></html>

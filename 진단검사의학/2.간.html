@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2. 간 정리본</title>
+<style>
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:400;font-display:swap;
+  src:local('지마켓산스 Medium'),local('GmarketSansMedium'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');}
+@font-face{font-family:'GmarketSans';font-style:normal;font-weight:700;font-display:swap;
+  src:local('지마켓산스 Bold'),local('GmarketSansBold'),
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');}
+
+:root{
+  --paper:#fcfcfa; --rule:#e3e6ea; --line-h:21px;
+  --ink:#1B2A44; --blue:#2B5FC4; --red:#E23B3B; --navy:#123C7A;
+  --violet:#7B52C9; --magenta:#DD3F92; --green:#0F9268; --gray:#6C7787;
+  --sci:#1F6F5C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:#d9dde2;
+  font-family:'GmarketSans','지마켓산스 Medium','맑은 고딕','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+  color:var(--blue); font-size:13.6px; line-height:var(--line-h);
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+.page{
+  width:210mm; max-width:100%; min-height:297mm; margin:14px auto;
+  padding:14mm 12mm 16mm;
+  background:repeating-linear-gradient(to bottom,var(--paper) 0 calc(var(--line-h) - 1px),var(--rule) calc(var(--line-h) - 1px) var(--line-h));
+  box-shadow:0 2px 10px rgba(0,0,0,.25); position:relative;
+}
+.pno{position:absolute;right:12mm;bottom:7mm;font-size:11px;color:#9aa3ae;}
+
+/* 제목 */
+.doc-title{font-weight:700;font-size:25px;color:#111;letter-spacing:-.5px;margin:0 0 4px;line-height:1.3;}
+.doc-title .num{color:var(--navy);}
+.doc-title .en{font-size:13.6px;color:var(--gray);font-weight:400;margin-left:6px;}
+.doc-sub{font-size:13px;color:#7d8794;margin:0 0 8px;}
+.hr-hand{height:3px;border:0;margin:0 0 14px;background:linear-gradient(90deg,#1b2a44 0%,#1b2a44 92%,transparent 100%);border-radius:2px;}
+
+/* 위계 */
+h2.lv1{font-weight:700;font-size:20px;color:#111;margin:20px 0 6px;display:inline-block;border-bottom:3px solid #ffd94a;padding:0 4px 1px;line-height:1.35;}
+h3.lv2{font-weight:700;font-size:18px;color:var(--navy);margin:14px 0 4px 6px;line-height:1.35;}
+h4.lv3{font-weight:700;font-size:16.5px;color:var(--violet);margin:10px 0 3px 16px;line-height:1.35;}
+h5.lv4{font-weight:700;font-size:15.5px;color:var(--magenta);margin:8px 0 2px 28px;line-height:1.35;}
+
+ul{list-style:none;margin:0;padding:0;}
+li{position:relative;padding-left:16px;margin:1px 0;}
+li::before{position:absolute;left:0;top:0;}
+ul.d{margin-left:30px;}
+ul.d>li::before{content:"◆";font-size:9px;color:var(--blue);top:1px;}
+ul.c{margin-left:48px;}
+ul.c>li{color:#3A4A63;font-size:12.8px;}
+ul.c>li::before{content:"✓";color:var(--green);font-weight:700;}
+ul.d ul.c{margin-left:16px;}
+
+b,strong{font-weight:700;}
+.r{color:var(--red);font-weight:700;}
+.k{color:#111;font-weight:700;}
+.gray{color:var(--gray);font-size:12.6px;}
+.sp{font-family:'Times New Roman',Times,serif;font-style:italic;color:var(--sci);font-size:14.5px;}
+.hl{background:linear-gradient(transparent 55%,rgba(255,226,72,.85) 55%);}
+.hlp{background:linear-gradient(transparent 55%,rgba(255,150,200,.6) 55%);}
+.hlb{background:linear-gradient(transparent 55%,rgba(120,190,255,.55) 55%);}
+.up{color:var(--red);font-weight:700;}
+.dn{color:#1f63d6;font-weight:700;}
+
+/* 출처 태그 */
+.tag{display:inline-block;font-size:10.5px;line-height:15px;padding:0 5px;border-radius:3px;margin:0 3px;vertical-align:1px;font-weight:700;}
+.t-pen{background:#e6f0ff;color:#2B5FC4;border:1px solid #9cbcf0;}
+.t-rec{background:#fff0e3;color:#c4621b;border:1px solid #f0b98a;}
+.t-pen2{background:#f1eafd;color:#6B3FC4;border:1px solid #c3a9f0;}
+.f2{background:#faf7ff;box-shadow:-4px 0 0 #9b7be0;}
+tr.f2 td{background:#faf7ff !important;}
+.t-ex{background:#ffe9ea;color:#c42530;border:1px solid #f2a3a8;}
+
+/* 박스 */
+.memo{border:2px solid #111;background:#fffdf4;box-shadow:2px 2px 0 #111;padding:8px 12px;margin:10px 4px 12px 20px;color:var(--ink);}
+.memo.red{border-color:var(--red);box-shadow:2px 2px 0 var(--red);}
+.memo.blue{border-color:#2b5fc4;background:#f4f9ff;box-shadow:2px 2px 0 #2b5fc4;}
+.memo.green{border-color:#0f9268;background:#f2fbf6;box-shadow:2px 2px 0 #0f9268;}
+.memo .mt{font-weight:700;color:#111;margin-bottom:2px;}
+.memo.blue .mt{color:#2b5fc4;}
+.memo.green .mt{color:#0f9268;}
+.memo.red .mt{color:var(--red);}
+.memo ul.d{margin-left:4px;}
+.memo ul.c{margin-left:20px;}
+.side{border:2px dashed #7d8794;background:rgba(255,255,255,.7);padding:6px 10px;margin:8px 4px 10px 20px;color:var(--ink);font-size:12.8px;}
+.side .mt{font-weight:700;color:var(--magenta);}
+.clear{clear:both;}
+
+/* 표 */
+table{width:calc(100% - 20px);margin:8px 0 12px 20px;border-collapse:collapse;font-size:11.6px;line-height:16px;color:var(--ink);background:#fff;}
+caption{background:#13756A;color:#fff;font-size:15.5px;font-weight:700;padding:5px 8px;text-align:left;line-height:20px;}
+th{background:#D8ECE7;color:#12403B;font-weight:700;padding:4px 5px;border:1px solid #4A6B66;text-align:center;}
+td{padding:4px 5px;border:1px solid #4A6B66;vertical-align:middle;}
+tbody tr:nth-child(odd) td{background:#F0F0E8;}
+tbody tr:nth-child(even) td{background:#fff;}
+tbody tr.hi td{background:#FFF6D8;}
+td.c,th.c{text-align:center;}
+td.kc{font-weight:700;background:#D8ECE7 !important;text-align:center;color:#12403B;}
+.tnote{font-size:11px;color:var(--gray);margin:-8px 0 10px 22px;line-height:15px;}
+
+.two{display:flex;gap:10px;margin-left:20px;}
+.two>div{flex:1;}
+.two table{margin-left:0;width:100%;}
+
+table,.memo,.side,.two,tr{break-inside:avoid;page-break-inside:avoid;}
+h2,h3,h4,h5{break-after:avoid;page-break-after:avoid;}
+@media print{
+  body{background:none;}
+  .page{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+  .page:last-child{page-break-after:auto;}
+}
+@page{size:A4;margin:0;}
+@media (max-width:800px){
+  .page{width:100%;min-height:auto;padding:16px;}
+  .side{float:none;width:auto;margin:6px 0;}
+  .two{display:block;margin-left:0;}
+  table{width:100%;margin-left:0;font-size:11px;}
+  ul.d{margin-left:12px;} ul.c{margin-left:24px;}
+  .memo{margin-left:0;}
+}
+/* 자료해석 전용 */
+.flow{margin:8px 0 12px 20px;display:flex;flex-direction:column;gap:6px;}
+.fstep{display:flex;gap:8px;align-items:stretch;}
+.fnum{flex:0 0 30px;background:#13756A;color:#fff;font-weight:700;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.fbody{flex:1;border:1.5px solid #4A6B66;background:#fff;border-radius:4px;padding:5px 9px;color:var(--ink);font-size:12.8px;line-height:18px;}
+.fbody .ft{font-weight:700;color:#12403B;}
+.fork{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.fork>div{flex:1;min-width:150px;border-radius:4px;padding:4px 7px;font-size:12px;line-height:16px;}
+.fk1{background:#E8F4EA;border:1px solid #0F9268;}
+.fk2{background:#FFF6D8;border:1px solid #C9A227;}
+.fk3{background:#FDECEC;border:1px solid #E23B3B;}
+.case{border:2px solid #13756A;border-radius:6px;margin:10px 0 14px 20px;background:#fff;color:var(--ink);overflow:hidden;}
+.case .ch{background:#13756A;color:#fff;font-weight:700;padding:5px 10px;font-size:14.5px;line-height:19px;}
+.case .ch .cn{display:inline-block;background:#fff;color:#13756A;border-radius:3px;padding:0 6px;margin-right:6px;font-size:12.5px;}
+.case .cs{padding:4px 10px;font-size:12.4px;line-height:17px;background:#F2F8F6;border-bottom:1px solid #D8ECE7;color:#3A4A63;}
+.case .cb{display:flex;gap:10px;padding:8px 10px;}
+.case .cd{flex:0 0 40%;}
+.case .cd table{margin:0;width:100%;font-size:11.2px;}
+.case .cd caption{font-size:12.5px;padding:3px 6px;}
+.case .ci{flex:1;}
+.case ol.st{margin:0;padding:0;list-style:none;counter-reset:s;}
+.case ol.st>li{counter-increment:s;position:relative;padding-left:24px;margin:0 0 4px;font-size:12.6px;line-height:18px;}
+.case ol.st>li::before{content:counter(s);position:absolute;left:0;top:1px;width:17px;height:17px;border-radius:50%;background:#2B5FC4;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.case .cc{margin:6px 10px 8px;padding:5px 9px;background:#FFF6D8;border-left:4px solid #E23B3B;font-size:12.8px;line-height:18px;}
+.case .cc b{color:#E23B3B;}
+.case .tr{margin:0 10px 8px;padding:4px 9px;background:#F4F9FF;border-left:4px solid #2B5FC4;font-size:12.2px;line-height:17px;}
+.cat-pre .ch{background:#0F9268;} .cat-pre{border-color:#0F9268;}
+.cat-ren .ch{background:#C0392B;} .cat-ren{border-color:#C0392B;}
+.cat-post .ch{background:#2B5FC4;} .cat-post{border-color:#2B5FC4;}
+.cat-mim .ch{background:#B7791F;} .cat-mim{border-color:#B7791F;}
+.cat-oth .ch{background:#6B4FA0;} .cat-oth{border-color:#6B4FA0;}
+.legend{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px 20px;font-size:11.5px;}
+.legend span{padding:1px 7px;border-radius:3px;color:#fff;font-weight:700;}
+@media (max-width:800px){.case .cb{display:block;}.case .cd{margin-bottom:6px;}.case{margin-left:0;}.flow{margin-left:0;}}
+
+</style>
+</head>
+<body>
+<section class="page">
+<h1 class="doc-title"><span class="num">2.</span> 간 <span class="en">Liver — Serum Chemistry</span></h1>
+<p class="doc-sub">진단검사의학 · 강의 PDF 1–69p + 수업 녹음 ①②③ + 슬라이드 필기 반영 &nbsp;|&nbsp; <span class="tag t-pen">필기</span> 슬라이드 손필기 &nbsp;<span class="tag t-rec">수업</span> 녹음에서만 나온 내용 &nbsp;<span class="tag t-pen2">필기2</span> 동기 타이핑 필기에서 새로 추가한 내용 &nbsp;<span class="tag t-ex">시험</span> 강조 포인트</p>
+<hr class="hr-hand">
+<table>
+<caption>표 1. 간 검사 한눈에 — 무엇이 언제 오르나</caption>
+<thead><tr><th style="width:18%">구분</th><th style="width:30%">항목</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="kc">Leakage<br>(손상)</td><td><b>ALT, AST</b>, (SDH)</td><td>세포 손상 → 바로 혈중 유리, <b>수 시간 내</b>↑. 가장 민감(sensitive). 반감기 짧음</td></tr>
+<tr><td class="kc">Induction<br>(유도)</td><td><b>ALP, GGT</b></td><td>담즙정체·약물(steroid 등)로 <b>유도</b>. 최고치까지 며칠~몇 주, 감소에 ~2개월</td></tr>
+<tr class="hi"><td class="kc">기능 ①</td><td><b>Bile acid</b></td><td>간 <b>40% 이상</b> 손상 → 기능 장애 시작</td></tr>
+<tr class="hi"><td class="kc">기능 ②</td><td><b>Ammonia</b></td><td><b>60–70% 이상</b> → 암모니아 해독기능 저하</td></tr>
+<tr class="hi"><td class="kc">기능 ③</td><td><b>Albumin, BUN, glucose, cholesterol, 응고인자</b></td><td><b>80% 이상</b> → 항상성 유지용 합성기능 저하 (가장 specific, 가장 늦음)</td></tr>
+<tr><td class="kc">애매</td><td>Bilirubin</td><td>간전성·간성·간후성 모두 ↑ — 개에서 간성이면 <b>grave</b>, 고양이는 <b>비특이적</b></td></tr>
+</tbody>
+</table>
+<h2 class="lv1">Ⅰ. 간 검사 개요</h2>
+<h3 class="lv2">1. 손상 정도에 따라 순서대로 나타나는 지표</h3>
+<ul class="d">
+<li>원인(약물, 세균, virus, 종양, toxicants, 다른 부위 염증, 선천적 장애…)이 계속 간세포를 괴롭힐 때 진행 순서 <span class="tag t-ex">시험</span></li>
+<li class="f2">원인별 특징: 세균·바이러스는 <b>고양이</b>에서 많은 편 / 종양은 원발성도 있지만 <b>다른 부위에서 넘어오는(전이)</b> 게 많은 편 / <b>다른 부위 염증</b>(방광염·췌장염 등)의 <b>사이토카인</b>이 간·심장 같은 장기에 영향 / 개는 <b>선천적 장애</b>도 꽤 있음 <span class="tag t-pen2">필기2</span></li>
+</ul>
+<ul class="c">
+<li>조금이라도 손상 → <b>ALT·AST·SDH</b>(leakage) + <b>ALP·GGT</b>(induction) ↑</li>
+<li><b>40% 이상</b> → <span class="tag t-pen">필기</span> 이때부터 기능장애 시작 → <b>bile acid</b>↑</li>
+<li><b>60–70% 이상</b> → <span class="tag t-pen">필기</span> 암모니아 해독기능 저하 → <b>ammonia</b>↑</li>
+<li><b>80% 이상</b> → <span class="tag t-pen">필기</span> 항상성 유지를 위한 합성기능 저하 → <b>albumin·BUN·glucose·cholesterol↓</b>, 응고인자 합성 저하</li>
+</ul>
+<div class="memo" style="border-color:#9b7be0;box-shadow:2px 2px 0 #9b7be0;background:#faf7ff;">
+<div class="mt" style="color:#6B3FC4;">왜 이 항목들이 "간 합성" 지표인가? <span class="tag t-pen2">필기2</span></div>
+<ul class="d">
+<li><b>Glucose</b>: 간은 포도당을 새로 만들고(gluconeogenesis), 저장한 <b>글리코겐을 분해</b>해 혈당 유지</li>
+<li><b>Cholesterol</b>: 체내 콜레스테롤 대부분을 간이 <b>acetyl-CoA</b>를 원료로 자체 합성</li>
+<li><b>BUN</b>: 간이 urea cycle로 합성하는 것이 <b>요소(urea)</b> → BUN = 혈중 요소의 <b>질소량</b> 측정값</li>
+<li><b>응고인자</b>: 간이 제1~12인자 <b>거의 모두</b> 합성 + <b>항응고인자</b>도 합성 / 일부 인자는 <b>비타민 K</b>가 필요 <span class="gray">(정리자 보충: 비타민 K 의존 인자 = Ⅱ·Ⅶ·Ⅸ·Ⅹ — 동기 필기엔 "이 인자들"로 뭉뚱그려 있음)</span></li>
+</ul>
+</div>
+<ul class="d">
+<li>왼쪽(80%)으로 갈수록 <b>Specific!!</b>, 오른쪽(효소)으로 갈수록 <b>Sensitive!!!</b></li>
+<li>실제로 후천적 손상에서 80%까지 가기는 드묾 — 그 전에 이미 상태가 매우 나쁨. 단 한 번에 60–70% 손상돼 오는 경우, 선천적 형성장애로 처음부터 심한 경우도 있음 <span class="tag t-rec">수업</span></li>
+<li>간도 신장처럼 <b>예비능력이 커서</b> 임상증상이 늦게 나타남 (신장: BUN·Cr↑ = 1/3도 안 남음)</li>
+</ul>
+<span class="pno">1</span>
+</section>
+
+<section class="page">
+<div class="memo blue">
+<div class="mt">✎ 효소가 알려주는 것 / 못 알려주는 것 <span class="tag t-pen">필기</span></div>
+<ul class="d">
+<li>ALT·AST·SDH: 세포 손상 시 바로 혈관으로 흘러들어가는 만큼 <b>직관적</b></li>
+<li>그러나 효소만으로는 모름 → <b>원발? 속발? 급성? 만성? How many cells? 치명적? Mild?</b></li>
+<li>기능 지표는 <b>Tells severity — not how? why? what?</b></li>
+<li>∴ <span class="r">심하게 손상되든 안 되든 일단 이 효소들은 계속 나옴.</span></li>
+</ul>
+</div>
+<div class="memo">
+<div class="mt">*검사 전략 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>아프면 다 하는 게 좋음 — 간담관계 문제 + 어느 정도까지 손상됐는지 평가</li>
+<li>보호자 경제 사정으로 최소한만? → <b>효소 수치</b>만 (비교적 빠르게 증가하므로)</li>
+<li><b>응고계</b>는 간 기능 평가에 루틴으로 하지 않음 → 단, <b>생검·수술</b> 전에는 검사</li>
+<li>Chemistry = <b>간담관계가 관여됐다</b>는 것 + 심각도. <b>원인은 알려주지 않음</b></li>
+</ul>
+</div>
+<h3 class="lv2">2. Case — 5세령 sF Lhasa apso</h3>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 1</span>5세령 sF Lhasa apso — 효소↑ + 합성 4종↓ + small liver</div>
+<div class="cs">침울, 무기력, 경련, 운동실조, 식욕부진 등 / 초음파 검사 시 <b>small liver</b> <span class="tag t-pen">필기</span> = Ammonia hepatica(→ microhepatica)</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">Glu</td><td class="c"><span class="dn">58</span></td><td class="c">64–123</td></tr>
+<tr class="hi"><td class="kc">Urea</td><td class="c"><span class="dn">9</span></td><td class="c">15–57</td></tr>
+<tr class="hi"><td class="kc">Alb</td><td class="c"><span class="dn">1.5</span></td><td class="c">2.4–4.1</td></tr>
+<tr class="hi"><td class="kc">Chol</td><td class="c"><span class="dn">107</span></td><td class="c">135–347</td></tr>
+<tr><td class="kc">ALP / AST</td><td class="c"><span class="up">257 / 141</span></td><td class="c">&lt;141 / 15–80</td></tr>
+<tr><td class="kc">ALT / GGT</td><td class="c"><span class="up">167 / 17</span></td><td class="c">10–90 / &lt;10</td></tr>
+<tr><td class="kc">Ca</td><td class="c"><span class="dn">7.1</span></td><td class="c">7.6–11.6</td></tr>
+<tr><td class="kc">Tbil</td><td class="c">0.12</td><td class="c">&lt;0.64</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALT·AST·ALP·GGT 모두↑ → 간담관계 문제 (원인·정도는 아직 모름)</li>
+<li><b>Alb·BUN·Glu·Chol 4개 모두↓</b> → 합성 기능 저하 = <b>80% 이상</b> 손상 수준</li>
+<li>후천적으론 여기까지 가기 드묾 <span class="tag t-pen">필기</span> <b>선천적? → 보통 PSS</b> (후천은 Alb·Chol은 거의↓, Glu·BUN은 있을 수도 없을 수도) <span class="tag t-rec">수업</span></li>
+<li>small liver(microhepatica) = 혈관이 간을 bypass → <b>저형성</b></li>
+<li>임상: <span class="tag t-pen">필기</span> *<b>단백식이 하고 나면 술 취한 듯이 몽롱해 함</b> → 암모니아 해독↓(간성 뇌증)</li>
+<li>Ca 7.1↓은 Alb 1.5↓에 따른 총 Ca 감소일 가능성 <span class="gray">(정리자 보충)</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>PSS(선천성 간 저형성)</b> — 다음 단계: BA(식전·식후) + NH₃ + 영상</div>
+<div class="tr">포인트: 4종이 <b>모두</b> 떨어지는 패턴은 선천(저형성)을 먼저 떠올림 <span class="tag t-ex">시험</span></div>
+</div>
+<h3 class="lv2">3. 간의 구조 — 이것만 기억</h3>
+<ul class="d">
+<li>간은 <b>동맥(hepatic artery) + 정맥(portal vein)</b>을 함께 받는 특이한 장기 → portal area → central vein으로 빠짐</li>
+<li><span class="hl">모든 간세포의 한쪽 면은 sinusoid(혈관), 다른 쪽 면은 bile canaliculi</span> <span class="tag t-ex">시험</span></li>
+</ul>
+<span class="pno">2</span>
+</section>
+
+<section class="page">
+<ul class="c">
+<li>canaliculi = 따로 관 구조가 있는 게 아니라 <b>간세포와 간세포 사이 간극</b> → 빌리루빈을 중합해 담즙으로 보내는 통로</li>
+<li>담즙은 혈류와 <b>반대 방향</b>으로 흐름</li>
+<li>장(엄밀히 몸 밖)에서 오는 항원을 <b>1차로 걸러주는 관문</b>, 안 되면 비장이 걸러줌</li>
+<li class="f2">이 필터 역할의 주인공 = sinusoid 안의 <b>Kupffer 세포</b> → 세균 탐식·독소 해독 (거대한 필터이자 1차 방어벽) <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+<li class="f2">간세포는 <b>양극성</b>: sinusoid 면으로 산소·영양분·대사할 물질(<b>지용성</b> 비결합 빌리루빈 등)을 흡수 → 세포 안에서 포합 → <b>수용성</b> 결합 빌리루빈을 반대쪽 canaliculi로 분비 → 모여서 담즙 <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+</ul>
+<ul class="d">
+<li>그래서 효소 증가가 이해됨</li>
+</ul>
+<ul class="c">
+<li>독성물질이 혈관 따라 들어와 간세포 손상 → 막 투과도 변화 → 세포질 효소가 혈관으로 → <b>leakage 효소↑</b></li>
+<li>손상된 간세포가 <b>swelling</b> → 좁은 canaliculi가 더 좁아짐 → <b>담즙 정체</b> → 빌리루빈 처리량↑ → <b>ALP induction</b> <span class="tag t-pen">필기</span> "지방세포 종창되는 경우 세담관 막힘~"</li>
+<li>장 세균이 담관 타고 올라와 간세포 감염, 예전엔 infectious canine hepatitis(<b>blue eye</b>)도 있었음 <span class="tag t-rec">수업</span></li>
+</ul>
+<p class="tnote">* Zone 1–3(산소 분압에 따라 gluconeogenesis·β-oxidation vs glycolysis) — 교수님: 시험에 안 나옴</p>
+<h3 class="lv2">4. 효소의 두 종류 — leakage vs induction</h3>
+<table>
+<caption>표 2. Cell damage(leakage) marker vs Cholestasis(induction) marker <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:16%"></th><th>Cell damage or <i>leakage</i> marker</th><th>Cholestasis or <i>induction</i> marker</th></tr></thead>
+<tbody>
+<tr><td class="kc">항목</td><td><b>ALT, AST, SDH</b> 등</td><td><b>GGT, ALP</b> 등</td></tr>
+<tr><td class="kc">기전</td><td>세포 손상 또는 괴사 → 혈중으로 유리 (가역적 손상, 비가역적 손상, 재생 세포 등등)</td><td>담즙정체, 약물 등에 <b>유도</b> (요구량↑ → 생성↑)</td></tr>
+<tr class="hi"><td class="kc">시간</td><td>~<b>수 시간 내</b> 증가 (거의 즉시)</td><td>최고치까지 <b>며칠~몇 주</b>, 감소하는데 <b>몇 달(~2개월)</b></td></tr>
+<tr><td class="kc">특징</td><td><b>반드시 간세포 괴사는 아님!</b> 병증의 중등도와 상관도 낮음. 더 <b>민감</b></td><td>민감도는 떨어지지만 좀 더 특이적</td></tr>
+</tbody>
+</table>
+<p class="r" style="margin:0 0 0 20px;">→ 그러나, 원인은 알 수 없음.....</p>
+<div class="memo" style="border-color:#9b7be0;box-shadow:2px 2px 0 #9b7be0;background:#faf7ff;">
+<div class="mt" style="color:#6B3FC4;">왜 "반드시 괴사는 아님 + 중등도와 상관 낮음"인가? <span class="tag t-pen2">필기2</span></div>
+<ul class="d">
+<li>간세포 <b>소수만 완전히</b> 망가져도 혈중 활성도 증가는 <b>클 수 있음</b></li>
+<li>① 독성물질이 일시적으로 작용해 <b>가역적</b>으로 막 투과도만 변해도 효소가 빠져나감 ② 세균·바이러스 등으로 손상돼 ALT가 쏟아져 들어와도 증가</li>
+<li>→ 둘 중 무엇인지 <b>생화학 검사로는 알 수 없음</b> → 원발이든 속발이든 <b>기저 원인</b>을 찾아 같이 치료</li>
+</ul>
+</div>
+<h4 class="lv3">1) 그래프로 보는 패턴</h4>
+<table>
+<caption>표 3. 손상 유형별 효소 곡선</caption>
+<thead><tr><th style="width:24%">상황</th><th>패턴</th></tr></thead>
+<tbody>
+<tr><td class="kc">Acute injury<br>(간독성 약물 투여 실험)</td><td>ALT·AST 빠르게↑(1–2일 정점) 후↓ → 간세포 손상은 canaliculi 흐름에 영향 → ALP가 <b>서서히</b>↑. 단발성 원인이 잘 제거되면 감소 = <b>예후 좋음</b></td></tr>
+<tr><td class="kc">Bile duct obstruction</td><td><b>ALP가 가장 심하게</b>(Severe) 계속↑, ALT·AST는 경도. 담관이 먼저 문제면 담관 마커↑ 정도가 더 큼</td></tr>
+<tr class="hi"><td class="kc">Chronic injury<br>(손상 + 재생 반복)</td><td>손상–휴지기 반복 → ALT·AST <b>들쭉날쭉</b>, 전체적으론 <b>간세포 수가 줄어 감소 경향</b> / bile acid는 꾸준히↑</td></tr>
+</tbody>
+</table>
+<span class="pno">3</span>
+</section>
+
+<section class="page">
+<div class="memo red">
+<div class="mt">★ 효소가 떨어지는데 예후가 좋은가? <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>급성</b>(단발성): 한 번 오른 효소가 <b>서서히 감소 → 예후 좋음</b> / 입원 중 <b>안 떨어진다</b> → underlying disease가 계속 작용 → 기저 원인(종양·전이 등) 찾기</li>
+<li><b>만성</b>: 효소 감소 = 간세포 수 자체가 줄어든 것 → <span class="r">오히려 예후 나쁨</span></li>
+<li>급성/만성 구분은 <b>임상 증상의 기간(history)</b>으로</li>
+</ul>
+</div>
+<ul class="d">
+<li>사람: 담석 등으로 황달이 심하면 <b>소양감</b>이 엄청 심함 (교수님 지인은 잠을 못 잘 정도) — 개·고양이는 말을 안 하니 모름 <span class="tag t-rec">수업</span></li>
+</ul>
+<h3 class="lv2">5. ★ 자료해석 — 간 수치 읽는 순서 (정리자 구성 — 강의 논리를 단계화)</h3>
+<div class="memo red">
+<div class="mt">★ 교수님 요약 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>Chemistry의 목적 = <b>간담관계가 관여됐다</b>는 것 → <b>원인·정도</b>는 추가 검사 (영상·FNA·생검)</li>
+<li>모든 케이스는 "<b>leakage냐 induction이냐 → 얼마나 심한가(기능 지표) → 언제부터인가(반감기·내원 시점)</b>"로 읽는다</li>
+</ul>
+</div>
+<div class="legend"><span style="background:#C0392B">간세포 손상</span><span style="background:#2B5FC4">담관·담즙정체</span><span style="background:#6B4FA0">기능부전·선천(PSS·IEM)</span><span style="background:#B7791F">간 외 원인(근육·용혈·뼈·약물)</span><span style="background:#0F9268">고양이 특이</span></div>
+<div class="flow">
+<div class="fstep"><div class="fnum">0</div><div class="fbody"><span class="ft">시료·간 외 원인부터 배제</span> 용혈(ALT 정상 + AST·CK·LDH↑, MCHC↑)·지질혈증·근육(AST·CK ≫ ALT, 근육주사·경련·외상) → 진짜 간 문제인지 먼저 확인</div></div>
+<div class="fstep"><div class="fnum">1</div><div class="fbody"><span class="ft">패턴: leakage vs induction (몇 배 올랐나?)</span>
+<div class="fork">
+<div class="fk3"><b>ALT·AST ≫ ALP·GGT</b><br>간세포 손상 우세<br>(hypoxia·외상·독성·염증)</div>
+<div class="fk2"><b>비슷하게 둘 다↑</b><br>간·담관 모두 involve<br>(내원 시점 고려)</div>
+<div class="fk1" style="background:#E8F0FB;border-color:#2B5FC4;"><b>ALP·GGT ≫ ALT</b><br>담관계 우세<br>(폐색·담즙정체·췌장염)</div>
+</div></div></div>
+<div class="fstep"><div class="fnum">2</div><div class="fbody"><span class="ft">ALP만↑면 간 외 induction부터</span> 어린 개(bone, GGT 정상) · 개의 <b>스테로이드/스트레스</b>(CIALP, 끊고도 6주) · 항경련제 · DM·갑저·쿠싱 · 회복기 잔존 · "unknown origin" / 고양이는 스테로이드 유도 <b>✕</b> → ALP↑면 바로 정밀검사</div></div>
+<div class="fstep"><div class="fnum">3</div><div class="fbody"><span class="ft">기능 지표로 심각도</span> BA(40%) → NH₃(60–70%) → Alb·BUN·Glu·Chol·응고(80%) — 4종 모두↓ + 어린 나이 + small liver + MCV↓ = <b>PSS</b> / BA 정상 + NH₃↑ = <b>urea cycle(IEM)</b></div></div>
+<div class="fstep"><div class="fnum">4</div><div class="fbody"><span class="ft">빌리루빈 분류</span> 빈혈·spherocyte → <b>간전성</b> / 효소 패턴 담관 우세·영상 폐색 → <b>간후성</b> / 둘 다 없는데 1–2 mg/dL↑(개) → <b>간성 = grave</b> / 감염 + 빌리루빈 ≫ 효소 → functional cholestasis / 회복 후 지속 → delta bilirubin / 고양이 = 비특이</div></div>
+<div class="fstep"><div class="fnum">5</div><div class="fbody"><span class="ft">시간축으로 해석</span> 내원 시 ALT·AST·Tbil은 이미 정점, ALP·GGT는 아직 오르는 중 → 첫 내원 한 번으로 ALP·GGT 판단 곤란 / 급성은 <b>감소 추세</b>면 예후 좋음, 만성은 감소 = 간세포 수 감소 = 나쁨</div></div>
+<div class="fstep"><div class="fnum">6</div><div class="fbody"><span class="ft">신호(signalment)로 마무리</span> 품종(도베르만·코카·베들링턴·웨스티·리트리버 → 만성 간염 / 말티즈 → BA 높음) · 고양이(효소 하나라도↑ → triaditis, 에코 변화 없어도 FNA / 노령묘 → 갑상선 항진)</div></div>
+</div>
+<span class="pno">4</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅱ. Leakage 효소 — ALT, AST, 기타</h2>
+<h3 class="lv2">1. ALT (alanine aminotransferase)</h3>
+<ul class="d">
+<li>SALT (serum ALT) = SGPT (serum glutamate-pyruvate transaminase)</li>
+<li><b>Cytosol enzyme</b>; 간세포 내 농도가 혈청보다 <b>~10,000배</b> 높음</li>
+<li>Isoenzyme</li>
+</ul>
+<ul class="c">
+<li>Heart, kidney, muscle 등: 농도 매우 낮고 반감기 매우 짧음</li>
+<li><span class="hl"><b>liver specific — dog &amp; cat</b></span> / <b>Horse and ruminant → SDH</b> 사용</li>
+</ul>
+<ul class="d">
+<li><b>Corticosteroid induced</b>도 가능</li>
+<li class="f2">기전: glucocorticoid(쿠싱·외인성 스테로이드) → 간세포 내 <b>글리코겐 과다 축적</b> → 세포 팽창 → 막이 늘어나며 손상 → 세포질 ALT <b>leakage</b> <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+<li class="f2">Hypoxia = 빈혈 등으로 산소 포화도↓ → 간세포도 힘들어 효소 배출 / 개는 <b>감염성 원인이 드묾</b> → 대사 질환·종양(원발 또는 전이)이 많음 / copper storage disease = <b>선천성</b> 질병 <span class="tag t-pen2">필기2</span></li>
+<li>측정: ALT → pyruvate + glutamate → GLDH 반응 → WST-8 formazan(orange) 흡광. 간섭: 고양이·돼지 용혈 시 RBC 유래 ALT↑ 가능</li>
+</ul>
+<h4 class="lv3">1) ALT 증가 원인</h4>
+<table>
+<caption>표 4. ALT primary / secondary / drug</caption>
+<thead><tr><th style="width:20%">분류</th><th>원인</th></tr></thead>
+<tbody>
+<tr><td class="kc" rowspan="9">Primary<br>Hepatocyte damage (D &amp; C)</td><td>Degenerative: <b>hypoxia</b> by anemia or congestion</td></tr>
+<tr><td>Anomalous: <b>PSS</b></td></tr>
+<tr><td>Metabolic: <b>lipidosis, DM</b>, feline <b>hyperthyroidism</b></td></tr>
+<tr><td>Neoplastic: lymphoma, metastasis, hepatocellular carcinoma</td></tr>
+<tr><td>Nutritional: copper toxicosis, hemochromatosis</td></tr>
+<tr><td>Inflammatory: leptospirosis, histoplasmosis, FIP, bacterial CH / chronic hepatitis, cirrhosis</td></tr>
+<tr><td><b>Copper</b> storage disease, lysosomal storage disease</td></tr>
+<tr><td>Toxic: steroid hepatopathy, anesthetic agent, phenobarbital</td></tr>
+<tr><td>Traumatic: hit by car</td></tr>
+<tr><td class="kc">근육</td><td>Skeletal muscle damage (mild) — <b>교통사고 시 급격한 증가; 간세포 손상 증거 없음</b></td></tr>
+<tr class="hi"><td class="kc">Secondary</td><td><b>GI disease – up to 5 times</b> / Diabetes mellitus – lipid accumulation / <b>Septicemia or endotoxemia</b> / <b>Periodontal disease</b></td></tr>
+<tr><td class="kc">Drug</td><td>Azathioprine, Barbiturate (phenobarbital, primidone), <b>Glucocorticoid</b>, Griseofulvin, Halothane, Ketoconazole, Mebendazole, Sulfonamide</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 다른 부위 염증에 간이 영향 많이 받음 — 예전 구강위생 나쁜 개: 치은염 → 심내막염, 간 문제 <span class="tag t-rec">수업</span></p>
+<span class="pno">5</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">2) Case — Jindo 8m, 사고 직후 내원</h4>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 2</span>Jindo 8m — 교통사고 직후, ALT 972</div>
+<div class="cs">사고 직후 내원, 방사선: 폐 contusion, severe</div>
+<div class="cb"><div class="cd"><table>
+<caption>1st / 2nd day</caption><tbody>
+<tr class="hi"><td class="kc">ALT</td><td class="c"><span class="up">972</span></td><td class="c"><span class="up">584</span></td><td class="c">6–70</td></tr>
+<tr><td class="kc">ALP</td><td class="c">120</td><td class="c">136</td><td class="c">20–150</td></tr>
+<tr><td class="kc">PCV</td><td class="c">30.6</td><td class="c">24.3</td><td class="c">%</td></tr>
+<tr><td class="kc">MCV</td><td class="c">48</td><td class="c">48</td><td class="c">진돗개</td></tr>
+<tr><td class="kc">TP</td><td class="c"><span class="dn">4.9</span></td><td class="c"><span class="dn">4.8</span></td><td class="c">5–7.2</td></tr>
+<tr><td class="kc">Glu</td><td class="c"><span class="up">139</span></td><td class="c">106</td><td class="c">60–110</td></tr>
+<tr><td class="kc">TB</td><td class="c">0.3</td><td class="c">0.3</td><td class="c">0.1–0.6</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALT만 급격히↑(~14배), ALP 정상 → <b>leakage 패턴</b> — 간세포 손상, 담관계 아직 영향 X</li>
+<li>원인 = <b>Traumatic: hit by car</b> (ALT primary 원인 목록) — 슬라이드: 교통사고 시 급격한 증가</li>
+<li>다음 날 584로 <b>감소</b> → 단발성 원인 + 감소 추세 = 예후 좋음 (ALT 반감기 40–60h)</li>
+<li>PCV 30.6 → 24.3, TP↓ = 외상 출혈 가능 / MCV 48은 <b>진돗개</b>(원래 MCV 낮은 품종)라 정상 범주 <span class="gray">(정리자 보충)</span></li>
+<li>Glu 139 = 스트레스 고혈당 <span class="gray">(정리자 보충)</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>외상성 간세포 손상(급성 leakage)</b> — ALP가 며칠 뒤 서서히 오를 수 있음</div>
+<div class="tr">주의: 슬라이드 다른 부분엔 "교통사고 시 급격한 증가; <b>간세포 손상 증거 없음</b>"(근육 mild 기여)도 있음 → 근육 손상이면 AST·CK도 같이 보기</div>
+</div>
+<h4 class="lv3">3) Case — IMHA 진단 + 스테로이드 치료 중 추적</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 3</span>IMHA 초진 → 스테로이드 치료 121일 추적</div>
+<div class="cs">초진: 심한 빈혈 + 황달 / 이후 IMHA 치료(glucocorticoid)</div>
+<div class="cb"><div class="cd"><table>
+<caption>초진 데이터</caption><tbody>
+<tr class="hi"><td class="kc">PCV / Hb</td><td class="c"><span class="dn">6 / 4.8</span></td><td class="c">37–55 / 12–18</td></tr>
+<tr><td class="kc">RBC</td><td class="c"><span class="dn">0.42</span></td><td class="c">5.5–8.5</td></tr>
+<tr class="hi"><td class="kc">MCV / MCHC</td><td class="c"><span class="up">141 / 80</span></td><td class="c">60–75 / 32–36</td></tr>
+<tr><td class="kc">ALT / ALP</td><td class="c"><span class="up">194 / 736</span></td><td class="c">3–69 / 20–157</td></tr>
+<tr><td class="kc">T Bil</td><td class="c"><span class="up">1.4</span></td><td class="c">0.1–0.8</td></tr>
+<tr><td class="kc">Cr</td><td class="c"><span class="dn">0.2</span></td><td class="c">0.5–1.5</td></tr>
+<tr><td class="kc">WBC / Band</td><td class="c"><span class="up">27,255 / 5,178</span></td><td class="c"></td></tr>
+<tr><td class="kc">요</td><td class="c">Blood +++, Bil ++, Glu +</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>PCV 6 = 극심한 빈혈 → <b>Degenerative: hypoxia by anemia</b> → ALT↑ (ALT primary 원인 목록)</li>
+<li>T Bil 1.4 + 요 Bil ++ + 빈혈 → <b>간전성</b>(용혈) 빌리루빈</li>
+<li>MCV 141 · MCHC 80 = 생리적으로 불가능 → RBC <b>응집(autoagglutination)</b> artifact — IMHA에 흔함 <span class="gray">(정리자 보충)</span></li>
+<li class="f2">동기 필기 해석: <b>MCHC↑ = 용혈</b>(용혈성 빈혈) 소견 → <b>hypoxia·ischemia</b>가 간세포에 영향. 사실 간 말고 다른 장기도 영향받았겠지만 chem으로 볼 수 있는 건 제한적 / 면역매개성 질환을 <b>면역억제제로 계속 치료</b>하면 ALP·ALT가 오를 것을 예상해야 <span class="tag t-pen2">필기2</span></li>
+<li>치료 시작 후 추적(표 7): ALT는 50–100대로 진정, <b>ALP는 9일 730 → 24일 2145</b> 정점 → 이후 감소(75·84일 26) → 121일 다시 381</li>
+<li>ALT보다 ALP가 압도적으로↑ + GGT 경미↑(26) + 빌리루빈 정상 범위 → 담즙정체가 아니라 <b>스테로이드에 의한 변화</b></li>
+</ol></div></div>
+<div class="cc">결론: 슬라이드: <b>Glucocorticoid induced hepatopathy instead of true enzyme induction</b> (개에서 CIALP, 끊고도 최대 6주)</div>
+<div class="tr">읽는 법: 치료 중 ALP만 수천으로 뛰면 → 약물 이력부터 확인 (간 단원 "ALP만↑ → 간 외 induction" 단계)</div>
+</div>
+<span class="pno">6</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. AST (aspartate aminotransferase)</h3>
+<ul class="d">
+<li><b>Cytoplasmic and mitochondrial</b> / SGOT (serum glutamate-oxaloacetate transaminase)</li>
+<li><b>Liver, heart and skeletal muscle</b> → 근육은 <b>CK</b>로 확인 / 개·고양이에 근육 질환은 드묾</li>
+<li><b>AST &amp; CK↑ without ALT?</b> → 근육 or 용혈</li>
+<li><b>Hemolysis?</b> → <span class="hl">AST, CK, LDH↑ (&amp; ALT in cats)</span> — 용혈 외 다른 장기 문제가 섞이면 교과서대로 안 보일 수 있음 <span class="tag t-rec">수업</span></li>
+<li>Severe liver injury? — <b>Shorter half life than ALT</b></li>
+<li>AST·CK = 거의 <b>즉시형</b>(손상·과도한 사용 시 바로↑). <b>CK가 더 빨리 올랐다 빨리 감소</b>, AST는 살짝 느림 → 채혈 시점에 따라 정도가 다름</li>
+</ul>
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> <b>녹음 ② 여기서부터 시작</b> (AST 슬라이드)</p>
+<h4 class="lv3">1) Case — "건강한 개를 보냈는데 왜 이상치가 많나?"</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 4</span>수술 전 "건강한" 개 — AST·LDH↑, ALT 정상</div>
+<div class="cs">옛날 외부 랩(일산) 서비스, 수의사 문의 케이스 <span class="tag t-rec">수업</span></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry</caption><tbody>
+<tr><td class="kc">ALT</td><td class="c">14.6</td><td class="c">10–80</td></tr>
+<tr class="hi"><td class="kc">AST</td><td class="c"><span class="up">82.6</span></td><td class="c">15–50</td></tr>
+<tr class="hi"><td class="kc">LDH</td><td class="c"><span class="up">949</span></td><td class="c">45–223</td></tr>
+<tr><td class="kc">CK</td><td class="c">215</td><td class="c">52–368</td></tr>
+<tr><td class="kc">ALP</td><td class="c">142.7</td><td class="c">20–150</td></tr>
+<tr><td class="kc">D / I bil</td><td class="c">0.06 / <span class="up">0.35</span></td><td class="c">0–0.3 / 0.1–0.3</td></tr>
+<tr class="hi"><td class="kc">TG</td><td class="c"><span class="up">237.6</span></td><td class="c">20–155</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>간이 문제면 ALT·AST가 <b>비슷하게</b> 같이↑ → 여기선 <b>ALT 정상</b>인데 AST·LDH만↑ (CK는 RR에 묻힌 듯)</li>
+<li>ALT 정상 + <b>AST·CK·LDH</b>↑ = <b>용혈</b> 패턴 (w or w/o MCHC, Hgb↑) — 1장 개론 내용 그대로</li>
+<li>Indirect bil 살짝↑ = 용혈과 부합</li>
+<li>그럼 용혈 원인은? → <b>TG↑ = 지질혈증</b> → milky 혈장 속 RBC가 튜브에서 잘 깨짐</li>
+<li>→ 수술한다고 <b>아침밥을 먹이고 온 것</b> 아닐까 추론 <span class="tag t-rec">수업</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>간 질환 아님 — 비절식 → 지질혈증 → 용혈 → 검사 간섭</b> → 절식 후 재채혈</div>
+<div class="tr">연말엔 이런 데이터로 조별 케이스 토론 예정 <span class="tag t-rec">수업</span></div>
+</div>
+<div class="memo">
+<div class="mt">*Direct vs Indirect bilirubin — 이름의 유래 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>빌리루빈 측정 시약은 <b>수용성</b></li>
+<li>간세포에서 처리된 <b>중합(conjugated) 빌리루빈</b> = 수용성 → 시약과 <b>바로</b> 반응 → <b>Direct</b></li>
+<li>비장에서 갓 만들어진 <b>비중합(unconjugated)</b> = 바로는 반응 안 함 → 간접 방법 → <b>Indirect</b></li>
+</ul>
+</div>
+<span class="pno">7</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">2) Case — Maltese SF 6yr (2.72kg), FUO + 신경증상</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 5</span>Maltese SF 6yr — AST·CK 10배, ALT·ALP 2–3배</div>
+<div class="cs">Fever, depressed, anorexia 2일 / T 39.1, P 186, R 42 / FUO + 신경증상</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">AST / CK</td><td class="c"><span class="up">1083 / 2036</span></td><td class="c"></td></tr>
+<tr><td class="kc">ALT / ALKP</td><td class="c"><span class="up">140 / 381</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">CREA</td><td class="c"><span class="dn">0.3</span></td><td class="c"></td></tr>
+<tr><td class="kc">T-Bil</td><td class="c"><span class="up">1.1</span></td><td class="c"></td></tr>
+<tr><td class="kc">K</td><td class="c"><span class="dn">2.8</span></td><td class="c"></td></tr>
+<tr><td class="kc">CRP</td><td class="c"><span class="up">66</span></td><td class="c"></td></tr>
+<tr><td class="kc">WBC / PLT</td><td class="c"><span class="up">21.93</span> / <span class="dn">73</span></td><td class="c"></td></tr>
+<tr><td class="kc">Glu / TP</td><td class="c"><span class="up">131</span> / <span class="dn">4.9</span></td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>AST·CK <b>~10배</b> vs ALT·ALP <b>~2–3배</b> → 비율이 근육 쪽 → <span class="r">주로 근육 유래</span></li>
+<li>근육 손상 이유: 고열·<b>신경증상</b>(경련 등)으로 근육 과도 운동 — CK는 뇌에 많아도 신경질환 시 혈청 CK↑는 경련·횡와로 인한 <b>근육</b> 유래</li>
+<li>ALT·ALP·T-bil도 경도↑ → 슬라이드: toxic change, <b>sepsis associated cholestasis</b> (염증에 간이 이차적으로 영향)</li>
+<li>CRP 66 = 어딘가 염증 / K↓ = <b>anorexia</b>가 우선 원인 / <b>Cr 0.3</b> = 근육량↓ → 상당히 말랐구나</li>
+<li class="f2">교수님이 "인슐린 분비가 잘 안 되면"도 언급 → <b>인슐린</b>은 K를 혈관에서 <b>세포 안으로</b> 넣는 핵심 호르몬 <span class="gray">(동기 메모: Gemini 인용)</span> → 그런데 인슐린↓만으로는 K가 세포로 덜 들어가 오히려 혈중 K↑ 방향 → 동기도 "혈중 수치는 상승"이라 메모 → 이 환자의 K↓는 <b>섭취 감소(anorexia)</b>로 보는 게 맞음 <span class="tag t-pen2">필기2</span></li>
+<li>FUO(원인 불명 발열) — 근육 involve는 알지만 뇌는 모름 → 근육 생검, 근육·신경계 감염증 PCR·키트 스크리닝</li>
+</ol></div></div>
+<div class="cc">결론: <b>FUO + 신경증상 → 근육 유래 AST·CK↑ + 패혈증 연관 담즙정체</b> (간 원발 아님)</div>
+<div class="tr">비율로 읽기: AST·CK가 ALT보다 "몇 배 더" 올랐는지가 근육/간 감별의 핵심</div>
+</div>
+<h4 class="lv3">3) AST — 스테로이드와 고양이</h4>
+<ul class="d">
+<li><b>Glucocorticoid?</b> AST도 유도될 수 있지만 영향은 <b>AST &lt; ALT</b></li>
+<li><b>Cat</b>: 반감기 <b>77 min</b> &lt;&lt; dog <b>12 hr</b> → 반감기 짧음 = 더 민감 → <b>severe liver dz에서 ALT보다 민감</b></li>
+</ul>
+<ul class="c">
+<li>단, 고양이는 <b>병이 상당히 진행된 뒤 내원</b> → 이미 둘 다 비슷하게 올라 있어 구분에 별 도움 안 됨 (야생성 있는 새도 마찬가지 — 병원 가면 거의 말기) <span class="tag t-rec">수업</span></li>
+<li>교수님 당부: "증상 나타나면 웬만하면 지체 말고 병원 가라" — 병은 초기에, 할 수 있으면 예방이 최고</li>
+</ul>
+<h3 class="lv2">3. ETC — 사장된 후보 효소들</h3>
+<ul class="d">
+<li>Arginase, glutamate dehydrogenase(GLDH), lactate dehydrogenase(<b>LDH</b>), sorbitol dehydrogenase(SDH), ornithine carbamoyltransferase 등 → 비용·organ specificity 문제로 다 사장, <span class="hl">살아남은 건 ALT·AST 두 가지뿐</span> <span class="tag t-rec">수업</span></li>
+<li class="f2"><b>LDH</b>(lactate dehydrogenase, 젖산 탈수소효소) = 거의 모든 세포의 세포질에 있는 대표적 <b>누출 효소</b> → <b>민감도는 매우 높지만 장기 특이도는 매우 낮음</b> <span class="tag t-pen2">필기2</span> <span class="gray">(동기 메모: Gemini 인용)</span></li>
+<li><b>LDH</b>: many tissues; <b>very non-specific</b> — 사람에선 많이 쓰지만 개·고양이엔 안 씀. 임상 장비 대부분이 <b>사람용을 개·고양이 패널로 조정</b>한 것이라 LDH가 남아 있을 수 있음</li>
+<li><b>Arginase(?)</b>: not in secondary disease / mitochondria / High? → <b>poor prognosis</b></li>
+</ul>
+<span class="pno">8</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">Ⅲ. Induction 효소 — ALP, GGT</h2>
+<h3 class="lv2">1. ALP (alkaline phosphatase)</h3>
+<ul class="d">
+<li><b>Hepatocytes and the epithelium of biliary tract</b> — L-ALP isoform (all species), <b>C-ALP</b> isoform (dog)</li>
+<li>ALP expression normally restricted to <b>canalicular membrane</b> of hepatocytes → 담즙정체 시 생리적 필요로 <b>induction</b>(+ 담관 상피 일부)</li>
+<li><b>Cholestasis and drug induction</b> (steroid, phenobarbital 등)</li>
+</ul>
+<table>
+<caption>표 5. ALP isoenzymes</caption>
+<thead><tr><th style="width:22%">Isoenzyme</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td class="kc">Liver</td><td>L-ALP — 담즙정체로 유도</td></tr>
+<tr><td class="kc">Kidney · Intestine · Placenta</td><td><b>반감기 6분</b> → 혈중 영향 거의 없음. Intestine: 장관 내로 소실 / Placenta: <b>임신 중</b> 증가 (임신견 고려)</td></tr>
+<tr class="hi"><td class="kc">Bone</td><td><b>어린 강아지</b>: ~<b>2배</b>(adult RR 대비)까지 → <span class="r">ALP↑ + GGT?</span> 같이 검사 (GGT는 뼈에 없음)</td></tr>
+<tr><td class="kc">C-ALP (개만)</td><td>Corticosteroid induced → Ⅲ-2</td></tr>
+</tbody>
+</table>
+<div class="two">
+<div>
+<div class="memo" style="margin:4px 0 0 0;">
+<div class="mt">Cat</div>
+<ul class="d">
+<li><b>Not induced by steroids</b></li>
+<li><b>Specific for cholestasis</b> → 고양이에서 ALP가 훨씬↑면 바로 검사</li>
+<li>Half life <b>6 hr</b> &lt; <b>3 days</b>(dog)</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="memo blue" style="margin:4px 0 0 0;">
+<div class="mt">Dog — 관리가 어려운 이유 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li><b>건강한데도 ALP↑</b>인 경우 많음 → 조직검사: 공포성 간세포 변성(vacuolar hepatopathy)</li>
+<li>UDCA 먹여도 안 떨어짐. 증상 없으면 안 건드려도 되지만 보호자는 계속 신경 씀</li>
+<li>Isoform 전기영동 구분: 사람은 정착, 개는 C-ALP 때문에 어려움 — 그래도 진단엔 큰 지장 없음</li>
+</ul>
+</div>
+</div>
+</div>
+<h4 class="lv3">1) Case — 6m GSD</h4>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 6</span>6m GSD — 폭발성 설사, ALP만↑</div>
+<div class="cs">acute onset explosive diarrhea, 발생 6시간 내 내원 / good condition, depressed</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">ALP</td><td class="c"><span class="up">320 H</span></td><td class="c"></td></tr>
+<tr><td class="kc">GGT</td><td class="c">14</td><td class="c">RR 안</td></tr>
+<tr><td class="kc">ALT</td><td class="c">40</td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">P</td><td class="c"><span class="up">7.8 H</span></td><td class="c"></td></tr>
+<tr><td class="kc">T Bil / Alb</td><td class="c">0.2 / 3</td><td class="c"></td></tr>
+<tr><td class="kc">Lipase / Amyl</td><td class="c">625 / 432</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALP만↑, GGT·ALT 정상</li>
+<li><b>6개월령</b> → bone ALP 활성 (어린 강아지 adult RR의 ~2배까지)</li>
+<li><b>GGT는 뼈에 없음</b> → GGT 정상이니 담관 유도가 아니라 뼈 쪽으로 해석 / P↑도 성장기 소견과 부합 <span class="gray">(정리자 보충)</span></li>
+<li>단 엄밀히는 ALP가 GGT보다 <b>빨리</b> 오르고 GGT는 서서히 → 담즙정체 초기면 ALP만↑일 수도 → 영상으로 확인하면 됨</li>
+<li>설사(발생 6시간)는 효소 해석과 별개</li>
+</ol></div></div>
+<div class="cc">결론: <b>성장기 bone ALP</b> — "어린 개 ALP↑ → GGT 같이 검사"의 전형</div>
+</div>
+<span class="pno">9</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">2) Case — 6yr sF Dachshund, abdominal pain</h4>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 7</span>6yr sF Dachshund — 복통, ALP·GGT ≫ ALT</div>
+<div class="cs">abdominal pain <span class="tag t-pen">필기</span> 복통이 있다? 췌장염 의심 (고지방식 후 가장 빈번)</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry / UA</caption><tbody>
+<tr><td class="kc">ALT</td><td class="c">63</td><td class="c"><span class="tag t-pen">필기</span> RR</td></tr>
+<tr class="hi"><td class="kc">ALP</td><td class="c"><span class="up">2,745</span></td><td class="c">~20배</td></tr>
+<tr class="hi"><td class="kc">GGT</td><td class="c"><span class="up">155</span></td><td class="c">~10배↑</td></tr>
+<tr><td class="kc">Amylase / Lipase</td><td class="c"><span class="up">2,195 / 8,593</span></td><td class="c"></td></tr>
+<tr><td class="kc">Chol / TG</td><td class="c"><span class="up">540 / 250</span></td><td class="c"></td></tr>
+<tr><td class="kc">BUN / TP / Alb</td><td class="c"><span class="up">34</span> / <span class="dn">4.0 / 1.6</span></td><td class="c"></td></tr>
+<tr><td class="kc">T. bil</td><td class="c">0.6</td><td class="c">정상</td></tr>
+<tr class="hi"><td class="kc">UA</td><td class="c">SG 1.014, <b>Bil 1+</b></td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li><span class="tag t-pen">필기</span> *<b>ALP는 매우 많이 증가, ALT는 레퍼런스 범위 → 담관계 쪽이 문제?</b></li>
+<li>Amylase·lipase↑ + 복통 → <b>췌장염</b> → 염증이 <b>총담관(common bile duct)</b>을 눌러 부분 폐색 → 담즙정체</li>
+<li>담즙정체가 심하면 <b>Chol·TG↑</b> / 못 먹어 전해질 불균형·탈수 <span class="tag t-rec">수업</span></li>
+<li>혈중 빌리루빈 정상인데 요 Bil 1+ <span class="tag t-pen">필기</span> <b>뇨농축이 안 됐는데 Positive?</b> → *<b>빌리루빈은 좀 높아졌다 싶으면 바로 배출 ∴ 신장배설 역치 낮음</b> (glucose는 ~180 넘어야)</li>
+<li>초음파로 담관 폐색 확인</li>
+</ol></div></div>
+<div class="cc">결론: <b>췌장염 → 총담관 부분 폐색 → 담즙정체</b> (담관계 우세 패턴)</div>
+<div class="tr">요 bilirubin은 혈중보다 먼저 양성 → 빌리루빈 상승의 초기 신호가 될 수 있음</div>
+</div>
+<h4 class="lv3">3) ALP가 오르는 상황</h4>
+<table>
+<caption>표 6. ALP — 무엇이 올리나</caption>
+<thead><tr><th style="width:24%">원인</th><th>내용</th></tr></thead>
+<tbody>
+<tr class="hi"><td class="kc">Bile duct obstruction</td><td><b>Increase after 8hr</b> → <b>15 times after 2–4th day</b> → <b>Latest return to normal</b> (+ Delta bilirubin!). 담즙 흐름이 제일 늦게 회복; 손상 후에도 증가 지속 → 증상 개선돼도 활성 높을 수 있음(특히 ALP)</td></tr>
+<tr><td class="kc">Diabetes mellitus</td><td>Lipid accumulation → liver cell swelling → cholestasis</td></tr>
+<tr><td class="kc">Liver cell damage</td><td>Liver cell swelling → bile canaliculi obstruction → cholestasis</td></tr>
+<tr><td class="kc">Pancreatitis</td><td>총담관 압박 → 폭발적 증가 가능</td></tr>
+<tr><td class="kc">염증에 의한 특발성??</td><td>다른 부위 염증에 간세포가 영향 많이 받음</td></tr>
+</tbody>
+</table>
+<span class="pno">10</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">4) Case — Yorkshire Terrier CM 7yr</h4>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 8</span>Yorkshire Terrier CM 7yr — 황달 + ALP·GGT 수십 배</div>
+<div class="cs">식욕부진·구토 1주, 활동력 감소, 복부 팽대 / PE: 침울, 몸을 떪, 헐떡임, 피부·점막 황달</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry / UA</caption><tbody>
+<tr><td class="kc">ALT / AST</td><td class="c"><span class="up">194 / 117</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">ALP / GGT</td><td class="c"><span class="up">2926 / 151</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">T.bil</td><td class="c"><span class="up">11.8</span></td><td class="c"></td></tr>
+<tr><td class="kc">BA (fasting)</td><td class="c"><span class="up">227</span></td><td class="c"></td></tr>
+<tr><td class="kc">T.chol / TG</td><td class="c"><span class="up">551 / 280</span></td><td class="c"></td></tr>
+<tr><td class="kc">IP</td><td class="c"><span class="up">15.1</span></td><td class="c"></td></tr>
+<tr><td class="kc">K</td><td class="c"><span class="dn">2.1</span></td><td class="c"></td></tr>
+<tr><td class="kc">WBC</td><td class="c"><span class="up">72,600</span></td><td class="c"></td></tr>
+<tr><td class="kc">요</td><td class="c">Bil +++, crystal</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALT·AST도 ~2–3배↑지만 <b>ALP·GGT는 수십 배</b> → 비율이 담관계 쪽</li>
+<li><span class="tag t-pen">필기</span> <b>물론 ALT도 높지만, ALP·GGT가 수십 배 높은 것으로 보아 담관계에 문제가 생겨서 간 쪽에 영향을 끼쳤구나.</b></li>
+<li>T.bil 11.8 + 요 Bil +++ = 간후성 황달 / BA↑ = 담즙 흐름 장애로 재흡수·배설 이상</li>
+<li>Chol·TG↑ = 담즙정체 → 고지혈증은 inorganic phosphate 등 측정 오류 유발 가능 <span class="tag t-rec">수업</span></li>
+<li>영상: 방사선·초음파 – <b>담즙 정체</b>(부분 폐색), 원인은 불명 → 대증처치(수액·항생제·간보호제) 후 회복</li>
+</ol></div></div>
+<div class="cc">결론: <b>담관계 원발 → 간 이차 손상 (간후성 담즙정체)</b></div>
+</div>
+<div class="case cat-post">
+<div class="ch"><span class="cn">Case 9</span>ALP 5403 케이스 — 담관 + 췌장</div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry / CBC</caption><tbody>
+<tr class="hi"><td class="kc">ALP</td><td class="c"><span class="up">5403</span></td><td class="c">5–131</td></tr>
+<tr><td class="kc">ALT</td><td class="c"><span class="up">529</span></td><td class="c">12–118</td></tr>
+<tr><td class="kc">AST</td><td class="c"><span class="up">139</span></td><td class="c">15–43</td></tr>
+<tr><td class="kc">GGT</td><td class="c"><span class="up">114</span></td><td class="c">0–6</td></tr>
+<tr><td class="kc">TBIL</td><td class="c"><span class="up">7.51</span></td><td class="c">0.1–0.3</td></tr>
+<tr class="hi"><td class="kc">AMYL</td><td class="c"><span class="up">8395</span></td><td class="c">206–1125</td></tr>
+<tr><td class="kc">GLU</td><td class="c"><span class="dn">31</span></td><td class="c">63–118</td></tr>
+<tr><td class="kc">WBC</td><td class="c"><span class="up">57.3</span></td><td class="c">6–17</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALP <b>~40배</b> vs ALT <b>~3–4배</b> → 무조건 <b>담관계</b> 문제</li>
+<li>맨 아래 <b>Amylase 8395</b> → 췌장염 동반 (초음파 췌장 병변)</li>
+<li>WBC 57.3 = 심한 염증 / 빈혈은 아직 RR 안</li>
+</ol></div></div>
+<div class="cc">결론: <b>췌장염 + 담관 폐색/담즙정체</b></div>
+</div>
+<h3 class="lv2">2. Corticosteroid induced ALP (CIALP, SIALP)</h3>
+<ul class="d">
+<li><b>Steroid induced or stressed</b> animals — <span class="r">개에서만</span> 있는 isoform</li>
+<li>Drug withdrawal 후에도 <b>최대 6주</b> 지속 / Normal dogs – &lt;15% / Corticosteroid – <b>up to 85%</b> of serum ALP</li>
+<li>Also increased by: primary bile duct disease, <b>DM, hypothyroidism, pancreatitis, anti-convulsant</b> → <span class="hl">쿠싱병에 의한 증가와 기타 질병에 의한 증가를 구별하기 곤란함….</span></li>
+</ul>
+<span class="pno">11</span>
+</section>
+
+<section class="page">
+<div class="memo">
+<div class="mt">*Levamisole inhibition assay — 왜 안 쓰게 됐나 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>ALP 측정 → 남은 시료에 <b>levamisole</b> 첨가 후 재측정 → 건강견은 ALP 현저히↓, 쿠싱견은 변화 적음</li>
+<li>= 다른 isoform은 levamisole에 억제, <b>CIALP는 억제 안 됨</b> → 쿠싱 진단에 쓰자(유럽)</li>
+<li>그런데 쿠싱 말고도 여러 질병에서 <b>내인성 스테로이드</b>가 오래 분비되면 CIALP↑ → <span class="r">별 도움 안 됨 → 더 이상 안 함</span></li>
+</ul>
+</div>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 10</span>MUE 진단 후 MMF + steroid 치료 중 환자</div>
+<div class="cb"><div class="cd"><table>
+<caption>날짜별 (RR)</caption><tbody>
+<tr><td class="kc">날짜</td><td class="c">24-07-15</td><td class="c">24-10-01</td><td class="c">24-10-29</td><td class="c">25-02-18</td><td class="c">RR</td></tr>
+<tr class="hi"><td class="kc">ALP</td><td class="c"><span class="up">396</span></td><td class="c"><span class="up">10,500</span></td><td class="c"><span class="up">3,568</span></td><td class="c"><span class="up">307</span></td><td class="c">47–254</td></tr>
+<tr><td class="kc">ALT</td><td class="c">43</td><td class="c"><span class="up">336</span></td><td class="c"><span class="up">130</span></td><td class="c">18</td><td class="c">17–78</td></tr>
+<tr><td class="kc">GGT</td><td class="c">6</td><td class="c"><span class="up">48</span></td><td class="c">12</td><td class="c">7</td><td class="c">5–14</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>스테로이드 투여 중 <b>ALP 10,500</b>까지 — ALT·GGT도 따라 오르지만 ALP가 압도적</li>
+<li>용량 조절·시간 경과로 ALP 감소 → 그래도 RR 위에 잔존 (CIALP는 끊고도 최대 6주)</li>
+<li>개에서 스테로이드는 ALP 최대 85%까지 차지(CIALP) → 쿠싱·DM·갑저·췌장염·항경련제와도 구별 곤란</li>
+</ol></div></div>
+<div class="cc">결론: <b>약물(glucocorticoid) 유도 ALP</b> — 약 이력이 있으면 담관 질환으로 과해석 금지</div>
+</div>
+<h3 class="lv2">3. GGT (γ-glutamyl transpeptidase)</h3>
+<ul class="d">
+<li>Transmembrane protein — expression <b>restricted to the luminal surface</b> (bile duct 내강 쪽 상피) → canaliculi도 아닌 <b>담관 내강 면</b>에서만 induction</li>
+<li><b>Cholestasis</b>; <b>Less affected by liver cell necrosis</b> (간세포 괴사에 직접 영향 적음)</li>
+<li>Isoenzyme: kidney, pancreas, intestine, heart, muscle, RBC 등 — <b>Serum GGT mainly by bile system</b> / <b>Not in bone</b></li>
+<li>~10일령 강아지: 초유(milk)의 높은 GGT 때문에 높음</li>
+<li>Induction: <b>Corticosteroid ○</b> / <b>anticonvulsant ✕</b></li>
+</ul>
+<div class="memo red">
+<div class="mt">★ GGT vs ALP <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>Dog</b>: GGT가 ALP보다 <b>specificity↑, sensitivity↓</b> — <b>reversed in cats</b></li>
+<li>특이도↑ = 위양성 적음 → 개에서 GGT↑면 <b>대부분 담관계 문제</b> (다른 원인으로 GGT가 오르는 경우 거의 없음)</li>
+<li>민감도↓ = 위음성 많음 → 담즙정체가 있는데도 GGT <b>정상</b>인 경우가 생각보다 많음 — induction에 <b>시간</b>이 걸리고, <b>내원 시점</b>을 조절할 수 없어서</li>
+<li><b>Cat</b>: <b>GGT &gt;&gt; ALP in cholestatic dz</b> / 단, hepatic lipidosis에선 GGT 없이 ALP만↑(occasional)</li>
+</ul>
+</div>
+<span class="pno">12</span>
+</section>
+
+<section class="page">
+<p style="margin:0 0 0 20px;"><span class="tag t-pen">필기</span> *<b>담즙정체가 나타나는데 ALP 수치는 정상인 이유? : 내원 시점과 담즙정체의 시작 시점이 일치하는 것은 X</b></p>
+<h4 class="lv3">1) Case — 8yr male Airedale</h4>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 11</span>8yr male Airedale — 만성 + 빌리루빈 미약↑</div>
+<div class="cs">만성 체중감소, 무기력, 간헐적 설사 / PE: emaciated, 복부 팽만, 무열</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">T. bilirubin</td><td class="c"><span class="up">1.1 H</span></td><td class="c"></td></tr>
+<tr><td class="kc">Direct bil</td><td class="c">0.6</td><td class="c"></td></tr>
+<tr><td class="kc">ALT / ALP</td><td class="c"><span class="up">120 / 800</span></td><td class="c"></td></tr>
+<tr><td class="kc">GGT</td><td class="c">30</td><td class="c"></td></tr>
+<tr><td class="kc">TP / Albumin</td><td class="c"><span class="dn">4.0 / 1.8</span></td><td class="c"></td></tr>
+<tr><td class="kc">Creatinine</td><td class="c">0.6</td><td class="c"></td></tr>
+<tr><td class="kc">HCT / Retic</td><td class="c"><span class="dn">33</span> / 0.8%</td><td class="c"></td></tr>
+<tr><td class="kc">WBC / Mono</td><td class="c"><span class="up">32,000 / 3,400</span></td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>history 먼저: <b>만성</b> 체중감소 → 어떤 장기든 만성 경과임을 예상 (history taking 중요) <span class="tag t-rec">수업</span></li>
+<li>Cr 0.6 → 뼈만 남진 않았어도 BCS 많이 떨어짐</li>
+<li>ALT·ALP 증가 정도는 크지 않지만 <b>만성</b>이면 이것도 염려스러움</li>
+<li>빌리루빈 1.1: 빈혈은 경도·비재생(retic 0.8) → 용혈성(간전성) 아님 / 효소 패턴상 폐색(간후성)도 아님</li>
+<li><span class="tag t-pen">필기</span> <b>개에서 용혈성 빈혈도 없고, 담즙정체도 없는데 빌리루빈 증가?? → 예후 매우 안 좋음.</b> (개는 간 때문에 빌리루빈이 오르는 경우가 흔치 않음 → 1–2 mg/dL만 올라도 grave)</li>
+</ol></div></div>
+<div class="cc">결론: <b>만성 간질환에 의한 간성 빌리루빈 상승 — 예후 불량</b></div>
+<div class="tr">Alb 1.8↓ = 합성 기능 저하 가능성(80% 수준) → BA·NH₃로 기능 평가 이어가기 <span class="gray">(정리자 보충)</span></div>
+</div>
+<h3 class="lv2">4. 주요 효소의 반감기</h3>
+<div class="two">
+<div>
+<table>
+<caption>표 7. 반감기 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th>효소</th><th>반감기</th></tr></thead>
+<tbody>
+<tr><td class="kc">ALT</td><td class="c">40–60 hours</td></tr>
+<tr><td class="kc">AST</td><td class="c">12 hours</td></tr>
+<tr class="hi"><td class="kc">AST in cats</td><td class="c r">77 min</td></tr>
+<tr class="hi"><td class="kc">ALP in cat</td><td class="c r">6 hours</td></tr>
+<tr><td class="kc">ALP in dog</td><td class="c">72 hours</td></tr>
+<tr><td class="kc">GGT</td><td class="c">96 hours</td></tr>
+<tr><td class="kc">SDH</td><td class="c">&lt;12 hours</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="memo" style="margin:8px 0 0 0;">
+<div class="mt">한 시점에서의 효소 활성도 =</div>
+<p style="margin:0;color:var(--ink);"><b>손상 또는 유도 + 반감기 감소 + (재생 세포 유리)…</b></p>
+<ul class="d">
+<li>재생된 간세포는 약해서 거기서도 흘러나옴 → 반감기만큼 딱 떨어지지 않음 <span class="tag t-rec">수업</span></li>
+<li>핵심: 급성은 한 번 오른 뒤 <b>서서히 감소해야</b> 예후 좋음. ALT 반감기(40–60h) 안에 안 떨어지면 불안하지만, <b>감소 추세</b>면 OK</li>
+</ul>
+</div>
+</div>
+</div>
+<span class="pno">13</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">1) 종합 — 효소들의 변화 (부산 케이스) <span class="r">✎ *잘 이해하자.</span></h4>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 12</span>부산 케이스 — Day 0 / 4 / 20 추적</div>
+<div class="cs">간·담관 양쪽 involve, 치료 후 임상증상 개선</div>
+<div class="cb"><div class="cd"><table>
+<caption>DAY 0 / 4 / 20 (RR)</caption><tbody>
+<tr><td class="kc">ALT</td><td class="c"><span class="up">1920</span></td><td class="c">888</td><td class="c">82</td><td class="c">10–90</td></tr>
+<tr><td class="kc">AST</td><td class="c"><span class="up">476</span></td><td class="c">114</td><td class="c">78</td><td class="c">15–80</td></tr>
+<tr><td class="kc">T. BIL</td><td class="c"><span class="up">12.1</span></td><td class="c">4.7</td><td class="c">0.52</td><td class="c">&lt;0.64</td></tr>
+<tr class="hi"><td class="kc">ALP</td><td class="c">1081</td><td class="c"><span class="up">1671</span></td><td class="c"><span class="up">587</span></td><td class="c">&lt;141</td></tr>
+<tr class="hi"><td class="kc">GGT</td><td class="c">29</td><td class="c"><span class="up">33</span></td><td class="c">12</td><td class="c">&lt;10</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALT·ALP 모두↑ → <b>간·담관계 양쪽 involve</b> (ALT 쪽이 좀 더 심함)</li>
+<li><b>ALT·AST·Tbil</b>: Day 0이 최고치 → 이후 계속↓ = <b>내원 시 이미 정점</b> → 내원 <b>전</b>에 원인이 작용했음!</li>
+<li><b>ALP·GGT</b>: Day 0 → Day 4에 <b>오히려↑</b> → 원인 작용 후 며칠 지나 최고치~ 그리고 서서히 감소~</li>
+<li>→ <b>이 날 처음 내원했다면 ALP·GGT 증가에 대해 판단하기 곤란!</b></li>
+<li>Day 20: 증상 개선, ALT·AST 정상인데 <span class="r">ALP 587 여전히 높음</span> → 더 지나면 ALP만 남음 (개는 멀쩡)</li>
+</ol></div></div>
+<div class="cc">결론: <b>급성 간담관 손상 후 정상 회복 경과</b> — leakage는 빨리 내려가고 induction은 늦게 내려감</div>
+<div class="tr">"ALP — unknown origin": 생뚱맞게 ALP만 높은 개 → <b>과거 병력</b> 확인. 치료가 잘 되면 효소는 전반적으로 점점 떨어진다 <span class="tag t-rec">수업</span></div>
+<div class="tr">반감기 연결: ALT 40–60h, ALP(개) 72h, GGT 96h — 한 시점 활성도 = 손상/유도 + 반감기 감소 + (재생 세포 유리)</div>
+</div>
+<h2 class="lv1">Ⅳ. 기능 지표 ① — Bilirubin</h2>
+<h3 class="lv2">1. 빌리루빈 대사</h3>
+<ul class="d">
+<li>Hemoglobin → Heme + Globin → Heme → Fe + <b>Unconjugated bilirubin (indirect)</b> → 간에서 <b>glucuronic acid conjugation</b> → <b>Conjugated bilirubin (direct)</b> → biliary system → 소장</li>
+<li>소장에서 bacterial reduction → <b>Urobilinogen</b> → 90% excreted in feces / 10% recirculates in portal system → renal excretion</li>
+<li>빌리루빈은 <b>매 순간 일정량 만들어지는 배설물</b> → 간세포가 꾸준히 처리해야 함 <span class="tag t-rec">수업</span></li>
+</ul>
+<table>
+<caption>표 8. Total serum bilirubin — 간전성·간성·간후성 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th style="width:15%">분류</th><th>원인</th><th style="width:34%">포인트</th></tr></thead>
+<tbody>
+<tr><td class="kc">간전성</td><td>용혈성 질환 — 용혈성 빈혈(IMHA), <i>Babesia</i> 등</td><td>RBC 파괴↑ → 비중합 빌리루빈↑ / RBC 제거는 주로 <b>비장</b>에서</td></tr>
+<tr class="f2"><td class="kc">간전성 + 간질환</td><td>용혈성 빈혈인데 <b>간에도 문제</b>가 있으면 <span class="tag t-pen2">필기2</span></td><td>빌리루빈 <b>증가 정도가 크고, 높게 유지되는 기간이 길어짐</b> / 반대로 간이 여유 있으면 용혈이 있어도 수치로 잘 안 보이기도</td></tr>
+<tr class="hi"><td class="kc">간성</td><td>선천성 질환(<b>Cocker spaniel, Doberman Pinscher</b>), diffuse hepatocellular swelling, severe acute hepatitis, end-stage chronic hepatitis</td><td>간세포 <b>cell mass 감소</b>로 처리 못 함 → 심하게 오르진 않음(1–2 mg/dL) — <span class="r">간성? Grave in dog</span></td></tr>
+<tr><td class="kc">간후성</td><td>췌장과 관련된 병변, 담즙 분비 장애, 종양 (+ 담석 등)</td><td>흐름 장애 → 역류. 주로 <b>영상</b>으로 접근</td></tr>
+<tr><td class="kc">Cat</td><td colspan="2"><b>very non-specific</b> — sick? → bil increase.. 간 문제가 아니어도 어딘가 아프면 많이 증가 → 고양이에선 빌리루빈 증가를 별로 문제 삼지 않음 <span class="tag t-pen">필기</span> *고양이는 빌리루빈 딱히 도움 안 됨.</td></tr>
+</tbody>
+</table>
+<span class="pno">14</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. Case — 4yr female Beagle</h3>
+<div class="case cat-mim">
+<div class="ch"><span class="cn">Case 13</span>4yr female Beagle — 간전성 (IMHA)</div>
+<div class="cs">갑작스러운 행동 변화, 무기력·과민, 식욕 저하 / PE: 매우 창백, 약간 황달 / history 비특이적</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry / UA</caption><tbody>
+<tr class="hi"><td class="kc">HCT / RBC</td><td class="c"><span class="dn">20 / 2.43</span></td><td class="c"></td></tr>
+<tr><td class="kc">Retic</td><td class="c"><span class="up">35.0 %</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">Blood film</td><td class="c">moderate <b>spherocytes</b> (2+)</td><td class="c"></td></tr>
+<tr><td class="kc">T. bil / Direct</td><td class="c"><span class="up">5.0 / 1.3</span></td><td class="c"></td></tr>
+<tr><td class="kc">ALT / ALP / GGT</td><td class="c"><span class="up">400 / 300 / 18</span></td><td class="c"></td></tr>
+<tr><td class="kc">WBC / Neut</td><td class="c"><span class="up">17,900 / 13,500</span></td><td class="c"></td></tr>
+<tr><td class="kc">UA</td><td class="c">amber, SG 1.024, Bil 2+</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>심한 <b>재생성</b> 빈혈(retic 35%) + <b>spherocyte</b> → <b>IMHA</b></li>
+<li>빌리루빈 5.0 대부분 비중합(indirect) → 용혈로 원료 과다 = <b>간전성</b></li>
+<li>ALT·ALP·GGT↑ → 빈혈에 의한 <b>hypoxia</b>(ALT primary: degenerative) 등으로 간도 일부 영향</li>
+<li>예전엔 direct/indirect로 나눠 간전성 판정 → 내원 시점에 따라 달라 <span class="r">이제는 그렇게 안 함</span> <span class="tag t-rec">수업</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>IMHA → 간전성 고빌리루빈혈증</b> (+ hypoxia성 간효소↑)</div>
+<div class="tr">감별 루틴: 빌리루빈↑ → 먼저 CBC(빈혈·형태) → 그 다음 효소 패턴·영상</div>
+</div>
+<h3 class="lv2">3. Case — 6yr female Doberman</h3>
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 14</span>6yr female Doberman — 간성 (만성 간염)</div>
+<div class="cs">PU/PD(원인 불명), 2주간 bloated / PE: 현저한 복수, 탈수 X, 심장 청진 정상</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry / UA</caption><tbody>
+<tr class="hi"><td class="kc">T. bil / Direct</td><td class="c"><span class="up">1.0 / 0.6</span></td><td class="c"></td></tr>
+<tr><td class="kc">ALT / ALP / GGT</td><td class="c"><span class="up">307 / 680 / 25</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">Albumin / TP</td><td class="c"><span class="dn">1.8 / 5.0</span></td><td class="c"></td></tr>
+<tr><td class="kc">Ca</td><td class="c"><span class="dn">9.1 L</span></td><td class="c"></td></tr>
+<tr><td class="kc">HCT</td><td class="c">44</td><td class="c">빈혈 X</td></tr>
+<tr><td class="kc">UA</td><td class="c">SG 1.010, Bil 4+</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>빈혈 없음 → <b>간전성 배제</b></li>
+<li>ALT·ALP 증가 정도가 <b>비슷</b> → 폐색(간후성) 패턴 아님</li>
+<li>남은 건 <b>간성</b> — 빌리루빈 1.0으로 미약↑지만 개에서 간성은 <b>불길</b></li>
+<li><b>도베르만</b> + 간효소↑ + 빌리루빈↑ → <b>만성 간염</b>, 소인은 타고남 (중년 암컷, 구리 축적, 간경화율↑)</li>
+<li>복수: Alb 1.8 — 보통 1.5 이하에서 맑은 복수지만 간이 나쁘면(portal hypertension) 1.8도 가능 <span class="tag t-rec">수업</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>도베르만 만성 간염(간성 빌리루빈) — prognosis 매우 나쁨</b></div>
+<div class="tr">PU/PD + 복수 감별(슬라이드): 신장·자궁축농증·쿠싱·DM·심부전·저단백혈증 — 패널로 간·신장·GI 같이 평가</div>
+</div>
+<h3 class="lv2">4. Functional cholestasis</h3>
+<ul class="d">
+<li>해부학적으로 canaliculi·담관 흐름 장애의 명확한 증거가 <b>없는데도</b> 빌리루빈↑ → 조사해 보니 대부분 <b>세균 감염</b></li>
+</ul>
+<span class="pno">15</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 9. Cholestasis Associated With Extrahepatic Bacterial Infection in Five Dogs (J Vet Int Med 1989)</caption>
+<tbody>
+<tr><td class="kc" style="width:22%">원발 감염</td><td>pneumonia, peritonitis secondary to a rectal tear, urinary tract infection, bite wounds, vegetative endocarditis</td></tr>
+<tr><td class="kc">원인균</td><td><i class="sp">Escherichia coli</i> 2마리, mixed 1마리, gram-positive cocci 2마리</td></tr>
+<tr class="hi"><td class="kc">Total bilirubin</td><td><b class="r">3.5 to 33.5 mg/dL</b> — 아주 심하게↑</td></tr>
+<tr><td class="kc">간효소</td><td>only <b>mild to moderate</b> increases</td></tr>
+<tr><td class="kc">조직</td><td>hepatocytes·canaliculi·Kupffer's cells에 bile pigment 축적, 실질 염증 변화는 minimal</td></tr>
+</tbody>
+</table>
+<div class="memo blue">
+<div class="mt">기전 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>정상: 간세포가 sinusoid(basolateral; NTCP·OATP)에서 비중합 빌리루빈 uptake → 중합 → <b>canalicular membrane의 수용체(BSEP·MRP2)</b>로 canaliculi에 배출</li>
+<li>염증이 심하면 → canalicular 쪽 <b>direct bilirubin 배설 수용체 발현이 억제</b> → 다시 <b>sinusoid 쪽으로 역류</b> = functional cholestasis</li>
+<li>교수님 생각: <b>고양이는 아프면 functional cholestasis가 잘 생기는 듯</b> → 아픈 고양이 대부분 빌리루빈↑ → 질병 특이성 낮음</li>
+<li>개도 세균 감염 시 생길 수 있어 생각할 거리가 많음 → 그래서 빌리루빈이 약간 "천시"받는 경향</li>
+</ul>
+</div>
+<h3 class="lv2">5. Delta bilirubin (δ bilirubin)</h3>
+<ul class="d">
+<li>중합 빌리루빈 중에서 <b>단백질(albumin)과 비가역적인 결합</b> — 혈중 빌리루빈이 고농도로 <b>~1주일</b> 정도 유지되면 생김</li>
+<li>신장으로 즉시 배설 안 됨 → <b>반감기는 알부민과 비슷(약 3주)</b></li>
+<li>"<b>증상 개선 후 오래도록 빌리루빈 증가</b>" — 예: <b>췌장염에 이은 빌리루빈 증가</b> (수의사 단골 질문: "췌장염은 잘 치료됐는데 빌리루빈이 왜 계속 높죠?")</li>
+<li>따로 측정하지는 않음</li>
+</ul>
+<h2 class="lv1">Ⅴ. 기능 지표 ② — Bile acid</h2>
+<h3 class="lv2">1. 원리</h3>
+<ul class="d">
+<li>Cholesterol → cholic acid / chenodeoxycholic acid → amino acid conjugation → <b>Bile acids</b> → gall bladder 저장 → 배설 (BILE ACID + BILIRUBIN + CHOLESTEROL = <b>BILE JUICE</b>)</li>
+<li>빌리루빈과 차이 <span class="tag t-ex">시험</span></li>
+</ul>
+<ul class="c">
+<li>빌리루빈: 대부분 <b>변으로 배설</b></li>
+<li>Bile acid: <b>95–98% 회수</b>(portal circulation) → sinusoid 지날 때 간세포가 <b>re-uptake</b> → 혈중 농도 <b>매우 낮게</b> 유지 (fecal excretion 2–5%)</li>
+<li>Portal에서 re-uptake가 제대로 안 됨 = <b>간 기능 문제</b>(cell mass↓, 저형성, 만성 간부전) 또는 <b>혈관이 간을 우회</b></li>
+</ul>
+<span class="pno">16</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. 적응증</h3>
+<ul class="d">
+<li><b>PSS</b> portosystemic shunt, or <b>MVD</b>(microvascular dysplasia = intrahepatic shunt) of liver — Portosystemic vascular anomalies(PVA), Primary hypoplasia of the portal vein(PHPV), Hepatic vein hypoplasia → <b>어린 개</b> 혈관 이형성 감별에 특히 도움</li>
+<li><b>기능저하</b>; 간경화 또는 만성 간염</li>
+<li>혈관 이상이 아닌데 BA↑ → 간 <b>~40% 손상</b>으로 해석</li>
+<li>국내엔 <b>2001년경</b>부터 시약 도입·검사, 처음엔 인기 많았지만 알면 알수록 해석이 어려워짐 → "암모니아가 낫나 BA가 낫나" 논쟁 <span class="tag t-rec">수업</span></li>
+</ul>
+<h3 class="lv2">3. 방법</h3>
+<table>
+<caption>표 10. Bile acid 검사법</caption>
+<tbody>
+<tr><td class="kc" style="width:22%">Fasting</td><td>절식 → 혈청 검사</td></tr>
+<tr class="hi"><td class="kc">Postprandial</td><td>절식 후 <b>5kg 기준</b>으로: 이상 <b>2 tablespoons of P/D</b>, 이하 <b>2 teaspoons of P/D</b> → <b>2시간 후 채혈</b>, 혈청으로 검사</td></tr>
+<tr><td class="kc">왜 P/D?</td><td>고지방식 → bile juice 분비 자극 → 분비된 BA가 얼마나 잘 re-uptake되나 봄</td></tr>
+<tr class="hi"><td class="kc">주의</td><td><b>절식 BA는 ~100 µmol/L까지 증가 가능</b> — 공복기에도 불특정하게 분비됨이 알려짐 → <b>식전·식후 같이 검사</b> + 임상증상 or 다른 검사(<b>ammonia</b>)</td></tr>
+</tbody>
+</table>
+<div class="memo">
+<div class="mt">Resting vs postprandial SBA (J Vet Intern Med 2021; 341마리, 간생검 확진)</div>
+<ul class="d">
+<li>Resting 중앙값 최고: cirrhosis 98.8, congenital circulatory anomalies(CCa) 79.45 µmol/L</li>
+<li>Cut-off 10 µmol/L에서 민감도 — resting: CCa 87.5%, CH 81.1% / postprandial: cholangitis 100%, CCa 91.1%</li>
+<li>특이도(전체): resting <b>49.3%</b> / postprandial <b>29.7%</b></li>
+<li>결론: <b>Postprandial이 더 sensitive, 덜 specific</b>. 모든 간질환군에 resting &lt;10과 &gt;90인 개가 다 있음 → 정상값도 증가값도 신중히 해석</li>
+</ul>
+</div>
+<span class="pno">17</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">4. Case — Pekinese F 9m 2.8kg</h3>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 15</span>Pekinese F 9m — 어린 나이 + MCV↓ + BA 197/235</div>
+<div class="cs">어릴 때부터 활력 감소, melena, 진한 노란 소변 / 2개월 전 간 질환 치료 / PE: lethargy, <b>menace reflex 양측 미약</b></div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chem / UA / BA</caption><tbody>
+<tr class="hi"><td class="kc">MCV</td><td class="c"><span class="dn">57</span></td><td class="c">60–75</td></tr>
+<tr><td class="kc">ALT / ALP</td><td class="c"><span class="up">541 / 1140</span></td><td class="c">6–70 / 8–76</td></tr>
+<tr><td class="kc">GGT</td><td class="c"><span class="up">11</span></td><td class="c">0–8</td></tr>
+<tr><td class="kc">T Chol / Alb</td><td class="c"><span class="dn">63 / 2.3</span></td><td class="c"></td></tr>
+<tr><td class="kc">BUN</td><td class="c">17</td><td class="c">RR 안</td></tr>
+<tr><td class="kc">Glucose</td><td class="c"><span class="up">167</span></td><td class="c">60–115</td></tr>
+<tr class="hi"><td class="kc">BA pre / post</td><td class="c"><span class="up">197 / 235</span></td><td class="c">µmol/L</td></tr>
+<tr><td class="kc">UA</td><td class="c">ammonium biurate</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>menace reflex 미약 = 위협에 깜빡임·회피 없음 → 취한 듯 (간성 뇌증 의심)</li>
+<li><b>MCV↓</b>: 페키니즈는 소적혈구 품종 아님(진돗개·아시아계만 낮음) → 어린 나이 + MCV↓ → <b>PSS</b> 의심</li>
+<li>효소↑ = 간 손상 지속 / Chol·Alb↓ = 저형성으로 기능↓ (BUN은 RR 안)</li>
+<li>Glucose↑: 간 기능 저하에도 <b>고혈당</b> 가능 — 간이 혈당 조절에 관여(식후 혈당이 잘 안 떨어짐) <span class="tag t-rec">수업</span></li>
+<li>BA <b>식전·식후 둘 다</b> 크게↑ + 요 <b>ammonium biurate</b> 결정(암모니아·요산↑) + 영상 microhepatica</li>
+</ol></div></div>
+<div class="cc">결론: <b>PSS(간 저형성)</b> → 수술(shunt ring) 후 <b>BA 정상화까지 모니터링</b></div>
+<div class="tr">방사선에서 microhepatica면 추가 검사 없이도 PSS 가능성 높음 <span class="tag t-rec">수업</span></div>
+</div>
+<h3 class="lv2">5. Bile acid &amp; Maltese dog (&amp; other toy breeds??)</h3>
+<ul class="d">
+<li>BA 활용: <b>간 질환 시 치료 monitoring</b> / <b>약물에 의한 효소 유도 감별</b> → '정상' bile acid</li>
+<li><span class="hl"><b>Maltese</b>는 정상적으로 높음</span> (거짓 증가*) → <b>ammonia, ammonia 내성 시험</b> 필요 <span class="tag t-ex">시험</span></li>
+</ul>
+<table>
+<caption>표 11. 말티즈 BA 연구의 역사</caption>
+<tbody>
+<tr><td class="kc" style="width:24%">Aust Vet J</td><td>호주(말티즈 많음): <b>효소법 → 증가 / HPLC → 정상</b> → "말티즈 혈장에 간섭물질?"</td></tr>
+<tr class="hi"><td class="kc">J Small Anim Pract 2014</td><td>말티즈에서 <b>MVD 비율이 높다</b> — extra-hepatic PSS와 높은 postprandial BA 모두 <b>유전</b>된다는 강한 근거 → 괜히 높은 게 아님</td></tr>
+<tr><td class="kc">In Vivo 2023</td><td>PSS 있는 말티즈에서 SBA 높지만 <b>수술 후 감소</b> → 애초에 혈관장애가 많았을??</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 국내 토이 브리드도 높은 경우가 많다는 얘기가 나옴 <span class="tag t-rec">수업</span></p>
+<h2 class="lv1">Ⅵ. 기능 지표 ③ — Ammonia</h2>
+<h3 class="lv2">1. 방법 &amp; 주의 사항</h3>
+<ul class="d">
+<li><b>Ice chilled tube</b>에 채혈 → <b>냉장 원심분리기</b>로 → <b>Centrifuge and separate as soon as possible</b> after blood collecting</li>
+<li>부적절한 핸들링·지연 시 ↑ or ↓ 다양: <b>휘발성</b>, <b>혈구가 만들기도</b>, 시료 내 아미노산·단백질이 암모니아로 변환 → 예측 어려움</li>
+<li>로컬 병원엔 냉장 원심분리기가 거의 없으니 최소한 <b>얼음에 두고 빠르게</b> 검사 <span class="tag t-rec">수업</span></li>
+<li>(1장 보관: 암모니아는 <b>즉시 검사</b> 항목 / 조교 통해 다양한 상황에서 암모니아 측정 실습 예정)</li>
+</ul>
+<span class="pno">18</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">2. Bile acid versus Ammonia in cats, and dogs</h3>
+<table>
+<caption>표 12. PSS 진단 민감도·특이도 (Vet Clin Pathol 2010, 공복 암모니아 vs 혈청 BA)</caption>
+<thead><tr><th colspan="2"></th><th></th><th>Dog</th><th>Cat</th></tr></thead>
+<tbody>
+<tr><td class="kc" rowspan="2">laboratory limit</td><td class="kc">ammonia</td><td>sens / spec</td><td class="c">85 / 86</td><td class="c">83 / 76</td></tr>
+<tr class="hi"><td class="kc">bile acid</td><td>sens / spec</td><td class="c">93 / 67</td><td class="c"><b class="r">100</b> / 71</td></tr>
+<tr><td class="kc" rowspan="2">cut-off optimized</td><td class="kc">ammonia</td><td>sens / spec</td><td class="c"><b>91 / 84</b></td><td class="c">83 / 86</td></tr>
+<tr class="hi"><td class="kc">bile acid</td><td>sens / spec</td><td class="c">78 / 87</td><td class="c"><b class="r">100</b> / 84</td></tr>
+</tbody>
+</table>
+<ul class="d">
+<li>J Vet Intern Med 2006 (337마리): PVA 검출 민감도 AMM 100% vs BA 92.2%, 간질환견 중 shunt 검출 특이도 AMM 89.3% vs BA 17.9% → <b>AMM이 PSS 검출에 민감·특이</b>, BA는 덜 민감하고 훨씬 덜 특이</li>
+</ul>
+<div class="memo red">
+<div class="mt">★ 결론 <span class="tag t-ex">시험</span></div>
+<ul class="d">
+<li><b>개</b>: 큰 차이 없음 → <b>암모니아 + BA 둘 다</b> 하는 게 좋음</li>
+<li><b>고양이</b>: <b>BA</b>가 더 나음 → 주로 BA 추천 (육식이라 암모니아 수치가 애매)</li>
+</ul>
+</div>
+<h2 class="lv1">Ⅶ. 병인론 — 개</h2>
+<h3 class="lv2">1. 만성 간염 선천적 소인 품종</h3>
+<ul class="d">
+<li><b>Bedlington terriers*</b>, <b>West Highland white terriers</b>, <b>Doberman Pinscher</b>(middle age), <b>Golden Retriever</b>, <b>Cocker spaniel</b></li>
+<li>최근 증가: Skye Terriers, Standard Poodles, Springer Spaniels, Chihuahuas, <b>Maltese</b></li>
+<li>어릴 땐 잘 살다가 <b>4–5살쯤 갑자기 아프기 시작</b> → 증상 생긴 지 얼마 안 됐는데 검사·조직검사 하면 <b>이미 만성 간부전</b> 상태 (타고났기 때문) <span class="tag t-rec">수업</span></li>
+<li>개는 <b>선천적 소인</b>이 많고, 간담관 <b>염증은 드묾</b>, 원발·전이 종양은 종종</li>
+</ul>
+<table>
+<caption>표 13. Doberman vs Cocker spaniel <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th></th><th>Doberman</th><th>Cocker Spaniel</th></tr></thead>
+<tbody>
+<tr><td class="kc">호발</td><td><b>중년의 암컷</b></td><td><b>수컷, young adult</b></td></tr>
+<tr><td class="kc">질환</td><td>만성 간염, <b>높은 간경화 발생률</b>, 구리 축적</td><td>만성 간염, 구리 축적 (도베르만만큼 심하진 않음)</td></tr>
+<tr><td class="kc">발현</td><td>급성 발현</td><td>급성 발현</td></tr>
+<tr class="hi"><td class="kc">증상</td><td><b>복수, 황달, 체중감소</b>, 간뇌증, 출혈소인, 담즙 정체</td><td><b>복수, 현저한 저알부민혈증</b></td></tr>
+<tr class="hi"><td class="kc">예후</td><td><b>불량</b></td><td><b>불량</b> — 진단받고 그 자리를 넘기지 못한다(Saunders)</td></tr>
+</tbody>
+</table>
+<span class="pno">19</span>
+</section>
+
+<section class="page">
+<div class="case cat-ren">
+<div class="ch"><span class="cn">Case 16</span>Cocker spaniel 1년 cM — 효소는 경미, 그러나 코카</div>
+<div class="cs">복부 팽만 1개월, 호흡곤란, 검은 변·혈변 / PE: 점막 창백, 복수</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">TP / Alb</td><td class="c"><span class="dn">3.4 / 1.1</span></td><td class="c">5–7.2 / 3.1–4.5</td></tr>
+<tr><td class="kc">ALT / ALP</td><td class="c"><span class="up">107 / 197</span></td><td class="c">6–70 / 8–76</td></tr>
+<tr><td class="kc">GGT</td><td class="c">8</td><td class="c">0–8</td></tr>
+<tr><td class="kc">HCT</td><td class="c"><span class="dn">32</span></td><td class="c">37–55</td></tr>
+<tr><td class="kc">WBC</td><td class="c"><span class="up">21,300</span></td><td class="c"></td></tr>
+<tr><td class="kc">K</td><td class="c"><span class="up">5.8</span></td><td class="c">4.0–5.4</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>효소 증가 정도는 심하지 않아 보임</li>
+<li>그러나 <b>현저한 저알부민(1.1)</b> + 복수 → 코카 만성 간염의 전형 소견 (수컷 young adult, 구리 축적)</li>
+<li><b>코카 + 이 소견 = 긴장</b> → 암모니아 검사 등 필요했으나 보호자 원치 않음</li>
+<li>prednisolone·UDA·항생제·furosemide → 복수 감소·이뇨제 반응 → 보호자 회의적 → <b>폐사</b> (2003-01-24 → 01-27)</li>
+</ol></div></div>
+<div class="cc">결론: <b>코카 스파니엘 만성 간염</b> — 진단받고 그 자리를 넘기지 못한다(Saunders)</div>
+<div class="tr">효소 숫자가 작아도 <b>품종 + 저알부민 + 복수</b>면 이미 진행된 만성 간부전으로 봐야 함</div>
+</div>
+<h3 class="lv2">2. 구리(copper) 축적</h3>
+<ul class="d">
+<li><b>Bedlington terrier</b>: 유전자 이상 — <b>COMMD1</b> (Copper Metabolism MURR1 domain protein 1) → 과장하면 <span class="hl">간이 그냥 구리 덩어리</span>, 간세포 안에 구리 과립이 다수 관찰(특수염색) → <b>구리 축적이 직접 원인</b></li>
+<li>요즘 <b>유전자 검사</b> 가능 → 변이 있으면 소인 → 증상(식욕↓, 기운 없음) 있으면 무조건, 건강해도 미리미리 <span class="tag t-rec">수업</span></li>
+<li>도베르만·리트리버 등: 축적 농도가 높지 않음 → <b>만성 간부전의 결과인지 원인인지 아직 논란</b></li>
+<li>구리 농도: <b>간 생검</b> 조직을 의뢰해 측정 / 치료: 구리 킬레이터 <b>penicillamine</b></li>
+</ul>
+<h2 class="lv1">Ⅷ. 병인론 — 고양이</h2>
+<h3 class="lv2">1. 고양이는 개와 다르다</h3>
+<ul class="d">
+<li>개 = 선천적 소인 多, 염증 드묾 / <b>고양이 = 염증이 생각보다 많음</b> → <span class="r">세포검사·생검이 거의 필수</span></li>
+<li>ALT·ALP·GGT 셋 중 <b>하나라도↑</b> → <b>Triaditis</b> = <b>cholangiohepatitis + pancreatitis + IBD</b> (진행된 후 내원하니 어디서 시작했든 세트로 옴) → <b>FNA &amp; Biopsy!!!</b></li>
+<li>고양이는 상당히 진행된 다음 내원 → 병원 오면 <b>종합검사</b>를 돌리는 게 좋음</li>
+</ul>
+<table>
+<caption>표 14. ALT, ALP, GGT in cats</caption>
+<thead><tr><th style="width:18%"></th><th>내용</th></tr></thead>
+<tbody>
+<tr><td class="kc">ALT</td><td>liver disease / <b>hyperthyroidism</b>, feline heartworm disease, <b>FIP</b>, neoplasia……. 감별 필요</td></tr>
+<tr class="hi"><td class="kc">ALP &amp; GGT</td><td>심한 질환에서도 <b>modest하게만</b> 증가 / <b>no glucocorticosteroid or drug induction</b> / GGT in kidney and pancreas? <b>minimal!</b></td></tr>
+<tr><td class="kc">ALP &amp; GGT 감별</td><td><b>Pancreatitis, cholangitis, or EHBDO</b>(extrahepatic bile duct obstruction)</td></tr>
+<tr class="hi"><td class="kc">Hepatic lipidosis</td><td><b>large increases in ALP</b> and normal or slight increase in GGT</td></tr>
+<tr><td class="kc">Mixed lesions?</td><td>딱 구별돼서 오지 않고 섞여서 오는 경우 많음 → 종합적으로</td></tr>
+</tbody>
+</table>
+<span class="pno">20</span>
+</section>
+
+<section class="page">
+<table>
+<caption>표 15. 고양이 주요 3대 간질환 감별 <span class="tag t-ex" style="background:#fff;">시험</span></caption>
+<thead><tr><th>검사</th><th>SCH</th><th>LPH</th><th>HL</th></tr></thead>
+<tbody>
+<tr><td class="kc">호중구 증가</td><td class="c r">있음*</td><td class="c">없음</td><td class="c">없음</td></tr>
+<tr><td class="kc">핵좌방이동</td><td class="c r">있음</td><td class="c">없음</td><td class="c">없음</td></tr>
+<tr><td class="kc">ALT</td><td class="c">중등~현저 증가</td><td class="c">미약한 증가</td><td class="c r">현저한 증가</td></tr>
+<tr><td class="kc">ALP</td><td class="c">미약 또는 증가 없음</td><td class="c">미약 또는 증가 없음</td><td class="c r">현저한 증가</td></tr>
+<tr><td class="kc">Bilirubin</td><td class="c">경도~중등 증가</td><td class="c">미약 증가</td><td class="c r">현저한 증가</td></tr>
+<tr><td class="kc">연령</td><td class="c">young~middle aged</td><td class="c">old aged</td><td class="c"></td></tr>
+</tbody>
+</table>
+<p class="tnote">* 만성이 되면 없을 수도 있음 · SCH = suppurative cholangiohepatitis(화농성, 세균 감염 가능성↑) · LPH = lymphocytic portal hepatitis(림프구성, 만성) · HL = hepatic lipidosis(간 지질증) — 감별: 초음파 → FNA 세포검사 → 필요하면 생검</p>
+<h3 class="lv2">2. 언제 고양이 간담낭을 FNA? → <span class="r">효소 활성도 증가한 경우.</span></h3>
+<ul class="d">
+<li>보통 초음파에서 <b>에코 변화가 있을 때만</b> FNA → 하지만 염증으로 에코 변화가 생기려면 이미 심한 것. 림프구성·초기 lipidosis는 에코 변화가 별로 없음 <span class="tag t-rec">수업</span></li>
+<li>Ultrasonographic Findings of Feline Cholangitis (JAAHA 2012): 대부분의 cholangitis 고양이가 <b>정상 간 크기·에코·담도</b> → <b>간효소↑면 에코 변화 없어도 FNA</b>하는 게 좋다 (영상 전문가들의 논문)</li>
+</ul>
+<h4 class="lv3">1) Case — DSH M 8yr</h4>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 17</span>DSH M 8yr — 고양이 효소 두루↑ → 생검</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry</caption><tbody>
+<tr><td class="kc">TBIL</td><td class="c"><span class="up">4.6</span></td><td class="c">0.0–0.9</td></tr>
+<tr class="hi"><td class="kc">ALT</td><td class="c"><span class="up">449</span></td><td class="c">12–130</td></tr>
+<tr><td class="kc">ALP / GGT</td><td class="c"><span class="up">200 / 18</span></td><td class="c">14–111 / 0–10</td></tr>
+<tr><td class="kc">TRIG / CHOL</td><td class="c"><span class="up">180 / 480</span></td><td class="c"></td></tr>
+<tr class="hi"><td class="kc">WBC / Neut</td><td class="c"><span class="up">39.8 / 35.8</span></td><td class="c"></td></tr>
+<tr><td class="kc">HCT</td><td class="c"><span class="dn">25</span></td><td class="c">30–47</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>고양이 빌리루빈 → 아프면 오름 → <b>특별한 의미 부여 X</b></li>
+<li>GGT·ALP·ALT <b>두루두루</b>↑ → 고양이는 셋 중 하나만 올라도 triaditis 염두 → <b>FNA·생검</b></li>
+<li>담즙정체로 TG·Chol↑</li>
+<li>호중구성 백혈구 증가 → 3대 간질환 감별표에서 <b>SCH(화농성)</b> 쪽 (호중구↑는 SCH만)</li>
+<li>Additional: <b>hepatic biopsy and culture</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>Bacterial cholangiohepatitis</b> (SCH)</div>
+<div class="tr">고양이 GGT는 원래 매우 낮음(68개 중 24개만 1–3 U/L 검출) → GGT 18은 의미 있는 상승 <span class="gray">(정리자 보충)</span></div>
+</div>
+<span class="pno">21</span>
+</section>
+
+<section class="page">
+<h4 class="lv3">2) Case — Persian 12yr, 담낭 FNA</h4>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 18</span>Persian 12yr — 발작 응급 내원, 황달</div>
+<div class="cs">ALP &amp; GGT 2–3배 상승, Bil 7 mg/dL</div>
+<div class="cb"><div class="cd"><table>
+<caption>소견</caption><tbody>
+<tr><td class="kc">ALP / GGT</td><td class="c">2–3배↑</td><td class="c"></td></tr>
+<tr><td class="kc">Bil</td><td class="c"><span class="up">7</span></td><td class="c">mg/dL</td></tr>
+<tr><td class="kc">담즙 FNA</td><td class="c">보라·분홍 물질, 호중구, 막대균</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>고양이 ALP·GGT는 심해도 <b>modest하게만</b>↑ → 2–3배도 의미 있음</li>
+<li>정상 담즙 = gray-blue, 연하고 특별한 것 없어야 함</li>
+<li>여기선 호중구 + 파란 막대(세균) <span class="tag t-pen">필기</span> <b>이 안에 다 담즙에 감염된 세균</b></li>
+<li>담낭 FNA는 담즙 누출 위험 있지만 필요하면 해야 함 <span class="tag t-rec">수업</span></li>
+</ol></div></div>
+<div class="cc">결론: <b>세균성 담즙 감염(담관염)</b></div>
+</div>
+<h4 class="lv3">3) Case — Lymphocytic portal hepatitis</h4>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 19</span>고양이 — T-bil 11, ALP &gt;2000, GGT 19</div>
+<div class="cs">초음파: 담낭벽 비후</div>
+<div class="cb"><div class="cd"><table>
+<caption>소견</caption><tbody>
+<tr><td class="kc">T-bil</td><td class="c"><span class="up">11</span></td><td class="c"></td></tr>
+<tr><td class="kc">ALP</td><td class="c"><span class="up">&gt;2000</span></td><td class="c"></td></tr>
+<tr><td class="kc">GGT</td><td class="c"><span class="up">19</span></td><td class="c"></td></tr>
+<tr><td class="kc">FNA</td><td class="c">림프구 다수 침윤</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>ALP·GGT↑ + 담낭벽 비후 → 담관계 문제</li>
+<li>FNA: 림프구 다수 → <b>LPH</b>(lymphocytic portal hepatitis)</li>
+<li><b>CLL 감별? → 말초 혈액 도말표본 확인!</b></li>
+<li>Feline cholangitis/cholangiohepatitis syndrome(CCHS) — triaditis(cholangitis·pancreatitis·IBD)로 같이 생각</li>
+</ol></div></div>
+<div class="cc">결론: <b>Lymphocytic portal hepatitis (LPH)</b></div>
+</div>
+<h4 class="lv3">4) Hepatic lipidosis</h4>
+<ul class="d">
+<li>식욕부진, 황달, <b>간수치 모두 상승</b> / 세포: 지질 자리에 원형의 염색 안 되는 <b>공포(vacuole)</b> — 간세포 안·밖 → 진단 비교적 수월</li>
+<li>개: 당뇨 등으로 지질 축적돼도 <b>특별한 증상 없음</b> / 고양이: 관리 까다롭고 조절 안 되면 <b>예후 나쁨</b> (육식이라 아파도 먹어야 함)</li>
+<li>수의사에게: "<b>기저 질환을 찾아라</b>" — 환경 요인 포함 (사료·물통 색 변화, 새 고양이 입양에도 스트레스) <span class="tag t-rec">수업</span></li>
+</ul>
+<h4 class="lv3">5) Cholangitis, obstruction — 연속 데이터</h4>
+<ul class="c"><li>2024-08-15~31: ALT 588 → 85·55, ALKP 128 → 77, T.bil 5.7 → 0.3 → <b>치료가 잘 되면 한 번 증가했던 효소 활성도는 감소</b></li></ul>
+<span class="pno">22</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">3. Case — 10yr CM DSH, 갑상선 기능 항진증</h3>
+<div class="case cat-pre">
+<div class="ch"><span class="cn">Case 20</span>10yr CM DSH — weight loss + polyphagia, 간효소↑</div>
+<div class="cs">체중감소인데 <b>잘 먹음</b></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry</caption><tbody>
+<tr><td class="kc">ALP</td><td class="c"><span class="up">95</span></td><td class="c">&lt;50</td></tr>
+<tr><td class="kc">AST</td><td class="c"><span class="up">135</span></td><td class="c">&lt;60</td></tr>
+<tr><td class="kc">ALT</td><td class="c"><span class="up">243</span></td><td class="c">25–90</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>노령묘 + 체중감소 + <b>다식</b> → 대사 항진</li>
+<li>ALT·ALP↑ — 갑상선 항진 고양이의 <b>ALT↑ 88%, ALP↑ 76%</b></li>
+<li>Increased L-ALP (and B-ALP) <b>due to hyperthyroidism</b> — 간 원발 아님</li>
+<li>what additional tests? → <b>T4</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>갑상선 기능 항진증에 의한 간효소 상승</b></div>
+<div class="tr">나이 든 고양이 간수치↑ → 갑상선 항진증 <b>꼭 체크</b> (국내 증가 중) <span class="tag t-rec">수업</span></div>
+</div>
+<h3 class="lv2">4. Case — cat 3yr, seizure (PSS)</h3>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 21</span>cat 3yr seizure — MCV↓, NH₃ 경계, BA↑</div>
+<div class="cs">신경증상으로 내원</div>
+<div class="cb"><div class="cd"><table>
+<caption>CBC / Chemistry</caption><tbody>
+<tr class="hi"><td class="kc">MCV</td><td class="c"><span class="dn">31.5</span></td><td class="c">39–52</td></tr>
+<tr><td class="kc">RBC / HCT</td><td class="c">11.34 / 35.7</td><td class="c"></td></tr>
+<tr><td class="kc">ALT</td><td class="c"><span class="up">314</span></td><td class="c">13–75</td></tr>
+<tr class="hi"><td class="kc">NH₃</td><td class="c"><span class="up">98</span></td><td class="c">0–95</td></tr>
+<tr class="hi"><td class="kc">BA fasting / post</td><td class="c"><span class="up">16 / 53</span></td><td class="c">&lt;5 / &gt;30</td></tr>
+<tr><td class="kc">Alb / Chol / BUN</td><td class="c">3.2 / 126 / 22</td><td class="c">RR 안</td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>빈혈 없는데 <b>MCV 현저히↓</b> → 루틴 CBC 중 PSS 단서</li>
+<li>NH₃ 98 = upper limit 수준 → 애매</li>
+<li>BA는 공복·식후 둘 다 의미 있게↑</li>
+<li>경계값이 애매할 때 → 건강하면 지켜보고, 의심 질환 있으면 <b>연관 검사를 세트로</b> (CBC + chem)</li>
+<li>CT: <b>shunt 2개</b> — 고양이는 복합 shunt 多</li>
+</ol></div></div>
+<div class="cc">결론: <b>고양이 PSS</b> — 고양이는 BA가 NH₃보다 유용</div>
+<div class="tr">고양이 PSS는 underestimated: 증상 약하면 안 데려와서 나이 들어 발견 / CEHPSS 34마리: NH₃ 중앙값 217 <span class="tag t-rec">수업</span></div>
+</div>
+<span class="pno">23</span>
+</section>
+
+<section class="page">
+<h3 class="lv2">5. Case — Inborn Error of Metabolism (IEM), 18개월 American Shorthair</h3>
+<div class="case cat-oth">
+<div class="ch"><span class="cn">Case 22</span>18개월 ASH — BA 정상인데 NH₃만↑</div>
+<div class="cs">성장 장애, <b>식후 침울</b></div>
+<div class="cb"><div class="cd"><table>
+<caption>Chemistry</caption><tbody>
+<tr><td class="kc">ALT</td><td class="c"><span class="up">367</span></td><td class="c">10–109</td></tr>
+<tr><td class="kc">AST</td><td class="c"><span class="up">131</span></td><td class="c">13–85</td></tr>
+<tr class="hi"><td class="kc">BA 공복 / 식후</td><td class="c">6.5 / 9.5</td><td class="c">&lt;10</td></tr>
+<tr class="hi"><td class="kc">Ammonia</td><td class="c"><span class="up">396 / 785</span></td><td class="c">&lt;50 µg/L</td></tr>
+<tr><td class="kc">2개월 후</td><td class="c">ALT 255, AST 61, NH₃ 300 유지</td><td class="c"></td></tr>
+</tbody></table></div><div class="ci"><ol class="st">
+<li>간효소↑ + 식후 침울 → 간 기능? → BA 검사: <b>정상</b> → 간 기능 저하는 없어 보임</li>
+<li>그런데 <b>NH₃는 심하게↑</b>(식후 더↑)</li>
+<li>NH₃는 BA보다 <b>더 심한 손상</b>에서 오름 → NH₃↑면 BA도 당연히↑여야 하는데 정상 → 앞뒤가 안 맞음</li>
+<li>→ <span class="r">암모니아 회로(urea cycle)에만 문제</span></li>
+<li>PSS 검사 (–) → 요 GC/MS → <b>OTC(ornithine transcarbamylase) 결핍증</b></li>
+</ol></div></div>
+<div class="cc">결론: <b>IEM — urea cycle 효소 선천 결핍</b> (치료: k/d·l/d, lactulose, UDC)</div>
+<div class="tr">예전엔 <b>arginine 결핍 사료</b>를 먹은 고양이에서 같은 패턴 (고양이 필수 아미노산) <span class="tag t-rec">수업</span></div>
+</div>
+<div class="memo green">
+<div class="mt">교수님 마무리 요약 <span class="tag t-rec">수업</span></div>
+<ul class="d">
+<li>Chemistry의 목적 = <b>간담관계가 관여됐다</b>는 것을 알려주는 것 → <b>원인이나 정도</b>를 알려면 <b>추가 검사</b> 필요</li>
+<li>기능 검사: <b>암모니아, bile acid</b> / <b>빌리루빈은 애매</b></li>
+<li>병인론: <b>개</b>는 대부분 <b>congenital(선천적 소인)</b>이 많음 / <b>고양이</b>는 <b>triaditis</b>로 복합적으로 접근하는 게 일반적</li>
+</ul>
+</div>
+<span class="pno">24</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">★ 2장 총정리 — 시험 직전에 보는 표</h2>
+<table>
+<caption>표 16. 패턴으로 읽는 간 케이스</caption>
+<thead><tr><th style="width:30%">패턴</th><th style="width:28%">해석</th><th>케이스 / 키워드</th></tr></thead>
+<tbody>
+<tr class="hi"><td>효소 4종↑ + <b>Alb·BUN·Glu·Chol 모두↓</b> + small liver + MCV↓</td><td><b>PSS</b>(선천, 저형성)</td><td>Lhasa apso, Pekinese — 단백식 후 몽롱, ammonium biurate, BA 197/235</td></tr>
+<tr><td><b>ALP·GGT ≫ ALT</b> (ALT 정상~경도)</td><td><b>담관계</b> 문제 (폐색·담즙정체)</td><td>Dachshund(췌장염 → 총담관), Yorkie, ALP 5403 case</td></tr>
+<tr><td><b>ALT 정상 + AST·LDH·CK↑</b> (MCHC·Hb↑)</td><td><b>용혈</b> (→ 원인: 비절식 지질혈증?)</td><td>외부 랩 "건강견" 케이스</td></tr>
+<tr><td><b>AST·CK ~10배 ≫ ALT·ALP</b></td><td><b>근육</b> 유래</td><td>Maltese FUO + 신경증상, Cr 0.3 = 마름</td></tr>
+<tr><td>어린 개 <b>ALP만↑ + GGT 정상</b> (+P↑)</td><td><b>Bone ALP</b></td><td>6m GSD</td></tr>
+<tr><td>ALT 급↑, ALP 정상</td><td>외상 / 급성 leakage</td><td>Jindo 8m 교통사고 ALT 972</td></tr>
+<tr class="hi"><td>개: 용혈·담즙정체 없이 <b>빌리루빈 미약↑</b>(1–2 mg/dL)</td><td><b>간성 → grave</b></td><td>Airedale, Doberman</td></tr>
+<tr><td>빈혈 + spherocyte + 빌리루빈↑</td><td><b>간전성</b>(IMHA)</td><td>Beagle 4yr</td></tr>
+<tr><td>감염 + 빌리루빈 ≫, 효소 경~중등</td><td><b>Functional cholestasis</b></td><td>폐렴·복막염·UTI·교상·심내막염</td></tr>
+<tr><td>증상 개선 후에도 빌리루빈 지속↑</td><td><b>Delta bilirubin</b> (반감기 ~3주)</td><td>췌장염 후</td></tr>
+<tr><td>회복 후 <b>ALP만 계속↑</b></td><td>induction 효소는 늦게 회복</td><td>Day 20 ALP 587 / "ALP unknown origin"</td></tr>
+<tr class="hi"><td><b>BA 정상 + Ammonia↑</b></td><td><b>Urea cycle</b> 문제 (IEM)</td><td>ASH 18m — OTC 결핍 / arginine 결핍 사료</td></tr>
+<tr><td>스테로이드 치료 중 ALP 수천</td><td>CIALP / glucocorticoid hepatopathy</td><td>IMHA Tx, MUE(MMF+steroid)</td></tr>
+<tr><td>노령 고양이 ALT·ALP↑ + 체중감소·다식</td><td><b>갑상선 기능 항진증</b> → T4</td><td>ALT↑ 88%, ALP↑ 76%</td></tr>
+</tbody>
+</table>
+<table>
+<caption>표 17. 개 vs 고양이 한 장 비교</caption>
+<thead><tr><th style="width:18%">항목</th><th>Dog</th><th>Cat</th></tr></thead>
+<tbody>
+<tr><td class="kc">AST 반감기</td><td>12 hr</td><td><b>77 min</b> → severe dz에서 ALT보다 민감(그러나 늦게 내원)</td></tr>
+<tr><td class="kc">ALP 반감기</td><td>72 hr (3 days)</td><td><b>6 hr</b></td></tr>
+<tr class="hi"><td class="kc">ALP 스테로이드 유도</td><td><b>○</b> (CIALP, 최대 85%, 끊고도 6주)</td><td><b>✕</b> → cholestasis에 specific</td></tr>
+<tr class="hi"><td class="kc">GGT vs ALP</td><td>GGT: specificity↑, sensitivity↓</td><td><b>반대</b> — GGT ≫ ALP in cholestatic dz (lipidosis는 ALP만)</td></tr>
+<tr><td class="kc">ALP·GGT 증가폭</td><td>수십 배까지</td><td>심해도 <b>modest</b></td></tr>
+<tr><td class="kc">Bilirubin</td><td>간성이면 grave</td><td><b>very non-specific</b> (아프면 오름)</td></tr>
+<tr><td class="kc">BA vs NH₃</td><td>둘 다</td><td><b>BA</b> 추천</td></tr>
+<tr><td class="kc">병인</td><td>선천적 소인(품종), 염증 드묾</td><td><b>염증 多</b> → triaditis, FNA·생검 필수</td></tr>
+<tr><td class="kc">Lipidosis</td><td>증상 없음</td><td>관리 까다롭고 예후 나쁨</td></tr>
+<tr><td class="kc">PSS</td><td>단일 shunt 많음, 말티즈 BA 높음</td><td>underestimated, <b>복합 shunt</b> 多</td></tr>
+</tbody>
+</table>
+<span class="pno">25</span>
+</section>
+
+<section class="page">
+<div class="memo">
+<div class="mt">*헷갈리기 쉬운 짝</div>
+<ul class="d">
+<li><b>Leakage vs Induction</b> — ALT·AST·SDH(수 시간, 민감) / ALP·GGT(며칠~몇 주, 회복 ~2개월)</li>
+<li><b>간 손상 단계</b> — BA 40% / NH₃ 60–70% / Alb·BUN·Glu·Chol·응고인자 80% <span class="gray">(1장 개론에선 40–50%, 85%로 설명 — 이번 강의 숫자 기준으로)</span></li>
+<li><b>급성 효소↓ vs 만성 효소↓</b> — 급성은 회복(좋음) / 만성은 간세포 수 감소(나쁨)</li>
+<li><b>Direct vs Indirect</b> — 중합(수용성, 시약과 바로 반응) / 비중합(간접 측정). 분획으로 간전성 감별하던 건 이제 안 함</li>
+<li><b>Bilirubin vs Bile acid</b> — 대부분 변으로 / 95–98% portal로 회수</li>
+<li><b>Fasting vs Postprandial BA</b> — PP가 더 sensitive, 덜 specific / 공복도 ~100까지 가능 → 둘 다</li>
+<li><b>BA 정상 + NH₃↑</b> = urea cycle(IEM) ↔ <b>NH₃·BA 둘 다↑</b> = PSS·간부전</li>
+<li><b>요 bilirubin</b> — 신장 배설 역치 낮음 → 혈중 정상이어도 요에서 먼저 / glucose는 ~180 mg/dL 넘어야</li>
+<li><b>Doberman vs Cocker</b> — 중년 암컷·간경화·황달 / 수컷 young adult·현저한 저알부민</li>
+<li><b>SCH vs LPH vs HL</b> — 호중구·좌방이동 / 미약·노령 / ALT·ALP·빌리루빈 모두 현저</li>
+<li><b>MCV↓</b> — 진돗개·아시아계 품종은 원래 낮음 vs 그 외 어린 개·고양이에서 MCV↓ = PSS 의심</li>
+<li><b>Levamisole</b> — CIALP는 억제 안 됨 → 쿠싱 감별용이었지만 내인성 스테로이드 때문에 폐기</li>
+</ul>
+</div>
+<span class="pno">26</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 — 한 줄로 답해보기</h2>
+<table>
+<caption>표 18. 시험 전 확인 문제 (답은 오른쪽 칸 가리고 풀기)</caption>
+<thead><tr><th style="width:5%">#</th><th>질문</th><th style="width:40%">답</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>간 손상 정도별로 BA·암모니아·합성 지표가 이상해지는 기준은?</td><td>BA <b>40%</b> / NH₃ <b>60–70%</b> / Alb·BUN·Glu·Chol·응고 <b>80%</b></td></tr>
+<tr><td class="c">2</td><td>leakage 효소와 induction 효소를 각각 쓰고 시간 경과 차이는?</td><td>ALT·AST·SDH = 수 시간 / ALP·GGT = 며칠~몇 주, 회복 ~2개월</td></tr>
+<tr><td class="c">3</td><td>간세포의 두 면은 각각 무엇과 접하나?</td><td>한쪽 <b>sinusoid</b>(혈관), 다른 쪽 <b>bile canaliculi</b>(세포 사이 간극)</td></tr>
+<tr><td class="c">4</td><td>만성 간질환에서 효소 수치가 떨어지면?</td><td>간세포 수 감소 → <b>예후 나쁨</b> (급성은 반대)</td></tr>
+<tr><td class="c">5</td><td>ALT가 간 특이적인 종과, 말·반추류에서 쓰는 효소는?</td><td>dog &amp; cat / <b>SDH</b></td></tr>
+<tr><td class="c">6</td><td>ALT의 secondary 원인 4가지?</td><td>GI disease(최대 5배), DM, septicemia·endotoxemia, periodontal disease</td></tr>
+<tr class="hi"><td class="c">7</td><td>ALT 정상 + AST·LDH↑ + TG↑인 "건강견" 수술 전 검사의 해석은?</td><td><b>용혈</b> ← 비절식 지질혈증</td></tr>
+<tr><td class="c">8</td><td>고양이 AST 반감기와 그 의미는?</td><td><b>77분</b>(개 12h) → severe dz에서 ALT보다 민감</td></tr>
+<tr><td class="c">9</td><td>ALP isoenzyme 중 반감기 6분인 것과, 어린 개에서 문제 되는 것은?</td><td>kidney·intestine·placenta / <b>bone</b>(최대 2배) → GGT 같이</td></tr>
+<tr><td class="c">10</td><td>고양이 ALP의 특징 3가지?</td><td>스테로이드 유도 ✕, cholestasis에 specific, 반감기 6h</td></tr>
+<tr><td class="c">11</td><td>CIALP가 쿠싱 진단에 도움 안 되는 이유는?</td><td>DM·갑저·췌장염·항경련제·각종 질병의 <b>내인성 스테로이드</b>로도↑</td></tr>
+<tr class="hi"><td class="c">12</td><td>개에서 GGT vs ALP의 민감도·특이도는? 고양이는?</td><td>개: GGT 특이도↑ 민감도↓ / 고양이: 반대 (GGT ≫ ALP)</td></tr>
+<tr><td class="c">13</td><td>담즙정체인데 ALP·GGT가 정상인 이유는?</td><td>induction에 시간 소요 — <b>내원 시점 ≠ 담즙정체 시작 시점</b></td></tr>
+<tr><td class="c">14</td><td>ALT·AST·ALP·GGT 반감기?</td><td>40–60h / 12h(고양이 77min) / 개 72h·고양이 6h / 96h</td></tr>
+<tr><td class="c">15</td><td>요비중이 낮은데 요 bilirubin 양성인 이유는?</td><td>빌리루빈 <b>신장 배설 역치가 낮음</b></td></tr>
+<tr class="hi"><td class="c">16</td><td>개에서 용혈·담즙정체 없이 빌리루빈 1–2 mg/dL↑의 의미는?</td><td>간성 → <b>예후 매우 나쁨(grave)</b></td></tr>
+<tr><td class="c">17</td><td>Functional cholestasis의 원인과 기전은?</td><td>간외 <b>세균 감염</b> → canalicular 배설 수용체 억제 → sinusoid로 역류</td></tr>
+<tr><td class="c">18</td><td>Delta bilirubin이란? 임상 의미는?</td><td>중합 빌리루빈이 단백과 비가역 결합, 반감기 ~3주 → 회복 후에도 빌리루빈 지속 (췌장염 후)</td></tr>
+<tr><td class="c">19</td><td>Postprandial BA 검사법은?</td><td>절식 후 5kg 이상 P/D 2 tablespoons, 이하 2 teaspoons → <b>2시간 후</b> 혈청</td></tr>
+<tr><td class="c">20</td><td>말티즈 BA 해석 주의점과 대안은?</td><td>정상적으로 높음(MVD 多) → <b>ammonia·암모니아 내성 시험</b></td></tr>
+<tr><td class="c">21</td><td>암모니아 시료 처리법은?</td><td>ice chilled tube → 냉장 원심 → 즉시 분리·검사</td></tr>
+<tr><td class="c">22</td><td>PSS 진단에 개·고양이 각각 추천 검사는?</td><td>개: NH₃ + BA 둘 다 / 고양이: <b>BA</b></td></tr>
+<tr class="hi"><td class="c">23</td><td>BA 정상인데 암모니아만↑이면?</td><td><b>Urea cycle 이상</b> (IEM: OTC 결핍, arginine 결핍)</td></tr>
+<tr><td class="c">24</td><td>도베르만과 코카의 만성 간염 차이는?</td><td>중년 암컷·간경화 / 수컷 young adult·현저한 저알부민</td></tr>
+<tr><td class="c">25</td><td>구리 축적이 확실한 원인인 품종과 유전자는?</td><td><b>Bedlington terrier — COMMD1</b> / 치료 penicillamine</td></tr>
+<tr><td class="c">26</td><td>고양이 triaditis 구성과 간효소↑ 시 할 일은?</td><td>cholangiohepatitis + pancreatitis + IBD → 에코 변화 없어도 <b>FNA·생검</b></td></tr>
+<tr><td class="c">27</td><td>고양이 hepatic lipidosis의 효소 패턴은?</td><td><b>ALP 크게↑</b>, GGT 정상~경미</td></tr>
+<tr><td class="c">28</td><td>노령 고양이 간수치↑에서 꼭 확인할 질환은?</td><td><b>갑상선 기능 항진증</b> (ALT↑ 88%)</td></tr>
+<tr><td class="c">29</td><td>Glucocorticoid가 ALT를 올리는 기전? <span class="tag t-pen2">필기2</span></td><td>간세포 <b>글리코겐 축적</b> → 팽창 → 막 손상 → ALT leakage</td></tr>
+<tr><td class="c">30</td><td>간이 BUN·glucose·cholesterol을 만드는 방식? <span class="tag t-pen2">필기2</span></td><td>urea cycle(요소) / gluconeogenesis·글리코겐 분해 / acetyl-CoA로 합성</td></tr>
+<tr><td class="c">31</td><td>Leakage 효소 수치가 손상 중등도와 상관이 낮은 이유? <span class="tag t-pen2">필기2</span></td><td>소수 세포만 망가져도 크게↑, 가역적 막 투과도 변화로도 유출</td></tr>
+<tr><td class="c">32</td><td>sinusoid 안에서 세균 탐식·해독을 맡는 세포? <span class="tag t-pen2">필기2</span></td><td><b>Kupffer 세포</b></td></tr>
+</tbody>
+</table>
+<span class="pno">27</span>
+</section>
+
+<section class="page">
+<h2 class="lv1">✎ 셀프 체크 ② — 미니 케이스</h2>
+<table>
+<caption>표 19. 숫자를 보고 해석해보기 (강의 케이스 변형 — 답은 가리고)</caption>
+<thead><tr><th style="width:5%">#</th><th>데이터</th><th style="width:36%">답 · 근거</th></tr></thead>
+<tbody>
+<tr><td class="c">1</td><td>개, 교통사고 직후. ALT 850, ALP 130, GGT 정상, TB 0.3</td><td><b>급성 leakage</b>(외상) — 다음날 감소하면 예후 좋음, ALP는 며칠 뒤 오를 수 있음</td></tr>
+<tr><td class="c">2</td><td>개, 복통·구토. ALT 70, ALP 2,500, GGT 140, Amyl·Lip↑, Chol 500</td><td><b>담관계</b> — 췌장염 → 총담관 폐색 → 담즙정체</td></tr>
+<tr><td class="c">3</td><td>4개월 강아지, 건강. ALP 300, GGT 정상, P↑</td><td><b>Bone ALP</b> (성장기) — GGT 같이 보기</td></tr>
+<tr><td class="c">4</td><td>개, 프레드니솔론 3주째. ALP 3,000, ALT 120, GGT 25, Tbil 정상</td><td><b>CIALP / steroid hepatopathy</b> — 약 이력</td></tr>
+<tr><td class="c">5</td><td>"건강한" 술전 개. ALT 정상, AST 90, LDH 900, CK 450, TG 300</td><td><b>용혈</b>(← 비절식 지질혈증) — 재채혈</td></tr>
+<tr><td class="c">6</td><td>개, 경련 후 내원. AST 900, CK 3,000, ALT 150</td><td><b>근육</b> 유래 (AST·CK ≫ ALT)</td></tr>
+<tr><td class="c">7</td><td>8개월 개, 식후 비틀거림. Alb·BUN·Glu·Chol 모두↓, MCV↓, small liver</td><td><b>PSS</b> → BA 식전·식후 + NH₃ + 영상</td></tr>
+<tr><td class="c">8</td><td>개, HCT 15, spherocyte 3+, Tbil 6.0, ALT 300</td><td><b>간전성</b>(IMHA) + hypoxia성 ALT↑</td></tr>
+<tr><td class="c">9</td><td>중년 암컷 도베르만, 복수. ALT 300, ALP 600, Tbil 1.2, 빈혈 X, 영상 폐색 X</td><td><b>간성</b>(만성 간염) — 개에서 grave</td></tr>
+<tr><td class="c">10</td><td>개, 폐렴 치료 중. Tbil 15, ALT·ALP 경도↑, 영상 정상</td><td><b>Functional cholestasis</b>(세균 감염)</td></tr>
+<tr><td class="c">11</td><td>개, 췌장염 회복 2주 후 증상 없음. Tbil 여전히 2.5</td><td><b>Delta bilirubin</b> (반감기 ~3주)</td></tr>
+<tr><td class="c">12</td><td>말티즈, 증상 없음. 공복 BA 40, NH₃ 정상</td><td>말티즈는 BA 원래 높음(MVD) → <b>NH₃·암모니아 내성 시험</b>으로 평가</td></tr>
+<tr><td class="c">13</td><td>고양이 8세, ALT 300, ALP 80, GGT 5, 에코 정상</td><td>효소 하나라도↑ → <b>에코 변화 없어도 FNA</b> (triaditis 염두)</td></tr>
+<tr><td class="c">14</td><td>고양이, 식욕부진 1주·황달. ALP 크게↑, GGT 정상~경미</td><td><b>Hepatic lipidosis</b> → 기저 질환 찾기</td></tr>
+<tr><td class="c">15</td><td>노령묘, 체중↓·다식. ALT 250, ALP 100</td><td><b>갑상선 기능 항진증</b> → T4</td></tr>
+<tr><td class="c">16</td><td>어린 고양이, 식후 침울. BA 정상, NH₃ 매우↑, PSS (–)</td><td><b>IEM</b>(urea cycle, OTC 결핍) / arginine 결핍</td></tr>
+</tbody>
+</table>
+<p class="tnote">* 위 표는 강의 케이스를 바탕으로 정리자가 만든 연습 문제 — 수치는 예시</p>
+<span class="pno">28</span>
+</section>
+</body>
+</html>
