@@ -1,0 +1,4 @@
+---
+# GitHub Pages가 빌드할 때 저장소의 HTML 파일 목록으로 자동 생성돼요. 직접 고칠 필요 없어요.
+---
+[{% assign first = true %}{% for f in site.static_files %}{% if f.extname == ".html" or f.extname == ".htm" %}{% unless first %},{% endunless %}{{ f.path | jsonify }}{% assign first = false %}{% endif %}{% endfor %}]

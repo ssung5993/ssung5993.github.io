@@ -374,36 +374,43 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("reader").hidden
 $("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();render()});
 
 // 저장소 파일 목록 → 정리본 목록 (과목폴더/파일.html, 소동물내과/간단 정리본/파일.html)
-const CACHE_KEY="vetnotes-tree-v2",TTL=5*60*1000;
+// 목록은 GitHub Pages가 빌드할 때 만드는 data/notes.json에서 읽고, 없으면 GitHub API로 읽어요.
+const CACHE_KEY="vetnotes-tree-v3";
 function fromTree(tree){
   const out=[];
   for(const it of tree){
     if(it.type!=="blob")continue;
-    const parts=it.path.split("/");
+    const parts=it.path.replace(/^\//,"").split("/");
     if(parts.length<2||!/\.html?$/i.test(it.path))continue;
     const c=catByKo(parts[0]);if(!c)continue;
     const kind=parts.length>2&&parts[1]==="간단 정리본"?"brief":"full";
-    out.push({category:c.k,kind,title:parts[parts.length-1].replace(/\.html?$/i,""),path:it.path,size:it.size});
+    out.push({category:c.k,kind,title:parts[parts.length-1].replace(/\.html?$/i,""),path:parts.join("/"),size:it.size});
   }
   out.sort((a,b)=>a.title.localeCompare(b.title,"ko",{numeric:true}));
   return out;
 }
-async function load(force){
+async function fetchTree(){
+  try{
+    const res=await fetch("data/notes.json",{cache:"no-cache"});
+    if(res.ok){const paths=await res.json();if(Array.isArray(paths))return paths.map(p=>({type:"blob",path:p}))}
+  }catch(e){}
   const info=repoInfo();
-  if(!info){loadErr="GitHub 저장소를 찾지 못했어요. index.html의 CONFIG에 아이디와 저장소 이름을 적어 주세요.";render();return}
-  let cached=null;
-  try{cached=JSON.parse(localStorage.getItem(CACHE_KEY)||"null")}catch(e){}
-  if(!force&&cached&&Date.now()-cached.t<TTL){notes=fromTree(cached.tree);loaded=true;render();return}
+  if(!info)throw "norepo";
+  const res=await fetch(`https://api.github.com/repos/${encodeURIComponent(info.owner)}/${encodeURIComponent(info.repo)}/git/trees/${encodeURIComponent(info.branch)}?recursive=1`,{headers:{Accept:"application/vnd.github+json"}});
+  if(!res.ok)throw res.status;
+  return (await res.json()).tree;
+}
+async function load(){
   loaded=false;loadErr="";render();
   try{
-    const res=await fetch(`https://api.github.com/repos/${encodeURIComponent(info.owner)}/${encodeURIComponent(info.repo)}/git/trees/${encodeURIComponent(info.branch)}?recursive=1`,{headers:{Accept:"application/vnd.github+json"}});
-    if(!res.ok)throw res.status;
-    const data=await res.json();
-    try{localStorage.setItem(CACHE_KEY,JSON.stringify({t:Date.now(),tree:data.tree}))}catch(e){}
-    notes=fromTree(data.tree);loaded=true;
+    const tree=await fetchTree();
+    try{localStorage.setItem(CACHE_KEY,JSON.stringify(tree))}catch(e){}
+    notes=fromTree(tree);loaded=true;
   }catch(code){
-    if(cached){notes=fromTree(cached.tree);loaded=true}
-    else loadErr=code===403||code===429?"잠시 접속이 많았어요. 몇 분 뒤 다시 시도해 주세요.":code===404?"저장소나 브랜치 이름이 맞는지 확인해 주세요.":"인터넷 연결을 확인하고 다시 시도해 주세요.";
+    let cached=null;
+    try{cached=JSON.parse(localStorage.getItem(CACHE_KEY)||"null")}catch(e){}
+    if(cached){notes=fromTree(cached);loaded=true}
+    else loadErr=code==="norepo"?"GitHub 저장소를 찾지 못했어요. index.html의 CONFIG에 아이디와 저장소 이름을 적어 주세요.":code===403||code===429?"잠시 접속이 많았어요. 몇 분 뒤 다시 시도해 주세요.":code===404?"저장소나 브랜치 이름이 맞는지 확인해 주세요.":"인터넷 연결을 확인하고 다시 시도해 주세요.";
   }
   render();
 }
