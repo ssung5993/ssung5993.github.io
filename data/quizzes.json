@@ -3,42 +3,48 @@
   "id": "pathcc-cow-1",
   "category": "pathcc",
   "title": "소 감염병리진단 I (세균성) · 20문항",
-  "sub": "자동 생성 · 11/28 · 병리집담회1 정리본",
+  "sub": "자동 생성 · 11/28 · 병리집담회1 정리본 · 5지선다",
   "createdAt": "2026-11-28T00:00:00.000Z",
   "questions": [
    {
-    "type": "ox",
-    "q": "요네병의 원인체 MAP(Mycobacterium avium subsp. paratuberculosis)는 Gram 양성, acid-fast 간균이며 세포내 기생균이다.",
+    "type": "mc",
+    "q": "요네병 원인체 MAP(Mycobacterium avium subsp. paratuberculosis)의 특징으로 옳지 않은 것은?",
     "options": [
-     "O",
-     "X"
+     "세포내 기생균이다.",
+     "Gram 양성 acid-fast 간균이다.",
+     "매우 느리게 자란다.",
+     "분변을 통해 배출되며 환경 저항성이 높다.",
+     "이름이 -a로 끝나지 않으므로 Gram 음성균이다."
     ],
-    "answer": 0,
-    "explanation": "MAP는 Mycobacteriaceae, Gram(+) acid-fast bacilli, 매우 느리게 자라는 세포내 기생균이에요. 분변으로 배출되고 환경 저항성도 높아요.",
+    "answer": 4,
+    "explanation": "Mycobacterium은 -a로 끝나지 않는 Gram(+)균이에요. '-a로 끝나면 대부분 Gram(−)'(Salmonella, Mannheimia, Coxiella 등) 규칙과 반대 방향으로 헷갈리지 마세요.",
     "no": 1
    },
    {
-    "type": "ox",
-    "q": "조직에서 epithelioid cell과 다핵거대세포(MGC)가 보이는 육아종이 있다면, 원인은 항상 감염성 병원체이다.",
+    "type": "mc",
+    "q": "14세 개의 간과 장간막 종괴를 병리 검사한 결과, epithelioid cell과 대식세포가 섞여 있고 다핵거대세포가 회색의 이물을 둘러싼 모습이 곳곳에 보였다. 가장 적절한 진단은?",
     "options": [
-     "O",
-     "X"
+     "간세포암종(HCC)의 장간막 전이",
+     "요네병",
+     "결핵성 육아종",
+     "이물(foreign body) 육아종",
+     "림프종"
     ],
-    "answer": 1,
-    "explanation": "CPC 코코 케이스처럼 봉합사 같은 이물도 육아종(이물 육아종)을 만들어 종괴처럼 커질 수 있어요. 육아종의 원인이 감염만은 아니에요.",
+    "answer": 3,
+    "explanation": "CPC 코코 케이스예요. epithelioid + MGC = 육아종이지만 원인이 감염만은 아니에요. 봉합사 같은 이물도 육아종을 만들어 종괴처럼 커질 수 있어요.",
     "no": 2
    },
    {
     "type": "mc",
     "q": "요네병의 감염 시기와 잠복기에 대한 설명으로 옳은 것은?",
     "options": [
-     "주로 성우에서 감염되며 잠복기는 1~2주이다.",
-     "주로 2년령 미만의 어린 송아지가 감염되고, 2~5년의 긴 잠복기 후 임상증상이 나타난다.",
+     "제1종 법정가축전염병이다.",
      "양·염소는 소보다 설사가 훨씬 심해 진단이 쉽다.",
+     "주로 2년령 미만의 어린 송아지가 감염되고, 2~5년의 긴 잠복기 후 임상증상이 나타난다.",
      "농장에서는 설사하는 임상형 소가 감염우의 대부분을 차지한다.",
-     "제1종 법정가축전염병이다."
+     "주로 성우에서 감염되며 잠복기는 1~2주이다."
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "어린 송아지(태내·신생기)가 감수성이 높고, 잠복기가 최소 2년(2~5년)이에요. 설사 소 한 마리는 '빙산의 일각'이고, 양·염소는 증상이 미약해요. 요네병은 제2종이에요.",
     "no": 3
    },
@@ -46,43 +52,39 @@
     "type": "mc",
     "q": "MAP가 주로 회맹부(ileocecal)의 대식세포에 감염되는 이유로 수업에서 설명한 것은?",
     "options": [
-     "회맹부는 산소 농도가 가장 높아서",
      "MAP는 siderophore(철 갈고리)가 없어, 철 농도와 사용률이 가장 높은 회맹부 대식세포에 기생하므로",
+     "회맹부에는 호중구가 존재하지 않으므로",
      "회맹부에는 Peyer's patch가 없어 면역이 약하므로",
      "회맹부 상피의 pH가 낮아 균이 잘 자라므로",
-     "회맹부에는 호중구가 존재하지 않으므로"
+     "회맹부는 산소 농도가 가장 높아서"
     ],
-    "answer": 1,
+    "answer": 0,
     "explanation": "MAP는 스스로 mycobactin(siderophore)을 못 만들어서 철이 가장 풍부한 회맹부 MØ에 붙어 살아요. 배양할 때 mycobactin J를 넣어 줘야 하는 이유이기도 해요.",
     "no": 4
    },
    {
-    "type": "multi",
-    "q": "MAP의 면역 회피 전략으로 옳은 것을 모두 고르시오.",
+    "type": "mc",
+    "q": "MAP의 면역 회피 전략으로 옳지 않은 것은?",
     "options": [
-     "phagosome-lysosome 융합을 회피한다(LAM → IL-10 분비 유도).",
+     "phagosome-lysosome 융합을 회피한다.",
+     "세포벽 LAM이 대식세포의 IL-10 분비를 유도해 초기 살균성 면역을 차단한다.",
      "감염된 대식세포의 apoptosis를 억제해 은신을 유지한다.",
      "capsule이 C3b binding을 막아 옵소닌화를 방어한다.",
-     "leukotoxin을 분비해 반추류 백혈구를 죽인다.",
-     "siderophore로 숙주의 철을 빼앗는다."
+     "leukotoxin을 분비해 반추류 백혈구를 죽인다."
     ],
-    "answers": [
-     0,
-     1,
-     2
-    ],
-    "explanation": "①②③이 MAP의 3가지 면역 회피 전략이에요. ④ leukotoxin은 Mannheimia haemolytica(수송열), ⑤ MAP는 siderophore가 없어요.",
+    "answer": 4,
+    "explanation": "leukotoxin은 Mannheimia haemolytica(수송열)의 독소예요. ①~④가 MAP의 면역 회피 전략이에요.",
     "no": 5
    },
    {
     "type": "mc",
     "q": "육아종을 구성하는 세포 중, 균을 죽이지 못한 대식세포들이 서로 융합해 면역반응을 집약한('원기옥') 세포는?",
     "options": [
-     "Epithelioid cell",
-     "Multinucleated giant cell (MGC)",
-     "Plasma cell",
      "Oat cell",
-     "Neutrophil"
+     "Multinucleated giant cell (MGC)",
+     "Neutrophil",
+     "Epithelioid cell",
+     "Plasma cell"
     ],
     "answer": 1,
     "explanation": "MGC는 MØ끼리 융합해 한 번에 공격하는 세포로, 핵이 가장자리에 늘어서 있어요. Epithelioid cell은 항원제시 쪽으로 변신한 MØ예요.",
@@ -92,38 +94,41 @@
     "type": "mc",
     "q": "Diffuse형과 Nodular형 육아종에 대한 설명으로 옳지 않은 것은?",
     "options": [
+     "Johne's disease는 nodular형의 대표 질병이다.",
+     "Nodular(tuberculoid)형은 TH1 편향(IFN-γ)이다.",
      "Diffuse(lepromatous)형은 leprosy에서 유래한 이름이다.",
      "Diffuse형은 TH2 편향(IL-4)이다.",
-     "Nodular(tuberculoid)형은 TH1 편향(IFN-γ)이다.",
-     "Johne's disease는 nodular형의 대표 질병이다.",
      "Diffuse형은 경계 없이 대식세포가 sheet처럼 퍼져 있다."
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "Johne's disease는 diffuse형의 대표예요. Nodular형의 대표는 결핵(TB), Brucella, Histoplasma 등이에요.",
     "no": 7
    },
    {
-    "type": "ox",
-    "q": "요네병 소의 회장 조직에서 육아종성 염증과 함께 acid-fast 양성 막대균을 직접 확인했다면, PCR 없이도 '확진'이라고 표현할 수 있다.",
+    "type": "mc",
+    "q": "만성 설사 소의 회장 조직에서 육아종성 염증과 acid-fast 양성 막대균이 확인되었다. 이에 대한 설명으로 옳은 것은?",
     "options": [
-     "O",
-     "X"
+     "균을 직접 확인했으므로 PCR 없이도 요네병 '확진'이라고 표현할 수 있다.",
+     "acid-fast 양성이므로 반드시 결핵이다.",
+     "확진을 위해서는 반드시 혈청검사가 필요하다.",
+     "원인체는 Gram 음성균이다.",
+     "육아종은 nodular형으로 치즈양 괴사를 동반한다."
     ],
     "answer": 0,
-    "explanation": "보통 확진은 병원체 분리·동정(PCR 등)이 필요하지만, 조직에서 균을 눈으로 직접 확인한 경우는 예외로 확진 표현이 가능하다고 하셨어요.",
+    "explanation": "보통 확진은 병원체 분리·동정이 필요하지만, 조직에서 균을 직접 본 경우는 확진 표현이 가능하다고 하셨어요. 결핵도 AF 양성이지만 폐·nodular가 주 병변이에요.",
     "no": 8
    },
    {
     "type": "mc",
     "q": "요네병 조직 등급(Histopathological scoring)에서 'MGC와 epithelioid 육아종을 동반한 diffuse granulomatous change + MGC 안의 AFB'에 해당하는 등급은?",
     "options": [
-     "Negative",
-     "Grade 1",
-     "Grade 2",
      "Grade 3",
+     "Grade 1",
+     "Negative",
+     "Grade 2",
      "Grade 4"
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "G1 = 국소 MØ·epithelioid 침윤, G2 = 국소 육아종성 변화 + AFB, G3 = MGC까지 있는 diffuse 육아종성 변화(가장 심함)예요.",
     "no": 9
    },
@@ -131,81 +136,83 @@
     "type": "mc",
     "q": "요네병과 비교한 소 결핵(Bovine TB)의 특징으로 옳은 것은?",
     "options": [
-     "주 병변은 회장 lamina propria이다.",
+     "제1종 법정가축전염병이다.",
      "TH2 편향의 diffuse 육아종을 만든다.",
      "폐와 림프절에 nodular 육아종을 만들고, 중심에 치즈양(caseous) 괴사와 광물화가 흔하다.",
-     "acid-fast 염색에 음성이다.",
-     "제1종 법정가축전염병이다."
+     "주 병변은 회장 lamina propria이다.",
+     "acid-fast 염색에 음성이다."
     ],
     "answer": 2,
     "explanation": "결핵은 폐(+림프절)의 nodular(TH1) 육아종, 치즈양 괴사·광물화가 특징이에요. 요네병처럼 AFB 양성이고 제2종이에요.",
     "no": 10
    },
    {
-    "type": "ox",
-    "q": "Caseating(건락성) 육아종은 조절된 TH1 면역반응으로 병원체가 잘 봉쇄되었을 때 생긴다.",
+    "type": "mc",
+    "q": "Caseating(건락성)과 Noncaseating(비건락성) 육아종에 대한 설명으로 옳은 것은?",
     "options": [
-     "O",
-     "X"
+     "Noncaseating 육아종은 중심에 노란 괴사 물질이 있다.",
+     "Caseating 육아종의 대표 질병은 요네병이다.",
+     "Caseating 육아종은 강력한 TH1 반응으로 염증이 지속되어 중심에 치즈양 괴사가 생긴 것이다.",
+     "Caseating 육아종은 조절된 TH1 반응으로 병원체가 잘 봉쇄될 때 생긴다.",
+     "Noncaseating 육아종은 TH2 반응으로만 생긴다."
     ],
-    "answer": 1,
-    "explanation": "조절된 TH1 반응 → 봉쇄 = noncaseating이에요. 강력한 TH1 반응으로 염증이 지속되며 조직이 파괴되면 caseating(치즈양 괴사)이 생겨요.",
+    "answer": 2,
+    "explanation": "조절된 TH1 → 봉쇄 = noncaseating, 강력한 TH1 → 조직 손상·괴사 = caseating(TB, Brucella, Histoplasma)이에요.",
     "no": 11
    },
    {
     "type": "mc",
     "q": "기종저(Blackleg)에 대한 설명으로 옳지 않은 것은?",
     "options": [
-     "원인체는 Clostridium chauvoei이다.",
-     "병변 근육은 검붉고 열감이 있으며, 누르면 염발음(crepitus)이 난다.",
-     "조직에서 gas bubble, 세균 집락, 응고괴사가 보인다.",
+     "골격근뿐 아니라 심근에서도 병변이 관찰된다.",
      "병변 근육을 포르말린에 넣으면 무거워서 바로 가라앉는다.",
-     "골격근뿐 아니라 심근에서도 병변이 관찰된다."
+     "조직에서 gas bubble, 세균 집락, 응고괴사가 보인다.",
+     "원인체는 Clostridium chauvoei이다.",
+     "병변 근육은 검붉고 열감이 있으며, 누르면 염발음(crepitus)이 난다."
     ],
-    "answer": 3,
+    "answer": 1,
     "explanation": "가스 때문에 병변 조직이 포르말린에 둥둥 떠요. 이것도 진단 단서예요.",
     "no": 12
    },
    {
-    "type": "ox",
-    "q": "기종저 진단을 위해 근육을 혈액 한천배지에 배양하면 콜로니 주변이 녹아내리는 용혈이 관찰된다.",
+    "type": "mc",
+    "q": "Clostridium chauvoei 감염(기종저)의 진단에 대한 설명으로 옳은 것은?",
     "options": [
-     "O",
-     "X"
+     "acid-fast 염색 양성 간균이 관찰된다.",
+     "혈액 한천배지에 배양하면 콜로니 주변이 녹아내리는 용혈이 보인다.",
+     "조직에서 oat cell이 특징적으로 보인다.",
+     "부검 시 병변 근육은 창백하고 차갑다.",
+     "병변 근육은 포르말린에 넣으면 바로 가라앉는다."
     ],
-    "answer": 0,
-    "explanation": "C. chauvoei는 RBC를 깨뜨려 콜로니 주변에 용혈이 생겨요. PCR도 쓰지만 직접 배양을 많이 해요.",
+    "answer": 1,
+    "explanation": "C. chauvoei는 RBC를 깨뜨려 용혈을 보여요. 병변 근육은 검붉고 열감, 가스 때문에 포르말린에 떠요.",
     "no": 13
    },
    {
-    "type": "multi",
-    "q": "소에서 유사산을 일으키는 대표적인 질병을 모두 고르시오.",
+    "type": "mc",
+    "q": "다음 중 소에서 유사산을 일으키는 대표적인 질병에 해당하지 않는 것은?",
     "options": [
-     "Leptospirosis",
      "Neosporosis",
-     "Salmonellosis",
      "Listeriosis",
-     "Blackleg"
+     "Q fever",
+     "Leptospirosis",
+     "Shipping fever"
     ],
-    "answers": [
-     0,
-     1,
-     3
-    ],
-    "explanation": "슬라이드 목록: Lepto, Neospora, Toxo, Listeria, Q fever, Akabane, IBR, BVD. Salmonellosis는 시험 답 기준으로 해당하지 않고, Blackleg은 근육 질병이에요.",
+    "answer": 4,
+    "explanation": "슬라이드 목록: Lepto, Neospora, Toxo, Listeria, Q fever, Akabane, IBR, BVD. 수송열은 호흡기 질병이에요.",
     "no": 14
    },
    {
     "type": "mc",
     "q": "Q fever에 대한 설명으로 옳은 것은?",
     "options": [
-     "소에서 급사를 일으키는 매우 중요한 질병이다.",
      "부검 시 특징적인 육안 홀마크로 쉽게 진단할 수 있다.",
-     "원인체는 Coxiella burnetii이며, 반추류 유사산의 대표 병원체이고 사람도 감염된다.",
+     "사람은 주로 모기에 물려 감염된다.",
      "조직에서 fibrin ring granuloma가 항상 관찰된다.",
-     "사람은 주로 모기에 물려 감염된다."
+     "원인체는 Coxiella burnetii이며, 반추류 유사산의 대표 병원체이고 사람도 감염된다.",
+     "소에서 급사를 일으키는 매우 중요한 질병이다."
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "Q fever는 소 입장에선 무섭지 않지만 유사산 때문에 중요하고, 사람 법정감염병이에요. 부검으로 밝힐 수 있는 병이 아니고, fibrin ring granuloma도 'not always'예요. 사람은 주로 흡입·감염 우유로 감염돼요.",
     "no": 15
    },
@@ -214,62 +221,69 @@
     "q": "수송열(Shipping fever)의 육안 홀마크로 옳은 것은?",
     "options": [
      "Caudodorsal(뒤·위쪽) 분포의 간질성 폐렴",
-     "Cranioventral(앞·아래쪽) 분포의 섬유소성 기관지폐렴·흉막폐렴과 소엽간 중격의 확장",
      "폐의 결절과 중심의 노란 치즈양 괴사",
-     "폐 전체에 퍼진 다발성 소농양",
-     "특징적인 육안 소견 없음"
+     "특징적인 육안 소견 없음",
+     "Cranioventral(앞·아래쪽) 분포의 섬유소성 기관지폐렴·흉막폐렴과 소엽간 중격의 확장",
+     "폐 전체에 퍼진 다발성 소농양"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "수송열은 항상 cranioventral, 흉막의 두꺼운 fibrin층, 노란 젤라틴 부종·fibrin으로 넓어진 소엽간 중격이 특징이에요.",
     "no": 16
    },
    {
-    "type": "short",
-    "q": "수송열의 조직 홀마크인 'oat cell'이 무엇이고, 왜 생기는지 설명하시오.",
-    "model": "길쭉하고(elongated) 호염기성인 변성 호중구(및 MØ). Mannheimia haemolytica가 분비하는 leukotoxin이 반추류 백혈구를 죽이면서, 몰려온 호중구가 죽어가며 길쭉하게 찌그러진 형태로 보이는 것.",
-    "explanation": "키워드: 변성 호중구 · leukotoxin · 반추류 백혈구에만 독성. 돼지 흉막폐렴(A. pleuropneumoniae)에서도 같은 RTX 계열 독소로 oat cell이 보여요.",
+    "type": "mc",
+    "q": "수송열의 조직 홀마크인 oat cell에 대한 설명으로 옳은 것은?",
+    "options": [
+     "Splendore-Hoeppli 물질에 둘러싸인 균 집락이다.",
+     "폭스바이러스에 감염된 각질세포이다.",
+     "대식세포가 융합한 다핵거대세포이다.",
+     "Mannheimia haemolytica의 leukotoxin에 의해 변성된, 길쭉하고 호염기성인 호중구이다.",
+     "항원제시 능력이 커진 epithelioid cell이다."
+    ],
+    "answer": 3,
+    "explanation": "Leukotoxin이 몰려온 호중구를 죽이면서 길쭉하게 찌그러진 세포가 oat cell이에요. 돼지 흉막폐렴의 홀마크이기도 해요.",
     "no": 17
    },
    {
-    "type": "ox",
-    "q": "Mannheimia haemolytica는 정상적으로 상부 호흡기에 머무는 상재균으로, 이유·수송·밀집·바이러스 감염 등의 스트레스를 받으면 폐로 넘어가 병을 일으킨다.",
+    "type": "mc",
+    "q": "Mannheimia haemolytica에 의한 수송열에 대한 설명으로 옳지 않은 것은?",
     "options": [
-     "O",
-     "X"
+     "원래 상부 호흡기에 머무는 상재균이다.",
+     "이유·수송·밀집·바이러스 감염 등 스트레스가 발병 요인이다.",
+     "Leukotoxin은 반추류 백혈구에만 세포독성을 보인다.",
+     "흉막이 두꺼운 fibrin층으로 덮인다.",
+     "병변은 항상 caudodorsal(뒤·위쪽) 폐엽에 분포한다."
     ],
-    "answer": 0,
-    "explanation": "스트레스·바이러스(BoHV-1, BPIV-3, BRSV)가 상부 호흡기 점막을 손상시키면 균이 폐로 침입해 leukotoxin을 분비해요.",
+    "answer": 4,
+    "explanation": "수송열은 항상 cranioventral(앞·아래쪽)이에요. 기도로 들어온 균·삼출물이 중력 방향, 짧은 기관지의 앞아래 폐엽에 고여요.",
     "no": 18
    },
    {
     "type": "mc",
     "q": "혀가 딱딱하게 붓고 움직이지 않으며 연하곤란과 과도한 침흘림을 보이는 소. 가장 의심되는 원인체는?",
     "options": [
-     "Actinomyces bovis",
-     "Actinobacillus lignieresii",
      "Haemonchus contortus",
+     "Actinobacillus lignieresii",
+     "Mannheimia haemolytica",
      "Clostridium chauvoei",
-     "Mannheimia haemolytica"
+     "Actinomyces bovis"
     ],
     "answer": 1,
     "explanation": "혀(연부조직) = Wooden tongue = Actinobacillus lignieresii. 뼈를 좋아하는 Actinomyces bovis는 Lumpy jaw, Haemonchus에 의한 저알부민혈증은 Bottle jaw예요.",
     "no": 19
    },
    {
-    "type": "multi",
-    "q": "Lumpy jaw(방선균증)에 대한 설명으로 옳지 않은 것 2개를 고르시오.",
+    "type": "mc",
+    "q": "Lumpy jaw(방선균증)에 대한 설명으로 옳지 않은 것은?",
     "options": [
-     "원인체는 Gram 양성 혐기성균이며 구강 상재균이다.",
-     "하악·상악에 화농육아종성 종괴와 골수염(뼈 파괴·증식)이 생긴다.",
-     "조직에서 균 집락 주위에 곤봉 모양 Splendore-Hoeppli 물질(sulfur granule)이 보인다.",
-     "Bottle jaw처럼 저알부민혈증에 의한 턱밑 부종이 원인이다.",
-     "주로 혀의 연부조직을 침범해 경화성 섬유화를 일으킨다."
+     "하악·상악에 화농육아종성 종괴와 골수염이 생긴다.",
+     "구강 상재균이 점막 상처를 통해 조직으로 들어간다.",
+     "주로 혀의 연부조직을 침범해 경화성 섬유화를 일으킨다.",
+     "조직에서 균 집락 주위에 Splendore-Hoeppli 물질(sulfur granule)이 보인다.",
+     "원인체는 Gram 양성 혐기성균인 Actinomyces bovis이다."
     ],
-    "answers": [
-     3,
-     4
-    ],
-    "explanation": "④는 Bottle jaw(순환장애, 감염 아님), ⑤는 Wooden tongue(Actinobacillus lignieresii)의 설명이에요. Lumpy jaw의 A. bovis는 뼈를 좋아해요.",
+    "answer": 2,
+    "explanation": "혀의 경화 = Wooden tongue(Actinobacillus lignieresii). Actinomyces는 뼈, Actinobacillus는 연부조직을 좋아해요.",
     "no": 20
    }
   ]
@@ -278,31 +292,34 @@
   "id": "pathcc-cow-2",
   "category": "pathcc",
   "title": "소 감염병리진단 II (바이러스성) · 20문항",
-  "sub": "자동 생성 · 11/28 · 병리집담회1 정리본",
+  "sub": "자동 생성 · 11/28 · 병리집담회1 정리본 · 5지선다",
   "createdAt": "2026-11-28T00:00:01.000Z",
   "questions": [
    {
-    "type": "ox",
-    "q": "구제역(FMD)은 morbidity가 거의 100%에 이르지만 mortality는 낮은 질병이다.",
+    "type": "mc",
+    "q": "구제역(FMD)에 대한 설명으로 옳은 것은?",
     "options": [
-     "O",
-     "X"
+     "제2종 법정가축전염병이다.",
+     "Morbidity는 거의 100%이지만 mortality는 약 1.5%로 낮다.",
+     "혈청형은 1개뿐이다.",
+     "기제류(말)도 감염된다.",
+     "Morbidity와 mortality가 모두 매우 높다."
     ],
-    "answer": 0,
-    "explanation": "'스치면 감염되지만 많이 아프진 않다' — 폐사율 약 1.5%. 동물보다 사람(경제·무역) 입장에서 무서운 질병이에요.",
+    "answer": 1,
+    "explanation": "'스치면 감염되지만 많이 아프진 않다.' 우제류만 감염되고, 7개 혈청형(국내 O·A형), 제1종이에요.",
     "no": 1
    },
    {
     "type": "mc",
     "q": "구제역의 전파 경로로 옳지 않은 것은?",
     "options": [
-     "직접 접촉",
-     "유즙",
-     "정액",
      "공기",
-     "모기 매개"
+     "정액",
+     "모기 매개",
+     "직접 접촉",
+     "유즙"
     ],
-    "answer": 4,
+    "answer": 2,
     "explanation": "구제역은 접촉·유즙·정액·공기로 전파돼요. 모기 매개는 럼피스킨병(LSD)과 아까바네병이에요.",
     "no": 2
    },
@@ -312,55 +329,68 @@
     "options": [
      "주로 성우에서 관찰된다.",
      "주로 2개월령 이하 송아지에서 관찰되며, 심근의 Zenker's(응고) 괴사와 단핵세포 침윤이 흰 줄무늬로 보인다.",
-     "비타민 E·셀레늄 결핍이 원인이다.",
      "입과 발굽의 수포가 심장으로 번진 것이다.",
-     "심근의 치즈양 괴사와 광물화가 특징이다."
+     "심근의 치즈양 괴사와 광물화가 특징이다.",
+     "비타민 E·셀레늄 결핍이 원인이다."
     ],
     "answer": 1,
     "explanation": "Tiger heart는 거의 송아지(myotropism)에서만 보여요. 흰 줄무늬 = 괴사한 심근이에요. 비타민 E·Se 결핍은 감별 대상인 White muscle disease예요.",
     "no": 3
    },
    {
-    "type": "short",
-    "q": "같은 구제역 바이러스인데 성우는 입·발굽의 수포를, 송아지는 Tiger heart를 보이는 이유를 설명하시오.",
-    "model": "FMDV가 수용체로 쓰는 integrin(αvβ6)의 분포가 나이에 따라 다르기 때문. 성우는 상피세포에 많아 epitheliotropism(입·혀·발굽 수포), 송아지(<2개월령)는 심근세포에 많아 myotropism(심근 괴사, tiger heart)을 보인다.",
-    "explanation": "키워드: integrin αvβ6 · epitheliotropism vs myotropism. 우제류 integrin에만 붙어서 말 같은 기제류는 감염되지 않아요.",
+    "type": "mc",
+    "q": "같은 구제역 바이러스인데 성우는 입·발굽 수포를, 송아지는 Tiger heart를 보이는 이유로 옳은 것은?",
+    "options": [
+     "송아지는 비타민 E가 부족하기 때문",
+     "송아지는 모체이행항체가 상피를 보호하기 때문",
+     "성우는 심근에 바이러스가 도달하지 못하기 때문",
+     "수용체인 integrin αvβ6가 성우는 상피세포, 송아지는 심근세포에 많이 분포하기 때문",
+     "송아지에는 다른 혈청형만 감염되기 때문"
+    ],
+    "answer": 3,
+    "explanation": "Integrin αvβ6 분포가 나이에 따라 달라요: 성우 = epitheliotropism, 송아지 = myotropism.",
     "no": 4
    },
    {
     "type": "mc",
     "q": "구제역 병리기전에서 바이러스가 최초로 증식하는 부위는?",
     "options": [
-     "발굽 주변 표피",
-     "혀의 각화상피",
-     "비인두(dorsal nasopharynx)",
      "심근",
-     "장간막 림프절"
+     "발굽 주변 표피",
+     "장간막 림프절",
+     "혀의 각화상피",
+     "비인두(dorsal nasopharynx)"
     ],
-    "answer": 2,
+    "answer": 4,
     "explanation": "Pre-viremia 단계에서 상부 호흡기 점막, 특히 dorsal nasopharynx(코로나 검사 때 면봉으로 긁는 부위)에서 처음 증식해요.",
     "no": 5
    },
    {
-    "type": "ox",
-    "q": "우리나라는 2011년 구제역 백신 접종을 결정하면서 '백신 미접종 청정국'의 지위를 얻었다.",
+    "type": "mc",
+    "q": "국내 구제역 발생과 백신에 대한 설명으로 옳은 것은?",
     "options": [
-     "O",
-     "X"
+     "현재 연 1회만 접종한다.",
+     "2010~2011 시즌이 살처분·재정 손실이 가장 컸다.",
+     "백신 접종 후 한 건도 발생하지 않았다.",
+     "2019년 이후 돼지에서 계속 대규모로 발생하고 있다.",
+     "2011년 백신 접종 결정 후 '백신 미접종 청정국'이 되었다."
     ],
     "answer": 1,
-    "explanation": "반대예요. 백신 결정 전이 '백신 미접종 청정국'이었고, 결정 후 한 단계 내려간 '백신접종 청정국'이 됐어요.",
+    "explanation": "2010~2011 시즌: 살처분 354만 마리, 2조 8,695억 원. 백신 결정 후엔 '백신접종 청정국', 지금은 봄·가을 연 2회, 돼지는 2019년 이후 발생 없음.",
     "no": 6
    },
    {
-    "type": "ox",
-    "q": "구제역 바이러스의 배출량은 소가 돼지보다 많다.",
+    "type": "mc",
+    "q": "구제역 바이러스의 특성으로 옳지 않은 것은?",
     "options": [
-     "O",
-     "X"
+     "입자가 작아 공기로도 전파된다.",
+     "성우는 회복 후에도 바이러스가 조직에 남아 carrier가 될 수 있다.",
+     "침에도 바이러스가 많아 사료통을 통해 빠르게 퍼진다.",
+     "비인두(dorsal nasopharynx)에서 최초 증식한다.",
+     "바이러스 배출량은 소가 돼지보다 많다."
     ],
-    "answer": 1,
-    "explanation": "돼지 > 소. 돼지는 개체 수가 많고 밀집 사육이라 바이러스 배출량이 많아 공기로 폭발적으로 퍼져요.",
+    "answer": 4,
+    "explanation": "배출량은 돼지 > 소예요. 돼지는 개체 수가 많고 밀집 사육이라 폭발적으로 늘어 공기로 퍼져요.",
     "no": 7
    },
    {
@@ -381,61 +411,56 @@
     "type": "mc",
     "q": "럼피스킨병 피부 병변의 진행 순서로 옳은 것은?",
     "options": [
-     "구진 → 반점 → 수포 → 가피 → 농포",
-     "반점 → 구진 → 수포 → 농포 → 가피",
      "반점 → 수포 → 구진 → 농포 → 가피",
+     "반점 → 구진 → 농포 → 수포 → 가피",
+     "반점 → 구진 → 수포 → 농포 → 가피",
      "수포 → 반점 → 구진 → 가피 → 농포",
-     "반점 → 구진 → 농포 → 수포 → 가피"
+     "구진 → 반점 → 수포 → 가피 → 농포"
     ],
-    "answer": 1,
+    "answer": 2,
     "explanation": "반점(macule) → 구진(papule) → 수포(vesicle) → 농포(pustule) → 가피(crust). 보통 수포 단계부터 육안으로 발견돼요.",
     "no": 9
    },
    {
-    "type": "ox",
-    "q": "럼피스킨병에서 'sit-fast'란 결절 중심의 괴사 조직이 격리되어 피부에 단단히 붙어 있는 병변을 말한다.",
+    "type": "mc",
+    "q": "럼피스킨병에서 결절 중심의 괴사 조직이 격리되어 피부에 단단히 붙어 있고, 떨어지면 피가 나며 궤양을 남기는 병변을 무엇이라 하는가?",
     "options": [
-     "O",
-     "X"
+     "Fibrin ring granuloma",
+     "Oat cell",
+     "Sit-fast",
+     "Sulfur granule",
+     "Tiger heart"
     ],
-    "answer": 0,
-    "explanation": "Sit-fast는 잘 안 떨어지고, 떨어지면 피가 나요. 약 20일 지나면 떨어져 나가며 궤양이 남아요.",
+    "answer": 2,
+    "explanation": "Sit-fast는 약 20일 지나 떨어져 나가며 궤양을 남겨요.",
     "no": 10
    },
    {
-    "type": "multi",
-    "q": "국내 럼피스킨병 발생의 특징으로 옳은 것을 모두 고르시오.",
+    "type": "mc",
+    "q": "국내 럼피스킨병 발생의 특징으로 옳지 않은 것은?",
     "options": [
-     "가을(특히 10~11월)에 집중 발생한다.",
-     "해안 인접 시군에서 많이 발생한다.",
-     "한우 발생 비율이 높은 것은 한우가 젖소보다 감수성이 높기 때문이다.",
      "경기도에서 시작해 인접 지역으로 차례로 번진다.",
-     "모기 등 흡혈곤충이 주된 매개체이다."
+     "제주도 등에서도 산발적으로 발생한다.",
+     "모기 등 흡혈곤충이 주된 매개체이다.",
+     "가을(특히 10~11월)에 집중 발생한다.",
+     "해안 인접 시군에서 많이 발생한다."
     ],
-    "answers": [
-     0,
-     1,
-     4
-    ],
-    "explanation": "③ 국내 사육 소의 95%가 한우라서 생긴 통계의 착시예요(필기: 젖소 감수성이 더 높음). ④ 모기 매개라 산발적으로 발생해요(제주도에서도 터짐).",
+    "answer": 0,
+    "explanation": "모기 매개라 차례로 번지지 않고 산발적으로 발생해요.",
     "no": 11
    },
    {
-    "type": "multi",
-    "q": "럼피스킨병의 조직소견으로 옳은 것을 모두 고르시오.",
+    "type": "mc",
+    "q": "럼피스킨병의 조직소견으로 옳지 않은 것은?",
     "options": [
-     "각질세포의 공포변성(vacuolar change)",
-     "세포질 내 호산성 봉입체",
-     "혈관내피 손상에 의한 vasculitis와 혈전",
      "핵 내 호염기성 봉입체",
-     "모낭·피지선 등 피부 부속기의 증생"
+     "괴사성 피부염(necrotizing dermatitis)",
+     "혈관내피 손상에 의한 vasculitis",
+     "세포질 내 호산성 봉입체",
+     "각질세포의 공포변성"
     ],
-    "answers": [
-     0,
-     1,
-     2
-    ],
-    "explanation": "폭스바이러스는 세포질 내(intracytoplasmic) 호산성 봉입체를 만들어요. 심한 necrotizing dermatitis에서는 부속기가 괴사로 소실돼요.",
+    "answer": 0,
+    "explanation": "폭스바이러스는 세포질 내(intracytoplasmic) 호산성 봉입체를 만들어요.",
     "no": 12
    },
    {
@@ -443,12 +468,12 @@
     "q": "럼피스킨병에 대한 설명으로 옳지 않은 것은?",
     "options": [
      "2026년 3월 31일 제1종에서 제2종 법정가축전염병으로 하향되었다.",
-     "백신은 피내접종한다.",
-     "구제역 백신과 같은 주사기에 섞어 한 번에 접종하는 것이 권장된다.",
+     "SERPINs를 통해 숙주 방어를 무력화한다.",
      "Morbidity는 약 9~26%, mortality는 0.5~2%이다.",
-     "SERPINs를 통해 숙주 방어를 무력화한다."
+     "구제역 백신과 같은 주사기에 섞어 한 번에 접종하는 것이 권장된다.",
+     "백신은 피내접종한다."
     ],
-    "answer": 2,
+    "answer": 3,
     "explanation": "구제역 백신과 같은 주사기에 혼합 금지(별도 주사기·바늘), 구제역 백신을 놓은 목의 반대편에 접종해요.",
     "no": 13
    },
@@ -456,46 +481,56 @@
     "type": "mc",
     "q": "생후 2주 미만 송아지가 수양성 설사를 하다 혈변까지 보이고, 조직에서 융모 끝부분이 공격받은 villus atrophy가 관찰되었다. 가장 의심되는 원인체는?",
     "options": [
-     "Rotavirus",
-     "Coronavirus",
-     "Cryptosporidium parvum",
      "BVDV",
-     "Parvovirus"
+     "Cryptosporidium parvum",
+     "Coronavirus",
+     "Parvovirus",
+     "Rotavirus"
     ],
-    "answer": 0,
+    "answer": 4,
     "explanation": "Rota = 2주 미만, 잠복 1.5~4일, 융모 끝 공격. Corona = 1~3주령(특히 19~21일), 융모 가운데까지, 더 severe.",
     "no": 14
    },
    {
-    "type": "ox",
-    "q": "송아지의 Coronavirus 감염은 Rotavirus 감염보다 경미하며, 성우가 겨울철에 설사만 하는 경우를 winter dysentery라 부른다.",
+    "type": "mc",
+    "q": "송아지 Coronavirus(BCoV) 감염에 대한 설명으로 옳지 않은 것은?",
     "options": [
-     "O",
-     "X"
+     "Rotavirus 감염보다 경미하다.",
+     "성우의 겨울철 설사를 winter dysentery라 부른다.",
+     "조직에서 villus atrophy가 관찰된다.",
+     "주로 1~3주령 송아지에서 발생한다.",
+     "잠복기는 약 2~5일이다."
     ],
-    "answer": 1,
-    "explanation": "Coronavirus 감염은 Rotavirus보다 더 심해요(more severe). winter dysentery라는 이름 설명은 맞아요.",
+    "answer": 0,
+    "explanation": "Coronavirus 감염은 Rotavirus보다 더 심해요(more severe). 초유 섭취가 중요해요.",
     "no": 15
    },
    {
     "type": "mc",
     "q": "Cryptosporidium parvum에 대한 설명으로 옳지 않은 것은?",
     "options": [
-     "원충(protozoa)이다.",
-     "사람과 소 모두 감염되는 인수공통 병원체이다.",
-     "중간숙주가 필요 없는 단숙주성이다.",
      "주로 부검 시 조직 병변을 보고 진단한다.",
-     "혈변은 드물다."
+     "사람과 소 모두 감염되는 인수공통 병원체이다.",
+     "혈변은 드물다.",
+     "원충(protozoa)이다.",
+     "중간숙주가 필요 없는 단숙주성이다."
     ],
-    "answer": 3,
+    "answer": 0,
     "explanation": "Crypto는 부검·조직 병변으로 진단하는 병원체가 아니에요. 분변 부유법으로 원충을 직접 봐야 해요.",
     "no": 16
    },
    {
-    "type": "short",
-    "q": "Rotavirus·Coronavirus 감염 시 villus atrophy가 수양성 설사를 일으키는 원리를 설명하시오.",
-    "model": "융모는 영양분과 물을 재흡수하는 넓은 표면이다. 바이러스가 융모를 공격해 짧아지면(villus atrophy) 흡수 면적이 줄고, 장 안에 남은 영양분이 삼투압으로 물을 끌어당겨 흡수불량성 수양성 설사와 탈수가 생긴다.",
-    "explanation": "키워드: 흡수 면적↓ · 삼투압 · 물 재흡수 실패 · 탈수. Crypt까지 망가지면(파보) 재생이 가장 어려워요.",
+    "type": "mc",
+    "q": "Rotavirus·Coronavirus 감염 시 수양성 설사가 생기는 기전으로 옳은 것은?",
+    "options": [
+     "저알부민혈증으로 장벽 부종이 생기기 때문",
+     "Villus atrophy로 흡수 면적이 줄어 장 내 영양분이 삼투압으로 물을 끌어당기기 때문",
+     "장 상피의 Cl⁻ 분비가 독소로 과다해져서",
+     "Crypt 줄기세포만 선택적으로 파괴되기 때문",
+     "대장의 섬유소출혈성 결장염 때문"
+    ],
+    "answer": 1,
+    "explanation": "융모가 짧아지면 재흡수를 못 해서 흡수불량성 물설사와 탈수가 생겨요. Crypt까지 망가지는 건 파보예요.",
     "no": 17
    },
    {
@@ -517,12 +552,12 @@
     "q": "어미는 무증상인데 관절 굴곡 기형, 뇌수종, 소뇌형성부전을 가진 송아지가 태어났다. 모기·진드기가 매개하고 직접 접촉으로는 전파되지 않는 질병은?",
     "options": [
      "Bovine viral diarrhea",
-     "Akabane disease",
      "Foot-and-mouth disease",
-     "Lumpy skin disease",
-     "Bovine coronavirus infection"
+     "Bovine coronavirus infection",
+     "Akabane disease",
+     "Lumpy skin disease"
     ],
-    "answer": 1,
+    "answer": 3,
     "explanation": "아까바네병(Orthobunyavirus)은 어미는 대부분 무증상이고 유사산·기형만 일으켜요. 소뇌형성부전은 BVD도 일으키지만, 관절 굴곡 + 절지동물 매개 + 직접전파 X면 아까바네예요.",
     "no": 19
    },
@@ -530,13 +565,13 @@
     "type": "mc",
     "q": "국내 2014~2020년 소 유사산 원인 조사에서 감염성 원인 1위로 확인된 병원체는?",
     "options": [
-     "BVDV",
+     "Akabane virus",
      "Coxiella burnetii",
      "Neospora caninum",
-     "Akabane virus",
+     "BVDV",
      "Leptospira"
     ],
-    "answer": 0,
+    "answer": 3,
     "explanation": "BVDV가 약 18%(수업: 약 20%)로 1위, 다음이 Coxiella burnetii(Q fever) 5.3%예요. 1999~2000년 조사에서는 Neospora가 압도적이었어요.",
     "no": 20
    }
